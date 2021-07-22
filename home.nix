@@ -1,6 +1,7 @@
 { config, pkgs, lib, options, nixpkgs, ... }:
 
 let
+  secrets = import ./secrets.nix;
   username = "mightyiam";
   userEmail = "mightyiampresence@gmail.com";
   homeDirectory = /home/mightyiam;
@@ -11,7 +12,7 @@ let
   bar = let id = "bottom"; in {
     inherit id;
     swaybar = {
-      fonts = { names = ["monospace"]; style = "Bold"; size = 12.0; };
+      fonts = { names = ["monospace"]; style = "Bold"; size = 10.0; };
       statusCommand = "i3status-rs ${configHome}/i3status-rust/config-${id}.toml";
       trayOutput = "DP-2";
     };
@@ -141,6 +142,7 @@ in {
     wrapperFeatures.gtk = true;
     extraSessionCommands = ''
       export WLR_DRM_NO_MODIFIERS=1
+      export I3RS_GITHUB_TOKEN=${secrets.I3RS_GITHUB_TOKEN}
     '';
     config = {
       output = {

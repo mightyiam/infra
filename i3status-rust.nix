@@ -1,16 +1,22 @@
 id: {
   "${id}" = {
     blocks = [
-      {
-        block = "disk_space";
-        path = "/";
-        alias = "/";
-        info_type = "available";
-        unit = "GB";
-        interval = 60;
-        warning = 50.0;
-        alert = 30;
-      }
+      { block = "focused_window"; }
+
+      { block = "cpu"; }
+      { block = "memory"; }
+      { block = "disk_space"; }
+      #{ block = "nvidia_gpu"; }
+
+      { block = "docker"; }
+      { block = "github"; }
+
+      { block = "net"; }
+      { block = "networkmanager"; device_format = "{icon}{ap}"; }
+
+      { block = "time"; }
+      { block = "keyboard_layout"; driver = "sway"; }
+      { block = "sound"; }
     ];
   };
 }
