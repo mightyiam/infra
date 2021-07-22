@@ -5,8 +5,33 @@ let
   userEmail = "mightyiampresence@gmail.com";
   homeDirectory = /home/mightyiam;
   configDir = ".config";
+  configHome = builtins.toString homeDirectory + "/${configDir}";
   sessionVariables = { };
   mod-key = "Mod4";
+  bar = let id = "bottom"; in {
+    inherit id;
+    swaybar = {
+      fonts = { names = ["monospace"]; style = "Bold"; size = 12.0; };
+      statusCommand = "i3status-rs ${configHome}/i3status-rust/config-${id}.toml";
+      trayOutput = "DP-2";
+    };
+    i3status-rust = {
+      "${id}" = {
+        blocks = [
+          {
+            block = "disk_space";
+            path = "/";
+            alias = "/";
+            info_type = "available";
+            unit = "GB";
+            interval = 60;
+            warning = 50.0;
+            alert = 30;
+          }
+        ];
+      };
+    };
+  };
 in {
   systemd = {
     user = {
@@ -19,7 +44,7 @@ in {
 
   xdg = {
     enable = true;
-    configHome = builtins.toString homeDirectory + "/${configDir}";
+    inherit configHome;
     #userDirs = let tmp = "${homeDirectory}/tmp"; in {
       #enable = true;
       #createDirectories = false;
@@ -38,25 +63,7 @@ in {
     firefox = {
       enable = true;
     };
-    i3status-rust = {
-      enable = true;
-      bars = {
-        top = {
-          blocks = [
-            {
-              block = "disk_space";
-              path = "/";
-              alias = "/";
-              info_type = "available";
-              unit = "GB";
-              interval = 60;
-              warning = 50.0;
-              alert = 30;
-            }
-          ];
-        };
-      };
-};
+    i3status-rust = { enable = true; bars = {} // bar.i3status-rust; };
     command-not-found.enable = true;
     info.enable = true;
     gh = {
@@ -161,11 +168,7 @@ in {
       };
       fonts = { size = 10.0; };
       modifier = mod-key;
-      bars = [
-        {
-          command = "i3status-rs" + configDir + "/i3status-rust/config-top";
-        }
-      ];
+      bars = [ bar.swaybar ];
       input = {
         "type:keyboard" = {
           xkb_layout = "us,il";
