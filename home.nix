@@ -7,7 +7,9 @@ let
   homeDirectory = /home/mightyiam;
   configDir = ".config";
   configHome = builtins.toString homeDirectory + "/${configDir}";
-  sessionVariables = { };
+  sessionVariables = {
+    BAT_THEME = "base16";
+  };
   mod-key = "Mod4";
   bar = let id = "bottom"; in {
     inherit id;
