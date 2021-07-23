@@ -106,6 +106,9 @@ in {
       defaultKeymap = "viins";
       history.ignorePatterns = ["rm *"];
       inherit sessionVariables;
+      envExtra = ''
+        if [ "$SKIPTMUX" = "" ] && [ "$TMUX" = "" ]; then exec tmux; fi
+      '';
     };
     bash = {
       enable = true;
