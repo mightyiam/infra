@@ -48,6 +48,15 @@ in {
   };
 
   programs = {
+    tmux = {
+      enable = true;
+      keyMode = "vi";
+      shortcut = "a";
+      customPaneNavigationAndResize = true;
+      extraConfig = ''
+        set-option -ga terminal-overrides ",alacritty:Tc"
+      '';
+    };
     firefox = {
       enable = true;
     };
@@ -200,7 +209,6 @@ in {
       slack
       swayidle
       swaylock
-      tmux
       vlc
       wl-clipboard
       xdg-utils
