@@ -204,9 +204,15 @@ in {
         };
       };
       terminal = "alacritty";
-      keybindings = lib.mkOptionDefault {
-        "${mod-key}+Shift+e" = "exec swaymsg exit";
-      };
+      keybindings =
+        let
+          step = 5;
+          incVol = d: "exec pactl set-sink-volume @DEFAULT_SINK@ ${d}${builtins.toString step}%";
+        in lib.mkOptionDefault {
+          "${mod-key}+Shift+e" = "exec swaymsg exit";
+          "${mod-key}+minus" = incVol "-";
+          "${mod-key}+equal" = incVol "+";
+        };
       startup = [
         { command = "skypeforlinux"; }
         { command = "slack"; }
