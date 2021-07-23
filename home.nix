@@ -67,6 +67,9 @@ in {
     };
     firefox = {
       enable = true;
+      package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
+        forceWayland = true;
+      };
     };
     i3status-rust = { enable = true; bars = {} // bar.i3status-rust; };
     command-not-found.enable = true;
@@ -184,6 +187,7 @@ in {
     extraSessionCommands = ''
       export WLR_DRM_NO_MODIFIERS=1
       export I3RS_GITHUB_TOKEN=${secrets.I3RS_GITHUB_TOKEN}
+      export MOZ_ENABLE_WAYLAND=1
     '';
     config = {
       output = {
