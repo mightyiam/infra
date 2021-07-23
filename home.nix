@@ -55,6 +55,8 @@ in {
       customPaneNavigationAndResize = true;
       extraConfig = ''
         set-option -ga terminal-overrides ",alacritty:Tc"
+        set-option -g status-right "tmux"
+        set-option -g status-style "bg=black,fg=gray"
       '';
     };
     firefox = {
