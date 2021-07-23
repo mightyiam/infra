@@ -20,6 +20,7 @@ let
     };
     i3status-rust = import ./i3status-rust.nix id;
   };
+  zshBin = "${pkgs.zsh}/bin/zsh";
 in {
   systemd = {
     user = {
@@ -58,6 +59,7 @@ in {
         set-option -g status-right "tmux"
         set-option -g status-style "bg=black,fg=gray"
       '';
+      shell = zshBin;
     };
     firefox = {
       enable = true;
@@ -95,6 +97,16 @@ in {
       };
     };
     bat.enable = true;
+    zsh = {
+      enable = true;
+      enableAutosuggestions = true;
+      enableCompletion = true;
+      enableVteIntegration = true;
+      autocd = true;
+      defaultKeymap = "viins";
+      history.ignorePatterns = ["rm *"];
+      inherit sessionVariables;
+    };
     bash = {
       enable = true;
       enableVteIntegration = true;
@@ -135,6 +147,10 @@ in {
     alacritty = {
       enable = true;
       settings = {
+        shell = {
+          program = zshBin;
+          args = ["--login"];
+        };
         background_opacity = 0.8;
         decorations = "none";
         dynamic_title = true;
