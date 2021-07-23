@@ -1,5 +1,7 @@
 id: {
   "${id}" = {
+    theme = "plain";
+    icons = "awesome5";
     blocks = [
       { block = "focused_window"; }
 
