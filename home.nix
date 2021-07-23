@@ -14,7 +14,7 @@ let
   bar = let id = "bottom"; in {
     inherit id;
     swaybar = {
-      fonts = { names = ["monospace"]; style = "Bold"; size = 10.0; };
+      fonts = { names = ["monospace"]; style = "Bold"; size = 12.0; };
       statusCommand = "i3status-rs ${configHome}/i3status-rust/config-${id}.toml";
       trayOutput = "DP-2";
     };
