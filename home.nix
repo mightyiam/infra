@@ -106,7 +106,7 @@ in {
       defaultKeymap = "viins";
       history.ignorePatterns = ["rm *"];
       inherit sessionVariables;
-      envExtra = ''
+      initExtra = ''
         bindkey '^P' up-history
         bindkey '^N' down-history
         bindkey '^w' backward-kill-word
