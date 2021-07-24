@@ -11,12 +11,13 @@ let
     BAT_THEME = "base16";
   };
   mod-key = "Mod4";
+  sway-outputs = { left = "DP-2"; right = "DP-1"; };
   bar = let id = "bottom"; in {
     inherit id;
     swaybar = {
       fonts = { names = ["monospace"]; style = "Bold"; size = 12.0; };
       statusCommand = "i3status-rs ${configHome}/i3status-rust/config-${id}.toml";
-      trayOutput = "DP-2";
+      trayOutput = sway-outputs.left;
     };
     i3status-rust = import ./i3status-rust.nix id;
   };
@@ -191,10 +192,10 @@ in {
     '';
     config = {
       output = {
-        DP-1 = {
+        "${sway-outputs.right}" = {
           res = "1920x1080@144Hz";
-        } ;
-        DP-2 = {
+        };
+        "${sway-outputs.left}" = {
           res = "1920x1080@75Hz";
         };
       };
