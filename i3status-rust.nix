@@ -15,7 +15,14 @@ id: {
       { block = "networkmanager"; device_format = "{icon}{ap}"; }
 
       { block = "time"; format = "%F %R"; }
-      { block = "keyboard_layout"; driver = "sway"; }
+      {
+        block = "keyboard_layout";
+        driver = "sway";
+        mappings = {
+          "English (US)" = "EN";
+          "Hebrew (N/A)" = "HE";
+        };
+      }
       { block = "sound"; }
     ];
   };
