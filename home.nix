@@ -198,9 +198,9 @@ in {
           "$character"
         ];
         custom.line = {
-          command = "printf '━%.0s' {6..$COLUMNS}";
+          command = "printf '━%.0s' {11..$COLUMNS}";
           when = "true";
-          format = " [  ($output)]($style)";
+          format = "    [╼($output)╾]($style)";
           style = "bold ${pink}";
         };
         directory = {
@@ -274,6 +274,8 @@ in {
       extraConfig = ''
         set ignorecase
         let mapleader = ","
+        vnoremap < <gv
+        vnoremap > >gv
       '';
     };
     alacritty = {
