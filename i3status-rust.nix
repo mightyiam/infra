@@ -3,8 +3,6 @@ id: {
     theme = "plain";
     icons = "awesome5";
     blocks = [
-      { block = "focused_window"; }
-
       { block = "cpu"; }
       { block = "memory"; }
       { block = "disk_space"; }
