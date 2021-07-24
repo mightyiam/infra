@@ -114,13 +114,12 @@ in {
       defaultKeymap = "viins";
       history.ignorePatterns = ["rm *"];
       inherit sessionVariables;
+      initExtraFirst = builtins.readFile ./zsh-tmux-init.sh;
       initExtra = ''
         bindkey '^P' up-history
         bindkey '^N' down-history
         bindkey '^w' backward-kill-word
         bindkey '^r' history-incremental-search-backward
-
-        if [ "$SKIPTMUX" = "" ] && [ "$TMUX" = "" ]; then exec tmux; fi
       '';
     };
     bash = {
