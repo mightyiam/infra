@@ -219,7 +219,6 @@ in {
           "${mod-key}+equal" = incVol "+";
         };
       startup = [
-        { command = "skypeforlinux"; }
         { command = "slack"; }
       ];
     };
