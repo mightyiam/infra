@@ -180,6 +180,14 @@ in {
         live_config_reload = true;
       };
     };
+    mako = {
+      enable = true;
+      anchor = "top-right";
+      defaultTimeout = 3000;
+      ignoreTimeout = true;
+      font = "monospace 12";
+      output = sway-outputs.left;
+    };
   };
 
   wayland.windowManager.sway = {
@@ -219,6 +227,7 @@ in {
           "${mod-key}+equal" = incVol "+";
         };
       startup = [
+        { command = "mako"; }
         { command = "slack"; }
       ];
     };
@@ -237,7 +246,7 @@ in {
       font-awesome
       gnome.gnome-terminal
       imv
-      mako
+      libnotify
       neofetch
       nixpkgs-fmt
       noto-fonts
