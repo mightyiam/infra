@@ -228,7 +228,6 @@ in {
         };
       startup = [
         { command = "mako"; }
-        { command = "slack"; }
       ];
     };
   };
