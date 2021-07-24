@@ -126,7 +126,7 @@ in {
     bash = {
       enable = true;
       enableVteIntegration = true;
-      sessionVariables = sessionVariables;
+      inherit sessionVariables;
     };
     starship = {
       enable = true;
