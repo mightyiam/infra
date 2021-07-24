@@ -14,7 +14,7 @@ id: {
       { block = "net"; }
       { block = "networkmanager"; device_format = "{icon}{ap}"; }
 
-      { block = "time"; }
+      { block = "time"; format = "%F %R"; }
       { block = "keyboard_layout"; driver = "sway"; }
       { block = "sound"; }
     ];
