@@ -1,1 +1,1 @@
-eval printf %.0s═ '{2..'"${COLUMNS:-$(tput cols)}"\}
+eval printf %.0s─ '{2..'"${COLUMNS:-$(tput cols)}"\}

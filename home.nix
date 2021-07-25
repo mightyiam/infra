@@ -206,7 +206,7 @@ in {
         custom."${sep}" = {
           command = builtins.readFile "${./.}/starship-${sep}.sh";
           when = "true";
-          format = "[╔($output)\n]($style)";
+          format = "[╓($output)\n]($style)";
           style = "bold ${pink}";
         };
         directory = {
