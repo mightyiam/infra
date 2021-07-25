@@ -131,12 +131,15 @@ in {
       enable = true;
       enableBashIntegration = true;
       enableZshIntegration = true;
-      settings = let pink = "#FFC0CB"; in {
+      settings = let
+        pink = "#FFC0CB";
+        vertical = "[║](${pink})";
+      in {
         add_newline = false;
         ## https://starship.rs/config/#prompt
         format = builtins.concatStringsSep "" [
           "$\{custom.line\}"
-          "\n "
+          vertical
           "$username"
           "$hostname"
           "$kubernetes"
@@ -189,18 +192,20 @@ in {
           "$lua"
           "$jobs"
           "$battery"
-          "\n "
+          "\n"
+          vertical
           "$directory"
-          "\n "
+          "\n"
+          vertical
           "$status"
           "[ $shell](bold ${pink})"
           "$shlvl"
           "$character"
         ];
         custom.line = {
-          command = "printf '━%.0s' {11..$COLUMNS}";
+          command = "printf '═%.0s' {2..$COLUMNS}";
           when = "true";
-          format = "    [╼($output)╾]($style)";
+          format = "[╔($output)\n]($style)";
           style = "bold ${pink}";
         };
         directory = {
