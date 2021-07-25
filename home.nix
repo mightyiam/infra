@@ -204,7 +204,7 @@ in {
           "$character"
         ];
         custom."${sep}" = {
-          command = "printf '═%.0s' {2..$COLUMNS}";
+          command = builtins.readFile "${./.}/starship-${sep}.sh";
           when = "true";
           format = "[╔($output)\n]($style)";
           style = "bold ${pink}";
