@@ -287,6 +287,12 @@ in {
             autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
           '';
         }
+        {
+          plugin = nerdtree-git-plugin;
+          config = ''
+            let g:NERDTreeGitStatusUseNerdFonts = 1
+          '';
+        }
       ];
       extraConfig = ''
         set ignorecase
