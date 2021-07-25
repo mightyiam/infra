@@ -134,11 +134,12 @@ in {
       settings = let
         pink = "#FFC0CB";
         vertical = "[║](${pink})";
+        sep = "sep";
       in {
         add_newline = false;
         ## https://starship.rs/config/#prompt
         format = builtins.concatStringsSep "" [
-          "$\{custom.line\}"
+          "$\{custom.${sep}\}"
           vertical
           "$username"
           "$hostname"
@@ -202,7 +203,7 @@ in {
           "$shlvl"
           "$character"
         ];
-        custom.line = {
+        custom."${sep}" = {
           command = "printf '═%.0s' {2..$COLUMNS}";
           when = "true";
           format = "[╔($output)\n]($style)";
