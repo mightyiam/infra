@@ -212,7 +212,6 @@ in {
         directory = {
           truncation_length = 0;
           format = "[ : $path]($style)[$read_only]($read_only_style) ";
-          home_symbol = " ";
         };
         shell.disabled = false;
         shlvl = {
