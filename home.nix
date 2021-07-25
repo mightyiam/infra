@@ -217,7 +217,7 @@ in {
         shell.disabled = false;
         shlvl = {
           disabled = false;
-          threshold = 4;
+          threshold = 3;
           style = "bold red";
           symbol = "";
         };
