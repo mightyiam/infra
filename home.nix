@@ -281,6 +281,7 @@ in {
         let mapleader = ","
         vnoremap < <gv
         vnoremap > >gv
+        set clipboard+=unnamedplus
       '';
     };
     alacritty = {
