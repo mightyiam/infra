@@ -94,14 +94,7 @@ in {
     home-manager.enable = true;
     neovim = import ./nvim/main.nix pkgs;
     alacritty = import ./alacritty.nix zshBin;
-    mako = {
-      enable = true;
-      anchor = "top-right";
-      defaultTimeout = 3000;
-      ignoreTimeout = true;
-      font = "monospace 12";
-      output = sway-outputs.left;
-    };
+    mako = import ./mako.nix sway-outputs.left;
   };
 
   wayland.windowManager.sway = {
