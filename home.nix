@@ -275,6 +275,15 @@ in {
         vim-nix
         vim-easymotion
         editorconfig-vim
+        {
+          plugin = nerdtree;
+          config = ''
+            nnoremap <leader>n :NERDTreeFocus<CR>
+            nnoremap <C-n> :NERDTree<CR>
+            nnoremap <C-t> :NERDTreeToggle<CR>
+            nnoremap <C-f> :NERDTreeFind<CR>
+          '';
+        }
       ];
       extraConfig = ''
         set ignorecase
