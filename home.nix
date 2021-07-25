@@ -294,6 +294,7 @@ in {
         vnoremap < <gv
         vnoremap > >gv
         set clipboard+=unnamedplus
+        set number
       '';
     };
     alacritty = {
