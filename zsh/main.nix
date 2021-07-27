@@ -13,5 +13,7 @@ sessionVariables: {
     bindkey '^N' down-history
     bindkey '^w' backward-kill-word
     bindkey '^r' history-incremental-search-backward
+
+    alias ls='exa --icons --git --header --all'
   '';
 }

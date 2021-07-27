@@ -49,6 +49,7 @@ in {
   };
 
   programs = {
+    exa = { enable = true; };
     tmux = import ./tmux.nix zshBin;
     firefox = {
       enable = true;
