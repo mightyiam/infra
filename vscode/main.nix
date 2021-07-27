@@ -2,6 +2,10 @@ pkgs: {
   enable = true;
   package = pkgs.vscodium;
   userSettings = {
+    "editor.cursorSmoothCaretAnimation" = true;
+    "editor.smoothScrolling" = true;
+    "workbench.list.smoothScrolling" = true;
+
     "vscode-neovim.neovimExecutablePaths.linux" = "${pkgs.neovim}/bin/nvim";
   };
   extensions = builtins.concatLists [
