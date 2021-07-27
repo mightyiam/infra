@@ -1,9 +1,9 @@
-pkgs: {
+vimPlugins: {
   enable = true;
   viAlias = true;
   vimAlias = true;
   vimdiffAlias = true;
-  plugins = with pkgs.vimPlugins; [
+  plugins = with vimPlugins; [
     vim-nix
     vim-easymotion
     editorconfig-vim

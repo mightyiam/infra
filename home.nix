@@ -90,7 +90,7 @@ in {
       delta.enable = true;
     };
     home-manager.enable = true;
-    neovim = import ./nvim/main.nix pkgs;
+    neovim = import ./nvim/main.nix pkgs.vimPlugins;
     alacritty = import ./alacritty.nix zshBin;
     mako = import ./mako.nix sway-outputs.left;
   };
