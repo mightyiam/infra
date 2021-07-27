@@ -14,7 +14,7 @@
     bindkey '^w' backward-kill-word
     bindkey '^r' history-incremental-search-backward
 
-    alias ls='exa --icons --git --header --all'
+    alias ls='${pkgs.exa}/bin/exa --icons --git --header --all'
     alias du='${pkgs.du-dust}/bin/dust'
   '';
 }
