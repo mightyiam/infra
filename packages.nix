@@ -14,6 +14,8 @@ pkgs: with pkgs; [
   postman
   procs
   rclone
+  ripgrep
+  ripgrep-all
   skype
   slack
   swayidle
