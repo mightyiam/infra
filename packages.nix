@@ -11,6 +11,7 @@ pkgs: with pkgs; [
   noto-fonts-emoji
   pavucontrol
   postman
+  procs
   rclone
   skype
   slack
