@@ -1,6 +1,7 @@
 pkgs: with pkgs; [
   (nerdfonts.override { fonts = ["OpenDyslexic"]; })
   cargo
+  du-dust
   font-awesome
   gnome.gnome-terminal
   imv

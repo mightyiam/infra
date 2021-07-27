@@ -1,4 +1,4 @@
-sessionVariables: {
+{ sessionVariables, pkgs }: {
   enable = true;
   enableAutosuggestions = true;
   enableCompletion = true;
@@ -15,5 +15,6 @@ sessionVariables: {
     bindkey '^r' history-incremental-search-backward
 
     alias ls='exa --icons --git --header --all'
+    alias du='${pkgs.du-dust}/bin/dust'
   '';
 }

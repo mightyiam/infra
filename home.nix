@@ -72,7 +72,10 @@ in {
     };
     ssh = import ./ssh.nix homeDirectory;
     bat.enable = true;
-    zsh = import ./zsh/main.nix sessionVariables;
+    zsh = import ./zsh/main.nix {
+      inherit sessionVariables;
+      inherit pkgs;
+    };
     bash = {
       enable = true;
       enableVteIntegration = true;
