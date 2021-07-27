@@ -21,6 +21,7 @@ pkgs: with pkgs; [
   slack
   swayidle
   swaylock
+  tokei
   vlc
   wl-clipboard
   xdg-utils
