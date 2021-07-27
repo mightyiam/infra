@@ -6,10 +6,14 @@ pkgs: {
     "editor.smoothScrolling" = true;
     "workbench.list.smoothScrolling" = true;
 
+    "nix.enableLanguageServer" = true;
+    "nix.serverPath" = "${pkgs.rnix-lsp}/bin/rnix-lsp";
+
     "vscode-neovim.neovimExecutablePaths.linux" = "${pkgs.neovim}/bin/nvim";
   };
   extensions = builtins.concatLists [
     (with pkgs.vscode-extensions; [
+      jnoortheen.nix-ide
     ])
     (pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {

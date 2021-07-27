@@ -18,6 +18,7 @@ pkgs: with pkgs; [
   rclone
   ripgrep
   ripgrep-all
+  rnix-lsp
   skype
   slack
   swayidle
