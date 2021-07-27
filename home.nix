@@ -64,12 +64,7 @@ in {
       enable = true;
       gitProtocol = "ssh";
     };
-    vscode = {
-      enable = true;
-      extensions = with pkgs.vscode-extensions; [
-        vscodevim.vim
-      ];
-    };
+    vscode = import ./vscode/main.nix pkgs;
     ssh = import ./ssh.nix homeDirectory;
     bat.enable = true;
     zsh = import ./zsh/main.nix {
