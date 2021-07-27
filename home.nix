@@ -89,7 +89,10 @@ in {
       inherit userEmail;
       delta.enable = true;
     };
-    home-manager.enable = true;
+    home-manager = {
+      enable = true;
+      path = builtins.toString homeDirectory + "/src/home-manager";
+    };
     neovim = import ./nvim/main.nix pkgs.vimPlugins;
     alacritty = import ./alacritty.nix zshBin;
     mako = import ./mako.nix sway-outputs.left;
