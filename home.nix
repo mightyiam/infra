@@ -1,4 +1,4 @@
-{ config, pkgs, lib, options, nixpkgs, ... }:
+{ config, pkgs, lib, options, ... }:
 
 let
   secrets = import ./secrets.nix;
