@@ -1,5 +1,6 @@
 pkgs: with pkgs; [
   (nerdfonts.override { fonts = ["OpenDyslexic"]; })
+  bandwhich
   bottom
   cargo
   du-dust
