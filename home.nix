@@ -106,7 +106,6 @@ in {
     "postman"
     "skypeforlinux"
     "slack"
-    "vscode"
   ];
   home = {
     packages = import ./packages.nix pkgs;
