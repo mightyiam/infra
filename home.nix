@@ -83,11 +83,9 @@ in {
         { id = "hdokiejnpimakedhajhdlcegeplioahd"; }
       ];
     };
-    git = {
-      enable = true;
-      userName = username;
+    git = import ./git/main.nix {
+      inherit username;
       inherit userEmail;
-      delta.enable = true;
     };
     home-manager = {
       enable = true;
