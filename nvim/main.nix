@@ -16,6 +16,10 @@ in {
       optional = true;
     }
     vim-easymotion
+    {
+      plugin = ctrlp-vim;
+      optional = true;
+    }
     editorconfig-vim
     {
       plugin = lightline-vim;
@@ -58,6 +62,7 @@ in {
       set number
 
       :packadd vim-nix
+      :packadd ctrlp-vim
       :packadd lightline-vim 
       :packadd nerdtree
       :packadd nerdtree-git-plugin
