@@ -19,4 +19,7 @@
     alias grep='${pkgs.ripgrep}/bin/rg'
     alias top='${pkgs.bottom}/bin/btm'
   '';
+  initExtraBeforeCompInit = ''
+    zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+  '';
 }
