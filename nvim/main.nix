@@ -40,6 +40,10 @@ in {
         let g:NERDTreeGitStatusUseNerdFonts = 1
       '';
     }
+    {
+      plugin = vim-gitgutter;
+      optional = true;
+    }
   ];
   extraConfig = builtins.concatStringsSep "\n" [
     ''
@@ -48,6 +52,7 @@ in {
       vnoremap < <gv
       vnoremap > >gv
       set clipboard+=unnamedplus
+      set updatetime=100
     ''
     (omitInVSCode ''
       set number
@@ -56,6 +61,7 @@ in {
       :packadd lightline-vim 
       :packadd nerdtree
       :packadd nerdtree-git-plugin
+      :packadd vim-gitgutter 
     '')
   ];
 }
