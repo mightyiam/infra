@@ -13,6 +13,7 @@
     bindkey '^N' down-history
     bindkey '^w' backward-kill-word
     bindkey '^r' history-incremental-search-backward
+    bindkey '^[^M' autosuggest-execute
 
     alias ls='${pkgs.exa}/bin/exa --icons --git --header --all'
     alias du='${pkgs.du-dust}/bin/dust'
