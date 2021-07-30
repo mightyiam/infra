@@ -18,6 +18,13 @@ in {
     vim-easymotion
     editorconfig-vim
     {
+      plugin = lightline-vim;
+      optional = true;
+      config = omitInVSCode ''
+        set noshowmode
+      '';
+    }
+    {
       plugin = nerdtree;
       optional = true;
       config = omitInVSCode ''
@@ -46,6 +53,7 @@ in {
       set number
 
       :packadd vim-nix
+      :packadd lightline-vim 
       :packadd nerdtree
       :packadd nerdtree-git-plugin
     '')
