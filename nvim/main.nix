@@ -1,15 +1,26 @@
-vimPlugins: {
+vimPlugins:
+let
+  omitInVSCode = viml: builtins.concatStringsSep "" [
+    "if !exists('g:vscode')\n"
+    viml
+    "endif"
+  ];
+in {
   enable = true;
   viAlias = true;
   vimAlias = true;
   vimdiffAlias = true;
   plugins = with vimPlugins; [
-    vim-nix
+    {
+      plugin = vim-nix;
+      optional = true;
+    }
     vim-easymotion
     editorconfig-vim
     {
       plugin = nerdtree;
-      config = ''
+      optional = true;
+      config = omitInVSCode ''
         nnoremap <leader>n :NERDTreeFocus<CR>
         nnoremap <C-n> :NERDTree<CR>
         nnoremap <C-t> :NERDTreeToggle<CR>
@@ -17,17 +28,26 @@ vimPlugins: {
     }
     {
       plugin = nerdtree-git-plugin;
-      config = ''
+      optional = true;
+      config = omitInVSCode ''
         let g:NERDTreeGitStatusUseNerdFonts = 1
       '';
     }
   ];
-  extraConfig = ''
-    set ignorecase
-    let mapleader = ","
-    vnoremap < <gv
-    vnoremap > >gv
-    set clipboard+=unnamedplus
-    set number
-  '';
+  extraConfig = builtins.concatStringsSep "\n" [
+    ''
+      set ignorecase
+      let mapleader = ","
+      vnoremap < <gv
+      vnoremap > >gv
+      set clipboard+=unnamedplus
+    ''
+    (omitInVSCode ''
+      set number
+
+      :packadd vim-nix
+      :packadd nerdtree
+      :packadd nerdtree-git-plugin
+    '')
+  ];
 }
