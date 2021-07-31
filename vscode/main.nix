@@ -25,4 +25,15 @@ pkgs: {
       }
     ])
   ];
+  keybindings = [
+    {
+      key = "ctrl+k f";
+      command = "-workbench.action.closeFolder";
+      when = "emptyWorkspaceSupport";
+    }
+    {
+      key = "ctrl+k f";
+      command = "workbench.explorer.fileView.focus";
+    }
+  ];
 }
