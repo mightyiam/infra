@@ -10,6 +10,7 @@
     add_newline = false;
     ## https://starship.rs/config/#prompt
     format = builtins.concatStringsSep "" [
+      "\n"
       "$\{custom.${sep}\}"
       vertical
       "$username"
