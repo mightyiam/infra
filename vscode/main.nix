@@ -14,6 +14,7 @@ pkgs: {
   extensions = builtins.concatLists [
     (with pkgs.vscode-extensions; [
       jnoortheen.nix-ide
+      dbaeumer.vscode-eslint
     ])
     (pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
