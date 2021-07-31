@@ -15,6 +15,8 @@
     bindkey '^r' history-incremental-search-backward
     bindkey '^[^M' autosuggest-execute
 
+    eval "$(direnv hook zsh)"
+
     alias ls='${pkgs.exa}/bin/exa --icons --git --header --all'
     alias du='${pkgs.du-dust}/bin/dust'
     alias grep='${pkgs.ripgrep}/bin/rg'

@@ -96,6 +96,10 @@ in {
     mako = import ./mako.nix sway-outputs.left;
   };
 
+  services = {
+    lorri.enable = true;
+  };
+
   wayland.windowManager.sway = import ./sway/main.nix {
     inherit lib;
     inherit sway-outputs;

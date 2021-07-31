@@ -3,6 +3,7 @@ pkgs: with pkgs; [
   bandwhich
   bottom
   cargo
+  direnv
   du-dust
   font-awesome
   gnome.gnome-terminal
