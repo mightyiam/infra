@@ -1,0 +1,4 @@
+{
+  programs.exa.enable = true;
+}
+

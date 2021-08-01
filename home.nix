@@ -33,7 +33,6 @@ in {
   };
 
   programs = {
-    exa = { enable = true; };
     firefox = {
       enable = true;
       package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
