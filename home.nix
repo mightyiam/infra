@@ -7,9 +7,6 @@ let
   homeDirectory = /home/mightyiam;
   configDir = ".config";
   configHome = builtins.toString homeDirectory + "/${configDir}";
-  sessionVariables = {
-    BAT_THEME = "base16";
-  };
   sway-outputs = { left = "DP-2"; right = "DP-1"; };
   bar = let id = "bottom"; in {
     inherit id;
@@ -24,6 +21,7 @@ let
 in {
   imports = [
     (import ./xdg)
+    (import ./programs)
   ];
 
   systemd = {
@@ -37,7 +35,6 @@ in {
 
   programs = {
     exa = { enable = true; };
-    tmux = import ./tmux.nix zshBin;
     firefox = {
       enable = true;
       package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
@@ -54,15 +51,6 @@ in {
     vscode = import ./vscode/main.nix pkgs;
     ssh = import ./ssh.nix homeDirectory;
     bat.enable = true;
-    zsh = import ./zsh/main.nix {
-      inherit sessionVariables;
-      inherit pkgs;
-    };
-    bash = {
-      enable = true;
-      enableVteIntegration = true;
-      inherit sessionVariables;
-    };
     starship = import ./starship/main.nix;
     chromium = {
       enable = true;
