@@ -22,6 +22,10 @@ let
   };
   zshBin = "${pkgs.zsh}/bin/zsh";
 in {
+  imports = [
+    (import ./xdg)
+  ];
+
   systemd = {
     user = {
       startServices = "sd-switch";
@@ -30,8 +34,6 @@ in {
   fonts = {
     fontconfig.enable = true;
   };
-
-  xdg = import ./xdg.nix configHome;
 
   programs = {
     exa = { enable = true; };

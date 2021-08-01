@@ -1,6 +1,6 @@
-configHome: {
+{
+  xdg = {
     enable = true;
-    inherit configHome;
     mime.enable = true;
     mimeApps = {
       enable = true;
@@ -29,4 +29,5 @@ configHome: {
       #templates = "${homeDirectory}/templates";
       #videos = tmp;
     #};
-  }
+  };
+}
