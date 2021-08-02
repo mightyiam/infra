@@ -17,7 +17,6 @@ let
     };
     i3status-rust = import ./i3status-rust.nix id;
   };
-  zshBin = "${pkgs.zsh}/bin/zsh";
 in {
   imports = [
     (import ./xdg)
@@ -67,7 +66,6 @@ in {
       path = builtins.toString homeDirectory + "/src/home-manager";
     };
     neovim = import ./nvim/main.nix pkgs.vimPlugins;
-    alacritty = import ./alacritty.nix zshBin;
     mako = import ./mako.nix sway-outputs.left;
   };
 
