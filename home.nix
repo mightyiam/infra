@@ -20,14 +20,10 @@ let
 in {
   imports = [
     (import ./xdg)
+    (import ./systemd)
     (import ./programs)
   ];
 
-  systemd = {
-    user = {
-      startServices = "sd-switch";
-    };
-  };
   fonts = {
     fontconfig.enable = true;
   };
