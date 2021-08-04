@@ -11,6 +11,7 @@
     (import ./vscode)
     (import ./gh)
     (import ./ssh)
+    (import ./starship)
   ];
 }
 

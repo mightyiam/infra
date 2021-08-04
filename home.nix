@@ -26,7 +26,6 @@ in {
 
   programs = {
     i3status-rust = { enable = true; bars = {} // bar.i3status-rust; };
-    starship = import ./starship/main.nix;
     chromium = {
       enable = true;
       extensions = [
