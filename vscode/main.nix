@@ -5,6 +5,7 @@ pkgs: {
     "editor.cursorSmoothCaretAnimation" = true;
     "editor.smoothScrolling" = true;
     "workbench.list.smoothScrolling" = true;
+    "diffEditor.renderSideBySide" = false;
 
     "nix.enableLanguageServer" = true;
     "nix.serverPath" = "${pkgs.rnix-lsp}/bin/rnix-lsp";
