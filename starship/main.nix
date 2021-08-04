@@ -100,7 +100,7 @@
     git_branch = { format = "[$symbol$branch]($style) ";};
 
     ## https://starship.rs/presets/#nerd-font-symbols
-    aws.symbol = "  ";
+    aws.symbol = " ";
     conda.symbol = " ";
     dart.symbol = " ";
     directory.read_only = " ";
