@@ -9,6 +9,7 @@
     (import ./info)
     (import ./bat)
     (import ./vscode)
+    (import ./gh)
   ];
 }
 
