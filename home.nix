@@ -25,12 +25,6 @@ in {
   ];
 
   programs = {
-    firefox = {
-      enable = true;
-      package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
-        forceWayland = true;
-      };
-    };
     i3status-rust = { enable = true; bars = {} // bar.i3status-rust; };
     command-not-found.enable = true;
     info.enable = true;
@@ -69,6 +63,9 @@ in {
     inherit sway-outputs;
     I3RS_GITHUB_TOKEN = secrets.I3RS_GITHUB_TOKEN;
     inherit bar;
+  };
+  programs.firefox.package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
+    forceWayland = true;
   };
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [

@@ -4,6 +4,7 @@
     (import ./tmux)
     (import ./alacritty)
     (import ./exa)
+    (import ./firefox)
   ];
 }
 
