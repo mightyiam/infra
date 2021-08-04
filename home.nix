@@ -16,6 +16,7 @@ let
   };
 in {
   imports = [
+    (import ./unfree)
     (import ./packages)
     (import ./xdg)
     (import ./accounts)
@@ -52,12 +53,6 @@ in {
   programs.firefox.package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
     forceWayland = true;
   };
-
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "postman"
-    "skypeforlinux"
-    "slack"
-  ];
   home = {
     username = "mightyiam";
     inherit homeDirectory;
