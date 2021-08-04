@@ -35,7 +35,6 @@ in {
       enable = true;
       path = builtins.toString homeDirectory + "/src/home-manager";
     };
-    neovim = import ./nvim/main.nix pkgs.vimPlugins;
     mako = import ./mako.nix sway-outputs.left;
   };
 

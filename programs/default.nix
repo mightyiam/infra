@@ -8,6 +8,7 @@
     (import ./command-not-found)
     (import ./info)
     (import ./bat)
+    (import ./neovim)
     (import ./vscode)
     (import ./gh)
     (import ./ssh)
