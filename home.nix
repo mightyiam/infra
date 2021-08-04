@@ -30,7 +30,6 @@ in {
       enable = true;
       gitProtocol = "ssh";
     };
-    vscode = import ./vscode/main.nix pkgs;
     ssh = import ./ssh.nix homeDirectory;
     starship = import ./starship/main.nix;
     chromium = {
