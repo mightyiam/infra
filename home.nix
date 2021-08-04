@@ -10,8 +10,7 @@ let
   sway-outputs = { left = "DP-2"; right = "DP-1"; };
   bar = let id = "bottom"; in {
     inherit id;
-    swaybar = {
-      fonts = { names = ["monospace"]; style = "Bold"; size = 12.0; };
+    swaybar = (import ./fonts).applyToSwaybar {
       statusCommand = "i3status-rs ${configHome}/i3status-rust/config-${id}.toml";
       trayOutput = sway-outputs.left;
     };
@@ -21,12 +20,9 @@ in {
   imports = [
     (import ./xdg)
     (import ./systemd)
+    (import ./fonts).module
     (import ./programs)
   ];
-
-  fonts = {
-    fontconfig.enable = true;
-  };
 
   programs = {
     firefox = {
@@ -86,23 +82,6 @@ in {
     inherit username;
     inherit homeDirectory;
     stateVersion = "21.05";
-
-    file = {
-      "${configDir}/fontconfig/fonts.conf" = {
-        text = ''
-          <?xml version="1.0"?>
-          <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-          <fontconfig>
-            <alias>
-              <family>monospace</family>
-              <prefer>
-                <family>OpenDyslexicMono Nerd Font</family>
-                <family>Noto Color Emoji</family>
-              </prefer>
-            </alias>
-          </fontconfig>'';
-      };
-    };
   };
 }
 

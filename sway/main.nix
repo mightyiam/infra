@@ -17,7 +17,6 @@
         res = "1920x1080@75Hz";
       };
     };
-    fonts = { size = 10.0; };
     modifier = mod-key;
     bars = [ bar.swaybar ];
     input = {

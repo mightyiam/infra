@@ -1,18 +1,14 @@
 pkgs: with pkgs; [
-  (nerdfonts.override { fonts = ["OpenDyslexic"]; })
   bandwhich
   bottom
   cargo
   direnv
   du-dust
-  font-awesome
   gnome.gnome-terminal
   imv
   libnotify
   neofetch
   nixpkgs-fmt
-  noto-fonts
-  noto-fonts-emoji
   pavucontrol
   postman
   procs
