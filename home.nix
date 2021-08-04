@@ -2,8 +2,6 @@
 
 let
   secrets = import ./secrets.nix;
-  username = "mightyiam";
-  userEmail = "mightyiampresence@gmail.com";
   homeDirectory = /home/mightyiam;
   configDir = ".config";
   configHome = builtins.toString homeDirectory + "/${configDir}";
@@ -19,6 +17,7 @@ let
 in {
   imports = [
     (import ./xdg)
+    (import ./accounts)
     (import ./systemd)
     (import ./fonts).module
     (import ./programs)
@@ -31,10 +30,6 @@ in {
       extensions = [
         { id = "hdokiejnpimakedhajhdlcegeplioahd"; }
       ];
-    };
-    git = import ./git/main.nix {
-      inherit username;
-      inherit userEmail;
     };
     home-manager = {
       enable = true;
@@ -66,7 +61,7 @@ in {
   home = {
     packages = import ./packages.nix pkgs;
 
-    inherit username;
+    username = "mightyiam";
     inherit homeDirectory;
     stateVersion = "21.05";
   };

@@ -12,6 +12,7 @@
     (import ./gh)
     (import ./ssh)
     (import ./starship)
+    (import ./git)
   ];
 }
 
