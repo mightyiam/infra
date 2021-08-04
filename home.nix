@@ -27,12 +27,6 @@ in {
 
   programs = {
     i3status-rust = { enable = true; bars = {} // bar.i3status-rust; };
-    chromium = {
-      enable = true;
-      extensions = [
-        { id = "hdokiejnpimakedhajhdlcegeplioahd"; }
-      ];
-    };
     home-manager = {
       enable = true;
       path = builtins.toString homeDirectory + "/src/home-manager";

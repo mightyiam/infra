@@ -5,6 +5,7 @@
     (import ./alacritty)
     (import ./exa)
     (import ./firefox)
+    (import ./chromium)
     (import ./command-not-found)
     (import ./info)
     (import ./bat)
