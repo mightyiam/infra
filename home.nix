@@ -16,6 +16,7 @@ let
   };
 in {
   imports = [
+    (import ./packages)
     (import ./xdg)
     (import ./accounts)
     (import ./systemd)
@@ -58,8 +59,6 @@ in {
     "slack"
   ];
   home = {
-    packages = import ./packages.nix pkgs;
-
     username = "mightyiam";
     inherit homeDirectory;
     stateVersion = "21.05";

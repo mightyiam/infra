@@ -1,0 +1,29 @@
+{ pkgs, ... }: {
+  home.packages = with pkgs; [
+    bandwhich
+    bottom
+    cargo
+    direnv
+    du-dust
+    gnome.gnome-terminal
+    imv
+    libnotify
+    neofetch
+    nixpkgs-fmt
+    pavucontrol
+    postman
+    procs
+    rclone
+    ripgrep
+    ripgrep-all
+    rnix-lsp
+    skype
+    slack
+    swayidle
+    swaylock
+    tokei
+    vlc
+    wl-clipboard
+    xdg-utils
+  ];
+}
