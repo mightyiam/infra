@@ -10,6 +10,7 @@
     (import ./bat)
     (import ./vscode)
     (import ./gh)
+    (import ./ssh)
   ];
 }
 
