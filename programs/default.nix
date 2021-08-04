@@ -6,6 +6,7 @@
     (import ./exa)
     (import ./firefox)
     (import ./command-not-found)
+    (import ./info)
   ];
 }
 
