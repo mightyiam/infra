@@ -7,6 +7,7 @@
     (import ./firefox)
     (import ./command-not-found)
     (import ./info)
+    (import ./bat)
   ];
 }
 

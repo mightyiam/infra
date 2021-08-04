@@ -32,7 +32,6 @@ in {
     };
     vscode = import ./vscode/main.nix pkgs;
     ssh = import ./ssh.nix homeDirectory;
-    bat.enable = true;
     starship = import ./starship/main.nix;
     chromium = {
       enable = true;
