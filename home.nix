@@ -26,7 +26,6 @@ in {
 
   programs = {
     i3status-rust = { enable = true; bars = {} // bar.i3status-rust; };
-    command-not-found.enable = true;
     info.enable = true;
     gh = {
       enable = true;
