@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ pkgs, lib, config, ... }:
   let
     outputs = { left = "DP-2"; right = "DP-1"; };
     bar = let id = "bottom"; in {
@@ -63,6 +63,7 @@
           move position 1800 px 0 px
       '';
     };
+    home.packages = [pkgs.pulseaudio];
     programs.i3status-rust = { enable = true; bars = {} // bar.i3status-rust; };
     programs.mako = {
       enable = true;
