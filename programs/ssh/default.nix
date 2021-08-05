@@ -12,7 +12,7 @@
         extraOptions = {
           PubkeyAuthentication = "yes";
         };
-        identityFile = builtins.toString config.xdg.configHome + "/.ssh/id_github.com";
+        identityFile = builtins.toString config.home.homeDirectory + "/.ssh/id_github.com";
       };
     };
   };
