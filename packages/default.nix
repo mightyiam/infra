@@ -22,6 +22,7 @@
     swayidle
     swaylock
     tokei
+    transmission-gtk
     vlc
     wl-clipboard
     xdg-utils
