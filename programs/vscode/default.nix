@@ -1,7 +1,10 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+let 
+  nixpkgsClone = import (builtins.fetchTarball "https://api.github.com/repos/NixOS/nixpkgs/tarball/65a010bcead26c971fe5b01bb02c4a9f02d02271") {};
+in {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscodium;
+    package = nixpkgsClone.vscodium;
     userSettings = {
       "editor.cursorSmoothCaretAnimation" = true;
       "editor.smoothScrolling" = true;
