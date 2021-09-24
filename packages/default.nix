@@ -2,7 +2,6 @@
   home.packages = with pkgs; [
     anki
     bandwhich
-    bottom
     cargo
     direnv
     du-dust
