@@ -17,10 +17,7 @@
 
       eval "$(direnv hook zsh)"
 
-      alias ls='${pkgs.exa}/bin/exa --icons --git --header --all'
-      alias du='${pkgs.du-dust}/bin/dust'
-      alias grep='${pkgs.ripgrep}/bin/rg'
-      alias top='${pkgs.bottom}/bin/btm'
+      alias l='${pkgs.exa}/bin/exa --icons --git --header --all'
     '';
     initExtraBeforeCompInit = ''
       zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
