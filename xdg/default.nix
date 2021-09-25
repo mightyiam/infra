@@ -1,4 +1,4 @@
-{
+homeDirectory: {
   xdg = {
     enable = true;
     mime.enable = true;
@@ -17,17 +17,17 @@
           "image/png" = image;
         };
     };
-    #userDirs = let tmp = "${homeDirectory}/tmp"; in {
-      #enable = true;
-      #createDirectories = false;
-      #desktop = tmp;
-      #documents = tmp;
-      #download = tmp;
-      #music = tmp;
-      #pictures = tmp;
-      #publicShare = "${homeDirectory}/public";
-      #templates = "${homeDirectory}/templates";
-      #videos = tmp;
-    #};
+    userDirs = let tmp = "${homeDirectory}/tmp"; in {
+      enable = true;
+      createDirectories = true;
+      desktop = tmp;
+      documents = tmp;
+      download = tmp;
+      music = tmp;
+      pictures = tmp;
+      publicShare = "${homeDirectory}/public";
+      templates = "${homeDirectory}/templates";
+      videos = tmp;
+    };
   };
 }

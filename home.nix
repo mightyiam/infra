@@ -1,12 +1,12 @@
 { config, pkgs, options, ... }:
 
 let
-  homeDirectory = /home/mightyiam;
+  homeDirectory = toString /home/mightyiam;
 in {
   imports = [
     (import ./unfree)
     (import ./packages)
-    (import ./xdg)
+    ((import ./xdg) homeDirectory)
     (import ./accounts)
     (import ./systemd)
     (import ./fonts).module
