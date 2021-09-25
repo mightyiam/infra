@@ -63,8 +63,8 @@ in {
         set number
 
         :packadd vim-nix
-        :packadd ctrlp-vim
-        :packadd lightline-vim 
+        :packadd ctrlp.vim
+        :packadd lightline.vim 
         :packadd nerdtree
         :packadd nerdtree-git-plugin
         :packadd vim-gitgutter 
