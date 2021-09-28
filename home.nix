@@ -29,11 +29,9 @@ in {
     (import ./sway.nix)
   ];
 
-  programs = {
-    home-manager = {
-      enable = true;
-      path = builtins.toString homeDirectory + "/src/home-manager";
-    };
+  programs.home-manager = {
+    enable = true;
+    path = builtins.toString homeDirectory + "/src/home-manager";
   };
 
   services = {
