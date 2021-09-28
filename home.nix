@@ -26,6 +26,7 @@ in {
     (import ./starship)
     (import ./git.nix)
     (import ./bottom.nix)
+    (import ./wlsunset.nix)
     (import ./sway.nix)
   ];
 
