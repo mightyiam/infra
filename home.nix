@@ -34,9 +34,6 @@ in {
     path = builtins.toString homeDirectory + "/src/home-manager";
   };
 
-  programs.firefox.package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
-    forceWayland = true;
-  };
   home = {
     username = "mightyiam";
     inherit homeDirectory;
