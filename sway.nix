@@ -3,13 +3,13 @@
     outputs = { left = "DP-2"; right = "DP-1"; };
     bar = let id = "bottom"; in {
       inherit id;
-      swaybar = (import ../fonts).applyToSwaybar {
+      swaybar = (import ./fonts.nix).applyToSwaybar {
         statusCommand = "i3status-rs ${config.xdg.configHome}/i3status-rust/config-${id}.toml";
         trayOutput = outputs.left;
       };
-      i3status-rust = import ../i3status-rust.nix id;
+      i3status-rust = import ./i3status-rust.nix id;
     };
-    secrets = (import ../secrets.nix);
+    secrets = (import ./secrets.nix);
   in {
     wayland.windowManager.sway = {
       enable = true;

@@ -4,14 +4,14 @@ let
   homeDirectory = toString /home/mightyiam;
 in {
   imports = [
-    (import ./unfree)
-    (import ./packages)
-    ((import ./xdg) homeDirectory)
-    (import ./accounts)
-    (import ./systemd)
-    (import ./fonts).module
-    (import ./programs)
-    (import ./sway)
+    (import ./unfree.nix)
+    (import ./packages.nix)
+    ((import ./xdg.nix) homeDirectory)
+    (import ./accounts.nix)
+    (import ./systemd.nix)
+    (import ./fonts.nix).module
+    (import ./programs.nix)
+    (import ./sway.nix)
   ];
 
   programs = {
