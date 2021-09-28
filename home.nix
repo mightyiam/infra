@@ -34,10 +34,6 @@ in {
     path = builtins.toString homeDirectory + "/src/home-manager";
   };
 
-  services = {
-    lorri.enable = true;
-  };
-
   programs.firefox.package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
     forceWayland = true;
   };
