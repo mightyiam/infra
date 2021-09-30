@@ -1,10 +1,6 @@
 { pkgs, ... }:
 let
-  omitInVSCode = viml: builtins.concatStringsSep "" [
-    "if !exists('g:vscode')\n"
-    viml
-    "endif"
-  ];
+  omitInVSCode = import ./omitInVSCode.nix;
 in {
   programs.neovim = {
     enable = true;

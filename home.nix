@@ -19,7 +19,7 @@ in {
     (import ./command-not-found.nix)
     (import ./info.nix)
     (import ./bat.nix)
-    (import ./neovim.nix)
+    (import ./neovim)
     (import ./vscode.nix)
     (import ./gh.nix)
     (import ./ssh.nix)
