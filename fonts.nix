@@ -68,6 +68,11 @@ in {
       scala.symbol = " ";
       swift.symbol = "ﯣ ";
     };
+
+    gtk.font = {
+      name = default.family;
+      size = default.size;
+    };
   };
 }
 
