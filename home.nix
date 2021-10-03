@@ -19,6 +19,7 @@ in {
     (import ./chromium.nix)
     (import ./command-not-found.nix)
     (import ./info.nix)
+    (import ./lorri.nix)
     (import ./bat.nix)
     (import ./neovim)
     (import ./vscode.nix)
