@@ -1,14 +1,6 @@
 { pkgs, lib, config, ... }:
   let
-    outputs = { left = "DP-2"; right = "DP-1"; };
-    bar = let id = "bottom"; in {
-      inherit id;
-      swaybar = (import ./fonts.nix).applyToSwaybar {
-        statusCommand = "i3status-rs ${config.xdg.configHome}/i3status-rust/config-${id}.toml";
-        trayOutput = outputs.left;
-      };
-      i3status-rust = import ./i3status-rust.nix id;
-    };
+    outputs = import ./outputs.nix;
     secrets = (import ./secrets.nix);
   in {
     wayland.windowManager.sway = {
@@ -31,7 +23,6 @@
           };
         };
         modifier = mod-key;
-        bars = [ bar.swaybar ];
         input = {
           "type:keyboard" = {
             xkb_layout = "us,il";
@@ -64,7 +55,6 @@
       '';
     };
     home.packages = [pkgs.pulseaudio];
-    programs.i3status-rust = { enable = true; bars = {} // bar.i3status-rust; };
     programs.mako = {
       enable = true;
       anchor = "top-right";

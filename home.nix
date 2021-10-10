@@ -32,6 +32,7 @@ in {
     (import ./bottom.nix)
     (import ./wlsunset.nix)
     (import ./sway.nix)
+    (import ./sway-bar.nix)
   ];
 
   programs.home-manager = {
