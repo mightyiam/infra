@@ -16,6 +16,9 @@ in {
       {
         plugin = ctrlp-vim;
         optional = true;
+        config = omitInVSCode ''
+          let g:ctrlp_show_hidden = 1
+        '';
       }
       editorconfig-vim
       {
