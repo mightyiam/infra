@@ -1,4 +1,6 @@
 { pkgs, ... }: {
+  # https://chrome.google.com/webstore/detail/gruvbox-theme/ihennfdbghdiflogeancnalflhgmanop
+  programs.chromium.extensions = [ { id = "ihennfdbghdiflogeancnalflhgmanop"; } ];
   programs.neovim.plugins =
     let
       omitInVSCode = import ./neovim/omitInVSCode.nix;
