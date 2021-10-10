@@ -15,6 +15,7 @@ in {
     (import ./tmux.nix)
     (import ./alacritty.nix)
     (import ./exa.nix)
+    (import ./atuin.nix)
     (import ./firefox.nix)
     (import ./chromium.nix)
     (import ./command-not-found.nix)
