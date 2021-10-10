@@ -10,7 +10,7 @@ in {
     (import ./accounts.nix)
     (import ./systemd.nix)
     (import ./fonts.nix).module
-    (import ./gruvbox.nix)
+    (import ./gruvbox.nix).module
     (import ./zsh)
     (import ./tmux.nix)
     (import ./alacritty.nix)
