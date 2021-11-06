@@ -2,7 +2,9 @@
   programs.chromium = {
     enable = true;
     extensions = [
-      { id = "hdokiejnpimakedhajhdlcegeplioahd"; }
+      # Bitwarden
+      # https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb
+      { id = "nngceckbapebfimnlniiiahkandclblb"; }
     ];
   };
 }
