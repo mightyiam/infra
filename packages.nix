@@ -15,6 +15,7 @@
     swayidle
     swaylock
     tokei
+    tor-browser-bundle-bin
     transmission-gtk
     vlc
     wl-clipboard
