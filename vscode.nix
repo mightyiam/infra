@@ -20,6 +20,7 @@ in {
       (with pkgs.vscode-extensions; [
         jnoortheen.nix-ide
         dbaeumer.vscode-eslint
+        ms-vsliveshare.vsliveshare
       ])
       (pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
