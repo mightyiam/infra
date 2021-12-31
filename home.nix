@@ -33,6 +33,7 @@ in {
     (import ./wlsunset.nix)
     (import ./sway.nix)
     (import ./sway-bar.nix)
+    (import ./systembus-notify.nix)
   ];
 
   programs.home-manager = {
