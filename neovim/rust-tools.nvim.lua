@@ -1,0 +1,2 @@
+require('rust-tools').setup()
+
