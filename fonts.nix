@@ -1,7 +1,7 @@
 let
   default = { family = "sans-serif"; size = 10.0; };
   monospace = { family = "monospace"; size = 10.0; };
-  notifications = { family = "monospace"; size = 12.0; };
+  notifications = { family = "sans-serif"; size = 12.0; };
   bars = { family = "monospace"; style = "Bold"; size = 12.0; };
 in {
   applyToSwaybar = with bars; swayBar: swayBar // {
