@@ -34,6 +34,7 @@ in {
     (import ./sway.nix)
     (import ./sway-bar.nix)
     (import ./systembus-notify.nix)
+    (import ./udiskie.nix)
   ];
 
   programs.home-manager = {
