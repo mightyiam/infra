@@ -5,7 +5,7 @@
       decorations = "none";
       dynamic_title = true;
       live_config_reload = true;
-      background_opacity = 0.8;
+      window.opacity = 0.8;
       bell = {
         color = "#000000";
         duration = 200.0;
