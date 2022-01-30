@@ -3,6 +3,25 @@
     outputs = import ./outputs.nix;
     secrets = (import ./secrets.nix);
   in {
+    nixpkgs.overlays = [
+      (self: super: {
+        sway-unwrapped = super.sway-unwrapped.overrideAttrs (oldAttrs: rec {
+          version = "1.6.1";
+          src = pkgs.fetchFromGitHub {
+            owner = "swaywm";
+            repo = "sway";
+            rev = version;
+            sha256 = "0j4sdbsrlvky1agacc0pcz9bwmaxjmrapjnzscbd2i0cria2fc5j";
+          };
+          buildInputs = with pkgs; [
+            wayland libxkbcommon pcre json_c dbus libevdev
+            pango cairo libinput libcap pam gdk-pixbuf librsvg
+            wayland-protocols libdrm
+            (wlroots_0_14.override { enableXWayland = true; })
+          ];
+        });
+      })
+    ];
     wayland.windowManager.sway = {
       enable = true;
       wrapperFeatures.gtk = true;
