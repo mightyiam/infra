@@ -16,12 +16,16 @@ in {
       {
         plugin = vim-nix;
         optional = true;
+        config = omitInVSCode ''
+          :packadd vim-nix
+        '';
       }
       vim-easymotion
       {
         plugin = ctrlp-vim;
         optional = true;
         config = omitInVSCode ''
+          :packadd ctrlp.vim
           let g:ctrlp_show_hidden = 1
         '';
       }
@@ -30,6 +34,7 @@ in {
         plugin = lightline-vim;
         optional = true;
         config = omitInVSCode ''
+          :packadd lightline.vim 
           set noshowmode
         '';
       }
@@ -37,6 +42,7 @@ in {
         plugin = nerdtree;
         optional = true;
         config = omitInVSCode ''
+          :packadd nerdtree
           nnoremap <leader>n :NERDTreeFocus<CR>
           nnoremap <C-n> :NERDTree<CR>
           nnoremap <C-t> :NERDTreeToggle<CR>
@@ -46,12 +52,16 @@ in {
         plugin = nerdtree-git-plugin;
         optional = true;
         config = omitInVSCode ''
+          :packadd nerdtree-git-plugin
           let g:NERDTreeGitStatusUseNerdFonts = 1
         '';
       }
       {
         plugin = vim-gitgutter;
         optional = true;
+        config = omitInVSCode ''
+          :packadd vim-gitgutter 
+        '';
       }
       {
         plugin = nvim-lspconfig;
@@ -81,13 +91,6 @@ in {
       ''
       (omitInVSCode ''
         set number
-
-        :packadd vim-nix
-        :packadd ctrlp.vim
-        :packadd lightline.vim 
-        :packadd nerdtree
-        :packadd nerdtree-git-plugin
-        :packadd vim-gitgutter 
       '')
     ];
   };
