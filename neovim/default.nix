@@ -2,10 +2,10 @@
 let
   omitVIMLInVSCode = import ./omitVIMLInVSCode.nix;
   omitPluginInVSCode = import ./omitPluginInVSCode.nix;
-  inlineLuaFile = path: builtins.concatStringsSep "\n" [
-    "lua << EOF"
+  inlineLuaFile = path: builtins.concatStringsSep "" [
+    "lua << EOF\n"
     (builtins.readFile path)
-    "EOF"
+    "EOF\n"
   ];
 in
 {
