@@ -5,14 +5,11 @@
     programs.chromium.extensions = [ { id = "ihennfdbghdiflogeancnalflhgmanop"; } ];
     programs.neovim.plugins =
       let
-        omitInVSCode = import ./neovim/omitInVSCode.nix;
-      in with pkgs.vimPlugins; [
-        {
-          plugin = gruvbox-community;
-          config = omitInVSCode ''
-            autocmd vimenter * ++nested colorscheme gruvbox
-          '';
-        }
+        omitPluginInVSCode = import ./neovim/omitPluginInVSCode.nix;
+      in [
+        (omitPluginInVSCode pkgs.vimPlugins.gruvbox-community ''
+          autocmd vimenter * ++nested colorscheme gruvbox
+        '')
       ];
       programs.alacritty.settings.colors = 
         let
