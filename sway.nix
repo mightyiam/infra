@@ -62,16 +62,6 @@
           { command = "mako"; }
         ];
       };
-      extraConfig = let
-        firefoxSharingIndicator = "[app_id=\"firefox\" title=\"Sharing Indicator$\"]";
-      in ''
-        no_focus ${firefoxSharingIndicator}
-        for_window ${firefoxSharingIndicator} \
-          floating enable, \
-          sticky enable, \
-          border none, \
-          move position 1800 px 0 px
-      '';
     };
     home.packages = [pkgs.pulseaudio];
     programs.mako = {
