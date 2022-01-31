@@ -6,7 +6,8 @@ let
     (builtins.readFile path)
     "EOF"
   ];
-in {
+in
+{
   programs.neovim = {
     enable = true;
     viAlias = true;
@@ -75,8 +76,8 @@ in {
         plugin = rust-tools-nvim;
         optional = true;
         config = omitInVSCode (builtins.concatStringsSep "\n" [
-            "packadd! rust-tools.nvim"
-            (inlineLuaFile ./rust-tools.nvim.lua)
+          "packadd! rust-tools.nvim"
+          (inlineLuaFile ./rust-tools.nvim.lua)
         ]);
       }
     ];
