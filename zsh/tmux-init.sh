@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-if [[ -v DISPLAY ]] && [ -z $TMUX ] && [ -z $SKIP_TMUX ]; then
+if [[ -v DISPLAY && ! -v TMUX && ! -v SKIP_TMUX ]]; then
   delimiter=","
   sessions=$(tmux list-sessions -F "#{session_attached}${delimiter}#{session_id}")
   unused_sessions=$(echo $sessions | grep ^0)
