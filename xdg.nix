@@ -5,7 +5,7 @@ homeDirectory: {
     mimeApps = {
       enable = true;
       defaultApplications =
-        let 
+        let
           web_browser = [ "firefox.desktop" ];
           browser_types = [
             "x-scheme-handler/http"
@@ -22,21 +22,23 @@ homeDirectory: {
           image = [ "imv.desktop" ];
           type_to_browser_entry = (type: { name = type; value = web_browser; });
           browser_entries = builtins.listToAttrs (map type_to_browser_entry browser_types);
-        in browser_entries // {
+        in
+        browser_entries // {
           "image/png" = image;
         };
     };
-    userDirs = let tmp = "${homeDirectory}/tmp"; in {
-      enable = true;
-      createDirectories = true;
-      desktop = tmp;
-      documents = tmp;
-      download = tmp;
-      music = tmp;
-      pictures = tmp;
-      publicShare = "${homeDirectory}/public";
-      templates = "${homeDirectory}/templates";
-      videos = tmp;
-    };
+    userDirs = let tmp = "${homeDirectory}/tmp"; in
+      {
+        enable = true;
+        createDirectories = true;
+        desktop = tmp;
+        documents = tmp;
+        download = tmp;
+        music = tmp;
+        pictures = tmp;
+        publicShare = "${homeDirectory}/public";
+        templates = "${homeDirectory}/templates";
+        videos = tmp;
+      };
   };
 }
