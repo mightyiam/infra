@@ -18,6 +18,7 @@
     tor-browser-bundle-bin
     transmission-gtk
     vlc
+    watchexec
     wl-clipboard
     xdg-utils
   ];
