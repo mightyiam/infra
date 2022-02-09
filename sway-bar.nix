@@ -21,7 +21,7 @@ in {
           { block = "net"; }
           { block = "networkmanager"; device_format = "{icon}{ap}"; }
 
-          { block = "time"; format = "%F %R"; }
+          { block = "time"; format = "%F %a %R"; }
           {
             block = "keyboard_layout";
             driver = "sway";
