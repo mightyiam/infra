@@ -2,6 +2,14 @@
   let
     outputs = import ./outputs.nix;
     secrets = (import ./secrets.nix);
+    lockCommand = builtins.concatStringsSep " " [
+      (pkgs.swaylock + /bin/swaylock)
+      "--daemonize"
+      "--show-keyboard-layout"
+      "--indicator-caps-lock"
+      "--color 000000"
+      "--indicator-radius 200"
+    ];
   in {
     nixpkgs.overlays = [
       (self: super: {
@@ -55,6 +63,7 @@
             incVol = d: "exec pactl set-sink-volume @DEFAULT_SINK@ ${d}${builtins.toString step}%";
           in lib.mkOptionDefault {
             "${mod-key}+Shift+e" = "exec swaymsg exit";
+            "${mod-key}+Ctrl+l" = "exec ${lockCommand}";
             "${mod-key}+minus" = incVol "-";
             "${mod-key}+equal" = incVol "+";
           };
@@ -70,5 +79,19 @@
       defaultTimeout = 3000;
       ignoreTimeout = true;
       output = outputs.left;
+    };
+    services.swayidle = {
+      enable = true;
+      timeouts = [
+        {
+          timeout = 60 * 10;
+          command = lockCommand;
+        }
+        {
+          timeout = 60 * 11;
+          command = "${pkgs.sway + /bin/swaymsg} \"output * dpms off\"";
+          resumeCommand = "${pkgs.sway + /bin/swaymsg} \"output * dpms on\"";
+        }
+      ];
     };
   }
