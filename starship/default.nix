@@ -14,7 +14,9 @@
         ## https://starship.rs/config/#prompt
         format = builtins.concatStringsSep "" [
           "\n"
-          "$\{custom.${sep}\}"
+          "[╓](bold ${pink})"
+          "$fill"
+          "\n"
           vertical
           "$username"
           "$hostname"
@@ -78,10 +80,8 @@
           "$shlvl"
           "$character"
         ];
-        custom."${sep}" = {
-          command = builtins.readFile "${./.}/${sep}.sh";
-          when = "true";
-          format = "[╓($output)\n]($style)";
+        fill = {
+          symbol = "─";
           style = "bold ${pink}";
         };
         directory = {
