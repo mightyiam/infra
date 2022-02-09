@@ -23,7 +23,6 @@ in {
     (import ./lorri.nix)
     (import ./bat.nix)
     (import ./neovim)
-    (import ./rust.nix)
     (import ./vscode.nix)
     (import ./gh.nix)
     (import ./ssh.nix)
