@@ -25,6 +25,7 @@ homeDirectory: {
         in
         browser_entries // {
           "image/png" = image;
+          "x-scheme-handler/magnet" = "transmission-gtk";
         };
     };
     userDirs = let tmp = "${homeDirectory}/tmp"; in
