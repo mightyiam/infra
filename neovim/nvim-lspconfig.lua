@@ -1,7 +1,7 @@
 local function set_keymap(...) vim.api.nvim_set_keymap(...) end
 local function set_option(...) vim.api.nvim_set_option(...) end
 set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-local opts = { noremap=true, silent=true }
+local opts = {}
 set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
 set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
@@ -13,6 +13,7 @@ set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_worksp
 set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
 set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+set_keymap('x', '<space>ca', '<cmd>lua vim.lsp.buf.range_code_action()<CR>', opts)
 set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
 set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
