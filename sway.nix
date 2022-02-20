@@ -22,18 +22,16 @@ in
     config =
       let
         mod-key = "Mod4";
+        toSwayConfig = (_: { path, resolution, refreshRate, position, ... }: {
+          name = path;
+          value = {
+            res = with resolution; "${builtins.toString width}x${builtins.toString height}@${builtins.toString refreshRate}Hz";
+            pos = with position; "${builtins.toString x} ${builtins.toString y}";
+          };
+        });
       in
       {
-        output = {
-          "${outputs.right}" = {
-            res = "1920x1080@144Hz";
-            pos = "1920 0";
-          };
-          "${outputs.left}" = {
-            res = "1920x1080@75Hz";
-            pos = "0 0";
-          };
-        };
+        output = builtins.listToAttrs (builtins.attrValues (builtins.mapAttrs toSwayConfig outputs));
         modifier = mod-key;
         input = {
           "type:keyboard" = {
@@ -64,7 +62,7 @@ in
     anchor = "top-right";
     defaultTimeout = 3000;
     ignoreTimeout = true;
-    output = outputs.left;
+    output = outputs.left.path;
   };
   services.swayidle = {
     enable = true;

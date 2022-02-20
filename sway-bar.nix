@@ -40,7 +40,7 @@ in {
       (import ./fonts.nix).applyToSwaybar
       {
         statusCommand = "i3status-rs ${config.xdg.configHome}/i3status-rust/config-${id}.toml";
-        trayOutput = outputs.left;
+        trayOutput = outputs.left.path;
       }
     )
   ];
