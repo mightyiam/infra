@@ -1,4 +1,4 @@
-homeDirectory: {
+with builtins; homeDirectory: {
   xdg = {
     enable = true;
     mime.enable = true;
@@ -21,7 +21,7 @@ homeDirectory: {
           ];
           image = [ "imv.desktop" ];
           type_to_browser_entry = (type: { name = type; value = web_browser; });
-          browser_entries = builtins.listToAttrs (map type_to_browser_entry browser_types);
+          browser_entries = listToAttrs (map type_to_browser_entry browser_types);
         in
         browser_entries // {
           "image/png" = image;

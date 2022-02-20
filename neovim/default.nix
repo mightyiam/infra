@@ -1,10 +1,10 @@
-{ pkgs, ... }:
+with builtins; { pkgs, ... }:
 let
   omitVIMLInVSCode = import ./omitVIMLInVSCode.nix;
   omitPluginInVSCode = import ./omitPluginInVSCode.nix;
-  inlineLuaFile = path: builtins.concatStringsSep "" [
+  inlineLuaFile = path: concatStringsSep "" [
     "lua << EOF\n"
-    (builtins.readFile path)
+    (readFile path)
     "EOF\n"
   ];
 in
@@ -36,7 +36,7 @@ in
       (omitPluginInVSCode nvim-lspconfig (inlineLuaFile ./nvim-lspconfig.lua))
       (omitPluginInVSCode rust-tools-nvim (inlineLuaFile ./rust-tools.nvim.lua))
     ];
-    extraConfig = builtins.concatStringsSep "\n" [
+    extraConfig = concatStringsSep "\n" [
       ''
         set ignorecase
         let mapleader = ","

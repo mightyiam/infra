@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+with builtins; { pkgs, ... }: {
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
@@ -7,7 +7,7 @@
     autocd = true;
     defaultKeymap = "viins";
     history.ignorePatterns = ["rm *"];
-    initExtraFirst = builtins.readFile ./tmux-init.sh;
+    initExtraFirst = readFile ./tmux-init.sh;
     initExtra = ''
       bindkey '^P' up-history
       bindkey '^N' down-history

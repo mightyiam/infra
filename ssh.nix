@@ -1,4 +1,4 @@
-{ config, ... }: {
+with builtins; { config, ... }: {
   programs.ssh = {
     enable = true;
     compression = true;
@@ -12,19 +12,19 @@
         extraOptions = {
           PubkeyAuthentication = "yes";
         };
-        identityFile = builtins.toString config.home.homeDirectory + "/.ssh/id_github.com";
+        identityFile = toString config.home.homeDirectory + "/.ssh/id_github.com";
       };
       "gitlab.com" = {
         extraOptions = {
           PubkeyAuthentication = "yes";
         };
-        identityFile = builtins.toString config.home.homeDirectory + "/.ssh/id_gitlab.com";
+        identityFile = toString config.home.homeDirectory + "/.ssh/id_gitlab.com";
       };
       "gitlab.freedesktop.org" = {
         extraOptions = {
           PubkeyAuthentication = "yes";
         };
-        identityFile = builtins.toString config.home.homeDirectory + "/.ssh/id_gitlab.freedesktop.org";
+        identityFile = toString config.home.homeDirectory + "/.ssh/id_gitlab.freedesktop.org";
       };
     };
   };

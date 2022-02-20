@@ -1,4 +1,4 @@
-{ config, pkgs, options, ... }:
+with builtins; { config, pkgs, options, ... }:
 
 let
   homeDirectory = toString /home/mightyiam;
@@ -38,7 +38,7 @@ in {
 
   programs.home-manager = {
     enable = true;
-    path = builtins.toString homeDirectory + "/src/home-manager";
+    path = toString homeDirectory + "/src/home-manager";
   };
 
   home = {

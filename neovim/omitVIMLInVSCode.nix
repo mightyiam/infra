@@ -1,4 +1,4 @@
-viml: builtins.concatStringsSep "\n" [
+with builtins; viml: concatStringsSep "\n" [
   "if !exists('g:vscode')"
-  (builtins.concatStringsSep "" [viml "endif"])
+  (concatStringsSep "" [viml "endif"])
 ]

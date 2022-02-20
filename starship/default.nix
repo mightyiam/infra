@@ -1,4 +1,4 @@
-{
+with builtins; {
   programs.starship = {
     enable = true;
     enableBashIntegration = true;
@@ -12,7 +12,7 @@
       {
         add_newline = false;
         ## https://starship.rs/config/#prompt
-        format = builtins.concatStringsSep "" [
+        format = concatStringsSep "" [
           "\n"
           "[╓](bold ${pink})"
           "$fill"

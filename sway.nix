@@ -1,8 +1,8 @@
-{ pkgs, lib, config, ... }:
+with builtins; { pkgs, lib, config, ... }:
 let
   outputs = import ./outputs.nix;
   secrets = (import ./secrets.nix);
-  lockCommand = builtins.concatStringsSep " " [
+  lockCommand = concatStringsSep " " [
     (pkgs.swaylock + /bin/swaylock)
     "--daemonize"
     "--show-keyboard-layout"
@@ -25,13 +25,13 @@ in
         toSwayConfig = (_: { path, resolution, refreshRate, position, ... }: {
           name = path;
           value = {
-            res = with resolution; "${builtins.toString width}x${builtins.toString height}@${builtins.toString refreshRate}Hz";
-            pos = with position; "${builtins.toString x} ${builtins.toString y}";
+            res = with resolution; "${toString width}x${toString height}@${toString refreshRate}Hz";
+            pos = with position; "${toString x} ${toString y}";
           };
         });
       in
       {
-        output = builtins.listToAttrs (builtins.attrValues (builtins.mapAttrs toSwayConfig outputs));
+        output = listToAttrs (attrValues (mapAttrs toSwayConfig outputs));
         modifier = mod-key;
         input = {
           "type:keyboard" = {
@@ -43,7 +43,7 @@ in
         keybindings =
           let
             step = 5;
-            incVol = d: "exec pactl set-sink-volume @DEFAULT_SINK@ ${d}${builtins.toString step}%";
+            incVol = d: "exec pactl set-sink-volume @DEFAULT_SINK@ ${d}${toString step}%";
           in
           lib.mkOptionDefault {
             "${mod-key}+Shift+e" = "exec swaymsg exit";

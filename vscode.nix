@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+with builtins; { pkgs, ... }:
 let 
-  nixpkgsClone = import (builtins.fetchTarball "https://api.github.com/repos/NixOS/nixpkgs/tarball/65a010bcead26c971fe5b01bb02c4a9f02d02271") {};
+  nixpkgsClone = import (fetchTarball "https://api.github.com/repos/NixOS/nixpkgs/tarball/65a010bcead26c971fe5b01bb02c4a9f02d02271") {};
 in {
   programs.vscode = {
     enable = true;
@@ -16,7 +16,7 @@ in {
 
       "vscode-neovim.neovimExecutablePaths.linux" = "${pkgs.neovim}/bin/nvim";
     };
-    extensions = builtins.concatLists [
+    extensions = concatLists [
       (with pkgs.vscode-extensions; [
         jnoortheen.nix-ide
         dbaeumer.vscode-eslint
