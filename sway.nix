@@ -12,42 +12,10 @@ let
   ];
 in
 {
-  nixpkgs.overlays = [
-    (self: super: {
-      sway-unwrapped = super.sway-unwrapped.overrideAttrs (oldAttrs: rec {
-        version = "1.6.1";
-        src = pkgs.fetchFromGitHub {
-          owner = "swaywm";
-          repo = "sway";
-          rev = version;
-          sha256 = "0j4sdbsrlvky1agacc0pcz9bwmaxjmrapjnzscbd2i0cria2fc5j";
-        };
-        buildInputs = with pkgs; [
-          wayland
-          libxkbcommon
-          pcre
-          json_c
-          dbus
-          libevdev
-          pango
-          cairo
-          libinput
-          libcap
-          pam
-          gdk-pixbuf
-          librsvg
-          wayland-protocols
-          libdrm
-          (wlroots_0_14.override { enableXWayland = true; })
-        ];
-      });
-    })
-  ];
   wayland.windowManager.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
     extraSessionCommands = ''
-      export WLR_DRM_NO_MODIFIERS=1
       export I3RS_GITHUB_TOKEN=${secrets.I3RS_GITHUB_TOKEN}
       export MOZ_ENABLE_WAYLAND=1
     '';
@@ -59,9 +27,11 @@ in
         output = {
           "${outputs.right}" = {
             res = "1920x1080@144Hz";
+            pos = "1920 0";
           };
           "${outputs.left}" = {
             res = "1920x1080@75Hz";
+            pos = "0 0";
           };
         };
         modifier = mod-key;
