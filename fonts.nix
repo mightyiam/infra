@@ -12,6 +12,12 @@ in {
     };
   };
 
+  definitions = {
+    inherit default;
+    inherit monospace;
+    inherit notifications;
+  };
+
   module = { pkgs, config, ...}: {
     fonts = {
       fontconfig.enable = true;

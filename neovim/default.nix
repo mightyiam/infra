@@ -7,8 +7,11 @@ let
     (readFile path)
     "EOF\n"
   ];
+  fonts = (import ../fonts.nix).definitions;
+  pipe = pkgs.lib.trivial.pipe;
 in
 {
+  imports = [(import ./neovide.nix)];
   programs.neovim = {
     enable = true;
     viAlias = true;
@@ -47,6 +50,7 @@ in
       ''
       (omitVIMLInVSCode ''
         set number
+        set guifont=monospace:h${pipe fonts.monospace.size [floor toString]}
       '')
     ];
   };
