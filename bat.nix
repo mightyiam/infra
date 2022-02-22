@@ -1,3 +1,0 @@
-{
-  programs.bat.enable = true;
-}

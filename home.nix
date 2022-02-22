@@ -6,6 +6,7 @@ in {
   imports = [
     (import ./unfree.nix)
     (import ./packages.nix)
+    (import ./merely-enabled.nix)
     ((import ./xdg.nix) homeDirectory)
     (import ./accounts.nix)
     (import ./systemd.nix)
@@ -14,14 +15,9 @@ in {
     (import ./zsh)
     (import ./tmux.nix)
     (import ./alacritty.nix)
-    (import ./exa.nix)
     (import ./atuin.nix)
     (import ./firefox.nix)
     (import ./chromium.nix)
-    (import ./command-not-found.nix)
-    (import ./info.nix)
-    (import ./lorri.nix)
-    (import ./bat.nix)
     (import ./neovim)
     (import ./vscode.nix)
     (import ./gh.nix)
@@ -32,7 +28,6 @@ in {
     (import ./wlsunset.nix)
     (import ./sway.nix)
     (import ./sway-bar.nix)
-    (import ./systembus-notify.nix)
     (import ./udiskie.nix)
   ];
 

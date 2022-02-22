@@ -1,4 +1,0 @@
-{
-  services.lorri.enable = true;
-}
-
