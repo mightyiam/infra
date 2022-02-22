@@ -1,3 +1,6 @@
+let
+  style = import ./style.nix;
+in
 {
   programs.alacritty = {
     enable = true;
@@ -5,10 +8,10 @@
       decorations = "none";
       dynamic_title = true;
       live_config_reload = true;
-      window.opacity = import ./windowOpacity.nix;
+      window.opacity = style.windowOpacity;
       bell = {
-        color = "#000000";
-        duration = 200.0;
+        color = style.bellColor;
+        duration = style.bellDuration;
       };
     };
   };
