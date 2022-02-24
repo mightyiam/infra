@@ -8,9 +8,9 @@ in {
     (import ./packages.nix)
     (import ./merely-enabled.nix)
     ((import ./xdg.nix) homeDirectory)
+    (import ./fontconfig.nix)
     (import ./accounts.nix)
     (import ./systemd.nix)
-    (import ./fonts.nix).module
     (import ./gruvbox.nix).module
     (import ./zsh)
     (import ./tmux.nix)

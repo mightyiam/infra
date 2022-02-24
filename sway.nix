@@ -32,6 +32,7 @@ in
       in
       {
         output = listToAttrs (attrValues (mapAttrs toSwayConfig outputs));
+        fonts.size = (import ./fonts.nix).default.size;
         modifier = mod-key;
         input = {
           "type:keyboard" = {
@@ -63,6 +64,7 @@ in
     defaultTimeout = 3000;
     ignoreTimeout = true;
     output = outputs.left.path;
+    font = with (import ./fonts.nix).notifications; "${family} ${toString size}";
   };
   services.swayidle = {
     enable = true;

@@ -1,5 +1,7 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [
+with builtins; { pkgs, ... }:
+let
+  fontPackages = (import ./fonts.nix).packages pkgs;
+  packages = with pkgs; [
     anki
     bandwhich
     direnv
@@ -21,5 +23,11 @@
     watchexec
     wl-clipboard
     xdg-utils
+  ];
+in
+{
+  home.packages = concatLists [
+    fontPackages
+    packages
   ];
 }

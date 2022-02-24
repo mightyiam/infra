@@ -7,7 +7,7 @@ let
     (readFile path)
     "EOF\n"
   ];
-  fonts = (import ../fonts.nix).definitions;
+  font = (import ../fonts.nix).monospace;
   pipe = pkgs.lib.trivial.pipe;
 in
 {
@@ -50,7 +50,7 @@ in
       ''
       (omitVIMLInVSCode ''
         set number
-        set guifont=monospace:h${pipe fonts.monospace.size [floor toString]}
+        set guifont=monospace:h${pipe font.size [floor toString]}
       '')
     ];
   };

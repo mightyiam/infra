@@ -2,7 +2,9 @@
 let
   id = "bottom";
   outputs = import ./outputs.nix;
-in {
+  font = (import ./fonts.nix).bars;
+in
+{
   programs.i3status-rust = {
     enable = true;
     bars = {
@@ -36,12 +38,14 @@ in {
     };
   };
   wayland.windowManager.sway.config.bars = [
-    (
-      (import ./fonts.nix).applyToSwaybar
-      {
-        statusCommand = "i3status-rs ${config.xdg.configHome}/i3status-rust/config-${id}.toml";
-        trayOutput = outputs.left.path;
-      }
-    )
+    {
+      statusCommand = "i3status-rs ${config.xdg.configHome}/i3status-rust/config-${id}.toml";
+      trayOutput = outputs.left.path;
+      fonts = {
+        names = [ font.family ];
+        style = font.style;
+        size = font.size;
+      };
+    }
   ];
 }
