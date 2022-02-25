@@ -11,7 +11,6 @@ in {
     (import ./fontconfig.nix)
     (import ./accounts.nix)
     (import ./systemd.nix)
-    (import ./gruvbox.nix).module
     (import ./zsh)
     (import ./tmux.nix)
     (import ./alacritty.nix)

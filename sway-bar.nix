@@ -9,7 +9,7 @@ in
     enable = true;
     bars = {
       "${id}" = {
-        theme = (import ./gruvbox.nix).i3status-rust-theme;
+        theme = (import ./gruvbox.nix).i3status-rust;
         icons = "awesome5";
         blocks = [
           { block = "cpu"; }

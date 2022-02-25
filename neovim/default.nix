@@ -9,6 +9,7 @@ let
   ];
   font = (import ../fonts.nix).monospace;
   pipe = pkgs.lib.trivial.pipe;
+  gruvbox = (import ../gruvbox.nix).vim pkgs;
 in
 {
   imports = [(import ./neovide.nix)];
@@ -18,6 +19,7 @@ in
     vimAlias = true;
     vimdiffAlias = true;
     plugins = with pkgs.vimPlugins; [
+      (omitPluginInVSCode gruvbox.plugin gruvbox.config)
       (omitPluginInVSCode vim-nix "")
       vim-easymotion
       (omitPluginInVSCode ctrlp-vim ''

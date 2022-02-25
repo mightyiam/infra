@@ -1,91 +1,39 @@
 {
-  i3status-rust-theme = "gruvbox-dark";
-  module = { pkgs, ... }: {
-    # https://chrome.google.com/webstore/detail/gruvbox-theme/ihennfdbghdiflogeancnalflhgmanop
-    programs.chromium.extensions = [{ id = "ihennfdbghdiflogeancnalflhgmanop"; }];
-    programs.neovim.plugins =
-      let
-        omitPluginInVSCode = import ./neovim/omitPluginInVSCode.nix;
-      in
-      [
-        (omitPluginInVSCode pkgs.vimPlugins.gruvbox-community ''
-          autocmd vimenter * ++nested colorscheme gruvbox
-        '')
-      ];
-    programs.alacritty.settings.colors =
-      let
-        gruvbox_dark_bg = "#282828";
-      in
-      {
-        primary = {
-          # hard contrast background - "#1d2021";
-          background = gruvbox_dark_bg;
-          # soft contrast background - "#32302f";
-          foreground = "#ebdbb2";
-          bright_foreground = "#fbf1c7";
-          dim_foreground = "#a89984";
-        };
-        cursor = {
-          text = "CellBackground";
-          cursor = "CellForeground";
-        };
-        vi_mode_cursor = {
-          text = "CellBackground";
-          cursor = "CellForeground";
-        };
-        # search = {
-        #   matches = {
-        #     foreground = "#000000";
-        #     background = "#ffffff";
-        #   };
-        #   focused_match = {
-        #     foreground = "CellBackground";
-        #     background = "CellForeground";
-        #   };
-        #   bar = {
-        #     background = "";
-        #     foreground = "";
-        #   };
-        # };
-        # line_indicator = {
-        #   foreground = "None";
-        #   background = "None";
-        # };
-        selection = {
-          text = "CellBackground";
-          background = "CellForeground";
-        };
-        bright = {
-          black = "#928374";
-          red = "#fb4934";
-          green = "#b8bb26";
-          yellow = "#fabd2f";
-          blue = "#83a598";
-          magenta = "#d3869b";
-          cyan = "#8ec07c";
-          white = "#ebdbb2";
-        };
-        normal = {
-          black = gruvbox_dark_bg;
-          red = "#cc241d";
-          green = "#98971a";
-          yellow = "#d79921";
-          blue = "#458588";
-          magenta = "#b16286";
-          cyan = "#689d6a";
-          white = "#a89984";
-        };
-        dim = {
-          black = "#32302f";
-          red = "#9d0006";
-          green = "#79740e";
-          yellow = "#b57614";
-          blue = "#076678";
-          magenta = "#8f3f71";
-          cyan = "#427b58";
-          white = "#928374";
-        };
-      };
+  i3status-rust = "gruvbox-dark";
+  # https://chrome.google.com/webstore/detail/gruvbox-theme/ihennfdbghdiflogeancnalflhgmanop
+  chromium = "ihennfdbghdiflogeancnalflhgmanop";
+  vim = pkgs: {
+    plugin = pkgs.vimPlugins.gruvbox-community;
+    config = ''
+      autocmd vimenter * ++nested colorscheme gruvbox
+    '';
+  };
+  colors = {
+    dark0 = "#282828";
+    dark0_soft = "#32302f";
+    dark1 = "#3c3836";
+    light1 = "#ebdbb2";
+    light0 = "#fbf1c7";
+    light4 = "#a89984";
+    gray = "#928374";
+    bright_red = "#fb4934";
+    bright_green = "#b8bb26";
+    bright_yellow = "#fabd2f";
+    bright_blue = "#83a598";
+    bright_purple = "#d3869b";
+    bright_aqua = "#8ec07c";
+    neutral_red = "#cc241d";
+    neutral_green = "#98971a";
+    neutral_yellow = "#d79921";
+    neutral_blue = "#458588";
+    neutral_purple = "#b16286";
+    neutral_aqua = "#689d6a";
+    faded_red = "#9d0006";
+    faded_green = "#79740e";
+    faded_yellow = "#b57614";
+    faded_blue = "#076678";
+    faded_purple = "#8f3f71";
+    faded_aqua = "#427b58";
   };
 }
 
