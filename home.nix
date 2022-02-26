@@ -7,7 +7,7 @@ in {
     (import ./unfree.nix)
     (import ./packages.nix)
     (import ./merely-enabled.nix)
-    ((import ./xdg.nix) homeDirectory)
+    (import ./xdg.nix)
     (import ./fontconfig.nix)
     (import ./accounts.nix)
     (import ./systemd.nix)

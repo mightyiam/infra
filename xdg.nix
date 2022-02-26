@@ -1,4 +1,4 @@
-with builtins; homeDirectory: {
+with builtins; { config, ... }: {
   xdg = {
     enable = true;
     mime.enable = true;
@@ -28,7 +28,7 @@ with builtins; homeDirectory: {
           "x-scheme-handler/magnet" = "transmission-gtk";
         };
     };
-    userDirs = let tmp = "${homeDirectory}/tmp"; in
+    userDirs = let tmp = "${config.home.homeDirectory}/tmp"; in
       {
         enable = true;
         createDirectories = true;
@@ -37,8 +37,8 @@ with builtins; homeDirectory: {
         download = tmp;
         music = tmp;
         pictures = tmp;
-        publicShare = "${homeDirectory}/public";
-        templates = "${homeDirectory}/templates";
+        publicShare = "${config.home.homeDirectory}/public";
+        templates = "${config.home.homeDirectory}/templates";
         videos = tmp;
       };
   };
