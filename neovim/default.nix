@@ -50,6 +50,7 @@ in
         vnoremap > >gv
         set clipboard+=unnamedplus
         set updatetime=100
+        set scrolloff=99
       ''
       (omitVIMLInVSCode ''
         set number
