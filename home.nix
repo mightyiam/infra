@@ -22,7 +22,7 @@ in {
     (import ./vscode.nix)
     (import ./gh.nix)
     (import ./ssh.nix)
-    (import ./starship)
+    (import ./starship.nix)
     (import ./git.nix)
     (import ./bottom.nix)
     (import ./wlsunset.nix)
