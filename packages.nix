@@ -11,7 +11,6 @@ let
     procs
     ripgrep
     ripgrep-all
-    rnix-lsp
     swayidle
     swaylock
     tokei
