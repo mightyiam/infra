@@ -1,4 +1,4 @@
-with builtins; { pkgs, ... }:
+with builtins; { pkgs, config, ... }:
 let
   omitVIMLInVSCode = import ./omitVIMLInVSCode.nix;
   omitPluginInVSCode = import ./omitPluginInVSCode.nix;
@@ -9,10 +9,13 @@ let
   ];
   font = (import ../fonts.nix).monospace;
   pipe = pkgs.lib.trivial.pipe;
+  mkBefore = pkgs.lib.mkBefore;
   gruvbox = (import ../gruvbox.nix).vim pkgs;
 in
 {
   imports = [(import ./neovide.nix)];
+  xdg.configFile."nvim/init.vim".text = mkBefore ''
+    let mapleader = ","'';
   programs.neovim = {
     enable = true;
     viAlias = true;
@@ -44,7 +47,6 @@ in
     extraConfig = concatStringsSep "\n" [
       ''
         set ignorecase
-        let mapleader = ","
         vnoremap < <gv
         vnoremap > >gv
         set clipboard+=unnamedplus
