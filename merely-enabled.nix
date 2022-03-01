@@ -4,6 +4,7 @@ let
   programs = [
     "bat"
     "command-not-found"
+    "direnv"
     "exa"
     "info"
   ];

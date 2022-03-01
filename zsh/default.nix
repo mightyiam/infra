@@ -15,8 +15,6 @@ with builtins; { pkgs, ... }: {
       bindkey '^r' history-incremental-search-backward
       bindkey '^[^M' autosuggest-execute
 
-      eval "$(direnv hook zsh)"
-
       alias l='${pkgs.exa}/bin/exa --icons --git --header --all'
     '';
     initExtraBeforeCompInit = ''

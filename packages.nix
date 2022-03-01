@@ -4,7 +4,6 @@ let
   packages = with pkgs; [
     anki
     bandwhich
-    direnv
     du-dust
     imv
     libnotify
