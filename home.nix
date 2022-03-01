@@ -29,6 +29,7 @@ in {
     (import ./sway.nix)
     (import ./sway-bar.nix)
     (import ./udiskie.nix)
+    (import ./obs-studio.nix)
   ];
 
   programs.home-manager = {
