@@ -6,7 +6,6 @@ let
     bandwhich
     du-dust
     imv
-    libnotify
     neofetch
     pavucontrol
     procs
