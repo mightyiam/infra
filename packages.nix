@@ -11,8 +11,6 @@ let
     procs
     ripgrep
     ripgrep-all
-    swayidle
-    swaylock
     tokei
     tor-browser-bundle-bin
     transmission-gtk
