@@ -11,7 +11,6 @@ in {
     (import ./xdg-user-dirs.nix)
     (import ./fontconfig.nix)
     (import ./accounts.nix)
-    (import ./systemd.nix)
     (import ./zsh)
     (import ./tmux.nix)
     (import ./alacritty.nix)
