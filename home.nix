@@ -26,8 +26,7 @@ in {
     (import ./git.nix)
     (import ./bottom.nix)
     (import ./wlsunset.nix)
-    (import ./sway.nix)
-    (import ./sway-bar.nix)
+    (import ./sway)
     (import ./udiskie.nix)
     (import ./obs-studio.nix)
   ];

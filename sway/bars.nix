@@ -1,15 +1,19 @@
 { config, ... }:
 let
   id = "bottom";
-  outputs = import ./outputs.nix;
-  font = (import ./fonts.nix).bars;
+  outputs = import ../outputs.nix;
+  font = (import ../fonts.nix).bars;
+  secrets = import ../secrets.nix;
 in
 {
+  wayland.windowManager.sway.extraSessionCommands = ''
+    export I3RS_GITHUB_TOKEN=${secrets.I3RS_GITHUB_TOKEN}
+  '';
   programs.i3status-rust = {
     enable = true;
     bars = {
       "${id}" = {
-        theme = (import ./gruvbox.nix).i3status-rust;
+        theme = (import ../gruvbox.nix).i3status-rust;
         icons = "awesome5";
         blocks = [
           { block = "cpu"; }
