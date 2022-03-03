@@ -5,7 +5,6 @@ let
     "bat"
     "command-not-found"
     "direnv"
-    "exa"
     "info"
   ];
   services = [

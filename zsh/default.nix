@@ -14,8 +14,6 @@ with builtins; { pkgs, ... }: {
       bindkey '^w' backward-kill-word
       bindkey '^r' history-incremental-search-backward
       bindkey '^[^M' autosuggest-execute
-
-      alias l='${pkgs.exa}/bin/exa --icons --git --header --all'
     '';
     initExtraBeforeCompInit = ''
       zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'

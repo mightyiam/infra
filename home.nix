@@ -25,6 +25,7 @@ in {
     (import ./git.nix)
     (import ./bottom.nix)
     (import ./wlsunset.nix)
+    (import ./exa.nix)
     (import ./sway)
     (import ./udiskie.nix)
     (import ./obs-studio.nix)
