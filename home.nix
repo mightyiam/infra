@@ -18,7 +18,7 @@ in {
     (import ./firefox.nix)
     (import ./chromium.nix)
     (import ./neovim)
-    (import ./vscode.nix)
+    (import ./vscodium.nix)
     (import ./gh.nix)
     (import ./ssh.nix)
     (import ./starship.nix)
