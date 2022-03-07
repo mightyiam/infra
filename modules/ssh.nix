@@ -5,7 +5,7 @@ let
     "github.com"
     "gitlab.com"
     "gitlab.freedesktop.org"
-    "192.168.1.60"
+    "teeveera.local"
   ];
 in
 {
