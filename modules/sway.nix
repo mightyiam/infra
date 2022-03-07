@@ -92,9 +92,4 @@ in
       };
     };
   };
-  imports = [
-    (import ./bars.nix)
-    (import ./notifications.nix)
-    (import ./lock.nix)
-  ];
 }

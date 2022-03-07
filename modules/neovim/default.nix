@@ -7,13 +7,12 @@ let
     (readFile path)
     "EOF\n"
   ];
-  font = (import ../fonts.nix).monospace;
+  font = (import ../../fonts.nix).monospace;
   pipe = pkgs.lib.trivial.pipe;
   mkBefore = pkgs.lib.mkBefore;
-  gruvbox = (import ../gruvbox.nix).vim pkgs;
+  gruvbox = (import ../../gruvbox.nix).vim pkgs;
 in
 {
-  imports = [(import ./neovide.nix)];
   xdg.configFile."nvim/init.vim".text = mkBefore ''
     let mapleader = ","'';
   programs.neovim = {

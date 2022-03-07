@@ -24,7 +24,6 @@ let
       };
     }
     { package = dbaeumer.vscode-eslint; settings = { }; }
-    { package = ms-vsliveshare.vsliveshare; settings = { }; }
   ];
 in
 {

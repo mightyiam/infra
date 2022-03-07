@@ -1,5 +1,5 @@
 let
-  location = (import ./secrets.nix).location;
+  location = (import ../secrets.nix).location;
 in
 {
   services.wlsunset = with location; {

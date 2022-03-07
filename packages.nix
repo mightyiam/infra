@@ -1,28 +1,29 @@
-with builtins; { pkgs, ... }:
+with builtins; pkgs:
 let
   fontPackages = (import ./fonts.nix).packages pkgs;
-  packages = with pkgs; [
-    anki
+in
+with pkgs; {
+  tui = [
     bandwhich
     du-dust
-    imv
     neofetch
-    pavucontrol
     procs
     ripgrep
     ripgrep-all
     tokei
-    tor-browser-bundle-bin
-    transmission-gtk
-    vlc
     watchexec
-    wl-clipboard
-    xdg-utils
   ];
-in
-{
-  home.packages = concatLists [
+  gui = concatLists [
     fontPackages
-    packages
+    [
+      anki
+      imv
+      pavucontrol
+      tor-browser-bundle-bin
+      transmission-gtk
+      vlc
+      wl-clipboard
+      xdg-utils
+    ]
   ];
 }
