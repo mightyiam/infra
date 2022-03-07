@@ -26,6 +26,12 @@ with builtins; { config, ... }: {
         };
         identityFile = toString config.home.homeDirectory + "/.ssh/id_gitlab.freedesktop.org";
       };
+      "192.168.1.60" = {
+        extraOptions = {
+          PubkeyAuthentication = "yes";
+        };
+        identityFile = toString config.home.homeDirectory + "/.ssh/id_teeveera";
+      };
     };
   };
 }

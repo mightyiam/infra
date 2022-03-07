@@ -1,8 +1,11 @@
+let
+  location = (import ./secrets.nix).location;
+in
 {
-  services.wlsunset = {
+  services.wlsunset = with location; {
     enable = true;
-    latitude = "18.8";
-    longitude = "98.9";
+    latitude = toString latitude;
+    longitude = toString longitude;
     temperature.day = 6500;
     temperature.night = 4000;
   };
