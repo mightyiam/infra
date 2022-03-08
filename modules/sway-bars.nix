@@ -21,7 +21,7 @@ in
           { block = "disk_space"; }
           #{ block = "nvidia_gpu"; }
 
-          { block = "docker"; }
+          #{ block = "docker"; }
           { block = "github"; }
 
           { block = "net"; }
