@@ -19,6 +19,7 @@ in
     inherit username;
     homeDirectory = "/home/${username}";
     stateVersion = "21.05";
+    sessionVariables.TZ = "\$(<~/.config/timezone)";
   };
 }
 
