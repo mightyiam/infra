@@ -6,4 +6,3 @@ in {
     size = font.size;
   };
 }
-

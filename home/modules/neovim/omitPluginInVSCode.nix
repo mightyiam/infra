@@ -1,14 +1,13 @@
-with builtins;
-let
+with builtins; let
   omitVIMLInVSCode = import ./omitVIMLInVSCode.nix;
 in
-plugin: config: {
-  inherit plugin;
-  optional = true;
-  config = omitVIMLInVSCode (concatStringsSep "" [
-    ":packadd "
-    plugin.pname
-    "\n"
-    config
-  ]);
-}
+  plugin: config: {
+    inherit plugin;
+    optional = true;
+    config = omitVIMLInVSCode (concatStringsSep "" [
+      ":packadd "
+      plugin.pname
+      "\n"
+      config
+    ]);
+  }

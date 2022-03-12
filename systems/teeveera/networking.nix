@@ -7,11 +7,13 @@
       wlp7s0.useDHCP = false;
     };
   };
-  users.users.mightyiam.extraGroups = [ "networkmanager" ];
+  users.users.mightyiam.extraGroups = ["networkmanager"];
   services.avahi = {
     enable = true;
     nssmdns = true;
-    publish = { enable = true; addresses = true; };
+    publish = {
+      enable = true;
+      addresses = true;
+    };
   };
 }
-

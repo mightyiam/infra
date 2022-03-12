@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   users.extraUsers.kodi.isNormalUser = true;
   services.cage = {
     user = "kodi";

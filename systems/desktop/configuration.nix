@@ -1,6 +1,9 @@
-{ config, pkgs, ... }:
 {
-  imports = [ ./hardware-configuration.nix ];
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [./hardware-configuration.nix];
   hardware = {
     enableRedistributableFirmware = true;
     cpu.intel.updateMicrocode = true;
@@ -13,14 +16,23 @@
         enable = true;
         efiSupport = true;
         mirroredBoots = [
-          { devices = [ "nodev" ]; path = "/boot0"; }
-          { devices = [ "nodev" ]; path = "/boot1"; }
+          {
+            devices = ["nodev"];
+            path = "/boot0";
+          }
+          {
+            devices = ["nodev"];
+            path = "/boot1";
+          }
         ];
       };
       efi.canTouchEfiVariables = true;
     };
-    zfs = { forceImportAll = false; forceImportRoot = false; };
-    kernelParams = [ "nohibernate" ];
+    zfs = {
+      forceImportAll = false;
+      forceImportRoot = false;
+    };
+    kernelParams = ["nohibernate"];
   };
   security.rtkit.enable = true;
   networking = {
@@ -34,14 +46,24 @@
     defaultUserShell = pkgs.zsh;
     users.mightyiam = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "audio" "networkmanager" "docker" ];
+      extraGroups = ["wheel" "audio" "networkmanager" "docker"];
       hashedPassword = import ./hashed-password.nix;
     };
   };
-  programs.neovim = { enable = true; vimAlias = true; defaultEditor = true; };
+  programs.neovim = {
+    enable = true;
+    vimAlias = true;
+    defaultEditor = true;
+  };
   services = {
-    avahi = { enable = true; nssmdns = true; };
-    zfs.autoScrub = { enable = true; interval = "monthly"; };
+    avahi = {
+      enable = true;
+      nssmdns = true;
+    };
+    zfs.autoScrub = {
+      enable = true;
+      interval = "monthly";
+    };
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -61,6 +83,6 @@
     ];
   };
   ###
-  security.pam.services.swaylock = { };
+  security.pam.services.swaylock = {};
   system.stateVersion = "21.11";
 }

@@ -1,7 +1,6 @@
 let
   location = (import ../secrets.nix).location;
-in
-{
+in {
   services.wlsunset = with location; {
     enable = true;
     latitude = toString latitude;
@@ -10,4 +9,3 @@ in
     temperature.night = 4000;
   };
 }
-

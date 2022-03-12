@@ -1,8 +1,7 @@
 let
   style = import ../style.nix;
   font = (import ../fonts.nix).monospace;
-in
-{
+in {
   programs.alacritty = {
     enable = true;
     settings = {
@@ -67,4 +66,3 @@ in
     };
   };
 }
-

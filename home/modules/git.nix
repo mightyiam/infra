@@ -1,4 +1,4 @@
-{ config, ...}: {
+{config, ...}: {
   programs.git = {
     enable = true;
     userName = config.accounts.email.accounts.default.realName;
