@@ -43,8 +43,8 @@ with builtins;
           let g:NERDTreeGitStatusUseNerdFonts = 1
         '')
         (omitPluginInVSCode vim-gitgutter "")
-        (omitPluginInVSCode nvim-lspconfig (inlineLuaFile ./nvim-lspconfig.lua))
-        (omitPluginInVSCode rust-tools-nvim (inlineLuaFile ./rust-tools.nvim.lua))
+        (omitPluginInVSCode nvim-lspconfig "")
+        (omitPluginInVSCode rust-tools-nvim "")
       ];
       extraConfig = concatStringsSep "\n" [
         ''
@@ -59,6 +59,7 @@ with builtins;
           set number
           set guifont=monospace:h${pipe font.size [floor toString]}
         '')
+        (pipe ./lsp.lua [inlineLuaFile omitVIMLInVSCode])
       ];
     };
   }

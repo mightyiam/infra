@@ -30,3 +30,4 @@ vim.api.nvim_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 local servers = { 'tsserver', 'rnix', 'sumneko_lua' }
 for _, lsp in ipairs(servers) do nvim_lsp[lsp].setup{} end
 
+require('rust-tools').setup()
