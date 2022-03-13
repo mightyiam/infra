@@ -27,7 +27,20 @@ end
 
 vim.api.nvim_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-local servers = { 'tsserver', 'rnix', 'sumneko_lua' }
+nvim_lsp.sumneko_lua.setup{
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' },
+      },
+      workspace = {
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+    }
+  }
+}
+
+local servers = { 'tsserver', 'rnix' }
 for _, lsp in ipairs(servers) do nvim_lsp[lsp].setup{} end
 
 require('rust-tools').setup()
