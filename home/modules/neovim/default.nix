@@ -30,7 +30,7 @@ with builtins;
         (omitPluginInVSCode ctrlp-vim ''
           let g:ctrlp_show_hidden = 1
         '')
-        editorconfig-vim
+        editorconfig-nvim
         (omitPluginInVSCode lightline-vim ''
           set noshowmode
         '')
