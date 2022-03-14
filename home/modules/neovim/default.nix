@@ -17,8 +17,9 @@ with builtins;
     mkBefore = pkgs.lib.mkBefore;
     gruvbox = (import ../../gruvbox.nix).vim pkgs;
   in {
-    xdg.configFile."nvim/init.vim".text = mkBefore ''
-      let mapleader = ","'';
+    xdg.configFile."nvim/init.vim".text =
+      mkBefore ''
+        let mapleader = ","'';
     programs.neovim = {
       enable = true;
       vimAlias = true;

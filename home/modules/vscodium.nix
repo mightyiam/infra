@@ -36,12 +36,13 @@ with builtins;
     programs.vscode = {
       enable = true;
       package = pkgs.vscodium;
-      userSettings = mergeAttrs
-      settings
-      (pipe extensions [
-        (map ({settings, ...}: settings))
-        (foldr mergeAttrs {})
-      ]);
+      userSettings =
+        mergeAttrs
+        settings
+        (pipe extensions [
+          (map ({settings, ...}: settings))
+          (foldr mergeAttrs {})
+        ]);
       extensions = map ({package, ...}: package) extensions;
       keybindings = [
         {
