@@ -1,2 +1,2 @@
-local lspconfig = require('lspconfig')
-lspconfig.rnix.setup{}
+local lspconfig = require("lspconfig")
+lspconfig.rnix.setup({})
