@@ -59,7 +59,11 @@ with builtins;
           set number
           set guifont=monospace:h${pipe font.size [floor toString]}
         '')
-        (pipe ./lsp.lua [inlineLuaFile omitVIMLInVSCode])
+        (omitVIMLInVSCode "lua require('lsp.index')\n")
       ];
+    };
+    xdg.configFile."nvim/lua" = {
+      recursive = true;
+      source = ./lua;
     };
   }

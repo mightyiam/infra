@@ -1,5 +1,4 @@
-local nvim_lsp = require('lspconfig')
-
+vim.api.nvim_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 local mappings = {
   { 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', {} },
   { 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {} },
@@ -24,23 +23,3 @@ local mappings = {
 for _, mapping in ipairs(mappings) do
   vim.api.nvim_set_keymap(unpack(mapping))
 end
-
-vim.api.nvim_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-nvim_lsp.sumneko_lua.setup{
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { 'vim' },
-      },
-      workspace = {
-        library = vim.api.nvim_get_runtime_file("", true),
-      },
-    }
-  }
-}
-
-local servers = { 'tsserver', 'rnix' }
-for _, lsp in ipairs(servers) do nvim_lsp[lsp].setup{} end
-
-require('rust-tools').setup()
