@@ -1,3 +1,4 @@
+require('lsp.common')()
 local servers = {
 	"tsserver",
 	"rnix",
