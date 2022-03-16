@@ -16,6 +16,22 @@ with builtins;
     pipe = pkgs.lib.trivial.pipe;
     mkBefore = pkgs.lib.mkBefore;
     gruvbox = (import ../../gruvbox.nix).vim pkgs;
+    lsp-zero = pkgs.vimUtils.buildVimPlugin rec {
+      pname = "lsp-zero";
+      version = "3b6387e242c9441f5ad008aff150c8b882fd86f3";
+      src = pkgs.fetchFromGitHub {
+        owner = "VonHeikemen";
+        repo = "lsp-zero.nvim";
+        rev = version;
+        sha256 = "pSoY2k28+oE2GjkiP6kpthH3ekJ5ybjT7aYYz6kGPgs=";
+      };
+    };
+    luafun = pkgs.fetchFromGitHub {
+      owner = "luafun";
+      repo = "luafun";
+      rev = "0.1.3";
+      sha256 = "aOriC7VD29XzchvLOfmySNDR1MtO1xrqHYABRMaDoJo=";
+    };
   in {
     xdg.configFile."nvim/init.vim".text =
       mkBefore ''
@@ -46,6 +62,10 @@ with builtins;
         (omitPluginInVSCode vim-gitgutter "")
         (omitPluginInVSCode nvim-lspconfig "")
         (omitPluginInVSCode rust-tools-nvim "")
+        (omitPluginInVSCode cmp-nvim-lsp "")
+        (omitPluginInVSCode nvim-cmp "")
+        (omitPluginInVSCode luasnip "")
+        (omitPluginInVSCode lsp-zero "")
       ];
       extraConfig = concatStringsSep "\n" [
         ''
@@ -66,5 +86,9 @@ with builtins;
     xdg.configFile."nvim/lua" = {
       recursive = true;
       source = ./lua;
+    };
+    xdg.configFile."nvim/lua/luafun" = {
+      recursive = true;
+      source = luafun;
     };
   }
