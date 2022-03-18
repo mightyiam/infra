@@ -2,6 +2,7 @@ with builtins;
   {pkgs, ...}: let
     l = concatStringsSep " " [
       "${pkgs.exa}/bin/exa"
+      "--group"
       "--icons"
       "--git"
       "--header"
