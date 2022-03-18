@@ -11,6 +11,7 @@ with builtins;
     getName = lib.getName;
     packages = (import ./packages.nix) pkgs;
     modules = import ./modules;
+    shared = import ../shared.nix;
   in {
     imports = concatMap (feature: getAttr feature modules) config.features;
     home.packages = concatMap (feature: getAttr feature packages) config.features;
@@ -28,5 +29,6 @@ with builtins;
       homeDirectory = "/home/${username}";
       stateVersion = "21.05";
       sessionVariables.TZ = "\$(<~/.config/timezone)";
+      shellAliases = shared.teeveera.shellAliases pkgs;
     };
   }

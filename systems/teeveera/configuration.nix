@@ -5,12 +5,14 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+    ./storage.nix
     ./hardware.nix
     ./boot.nix
     ./zfs.nix
     ./networking.nix
     ./users.nix
     ./kodi.nix
+    ./transmission.nix
   ];
   programs.neovim = {
     enable = true;

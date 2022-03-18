@@ -1,6 +1,6 @@
 {
   networking = {
-    hostName = "teeveera";
+    hostName = (import ../../shared.nix).teeveera.hostname;
     networkmanager.enable = true;
     interfaces = {
       enp6s0.useDHCP = false;
