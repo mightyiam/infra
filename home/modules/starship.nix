@@ -89,7 +89,7 @@ with builtins; {
       shell.disabled = false;
       shlvl = {
         disabled = false;
-        threshold = 3;
+        threshold = 2;
         style = "bold red";
         symbol = "";
       };
