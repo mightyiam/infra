@@ -1,6 +1,5 @@
 let
-  shared = import ../../shared.nix;
-  media = shared.teeveera.media;
+  media = import ./media.nix;
   boot = n: {
     "/boot${toString n}" = {
       device = "/dev/disk/by-partlabel/boot${toString n}";

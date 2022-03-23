@@ -1,9 +1,9 @@
 {pkgs, ...}: let
-  common = import ../../shared.nix;
+  media = import ./media.nix;
 in {
   users.extraUsers.kodi = {
     isNormalUser = true;
-    group = common.teeveera.media.group;
+    group = media.group;
   };
   services.cage = {
     user = "kodi";

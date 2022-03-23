@@ -3,15 +3,13 @@
   config,
   ...
 }: let
-  teeveera = (import ../../shared.nix).teeveera;
-  media = teeveera.media;
+  media = import ./media.nix;
   incompleteDir = "${media.dir}/.transmission-incomplete";
 in {
   services.transmission = {
     group = media.group;
     enable = true;
     settings = {
-      rpc-port = teeveera.transmissionRPCPort;
       download-dir = media.dir;
       incomplete-dir-enabled = true;
       incomplete-dir = incompleteDir;
