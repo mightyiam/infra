@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  imports = [./hardware-configuration.nix];
+  imports = [../../hardware-configuration.nix];
   hardware = {
     enableRedistributableFirmware = true;
     cpu.intel.updateMicrocode = true;
