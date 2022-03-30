@@ -1,13 +1,5 @@
 {
-  networking = {
-    hostName = "teeveera";
-    networkmanager.enable = true;
-    interfaces = {
-      enp6s0.useDHCP = false;
-      wlp7s0.useDHCP = false;
-    };
-  };
-  users.users.mightyiam.extraGroups = ["networkmanager"];
+  networking.hostName = "teeveera";
   services.avahi = {
     enable = true;
     nssmdns = true;
