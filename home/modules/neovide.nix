@@ -1,6 +1,6 @@
 with builtins;
   {pkgs, ...}: let
-    outputs = import ../outputs.nix;
+    instance = import ../instance.nix;
     pipe = pkgs.lib.trivial.pipe;
     expand = name: value: let
       rhs =
@@ -10,7 +10,7 @@ with builtins;
     in "let g:neovide_${name}=${rhs}";
     last = pkgs.lib.lists.last;
     options = {
-      refresh_rate = pipe outputs [attrValues (map (getAttr "refreshRate")) (sort lessThan) last];
+      refresh_rate = pipe instance.outputs [attrValues (map (getAttr "refreshRate")) (sort lessThan) last];
       transparency = 1.0;
       cursor_animation_length = 0.08;
       cursor_vfx_mode = "railgun";

@@ -6,7 +6,7 @@ with builtins;
     ...
   }: let
     modKey = "Mod4";
-    outputs = import ../outputs.nix;
+    instance = import ../instance.nix;
     secrets = import ../secrets.nix;
     step = 5;
     incVol = d:
@@ -36,7 +36,7 @@ with builtins;
         export MOZ_ENABLE_WAYLAND=1
       '';
       config = {
-        output = listToAttrs (attrValues (mapAttrs toSwayOutput outputs));
+        output = listToAttrs (attrValues (mapAttrs toSwayOutput instance.outputs));
         fonts.size = (import ../fonts.nix).default.size;
         modifier = modKey;
         input = {

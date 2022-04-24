@@ -1,6 +1,6 @@
 {config, ...}: let
   id = "bottom";
-  outputs = import ../outputs.nix;
+  instance = import ../instance.nix;
   font = (import ../fonts.nix).bars;
   secrets = import ../secrets.nix;
 in {
@@ -48,7 +48,7 @@ in {
   wayland.windowManager.sway.config.bars = [
     {
       statusCommand = "i3status-rs ${config.xdg.configHome}/i3status-rust/config-${id}.toml";
-      trayOutput = outputs.left.path;
+      trayOutput = instance.outputs.left.path;
       fonts = {
         names = [font.family];
         style = font.style;
