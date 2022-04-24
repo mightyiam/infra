@@ -7,19 +7,19 @@ with builtins;
     ...
   }: let
     username = "mightyiam";
-    config = import ./config.nix;
+    instance = import ./instance.nix;
     getName = lib.getName;
     packages = (import ./packages.nix) pkgs;
     modules = import ./modules;
   in {
-    imports = concatMap (feature: getAttr feature modules) config.features;
-    home.packages = concatMap (feature: getAttr feature packages) config.features;
+    imports = concatMap (feature: getAttr feature modules) instance.features;
+    home.packages = concatMap (feature: getAttr feature packages) instance.features;
 
     programs.home-manager = {
       enable = true;
       path =
-        if config ? homeManagerPath
-        then config.homeManagerPath
+        if instance ? homeManagerPath
+        then instance.homeManagerPath
         else null;
     };
 
