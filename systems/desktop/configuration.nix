@@ -8,6 +8,7 @@
     enableRedistributableFirmware = true;
     cpu.intel.updateMicrocode = true;
     opengl.enable = true;
+    bluetooth.enable = true;
   };
   boot = {
     loader = {
