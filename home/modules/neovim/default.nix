@@ -18,12 +18,12 @@ with builtins;
     gruvbox = (import ../../gruvbox.nix).vim pkgs;
     lsp-zero = pkgs.vimUtils.buildVimPlugin rec {
       pname = "lsp-zero";
-      version = "3b6387e242c9441f5ad008aff150c8b882fd86f3";
+      version = "e6f46b68edebbce73a18ab0856df2da703b748b3";
       src = pkgs.fetchFromGitHub {
         owner = "VonHeikemen";
         repo = "lsp-zero.nvim";
         rev = version;
-        sha256 = "pSoY2k28+oE2GjkiP6kpthH3ekJ5ybjT7aYYz6kGPgs=";
+        sha256 = "dY+Zw/woyl5aqe+l44TltAfnSLGQD2gkZzGTOZl/SP4=";
       };
     };
     luafun = pkgs.fetchFromGitHub {
