@@ -1,4 +1,6 @@
-with builtins;
+with builtins; let
+  gruvbox = import ../../gruvbox.nix;
+in
   {pkgs, ...}: {
     programs.zsh = {
       enable = true;
@@ -10,6 +12,7 @@ with builtins;
       history.ignorePatterns = ["rm *"];
       initExtraFirst = readFile ./tmux-init.sh;
       initExtra = ''
+        ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=${gruvbox.colors.light4}"
         bindkey '^P' up-history
         bindkey '^N' down-history
         bindkey '^w' backward-kill-word
