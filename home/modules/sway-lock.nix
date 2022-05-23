@@ -4,7 +4,7 @@ with builtins;
     config,
     ...
   }: let
-    modKey = config.wayland.windowManager.sway.config.modifier;
+    keyboard = import ../keyboard.nix;
     lockCommand = concatStringsSep " " [
       (pkgs.swaylock + /bin/swaylock)
       "--daemonize"
@@ -15,7 +15,7 @@ with builtins;
     ];
     swayMsgPath = config.wayland.windowManager.sway.package + /bin/swaymsg;
   in {
-    wayland.windowManager.sway.config.keybindings."${modKey}+Ctrl+l" = "exec ${lockCommand}";
+    wayland.windowManager.sway.config.keybindings."${keyboard.wm.lock}" = "exec ${lockCommand}";
     services.swayidle = {
       enable = true;
       timeouts = [
