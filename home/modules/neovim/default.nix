@@ -88,6 +88,8 @@ with builtins;
             nnoremap ${refactor.rename} <cmd>lua vim.lsp.buf.rename()<CR>
             xnoremap ${list.actions} <cmd>lua vim.lsp.buf.range_code_action()<CR>
           '')
+          plenary-nvim # dependency of null-ls-nvim
+          (omitPluginInVSCode null-ls-nvim (inlineLuaFile ./lua/lsp/null-ls.lua))
         ];
         extraConfig = concatStringsSep "\n" [
           ''
