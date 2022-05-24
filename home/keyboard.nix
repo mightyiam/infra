@@ -31,6 +31,7 @@ in {
     indent = ">";
   };
   refactor = prefixRec "<space>" {
+    actions = "a";
     rename = "r";
     format = "f";
   };
@@ -38,26 +39,18 @@ in {
     declaration = "D";
     definition = "d";
     implementation = "i";
-    type = "t";
-  };
-  popup = applyRec (v: "<C-${v}>") {
-    type = "t";
-    signature = "s";
-    diagnostics = "d";
-  };
-  list = prefixRec "a" {
-    actions = "a";
+    type = "o";
     references = "r";
-    diagnostics = "d";
+    diagnostics = "l";
   };
-  prevNext =
-    applyRec (v: {
-      prev = "p" + v;
-      next = "n" + v;
-    }) {
-      diagnostic = "d";
-      searchResult = "s";
-    };
+  show = {
+    type = "K";
+    signature = "<C-k>";
+  };
+  diagnostic = {
+    prev = "]d";
+    next = "[d";
+  };
   wm = prefixRec "Mod4+" {
     lock = "Ctrl+l";
     terminal = "Return";

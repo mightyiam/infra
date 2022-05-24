@@ -72,21 +72,20 @@ with builtins;
           (omitPluginInVSCode nvim-cmp "")
           (omitPluginInVSCode luasnip "")
           (omitPluginInVSCode lsp-zero ''
-            nnoremap ${goTo.declaration} <cmd>lua vim.lsp.buf.declaration()<CR>
+            nnoremap ${show.type} <cmd>lua vim.lsp.buf.hover()<CR>
+            nnoremap ${show.signature} <cmd>lua vim.lsp.buf.signature_help()<CR>
             nnoremap ${goTo.definition} <cmd>lua vim.lsp.buf.definition()<CR>
+            nnoremap ${goTo.declaration} <cmd>lua vim.lsp.buf.declaration()<CR>
             nnoremap ${goTo.implementation} <cmd>lua vim.lsp.buf.implementation()<CR>
             nnoremap ${goTo.type} <cmd>lua vim.lsp.buf.type_definition()<CR>
-            nnoremap ${list.actions} <cmd>lua vim.lsp.buf.code_action()<CR>
-            nnoremap ${list.diagnostics} <cmd>lua vim.diagnostic.setloclist()<CR>
-            nnoremap ${list.references} <cmd>lua vim.lsp.buf.references()<CR>
-            nnoremap ${popup.diagnostics} <cmd>lua vim.diagnostic.open_float()<CR>
-            nnoremap ${popup.signature} <cmd>lua vim.lsp.buf.signature_help()<CR>
-            nnoremap ${popup.type} <cmd>lua vim.lsp.buf.hover()<CR>
-            nnoremap ${prevNext.diagnostic.next} <cmd>lua vim.diagnostic.goto_next()<CR>
-            nnoremap ${prevNext.diagnostic.prev} <cmd>lua vim.diagnostic.goto_prev()<CR>
-            nnoremap ${refactor.format} <cmd>lua vim.lsp.buf.formatting()<CR>
+            nnoremap ${goTo.references} <cmd>lua vim.lsp.buf.references()<CR>
+            nnoremap ${goTo.diagnostics} <cmd>lua vim.diagnostic.setloclist()<CR>
             nnoremap ${refactor.rename} <cmd>lua vim.lsp.buf.rename()<CR>
-            xnoremap ${list.actions} <cmd>lua vim.lsp.buf.range_code_action()<CR>
+            nnoremap ${refactor.actions} <cmd>lua vim.lsp.buf.code_action()<CR>
+            xnoremap ${refactor.actions} <cmd>lua vim.lsp.buf.range_code_action()<CR>
+            nnoremap ${refactor.format} <cmd>lua vim.lsp.buf.formatting()<CR>
+            nnoremap ${diagnostic.next} <cmd>lua vim.diagnostic.goto_next()<CR>
+            nnoremap ${diagnostic.prev} <cmd>lua vim.diagnostic.goto_prev()<CR>
           '')
           plenary-nvim # dependency of null-ls-nvim
           (omitPluginInVSCode null-ls-nvim (inlineLuaFile ./lua/lsp/null-ls.lua))
