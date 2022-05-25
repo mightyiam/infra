@@ -55,7 +55,7 @@ in {
     workspace = "${leader}xw";
     document = "${leader}xd";
     quickfix = "${leader}xq";
-    quickfix = "${leader}xl";
+    loclist = "${leader}xl";
   };
   wm = prefixRec "Mod4+" {
     lock = "Ctrl+l";
