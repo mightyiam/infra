@@ -49,8 +49,8 @@ in {
     signature = "<C-k>";
   };
   diagnostic = {
-    prev = "]d";
-    next = "[d";
+    prev = "[d";
+    next = "]d";
     toggle = "${leader}xx";
     workspace = "${leader}xw";
     document = "${leader}xd";
