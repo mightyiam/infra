@@ -82,7 +82,6 @@ with builtins;
             nnoremap ${goTo.declaration} <cmd>lua vim.lsp.buf.declaration()<CR>
             nnoremap ${goTo.implementation} <cmd>lua vim.lsp.buf.implementation()<CR>
             nnoremap ${goTo.type} <cmd>lua vim.lsp.buf.type_definition()<CR>
-            nnoremap ${goTo.references} <cmd>lua vim.lsp.buf.references()<CR>
             nnoremap ${goTo.diagnostics} <cmd>lua vim.diagnostic.setloclist()<CR>
             nnoremap ${refactor.rename} <cmd>lua vim.lsp.buf.rename()<CR>
             nnoremap ${refactor.actions} <cmd>lua vim.lsp.buf.code_action()<CR>
@@ -93,6 +92,18 @@ with builtins;
           '')
           plenary-nvim # dependency of null-ls-nvim
           (omitPluginInVSCode null-ls-nvim (inlineLuaFile ./lua/lsp/null-ls.lua))
+          (omitPluginInVSCode nvim-web-devicons "") # for trouble-nvim
+          (omitPluginInVSCode trouble-nvim ''
+            lua << EOF
+              require("trouble").setup {}
+            EOF
+            nnoremap ${diagnostic.toggle} <cmd>TroubleToggle<cr>
+            nnoremap ${diagnostic.workspace} <cmd>TroubleToggle workspace_diagnostics<cr>
+            nnoremap ${diagnostic.document} <cmd>TroubleToggle document_diagnostics<cr>
+            nnoremap ${diagnostic.quickfix} <cmd>TroubleToggle quickfix<cr>
+            nnoremap ${diagnostic.loclist} <cmd>TroubleToggle loclist<cr>
+            nnoremap ${goTo.references} <cmd>TroubleToggle lsp_references<cr>
+          '')
         ];
         extraConfig = concatStringsSep "\n" [
           ''

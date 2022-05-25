@@ -16,7 +16,9 @@ with builtins; let
       else f v)
     attrs;
   prefixRec = str: applyRec (v: str + v);
+  leader = ",";
 in {
+  inherit leader;
   keyMode = "vi"; # tmux
   terminalMultiplexerEscape = "a"; # tmux
   splitVertical = "\""; # tmux
@@ -24,7 +26,6 @@ in {
   windowNew = "c"; # tmux
   fileTreeFocus = "<C-t>";
   fileTreeToggle = "<C-T>";
-  leader = ",";
   easyMotion = ",";
   text = {
     dedent = "<";
@@ -50,6 +51,11 @@ in {
   diagnostic = {
     prev = "]d";
     next = "[d";
+    toggle = "${leader}xx";
+    workspace = "${leader}xw";
+    document = "${leader}xd";
+    quickfix = "${leader}xq";
+    quickfix = "${leader}xl";
   };
   wm = prefixRec "Mod4+" {
     lock = "Ctrl+l";
