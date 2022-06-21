@@ -85,5 +85,12 @@
   };
   ###
   security.pam.services.swaylock = {};
+  fonts.enableDefaultFonts = false;
+  fonts.fontconfig.defaultFonts = {
+    serif = [];
+    emoji = [];
+    sansSerif = [];
+    monospace = [];
+  };
   system.stateVersion = "21.11";
 }

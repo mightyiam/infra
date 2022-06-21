@@ -20,13 +20,27 @@
     {
       family = "monospace";
       prefer = [
+        "OpenDyslexicMono"
         "OpenDyslexicMono Nerd Font"
         "Noto Color Emoji"
+      ];
+    }
+    {
+      family = "sans-serif";
+      prefer = [
+        "OpenDyslexic"
+      ];
+    }
+    {
+      family = "serif";
+      prefer = [
+        "OpenDyslexic"
       ];
     }
   ];
   packages = pkgs:
     with pkgs; [
+      open-dyslexic
       (nerdfonts.override {fonts = ["OpenDyslexic"];})
       font-awesome
       noto-fonts
