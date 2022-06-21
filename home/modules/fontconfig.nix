@@ -17,7 +17,8 @@ with builtins;
         <prefer>
           ${pipe prefer [(map expandPrefer) (concatStringsSep "\n    ")]}
         </prefer>
-      </alias>'';
+      </alias>
+    '';
     fontsConf = {aliases}:
       concatStringsSep "\n" [
         ''
