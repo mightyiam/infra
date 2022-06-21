@@ -13,7 +13,7 @@ with builtins;
       prefer,
     }: ''
       <alias>
-        <family>monospace</family>
+        <family>${family}</family>
         <prefer>
           ${pipe prefer [(map expandPrefer) (concatStringsSep "\n    ")]}
         </prefer>
