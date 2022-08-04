@@ -10,6 +10,7 @@
     ./neovim
     ./ssh.nix
     ./starship.nix
+    ./tealdeer.nix
     ./tmux.nix
     ./udiskie.nix
     ./zsh
