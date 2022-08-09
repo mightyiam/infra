@@ -90,6 +90,7 @@ with builtins;
             nnoremap ${diagnostic.next} <cmd>lua vim.diagnostic.goto_next()<CR>
             nnoremap ${diagnostic.prev} <cmd>lua vim.diagnostic.goto_prev()<CR>
           '')
+          (omitPluginInVSCode symbols-outline-nvim "")
           plenary-nvim # dependency of null-ls-nvim
           (omitPluginInVSCode null-ls-nvim (inlineLuaFile ./lua/lsp/null-ls.lua))
           (omitPluginInVSCode nvim-web-devicons "") # for trouble-nvim
