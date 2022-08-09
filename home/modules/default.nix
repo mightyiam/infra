@@ -23,6 +23,7 @@
     ./gtk.nix
     ./neovide.nix
     ./obs-studio.nix
+    ./qutebrowser.nix
     ./sway-bars.nix
     ./sway-lock.nix
     ./sway-notifications.nix
