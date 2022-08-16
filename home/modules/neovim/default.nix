@@ -73,7 +73,11 @@ with builtins;
           (omitPluginInVSCode luasnip "")
           {
             plugin = nvim-autopairs;
-            config = inlineLuaFile ./lua/nvim-autopairs.lua;
+            config = ''
+              lua << EOF
+                require("nvim-autopairs").setup{}
+              EOF
+            '';
           }
           (omitPluginInVSCode lsp-zero ''
             nnoremap ${show.type} <cmd>lua vim.lsp.buf.hover()<CR>
