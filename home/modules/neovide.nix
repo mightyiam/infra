@@ -22,7 +22,6 @@ with builtins;
     home.shellAliases = {
       nv = concatStringsSep " " [
         "${pkgs.neovide}/bin/neovide"
-        "--neovim-bin ${pkgs.neovim}/bin/nvim"
         "--multigrid"
       ];
     };

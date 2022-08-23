@@ -117,7 +117,7 @@ with builtins;
             vnoremap ${text.indent} >gv
             set clipboard+=unnamedplus
             set updatetime=100
-            set scrolloff=99
+            set scrolloff=8
           ''
           (omitVIMLInVSCode ''
             set number
