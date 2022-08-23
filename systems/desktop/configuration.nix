@@ -12,7 +12,7 @@
   };
   boot = {
     loader = {
-      timeout = 4;
+      timeout = 2;
       grub = {
         enable = true;
         efiSupport = true;
