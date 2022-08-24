@@ -52,7 +52,7 @@ with builtins;
             '';
           }
           (omitPluginInVSCode ctrlp-vim ''
-            let g:ctrlp_show_hidden = 1
+            let g:ctrlp_user_command = ['.git', 'cd %s && ${pkgs.git}/bin/git ls-files -co --exclude-standard']
           '')
           editorconfig-nvim
           (omitPluginInVSCode lightline-vim ''
