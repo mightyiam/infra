@@ -16,18 +16,16 @@ with builtins;
     swayMsgPath = config.wayland.windowManager.sway.package + /bin/swaymsg;
   in {
     wayland.windowManager.sway.config.keybindings."${keyboard.wm.lock}" = "exec ${lockCommand}";
-    services.swayidle = {
-      enable = true;
-      timeouts = [
-        {
-          timeout = 60 * 10;
-          command = lockCommand;
-        }
-        {
-          timeout = 60 * 11;
-          command = "${swayMsgPath} \"output * dpms off\"";
-          resumeCommand = "${swayMsgPath} \"output * dpms on\"";
-        }
-      ];
-    };
+    services.swayidle.enable = true;
+    services.swayidle.timeouts = [
+      {
+        timeout = 60 * 10;
+        command = lockCommand;
+      }
+      {
+        timeout = 60 * 11;
+        command = "${swayMsgPath} \"output * dpms off\"";
+        resumeCommand = "${swayMsgPath} \"output * dpms on\"";
+      }
+    ];
   }
