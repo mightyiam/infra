@@ -19,6 +19,7 @@
     ./alacritty.nix
     ./chromium.nix
     ./firefox.nix
+    ./flameshot.nix
     ./fontconfig.nix
     ./gtk.nix
     ./neovide.nix
