@@ -11,6 +11,7 @@ with builtins;
     getName = lib.getName;
     packages = (import ./packages.nix) pkgs;
     modules = import ./modules;
+    secrets = import ./secrets.nix;
   in {
     imports = concatMap (feature: getAttr feature modules) instance.features;
     home.packages = concatMap (feature: getAttr feature packages) instance.features;
@@ -28,5 +29,6 @@ with builtins;
       homeDirectory = "/home/${username}";
       stateVersion = "21.05";
       sessionVariables.TZ = "\$(<~/.config/timezone)";
+      sessionVariables.CACHIX_AUTH_TOKEN = secrets.CACHIX_AUTH_TOKEN;
     };
   }

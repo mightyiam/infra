@@ -61,5 +61,6 @@
   fonts.fontconfig.defaultFonts.emoji = [];
   fonts.fontconfig.defaultFonts.sansSerif = [];
   fonts.fontconfig.defaultFonts.monospace = [];
+  nix.settings.trusted-users = ["root" "mightyiam"];
   system.stateVersion = "21.11";
 }
