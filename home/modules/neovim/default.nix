@@ -33,6 +33,10 @@ with builtins;
       rev = "0.1.3";
       sha256 = "aOriC7VD29XzchvLOfmySNDR1MtO1xrqHYABRMaDoJo=";
     };
+    embedLua = lua: ''
+      lua << EOF
+      ${lua}EOF
+    '';
   in
     with keyboard; {
       xdg.configFile."nvim/init.vim".text =
@@ -73,10 +77,8 @@ with builtins;
           (omitPluginInVSCode luasnip "")
           {
             plugin = nvim-autopairs;
-            config = ''
-              lua << EOF
-                require("nvim-autopairs").setup{}
-              EOF
+            config = embedLua ''
+              require("nvim-autopairs").setup{}
             '';
           }
           (omitPluginInVSCode lsp-zero ''
