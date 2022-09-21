@@ -19,12 +19,14 @@ with builtins;
       resolution,
       refreshRate,
       position,
+      scale,
       ...
     }: {
       name = path;
       value = {
         res = with resolution; "${toString width}x${toString height}@${toString refreshRate}Hz";
         pos = with position; "${toString x} ${toString y}";
+        scale = toString scale;
       };
     };
     swayMsgPath = config.wayland.windowManager.sway.package + /bin/swaymsg;
