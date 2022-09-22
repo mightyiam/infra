@@ -7,7 +7,7 @@ in {
     anchor = "top-right";
     defaultTimeout = 3000;
     ignoreTimeout = true;
-    output = instance.outputs.left.path;
+    output = instance.notificationOutput;
     font = with font; "${family} ${toString size}";
   };
   wayland.windowManager.sway.config.startup = [
