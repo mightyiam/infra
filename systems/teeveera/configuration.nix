@@ -23,4 +23,5 @@
   hardware.enableAllFirmware = true;
   system.stateVersion = "21.11";
   nix.settings.auto-optimise-store = true;
+  nixpkgs.config.allowUnfree = true;
 }
