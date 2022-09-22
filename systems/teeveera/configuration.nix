@@ -5,13 +5,13 @@
 }: {
   imports = [
     ../../hardware-configuration.nix
-    ./storage.nix
     ./boot.nix
     ./zfs.nix
     ./networking.nix
     ./users.nix
     ./kodi.nix
     ./transmission.nix
+    (import ./media.nix).module
   ];
   programs.neovim = {
     enable = true;
