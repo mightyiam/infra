@@ -6,7 +6,6 @@
   imports = [
     ../../hardware-configuration.nix
     ./storage.nix
-    ./hardware.nix
     ./boot.nix
     ./zfs.nix
     ./networking.nix
@@ -21,6 +20,7 @@
   };
   services.openssh.enable = true;
   security.sudo.wheelNeedsPassword = false;
+  hardware.enableAllFirmware = true;
   system.stateVersion = "21.11";
   nix.settings.auto-optimise-store = true;
 }
