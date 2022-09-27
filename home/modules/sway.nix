@@ -47,6 +47,7 @@ with builtins;
           };
         };
         terminal = "false";
+        modifier = "Mod4";
         keybindings = with keyboard.wm; {
           "${terminal}" = "exec ${config.programs.alacritty.package + /bin/alacritty}";
           "${kill}" = "kill";
