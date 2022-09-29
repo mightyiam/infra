@@ -39,9 +39,9 @@ with builtins;
     '';
   in
     with keyboard; {
-      xdg.configFile."nvim/init.vim".text =
+      xdg.configFile."nvim/init.lua".text =
         mkBefore ''
-          let mapleader = "${leader}"'';
+          vim.cmd [[let mapleader = "${leader}"]]'';
       programs.neovim = {
         enable = true;
         vimAlias = true;
