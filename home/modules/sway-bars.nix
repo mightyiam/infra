@@ -35,6 +35,10 @@ in {
             };
           }
           {block = "sound";}
+          {
+            block = "battery";
+            hide_missing = true;
+          }
         ];
       };
     };
