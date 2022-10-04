@@ -1,4 +1,4 @@
-{
+instance: {
   programs.atuin = {
     enable = true;
     settings = {

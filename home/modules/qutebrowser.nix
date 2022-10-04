@@ -1,4 +1,4 @@
-{...}: {
+instance: {...}: {
   programs.qutebrowser = {
     enable = true;
     settings = {

@@ -1,13 +1,11 @@
 with builtins;
-  {
+  instance: {
     pkgs,
     lib,
     config,
     ...
   }: let
     keyboard = import ../keyboard.nix;
-    instance = import ../instance.nix;
-    secrets = import ../secrets.nix;
     step = 5;
     incVol = d:
       concatStringsSep " " [

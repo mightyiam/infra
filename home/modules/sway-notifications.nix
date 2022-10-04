@@ -1,6 +1,5 @@
-let
+instance: let
   font = (import ../fonts.nix).notifications;
-  instance = import ../instance.nix;
 in {
   programs.mako = {
     enable = true;

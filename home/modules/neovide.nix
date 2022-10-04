@@ -1,6 +1,5 @@
 with builtins;
-  {pkgs, ...}: let
-    instance = import ../instance.nix;
+  instance: {pkgs, ...}: let
     pipe = pkgs.lib.trivial.pipe;
     expand = name: value: let
       rhs =

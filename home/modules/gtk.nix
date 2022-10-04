@@ -1,4 +1,4 @@
-let
+instance: let
   font = (import ../fonts.nix).default;
 in {
   gtk.font = {

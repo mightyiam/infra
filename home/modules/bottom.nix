@@ -1,4 +1,4 @@
-{
+instance: {
   programs.bottom = {
     enable = true;
     settings = {

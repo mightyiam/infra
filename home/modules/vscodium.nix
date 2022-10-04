@@ -1,5 +1,5 @@
 with builtins;
-  {
+  instance: {
     pkgs,
     lib,
     ...

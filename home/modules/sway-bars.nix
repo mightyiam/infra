@@ -1,12 +1,7 @@
-{config, ...}: let
+instance: {config, ...}: let
   id = "bottom";
-  instance = import ../instance.nix;
   font = (import ../fonts.nix).bars;
-  secrets = import ../secrets.nix;
 in {
-  wayland.windowManager.sway.extraSessionCommands = ''
-    export I3RS_GITHUB_TOKEN=${secrets.I3RS_GITHUB_TOKEN}
-  '';
   programs.i3status-rust = {
     enable = true;
     bars = {
@@ -20,7 +15,6 @@ in {
           #{ block = "nvidia_gpu"; }
 
           #{ block = "docker"; }
-          {block = "github";}
 
           {block = "net";}
           {

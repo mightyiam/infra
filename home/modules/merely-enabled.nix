@@ -1,5 +1,5 @@
 with builtins;
-  {pkgs, ...}: let
+  instance: {pkgs, ...}: let
     pipe = pkgs.lib.trivial.pipe;
     programs = [
       "bat"

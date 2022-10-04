@@ -1,4 +1,4 @@
-{config, ...}: {
+instance: {config, ...}: {
   xdg = {
     enable = true;
     userDirs = let

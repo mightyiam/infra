@@ -1,7 +1,6 @@
-let
-  location = (import ../secrets.nix).location;
+instance: let
 in {
-  services.wlsunset = with location; {
+  services.wlsunset = with instance.secrets.location; {
     enable = true;
     latitude = toString latitude;
     longitude = toString longitude;

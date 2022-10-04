@@ -1,4 +1,4 @@
-{
+instance: {
   programs.gh = {
     enable = true;
     settings = {

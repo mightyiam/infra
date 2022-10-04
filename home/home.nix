@@ -1,5 +1,5 @@
 with builtins;
-  {
+  instance: {
     config,
     pkgs,
     options,
@@ -7,13 +7,12 @@ with builtins;
     ...
   }: let
     username = "mightyiam";
-    instance = import ./instance.nix;
     getName = lib.getName;
     packages = (import ./packages.nix) pkgs;
     modules = import ./modules;
-    secrets = import ./secrets.nix;
+    activeModules = concatMap (feature: getAttr feature modules) instance.features;
   in {
-    imports = concatMap (feature: getAttr feature modules) instance.features;
+    imports = map (module: import module instance) activeModules;
     home.packages = concatMap (feature: getAttr feature packages) instance.features;
 
     programs.home-manager = {
@@ -29,6 +28,6 @@ with builtins;
       homeDirectory = "/home/${username}";
       stateVersion = "21.05";
       sessionVariables.TZ = "\$(<~/.config/timezone)";
-      sessionVariables.CACHIX_AUTH_TOKEN = secrets.CACHIX_AUTH_TOKEN;
+      sessionVariables.CACHIX_AUTH_TOKEN = instance.secrets.CACHIX_AUTH_TOKEN;
     };
   }
