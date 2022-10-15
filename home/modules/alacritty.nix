@@ -15,7 +15,7 @@ in {
       };
       colors = with (import ../gruvbox.nix).colors; {
         primary = {
-          background = dark1;
+          background = dark0;
           foreground = light1;
           bright_foreground = light0;
           dim_foreground = light4;

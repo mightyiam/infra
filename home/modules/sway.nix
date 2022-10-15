@@ -25,6 +25,7 @@ with builtins;
         res = with resolution; "${toString width}x${toString height}@${toString refreshRate}Hz";
         pos = with position; "${toString x} ${toString y}";
         scale = toString scale;
+        background = "${(import ../gruvbox.nix).colors.dark0} solid_color";
       };
     };
     swayMsgPath = config.wayland.windowManager.sway.package + /bin/swaymsg;
