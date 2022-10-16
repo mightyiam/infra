@@ -91,7 +91,7 @@ with builtins;
             nnoremap ${goTo.diagnostics} <cmd>lua vim.diagnostic.setloclist()<CR>
             nnoremap ${refactor.rename} <cmd>lua vim.lsp.buf.rename()<CR>
             nnoremap ${refactor.actions} <cmd>lua vim.lsp.buf.code_action()<CR>
-            xnoremap ${refactor.actions} <cmd>lua vim.lsp.buf.range_code_action()<CR>
+            xnoremap ${refactor.actions} <cmd>lua vim.lsp.buf.code_action()<CR>
             nnoremap ${refactor.format} <cmd>lua vim.lsp.buf.format({ async = false })<CR>
             nnoremap ${diagnostic.next} <cmd>lua vim.diagnostic.goto_next()<CR>
             nnoremap ${diagnostic.prev} <cmd>lua vim.diagnostic.goto_prev()<CR>
