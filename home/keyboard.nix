@@ -10,7 +10,8 @@ with builtins; let
     right = "l";
   };
   applyRec = f: attrs:
-    mapAttrs (k: v:
+    mapAttrs
+    (k: v:
       if isAttrs v
       then applyRec f v
       else f v)
