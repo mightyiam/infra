@@ -56,6 +56,7 @@ with builtins;
           "${focus.down}" = "focus down";
           "${focus.up}" = "focus up";
           "${focus.right}" = "focus right";
+          "${focus.parent}" = "focus parent";
 
           "${move.left}" = "move left";
           "${move.down}" = "move down";

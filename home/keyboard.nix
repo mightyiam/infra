@@ -62,7 +62,7 @@ in {
     terminal = "Return";
     kill = "Shift+q";
     menu = "d";
-    focus = directions;
+    focus = directions // {parent = "a";};
     move = prefixRec "Shift+" directions;
     fullscreen = "f";
     layout = {
