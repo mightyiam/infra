@@ -19,7 +19,6 @@
   ];
   boot.loader.efi.canTouchEfiVariables = true;
   boot.zfs.forceImportRoot = false;
-  boot.kernelParams = ["nohibernate"];
   nix.settings.auto-optimise-store = true;
   users.mutableUsers = false;
   users.defaultUserShell = pkgs.zsh;
