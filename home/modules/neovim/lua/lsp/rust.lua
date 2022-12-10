@@ -4,6 +4,9 @@ local function setup(lsp_zero)
       ["rust-analyzer"] = {
         checkOnSave = {
           command = "clippy"
+        },
+        inlayHints = {
+          maxLength = 99
         }
       }
     }
