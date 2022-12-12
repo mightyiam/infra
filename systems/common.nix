@@ -34,4 +34,5 @@
   services.avahi.nssmdns = true;
   services.zfs.autoScrub.enable = true;
   services.zfs.autoScrub.interval = "monthly";
+  environment.systemPackages = [pkgs.nvd];
 }
