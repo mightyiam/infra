@@ -11,7 +11,7 @@ in {
       window.opacity = style.windowOpacity;
       bell = {
         color = style.bellColor;
-        duration = style.bellDuration;
+        duration = builtins.ceil style.bellDuration;
       };
       colors = with (import ../gruvbox.nix).colors; {
         primary = {
