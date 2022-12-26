@@ -27,6 +27,16 @@ with builtins;
         sha256 = "/olrokwin7T/v12Ml11Wo14BwS/lXOIDoWcYorj1c3o=";
       };
     };
+    vim-autoread = pkgs.vimUtils.buildVimPlugin rec {
+      pname = "vim-autoread";
+      version = "7e83d47a71fdafc271005fc39c89863204278c77";
+      src = pkgs.fetchFromGitHub {
+        owner = "djoshea";
+        repo = "vim-autoread";
+        rev = version;
+        sha256 = "IGgJ/D2AGDtbO+RZk2zd+zO9ZtANsle4QSjsh+VOXpg=";
+      };
+    };
     luafun = pkgs.fetchFromGitHub {
       owner = "luafun";
       repo = "luafun";
@@ -111,6 +121,9 @@ with builtins;
             nnoremap ${diagnostic.quickfix} <cmd>TroubleToggle quickfix<cr>
             nnoremap ${diagnostic.loclist} <cmd>TroubleToggle loclist<cr>
             nnoremap ${goTo.references} <cmd>TroubleToggle lsp_references<cr>
+          '')
+          (omitPluginInVSCode vim-autoread ''
+            autocmd VimEnter * nested WatchForChangesAllFile!
           '')
         ];
         extraConfig = concatStringsSep "\n" [
