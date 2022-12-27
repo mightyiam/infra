@@ -8,6 +8,7 @@ instance: {config, ...}: {
       init = {
         defaultBranch = "master";
       };
+      push.default = "current";
     };
   };
 }
