@@ -6,7 +6,9 @@ local function setup(lsp_zero)
           command = "clippy"
         },
         inlayHints = {
-          maxLength = 99
+          maxLength = 99,
+          -- https://github.com/simrat39/rust-tools.nvim/issues/300
+          locationLinks = false,
         }
       }
     }
