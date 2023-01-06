@@ -19,12 +19,12 @@ with builtins;
     gruvbox = (import ../../gruvbox.nix).vim pkgs;
     lsp-zero = pkgs.vimUtils.buildVimPlugin rec {
       pname = "lsp-zero";
-      version = "c283c02735a460c52d9dcf1e5ce56de0efec4c9e";
+      version = "072e486271c7068b6732924d47ea0ac9ec55423b";
       src = pkgs.fetchFromGitHub {
         owner = "VonHeikemen";
         repo = "lsp-zero.nvim";
         rev = version;
-        sha256 = "/olrokwin7T/v12Ml11Wo14BwS/lXOIDoWcYorj1c3o=";
+        sha256 = "8zQoSYdh6Xf+guxxMdXtiVmJB+brNTEJWdrGefL0QwY=";
       };
     };
     vim-autoread = pkgs.vimUtils.buildVimPlugin rec {
