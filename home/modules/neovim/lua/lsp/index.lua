@@ -4,11 +4,13 @@ lsp_zero.preset("system-lsp")
 lsp_zero.setup_servers({
 	"tsserver",
 	"rnix",
-	"sumneko_lua",
+	"lua_ls",
 })
 lsp_zero.set_preferences({
 	set_lsp_keymaps = false,
 })
+
+require("lsp.lua")(lsp_zero)
 
 lsp_zero.setup()
 require("lsp.rust")(lsp_zero)
