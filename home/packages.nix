@@ -12,6 +12,19 @@ with builtins;
         ripgrep-all
         tokei
         watchexec
+
+        # nix
+        alejandra
+        rnix-lsp
+
+        # rust
+        rustup
+        rust-analyzer
+        cargo-watch
+        cargo-outdated
+        cargo-feature
+
+        mob
       ];
       gui = concatLists [
         fontPackages
