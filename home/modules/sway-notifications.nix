@@ -1,7 +1,7 @@
 instance: let
   font = (import ../fonts.nix).notifications;
 in {
-  programs.mako = {
+  services.mako = {
     enable = true;
     anchor = "top-right";
     defaultTimeout = 3000;
