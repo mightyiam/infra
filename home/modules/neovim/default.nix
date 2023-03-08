@@ -108,8 +108,10 @@ with builtins;
           '')
           (omitPluginInVSCode fidget-nvim (inlineLuaFile ./lua/lsp/fidget-nvim.lua))
           (omitPluginInVSCode symbols-outline-nvim "")
-          plenary-nvim # dependency of null-ls-nvim
+          plenary-nvim
           (omitPluginInVSCode null-ls-nvim (inlineLuaFile ./lua/lsp/null-ls.lua))
+          (omitPluginInVSCode telescope-nvim ''
+          '')
           (omitPluginInVSCode nvim-web-devicons "") # for trouble-nvim
           (omitPluginInVSCode trouble-nvim ''
             lua << EOF
