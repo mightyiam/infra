@@ -17,14 +17,10 @@ in {
           #{ block = "docker"; }
 
           {block = "net";}
-          {
-            block = "networkmanager";
-            device_format = "{icon}{ap}";
-          }
 
           {
             block = "time";
-            format = "%F %a %R";
+            format = "$icon $timestamp.datetime(f:'%F %a %R')";
           }
           {
             block = "keyboard_layout";
@@ -37,7 +33,7 @@ in {
           {block = "sound";}
           {
             block = "battery";
-            hide_missing = true;
+            missing_format = "";
           }
         ];
       };
