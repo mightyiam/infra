@@ -3,6 +3,7 @@
     ./accounts.nix
     ./atuin.nix
     ./bottom.nix
+    ./editorconfig.nix
     ./exa.nix
     ./gh.nix
     ./git.nix
