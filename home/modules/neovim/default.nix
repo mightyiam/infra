@@ -111,7 +111,7 @@ with builtins;
           plenary-nvim
           (omitPluginInVSCode null-ls-nvim (inlineLuaFile ./lua/lsp/null-ls.lua))
           (omitPluginInVSCode telescope-nvim ''
-          '')
+            '')
           (omitPluginInVSCode nvim-web-devicons "") # for trouble-nvim
           (omitPluginInVSCode trouble-nvim ''
             lua << EOF
