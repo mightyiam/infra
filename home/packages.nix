@@ -16,6 +16,7 @@ with builtins;
         # nix
         alejandra
         rnix-lsp
+        nurl
 
         # rust
         rustup
