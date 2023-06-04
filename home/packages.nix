@@ -20,7 +20,6 @@ with builtins;
 
         # rust
         rustup
-        rust-analyzer
         cargo-watch
         cargo-outdated
         cargo-feature
