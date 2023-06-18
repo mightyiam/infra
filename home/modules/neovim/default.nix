@@ -111,8 +111,24 @@ with builtins;
           (omitPluginInVSCode symbols-outline-nvim "")
           plenary-nvim
           (omitPluginInVSCode null-ls-nvim (inlineLuaFile ./lua/lsp/null-ls.lua))
-          (omitPluginInVSCode telescope-nvim ''
-            '')
+          (omitPluginInVSCode telescope-nvim (embedLua ''
+              local builtin = require('telescope.builtin')
+              vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+              vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+              vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+              vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+              vim.keymap.set('n', '<leader>fc', builtin.commands, {})
+              vim.keymap.set('n', '<leader>fq', builtin.quickfix, {})
+              vim.keymap.set('n', '<leader>fk', builtin.keymaps, {})
+              vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {})
+              vim.keymap.set('n', '<leader>fds', builtin.lsp_document_symbols, {})
+              vim.keymap.set('n', '<leader>fs', builtin.lsp_workspace_symbols, {})
+              vim.keymap.set('n', '<leader>fp', builtin.diagnostics, {})
+              vim.keymap.set('n', '<leader>fi', builtin.lsp_implementations, {})
+              vim.keymap.set('n', '<leader>fd', builtin.lsp_definitions, {})
+              vim.keymap.set('n', '<leader>ft', builtin.lsp_type_definitions, {})
+              vim.keymap.set('n', '<leader>fa', builtin.builtin, {})
+            ''))
           (omitPluginInVSCode nvim-web-devicons "") # for trouble-nvim
           (omitPluginInVSCode trouble-nvim ''
             lua << EOF
