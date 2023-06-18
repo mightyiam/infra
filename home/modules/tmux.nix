@@ -6,6 +6,8 @@ in {
     keyMode = keyMode;
     shortcut = terminalMultiplexerEscape;
     customPaneNavigationAndResize = true;
+    escapeTime = 0;
+    terminal = "tmux-256color";
     extraConfig = ''
       set-option -ga terminal-overrides ",alacritty:Tc"
       set-option -g status-right "tmux"
