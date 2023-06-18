@@ -137,6 +137,7 @@ with builtins;
             set clipboard+=unnamedplus
             set updatetime=100
             set scrolloff=8
+            let g:loaded_perl_provider = 0
           ''
           (omitVIMLInVSCode ''
             set number
