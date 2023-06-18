@@ -6,6 +6,7 @@ with builtins;
       tui = [
         bandwhich
         du-dust
+        fd
         neofetch
         procs
         ripgrep
