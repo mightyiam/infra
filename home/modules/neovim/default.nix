@@ -68,7 +68,14 @@ with builtins;
           (omitPluginInVSCode ctrlp-vim ''
             let g:ctrlp_user_command = ['.git', 'cd %s && ${pkgs.git}/bin/git ls-files -co --exclude-standard']
           '')
-          (omitPluginInVSCode nvim-treesitter.withAllGrammars "")
+          (omitPluginInVSCode nvim-treesitter.withAllGrammars (embedLua ''
+            require'nvim-treesitter.configs'.setup {
+              auto_install = false,
+              highlight = {
+                enable = true,
+              }
+            }
+          ''))
           editorconfig-nvim
           (omitPluginInVSCode lightline-vim ''
             set noshowmode
