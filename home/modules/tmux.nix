@@ -8,6 +8,7 @@ in {
     customPaneNavigationAndResize = true;
     escapeTime = 0;
     terminal = "tmux-256color";
+    historyLimit = 100000;
     extraConfig = ''
       set-option -ga terminal-overrides ",alacritty:Tc"
       set-option -g status-right "tmux"
