@@ -109,6 +109,18 @@ with builtins;
                 globalstatus = true,
                 section_separators = "",
                 component_separators = "",
+
+                disabled_filetypes = {
+                  winbar = {
+                    'nerdtree',
+                    'Trouble',
+                  },
+                },
+
+                ignore_focus = {
+                    'nerdtree',
+                    'Trouble',
+                },
               },
 
               extensions = {
