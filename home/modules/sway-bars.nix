@@ -32,6 +32,11 @@ in {
           }
           {block = "sound";}
           {
+            block = "sound";
+            device_kind = "source";
+            format = "$icon";
+          }
+          {
             block = "battery";
             missing_format = "";
           }

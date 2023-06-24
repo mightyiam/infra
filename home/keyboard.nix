@@ -100,6 +100,7 @@ in {
     volume = {
       decrement = "minus";
       increment = "equal";
+      toggleMuteSources = "m";
     };
   };
 }

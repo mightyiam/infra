@@ -13,6 +13,12 @@ with builtins;
         "exec ${pactl}"
         "set-sink-volume @DEFAULT_SINK@ ${d}${toString step}%"
       ];
+    toggleMuteSources = concatStringsSep " " [
+      "exec ${pkgs.zsh + /bin/zsh} -c '"
+      "for source in $(${pactl} list short sources | ${pkgs.gawk + /bin/awk} \"{print \\$2}\");"
+      "do ${pactl} set-source-mute \"$source\" toggle;"
+      "done'"
+    ];
     toSwayOutput = _: {
       path,
       resolution,
@@ -99,6 +105,7 @@ with builtins;
 
           "${volume.decrement}" = incVol "-";
           "${volume.increment}" = incVol "+";
+          "${volume.toggleMuteSources}" = toggleMuteSources;
         };
       };
     };
