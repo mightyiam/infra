@@ -7,9 +7,10 @@ with builtins;
   }: let
     keyboard = import ../keyboard.nix;
     step = 5;
+    pactl = pkgs.pulseaudio + /bin/pactl;
     incVol = d:
       concatStringsSep " " [
-        "exec ${pkgs.pulseaudio + /bin/pactl}"
+        "exec ${pactl}"
         "set-sink-volume @DEFAULT_SINK@ ${d}${toString step}%"
       ];
     toSwayOutput = _: {
