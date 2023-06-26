@@ -9,6 +9,7 @@ with builtins;
     mergeAttrs = lib.trivial.mergeAttrs;
     settings = {
       "editor.cursorSmoothCaretAnimation" = true;
+      "editor.unicodeHighlight.ambiguousCharacters" = false;
       "editor.smoothScrolling" = true;
       "workbench.list.smoothScrolling" = true;
       "diffEditor.renderSideBySide" = false;
