@@ -166,12 +166,9 @@ with builtins;
           (omitPluginInVSCode cmp-nvim-lsp "")
           (omitPluginInVSCode nvim-cmp "")
           (omitPluginInVSCode luasnip "")
-          {
-            plugin = nvim-autopairs;
-            config = embedLua ''
-              require("nvim-autopairs").setup{}
-            '';
-          }
+          (omitPluginInVSCode nvim-autopairs (embedLua ''
+            require("nvim-autopairs").setup{}
+          ''))
           (omitPluginInVSCode lsp-zero ''
             nnoremap ${show.type} <cmd>lua vim.lsp.buf.hover()<CR>
             nnoremap ${show.signature} <cmd>lua vim.lsp.buf.signature_help()<CR>
