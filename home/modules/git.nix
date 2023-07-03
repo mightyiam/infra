@@ -11,6 +11,7 @@ instance: {config, ...}: {
         defaultBranch = "master";
       };
       push.default = "current";
+      safe.bareRepository = "explicit";
     };
   };
 }
