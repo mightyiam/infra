@@ -8,7 +8,6 @@ with builtins;
       "info"
     ];
     services = [
-      "lorri"
       "systembus-notify"
     ];
     mapper = name: {
