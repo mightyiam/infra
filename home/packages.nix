@@ -16,7 +16,7 @@ with builtins;
 
         # nix
         alejandra
-        rnix-lsp
+        nixd
         nurl
 
         # rust

@@ -3,7 +3,7 @@ local lsp_zero = require("lsp-zero")
 lsp_zero.preset("system-lsp")
 lsp_zero.setup_servers({
 	"tsserver",
-	"rnix",
+	"nixd",
 	"lua_ls",
 })
 lsp_zero.set_preferences({

@@ -19,7 +19,7 @@ with builtins;
         package = jnoortheen.nix-ide;
         settings = {
           "nix.enableLanguageServer" = true;
-          "nix.serverPath" = "${pkgs.rnix-lsp}/bin/rnix-lsp";
+          "nix.serverPath" = "${pkgs.nixd}/bin/nixd";
         };
       }
       {
