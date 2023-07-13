@@ -4,7 +4,6 @@ with builtins;
     programs = [
       "bat"
       "command-not-found"
-      "direnv"
       "info"
     ];
     services = [
