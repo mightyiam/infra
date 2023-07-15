@@ -18,6 +18,7 @@
     }
   ];
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.tmp.cleanOnBoot = true;
   boot.zfs.forceImportRoot = false;
   nix.settings.auto-optimise-store = true;
   users.mutableUsers = false;
