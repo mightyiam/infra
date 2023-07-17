@@ -221,6 +221,7 @@ with builtins;
           (omitPluginInVSCode vim-autoread ''
             autocmd VimEnter * nested WatchForChangesAllFile!
           '')
+          (omitPluginInVSCode unicode-vim "")
         ];
         extraConfig = concatStringsSep "\n" [
           ''
