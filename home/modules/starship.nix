@@ -113,7 +113,7 @@ with builtins;
           when = "[[ -v MOB_TIMER_ROOM ]]";
         };
 
-        # https://starship.rs/presets/#nerd-font-symbols
+        # https://starship.rs/presets/nerd-font.html
         aws.symbol = " ";
         conda.symbol = " ";
         dart.symbol = " ";
@@ -126,10 +126,10 @@ with builtins;
         hg_branch.symbol = " ";
         java.symbol = " ";
         julia.symbol = " ";
-        memory_usage.symbol = " ";
-        nim.symbol = " ";
+        memory_usage.symbol = "󰍛 ";
+        nim.symbol = " ";
         nix_shell.symbol = " ";
-        package.symbol = " ";
+        package.symbol = "󰏗 ";
         perl.symbol = " ";
         php.symbol = " ";
         python.symbol = " ";
