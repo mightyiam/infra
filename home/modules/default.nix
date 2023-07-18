@@ -10,6 +10,7 @@
     ./git.nix
     ./merely-enabled.nix
     ./neovim
+    ./nix.nix
     ./ssh.nix
     ./starship.nix
     ./tealdeer.nix
