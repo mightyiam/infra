@@ -222,6 +222,9 @@ with builtins;
             autocmd VimEnter * nested WatchForChangesAllFile!
           '')
           (omitPluginInVSCode unicode-vim "")
+          (omitPluginInVSCode which-key-nvim (embedLua ''
+            require("which-key").setup {}
+          ''))
         ];
         extraConfig = concatStringsSep "\n" [
           ''
