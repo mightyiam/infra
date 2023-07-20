@@ -2,9 +2,9 @@ require("luafun.fun")()
 local lsp_zero = require("lsp-zero")
 lsp_zero.preset("system-lsp")
 lsp_zero.setup_servers({
-	"tsserver",
-	"nixd",
 	"lua_ls",
+	"nixd",
+	"tsserver",
 })
 lsp_zero.set_preferences({
 	set_lsp_keymaps = false,
