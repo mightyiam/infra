@@ -4,6 +4,7 @@ with builtins;
   in
     with pkgs; {
       tui = [
+        atool
         bandwhich
         du-dust
         fd
