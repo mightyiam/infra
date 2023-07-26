@@ -19,7 +19,7 @@
   ];
   ###
   security.pam.services.swaylock = {};
-  fonts.enableDefaultFonts = false;
+  fonts.enableDefaultPackages = false;
   fonts.fontconfig.defaultFonts.serif = [];
   fonts.fontconfig.defaultFonts.emoji = [];
   fonts.fontconfig.defaultFonts.sansSerif = [];
