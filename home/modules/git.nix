@@ -12,6 +12,7 @@ instance: {config, ...}: {
       };
       push.default = "current";
       safe.bareRepository = "explicit";
+      rebase.instructionFormat = "%d %s";
     };
   };
 }
