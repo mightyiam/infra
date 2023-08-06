@@ -1,10 +1,8 @@
-{pkgs ? import <nixpkgs> {}}:
+let
+  pkgs = import <nixpkgs> {};
+in
 pkgs.mkShell {
-  buildInputs = with pkgs; [
+  packages = with pkgs; [
     alejandra
-    rnix-lsp
-    stylua
-    lua-language-server
-    mob
   ];
 }
