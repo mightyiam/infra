@@ -1,12 +1,12 @@
 instance: {config, ...}: let
   id = "bottom";
-  font = (import ../fonts.nix).bars;
+  font = (import ../../fonts.nix).bars;
 in {
   programs.i3status-rust = {
     enable = true;
     bars = {
       "${id}" = {
-        theme = (import ../gruvbox.nix).i3status-rust;
+        theme = (import ../../gruvbox.nix).i3status-rust;
         icons = "awesome5";
         blocks = [
           {block = "cpu";}

@@ -1,5 +1,5 @@
 instance: let
-  font = (import ../fonts.nix).notifications;
+  font = (import ../../fonts.nix).notifications;
 in {
   services.mako = {
     enable = true;

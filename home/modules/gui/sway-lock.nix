@@ -4,7 +4,7 @@ with builtins;
     config,
     ...
   }: let
-    keyboard = import ../keyboard.nix;
+    keyboard = import ../../keyboard.nix;
     lockCommand = pkgs.swaylock + /bin/swaylock;
     swayMsgPath = config.wayland.windowManager.sway.package + /bin/swaymsg;
   in {

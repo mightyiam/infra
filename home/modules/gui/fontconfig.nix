@@ -5,8 +5,8 @@ with builtins;
     ...
   }: let
     pipe = pkgs.lib.trivial.pipe;
-    monospace = (import ../fonts.nix).monospace;
-    aliases = (import ../fonts.nix).aliases;
+    monospace = (import ../../fonts.nix).monospace;
+    aliases = (import ../../fonts.nix).aliases;
     expandPrefer = family: "<family>${family}</family>";
     expandAlias = {
       family,

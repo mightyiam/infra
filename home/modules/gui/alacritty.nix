@@ -1,6 +1,6 @@
 instance: let
-  style = import ../style.nix;
-  font = (import ../fonts.nix).monospace;
+  style = import ../../style.nix;
+  font = (import ../../fonts.nix).monospace;
 in {
   programs.alacritty = {
     enable = true;
@@ -13,7 +13,7 @@ in {
         color = style.bellColor;
         duration = builtins.ceil style.bellDuration;
       };
-      colors = with (import ../gruvbox.nix).colors; {
+      colors = with (import ../../gruvbox.nix).colors; {
         primary = {
           background = dark0;
           foreground = light1;

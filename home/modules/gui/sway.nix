@@ -5,7 +5,7 @@ with builtins;
     config,
     ...
   }: let
-    keyboard = import ../keyboard.nix;
+    keyboard = import ../../keyboard.nix;
     step = 5;
     pactl = pkgs.pulseaudio + /bin/pactl;
     incVol = d:
@@ -32,7 +32,7 @@ with builtins;
         res = with resolution; "${toString width}x${toString height}@${toString refreshRate}Hz";
         pos = with position; "${toString x} ${toString y}";
         scale = toString scale;
-        background = "${(import ../gruvbox.nix).colors.dark0} solid_color";
+        background = "${(import ../../gruvbox.nix).colors.dark0} solid_color";
       };
     };
     swayMsgPath = config.wayland.windowManager.sway.package + /bin/swaymsg;
@@ -45,7 +45,7 @@ with builtins;
       '';
       config = {
         output = listToAttrs (attrValues (mapAttrs toSwayOutput instance.outputs));
-        fonts.size = (import ../fonts.nix).default.size;
+        fonts.size = (import ../../fonts.nix).default.size;
         input = {
           "type:keyboard" = {
             xkb_layout = "us,il";

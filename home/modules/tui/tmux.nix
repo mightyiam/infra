@@ -1,5 +1,5 @@
 instance: {pkgs, ...}: let
-  keyboard = import ../keyboard.nix;
+  keyboard = import ../../keyboard.nix;
 in {
   programs.tmux = with keyboard; {
     enable = true;

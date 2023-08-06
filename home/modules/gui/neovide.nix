@@ -10,7 +10,7 @@ with builtins;
     last = pkgs.lib.lists.last;
     options = {
       refresh_rate = pipe instance.outputs [attrValues (map (getAttr "refreshRate")) (sort lessThan) last];
-      transparency = (import ../style.nix).windowOpacity;
+      transparency = (import ../../style.nix).windowOpacity;
       cursor_animation_length = 0.08;
       cursor_vfx_mode = "railgun";
       cursor_vfx_particle_density = 20;

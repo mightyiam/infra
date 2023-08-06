@@ -9,8 +9,14 @@ with builtins;
     username = "mightyiam";
     getName = lib.getName;
     packages = (import ./packages.nix) pkgs;
-    modules = import ./modules;
-    activeModules = concatMap (feature: getAttr feature modules) instance.features;
+    activeModules = let
+      featureToModulePaths = feature: let
+        dir = toString ./modules + "/" + feature;
+        relativePaths = attrNames (readDir dir);
+      in
+        map (path: "${dir}/${path}") relativePaths;
+    in
+      concatMap featureToModulePaths instance.features;
   in {
     imports = map (module: import module instance) activeModules;
     home.packages = concatMap (feature: getAttr feature packages) instance.features;

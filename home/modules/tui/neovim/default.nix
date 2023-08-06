@@ -4,7 +4,7 @@ with builtins;
     config,
     ...
   }: let
-    keyboard = import ../../keyboard.nix;
+    keyboard = import ../../../keyboard.nix;
     omitVIMLInVSCode = import ./omitVIMLInVSCode.nix;
     omitPluginInVSCode = import ./omitPluginInVSCode.nix;
     inlineLuaFile = path:
@@ -13,10 +13,10 @@ with builtins;
         (readFile path)
         "EOF\n"
       ];
-    font = (import ../../fonts.nix).monospace;
+    font = (import ../../../fonts.nix).monospace;
     pipe = pkgs.lib.trivial.pipe;
     mkBefore = pkgs.lib.mkBefore;
-    gruvbox = (import ../../gruvbox.nix).vim pkgs;
+    gruvbox = (import ../../../gruvbox.nix).vim pkgs;
     lsp-zero = pkgs.vimUtils.buildVimPlugin rec {
       pname = "lsp-zero";
       version = "072e486271c7068b6732924d47ea0ac9ec55423b";
