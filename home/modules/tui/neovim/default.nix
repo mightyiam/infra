@@ -29,12 +29,12 @@ with builtins;
     };
     vim-autoread = pkgs.vimUtils.buildVimPlugin rec {
       pname = "vim-autoread";
-      version = "7e83d47a71fdafc271005fc39c89863204278c77";
+      version = "24061f84652d768bfb85d222c88580b3af138dab";
       src = pkgs.fetchFromGitHub {
         owner = "djoshea";
         repo = "vim-autoread";
         rev = version;
-        sha256 = "IGgJ/D2AGDtbO+RZk2zd+zO9ZtANsle4QSjsh+VOXpg=";
+        sha256 = "fSADjNt1V9jgAPjxggbh7Nogcxyisi18KaVve8j+c3w=";
       };
     };
     luafun = pkgs.fetchFromGitHub {
