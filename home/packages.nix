@@ -15,6 +15,9 @@ with builtins;
         tokei
         watchexec
 
+        # javascript
+        vscode-langservers-extracted
+
         # nix
         alejandra
         nixd

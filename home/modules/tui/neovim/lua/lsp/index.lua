@@ -2,6 +2,7 @@ require("luafun.fun")()
 local lsp_zero = require("lsp-zero")
 lsp_zero.preset("system-lsp")
 lsp_zero.setup_servers({
+	"eslint",
 	"lua_ls",
 	"nixd",
 	"tsserver",
