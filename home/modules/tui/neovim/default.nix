@@ -259,6 +259,9 @@ with builtins;
             set updatetime=100
             set scrolloff=8
             let g:loaded_perl_provider = 0
+
+            set title
+            set titlestring=\ %{substitute(getcwd(),\ $HOME,\ '~',\ '''''')}
           ''
           (omitVIMLInVSCode ''
             set number
