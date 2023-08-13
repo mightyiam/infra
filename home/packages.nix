@@ -23,6 +23,9 @@ with builtins;
         nixd
         nurl
 
+        # lua
+        lua-language-server
+
         # rust
         rustup
         cargo-watch
