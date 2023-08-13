@@ -9,6 +9,7 @@ in {
       dynamic_title = true;
       live_config_reload = true;
       window.opacity = style.windowOpacity;
+      window.title = "";
       bell = {
         color = style.bellColor;
         duration = builtins.ceil style.bellDuration;
