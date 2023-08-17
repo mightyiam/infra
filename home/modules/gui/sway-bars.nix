@@ -1,4 +1,4 @@
-instance: {config, ...}: let
+instance: {config, pkgs, ...}: let
   id = "bottom";
   font = (import ../../fonts.nix).bars;
 in {
@@ -14,7 +14,7 @@ in {
             format = "󰪛 ";
             json = true;
             command = ''
-            if grep -q 1 /sys/class/leds/input*::capslock/brightness; then
+            if ${pkgs.gnugrep}/bin/grep -q 1 /sys/class/leds/input*::capslock/brightness; then
               echo '{ "state": "Warning" }'
             else
               echo '{}'
