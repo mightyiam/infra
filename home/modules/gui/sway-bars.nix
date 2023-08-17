@@ -26,7 +26,6 @@ in {
           {block = "cpu";}
           {block = "memory";}
           {block = "disk_space";}
-          #{ block = "nvidia_gpu"; }
 
           #{ block = "docker"; }
 
