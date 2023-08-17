@@ -51,7 +51,7 @@ in {
           {
             block = "sound";
             device_kind = "source";
-            format = "$icon";
+            format = "$icon ";
           }
           {
             block = "battery";
