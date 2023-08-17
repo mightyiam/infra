@@ -9,6 +9,20 @@ in {
         theme = (import ../../gruvbox.nix).i3status-rust;
         icons = "awesome5";
         blocks = [
+          {
+            block = "custom";
+            format = "󰪛 ";
+            json = true;
+            command = ''
+            if grep -q 1 /sys/class/leds/input*::capslock/brightness; then
+              echo '{ "state": "Warning" }'
+            else
+              echo '{}'
+            fi
+            '';
+            watch_files = ["/dev/input"];
+            interval = "once";
+          }
           {block = "cpu";}
           {block = "memory";}
           {block = "disk_space";}
