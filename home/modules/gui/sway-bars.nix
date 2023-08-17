@@ -18,11 +18,11 @@ in {
             format = "󰪛 ";
             json = true;
             command = ''
-            if ${pkgs.gnugrep}/bin/grep -q 1 /sys/class/leds/input*::capslock/brightness; then
-              echo '{ "state": "Warning" }'
-            else
-              echo '{}'
-            fi
+              if ${pkgs.gnugrep}/bin/grep -q 1 /sys/class/leds/input*::capslock/brightness; then
+                echo '{ "state": "Warning" }'
+              else
+                echo '{}'
+              fi
             '';
             watch_files = ["/dev/input"];
             interval = "once";
