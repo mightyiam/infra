@@ -1,4 +1,8 @@
-instance: {config, pkgs, ...}: let
+instance: {
+  config,
+  pkgs,
+  ...
+}: let
   id = "bottom";
   font = (import ../../fonts.nix).bars;
 in {
