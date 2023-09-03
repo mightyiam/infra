@@ -11,7 +11,7 @@ with builtins;
         neofetch
         procs
         ripgrep
-        ripgrep-all
+        #ripgrep-all
         tokei
         watchexec
 
