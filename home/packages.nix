@@ -38,12 +38,16 @@ with builtins;
         fontPackages
         [
           anki
+          gh-markdown-preview
+          gimp
           imv
+          inkscape
           pavucontrol
           tor-browser-bundle-bin
           transmission-gtk
           vlc
           wl-clipboard
+          wl-color-picker
           xdg-utils
         ]
       ];
