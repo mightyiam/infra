@@ -64,7 +64,7 @@ in {
   wayland.windowManager.sway.config.bars = [
     {
       statusCommand = "i3status-rs ${config.xdg.configHome}/i3status-rust/config-${id}.toml";
-      trayOutput = instance.trayOutput;
+      trayOutput = "none";
       fonts = {
         names = [font.family];
         style = font.style;

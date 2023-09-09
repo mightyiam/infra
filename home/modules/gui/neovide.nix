@@ -9,7 +9,7 @@ with builtins;
     in "let g:neovide_${name}=${rhs}";
     last = pkgs.lib.lists.last;
     options = {
-      refresh_rate = pipe instance.outputs [attrValues (map (getAttr "refreshRate")) (sort lessThan) last];
+      refresh_rate = 144;
       transparency = (import ../../style.nix).windowOpacity;
       cursor_animation_length = 0.08;
       cursor_vfx_mode = "railgun";

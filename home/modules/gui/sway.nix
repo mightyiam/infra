@@ -19,20 +19,6 @@ with builtins;
       "do ${pactl} set-source-mute \"$source\" toggle;"
       "done'"
     ];
-    toSwayOutput = _: {
-      path,
-      resolution,
-      refreshRate,
-      position,
-      scale,
-      ...
-    }: {
-      name = path;
-      value.res = with resolution; "${toString width}x${toString height}@${toString refreshRate}Hz";
-      value.pos = with position; "${toString x} ${toString y}";
-      value.scale = toString scale;
-      value.background = "${(import ../../gruvbox.nix).colors.dark0} solid_color";
-    };
     swayMsgPath = config.wayland.windowManager.sway.package + /bin/swaymsg;
   in
     lib.attrsets.recursiveUpdate
@@ -42,7 +28,6 @@ with builtins;
       wayland.windowManager.sway.extraSessionCommands = ''
         export MOZ_ENABLE_WAYLAND=1
       '';
-      wayland.windowManager.sway.config.output = listToAttrs (attrValues (mapAttrs toSwayOutput instance.outputs));
       wayland.windowManager.sway.config.fonts.size = (import ../../fonts.nix).default.size;
       wayland.windowManager.sway.config.input."type:keyboard".xkb_layout = "us,il";
       wayland.windowManager.sway.config.input."type:keyboard".xkb_options = "grp:lalt_lshift_toggle";
