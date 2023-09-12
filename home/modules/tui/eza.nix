@@ -1,7 +1,7 @@
 with builtins;
   instance: {pkgs, ...}: let
     l = concatStringsSep " " [
-      "${pkgs.exa}/bin/exa"
+      "${pkgs.eza}/bin/eza"
       "--group"
       "--icons"
       "--git"
@@ -9,7 +9,7 @@ with builtins;
       "--all"
     ];
   in {
-    programs.exa.enable = true;
+    programs.eza.enable = true;
     home.shellAliases = {
       inherit l;
       ll = "${l} --long";
