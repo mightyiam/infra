@@ -43,6 +43,7 @@ with builtins;
           imv
           inkscape
           pavucontrol
+          qpwgraph
           tor-browser-bundle-bin
           transmission-gtk
           vlc
