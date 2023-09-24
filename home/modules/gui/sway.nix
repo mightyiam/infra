@@ -33,6 +33,7 @@ with builtins;
       wayland.windowManager.sway.config.input."type:keyboard".xkb_options = "grp:lalt_lshift_toggle";
       wayland.windowManager.sway.config.input."type:keyboard".repeat_delay = "200";
       wayland.windowManager.sway.config.input."type:keyboard".repeat_rate = "50";
+      wayland.windowManager.sway.config.input."type:touchpad".tap = "enabled";
       wayland.windowManager.sway.config.terminal = "false";
       wayland.windowManager.sway.config.modifier = "Mod4";
     }
