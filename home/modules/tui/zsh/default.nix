@@ -22,4 +22,5 @@ with builtins;
       programs.zsh.initExtraBeforeCompInit = ''
         zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
       '';
+      programs.zsh.shellAliases.nix-shell = "nix-shell --run zsh";
     }
