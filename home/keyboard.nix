@@ -101,6 +101,7 @@ in {
       decrement = "minus";
       increment = "equal";
       toggleMuteSources = "m";
+      sinkRotate = "s";
     };
   };
 }
