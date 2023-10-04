@@ -6,4 +6,3 @@ instance: {
     ".direnv"
   ];
 }
-
