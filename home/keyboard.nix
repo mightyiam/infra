@@ -103,5 +103,10 @@ in {
       toggleMuteSources = "m";
       sinkRotate = "s";
     };
+    screenshot = prefixRec "Shift+" {
+      window = "w";
+      output = "o";
+      region = "r";
+    };
   };
 }
