@@ -6,7 +6,6 @@ with builtins;
     lib,
     ...
   }: let
-    username = "mightyiam";
     getName = lib.getName;
     packages = (import ./packages.nix) pkgs;
     activeModules = let
@@ -27,8 +26,6 @@ with builtins;
       then instance.homeManagerPath
       else null;
 
-    home.username = username;
-    home.homeDirectory = "/home/${username}";
     home.stateVersion = "21.05";
     home.sessionVariables.TZ = "\$(<~/.config/timezone)";
     home.sessionVariables.CACHIX_AUTH_TOKEN = instance.secrets.CACHIX_AUTH_TOKEN;
