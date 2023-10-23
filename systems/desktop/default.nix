@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   security.rtkit.enable = true;
@@ -14,7 +15,11 @@
   #
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [
-    pkgs.xdg-desktop-portal-wlr
+    (pkgs.xdg-desktop-portal-wlr.overrideAttrs (attrs: {
+      postInstall = ''
+        wrapProgram $out/libexec/xdg-desktop-portal-wlr --prefix PATH ":" ${lib.makeBinPath [pkgs.grim pkgs.slurp pkgs.bash]}
+      '';
+    }))
     pkgs.xdg-desktop-portal-gtk
   ];
   ###
