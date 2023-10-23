@@ -8,7 +8,4 @@ in {
     ignoreTimeout = true;
     font = with font; "${family} ${toString size}";
   };
-  wayland.windowManager.sway.config.startup = [
-    {command = "mako";}
-  ];
 }
