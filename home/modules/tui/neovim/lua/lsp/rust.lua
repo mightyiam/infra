@@ -7,7 +7,10 @@ local function setup(lsp_zero)
         },
         inlayHints = {
           maxLength = 99,
-        }
+        },
+        cargo = {
+          features = "all",
+        },
       }
     }
   })
