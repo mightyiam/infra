@@ -5,16 +5,16 @@ instance: {
 }: let
   sink-rotate = pkgs.rustPlatform.buildRustPackage {
     pname = "sink-rotate";
-    version = "1.0.2";
+    version = "1.0.4";
 
     src = pkgs.fetchFromGitHub {
       owner = "mightyiam";
       repo = "sink-rotate";
-      rev = "v1.0.2";
-      hash = "sha256-nNOhQ0l3skF3lbDfE73biT0naUicJemdDsDw464PpLc=";
+      rev = "v1.0.4";
+      hash = "sha256-q20uUr+7yLJlZc5YgEkY125YrZ2cuJrPv5IgWXaYRlo=";
     };
 
-    cargoHash = "sha256-5BW8tfA1cXEdU8KQnA+xkKO0XXFfqwl9ytVighgf7ac=";
+    cargoHash = "sha256-MPeyPTkxpi6iw/BT5m4S7jVBD0c2zG2rsv+UZWQxpUU=";
 
     buildInputs = with pkgs; [pipewire wireplumber];
 
