@@ -4,12 +4,18 @@ with builtins;
     lib,
     ...
   }: let
-    pipe = lib.trivial.pipe;
-    pubkeyAuthHosts = [
-      "github.com"
-      "gitlab.com"
-      "gitlab.freedesktop.org"
-      "teeveera.local"
+    keysPath = ~/.ssh/keys;
+
+    keyFilenames =
+      if builtins.pathExists keysPath
+      then (lib.trivial.pipe keysPath [readDir attrNames])
+      else [];
+
+    isPublicKeyFilename = lib.strings.hasSuffix ".pub";
+
+    pubkeyAuthHosts = lib.trivial.pipe keyFilenames [
+      (builtins.filter (name: !(isPublicKeyFilename name)))
+      (builtins.map (lib.strings.removePrefix "id_"))
     ];
   in {
     programs.ssh = {
@@ -20,12 +26,12 @@ with builtins;
         IdentitiesOnly no
         PubkeyAuthentication no
       '';
-      matchBlocks = pipe pubkeyAuthHosts [
+      matchBlocks = lib.trivial.pipe pubkeyAuthHosts [
         (map (host: {
           name = host;
           value = {
             extraOptions = {PubkeyAuthentication = "yes";};
-            identityFile = toString config.home.homeDirectory + "/.ssh/id_${host}";
+            identityFile = toString config.home.homeDirectory + "/.ssh/keys/id_${host}";
           };
         }))
         listToAttrs
