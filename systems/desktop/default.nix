@@ -14,7 +14,8 @@
   ## Things I'd like configured by home-manager:
   #
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [
+  xdg.portal.wlr.enable = true;
+  xdg.portal.configPackages = [
     (pkgs.xdg-desktop-portal-wlr.overrideAttrs (attrs: {
       postInstall = ''
         wrapProgram $out/libexec/xdg-desktop-portal-wlr --prefix PATH ":" ${lib.makeBinPath [pkgs.grim pkgs.slurp pkgs.bash]}
