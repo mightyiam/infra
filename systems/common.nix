@@ -2,6 +2,7 @@
   imports = [
     /etc/nixos/hardware-configuration.nix
   ];
+  security.sudo-rs.enable = true;
   hardware.opengl.enable = true;
   hardware.bluetooth.enable = true;
   boot.loader.timeout = 4;
