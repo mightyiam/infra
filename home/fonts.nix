@@ -20,8 +20,7 @@
     {
       family = "monospace";
       prefer = [
-        "OpenDyslexicMono"
-        "OpenDyslexicMono Nerd Font"
+        "OpenDyslexicM Nerd Font Mono"
         "Noto Color Emoji"
       ];
     }
