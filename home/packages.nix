@@ -10,6 +10,7 @@ with builtins;
         fd
         neofetch
         procs
+        psmisc
         ripgrep
         #ripgrep-all
         tokei
