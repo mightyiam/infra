@@ -76,7 +76,6 @@ with builtins;
               }
             }
           ''))
-          editorconfig-nvim
           (omitPluginInVSCode lualine-nvim (embedLua ''
             local winbar = {
               lualine_a = {
