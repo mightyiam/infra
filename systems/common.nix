@@ -40,7 +40,7 @@
   programs.neovim.vimAlias = true;
   programs.neovim.defaultEditor = true;
   services.avahi.enable = true;
-  services.avahi.nssmdns = true;
+  services.avahi.nssmdns4 = true;
   services.zfs.autoScrub.enable = true;
   services.zfs.autoScrub.interval = "monthly";
   environment.systemPackages = [pkgs.nvd];
