@@ -76,6 +76,12 @@ with builtins;
               }
             }
           ''))
+          {
+            plugin = guess-indent-nvim;
+            config = embedLua ''
+              require('guess-indent').setup {}
+            '';
+          }
           (omitPluginInVSCode lualine-nvim (embedLua ''
             local winbar = {
               lualine_a = {
