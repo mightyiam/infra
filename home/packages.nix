@@ -33,6 +33,9 @@ with builtins;
         cargo-outdated
         cargo-feature
 
+        # yaml
+        yaml-language-server
+
         mob
       ];
       gui = concatLists [

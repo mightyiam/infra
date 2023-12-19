@@ -6,6 +6,7 @@ lsp_zero.setup_servers({
 	"lua_ls",
 	"nixd",
 	"tsserver",
+	"yamlls",
 })
 lsp_zero.set_preferences({
 	set_lsp_keymaps = false,
