@@ -252,7 +252,13 @@ with builtins;
           '')
           (omitPluginInVSCode unicode-vim "")
           (omitPluginInVSCode which-key-nvim (embedLua ''
-            require("which-key").setup {}
+            local wk = require("which-key")
+            wk.setup({})
+            wk.register({
+              ["<leader>"] = {
+                w = { ":w<cr>", "Write buffer" },
+              },
+            })
           ''))
         ];
         extraConfig = concatStringsSep "\n" [
