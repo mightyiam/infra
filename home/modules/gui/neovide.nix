@@ -19,9 +19,6 @@ with builtins;
     home.packages = [pkgs.neovide];
     programs.neovim.extraConfig = pipe options [(mapAttrs expand) attrValues (concatStringsSep "\n")];
     home.shellAliases = {
-      nv = concatStringsSep " " [
-        "${pkgs.neovide}/bin/neovide"
-        "--multigrid"
-      ];
+      nv = "${pkgs.neovide}/bin/neovide";
     };
   }
