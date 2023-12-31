@@ -102,6 +102,7 @@ with builtins;
                 'diff',
               },
               lualine_y = {
+                '%o',
                 'location',
               },
               lualine_z = {
