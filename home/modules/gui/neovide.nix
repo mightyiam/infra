@@ -17,7 +17,4 @@ with builtins;
   in {
     home.packages = [pkgs.neovide];
     programs.neovim.extraConfig = pipe options [(mapAttrs expand) attrValues (concatStringsSep "\n")];
-    home.shellAliases = {
-      nv = "${pkgs.neovide}/bin/neovide";
-    };
   }
