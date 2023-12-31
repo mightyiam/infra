@@ -9,7 +9,6 @@ instance: {pkgs, ...}: {
       '';
     };
     enable = true;
-    settings.version = "1";
     settings.git_protocol = "ssh";
   };
 }
