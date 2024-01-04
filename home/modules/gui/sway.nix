@@ -89,4 +89,5 @@ with builtins;
       wayland.windowManager.sway.config.keybindings.${volume.decrement} = incVol "-";
       wayland.windowManager.sway.config.keybindings.${volume.increment} = incVol "+";
       wayland.windowManager.sway.config.keybindings.${volume.toggleMuteSources} = toggleMuteSources;
+      xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-wlr];
     })
