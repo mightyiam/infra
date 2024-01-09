@@ -5,9 +5,9 @@ in {
   programs.alacritty = {
     enable = true;
     settings = {
-      decorations = "none";
-      dynamic_title = true;
       live_config_reload = true;
+      window.decorations = "none";
+      window.dynamic_title = true;
       window.opacity = style.windowOpacity;
       window.title = "";
       bell = {
