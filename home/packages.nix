@@ -28,7 +28,6 @@ with builtins;
         lua-language-server
 
         # rust
-        rustup
         cargo-watch
         cargo-outdated
         cargo-feature
