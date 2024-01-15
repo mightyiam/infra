@@ -18,5 +18,6 @@
   fonts.fontconfig.defaultFonts.sansSerif = [];
   fonts.fontconfig.defaultFonts.monospace = [];
   nix.settings.trusted-users = ["root" "mightyiam"];
+  hardware.flipperzero.enable = true;
   system.stateVersion = "21.11";
 }
