@@ -47,6 +47,7 @@ with builtins;
           imv
           inkscape
           pavucontrol
+          qFlipper
           qpwgraph
           tor-browser-bundle-bin
           transmission-gtk
