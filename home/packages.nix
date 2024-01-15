@@ -12,7 +12,7 @@ with builtins;
         procs
         psmisc
         ripgrep
-        #ripgrep-all
+        ripgrep-all
         tokei
         usbutils
         watchexec
