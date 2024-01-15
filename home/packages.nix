@@ -14,6 +14,7 @@ with builtins;
         ripgrep
         #ripgrep-all
         tokei
+        usbutils
         watchexec
 
         # javascript
