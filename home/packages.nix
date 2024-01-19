@@ -24,6 +24,7 @@ with builtins;
         alejandra
         nixd
         nurl
+        comma
 
         # lua
         lua-language-server
