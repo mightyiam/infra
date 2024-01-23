@@ -36,7 +36,6 @@ with builtins;
 
       home.stateVersion = "21.05";
       home.sessionVariables.TZ = "\$(<~/.config/timezone)";
-      home.sessionVariables.CACHIX_AUTH_TOKEN = instance.secrets.CACHIX_AUTH_TOKEN;
     };
   in
     lib.attrsets.recursiveUpdate always userAndHome
