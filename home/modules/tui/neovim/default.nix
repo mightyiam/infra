@@ -43,6 +43,19 @@ with builtins;
       rev = "0.1.3";
       sha256 = "aOriC7VD29XzchvLOfmySNDR1MtO1xrqHYABRMaDoJo=";
     };
+
+    lsp-inlayhints-nvim = pkgs.vimUtils.buildVimPlugin rec {
+      pname = "lsp-inlayhints.nvim";
+      version = "d981f65c9ae0b6062176f0accb9c151daeda6f16";
+      src = pkgs.fetchFromGitHub {
+        owner = "lvimuser";
+        repo = "lsp-inlayhints.nvim";
+        rev = version;
+        sha256 = "sha256-06CiJ+xeMO4+OJkckcslqwloJyt2gwg514JuxV6KOfQ=";
+      };
+      meta.homepage = "https://github.com/lvimuser/lsp-inlayhints.nvim/";
+    };
+
     embedLua = lua: ''
       lua << EOF
       ${lua}EOF
@@ -58,6 +71,9 @@ with builtins;
         vimdiffAlias = true;
         plugins = with pkgs.vimPlugins; [
           (omitPluginInVSCode gruvbox.plugin gruvbox.config)
+          (omitPluginInVSCode which-key-nvim (embedLua ''
+            require("which-key").setup {}
+          ''))
           (omitPluginInVSCode vim-nix "")
           {
             plugin = vim-easymotion;
@@ -168,7 +184,69 @@ with builtins;
           '')
           (omitPluginInVSCode vim-gitgutter "")
           (omitPluginInVSCode nvim-lspconfig "")
-          (omitPluginInVSCode rust-tools-nvim "")
+          (omitPluginInVSCode rustaceanvim (embedLua ''
+            vim.g.rustaceanvim = {
+              tools = {
+              },
+              server = {
+                on_attach = function(client, bufnr)
+                  require("lsp-inlayhints").on_attach(client, bufnr)
+                  require("which-key").register({
+                    ["<leader>"] = {
+                      a = {
+                        function()
+                          vim.cmd.RustLsp('codeAction')
+                        end,
+                        "Rust "
+                      },
+                      p = {
+                        "<CMD>RustParentModule<CR>",
+                        "go to parent module",
+                      },
+                    },
+                  })
+                end,
+                settings = {
+                  ['rust-analyzer'] = {
+                    checkOnSave = {
+                      command = "clippy"
+                    },
+                    inlayHints = {
+                      maxLength = 99,
+                    },
+                    cargo = {
+                      features = "all",
+                    },
+                  },
+                },
+              },
+              dap = {
+              },
+            }
+          ''))
+          (omitPluginInVSCode lsp-inlayhints-nvim (embedLua ''
+            require("lsp-inlayhints").setup()
+
+            require("which-key").register({
+              ["<leader>"] = {
+                h = {
+                  name = "inlay hints",
+                  t = {
+                    function()
+                      require('lsp-inlayhints').toggle()
+                    end,
+                    "toggle"
+                  },
+                  r = {
+                    function()
+                      require('lsp-inlayhints').reset()
+                    end,
+                    "reset",
+                  },
+                }
+              },
+            })
+          ''))
           (omitPluginInVSCode cmp-nvim-lsp "")
           (omitPluginInVSCode nvim-cmp "")
           (omitPluginInVSCode luasnip "")
@@ -252,9 +330,6 @@ with builtins;
             autocmd VimEnter * nested WatchForChangesAllFile!
           '')
           (omitPluginInVSCode unicode-vim "")
-          (omitPluginInVSCode which-key-nvim (embedLua ''
-            require("which-key").setup {}
-          ''))
           (omitPluginInVSCode nvim-spectre (embedLua ''
             require('spectre').setup()
             local wk = require('which-key')

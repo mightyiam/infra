@@ -15,4 +15,3 @@ lsp_zero.set_preferences({
 require("lsp.lua")(lsp_zero)
 
 lsp_zero.setup()
-require("lsp.rust")(lsp_zero)
