@@ -192,12 +192,12 @@ with builtins;
                 on_attach = function(client, bufnr)
                   require("lsp-inlayhints").on_attach(client, bufnr)
                   require("which-key").register({
-                    ["<leader>"] = {
+                    ["<space>"] = {
                       a = {
                         function()
                           vim.cmd.RustLsp('codeAction')
                         end,
-                        "Rust "
+                        "code action"
                       },
                       p = {
                         "<CMD>RustParentModule<CR>",
