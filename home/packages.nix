@@ -4,6 +4,7 @@ with builtins;
   in
     with pkgs; {
       tui = [
+        ansifilter
         atool
         bandwhich
         du-dust
