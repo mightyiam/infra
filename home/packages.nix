@@ -10,6 +10,7 @@ with builtins;
         du-dust
         fd
         neofetch
+        pciutils
         procs
         psmisc
         ripgrep
