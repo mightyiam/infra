@@ -93,6 +93,42 @@ with builtins;
             }
           ''))
           {
+            plugin = comment-nvim;
+            config = embedLua ''
+              require('Comment').setup({
+                mappings = { basic = false, extra = false },
+              })
+
+              require("which-key").register({
+                ["<leader>c" ] = {
+                  name = "comment",
+                  l = {
+                    "<Plug>(comment_toggle_linewise)",
+                    "toggle line linewise",
+                  },
+                  b = {
+                    "<Plug>(comment_toggle_blockwise)",
+                    "toggle line blockwise",
+                  },
+                },
+              })
+
+              require("which-key").register({
+                ["<leader>c"] = {
+                  name = "comment",
+                  l = {
+                    "<Plug>(comment_toggle_linewise_visual)",
+                    "toggle region linewise"
+                  },
+                  b = {
+                    "<Plug>(comment_toggle_blockwise_visual)",
+                    "toggle region blockwise"
+                  },
+                },
+              }, { mode = "v" })
+            '';
+          }
+          {
             plugin = guess-indent-nvim;
             config = embedLua ''
               require('guess-indent').setup {}
