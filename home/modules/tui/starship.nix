@@ -32,6 +32,7 @@ with builtins;
           "$cmake"
           "$dart"
           "$deno"
+          "$direnv"
           "$dotnet"
           "$elixir"
           "$elm"
@@ -88,6 +89,7 @@ with builtins;
           truncation_length = 0;
           format = "[ : $path]($style)[$read_only]($read_only_style) ";
         };
+        direnv.disabled = false;
         shell.disabled = false;
         shlvl = {
           disabled = false;
