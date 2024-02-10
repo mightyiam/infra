@@ -1,5 +1,4 @@
 instance: {...}: {
-  home.sessionVariables.CACHIX_AUTH_TOKEN = instance.secrets.CACHIX_AUTH_TOKEN;
   nix.settings.substituters = [
     "https://cache.nixos.org"
     "https://nix-community.cachix.org"
