@@ -236,7 +236,7 @@ with builtins;
                         "code action"
                       },
                       p = {
-                        "<CMD>RustParentModule<CR>",
+                        "<CMD>RustLsp parentModule<CR>",
                         "go to parent module",
                       },
                     },
