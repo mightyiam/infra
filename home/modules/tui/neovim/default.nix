@@ -397,7 +397,7 @@ with builtins;
             vnoremap ${text.indent} >gv
             set clipboard+=unnamedplus
             set updatetime=100
-            set scrolloff=8
+            set scrolloff=0
             let g:loaded_perl_provider = 0
 
             set title
