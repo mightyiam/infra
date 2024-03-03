@@ -5,4 +5,5 @@ instance: {
     ".envrc"
     ".direnv"
   ];
+  programs.direnv.config.warn_timeout = 0;
 }
