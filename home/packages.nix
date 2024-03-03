@@ -9,6 +9,7 @@ with builtins;
         bandwhich
         du-dust
         fd
+        gh-dash
         neofetch
         pciutils
         procs
