@@ -4,7 +4,7 @@ with builtins;
   in
     {pkgs, ...}: {
       programs.zsh.enable = true;
-      programs.zsh.enableAutosuggestions = true;
+      programs.zsh.autosuggestion.enable = true;
       programs.zsh.enableCompletion = true;
       programs.zsh.enableVteIntegration = true;
       programs.zsh.autocd = true;
