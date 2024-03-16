@@ -9,6 +9,7 @@ with builtins;
         bandwhich
         du-dust
         fd
+        git-instafix
         gh-dash
         neofetch
         pciutils
