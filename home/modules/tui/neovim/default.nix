@@ -93,6 +93,12 @@ with builtins;
             }
           ''))
           {
+            plugin = nvim-surround;
+            config = embedLua ''
+              require('nvim-surround').setup()
+            '';
+          }
+          {
             plugin = comment-nvim;
             config = embedLua ''
               require('Comment').setup({
