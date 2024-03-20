@@ -11,6 +11,7 @@ with builtins;
         fd
         git-instafix
         gh-dash
+        lsof
         neofetch
         pciutils
         procs
