@@ -9,8 +9,8 @@ with builtins;
         bandwhich
         du-dust
         fd
-        git-instafix
         gh-dash
+        git-instafix
         lsof
         neofetch
         pciutils
