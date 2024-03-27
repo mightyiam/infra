@@ -19,6 +19,7 @@ with builtins;
         ripgrep
         ripgrep-all
         tokei
+        unzip
         usbutils
         watchexec
 
