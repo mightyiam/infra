@@ -1,4 +1,4 @@
-secrets: {
+{
   config,
   pkgs,
   lib,
@@ -6,7 +6,6 @@ secrets: {
 }: let
   home = import ../home/home.nix;
   instance = {
-    inherit secrets;
     features = ["tui"];
   };
 in {
