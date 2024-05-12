@@ -1,6 +1,6 @@
-instance: let
+{config, ...}: let
 in {
-  services.wlsunset = with instance.location; {
+  services.wlsunset = with config.location; {
     enable = true;
     latitude = toString latitude;
     longitude = toString longitude;

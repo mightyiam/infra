@@ -1,4 +1,4 @@
-instance: {
+{
   programs.firefox.enable = true;
   programs.firefox.profiles.primary.id = 0;
   programs.firefox.profiles.primary.settings."toolkit.legacyUserProfileCustomizations.stylesheets" = true;

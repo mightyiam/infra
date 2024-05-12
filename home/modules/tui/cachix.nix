@@ -1,4 +1,4 @@
-instance: {...}: {
+{...}: {
   nix.settings.substituters = [
     "https://cache.nixos.org"
     "https://nix-community.cachix.org"

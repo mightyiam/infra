@@ -1,4 +1,4 @@
-instance: let
+let
   style = import ../../style.nix;
   font = (import ../../fonts.nix).monospace;
 in {

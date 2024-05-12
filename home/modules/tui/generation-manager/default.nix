@@ -1,4 +1,4 @@
-instance: {pkgs, ...}: let
+{pkgs, ...}: let
   generation-manager = pkgs.rustPlatform.buildRustPackage {
     pname = "generation-manager";
     version = "1.0.0";

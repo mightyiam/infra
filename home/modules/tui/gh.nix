@@ -1,4 +1,4 @@
-instance: {pkgs, ...}: {
+{pkgs, ...}: {
   programs.gh = {
     package = pkgs.symlinkJoin {
       name = pkgs.gh.name;

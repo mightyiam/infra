@@ -1,4 +1,4 @@
-instance: {
+{
   pkgs,
   config,
   ...

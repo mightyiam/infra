@@ -1,5 +1,5 @@
 with builtins;
-  instance: {pkgs, ...}: let
+  {pkgs, ...}: let
     pipe = pkgs.lib.trivial.pipe;
     web_browser = ["firefox.desktop"];
     browser_types = [

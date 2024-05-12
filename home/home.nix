@@ -1,20 +1,24 @@
 with builtins;
-  instance: {
+  {
     config,
     pkgs,
     options,
     lib,
     ...
   }: let
+    inherit
+      (lib)
+      mkIf
+      mkOption
+      types
+      ;
+
     username = "mightyiam";
     getName = lib.getName;
-    userAndHome =
-      if (instance ? "nix-on-droid")
-      then {}
-      else {
-        home.username = username;
-        home.homeDirectory = "/home/${username}";
-      };
+    userAndHome.config = mkIf (!config.isNixOnDroid) {
+      home.username = username;
+      home.homeDirectory = "/home/${username}";
+    };
     packages = (import ./packages.nix) pkgs;
     activeModules = let
       featureToModulePaths = feature: let
@@ -23,19 +27,30 @@ with builtins;
       in
         map (path: "${dir}/${path}") relativePaths;
     in
-      concatMap featureToModulePaths instance.features;
+      concatMap featureToModulePaths ["gui" "tui"];
     always = {
-      imports = map (module: import module instance) activeModules;
-      home.packages = concatMap (feature: getAttr feature packages) instance.features;
+      imports = activeModules;
 
-      programs.home-manager.enable = true;
-      programs.home-manager.path =
-        if instance ? homeManagerPath
-        then instance.homeManagerPath
-        else null;
+      config.home.packages = concatMap (feature: getAttr feature packages) ["gui" "tui"];
 
-      home.stateVersion = "21.05";
-      home.sessionVariables.TZ = "\$(<~/.config/timezone)";
+      config.programs.home-manager.enable = true;
+
+      config.home.stateVersion = "21.05";
+      config.home.sessionVariables.TZ = "\$(<~/.config/timezone)";
     };
-  in
-    lib.attrsets.recursiveUpdate always userAndHome
+  in {
+    options.location.latitude = mkOption {
+      type = types.numbers.between (-90) 90;
+    };
+
+    options.location.longitude = mkOption {
+      type = types.numbers.between (-180) 180;
+    };
+
+    options.isNixOnDroid = mkOption {
+      type = types.bool;
+      default = false;
+    };
+
+    imports = [always userAndHome];
+  }

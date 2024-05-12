@@ -1,5 +1,5 @@
 with builtins;
-  instance: {pkgs, ...}: let
+  {pkgs, ...}: let
     l = concatStringsSep " " [
       "${pkgs.eza}/bin/eza"
       "--group"

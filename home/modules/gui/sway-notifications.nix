@@ -1,4 +1,4 @@
-instance: {pkgs, ...}: let
+{pkgs, ...}: let
   font = (import ../../fonts.nix).notifications;
   mode = "screen-capture";
 in {

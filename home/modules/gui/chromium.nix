@@ -1,4 +1,4 @@
-instance: {
+{
   programs.chromium = {
     enable = true;
     extensions = [

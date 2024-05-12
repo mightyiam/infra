@@ -1,4 +1,4 @@
-instance: {pkgs, ...}: let
+{pkgs, ...}: let
   keyboard = import ../../keyboard.nix;
 in {
   programs.tmux = with keyboard; {
