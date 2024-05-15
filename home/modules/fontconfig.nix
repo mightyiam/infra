@@ -2,11 +2,17 @@ with builtins;
   {
     pkgs,
     config,
+    lib,
     ...
   }: let
+    inherit
+      (lib)
+      mkIf
+      ;
+
     pipe = pkgs.lib.trivial.pipe;
-    monospace = (import ../../fonts.nix).monospace;
-    aliases = (import ../../fonts.nix).aliases;
+    monospace = (import ../fonts.nix).monospace;
+    aliases = (import ../fonts.nix).aliases;
     expandPrefer = family: "<family>${family}</family>";
     expandAlias = {
       family,
@@ -32,9 +38,10 @@ with builtins;
         ''
           </fontconfig>''
       ];
-  in {
-    fonts.fontconfig.enable = true;
-    home.file."${config.xdg.configHome}/fontconfig/fonts.conf" = {
-      text = fontsConf {inherit aliases;};
-    };
-  }
+  in
+    mkIf config.gui.enable {
+      fonts.fontconfig.enable = true;
+      home.file."${config.xdg.configHome}/fontconfig/fonts.conf" = {
+        text = fontsConf {inherit aliases;};
+      };
+    }

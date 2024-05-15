@@ -1,5 +1,15 @@
 with builtins;
-  {pkgs, ...}: let
+  {
+    pkgs,
+    config,
+    lib,
+    ...
+  }: let
+    inherit
+      (lib)
+      mkIf
+      ;
+
     pipe = pkgs.lib.trivial.pipe;
     web_browser = ["firefox.desktop"];
     browser_types = [
@@ -20,18 +30,19 @@ with builtins;
       value = web_browser;
     };
     browser_entries = pipe browser_types [(map type_to_browser_entry) listToAttrs];
-  in {
-    xdg = {
-      enable = true;
-      mime.enable = true;
-      mimeApps = {
+  in
+    mkIf config.gui.enable {
+      xdg = {
         enable = true;
-        defaultApplications =
-          browser_entries
-          // {
-            "image/png" = image;
-            "x-scheme-handler/magnet" = "transmission-gtk";
-          };
+        mime.enable = true;
+        mimeApps = {
+          enable = true;
+          defaultApplications =
+            browser_entries
+            // {
+              "image/png" = image;
+              "x-scheme-handler/magnet" = "transmission-gtk";
+            };
+        };
       };
-    };
-  }
+    }

@@ -20,16 +20,13 @@ with builtins;
       home.homeDirectory = "/home/${username}";
     };
     packages = (import ./packages.nix) pkgs;
-    activeModules = let
-      featureToModulePaths = feature: let
-        dir = toString ./modules + "/" + feature;
-        relativePaths = attrNames (readDir dir);
-      in
-        map (path: "${dir}/${path}") relativePaths;
+    modules = let
+      dir = "${../.}/home/modules";
+      relativePaths = attrNames (readDir dir);
     in
-      concatMap featureToModulePaths ["gui" "tui"];
+      map (path: "${dir}/${path}") relativePaths;
     always = {
-      imports = activeModules;
+      imports = modules;
 
       config.home.packages = concatMap (feature: getAttr feature packages) ["gui" "tui"];
 
@@ -39,6 +36,11 @@ with builtins;
       config.home.sessionVariables.TZ = "\$(<~/.config/timezone)";
     };
   in {
+    options.gui.enable = mkOption {
+      type = types.bool;
+      default = true;
+    };
+
     options.location.latitude = mkOption {
       type = types.numbers.between (-90) 90;
     };

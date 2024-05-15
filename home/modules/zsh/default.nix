@@ -1,5 +1,5 @@
 with builtins; let
-  gruvbox = import ../../../gruvbox.nix;
+  gruvbox = import ../../gruvbox.nix;
 in
   {pkgs, ...}: {
     programs.zsh.enable = true;
