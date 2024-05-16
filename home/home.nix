@@ -1,6 +1,5 @@
 {
   config,
-  pkgs,
   lib,
   ...
 }: let
@@ -12,8 +11,6 @@
   inherit
     (lib)
     attrNames
-    concatMap
-    getAttr
     mkIf
     mkOption
     types
@@ -24,7 +21,6 @@
     home.username = username;
     home.homeDirectory = "/home/${username}";
   };
-  packages = (import ./packages.nix) pkgs;
   modules = let
     dir = "${../.}/home/modules";
     relativePaths = attrNames (readDir dir);
@@ -32,8 +28,6 @@
     map (path: "${dir}/${path}") relativePaths;
   always = {
     imports = modules;
-
-    config.home.packages = concatMap (feature: getAttr feature packages) ["gui" "tui"];
 
     config.programs.home-manager.enable = true;
 

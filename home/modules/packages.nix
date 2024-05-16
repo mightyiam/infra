@@ -1,11 +1,15 @@
-{lib, ...} @ pkgs: let
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
   inherit
     (lib)
     concatLists
+    optionals
     ;
 
-  fontPackages = (import ./fonts.nix).packages pkgs;
-in {
   tui = with pkgs; [
     ansifilter
     atool
@@ -50,6 +54,9 @@ in {
 
     mob
   ];
+
+  fontPackages = (import ../fonts.nix).packages pkgs;
+
   gui = concatLists [
     fontPackages
     (with pkgs; [
@@ -67,5 +74,10 @@ in {
       wl-color-picker
       xdg-utils
     ])
+  ];
+in {
+  home.packages = concatLists [
+    tui
+    (optionals config.gui.enable gui)
   ];
 }
