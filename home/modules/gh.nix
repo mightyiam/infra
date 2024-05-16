@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   programs.gh = {
     package = pkgs.symlinkJoin {
-      name = pkgs.gh.name;
+      inherit (pkgs.gh) name;
       paths = [pkgs.gh];
       buildInputs = [pkgs.makeWrapper];
       postBuild = ''

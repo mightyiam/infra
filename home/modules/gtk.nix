@@ -13,6 +13,6 @@ in
   mkIf config.gui.enable {
     gtk.font = {
       name = font.family;
-      size = font.size;
+      inherit (font) size;
     };
   }

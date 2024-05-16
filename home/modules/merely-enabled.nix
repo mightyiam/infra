@@ -6,9 +6,9 @@
   inherit
     (lib)
     listToAttrs
+    pipe
     ;
 
-  pipe = pkgs.lib.trivial.pipe;
   programs = [
     "bat"
     "command-not-found"

@@ -6,12 +6,12 @@
 }: let
   inherit
     (lib)
+    foldr
+    mergeAttrs
     mkIf
+    pipe
     ;
 
-  pipe = lib.trivial.pipe;
-  foldr = lib.lists.foldr;
-  mergeAttrs = lib.trivial.mergeAttrs;
   settings = {
     "editor.cursorSmoothCaretAnimation" = true;
     "editor.unicodeHighlight.ambiguousCharacters" = false;

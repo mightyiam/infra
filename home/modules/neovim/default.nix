@@ -11,6 +11,8 @@
   inherit
     (lib)
     concatStringsSep
+    mkBefore
+    pipe
     readFile
     ;
 
@@ -29,8 +31,6 @@
       "EOF\n"
     ];
   font = (import ../../fonts.nix).monospace;
-  pipe = pkgs.lib.trivial.pipe;
-  mkBefore = pkgs.lib.mkBefore;
   gruvbox = (import ../../gruvbox.nix).vim pkgs;
   lsp-zero = pkgs.vimUtils.buildVimPlugin rec {
     pname = "lsp-zero";

@@ -8,10 +8,10 @@
     (lib)
     concatStringsSep
     mkIf
+    pipe
     ;
 
-  pipe = pkgs.lib.trivial.pipe;
-  aliases = (import ../fonts.nix).aliases;
+  inherit (import ../fonts.nix) aliases;
   expandPrefer = family: "<family>${family}</family>";
   expandAlias = {
     family,

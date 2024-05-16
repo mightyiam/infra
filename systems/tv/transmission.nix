@@ -7,7 +7,7 @@
   incompleteDir = "${media.dir}/.transmission-incomplete";
 in {
   services.transmission = {
-    group = media.group;
+    inherit (media) group;
     enable = true;
     settings = {
       download-dir = media.dir;

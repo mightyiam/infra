@@ -11,9 +11,9 @@
     isString
     mapAttrs
     mkIf
+    pipe
     ;
 
-  pipe = pkgs.lib.trivial.pipe;
   expand = name: value: let
     rhs =
       if isString value

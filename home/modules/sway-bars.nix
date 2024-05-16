@@ -75,8 +75,7 @@ in
         trayOutput = "none";
         fonts = {
           names = [font.family];
-          style = font.style;
-          size = font.size;
+          inherit (font) style size;
         };
       }
     ];

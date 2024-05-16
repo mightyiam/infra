@@ -8,9 +8,9 @@
     (lib)
     listToAttrs
     mkIf
+    pipe
     ;
 
-  pipe = pkgs.lib.trivial.pipe;
   web_browser = ["firefox.desktop"];
   browser_types = [
     "x-scheme-handler/http"
