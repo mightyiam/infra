@@ -1,13 +1,16 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  inherit (pkgs) gh makeWrapper;
+in {
   programs.gh = {
-    package = pkgs.symlinkJoin {
-      inherit (pkgs.gh) name;
-      paths = [pkgs.gh];
-      buildInputs = [pkgs.makeWrapper];
-      postBuild = ''
-        wrapProgram $out/bin/gh --unset GITHUB_TOKEN
-      '';
-    };
+    package = gh.overrideAttrs (oldAttrs: {
+      buildInputs = oldAttrs.buildInputs or [] ++ [makeWrapper];
+      postInstall =
+        oldAttrs.postInstall
+        or ""
+        + ''
+          wrapProgram $out/bin/gh --unset GITHUB_TOKEN
+        '';
+    });
     enable = true;
     settings.git_protocol = "ssh";
   };
