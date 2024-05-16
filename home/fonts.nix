@@ -37,12 +37,4 @@
       ];
     }
   ];
-  packages = pkgs:
-    with pkgs; [
-      open-dyslexic
-      (nerdfonts.override {fonts = ["OpenDyslexic"];})
-      font-awesome
-      noto-fonts
-      noto-fonts-emoji
-    ];
 }

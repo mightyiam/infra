@@ -55,10 +55,8 @@
     mob
   ];
 
-  fontPackages = (import ../fonts.nix).packages pkgs;
-
   gui = concatLists [
-    fontPackages
+    config.fonts.packages
     (with pkgs; [
       anki
       gh-markdown-preview

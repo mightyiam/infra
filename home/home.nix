@@ -1,5 +1,6 @@
 {
   config,
+  pkgs,
   lib,
   ...
 }: let
@@ -66,6 +67,17 @@ in {
   options.style.bellDuration = mkOption {
     type = types.numbers.between 0 1000;
     default = 200.0;
+  };
+
+  options.fonts.packages = mkOption {
+    type = types.listOf types.package;
+    default = with pkgs; [
+      open-dyslexic
+      (nerdfonts.override {fonts = ["OpenDyslexic"];})
+      font-awesome
+      noto-fonts
+      noto-fonts-emoji
+    ];
   };
 
   imports = [always userAndHome];
