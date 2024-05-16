@@ -14,7 +14,7 @@
     listToAttrs
     ;
 
-  keysPath = ~/.ssh/keys;
+  keysPath = "${config.home.homeDirectory}/.ssh/keys";
 
   keyFilenames =
     if builtins.pathExists keysPath
