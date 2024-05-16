@@ -86,7 +86,7 @@ in {
   };
 
   options.gui.fonts.default.size = mkOption {
-    type = types.numbers.positive;
+    type = types.float;
     default = 10.0;
   };
 
@@ -96,7 +96,7 @@ in {
   };
 
   options.gui.fonts.monospace.size = mkOption {
-    type = types.numbers.positive;
+    type = types.float;
     default = 10.0;
   };
 
