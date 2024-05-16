@@ -1,4 +1,9 @@
-with builtins; let
+let
+  inherit
+    (builtins)
+    concatStringsSep
+    ;
+
   omitVIMLInVSCode = import ./omitVIMLInVSCode.nix;
 in
   plugin: config: {

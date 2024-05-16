@@ -1,40 +1,50 @@
-with builtins;
-  {
-    config,
-    lib,
-    ...
-  }: let
-    keysPath = ~/.ssh/keys;
+{
+  config,
+  lib,
+  ...
+}: let
+  inherit
+    (builtins)
+    readDir
+    ;
 
-    keyFilenames =
-      if builtins.pathExists keysPath
-      then (lib.trivial.pipe keysPath [readDir attrNames])
-      else [];
+  inherit
+    (lib)
+    attrNames
+    listToAttrs
+    ;
 
-    isPublicKeyFilename = lib.strings.hasSuffix ".pub";
+  keysPath = ~/.ssh/keys;
 
-    pubkeyAuthHosts = lib.trivial.pipe keyFilenames [
-      (builtins.filter (name: !(isPublicKeyFilename name)))
-      (builtins.map (lib.strings.removePrefix "id_"))
+  keyFilenames =
+    if builtins.pathExists keysPath
+    then (lib.trivial.pipe keysPath [readDir attrNames])
+    else [];
+
+  isPublicKeyFilename = lib.strings.hasSuffix ".pub";
+
+  pubkeyAuthHosts = lib.trivial.pipe keyFilenames [
+    (builtins.filter (name: !(isPublicKeyFilename name)))
+    (builtins.map (lib.strings.removePrefix "id_"))
+  ];
+in {
+  programs.ssh = {
+    enable = true;
+    compression = true;
+    hashKnownHosts = false;
+    extraConfig = ''
+      IdentitiesOnly no
+      PubkeyAuthentication no
+    '';
+    matchBlocks = lib.trivial.pipe pubkeyAuthHosts [
+      (map (host: {
+        name = host;
+        value = {
+          extraOptions = {PubkeyAuthentication = "yes";};
+          identityFile = toString config.home.homeDirectory + "/.ssh/keys/id_${host}";
+        };
+      }))
+      listToAttrs
     ];
-  in {
-    programs.ssh = {
-      enable = true;
-      compression = true;
-      hashKnownHosts = false;
-      extraConfig = ''
-        IdentitiesOnly no
-        PubkeyAuthentication no
-      '';
-      matchBlocks = lib.trivial.pipe pubkeyAuthHosts [
-        (map (host: {
-          name = host;
-          value = {
-            extraOptions = {PubkeyAuthentication = "yes";};
-            identityFile = toString config.home.homeDirectory + "/.ssh/keys/id_${host}";
-          };
-        }))
-        listToAttrs
-      ];
-    };
-  }
+  };
+}

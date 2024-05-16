@@ -1,4 +1,10 @@
-with builtins; let
+let
+  inherit
+    (builtins)
+    isAttrs
+    mapAttrs
+    ;
+
   split = {
     h = "h";
     v = "v";

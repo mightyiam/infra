@@ -1,4 +1,9 @@
-with builtins;
+let
+  inherit
+    (builtins)
+    concatStringsSep
+    ;
+in
   viml:
     concatStringsSep "\n" [
       "if !exists('g:vscode')"

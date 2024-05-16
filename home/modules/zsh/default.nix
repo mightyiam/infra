@@ -1,4 +1,9 @@
-with builtins; let
+let
+  inherit
+    (builtins)
+    readFile
+    ;
+
   gruvbox = import ../../gruvbox.nix;
 in
   {pkgs, ...}: {

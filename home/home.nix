@@ -1,58 +1,65 @@
-with builtins;
-  {
-    config,
-    pkgs,
-    options,
-    lib,
-    ...
-  }: let
-    inherit
-      (lib)
-      mkIf
-      mkOption
-      types
-      ;
+{
+  config,
+  pkgs,
+  options,
+  lib,
+  ...
+}: let
+  inherit
+    (builtins)
+    readDir
+    ;
 
-    username = "mightyiam";
-    getName = lib.getName;
-    userAndHome.config = mkIf (!config.isNixOnDroid) {
-      home.username = username;
-      home.homeDirectory = "/home/${username}";
-    };
-    packages = (import ./packages.nix) pkgs;
-    modules = let
-      dir = "${../.}/home/modules";
-      relativePaths = attrNames (readDir dir);
-    in
-      map (path: "${dir}/${path}") relativePaths;
-    always = {
-      imports = modules;
+  inherit
+    (lib)
+    attrNames
+    concatMap
+    getAttr
+    mkIf
+    mkOption
+    types
+    ;
 
-      config.home.packages = concatMap (feature: getAttr feature packages) ["gui" "tui"];
+  username = "mightyiam";
+  getName = lib.getName;
+  userAndHome.config = mkIf (!config.isNixOnDroid) {
+    home.username = username;
+    home.homeDirectory = "/home/${username}";
+  };
+  packages = (import ./packages.nix) pkgs;
+  modules = let
+    dir = "${../.}/home/modules";
+    relativePaths = attrNames (readDir dir);
+  in
+    map (path: "${dir}/${path}") relativePaths;
+  always = {
+    imports = modules;
 
-      config.programs.home-manager.enable = true;
+    config.home.packages = concatMap (feature: getAttr feature packages) ["gui" "tui"];
 
-      config.home.stateVersion = "21.05";
-      config.home.sessionVariables.TZ = "\$(<~/.config/timezone)";
-    };
-  in {
-    options.gui.enable = mkOption {
-      type = types.bool;
-      default = true;
-    };
+    config.programs.home-manager.enable = true;
 
-    options.location.latitude = mkOption {
-      type = types.numbers.between (-90) 90;
-    };
+    config.home.stateVersion = "21.05";
+    config.home.sessionVariables.TZ = "\$(<~/.config/timezone)";
+  };
+in {
+  options.gui.enable = mkOption {
+    type = types.bool;
+    default = true;
+  };
 
-    options.location.longitude = mkOption {
-      type = types.numbers.between (-180) 180;
-    };
+  options.location.latitude = mkOption {
+    type = types.numbers.between (-90) 90;
+  };
 
-    options.isNixOnDroid = mkOption {
-      type = types.bool;
-      default = false;
-    };
+  options.location.longitude = mkOption {
+    type = types.numbers.between (-180) 180;
+  };
 
-    imports = [always userAndHome];
-  }
+  options.isNixOnDroid = mkOption {
+    type = types.bool;
+    default = false;
+  };
+
+  imports = [always userAndHome];
+}

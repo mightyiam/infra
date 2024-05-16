@@ -1,66 +1,69 @@
-with builtins;
-  pkgs: let
-    fontPackages = (import ./fonts.nix).packages pkgs;
-  in
-    with pkgs; {
-      tui = [
-        ansifilter
-        atool
-        bandwhich
-        du-dust
-        fd
-        gh-dash
-        git-instafix
-        lsof
-        neofetch
-        pciutils
-        procs
-        psmisc
-        ripgrep
-        ripgrep-all
-        tokei
-        unzip
-        usbutils
-        watchexec
+{lib, ...} @ pkgs: let
+  inherit
+    (lib)
+    concatLists
+    ;
 
-        # javascript
-        vscode-langservers-extracted
+  fontPackages = (import ./fonts.nix).packages pkgs;
+in {
+  tui = with pkgs; [
+    ansifilter
+    atool
+    bandwhich
+    du-dust
+    fd
+    gh-dash
+    git-instafix
+    lsof
+    neofetch
+    pciutils
+    procs
+    psmisc
+    ripgrep
+    ripgrep-all
+    tokei
+    unzip
+    usbutils
+    watchexec
 
-        # nix
-        alejandra
-        nixd
-        nurl
-        comma
+    # javascript
+    vscode-langservers-extracted
 
-        # lua
-        lua-language-server
+    # nix
+    alejandra
+    nixd
+    nurl
+    comma
 
-        # rust
-        cargo-watch
-        cargo-outdated
-        cargo-feature
+    # lua
+    lua-language-server
 
-        # yaml
-        yaml-language-server
+    # rust
+    cargo-watch
+    cargo-outdated
+    cargo-feature
 
-        mob
-      ];
-      gui = concatLists [
-        fontPackages
-        [
-          anki
-          gh-markdown-preview
-          gimp
-          imv
-          inkscape
-          pavucontrol
-          qpwgraph
-          tor-browser-bundle-bin
-          transmission-gtk
-          vlc
-          wl-clipboard
-          wl-color-picker
-          xdg-utils
-        ]
-      ];
-    }
+    # yaml
+    yaml-language-server
+
+    mob
+  ];
+  gui = concatLists [
+    fontPackages
+    (with pkgs; [
+      anki
+      gh-markdown-preview
+      gimp
+      imv
+      inkscape
+      pavucontrol
+      qpwgraph
+      tor-browser-bundle-bin
+      transmission-gtk
+      vlc
+      wl-clipboard
+      wl-color-picker
+      xdg-utils
+    ])
+  ];
+}

@@ -1,4 +1,9 @@
-with builtins; {
+let
+  inherit
+    (builtins)
+    concatStringsSep
+    ;
+in {
   programs.starship = {
     enable = true;
     enableBashIntegration = true;
