@@ -10,7 +10,6 @@
     ;
 
   id = "bottom";
-  font = (import ../fonts.nix).bars;
 in
   mkIf config.gui.enable {
     programs.i3status-rust = {
@@ -74,8 +73,9 @@ in
         statusCommand = "i3status-rs ${config.xdg.configHome}/i3status-rust/config-${id}.toml";
         trayOutput = "none";
         fonts = {
-          names = [font.family];
-          inherit (font) style size;
+          names = ["monospace"];
+          size = 12.0;
+          style = "Bold";
         };
       }
     ];

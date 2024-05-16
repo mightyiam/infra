@@ -11,11 +11,6 @@
     family = "sans-serif";
     size = 12.0;
   };
-  bars = {
-    family = "monospace";
-    style = "Bold";
-    size = 12.0;
-  };
   aliases = [
     {
       family = "monospace";
