@@ -35,6 +35,7 @@ in {
     nurl
     comma
     statix
+    nix-diff
 
     # lua
     lua-language-server
