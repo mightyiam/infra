@@ -20,7 +20,6 @@
       then "\"${value}\""
       else toString value;
   in "let g:neovide_${name}=${rhs}";
-  last = pkgs.lib.lists.last;
   options = {
     transparency = (import ../style.nix).windowOpacity;
     cursor_animation_length = 0.08;

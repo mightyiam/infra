@@ -5,10 +5,6 @@ let
     mapAttrs
     ;
 
-  split = {
-    h = "h";
-    v = "v";
-  };
   directions = {
     left = "h";
     down = "j";

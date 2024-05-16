@@ -20,7 +20,6 @@
     ;
 
   username = "mightyiam";
-  getName = lib.getName;
   userAndHome.config = mkIf (!config.isNixOnDroid) {
     home.username = username;
     home.homeDirectory = "/home/${username}";

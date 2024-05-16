@@ -1,6 +1,5 @@
 {
   pkgs,
-  config,
   lib,
   ...
 }: let
@@ -12,7 +11,6 @@
   inherit
     (lib)
     concatStringsSep
-    mkFile
     readFile
     ;
 

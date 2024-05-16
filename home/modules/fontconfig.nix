@@ -11,7 +11,6 @@
     ;
 
   pipe = pkgs.lib.trivial.pipe;
-  monospace = (import ../fonts.nix).monospace;
   aliases = (import ../fonts.nix).aliases;
   expandPrefer = family: "<family>${family}</family>";
   expandAlias = {

@@ -11,7 +11,6 @@ in {
     settings = let
       pink = "#FFC0CB";
       vertical = "[║](${pink})";
-      sep = "sep";
     in {
       add_newline = false;
       ## https://starship.rs/config/#prompt
