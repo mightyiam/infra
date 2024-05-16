@@ -8,7 +8,6 @@
     mkIf
     ;
 
-  style = import ../style.nix;
   font = (import ../fonts.nix).monospace;
 in
   mkIf config.gui.enable {
@@ -21,8 +20,8 @@ in
         window.opacity = config.style.windowOpacity;
         window.title = "";
         bell = {
-          color = style.bellColor;
-          duration = builtins.ceil style.bellDuration;
+          color = config.style.bellColor;
+          duration = builtins.ceil config.style.bellDuration;
         };
         colors = with (import ../gruvbox.nix).colors; {
           primary = {
