@@ -18,7 +18,7 @@ in
         live_config_reload = true;
         window.decorations = "none";
         window.dynamic_title = true;
-        window.opacity = style.windowOpacity;
+        window.opacity = config.style.windowOpacity;
         window.title = "";
         bell = {
           color = style.bellColor;

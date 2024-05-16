@@ -21,7 +21,7 @@
       else toString value;
   in "let g:neovide_${name}=${rhs}";
   options = {
-    transparency = (import ../style.nix).windowOpacity;
+    transparency = config.style.windowOpacity;
     cursor_animation_length = 0.08;
     cursor_vfx_mode = "railgun";
     cursor_vfx_particle_density = 20;

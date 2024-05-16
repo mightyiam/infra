@@ -53,5 +53,10 @@ in {
     default = false;
   };
 
+  options.style.windowOpacity = mkOption {
+    type = types.numbers.between 0 1.0;
+    default = 1.0;
+  };
+
   imports = [always userAndHome];
 }
