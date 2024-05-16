@@ -1,7 +1,4 @@
-{
-  config,
-  ...
-}: let
+{config, ...}: let
   media = import ./media.nix;
   incompleteDir = "${media.dir}/.transmission-incomplete";
 in {
