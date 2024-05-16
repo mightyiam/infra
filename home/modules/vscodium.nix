@@ -12,6 +12,11 @@
     pipe
     ;
 
+  inherit
+    (pkgs)
+    vscode-extensions
+    ;
+
   settings = {
     "editor.cursorSmoothCaretAnimation" = true;
     "editor.unicodeHighlight.ambiguousCharacters" = false;
@@ -19,22 +24,22 @@
     "workbench.list.smoothScrolling" = true;
     "diffEditor.renderSideBySide" = false;
   };
-  extensions = with pkgs.vscode-extensions; [
+  extensions = [
     {
-      package = jnoortheen.nix-ide;
+      package = vscode-extensions.jnoortheen.nix-ide;
       settings = {
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "${pkgs.nixd}/bin/nixd";
       };
     }
     {
-      package = asvetliakov.vscode-neovim;
+      package = vscode-extensions.asvetliakov.vscode-neovim;
       settings = {
         "vscode-neovim.neovimExecutablePaths.linux" = "${pkgs.neovim}/bin/nvim";
       };
     }
     {
-      package = dbaeumer.vscode-eslint;
+      package = vscode-extensions.dbaeumer.vscode-eslint;
       settings = {};
     }
   ];
