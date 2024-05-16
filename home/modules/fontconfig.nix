@@ -10,7 +10,6 @@
     pipe
     ;
 
-  inherit (import ../fonts.nix) aliases;
   expandPrefer = family: "<family>${family}</family>";
   expandAlias = {
     family,
@@ -40,6 +39,6 @@ in
   mkIf config.gui.enable {
     fonts.fontconfig.enable = true;
     home.file."${config.xdg.configHome}/fontconfig/fonts.conf" = {
-      text = fontsConf {inherit aliases;};
+      text = fontsConf {inherit (config.gui.fonts) aliases;};
     };
   }

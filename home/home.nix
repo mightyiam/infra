@@ -100,5 +100,39 @@ in {
     default = 10.0;
   };
 
+  options.gui.fonts.aliases = mkOption {
+    type = types.listOf (types.submodule {
+      options.family = mkOption {
+        type = types.str;
+      };
+
+      options.prefer = mkOption {
+        type = types.listOf types.str;
+      };
+    });
+
+    default = [
+      {
+        family = "monospace";
+        prefer = [
+          "OpenDyslexicM Nerd Font Mono"
+          "Noto Color Emoji"
+        ];
+      }
+      {
+        family = "sans-serif";
+        prefer = [
+          "OpenDyslexic"
+        ];
+      }
+      {
+        family = "serif";
+        prefer = [
+          "OpenDyslexic"
+        ];
+      }
+    ];
+  };
+
   imports = [always userAndHome];
 }
