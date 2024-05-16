@@ -69,7 +69,7 @@ in {
     default = 200.0;
   };
 
-  options.fonts.packages = mkOption {
+  options.gui.fonts.packages = mkOption {
     type = types.listOf types.package;
     default = with pkgs; [
       open-dyslexic

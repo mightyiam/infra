@@ -56,7 +56,7 @@
   ];
 
   gui = concatLists [
-    config.fonts.packages
+    config.gui.fonts.packages
     (with pkgs; [
       anki
       gh-markdown-preview
