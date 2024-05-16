@@ -7,10 +7,6 @@
     family = "monospace";
     size = 10.0;
   };
-  notifications = {
-    family = "sans-serif";
-    size = 12.0;
-  };
   aliases = [
     {
       family = "monospace";

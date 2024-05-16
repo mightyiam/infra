@@ -9,7 +9,6 @@
     mkIf
     ;
 
-  font = (import ../fonts.nix).notifications;
   mode = "screen-capture";
 in
   mkIf config.gui.enable {
@@ -18,7 +17,7 @@ in
       anchor = "top-right";
       defaultTimeout = 3000;
       ignoreTimeout = true;
-      font = with font; "${family} ${toString size}";
+      font = "sans-serif 12.0";
       extraConfig = ''
         [mode=${mode}]
         invisible=1
