@@ -32,7 +32,7 @@ in
     wayland.windowManager.sway.extraSessionCommands = ''
       export MOZ_ENABLE_WAYLAND=1
     '';
-    wayland.windowManager.sway.config.fonts.size = (import ../fonts.nix).default.size;
+    wayland.windowManager.sway.config.fonts.size = config.gui.fonts.default.size;
     wayland.windowManager.sway.config.input."type:keyboard".xkb_layout = "us,il";
     wayland.windowManager.sway.config.input."type:keyboard".xkb_options = "grp:lalt_lshift_toggle";
     wayland.windowManager.sway.config.input."type:keyboard".repeat_delay = "200";

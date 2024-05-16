@@ -1,5 +1,6 @@
 {
   pkgs,
+  config,
   lib,
   ...
 }: let
@@ -30,7 +31,6 @@
       (readFile path)
       "EOF\n"
     ];
-  font = (import ../../fonts.nix).monospace;
   gruvbox = (import ../../gruvbox.nix).vim pkgs;
   lsp-zero = pkgs.vimUtils.buildVimPlugin rec {
     pname = "lsp-zero";
@@ -425,7 +425,7 @@ in {
       ''
       (omitVIMLInVSCode ''
         set number
-        set guifont=monospace:h${pipe font.size [floor toString]}
+        set guifont=monospace:h${pipe config.gui.fonts.monospace.size [floor toString]}
       '')
       (omitVIMLInVSCode "lua require('lsp.index')\n")
     ];

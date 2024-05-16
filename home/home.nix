@@ -80,5 +80,25 @@ in {
     ];
   };
 
+  options.gui.fonts.default.family = mkOption {
+    type = types.str;
+    default = "sans-serif";
+  };
+
+  options.gui.fonts.default.size = mkOption {
+    type = types.numbers.positive;
+    default = 10.0;
+  };
+
+  options.gui.fonts.monospace.family = mkOption {
+    type = types.str;
+    default = "monospace";
+  };
+
+  options.gui.fonts.monospace.size = mkOption {
+    type = types.numbers.positive;
+    default = 10.0;
+  };
+
   imports = [always userAndHome];
 }

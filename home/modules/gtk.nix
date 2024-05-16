@@ -7,12 +7,10 @@
     (lib)
     mkIf
     ;
-
-  font = (import ../fonts.nix).default;
 in
   mkIf config.gui.enable {
     gtk.font = {
-      name = font.family;
-      inherit (font) size;
+      name = config.gui.fonts.default.family;
+      size = config.gui.fonts.default.size;
     };
   }

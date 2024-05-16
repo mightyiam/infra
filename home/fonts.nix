@@ -1,12 +1,4 @@
 {
-  default = {
-    family = "sans-serif";
-    size = 10.0;
-  };
-  monospace = {
-    family = "monospace";
-    size = 10.0;
-  };
   aliases = [
     {
       family = "monospace";
