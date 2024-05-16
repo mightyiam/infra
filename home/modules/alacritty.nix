@@ -7,8 +7,6 @@
     (lib)
     mkIf
     ;
-
-  font = (import ../fonts.nix).monospace;
 in
   mkIf config.gui.enable {
     programs.alacritty = {
