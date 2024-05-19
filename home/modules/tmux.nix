@@ -1,5 +1,5 @@
-let
-  keyboard = import ../keyboard.nix;
+{config, ...}: let
+  inherit (config) keyboard;
 in {
   programs.tmux = {
     enable = true;

@@ -9,7 +9,7 @@
     mkIf
     ;
 
-  keyboard = import ../keyboard.nix;
+  inherit (config) keyboard;
   lockCommand = pkgs.swaylock + /bin/swaylock;
   swayMsgPath = config.wayland.windowManager.sway.package + /bin/swaymsg;
 in

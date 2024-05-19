@@ -22,7 +22,7 @@
     vimPlugins
     ;
 
-  keyboard = import ../../keyboard.nix;
+  inherit (config) keyboard;
   omitVIMLInVSCode = import ./omitVIMLInVSCode.nix;
   omitPluginInVSCode = import ./omitPluginInVSCode.nix;
   inlineLuaFile = path:

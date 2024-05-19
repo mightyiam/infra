@@ -10,7 +10,7 @@
     mkIf
     ;
 
-  keyboard = import ../keyboard.nix;
+  inherit (config) keyboard;
   step = 5;
   pactl = pkgs.pulseaudio + /bin/pactl;
   incVol = d:

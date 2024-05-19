@@ -9,7 +9,7 @@
     mkIf
     ;
 
-  keyboard = import ../keyboard.nix;
+  inherit (config) keyboard;
   shotman = "${pkgs.shotman}/bin/shotman --capture";
 in
   mkIf config.gui.enable {
