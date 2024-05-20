@@ -15,8 +15,9 @@
 in
   mkIf config.gui.enable {
     wayland.windowManager.sway.config.keybindings."${keyboard.wm.lock}" = "exec ${lockCommand}";
+    programs.swaylock.enable = true;
     programs.swaylock.settings.daemonize = true;
-    #programs.swaylock.catppuccin.enable = true;
+    programs.swaylock.catppuccin.enable = true;
     programs.swaylock.settings.show-keyboard-layout = true;
     programs.swaylock.settings.indicator-caps-lock = true;
     programs.swaylock.settings.indicator-radius = 200;
