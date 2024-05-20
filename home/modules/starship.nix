@@ -6,17 +6,17 @@ let
 in {
   programs.starship = {
     enable = true;
+    catppuccin.enable = true;
     enableBashIntegration = true;
     enableZshIntegration = true;
     settings = let
-      pink = "#FFC0CB";
-      vertical = "[║](${pink})";
+      vertical = "║";
     in {
       add_newline = false;
       ## https://starship.rs/config/#prompt
       format = concatStringsSep "" [
         "\n"
-        "[╓](bold ${pink})"
+        "[╓](bold)"
         "$fill"
         "\n"
         vertical
@@ -80,13 +80,13 @@ in {
         "\n"
         vertical
         "$status"
-        "[ $shell](bold ${pink})"
+        "[ $shell](bold)"
         "$shlvl"
         "$character"
       ];
       fill = {
         symbol = "─";
-        style = "bold ${pink}";
+        style = "bold";
       };
       directory = {
         truncation_length = 0;

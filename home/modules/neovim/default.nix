@@ -31,7 +31,6 @@
       (readFile path)
       "EOF\n"
     ];
-  gruvbox = (import ../../gruvbox.nix).vim pkgs;
   lsp-zero = pkgs.vimUtils.buildVimPlugin rec {
     pname = "lsp-zero";
     version = "072e486271c7068b6732924d47ea0ac9ec55423b";
@@ -81,10 +80,10 @@ in {
       vim.cmd [[let mapleader = "${keyboard.leader}"]]'';
   programs.neovim = {
     enable = true;
+    catppuccin.enable = true;
     vimAlias = true;
     vimdiffAlias = true;
     plugins = [
-      (omitPluginInVSCode gruvbox.plugin gruvbox.config)
       (omitPluginInVSCode vimPlugins.which-key-nvim (embedLua ''
         require("which-key").setup {}
       ''))

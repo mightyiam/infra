@@ -59,11 +59,6 @@ in {
     default = 1.0;
   };
 
-  options.style.bellColor = mkOption {
-    type = types.str;
-    default = "#000000";
-  };
-
   options.style.bellDuration = mkOption {
     type = types.numbers.between 0 1000;
     default = 200.0;
@@ -134,5 +129,9 @@ in {
     ];
   };
 
-  imports = [always userAndHome];
+  imports = [
+    <catppuccin/modules/home-manager>
+    always
+    userAndHome
+  ];
 }

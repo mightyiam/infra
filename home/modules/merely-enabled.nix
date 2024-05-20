@@ -6,7 +6,6 @@
     ;
 
   programs = [
-    "bat"
     "command-not-found"
     "info"
   ];

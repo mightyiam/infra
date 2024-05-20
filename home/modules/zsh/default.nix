@@ -4,9 +4,9 @@ let
     readFile
     ;
 
-  gruvbox = import ../../gruvbox.nix;
 in {
   programs.zsh.enable = true;
+  programs.zsh.syntaxHighlighting.catppuccin.enable = true;
   programs.zsh.autosuggestion.enable = true;
   programs.zsh.enableCompletion = true;
   programs.zsh.enableVteIntegration = true;
@@ -15,7 +15,6 @@ in {
   programs.zsh.history.ignorePatterns = ["rm *"];
   programs.zsh.initExtraFirst = readFile ./tmux-init.sh;
   programs.zsh.initExtra = ''
-    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=${gruvbox.colors.light4}"
     bindkey '^P' up-history
     bindkey '^N' down-history
     bindkey '^w' backward-kill-word

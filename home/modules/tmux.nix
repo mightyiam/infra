@@ -3,6 +3,7 @@
 in {
   programs.tmux = {
     enable = true;
+    catppuccin.enable = true;
     inherit (keyboard) keyMode;
     shortcut = keyboard.terminalMultiplexerEscape;
     customPaneNavigationAndResize = true;

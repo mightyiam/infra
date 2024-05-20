@@ -4,5 +4,6 @@
     settings = {
       rate = 400;
     };
+    catppuccin.enable = true;
   };
 }

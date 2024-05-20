@@ -13,4 +13,5 @@ in
       name = config.gui.fonts.default.family;
       size = config.gui.fonts.default.size;
     };
+    gtk.catppuccin.enable = true;
   }
