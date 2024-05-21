@@ -130,7 +130,6 @@ in {
   };
 
   imports = [
-    <catppuccin/modules/home-manager>
     always
     userAndHome
   ];
