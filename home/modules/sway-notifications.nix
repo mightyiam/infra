@@ -22,7 +22,6 @@ in
         [mode=${mode}]
         invisible=1
       '';
-      catppuccin.enable = true;
     };
     xdg.configFile."xdg-desktop-portal-wlr/config".text = ''
       [screencast]

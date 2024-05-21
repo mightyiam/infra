@@ -6,7 +6,6 @@ let
 in {
   programs.starship = {
     enable = true;
-    catppuccin.enable = true;
     enableBashIntegration = true;
     enableZshIntegration = true;
     settings = let

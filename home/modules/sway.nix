@@ -28,7 +28,6 @@
 in
   mkIf config.gui.enable {
     wayland.windowManager.sway.enable = true;
-    wayland.windowManager.sway.catppuccin.enable = true;
     wayland.windowManager.sway.wrapperFeatures.gtk = true;
     wayland.windowManager.sway.extraSessionCommands = ''
       export MOZ_ENABLE_WAYLAND=1

@@ -6,7 +6,6 @@ let
 
 in {
   programs.zsh.enable = true;
-  programs.zsh.syntaxHighlighting.catppuccin.enable = true;
   programs.zsh.autosuggestion.enable = true;
   programs.zsh.enableCompletion = true;
   programs.zsh.enableVteIntegration = true;

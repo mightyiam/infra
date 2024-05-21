@@ -80,7 +80,6 @@ in {
       vim.cmd [[let mapleader = "${keyboard.leader}"]]'';
   programs.neovim = {
     enable = true;
-    catppuccin.enable = true;
     vimAlias = true;
     vimdiffAlias = true;
     plugins = [

@@ -21,6 +21,5 @@ in
           duration = builtins.ceil config.style.bellDuration;
         };
       };
-      catppuccin.enable = true;
     };
   }
