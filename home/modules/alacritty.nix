@@ -19,6 +19,7 @@ in
         window.title = "";
         bell = {
           duration = builtins.ceil config.style.bellDuration;
+          color = "#000000";
         };
       };
     };
