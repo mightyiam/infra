@@ -72,4 +72,7 @@
   services.zfs.autoScrub.enable = true;
   services.zfs.autoScrub.interval = "monthly";
   environment.systemPackages = [pkgs.nvd];
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = ["mightyiam"];
+  hardware.enableRedistributableFirmware = true;
 }
