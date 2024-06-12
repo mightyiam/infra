@@ -34,10 +34,10 @@
   boot.tmp.cleanOnBoot = true;
   boot.zfs.forceImportRoot = false;
   nix.settings.auto-optimise-store = true;
-  users.mutableUsers = false;
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
   users.users.mightyiam.isNormalUser = true;
+  users.users.mightyiam.initialPassword = "";
   users.users.mightyiam.extraGroups = [
     "wheel"
     "audio"
