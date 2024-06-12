@@ -3,9 +3,6 @@
   lib,
   ...
 }: {
-  imports = [
-    /etc/nixos/hardware-configuration.nix
-  ];
   boot.initrd.preDeviceCommands = let
     message = ''
       If found, please contact:
