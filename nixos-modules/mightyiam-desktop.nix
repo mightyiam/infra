@@ -1,6 +1,7 @@
 {
   imports = [
     ./common.nix
+    ./steam.nix
   ];
 
   nixpkgs.hostPlatform = "x86_64-linux";
