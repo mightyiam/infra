@@ -3,6 +3,9 @@
   lib,
   ...
 }: {
+  imports = [
+    ./flakes.nix
+  ];
   security.rtkit.enable = true;
   networking.networkmanager.enable = true;
   services.pipewire.enable = true;
