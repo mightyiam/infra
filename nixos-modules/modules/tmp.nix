@@ -1,0 +1,3 @@
+{
+  boot.tmp.cleanOnBoot = true;
+}

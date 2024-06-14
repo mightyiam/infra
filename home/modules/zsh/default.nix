@@ -3,7 +3,6 @@ let
     (builtins)
     readFile
     ;
-
 in {
   programs.zsh.enable = true;
   programs.zsh.autosuggestion.enable = true;
