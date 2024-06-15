@@ -1,0 +1,3 @@
+{
+  boot.kernelModules = ["kvm-amd"];
+}
