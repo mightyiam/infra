@@ -16,6 +16,6 @@
     #   };
     # }
     # ```
-    nixosModules.mightyiam-desktop.modules = [./nixos-modules/hosts/mightyiam-desktop];
+    nixosModules.mightyiam-desktop.imports = [./nixos-modules/hosts/mightyiam-desktop];
   };
 }
