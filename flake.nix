@@ -1,23 +1,43 @@
 {
-  outputs = {...}: {
+  outputs = {self, ...}: {
     # Usage:
     # ```nix
-    # {
-    #   inputs.nixconfigs.url = "path:/home/mightyiam/src/nixconfigs";
-    #   outputs = {
-    #     nixpkgs,
-    #     nixconfigs,
-    #     ...
-    #   }: let
-    #     inherit (nixpkgs.lib) nixosSystem;
-    #   in {
-    #     nixosConfigurations.mightyiam-desktop = nixosSystem {
-    #       modules = [nixconfigs.nixosModules.mightyiam-desktop];
-    #     };
+    # inputs.nixconfigs.url = "path:/home/mightyiam/src/nixconfigs";
+    # inputs.catppuccin.url = "github:catppuccin/nix";
+    # inputs.home-manager.url = "github:nix-community/home-manager";
+    # inputs.nixpkgs.url = "nixpkgs/nixpkgs-unstable";
+    # inputs.home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    # outputs = {
+    #   catppuccin,
+    #   nixpkgs,
+    #   nixconfigs,
+    #   home-manager,
+    #   ...
+    # }: let
+    #   inherit (nixpkgs.lib) nixosSystem;
+    # in {
+    #   nixosConfigurations.mightyiam-desktop = nixosSystem {
+    #     modules = [
+    #       nixconfigs.nixosModules.mightyiam-desktop
+    #       home-manager.nixosModules.home-manager
+    #       {home-manager.users.mightyiam.imports = [catppuccin.homeManagerModules.catppuccin];}
+    #       {
+    #         home-manager.users.mightyiam.location.latitude = 18.7;
+    #         home-manager.users.mightyiam.location.longitude = 99.0;
+    #       }
+    #     ];
     #   };
-    # }
+    # };
     # ```
-    nixosModules.mightyiam-desktop.imports = [./nixos-modules/hosts/mightyiam-desktop];
+    nixosModules.mightyiam-desktop.imports = [
+      ./nixos-modules/hosts/mightyiam-desktop
+      ({lib, ...}: {
+        options.self = lib.mkOption {
+          type = lib.types.anything;
+          default = self;
+        };
+      })
+    ];
     # Usage:
     # ```nix
     # {

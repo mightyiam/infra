@@ -9,6 +9,7 @@
     "fonts.nix"
     "grub.nix"
     "home-related-hacks.nix"
+    "home.nix"
     "networking.nix"
     "nix.nix"
     "opengl.nix"
