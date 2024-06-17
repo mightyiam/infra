@@ -10,9 +10,10 @@
     #     ...
     #   }: let
     #     inherit (nixpkgs.lib) nixosSystem;
-    #     inherit (nixconfigs.nixosModules) mightyiam-desktop;
     #   in {
-    #     nixosConfigurations.mightyiam-desktop = nixosSystem mightyiam-desktop;
+    #     nixosConfigurations.mightyiam-desktop = nixosSystem {
+    #       modules = [nixconfigs.nixosModules.mightyiam-desktop];
+    #     };
     #   };
     # }
     # ```
