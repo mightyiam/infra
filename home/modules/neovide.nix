@@ -4,22 +4,9 @@
   pkgs,
   ...
 }: let
-  inherit
-    (lib)
-    attrValues
-    concatStringsSep
-    isString
-    mapAttrs
-    mkIf
-    pipe
-    ;
+  inherit (lib) mkIf;
+  inherit (pkgs.writers) writeTOML;
 
-  expand = name: value: let
-    rhs =
-      if isString value
-      then "\"${value}\""
-      else toString value;
-  in "let g:neovide_${name}=${rhs}";
   options = {
     transparency = config.style.windowOpacity;
     cursor_animation_length = 0.08;
@@ -29,6 +16,5 @@
 in
   mkIf config.gui.enable {
     home.packages = [pkgs.neovide];
-    programs.neovim.extraConfig = pipe options [(mapAttrs expand) attrValues (concatStringsSep "\n")];
-    xdg.configFile."neovide/neovide.toml".source = pkgs.writers.writeTOML "neovide.toml" {};
+    xdg.configFile."neovide/config.toml".source = writeTOML "neovide/config.toml" options;
   }
