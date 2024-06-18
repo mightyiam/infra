@@ -22,12 +22,9 @@
       imports = [
         ./nixos-modules/hosts/mightyiam-desktop
         home-manager.nixosModules.home-manager
-        ({lib, ...}: {
-          options.self = lib.mkOption {
-            type = lib.types.anything;
-            default = self;
-          };
-        })
+        {
+          home-manager.users.mightyiam.imports = [self.homeManagerModules.mightyiam];
+        }
       ];
     };
 
