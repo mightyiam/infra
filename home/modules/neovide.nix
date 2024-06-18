@@ -12,6 +12,7 @@
     cursor_animation_length = 0.08;
     cursor_vfx_mode = "railgun";
     cursor_vfx_particle_density = 20;
+    fork = true;
   };
 in
   mkIf config.gui.enable {
