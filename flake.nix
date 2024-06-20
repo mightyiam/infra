@@ -1,63 +1,82 @@
 {
-  inputs.nixpkgs.url = "nixpkgs/nixpkgs-unstable";
-  inputs.home-manager.url = "github:nix-community/home-manager";
-  inputs.home-manager.inputs.nixpkgs.follows = "nixpkgs";
-  inputs.catppuccin.url = "github:catppuccin/nix";
-  outputs = {
-    nixpkgs,
-    self,
-    catppuccin,
-    home-manager,
-    ...
-  }: let
-    pkgs = nixpkgs.legacyPackages.x86_64-linux;
-
-    evalExample = path: let
-      flake = import path;
-    in
-      assert flake.inputs.nixconfigs.url == "github:mightyiam/nixconfigs";
-        flake.outputs {nixconfigs = self;};
-  in {
-    nixosModules.mightyiam-desktop = {
-      imports = [
-        ./nixos-modules/hosts/mightyiam-desktop
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.users.mightyiam.imports = [self.homeManagerModules.mightyiam];
-        }
-      ];
-    };
-
-    homeManagerModules.mightyiam = {
-      imports = [
-        catppuccin.homeManagerModules.catppuccin
-        ./home/home.nix
-      ];
-    };
-
-    checks.x86_64-linux.home =
-      (evalExample examples/home/flake.nix)
-      .homeManagerConfigurations
-      .mightyiam
-      .config
-      .home
-      .activationPackage;
-
-    checks.x86_64-linux."host/mightyiam-desktop" =
-      (evalExample ./examples/hosts/mightyiam-desktop/flake.nix)
-      .nixosConfigurations
-      .mightyiam-desktop
-      .config
-      .system
-      .build
-      .toplevel;
-
-    devShells.x86_64-linux.default = pkgs.mkShell {
-      packages = [
-        (pkgs.writeShellScriptBin "check" ''
-          nix flake check --no-write-lock-file
-        '')
-      ];
-    };
+  inputs = {
+    nixpkgs.url = "nixpkgs/nixpkgs-unstable";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
+    devshell.url = "github:numtide/devshell";
+    devshell.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    catppuccin.url = "github:catppuccin/nix";
   };
+  outputs = inputs @ {
+    self,
+    flake-parts,
+    ...
+  }:
+    flake-parts.lib.mkFlake {inherit inputs;} {
+      imports = [
+        inputs.devshell.flakeModule
+      ];
+
+      flake = {
+        nixosModules.mightyiam-desktop = {
+          imports = [
+            ./nixos-modules/hosts/mightyiam-desktop
+            inputs.home-manager.nixosModules.home-manager
+            {
+              home-manager.users.mightyiam.imports = [self.homeManagerModules.mightyiam];
+            }
+          ];
+        };
+
+        homeManagerModules.mightyiam = {
+          imports = [
+            inputs.catppuccin.homeManagerModules.catppuccin
+            ./home/home.nix
+          ];
+        };
+      };
+
+      systems = [
+        "x86_64-linux"
+      ];
+
+      perSystem = {
+        checks = let
+          evalExample = path: let
+            flake = import path;
+          in
+            assert flake.inputs.nixconfigs.url == "github:mightyiam/nixconfigs";
+              flake.outputs {nixconfigs = self;};
+        in {
+          home =
+            (evalExample examples/home/flake.nix)
+            .homeManagerConfigurations
+            .mightyiam
+            .config
+            .home
+            .activationPackage;
+
+          "host/mightyiam-desktop" =
+            (evalExample ./examples/hosts/mightyiam-desktop/flake.nix)
+            .nixosConfigurations
+            .mightyiam-desktop
+            .config
+            .system
+            .build
+            .toplevel;
+        };
+
+        devshells.default = {
+          commands = [
+            {
+              help = "flake check that doesn't write lock file";
+              name = "check";
+              command = "nix flake check --no-write-lock-file";
+            }
+          ];
+        };
+      };
+    };
 }
