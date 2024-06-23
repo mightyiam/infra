@@ -30,6 +30,16 @@
           ];
         };
 
+        nixosModules.ganoderma = {
+          imports = [
+            ./nixos-modules/hosts/ganoderma
+            inputs.home-manager.nixosModules.home-manager
+            {
+              home-manager.users.mightyiam.imports = [self.homeManagerModules.mightyiam];
+            }
+          ];
+        };
+
         homeManagerModules.mightyiam = {
           imports = [
             inputs.catppuccin.homeManagerModules.catppuccin
@@ -62,6 +72,15 @@
             (evalExample ./examples/hosts/mightyiam-desktop/flake.nix)
             .nixosConfigurations
             .mightyiam-desktop
+            .config
+            .system
+            .build
+            .toplevel;
+
+          "host/ganoderma" =
+            (evalExample ./examples/hosts/ganoderma/flake.nix)
+            .nixosConfigurations
+            .ganoderma
             .config
             .system
             .build
