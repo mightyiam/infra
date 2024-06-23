@@ -12,7 +12,7 @@
     "home.nix"
     "networking.nix"
     "nix.nix"
-    "opengl.nix"
+    "graphics.nix"
     "pipewire.nix"
     "printing.nix"
     "service-discovery.nix"
