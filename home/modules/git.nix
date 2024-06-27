@@ -12,7 +12,7 @@
     #difftastic.display = "inline";
     extraConfig = {
       init = {
-        defaultBranch = "master";
+        defaultBranch = "main";
       };
       push.default = "current";
       safe.bareRepository = "explicit";
