@@ -66,7 +66,7 @@
       pavucontrol
       qpwgraph
       tor-browser-bundle-bin
-      transmission-gtk
+      transmission_4-gtk
       vlc
       wl-clipboard
       wl-color-picker
