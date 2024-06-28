@@ -1,0 +1,3 @@
+{
+  catppuccin.enable = true;
+}
