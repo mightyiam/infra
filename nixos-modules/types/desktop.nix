@@ -17,7 +17,6 @@
     "printing.nix"
     "service-discovery.nix"
     "shell.nix"
-    "state-version.nix"
     "steam.nix"
     "sudo.nix"
     "tmp.nix"

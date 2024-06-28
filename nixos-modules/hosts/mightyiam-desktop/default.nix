@@ -5,6 +5,7 @@
     ./gpu.nix
     ./filesystems.nix
     ./cpu.nix
+    ./state-version.nix
   ];
 
   nixpkgs.hostPlatform = "x86_64-linux";

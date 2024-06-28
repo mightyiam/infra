@@ -25,7 +25,10 @@
             ./nixos-modules/hosts/mightyiam-desktop
             inputs.home-manager.nixosModules.home-manager
             {
-              home-manager.users.mightyiam.imports = [self.homeManagerModules.mightyiam];
+              home-manager.users.mightyiam.imports = [
+                self.homeManagerModules.mightyiam
+                ({osConfig, ...}: {home.stateVersion = osConfig.system.stateVersion;})
+              ];
             }
           ];
         };
@@ -35,7 +38,10 @@
             ./nixos-modules/hosts/ganoderma
             inputs.home-manager.nixosModules.home-manager
             {
-              home-manager.users.mightyiam.imports = [self.homeManagerModules.mightyiam];
+              home-manager.users.mightyiam.imports = [
+                self.homeManagerModules.mightyiam
+                ({osConfig, ...}: {home.stateVersion = osConfig.system.stateVersion;})
+              ];
             }
           ];
         };
