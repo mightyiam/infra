@@ -1,5 +1,4 @@
-{pkgs, ...}: let
-in {
+{
   imports = [
     ../modules/bluetooth.nix
     ../modules/boot-message.nix
@@ -27,6 +26,4 @@ in {
     ../modules/dconf.nix
     ../modules/catppuccin.nix
   ];
-
-  environment.systemPackages = [pkgs.nvd];
 }
