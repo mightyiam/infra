@@ -23,6 +23,7 @@
     "user.nix"
     "virtualbox.nix"
     "zfs.nix"
+    "dconf.nix"
   ];
 in {
   imports = map (m: "${../modules}/${m}") modules;
