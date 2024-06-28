@@ -6,6 +6,7 @@
       modules = [
         nixconfigs.homeManagerModules.mightyiam
         {
+          home.stateVersion = "24.11";
           location.latitude = 18.746;
           location.longitude = 99.075;
         }

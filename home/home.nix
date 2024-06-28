@@ -32,7 +32,6 @@
 
     config.programs.home-manager.enable = true;
 
-    config.home.stateVersion = "24.11";
     config.home.sessionVariables.TZ = "\$(<~/.config/timezone)";
   };
 in {
