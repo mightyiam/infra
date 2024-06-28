@@ -23,6 +23,7 @@
         nixosModules.mightyiam-desktop = {
           imports = [
             ./nixos-modules/hosts/mightyiam-desktop
+            inputs.catppuccin.nixosModules.catppuccin
             inputs.home-manager.nixosModules.home-manager
             {
               home-manager.users.mightyiam.imports = [
@@ -36,6 +37,7 @@
         nixosModules.ganoderma = {
           imports = [
             ./nixos-modules/hosts/ganoderma
+            inputs.catppuccin.nixosModules.catppuccin
             inputs.home-manager.nixosModules.home-manager
             {
               home-manager.users.mightyiam.imports = [
