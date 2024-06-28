@@ -40,7 +40,6 @@ in
           browser_entries
           // {
             "image/png" = image;
-            "x-scheme-handler/magnet" = "transmission-gtk";
           };
       };
     };
