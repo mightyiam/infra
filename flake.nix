@@ -20,9 +20,9 @@
       ];
 
       flake = {
-        nixosModules.mightyiam-desktop = {
+        nixosModules.termitomyces = {
           imports = [
-            ./nixos-modules/hosts/mightyiam-desktop
+            ./nixos-modules/hosts/termitomyces
             inputs.catppuccin.nixosModules.catppuccin
             inputs.home-manager.nixosModules.home-manager
             {
@@ -76,10 +76,10 @@
             .home
             .activationPackage;
 
-          "host/mightyiam-desktop" =
-            (evalExample ./examples/hosts/mightyiam-desktop/flake.nix)
+          "host/termitomyces" =
+            (evalExample ./examples/hosts/termitomyces/flake.nix)
             .nixosConfigurations
-            .mightyiam-desktop
+            .termitomyces
             .config
             .system
             .build
