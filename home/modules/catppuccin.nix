@@ -1,6 +1,7 @@
 {
   catppuccin.flavor = "mocha";
   catppuccin.enable = true;
+  catppuccin.pointerCursor.enable = true;
   programs.chromium.extensions = [{id = "bkkmolkhemgaeaeggcmfbghljjjoofoh";}];
   gtk.gtk2.extraConfig = ''
     gtk-theme-name="Adwaita-dark"
