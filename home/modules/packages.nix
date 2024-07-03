@@ -16,6 +16,7 @@
     bandwhich
     du-dust
     fd
+    file
     gh-dash
     git-instafix
     lsof
