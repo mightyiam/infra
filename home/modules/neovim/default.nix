@@ -96,14 +96,14 @@ in {
       (omitPluginInVSCode vimPlugins.ctrlp-vim ''
         let g:ctrlp_user_command = ['.git', 'cd %s && ${pkgs.git}/bin/git ls-files -co --exclude-standard']
       '')
-      (omitPluginInVSCode vimPlugins.nvim-treesitter.withAllGrammars (embedLua ''
-        require'nvim-treesitter.configs'.setup {
-          auto_install = false,
-          highlight = {
-            enable = true,
-          }
-        }
-      ''))
+      # (omitPluginInVSCode vimPlugins.nvim-treesitter.withAllGrammars (embedLua ''
+      #   require'nvim-treesitter.configs'.setup {
+      #     auto_install = false,
+      #     highlight = {
+      #       enable = true,
+      #     }
+      #   }
+      # ''))
       {
         plugin = vimPlugins.nvim-surround;
         config = embedLua ''
