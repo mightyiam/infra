@@ -20,7 +20,7 @@
     gh-dash
     git-instafix
     lsof
-    neofetch
+    #neofetch
     pciutils
     procs
     psmisc
