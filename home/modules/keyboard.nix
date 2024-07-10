@@ -36,8 +36,6 @@ in {
       splitVertical = "\""; # tmux
       splitHorizontal = "%"; # tmux
       windowNew = "c"; # tmux
-      fileTreeFocus = "<C-t>";
-      fileTreeToggle = "<C-T>";
       easyMotion = ",";
       text = {
         dedent = "<";

@@ -188,19 +188,16 @@ in {
 
             disabled_filetypes = {
               winbar = {
-                'nerdtree',
                 'Trouble',
               },
             },
 
             ignore_focus = {
-                'nerdtree',
                 'Trouble',
             },
           },
 
           extensions = {
-            'nerdtree',
             'trouble',
           },
 
@@ -229,13 +226,6 @@ in {
           },
         })
       ''))
-      (omitPluginInVSCode vimPlugins.nerdtree ''
-        nnoremap ${keyboard.fileTreeFocus} :NERDTreeFocus<CR>
-        nnoremap ${keyboard.fileTreeToggle} :NERDTreeToggle<CR>
-      '')
-      (omitPluginInVSCode vimPlugins.nerdtree-git-plugin ''
-        let g:NERDTreeGitStatusUseNerdFonts = 1
-      '')
       (omitPluginInVSCode vimPlugins.vim-gitgutter "")
       (omitPluginInVSCode vimPlugins.nvim-lspconfig "")
       (omitPluginInVSCode vimPlugins.rustaceanvim (embedLua ''
