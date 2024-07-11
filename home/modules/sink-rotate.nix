@@ -11,4 +11,5 @@
 in
   mkIf config.gui.enable {
     wayland.windowManager.sway.config.keybindings."${config.keyboard.wm.volume.sinkRotate}" = "exec ${pkgs.sink-rotate}/bin/sink-rotate";
+    home.packages = [pkgs.sink-rotate];
   }
