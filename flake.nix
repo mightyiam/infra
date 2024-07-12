@@ -24,11 +24,16 @@
           (lib.mapAttrs (hostname: _: {
             imports = [
               inputs.catppuccin.nixosModules.catppuccin
-              inputs.home-manager.nixosModules.home-manager
               {
                 home-manager.users.mightyiam.imports = [
                   inputs.self.homeManagerModules.mightyiam
                 ];
+              }
+              {
+                options.homeManagerNixosModule = lib.mkOption {
+                  type = lib.types.anything;
+                  default = inputs.home-manager.nixosModules.home-manager;
+                };
               }
               (./nixos-modules/hosts + "/${hostname}")
             ];
