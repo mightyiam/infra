@@ -20,28 +20,18 @@
       ];
 
       flake = {
-        nixosModules = {
-          termitomyces.imports = [
-            ./nixos-modules/hosts/termitomyces
-            inputs.catppuccin.nixosModules.catppuccin
-            inputs.home-manager.nixosModules.home-manager
-            {
-              home-manager.users.mightyiam.imports = [
-                self.homeManagerModules.mightyiam
-              ];
-            }
-          ];
+        nixosModules = let
+          common = {
+            imports = [
+              inputs.catppuccin.nixosModules.catppuccin
+              inputs.home-manager.nixosModules.home-manager
+            ];
 
-          ganoderma.imports = [
-            ./nixos-modules/hosts/ganoderma
-            inputs.catppuccin.nixosModules.catppuccin
-            inputs.home-manager.nixosModules.home-manager
-            {
-              home-manager.users.mightyiam.imports = [
-                self.homeManagerModules.mightyiam
-              ];
-            }
-          ];
+            home-manager.users.mightyiam.imports = [self.homeManagerModules.mightyiam];
+          };
+        in {
+          termitomyces.imports = [common ./nixos-modules/hosts/termitomyces];
+          ganoderma.imports = [common ./nixos-modules/hosts/ganoderma];
         };
 
         homeManagerModules.mightyiam.imports = [
