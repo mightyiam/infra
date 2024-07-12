@@ -8,10 +8,15 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     catppuccin.url = "github:catppuccin/nix";
+    treefmt-nix.url = "github:numtide/treefmt-nix";
+    treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs = inputs:
     inputs.flake-parts.lib.mkFlake {inherit inputs;} {
-      imports = [inputs.devshell.flakeModule];
+      imports = [
+        inputs.devshell.flakeModule
+        inputs.treefmt-nix.flakeModule
+      ];
 
       flake = {
         nixosModules = let
@@ -39,6 +44,20 @@
       ];
 
       perSystem = {
+        treefmt = {
+          projectRootFile = "flake.nix";
+          programs.alejandra.enable = true;
+          programs.mdformat.enable = true;
+          programs.rustfmt.enable = true;
+          programs.shfmt.enable = true;
+          programs.stylua.enable = true;
+          programs.yamlfmt.enable = true;
+          settings.global.excludes = [
+            "*/.gitignore"
+            "*.toml"
+          ];
+        };
+
         checks = let
           evalExample = path: let
             flake = import path;
@@ -78,7 +97,7 @@
             {
               help = "flake check that doesn't write lock file";
               name = "check";
-              command = "nix flake check --no-write-lock-file";
+              command = "nix flake check --print-build-logs --no-write-lock-file";
             }
           ];
         };

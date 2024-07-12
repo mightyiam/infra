@@ -3,7 +3,6 @@ on:
   push:
     branches: [main]
   workflow_call:
-
 jobs:
   check:
     runs-on: ubuntu-latest
@@ -12,4 +11,3 @@ jobs:
       - uses: DeterminateSystems/nix-installer-action@main
       - uses: DeterminateSystems/magic-nix-cache-action@main
       - run: nix flake check
-
