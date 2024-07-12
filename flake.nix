@@ -28,7 +28,6 @@
             {
               home-manager.users.mightyiam.imports = [
                 self.homeManagerModules.mightyiam
-                ({osConfig, ...}: {home.stateVersion = osConfig.system.stateVersion;})
               ];
             }
           ];
@@ -42,7 +41,6 @@
             {
               home-manager.users.mightyiam.imports = [
                 self.homeManagerModules.mightyiam
-                ({osConfig, ...}: {home.stateVersion = osConfig.system.stateVersion;})
               ];
             }
           ];
