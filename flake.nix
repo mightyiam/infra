@@ -12,26 +12,28 @@
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs = inputs:
-    inputs.flake-parts.lib.mkFlake {inherit inputs;} {
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} ({lib, ...}: {
       imports = [
         inputs.devshell.flakeModule
         inputs.treefmt-nix.flakeModule
       ];
 
       flake = {
-        nixosModules = let
-          common = {
+        nixosModules = lib.pipe ./nixos-modules/hosts [
+          builtins.readDir
+          (lib.mapAttrs (hostname: _: {
             imports = [
               inputs.catppuccin.nixosModules.catppuccin
               inputs.home-manager.nixosModules.home-manager
+              {
+                home-manager.users.mightyiam.imports = [
+                  inputs.self.homeManagerModules.mightyiam
+                ];
+              }
+              (./nixos-modules/hosts + "/${hostname}")
             ];
-
-            home-manager.users.mightyiam.imports = [inputs.self.homeManagerModules.mightyiam];
-          };
-        in {
-          termitomyces.imports = [common ./nixos-modules/hosts/termitomyces];
-          ganoderma.imports = [common ./nixos-modules/hosts/ganoderma];
-        };
+          }))
+        ];
 
         homeManagerModules.mightyiam.imports = [
           inputs.catppuccin.homeManagerModules.catppuccin
@@ -102,5 +104,5 @@
           ];
         };
       };
-    };
+    });
 }
