@@ -9,12 +9,8 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     catppuccin.url = "github:catppuccin/nix";
   };
-  outputs = inputs @ {
-    self,
-    flake-parts,
-    ...
-  }:
-    flake-parts.lib.mkFlake {inherit inputs;} {
+  outputs = inputs:
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} {
       imports = [
         inputs.devshell.flakeModule
       ];
@@ -27,7 +23,7 @@
               inputs.home-manager.nixosModules.home-manager
             ];
 
-            home-manager.users.mightyiam.imports = [self.homeManagerModules.mightyiam];
+            home-manager.users.mightyiam.imports = [inputs.self.homeManagerModules.mightyiam];
           };
         in {
           termitomyces.imports = [common ./nixos-modules/hosts/termitomyces];
@@ -50,7 +46,7 @@
             flake = import path;
           in
             assert flake.inputs.nixconfigs.url == "github:mightyiam/nixconfigs";
-              flake.outputs {nixconfigs = self;};
+              flake.outputs {nixconfigs = inputs.self;};
         in {
           home =
             (evalExample examples/home/flake.nix)
