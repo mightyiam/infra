@@ -20,27 +20,29 @@
       ];
 
       flake = {
-        nixosModules.termitomyces.imports = [
-          ./nixos-modules/hosts/termitomyces
-          inputs.catppuccin.nixosModules.catppuccin
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager.users.mightyiam.imports = [
-              self.homeManagerModules.mightyiam
-            ];
-          }
-        ];
+        nixosModules = {
+          termitomyces.imports = [
+            ./nixos-modules/hosts/termitomyces
+            inputs.catppuccin.nixosModules.catppuccin
+            inputs.home-manager.nixosModules.home-manager
+            {
+              home-manager.users.mightyiam.imports = [
+                self.homeManagerModules.mightyiam
+              ];
+            }
+          ];
 
-        nixosModules.ganoderma.imports = [
-          ./nixos-modules/hosts/ganoderma
-          inputs.catppuccin.nixosModules.catppuccin
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager.users.mightyiam.imports = [
-              self.homeManagerModules.mightyiam
-            ];
-          }
-        ];
+          ganoderma.imports = [
+            ./nixos-modules/hosts/ganoderma
+            inputs.catppuccin.nixosModules.catppuccin
+            inputs.home-manager.nixosModules.home-manager
+            {
+              home-manager.users.mightyiam.imports = [
+                self.homeManagerModules.mightyiam
+              ];
+            }
+          ];
+        };
 
         homeManagerModules.mightyiam.imports = [
           inputs.catppuccin.homeManagerModules.catppuccin
