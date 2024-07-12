@@ -11,9 +11,7 @@
   };
   outputs = inputs:
     inputs.flake-parts.lib.mkFlake {inherit inputs;} {
-      imports = [
-        inputs.devshell.flakeModule
-      ];
+      imports = [inputs.devshell.flakeModule];
 
       flake = {
         nixosModules = let
