@@ -20,7 +20,7 @@
           flake.outputs {nixconfigs = inputs.self;};
     };
   in
-    inputs.flake-parts.lib.mkFlake {inputs = inputs // localInputs;} ({inputs, ...}: {
+    inputs.flake-parts.lib.mkFlake {inputs = inputs // localInputs;} {
       imports = [
         ./nixos-modules.nix
         ./home
@@ -30,5 +30,5 @@
       systems = [
         "x86_64-linux"
       ];
-    });
+    };
 }
