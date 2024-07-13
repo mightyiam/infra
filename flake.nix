@@ -25,14 +25,8 @@
         inputs.devshell.flakeModule
         inputs.treefmt-nix.flakeModule
         ./nixos-modules.nix
+        ./home
       ];
-
-      flake = {
-        homeManagerModules.mightyiam.imports = [
-          inputs.catppuccin.homeManagerModules.catppuccin
-          ./home/home.nix
-        ];
-      };
 
       systems = [
         "x86_64-linux"
@@ -51,16 +45,6 @@
             "*/.gitignore"
             "*.toml"
           ];
-        };
-
-        checks = {
-          home =
-            (inputs.evalExample examples/home/flake.nix)
-            .homeManagerConfigurations
-            .mightyiam
-            .config
-            .home
-            .activationPackage;
         };
 
         devshells.default = {
