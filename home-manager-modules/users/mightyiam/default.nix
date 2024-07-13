@@ -23,7 +23,7 @@
     home.homeDirectory = "/home/${username}";
   };
   modules = let
-    dir = "${../.}/home/modules";
+    dir = ./. + "/modules";
     relativePaths = attrNames (readDir dir);
   in
     map (path: "${dir}/${path}") relativePaths;
