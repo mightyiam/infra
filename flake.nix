@@ -20,11 +20,7 @@
           flake.outputs {nixconfigs = inputs.self;};
     };
   in
-    inputs.flake-parts.lib.mkFlake {inputs = inputs // localInputs;} ({
-      inputs,
-      lib,
-      ...
-    }: {
+    inputs.flake-parts.lib.mkFlake {inputs = inputs // localInputs;} ({inputs, ...}: {
       imports = [
         inputs.devshell.flakeModule
         inputs.treefmt-nix.flakeModule
