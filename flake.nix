@@ -61,24 +61,6 @@
             .config
             .home
             .activationPackage;
-
-          "host/termitomyces" =
-            (inputs.evalExample ./examples/hosts/termitomyces/flake.nix)
-            .nixosConfigurations
-            .termitomyces
-            .config
-            .system
-            .build
-            .toplevel;
-
-          "host/ganoderma" =
-            (inputs.evalExample ./examples/hosts/ganoderma/flake.nix)
-            .nixosConfigurations
-            .ganoderma
-            .config
-            .system
-            .build
-            .toplevel;
         };
 
         devshells.default = {

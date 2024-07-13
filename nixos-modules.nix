@@ -20,6 +20,15 @@
           (./nixos-modules/hosts + "/${hostname}")
         ];
       };
+
+      perSystem.checks."hosts/${hostname}" =
+        (inputs.evalExample (./examples/hosts + "/${hostname}/flake.nix"))
+        .nixosConfigurations
+        .${hostname}
+        .config
+        .system
+        .build
+        .toplevel;
     }))
   ];
 }
