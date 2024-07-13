@@ -10,16 +10,8 @@
 
     (map (hostname: {
       flake.nixosConfigurations.${hostname} = inputs.nixpkgs.lib.nixosSystem {
-        modules = [
-          inputs.catppuccin.nixosModules.catppuccin
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager.users.mightyiam.imports = [
-              inputs.self.homeManagerModules.mightyiam
-            ];
-          }
-          (./nixos-configurations + "/${hostname}")
-        ];
+        specialArgs = {inherit self;};
+        modules = [(./nixos-configurations + "/${hostname}")];
       };
 
       perSystem.checks."nixosConfigurations/${hostname}" =
