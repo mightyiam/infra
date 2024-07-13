@@ -11,8 +11,20 @@
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
-  outputs = inputs:
-    inputs.flake-parts.lib.mkFlake {inherit inputs;} ({lib, ...}: {
+  outputs = inputs: let
+    localInputs = {
+      evalExample = path: let
+        flake = import path;
+      in
+        assert flake.inputs.nixconfigs.url == "github:mightyiam/nixconfigs";
+          flake.outputs {nixconfigs = inputs.self;};
+    };
+  in
+    inputs.flake-parts.lib.mkFlake {inputs = inputs // localInputs;} ({
+      inputs,
+      lib,
+      ...
+    }: {
       imports = [
         inputs.devshell.flakeModule
         inputs.treefmt-nix.flakeModule
@@ -45,15 +57,9 @@
           ];
         };
 
-        checks = let
-          evalExample = path: let
-            flake = import path;
-          in
-            assert flake.inputs.nixconfigs.url == "github:mightyiam/nixconfigs";
-              flake.outputs {nixconfigs = inputs.self;};
-        in {
+        checks = {
           home =
-            (evalExample examples/home/flake.nix)
+            (inputs.evalExample examples/home/flake.nix)
             .homeManagerConfigurations
             .mightyiam
             .config
@@ -61,7 +67,7 @@
             .activationPackage;
 
           "host/termitomyces" =
-            (evalExample ./examples/hosts/termitomyces/flake.nix)
+            (inputs.evalExample ./examples/hosts/termitomyces/flake.nix)
             .nixosConfigurations
             .termitomyces
             .config
@@ -70,7 +76,7 @@
             .toplevel;
 
           "host/ganoderma" =
-            (evalExample ./examples/hosts/ganoderma/flake.nix)
+            (inputs.evalExample ./examples/hosts/ganoderma/flake.nix)
             .nixosConfigurations
             .ganoderma
             .config
