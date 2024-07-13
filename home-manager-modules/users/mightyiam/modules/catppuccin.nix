@@ -3,6 +3,11 @@
   catppuccin.flavor = "mocha";
   catppuccin.enable = true;
   catppuccin.pointerCursor.enable = true;
+
+  # IFD
+  programs.swaylock.catppuccin.enable = false;
+  services.mako.catppuccin.enable = false;
+
   programs.chromium.extensions = [{id = "bkkmolkhemgaeaeggcmfbghljjjoofoh";}];
   gtk.gtk2.extraConfig = ''
     gtk-theme-name="Adwaita-dark"
