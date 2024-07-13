@@ -1,4 +1,5 @@
-{
+{self, ...}: {
+  imports = [self.inputs.catppuccin.homeManagerModules.catppuccin];
   catppuccin.flavor = "mocha";
   catppuccin.enable = true;
   catppuccin.pointerCursor.enable = true;

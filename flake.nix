@@ -9,19 +9,10 @@
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
-  outputs = inputs: let
-    localInputs = {
-      evalExample = path: let
-        flake = import path;
-      in
-        assert flake.inputs.nixconfigs.url == "github:mightyiam/nixconfigs";
-          flake.outputs {nixconfigs = inputs.self;};
-    };
-  in
-    inputs.flake-parts.lib.mkFlake {inputs = inputs // localInputs;} {
+  outputs = inputs:
+    inputs.flake-parts.lib.mkFlake {inputs = inputs;} {
       imports = [
         ./nixos-configurations.nix
-        ./home
         ./fmt.nix
       ];
 
