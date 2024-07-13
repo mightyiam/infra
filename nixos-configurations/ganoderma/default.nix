@@ -1,6 +1,6 @@
 {
   imports = [
-    ../../types/desktop.nix
+    ../../nixos-modules/types/desktop.nix
     ./mobo.nix
     ./filesystems.nix
     ./state-version.nix

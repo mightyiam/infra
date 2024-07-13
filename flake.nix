@@ -20,7 +20,7 @@
   in
     inputs.flake-parts.lib.mkFlake {inputs = inputs // localInputs;} {
       imports = [
-        ./nixos-modules.nix
+        ./nixos-configurations.nix
         ./home
         ./fmt.nix
       ];

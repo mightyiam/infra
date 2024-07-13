@@ -1,15 +1,16 @@
 {
   lib,
   inputs,
+  self,
   ...
 }: {
-  imports = lib.pipe ./nixos-modules/hosts [
+  imports = lib.pipe ./nixos-configurations [
     builtins.readDir
     lib.attrNames
 
     (map (hostname: {
-      flake.nixosModules.${hostname} = {
-        imports = [
+      flake.nixosConfigurations.${hostname} = inputs.nixpkgs.lib.nixosSystem {
+        modules = [
           inputs.catppuccin.nixosModules.catppuccin
           inputs.home-manager.nixosModules.home-manager
           {
@@ -17,12 +18,12 @@
               inputs.self.homeManagerModules.mightyiam
             ];
           }
-          (./nixos-modules/hosts + "/${hostname}")
+          (./nixos-configurations + "/${hostname}")
         ];
       };
 
-      perSystem.checks."hosts/${hostname}" =
-        (inputs.evalExample (./examples/hosts + "/${hostname}/flake.nix"))
+      perSystem.checks."nixosConfigurations/${hostname}" =
+        self
         .nixosConfigurations
         .${hostname}
         .config
