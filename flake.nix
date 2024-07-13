@@ -23,9 +23,9 @@
     inputs.flake-parts.lib.mkFlake {inputs = inputs // localInputs;} ({inputs, ...}: {
       imports = [
         inputs.devshell.flakeModule
-        inputs.treefmt-nix.flakeModule
         ./nixos-modules.nix
         ./home
+        ./fmt.nix
       ];
 
       systems = [
@@ -33,20 +33,6 @@
       ];
 
       perSystem = {
-        treefmt = {
-          projectRootFile = "flake.nix";
-          programs.alejandra.enable = true;
-          programs.mdformat.enable = true;
-          programs.rustfmt.enable = true;
-          programs.shfmt.enable = true;
-          programs.stylua.enable = true;
-          programs.yamlfmt.enable = true;
-          settings.global.excludes = [
-            "*/.gitignore"
-            "*.toml"
-          ];
-        };
-
         devshells.default = {
           commands = [
             {
