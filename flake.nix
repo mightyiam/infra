@@ -22,11 +22,9 @@
   in
     inputs.flake-parts.lib.mkFlake {inputs = inputs // localInputs;} ({inputs, ...}: {
       imports = [
-        inputs.devshell.flakeModule
         ./nixos-modules.nix
         ./home
         ./fmt.nix
-        ./devshell.nix
       ];
 
       systems = [
