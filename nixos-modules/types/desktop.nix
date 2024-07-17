@@ -20,10 +20,11 @@
     ../modules/steam.nix
     ../modules/sudo.nix
     ../modules/tmp.nix
-    ../modules/user.nix
+    ../modules/mightyiam.nix
     ../modules/virtualbox.nix
     ../modules/zfs.nix
     ../modules/dconf.nix
     ../modules/catppuccin.nix
+    ../modules/1bowapinya.nix
   ];
 }
