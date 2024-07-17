@@ -4,6 +4,7 @@
     ./mobo.nix
     ./filesystems.nix
     ./state-version.nix
+    ./gdm.nix
   ];
 
   nixpkgs.hostPlatform = "x86_64-linux";
