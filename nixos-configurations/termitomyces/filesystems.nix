@@ -39,17 +39,5 @@
       device = "nixos/root/sbin";
       fsType = "zfs";
     };
-
-    "/boot1" = {
-      device = "/dev/disk/by-uuid/82EC-9017";
-      fsType = "vfat";
-      options = ["fmask=0022" "dmask=0022"];
-    };
-
-    "/boot0" = {
-      device = "/dev/disk/by-uuid/816E-3CD9";
-      fsType = "vfat";
-      options = ["fmask=0022" "dmask=0022"];
-    };
   };
 }
