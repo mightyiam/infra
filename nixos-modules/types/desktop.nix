@@ -26,5 +26,6 @@
     ../modules/dconf.nix
     ../modules/catppuccin.nix
     ../modules/1bowapinya.nix
+    ../modules/allow-unfree-packages.nix
   ];
 }
