@@ -41,6 +41,7 @@
     comma
     statix
     nix-diff
+    nix-prefetch-scripts
 
     # lua
     lua-language-server
