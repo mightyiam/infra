@@ -218,19 +218,10 @@ in {
           server = {
             on_attach = function(client, bufnr)
               require("lsp-inlayhints").on_attach(client, bufnr)
-              require("which-key").register({
-                ["<space>"] = {
-                  a = {
-                    function()
-                      vim.cmd.RustLsp('codeAction')
-                    end,
-                    "code action"
-                  },
-                  p = {
-                    "<CMD>RustLsp parentModule<CR>",
-                    "go to parent module",
-                  },
-                },
+              require("which-key").add({
+                { "<space>", group = "Rust" },
+                { "<space>a", function() vim.cmd.RustLsp('codeAction') end, desc = "code action" },
+                { "<space>p", "<CMD>RustLsp parentModule<CR>", desc = "go to parent module" },
               })
             end,
             settings = {
