@@ -117,33 +117,16 @@ in {
             mappings = { basic = false, extra = false },
           })
 
-          require("which-key").register({
-            ["<leader>c" ] = {
-              name = "comment",
-              l = {
-                "<Plug>(comment_toggle_linewise)",
-                "toggle line linewise",
-              },
-              b = {
-                "<Plug>(comment_toggle_blockwise)",
-                "toggle line blockwise",
-              },
-            },
+          require("which-key").add({
+            { "<leader>c", group = "comment" },
+            { "<leader>cl", "<Plug>(comment_toggle_linewise)", desc = "toggle line linewise" },
+            { "<leader>cb", "<Plug>(comment_toggle_blockwise)", desc = "toggle line blockwise" },
+            {
+              mode = "v",
+              { "<leader>cl", "<Plug>(comment_toggle_linewise_visual)", desc = "toggle line linewise" },
+              { "<leader>cb", "<Plug>(comment_toggle_blockwise_visual)", desc = "toggle line blockwise" },
+            }
           })
-
-          require("which-key").register({
-            ["<leader>c"] = {
-              name = "comment",
-              l = {
-                "<Plug>(comment_toggle_linewise_visual)",
-                "toggle region linewise"
-              },
-              b = {
-                "<Plug>(comment_toggle_blockwise_visual)",
-                "toggle region blockwise"
-              },
-            },
-          }, { mode = "v" })
         '';
       }
       {
@@ -271,24 +254,10 @@ in {
       (omitPluginInVSCode lsp-inlayhints-nvim (embedLua ''
         require("lsp-inlayhints").setup()
 
-        require("which-key").register({
-          ["<leader>"] = {
-            h = {
-              name = "inlay hints",
-              t = {
-                function()
-                  require('lsp-inlayhints').toggle()
-                end,
-                "toggle"
-              },
-              r = {
-                function()
-                  require('lsp-inlayhints').reset()
-                end,
-                "reset",
-              },
-            }
-          },
+        require("which-key").add({
+          { "<leader>h", group = "inlay hints" },
+          { "<leader>ht", function() require('lsp-inlayhints').toggle() end, desc = "toggle" },
+          { "<leader>hr", function() require('lsp-inlayhints').reset() end, desc = "reset" },
         })
       ''))
       (omitPluginInVSCode vimPlugins.cmp-nvim-lsp "")
