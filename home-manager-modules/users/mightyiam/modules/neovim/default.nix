@@ -328,17 +328,20 @@ in {
         vim.keymap.set('n', '<leader>fa', builtin.builtin, {})
       ''))
       (omitPluginInVSCode vimPlugins.nvim-web-devicons "") # for trouble-nvim
-      (omitPluginInVSCode vimPlugins.trouble-nvim ''
-        lua << EOF
-          require("trouble").setup {}
-        EOF
-        nnoremap ${keyboard.diagnostic.toggle} <cmd>TroubleToggle<cr>
-        nnoremap ${keyboard.diagnostic.workspace} <cmd>TroubleToggle workspace_diagnostics<cr>
-        nnoremap ${keyboard.diagnostic.document} <cmd>TroubleToggle document_diagnostics<cr>
-        nnoremap ${keyboard.diagnostic.quickfix} <cmd>TroubleToggle quickfix<cr>
-        nnoremap ${keyboard.diagnostic.loclist} <cmd>TroubleToggle loclist<cr>
-        nnoremap ${keyboard.goTo.references} <cmd>TroubleToggle lsp_references<cr>
-      '')
+      (omitPluginInVSCode vimPlugins.trouble-nvim (embedLua ''
+        require("trouble").setup {}
+        require("which-key").add({
+          { "<leader>x", group = "trouble" },
+          { "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>" },
+          { "<leader>xl", "<cmd>Trouble lsp toggle<cr>" },
+          { "<leader>xD", "<cmd>Trouble lsp_declarations toggle<cr>" },
+          { "<leader>xd", "<cmd>Trouble lsp_definitions toggle<cr>" },
+          { "<leader>xi", "<cmd>Trouble lsp_implementations toggle<cr>" },
+          { "<leader>xr", "<cmd>Trouble lsp_references toggle<cr>" },
+          { "<leader>xt", "<cmd>Trouble lsp_type_definitions toggle<cr>" },
+          { "<leader>xq", "<cmd>Trouble quickfix toggle<cr>" },
+        })
+      ''))
       (omitPluginInVSCode vim-autoread ''
         autocmd VimEnter * nested WatchForChangesAllFile!
       '')

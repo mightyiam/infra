@@ -61,11 +61,6 @@ in {
       diagnostic = {
         prev = "[d";
         next = "]d";
-        toggle = "${leader}xx";
-        workspace = "${leader}xw";
-        document = "${leader}xd";
-        quickfix = "${leader}xq";
-        loclist = "${leader}xl";
       };
       wm = prefixRec "Mod4+" {
         lock = "Ctrl+l";
