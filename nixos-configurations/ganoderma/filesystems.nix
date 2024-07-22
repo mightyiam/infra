@@ -1,7 +1,7 @@
 {
   fileSystems = {
     "/" = {
-      device = "storage";
+      device = "storage/root";
       fsType = "zfs";
     };
   };
