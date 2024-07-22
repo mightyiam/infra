@@ -3,7 +3,6 @@
     ../../nixos-modules/types/desktop.nix
     ./mobo.nix
     ./gpu.nix
-    ./filesystems.nix
     ./cpu.nix
     ./state-version.nix
   ];

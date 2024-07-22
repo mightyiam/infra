@@ -2,7 +2,6 @@
   imports = [
     ../../nixos-modules/types/desktop.nix
     ./mobo.nix
-    ./filesystems.nix
     ./state-version.nix
   ];
 

@@ -19,6 +19,7 @@
     ../modules/shell.nix
     ../modules/steam.nix
     ../modules/sudo.nix
+    ../modules/storage.nix
     ../modules/tmp.nix
     ../modules/mightyiam.nix
     ../modules/virtualbox.nix
