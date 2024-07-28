@@ -8,6 +8,10 @@ in {
   programs.zsh.autosuggestion.enable = true;
   programs.zsh.enableCompletion = true;
   programs.zsh.enableVteIntegration = true;
+  programs.zsh.syntaxHighlighting = {
+    enable = true;
+    highlighters = ["main" "brackets" "pattern" "regexp" "cursor" "line"];
+  };
   programs.zsh.autocd = true;
   programs.zsh.defaultKeymap = "viins";
   programs.zsh.history.ignorePatterns = ["rm *"];
