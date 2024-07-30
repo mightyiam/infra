@@ -19,6 +19,7 @@
     file
     gh-dash
     git-instafix
+    gping
     lsof
     #neofetch
     pciutils
