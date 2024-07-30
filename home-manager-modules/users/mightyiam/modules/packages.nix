@@ -21,7 +21,7 @@
     git-instafix
     gping
     lsof
-    #neofetch
+    neofetch
     pciutils
     procs
     psmisc
