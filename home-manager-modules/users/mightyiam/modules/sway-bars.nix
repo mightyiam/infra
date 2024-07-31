@@ -19,6 +19,10 @@ in
           icons = "awesome5";
           blocks = [
             {
+              block = "sound";
+              format = " $output_description $icon {$volume.eng(w:2) |}";
+            }
+            {
               block = "custom";
               format = "󰪛 ";
               json = true;
@@ -52,7 +56,6 @@ in
                 "Hebrew (N/A)" = "HE";
               };
             }
-            {block = "sound";}
             {
               block = "sound";
               device_kind = "source";
