@@ -111,7 +111,7 @@ in {
       {
         family = "monospace";
         prefer = [
-          "OpenDyslexicM Nerd Font Mono"
+          "OpenDyslexicM Nerd Font"
           "Noto Color Emoji"
         ];
       }
