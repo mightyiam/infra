@@ -9,6 +9,12 @@
             nvd diff /run/current-system result
           '';
         }
+        {
+          name = "system-switch";
+          command = ''
+            sudo nixos-rebuild --flake . switch
+          '';
+        }
       ];
 
       devshell.packages = [pkgs.nvd];
