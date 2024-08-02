@@ -37,6 +37,7 @@
 
     # nix
     alejandra
+    nix-tree
     nixd
     nurl
     comma
