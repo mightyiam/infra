@@ -44,6 +44,7 @@
     comma
     statix
     nix-diff
+    nix-melt
     nix-prefetch-scripts
 
     # lua
