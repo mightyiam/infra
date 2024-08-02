@@ -40,6 +40,7 @@
     nix-tree
     nixd
     nurl
+    nvd
     comma
     statix
     nix-diff
