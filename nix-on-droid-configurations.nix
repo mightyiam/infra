@@ -26,4 +26,6 @@ in {
       }
     ];
   };
+
+  perSystem.checks."nixOnDroidConfigurations/lentinula" = self.nixOnDroidConfigurations.lentinula.activationPackage;
 }
