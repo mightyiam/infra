@@ -14,18 +14,25 @@
     sink-rotate.inputs.treefmt-nix.follows = "treefmt-nix";
     devshell.url = "github:numtide/devshell";
     devshell.inputs.nixpkgs.follows = "nixpkgs";
+    nix-on-droid.url = "github:nix-community/nix-on-droid";
+    nix-on-droid.inputs.nixpkgs.follows = "nixpkgs";
+    nix-on-droid.inputs.home-manager.follows = "home-manager";
+    nix-on-droid.inputs.nixpkgs-docs.follows = "nixpkgs";
+    nix-on-droid.inputs.nixpkgs-for-bootstrap.follows = "nixpkgs";
   };
   outputs = inputs:
     inputs.flake-parts.lib.mkFlake {inputs = inputs;} {
       imports = [
         inputs.devshell.flakeModule
         ./nixos-configurations.nix
+        ./nix-on-droid-configurations.nix
         ./fmt.nix
         ./system-diff.nix
       ];
 
       systems = [
         "x86_64-linux"
+        "aarch64-linux"
       ];
     };
 }

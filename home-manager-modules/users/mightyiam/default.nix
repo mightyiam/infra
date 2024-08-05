@@ -12,15 +12,16 @@
   inherit
     (lib)
     attrNames
+    mkDefault
     mkIf
     mkOption
     types
     ;
 
   username = "mightyiam";
-  userAndHome.config = mkIf (!config.isNixOnDroid) {
-    home.username = username;
-    home.homeDirectory = "/home/${username}";
+  userAndHome.config = {
+    home.username = mkDefault username;
+    home.homeDirectory = mkDefault "/home/${username}";
   };
   modules = let
     dir = ./. + "/modules";
@@ -48,11 +49,6 @@ in {
   options.location.longitude = mkOption {
     type = types.numbers.between (-180) 180;
     default = 99.075;
-  };
-
-  options.isNixOnDroid = mkOption {
-    type = types.bool;
-    default = false;
   };
 
   options.style.windowOpacity = mkOption {
