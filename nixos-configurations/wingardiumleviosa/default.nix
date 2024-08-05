@@ -6,8 +6,6 @@
     ./gdm.nix
   ];
 
-  nixpkgs.hostPlatform = "x86_64-linux";
-
   networking.hostName = "wingardiumleviosa";
   networking.hostId = "abf835ae";
 }
