@@ -36,7 +36,6 @@
     vscode-langservers-extracted
 
     # nix
-    alejandra
     nix-tree
     nixd
     nurl
