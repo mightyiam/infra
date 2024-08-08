@@ -1,10 +1,8 @@
-{
-  lib,
-  config,
-  ...
-}: let
+{ lib, config, ... }:
+let
   inherit (lib) types mkOption;
-in {
+in
+{
   options.me = mkOption {
     type = types.str;
     default = "mightyiam";
@@ -12,7 +10,15 @@ in {
   config.users.users.${config.me} = {
     isNormalUser = true;
     initialPassword = "";
-    extraGroups = ["wheel" "audio" "docker" "input"];
+    extraGroups = [
+      "wheel"
+      "audio"
+      "docker"
+      "input"
+    ];
   };
-  config.nix.settings.trusted-users = ["root" config.me];
+  config.nix.settings.trusted-users = [
+    "root"
+    config.me
+  ];
 }

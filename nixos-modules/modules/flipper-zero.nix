@@ -1,3 +1,1 @@
-{
-  hardware.flipperzero.enable = true;
-}
+{ hardware.flipperzero.enable = true; }

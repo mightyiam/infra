@@ -1,6 +1,8 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   inherit (pkgs) zsh;
-in {
+in
+{
   programs.zsh.enable = true;
   users.defaultUserShell = zsh;
 }

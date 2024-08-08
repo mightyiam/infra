@@ -1,6 +1,8 @@
-{config, ...}: let
+{ config, ... }:
+let
   inherit (config) keyboard;
-in {
+in
+{
   programs.tmux = {
     enable = true;
     inherit (keyboard) keyMode;

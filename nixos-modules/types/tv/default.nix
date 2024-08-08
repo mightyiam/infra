@@ -1,10 +1,8 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
+{ config, pkgs, ... }:
+let
   media = import ./media.nix;
-in {
+in
+{
   imports = [
     ./kodi.nix
     ./transmission.nix
@@ -32,5 +30,5 @@ in {
   '';
   services.avahi.publish.enable = true;
   services.avahi.publish.addresses = true;
-  users.users.mightyiam.extraGroups = [media.group];
+  users.users.mightyiam.extraGroups = [ media.group ];
 }

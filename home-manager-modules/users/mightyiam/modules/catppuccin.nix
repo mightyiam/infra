@@ -1,5 +1,6 @@
-{self, ...}: {
-  imports = [self.inputs.catppuccin.homeManagerModules.catppuccin];
+{ self, ... }:
+{
+  imports = [ self.inputs.catppuccin.homeManagerModules.catppuccin ];
   catppuccin.flavor = "mocha";
   catppuccin.enable = true;
   catppuccin.pointerCursor.enable = true;
@@ -8,7 +9,7 @@
   programs.swaylock.catppuccin.enable = false;
   services.mako.catppuccin.enable = false;
 
-  programs.chromium.extensions = [{id = "bkkmolkhemgaeaeggcmfbghljjjoofoh";}];
+  programs.chromium.extensions = [ { id = "bkkmolkhemgaeaeggcmfbghljjjoofoh"; } ];
   gtk.gtk2.extraConfig = ''
     gtk-theme-name="Adwaita-dark"
   '';

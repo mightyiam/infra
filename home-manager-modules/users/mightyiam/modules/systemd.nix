@@ -1,3 +1,1 @@
-{
-  systemd.user.startServices = "sd-switch";
-}
+{ systemd.user.startServices = "sd-switch"; }

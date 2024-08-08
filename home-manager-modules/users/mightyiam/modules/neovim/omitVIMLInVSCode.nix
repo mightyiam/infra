@@ -1,11 +1,11 @@
 let
-  inherit
-    (builtins)
-    concatStringsSep
-    ;
+  inherit (builtins) concatStringsSep;
 in
-  viml:
-    concatStringsSep "\n" [
-      "if !exists('g:vscode')"
-      (concatStringsSep "" [viml "endif\n"])
-    ]
+viml:
+concatStringsSep "\n" [
+  "if !exists('g:vscode')"
+  (concatStringsSep "" [
+    viml
+    "endif\n"
+  ])
+]

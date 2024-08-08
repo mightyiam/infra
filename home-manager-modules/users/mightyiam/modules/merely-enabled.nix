@@ -1,22 +1,26 @@
-{lib, ...}: let
-  inherit
-    (lib)
-    listToAttrs
-    pipe
-    ;
+{ lib, ... }:
+let
+  inherit (lib) listToAttrs pipe;
 
   programs = [
     "command-not-found"
     "info"
   ];
-  services = [
-    "systembus-notify"
-  ];
+  services = [ "systembus-notify" ];
   mapper = name: {
     name = "${name}";
-    value = {enable = true;};
+    value = {
+      enable = true;
+    };
   };
-in {
-  programs = pipe programs [(map mapper) listToAttrs];
-  services = pipe services [(map mapper) listToAttrs];
+in
+{
+  programs = pipe programs [
+    (map mapper)
+    listToAttrs
+  ];
+  services = pipe services [
+    (map mapper)
+    listToAttrs
+  ];
 }

@@ -3,29 +3,24 @@
   config,
   lib,
   ...
-}: let
-  inherit
-    (builtins)
-    floor
-    ;
+}:
+let
+  inherit (builtins) floor;
 
-  inherit
-    (lib)
+  inherit (lib)
     concatStringsSep
     mkBefore
     pipe
     readFile
     ;
 
-  inherit
-    (pkgs)
-    vimPlugins
-    ;
+  inherit (pkgs) vimPlugins;
 
   inherit (config) keyboard;
   omitVIMLInVSCode = import ./omitVIMLInVSCode.nix;
   omitPluginInVSCode = import ./omitPluginInVSCode.nix;
-  inlineLuaFile = path:
+  inlineLuaFile =
+    path:
     concatStringsSep "" [
       "lua << EOF\n"
       (readFile path)
@@ -74,10 +69,9 @@
     lua << EOF
     ${lua}EOF
   '';
-in {
-  xdg.configFile."nvim/init.lua".text =
-    mkBefore ''
-      vim.cmd [[let mapleader = "${keyboard.leader}"]]'';
+in
+{
+  xdg.configFile."nvim/init.lua".text = mkBefore ''vim.cmd [[let mapleader = "${keyboard.leader}"]]'';
   programs.neovim = {
     enable = true;
     vimAlias = true;
@@ -376,7 +370,12 @@ in {
       ''
       (omitVIMLInVSCode ''
         set number
-        set guifont=monospace:h${pipe config.gui.fonts.monospace.size [floor toString]}
+        set guifont=monospace:h${
+          pipe config.gui.fonts.monospace.size [
+            floor
+            toString
+          ]
+        }
       '')
       (omitVIMLInVSCode "lua require('lsp.index')\n")
     ];

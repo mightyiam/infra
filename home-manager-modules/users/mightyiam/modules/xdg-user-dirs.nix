@@ -1,19 +1,15 @@
-{
-  config,
-  lib,
-  ...
-}: let
-  inherit
-    (lib)
-    mkIf
-    ;
+{ config, lib, ... }:
+let
+  inherit (lib) mkIf;
 in
-  mkIf config.gui.enable {
-    xdg = {
-      enable = true;
-      userDirs = let
+mkIf config.gui.enable {
+  xdg = {
+    enable = true;
+    userDirs =
+      let
         tmp = "${config.home.homeDirectory}/tmp";
-      in {
+      in
+      {
         enable = true;
         createDirectories = true;
         desktop = tmp;
@@ -25,5 +21,5 @@ in
         templates = "${config.home.homeDirectory}/templates";
         videos = tmp;
       };
-    };
-  }
+  };
+}

@@ -1,15 +1,8 @@
-{lib, ...}: let
-  inherit
-    (builtins)
-    isAttrs
-    mapAttrs
-    ;
+{ lib, ... }:
+let
+  inherit (builtins) isAttrs mapAttrs;
 
-  inherit
-    (lib)
-    mkOption
-    types
-    ;
+  inherit (lib) mkOption types;
 
   directions = {
     left = "h";
@@ -17,16 +10,11 @@
     up = "k";
     right = "l";
   };
-  applyRec = f: attrs:
-    mapAttrs
-    (k: v:
-      if isAttrs v
-      then applyRec f v
-      else f v)
-    attrs;
+  applyRec = f: attrs: mapAttrs (k: v: if isAttrs v then applyRec f v else f v) attrs;
   prefixRec = str: applyRec (v: str + v);
   leader = ",";
-in {
+in
+{
   options.keyboard = mkOption {
     type = types.anything;
     default = {
@@ -67,7 +55,9 @@ in {
         terminal = "Return";
         kill = "Shift+q";
         menu = "d";
-        focus = directions // {parent = "a";};
+        focus = directions // {
+          parent = "a";
+        };
         move = prefixRec "Shift+" directions;
         fullscreen = "f";
         layout = {

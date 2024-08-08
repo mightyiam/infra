@@ -3,14 +3,11 @@
   pkgs,
   lib,
   ...
-}: let
-  inherit
-    (builtins)
-    readDir
-    ;
+}:
+let
+  inherit (builtins) readDir;
 
-  inherit
-    (lib)
+  inherit (lib)
     attrNames
     mkDefault
     mkIf
@@ -23,10 +20,11 @@
     home.username = mkDefault username;
     home.homeDirectory = mkDefault "/home/${username}";
   };
-  modules = let
-    dir = ./. + "/modules";
-    relativePaths = attrNames (readDir dir);
-  in
+  modules =
+    let
+      dir = ./. + "/modules";
+      relativePaths = attrNames (readDir dir);
+    in
     map (path: "${dir}/${path}") relativePaths;
   always = {
     imports = modules;
@@ -35,7 +33,8 @@
 
     config.home.sessionVariables.TZ = "\$(<~/.config/timezone)";
   };
-in {
+in
+{
   options.gui.enable = mkOption {
     type = types.bool;
     default = true;
@@ -65,7 +64,7 @@ in {
     type = types.listOf types.package;
     default = with pkgs; [
       open-dyslexic
-      (nerdfonts.override {fonts = ["OpenDyslexic"];})
+      (nerdfonts.override { fonts = [ "OpenDyslexic" ]; })
       font-awesome
       noto-fonts
       noto-fonts-emoji
@@ -93,15 +92,13 @@ in {
   };
 
   options.gui.fonts.aliases = mkOption {
-    type = types.listOf (types.submodule {
-      options.family = mkOption {
-        type = types.str;
-      };
+    type = types.listOf (
+      types.submodule {
+        options.family = mkOption { type = types.str; };
 
-      options.prefer = mkOption {
-        type = types.listOf types.str;
-      };
-    });
+        options.prefer = mkOption { type = types.listOf types.str; };
+      }
+    );
 
     default = [
       {
@@ -113,15 +110,11 @@ in {
       }
       {
         family = "sans-serif";
-        prefer = [
-          "OpenDyslexic"
-        ];
+        prefer = [ "OpenDyslexic" ];
       }
       {
         family = "serif";
-        prefer = [
-          "OpenDyslexic"
-        ];
+        prefer = [ "OpenDyslexic" ];
       }
     ];
   };

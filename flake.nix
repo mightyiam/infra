@@ -20,8 +20,9 @@
     nix-on-droid.inputs.nixpkgs-docs.follows = "nixpkgs";
     nix-on-droid.inputs.nixpkgs-for-bootstrap.follows = "nixpkgs";
   };
-  outputs = inputs:
-    inputs.flake-parts.lib.mkFlake {inputs = inputs;} {
+  outputs =
+    inputs:
+    inputs.flake-parts.lib.mkFlake { inputs = inputs; } {
       imports = [
         inputs.devshell.flakeModule
         ./nixos-configurations.nix

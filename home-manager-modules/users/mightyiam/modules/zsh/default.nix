@@ -1,20 +1,25 @@
 let
-  inherit
-    (builtins)
-    readFile
-    ;
-in {
+  inherit (builtins) readFile;
+in
+{
   programs.zsh.enable = true;
   programs.zsh.autosuggestion.enable = true;
   programs.zsh.enableCompletion = true;
   programs.zsh.enableVteIntegration = true;
   programs.zsh.syntaxHighlighting = {
     enable = true;
-    highlighters = ["main" "brackets" "pattern" "regexp" "cursor" "line"];
+    highlighters = [
+      "main"
+      "brackets"
+      "pattern"
+      "regexp"
+      "cursor"
+      "line"
+    ];
   };
   programs.zsh.autocd = true;
   programs.zsh.defaultKeymap = "viins";
-  programs.zsh.history.ignorePatterns = ["rm *"];
+  programs.zsh.history.ignorePatterns = [ "rm *" ];
   programs.zsh.initExtraFirst = readFile ./tmux-init.sh;
   programs.zsh.initExtra = ''
     bindkey '^P' up-history

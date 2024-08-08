@@ -1,7 +1,9 @@
-{config, ...}: let
+{ config, ... }:
+let
   media = import ./media.nix;
   incompleteDir = "${media.dir}/.transmission-incomplete";
-in {
+in
+{
   services.transmission = {
     inherit (media) group;
     enable = true;

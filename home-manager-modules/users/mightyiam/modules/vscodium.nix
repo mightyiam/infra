@@ -3,19 +3,16 @@
   config,
   lib,
   ...
-}: let
-  inherit
-    (lib)
+}:
+let
+  inherit (lib)
     foldr
     mergeAttrs
     mkIf
     pipe
     ;
 
-  inherit
-    (pkgs)
-    vscode-extensions
-    ;
+  inherit (pkgs) vscode-extensions;
 
   settings = {
     "editor.cursorSmoothCaretAnimation" = true;
@@ -40,32 +37,31 @@
     }
     {
       package = vscode-extensions.dbaeumer.vscode-eslint;
-      settings = {};
+      settings = { };
     }
   ];
 in
-  mkIf config.gui.enable {
-    programs.vscode = {
-      enable = true;
-      package = pkgs.vscodium;
-      userSettings =
-        mergeAttrs
-        settings
-        (pipe extensions [
-          (map ({settings, ...}: settings))
-          (foldr mergeAttrs {})
-        ]);
-      extensions = map ({package, ...}: package) extensions;
-      keybindings = [
-        {
-          key = "ctrl+k f";
-          command = "-workbench.action.closeFolder";
-          when = "emptyWorkspaceSupport";
-        }
-        {
-          key = "ctrl+k f";
-          command = "workbench.explorer.fileView.focus";
-        }
-      ];
-    };
-  }
+mkIf config.gui.enable {
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscodium;
+    userSettings = mergeAttrs settings (
+      pipe extensions [
+        (map ({ settings, ... }: settings))
+        (foldr mergeAttrs { })
+      ]
+    );
+    extensions = map ({ package, ... }: package) extensions;
+    keybindings = [
+      {
+        key = "ctrl+k f";
+        command = "-workbench.action.closeFolder";
+        when = "emptyWorkspaceSupport";
+      }
+      {
+        key = "ctrl+k f";
+        command = "workbench.explorer.fileView.focus";
+      }
+    ];
+  };
+}

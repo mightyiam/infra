@@ -1,4 +1,8 @@
 {
   programs.steam.enable = true;
-  nixpkgs.allowUnfreePackages = ["steam" "steam-original" "steam-run"];
+  nixpkgs.allowUnfreePackages = [
+    "steam"
+    "steam-original"
+    "steam-run"
+  ];
 }

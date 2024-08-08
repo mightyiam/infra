@@ -1,12 +1,13 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   inherit (pkgs) gh makeWrapper;
-in {
+in
+{
   programs.gh = {
     package = gh.overrideAttrs (oldAttrs: {
-      buildInputs = oldAttrs.buildInputs or [] ++ [makeWrapper];
+      buildInputs = oldAttrs.buildInputs or [ ] ++ [ makeWrapper ];
       postInstall =
-        oldAttrs.postInstall
-        or ""
+        oldAttrs.postInstall or ""
         + ''
           wrapProgram $out/bin/gh --unset GITHUB_TOKEN
         '';

@@ -3,12 +3,9 @@
   pkgs,
   lib,
   ...
-}: let
-  inherit
-    (lib)
-    concatLists
-    optionals
-    ;
+}:
+let
+  inherit (lib) concatLists optionals;
 
   tui = with pkgs; [
     ansifilter
@@ -78,7 +75,8 @@
       xdg-utils
     ])
   ];
-in {
+in
+{
   home.packages = concatLists [
     tui
     (optionals config.gui.enable gui)

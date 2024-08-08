@@ -2,7 +2,8 @@ let
   dir = "/media";
   mode = 770;
   group = "media";
-in {
+in
+{
   inherit group;
   inherit dir;
   mode = {
@@ -14,5 +15,5 @@ in {
     chown root:${group} ${dir}
     chmod ${toString mode} ${dir}
   '';
-  module.users.groups."${group}" = {};
+  module.users.groups."${group}" = { };
 }

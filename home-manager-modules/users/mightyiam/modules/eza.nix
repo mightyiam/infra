@@ -1,12 +1,6 @@
-{
-  pkgs,
-  lib,
-  ...
-}: let
-  inherit
-    (lib)
-    concatStringsSep
-    ;
+{ pkgs, lib, ... }:
+let
+  inherit (lib) concatStringsSep;
 
   l = concatStringsSep " " [
     "${pkgs.eza}/bin/eza"
@@ -16,7 +10,8 @@
     "--header"
     "--all"
   ];
-in {
+in
+{
   programs.eza.enable = true;
   home.shellAliases = {
     inherit l;
