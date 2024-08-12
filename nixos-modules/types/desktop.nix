@@ -1,6 +1,5 @@
 {
   imports = [
-    ../modules/1bowapinya.nix
     ../modules/allow-unfree-packages.nix
     ../modules/bluetooth.nix
     ../modules/boot-message.nix
@@ -15,7 +14,6 @@
     ../modules/grub.nix
     ../modules/home-related-hacks.nix
     ../modules/home.nix
-    ../modules/mightyiam.nix
     ../modules/networking.nix
     ../modules/nix.nix
     ../modules/pipewire.nix
@@ -28,5 +26,7 @@
     ../modules/tmp.nix
     ../modules/virtualbox.nix
     ../modules/zfs.nix
+    ../users/1bowapinya.nix
+    ../users/me.nix
   ];
 }
