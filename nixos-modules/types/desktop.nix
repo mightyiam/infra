@@ -15,6 +15,7 @@
     ../modules/home-related-hacks.nix
     ../modules/home.nix
     ../modules/networking.nix
+    ../modules/nix-index.nix
     ../modules/nix.nix
     ../modules/pipewire.nix
     ../modules/printing.nix

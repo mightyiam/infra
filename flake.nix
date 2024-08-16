@@ -19,6 +19,8 @@
     nix-on-droid.inputs.home-manager.follows = "home-manager";
     nix-on-droid.inputs.nixpkgs-docs.follows = "nixpkgs";
     nix-on-droid.inputs.nixpkgs-for-bootstrap.follows = "nixpkgs";
+    nix-index-database.url = "github:nix-community/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs =
     inputs:
