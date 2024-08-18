@@ -5,5 +5,5 @@
     ".envrc"
     ".direnv"
   ];
-  programs.direnv.config.warn_timeout = 0;
+  programs.direnv.config.global.warn_timeout = 0;
 }
