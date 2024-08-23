@@ -31,6 +31,7 @@
         ./nix-on-droid-configurations.nix
         ./fmt.nix
         ./system-diff.nix
+        ./meta.nix
       ];
 
       systems = [
