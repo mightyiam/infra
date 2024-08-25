@@ -39,7 +39,7 @@ let
     nvd
     statix
     nix-diff
-    nix-melt
+    #nix-melt
     nix-prefetch-scripts
 
     # lua
