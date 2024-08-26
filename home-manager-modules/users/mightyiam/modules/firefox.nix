@@ -14,6 +14,9 @@ mkIf config.gui.enable {
         userChrome = '''';
         userContent = '''';
       };
+      vpn = {
+        id = 1;
+      };
     };
   };
 }
