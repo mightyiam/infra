@@ -27,7 +27,6 @@
     ../modules/sudo.nix
     ../modules/tmp.nix
     ../modules/virtualbox.nix
-    ../modules/zfs.nix
     ../users/1bowapinya.nix
     ../users/me.nix
   ];
