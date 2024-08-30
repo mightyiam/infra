@@ -1,4 +1,5 @@
-{config, ...}: {
+{ config, ... }:
+{
   boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
   boot.zfs.forceImportRoot = false;
   services.zfs.autoScrub.enable = true;
