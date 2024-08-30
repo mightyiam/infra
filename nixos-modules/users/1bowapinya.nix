@@ -8,25 +8,22 @@
 
   services.xserver.desktopManager.gnome.enable = true;
 
-  environment.gnome.excludePackages =
-    (with pkgs; [
-      epiphany
-      geary
-      gnome-calendar
-      gnome-connections
-      gnome-text-editor
-      gnome-tour
-      gnome-user-docs
-      orca
-      simple-scan
-      snapshot
-      yelp
-    ])
-    ++ (with pkgs.gnome; [
-      gnome-contacts
-      gnome-logs
-      gnome-maps
-      gnome-music
-      gnome-weather
-    ]);
+  environment.gnome.excludePackages = with pkgs; [
+    epiphany
+    geary
+    gnome-calendar
+    gnome-connections
+    gnome-contacts
+    gnome-logs
+    gnome-maps
+    gnome-music
+    gnome-text-editor
+    gnome-tour
+    gnome-user-docs
+    gnome-weather
+    orca
+    simple-scan
+    snapshot
+    yelp
+  ];
 }
