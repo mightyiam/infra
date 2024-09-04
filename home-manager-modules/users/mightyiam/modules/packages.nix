@@ -17,6 +17,7 @@ let
     file
     gh-dash
     git-instafix
+    glab
     gping
     lsof
     neofetch
