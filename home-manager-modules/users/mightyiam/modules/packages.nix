@@ -11,6 +11,7 @@ let
     ansifilter
     atool
     bandwhich
+    bind # for dig
     du-dust
     fd
     file
