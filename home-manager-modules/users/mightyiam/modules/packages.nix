@@ -19,6 +19,7 @@ let
     git-instafix
     glab
     gping
+    gptfdisk
     lsof
     neofetch
     pciutils
