@@ -1,5 +1,6 @@
 {
   imports = [
+    ../../nixos-modules/modules/swap.nix
     ../../nixos-modules/types/desktop.nix
     ./mobo.nix
     ./state-version.nix
