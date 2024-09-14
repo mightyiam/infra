@@ -5,7 +5,7 @@ lsp_zero.setup_servers({
 	"eslint",
 	"lua_ls",
 	"nixd",
-	"tsserver",
+	"ts_ls",
 	"yamlls",
 })
 lsp_zero.set_preferences({
