@@ -17,6 +17,7 @@ let
     file
     gh-dash
     git-instafix
+    git-trim
     glab
     gping
     gptfdisk
