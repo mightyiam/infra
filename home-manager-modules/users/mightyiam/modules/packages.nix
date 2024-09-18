@@ -36,6 +36,7 @@ let
     vscode-langservers-extracted
 
     # nix
+    nix-fast-build
     nix-tree
     nixd
     nurl
