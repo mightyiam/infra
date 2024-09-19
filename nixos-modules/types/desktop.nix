@@ -22,6 +22,7 @@
     ../modules/printing.nix
     ../modules/service-discovery.nix
     ../modules/shell.nix
+    ../modules/sshd.nix
     ../modules/steam.nix
     ../modules/storage.nix
     ../modules/sudo.nix
