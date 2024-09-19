@@ -14,6 +14,7 @@
     ../modules/grub.nix
     ../modules/home-related-hacks.nix
     ../modules/home.nix
+    ../modules/known-hosts.nix
     ../modules/networking.nix
     ../modules/nh.nix
     ../modules/nix-index.nix
