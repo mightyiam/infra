@@ -1,27 +1,4 @@
-{ config, lib, ... }:
-let
-  inherit (builtins) readDir;
-
-  inherit (lib) attrNames listToAttrs;
-
-  keysPath = "${config.home.homeDirectory}/.ssh/keys";
-
-  keyFilenames =
-    if builtins.pathExists keysPath then
-      (lib.trivial.pipe keysPath [
-        readDir
-        attrNames
-      ])
-    else
-      [ ];
-
-  isPublicKeyFilename = lib.strings.hasSuffix ".pub";
-
-  pubkeyAuthHosts = lib.trivial.pipe keyFilenames [
-    (builtins.filter (name: !(isPublicKeyFilename name)))
-    (builtins.map (lib.strings.removePrefix "id_"))
-  ];
-in
+{ config, ... }:
 {
   programs.ssh = {
     enable = true;
@@ -29,19 +6,7 @@ in
     hashKnownHosts = false;
     extraConfig = ''
       IdentitiesOnly no
-      PubkeyAuthentication no
+      Include ${config.home.homeDirectory}/.ssh/hosts/*
     '';
-    matchBlocks = lib.trivial.pipe pubkeyAuthHosts [
-      (map (host: {
-        name = host;
-        value = {
-          extraOptions = {
-            PubkeyAuthentication = "yes";
-          };
-          identityFile = toString config.home.homeDirectory + "/.ssh/keys/id_${host}";
-        };
-      }))
-      listToAttrs
-    ];
   };
 }
