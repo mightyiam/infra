@@ -20,7 +20,6 @@ in
   programs.zsh.autocd = true;
   programs.zsh.defaultKeymap = "viins";
   programs.zsh.history.ignorePatterns = [ "rm *" ];
-  programs.zsh.initExtraFirst = readFile ./tmux-init.sh;
   programs.zsh.initExtra = ''
     bindkey '^P' up-history
     bindkey '^N' down-history

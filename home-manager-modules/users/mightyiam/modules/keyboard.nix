@@ -19,11 +19,6 @@ in
     type = types.anything;
     default = {
       inherit leader;
-      keyMode = "vi"; # tmux
-      terminalMultiplexerEscape = "a"; # tmux
-      splitVertical = "\""; # tmux
-      splitHorizontal = "%"; # tmux
-      windowNew = "c"; # tmux
       easyMotion = ",";
       text = {
         dedent = "<";
