@@ -1,6 +1,6 @@
 {
   programs.atuin = {
-    enable = true;
+    #enable = true;
     settings = {
       keymap_mode = "vim-normal";
     };
