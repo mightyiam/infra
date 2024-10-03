@@ -28,6 +28,7 @@ in
         actions = "a";
         rename = "r";
         format = "f";
+        nixfmt = "n";
       };
       goTo = prefixRec "g" {
         declaration = "D";

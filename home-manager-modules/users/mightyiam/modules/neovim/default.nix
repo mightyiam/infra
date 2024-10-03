@@ -263,6 +263,7 @@ in
         nnoremap ${keyboard.refactor.actions} <cmd>lua vim.lsp.buf.code_action()<CR>
         xnoremap ${keyboard.refactor.actions} <cmd>lua vim.lsp.buf.code_action()<CR>
         nnoremap ${keyboard.refactor.format} <cmd>lua vim.lsp.buf.format({ async = false })<CR>
+        nnoremap ${keyboard.refactor.nixfmt} <cmd>!nix fmt %<cr>
         nnoremap ${keyboard.diagnostic.next} <cmd>lua vim.diagnostic.goto_next()<CR>
         nnoremap ${keyboard.diagnostic.prev} <cmd>lua vim.diagnostic.goto_prev()<CR>
       '')
