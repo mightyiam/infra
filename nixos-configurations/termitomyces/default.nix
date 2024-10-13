@@ -1,7 +1,6 @@
 {
   imports = [
     ../../nixos-modules/types/desktop.nix
-    ./remote-builder.nix
     ./sshd.nix
     ./mobo.nix
     ./gpu.nix
