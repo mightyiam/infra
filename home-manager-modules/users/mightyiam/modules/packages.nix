@@ -11,6 +11,7 @@ let
     ansifilter
     atool
     bandwhich
+    curl
     bind # for dig
     du-dust
     fd
@@ -21,6 +22,7 @@ let
     glab
     gping
     gptfdisk
+    jq
     lsof
     neofetch
     pciutils
