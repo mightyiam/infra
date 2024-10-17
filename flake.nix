@@ -28,7 +28,7 @@
       imports = [
         inputs.devshell.flakeModule
         ./nixos-configurations.nix
-        ./nix-on-droid-configurations.nix
+        ./nix-on-droid-configurations
         ./fmt.nix
         ./system-diff.nix
         ./meta.nix
