@@ -1,5 +1,6 @@
 {
   config,
+  self,
   pkgs,
   lib,
   ...
@@ -22,7 +23,7 @@ let
   };
   modules =
     let
-      dir = ./. + "/modules";
+      dir = self + "/home-manager-modules/users/mightyiam/modules";
       relativePaths = attrNames (readDir dir);
     in
     map (path: "${dir}/${path}") relativePaths;

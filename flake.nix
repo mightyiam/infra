@@ -28,6 +28,7 @@
     inputs.flake-parts.lib.mkFlake { inputs = inputs; } {
       imports = [
         ./fmt.nix
+        ./home-manager-configurations
         ./meta.nix
         ./nix-on-droid-configurations
         ./nixos-configurations.nix
