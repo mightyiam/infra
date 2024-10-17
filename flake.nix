@@ -1,4 +1,5 @@
 {
+  nixConfig.extra-experimental-features = [ "pipe-operators" ];
   inputs = {
     nixpkgs.url = "nixpkgs/nixpkgs-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";

@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  inherit (lib) concatStringsSep mkIf pipe;
+  inherit (lib) concatStringsSep mkIf;
 
   expandPrefer = family: "<family>${family}</family>";
   expandAlias =
@@ -9,12 +9,7 @@ let
       <alias>
         <family>${family}</family>
         <prefer>
-          ${
-            pipe prefer [
-              (map expandPrefer)
-              (concatStringsSep "\n    ")
-            ]
-          }
+          ${map expandPrefer prefer |> concatStringsSep "\n    "}
         </prefer>
       </alias>
     '';
@@ -25,10 +20,7 @@ let
         <?xml version="1.0"?>
         <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
         <fontconfig>''
-      (pipe aliases [
-        (map expandAlias)
-        (concatStringsSep "")
-      ])
+      (map expandAlias aliases |> concatStringsSep "")
       ''</fontconfig>''
     ];
 in

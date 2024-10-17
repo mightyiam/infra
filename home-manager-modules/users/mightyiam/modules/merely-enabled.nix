@@ -1,6 +1,6 @@
 { lib, ... }:
 let
-  inherit (lib) listToAttrs pipe;
+  inherit (lib) listToAttrs;
 
   programs = [
     "command-not-found"
@@ -15,12 +15,6 @@ let
   };
 in
 {
-  programs = pipe programs [
-    (map mapper)
-    listToAttrs
-  ];
-  services = pipe services [
-    (map mapper)
-    listToAttrs
-  ];
+  programs = map mapper programs |> listToAttrs;
+  services = map mapper services |> listToAttrs;
 }

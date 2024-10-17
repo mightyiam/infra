@@ -9,7 +9,6 @@ let
     foldr
     mergeAttrs
     mkIf
-    pipe
     ;
 
   inherit (pkgs) vscode-extensions;
@@ -46,10 +45,7 @@ mkIf config.gui.enable {
     enable = true;
     package = pkgs.vscodium;
     userSettings = mergeAttrs settings (
-      pipe extensions [
-        (map ({ settings, ... }: settings))
-        (foldr mergeAttrs { })
-      ]
+      map ({ settings, ... }: settings) extensions |> foldr mergeAttrs { }
     );
     extensions = map ({ package, ... }: package) extensions;
     keybindings = [

@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  inherit (lib) listToAttrs mkIf pipe;
+  inherit (lib) listToAttrs mkIf;
 
   web_browser = [ "firefox.desktop" ];
   browser_types = [
@@ -20,10 +20,7 @@ let
     name = type;
     value = web_browser;
   };
-  browser_entries = pipe browser_types [
-    (map type_to_browser_entry)
-    listToAttrs
-  ];
+  browser_entries = map type_to_browser_entry browser_types |> listToAttrs;
 in
 mkIf config.gui.enable {
   xdg = {

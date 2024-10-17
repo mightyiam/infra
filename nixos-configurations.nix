@@ -5,11 +5,10 @@
   ...
 }:
 {
-  imports = lib.pipe ./nixos-configurations [
-    builtins.readDir
-    lib.attrNames
-
-    (map (hostname: {
+  imports =
+    builtins.readDir ./nixos-configurations
+    |> lib.attrNames
+    |> map (hostname: {
       flake =
         let
           nixosConfiguration = inputs.nixpkgs.lib.nixosSystem {
@@ -26,6 +25,5 @@
           checks.${system}."nixosConfigurations/${hostname}" =
             nixosConfiguration.config.system.build.toplevel;
         };
-    }))
-  ];
+    });
 }

@@ -10,7 +10,6 @@ let
   inherit (lib)
     concatStringsSep
     mkBefore
-    pipe
     readFile
     ;
 
@@ -371,12 +370,7 @@ in
       ''
       (omitVIMLInVSCode ''
         set number
-        set guifont=monospace:h${
-          pipe config.gui.fonts.monospace.size [
-            floor
-            toString
-          ]
-        }
+        set guifont=monospace:h${floor config.gui.fonts.monospace.size |> toString}
       '')
       (omitVIMLInVSCode "lua require('lsp.index')\n")
     ];
