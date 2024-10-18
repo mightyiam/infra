@@ -18,6 +18,8 @@
       commit.verbose = true;
       rerere.enabled = true;
       diff.algorithm = "histogram";
+      branch.sort = "-committerdate";
+      tag.sort = "taggerdate";
     };
   };
 }
