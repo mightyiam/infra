@@ -18,8 +18,7 @@
   programs.zsh.defaultKeymap = "viins";
   programs.zsh.history.ignorePatterns = [ "rm *" ];
   programs.zsh.initExtra = ''
-    bindkey '^P' up-history
-    bindkey '^N' down-history
+    bindkey '^[;' up-line-or-search
     bindkey '^w' backward-kill-word
     bindkey '^r' history-incremental-search-backward
     bindkey '^[^M' autosuggest-execute
