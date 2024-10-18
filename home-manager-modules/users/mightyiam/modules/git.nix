@@ -16,6 +16,7 @@
       rebase.instructionFormat = "%d %s";
       merge.conflictstyle = "zdiff3";
       commit.verbose = true;
+      rerere.enabled = true;
     };
   };
 }
