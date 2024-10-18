@@ -7,10 +7,10 @@
 {
   config.programs.ssh.knownHosts =
     lib.filterAttrs (
-      name: config: !isNull config.config.services.openssh.publicKey
+      _name: config: !isNull config.config.services.openssh.publicKey
     ) self.nixosConfigurations
     |> lib.mapAttrs (
-      name: config: {
+      _name: config: {
         hostNames = [ "*" ];
         inherit (config.config.services.openssh) publicKey;
       }

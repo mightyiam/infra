@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   lib,
   ...
@@ -10,7 +9,6 @@ let
   inherit (lib)
     attrNames
     mkDefault
-    mkIf
     mkOption
     types
     ;

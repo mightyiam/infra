@@ -10,7 +10,7 @@ let
     up = "k";
     right = "l";
   };
-  applyRec = f: attrs: mapAttrs (k: v: if isAttrs v then applyRec f v else f v) attrs;
+  applyRec = f: attrs: mapAttrs (_: v: if isAttrs v then applyRec f v else f v) attrs;
   prefixRec = str: applyRec (v: str + v);
   leader = ",";
 in
