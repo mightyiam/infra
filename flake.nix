@@ -28,11 +28,11 @@
     inputs.flake-parts.lib.mkFlake { inputs = inputs; } {
       imports = [
         inputs.devshell.flakeModule
-        ./nixos-configurations.nix
-        ./nix-on-droid-configurations
         ./fmt.nix
-        ./system-diff.nix
         ./meta.nix
+        ./nix-on-droid-configurations
+        ./nixos-configurations.nix
+        ./system-diff.nix
       ];
 
       systems = [
