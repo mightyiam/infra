@@ -5,11 +5,9 @@
   ...
 }:
 let
-  inherit (lib) mkIf;
-
   mode = "screen-capture";
 in
-mkIf config.gui.enable {
+lib.mkIf config.gui.enable {
   services.mako = {
     enable = true;
     anchor = "top-right";

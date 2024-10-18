@@ -5,11 +5,9 @@
   ...
 }:
 let
-  inherit (lib) mkIf;
-
   id = "bottom";
 in
-mkIf config.gui.enable {
+lib.mkIf config.gui.enable {
   programs.i3status-rust = {
     enable = true;
     bars = {

@@ -5,8 +5,6 @@
   ...
 }:
 let
-  inherit (lib) concatLists optionals;
-
   tui = with pkgs; [
     ansifilter
     atool
@@ -63,7 +61,7 @@ let
     mob
   ];
 
-  gui = concatLists [
+  gui = lib.concatLists [
     config.gui.fonts.packages
     (with pkgs; [
       anki
@@ -83,8 +81,8 @@ let
   ];
 in
 {
-  home.packages = concatLists [
+  home.packages = lib.concatLists [
     tui
-    (optionals config.gui.enable gui)
+    (lib.optionals config.gui.enable gui)
   ];
 }

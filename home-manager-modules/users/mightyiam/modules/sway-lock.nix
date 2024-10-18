@@ -5,14 +5,11 @@
   ...
 }:
 let
-  inherit (lib) mkIf;
-
-  inherit (config) keyboard;
   lockCommand = pkgs.swaylock + /bin/swaylock;
   swayMsgPath = config.wayland.windowManager.sway.package + /bin/swaymsg;
 in
-mkIf config.gui.enable {
-  wayland.windowManager.sway.config.keybindings."${keyboard.wm.lock}" = "exec ${lockCommand}";
+lib.mkIf config.gui.enable {
+  wayland.windowManager.sway.config.keybindings."${config.keyboard.wm.lock}" = "exec ${lockCommand}";
   programs.swaylock.enable = true;
   programs.swaylock.settings.daemonize = true;
   programs.swaylock.settings.show-keyboard-layout = true;

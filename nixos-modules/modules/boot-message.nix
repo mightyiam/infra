@@ -1,8 +1,5 @@
 { lib, pkgs, ... }:
 let
-  inherit (lib) escapeShellArg;
-  inherit (pkgs) neo-cowsay;
-
   message = ''
     If found, please contact:
     Shahar "Dawn" Or
@@ -13,6 +10,6 @@ let
 in
 {
   boot.initrd.preDeviceCommands = ''
-    echo -e ${escapeShellArg message} | ${neo-cowsay}/bin/cowsay --bold --aurora -f dragon
+    echo -e ${lib.escapeShellArg message} | ${pkgs.neo-cowsay}/bin/cowsay --bold --aurora -f dragon
   '';
 }

@@ -5,14 +5,6 @@
   ...
 }:
 let
-  inherit (lib)
-    foldr
-    mergeAttrs
-    mkIf
-    ;
-
-  inherit (pkgs) vscode-extensions;
-
   settings = {
     "editor.cursorSmoothCaretAnimation" = true;
     "editor.unicodeHighlight.ambiguousCharacters" = false;
@@ -22,30 +14,30 @@ let
   };
   extensions = [
     {
-      package = vscode-extensions.jnoortheen.nix-ide;
+      package = pkgs.vscode-extensions.jnoortheen.nix-ide;
       settings = {
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "${pkgs.nixd}/bin/nixd";
       };
     }
     {
-      package = vscode-extensions.asvetliakov.vscode-neovim;
+      package = pkgs.vscode-extensions.asvetliakov.vscode-neovim;
       settings = {
         "vscode-neovim.neovimExecutablePaths.linux" = "${pkgs.neovim}/bin/nvim";
       };
     }
     {
-      package = vscode-extensions.dbaeumer.vscode-eslint;
+      package = pkgs.vscode-extensions.dbaeumer.vscode-eslint;
       settings = { };
     }
   ];
 in
-mkIf config.gui.enable {
+lib.mkIf config.gui.enable {
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
-    userSettings = mergeAttrs settings (
-      map ({ settings, ... }: settings) extensions |> foldr mergeAttrs { }
+    userSettings = lib.mergeAttrs settings (
+      map ({ settings, ... }: settings) extensions |> lib.foldr lib.mergeAttrs { }
     );
     extensions = map ({ package, ... }: package) extensions;
     keybindings = [

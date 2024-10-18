@@ -5,24 +5,13 @@
   ...
 }:
 let
-  inherit (builtins) floor;
-
-  inherit (lib)
-    concatStringsSep
-    mkBefore
-    readFile
-    ;
-
-  inherit (pkgs) vimPlugins;
-
-  inherit (config) keyboard;
   omitVIMLInVSCode = import ./omitVIMLInVSCode.nix;
   omitPluginInVSCode = import ./omitPluginInVSCode.nix;
   inlineLuaFile =
     path:
-    concatStringsSep "" [
+    lib.concatStringsSep "" [
       "lua << EOF\n"
-      (readFile path)
+      (lib.readFile path)
       "EOF\n"
     ];
   lsp-zero = pkgs.vimUtils.buildVimPlugin rec {
@@ -70,23 +59,23 @@ let
   '';
 in
 {
-  xdg.configFile."nvim/init.lua".text = mkBefore ''vim.cmd [[let mapleader = "${keyboard.leader}"]]'';
+  xdg.configFile."nvim/init.lua".text = lib.mkBefore ''vim.cmd [[let mapleader = "${config.keyboard.leader}"]]'';
   programs.neovim = {
     enable = true;
     vimAlias = true;
     vimdiffAlias = true;
     plugins = [
-      (omitPluginInVSCode vimPlugins.which-key-nvim (embedLua ''
+      (omitPluginInVSCode pkgs.vimPlugins.which-key-nvim (embedLua ''
         require("which-key").setup {}
       ''))
-      (omitPluginInVSCode vimPlugins.vim-nix "")
+      (omitPluginInVSCode pkgs.vimPlugins.vim-nix "")
       {
-        plugin = vimPlugins.vim-easymotion;
+        plugin = pkgs.vimPlugins.vim-easymotion;
         config = ''
-          map ${keyboard.easyMotion} <Plug>(easymotion-prefix)
+          map ${config.keyboard.easyMotion} <Plug>(easymotion-prefix)
         '';
       }
-      (omitPluginInVSCode vimPlugins.ctrlp-vim ''
+      (omitPluginInVSCode pkgs.vimPlugins.ctrlp-vim ''
         let g:ctrlp_user_command = ['.git', 'cd %s && ${pkgs.git}/bin/git ls-files -co --exclude-standard']
       '')
       # (omitPluginInVSCode vimPlugins.nvim-treesitter.withAllGrammars (embedLua ''
@@ -98,13 +87,13 @@ in
       #   }
       # ''))
       {
-        plugin = vimPlugins.nvim-surround;
+        plugin = pkgs.vimPlugins.nvim-surround;
         config = embedLua ''
           require('nvim-surround').setup()
         '';
       }
       {
-        plugin = vimPlugins.comment-nvim;
+        plugin = pkgs.vimPlugins.comment-nvim;
         config = embedLua ''
           require('Comment').setup({
             mappings = { basic = false, extra = false },
@@ -123,12 +112,12 @@ in
         '';
       }
       {
-        plugin = vimPlugins.guess-indent-nvim;
+        plugin = pkgs.vimPlugins.guess-indent-nvim;
         config = embedLua ''
           require('guess-indent').setup {}
         '';
       }
-      (omitPluginInVSCode vimPlugins.lualine-nvim (embedLua ''
+      (omitPluginInVSCode pkgs.vimPlugins.lualine-nvim (embedLua ''
         local winbar = {
           lualine_a = {
             'encoding',
@@ -202,9 +191,9 @@ in
           },
         })
       ''))
-      (omitPluginInVSCode vimPlugins.vim-gitgutter "")
-      (omitPluginInVSCode vimPlugins.nvim-lspconfig "")
-      (omitPluginInVSCode vimPlugins.rustaceanvim (embedLua ''
+      (omitPluginInVSCode pkgs.vimPlugins.vim-gitgutter "")
+      (omitPluginInVSCode pkgs.vimPlugins.nvim-lspconfig "")
+      (omitPluginInVSCode pkgs.vimPlugins.rustaceanvim (embedLua ''
         vim.g.rustaceanvim = {
           tools = {
           },
@@ -244,33 +233,33 @@ in
           { "<leader>hr", function() require('lsp-inlayhints').reset() end, desc = "reset" },
         })
       ''))
-      (omitPluginInVSCode vimPlugins.cmp-nvim-lsp "")
-      (omitPluginInVSCode vimPlugins.nvim-cmp "")
-      (omitPluginInVSCode vimPlugins.luasnip "")
-      (omitPluginInVSCode vimPlugins.nvim-autopairs (embedLua ''
+      (omitPluginInVSCode pkgs.vimPlugins.cmp-nvim-lsp "")
+      (omitPluginInVSCode pkgs.vimPlugins.nvim-cmp "")
+      (omitPluginInVSCode pkgs.vimPlugins.luasnip "")
+      (omitPluginInVSCode pkgs.vimPlugins.nvim-autopairs (embedLua ''
         require("nvim-autopairs").setup{}
       ''))
       (omitPluginInVSCode lsp-zero ''
-        nnoremap ${keyboard.show.type} <cmd>lua vim.lsp.buf.hover()<CR>
-        nnoremap ${keyboard.show.signature} <cmd>lua vim.lsp.buf.signature_help()<CR>
-        nnoremap ${keyboard.goTo.definition} <cmd>lua vim.lsp.buf.definition()<CR>
-        nnoremap ${keyboard.goTo.declaration} <cmd>lua vim.lsp.buf.declaration()<CR>
-        nnoremap ${keyboard.goTo.implementation} <cmd>lua vim.lsp.buf.implementation()<CR>
-        nnoremap ${keyboard.goTo.type} <cmd>lua vim.lsp.buf.type_definition()<CR>
-        nnoremap ${keyboard.goTo.diagnostics} <cmd>lua vim.diagnostic.setloclist()<CR>
-        nnoremap ${keyboard.refactor.rename} <cmd>lua vim.lsp.buf.rename()<CR>
-        nnoremap ${keyboard.refactor.actions} <cmd>lua vim.lsp.buf.code_action()<CR>
-        xnoremap ${keyboard.refactor.actions} <cmd>lua vim.lsp.buf.code_action()<CR>
-        nnoremap ${keyboard.refactor.format} <cmd>lua vim.lsp.buf.format({ async = false })<CR>
-        nnoremap ${keyboard.refactor.nixfmt} <cmd>!nix fmt %<cr>
-        nnoremap ${keyboard.diagnostic.next} <cmd>lua vim.diagnostic.goto_next()<CR>
-        nnoremap ${keyboard.diagnostic.prev} <cmd>lua vim.diagnostic.goto_prev()<CR>
+        nnoremap ${config.keyboard.show.type} <cmd>lua vim.lsp.buf.hover()<CR>
+        nnoremap ${config.keyboard.show.signature} <cmd>lua vim.lsp.buf.signature_help()<CR>
+        nnoremap ${config.keyboard.goTo.definition} <cmd>lua vim.lsp.buf.definition()<CR>
+        nnoremap ${config.keyboard.goTo.declaration} <cmd>lua vim.lsp.buf.declaration()<CR>
+        nnoremap ${config.keyboard.goTo.implementation} <cmd>lua vim.lsp.buf.implementation()<CR>
+        nnoremap ${config.keyboard.goTo.type} <cmd>lua vim.lsp.buf.type_definition()<CR>
+        nnoremap ${config.keyboard.goTo.diagnostics} <cmd>lua vim.diagnostic.setloclist()<CR>
+        nnoremap ${config.keyboard.refactor.rename} <cmd>lua vim.lsp.buf.rename()<CR>
+        nnoremap ${config.keyboard.refactor.actions} <cmd>lua vim.lsp.buf.code_action()<CR>
+        xnoremap ${config.keyboard.refactor.actions} <cmd>lua vim.lsp.buf.code_action()<CR>
+        nnoremap ${config.keyboard.refactor.format} <cmd>lua vim.lsp.buf.format({ async = false })<CR>
+        nnoremap ${config.keyboard.refactor.nixfmt} <cmd>!nix fmt %<cr>
+        nnoremap ${config.keyboard.diagnostic.next} <cmd>lua vim.diagnostic.goto_next()<CR>
+        nnoremap ${config.keyboard.diagnostic.prev} <cmd>lua vim.diagnostic.goto_prev()<CR>
       '')
-      (omitPluginInVSCode vimPlugins.fidget-nvim (inlineLuaFile ./lua/lsp/fidget-nvim.lua))
-      (omitPluginInVSCode vimPlugins.symbols-outline-nvim "")
-      vimPlugins.plenary-nvim
-      (omitPluginInVSCode vimPlugins.null-ls-nvim (inlineLuaFile ./lua/lsp/null-ls.lua))
-      (omitPluginInVSCode vimPlugins.telescope-nvim (embedLua ''
+      (omitPluginInVSCode pkgs.vimPlugins.fidget-nvim (inlineLuaFile ./lua/lsp/fidget-nvim.lua))
+      (omitPluginInVSCode pkgs.vimPlugins.symbols-outline-nvim "")
+      pkgs.vimPlugins.plenary-nvim
+      (omitPluginInVSCode pkgs.vimPlugins.null-ls-nvim (inlineLuaFile ./lua/lsp/null-ls.lua))
+      (omitPluginInVSCode pkgs.vimPlugins.telescope-nvim (embedLua ''
         local telescope = require("telescope")
         local telescopeConfig = require("telescope.config")
         local builtin = require('telescope.builtin')
@@ -311,9 +300,10 @@ in
         vim.keymap.set('n', '<leader>fd', builtin.lsp_definitions, {})
         vim.keymap.set('n', '<leader>ft', builtin.lsp_type_definitions, {})
         vim.keymap.set('n', '<leader>fa', builtin.builtin, {})
+        vim.keymap.set('n', '<leader>f;', builtin.resume, {})
       ''))
-      (omitPluginInVSCode vimPlugins.nvim-web-devicons "") # for trouble-nvim
-      (omitPluginInVSCode vimPlugins.trouble-nvim (embedLua ''
+      (omitPluginInVSCode pkgs.vimPlugins.nvim-web-devicons "") # for trouble-nvim
+      (omitPluginInVSCode pkgs.vimPlugins.trouble-nvim (embedLua ''
         require("trouble").setup {}
         require("which-key").add({
           { "<leader>x", group = "trouble" },
@@ -330,7 +320,7 @@ in
       (omitPluginInVSCode vim-autoread ''
         autocmd VimEnter * nested WatchForChangesAllFile!
       '')
-      (omitPluginInVSCode vimPlugins.unicode-vim "")
+      (omitPluginInVSCode pkgs.vimPlugins.unicode-vim "")
       # (omitPluginInVSCode vimPlugins.nvim-spectre (embedLua ''
       #   require('spectre').setup()
       #   local wk = require('which-key')
@@ -355,11 +345,11 @@ in
       #   })
       # ''))
     ];
-    extraConfig = concatStringsSep "\n" [
+    extraConfig = lib.concatStringsSep "\n" [
       ''
         set ignorecase
-        vnoremap ${keyboard.text.dedent} <gv
-        vnoremap ${keyboard.text.indent} >gv
+        vnoremap ${config.keyboard.text.dedent} <gv
+        vnoremap ${config.keyboard.text.indent} >gv
         set clipboard+=unnamedplus
         set updatetime=100
         set scrolloff=0
@@ -370,7 +360,7 @@ in
       ''
       (omitVIMLInVSCode ''
         set number
-        set guifont=monospace:h${floor config.gui.fonts.monospace.size |> toString}
+        set guifont=monospace:h${builtins.floor config.gui.fonts.monospace.size |> toString}
       '')
       (omitVIMLInVSCode "lua require('lsp.index')\n")
     ];

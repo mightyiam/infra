@@ -1,8 +1,6 @@
 { pkgs, lib, ... }:
 let
-  inherit (lib) concatStringsSep;
-
-  l = concatStringsSep " " [
+  l = lib.concatStringsSep " " [
     "${pkgs.eza}/bin/eza"
     "--group"
     "--icons"

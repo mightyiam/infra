@@ -1,8 +1,5 @@
 { config, lib, ... }:
-let
-  inherit (lib) mkIf;
-in
-mkIf config.gui.enable {
+lib.mkIf config.gui.enable {
   services.wlsunset = with config.location; {
     enable = true;
     latitude = toString latitude;

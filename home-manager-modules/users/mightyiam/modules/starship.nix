@@ -1,6 +1,3 @@
-let
-  inherit (builtins) concatStringsSep;
-in
 {
   programs.starship = {
     enable = true;
@@ -9,7 +6,7 @@ in
     settings = {
       add_newline = false;
       ## https://starship.rs/config/#prompt
-      format = concatStringsSep "" [
+      format = builtins.concatStringsSep "" [
         "\n"
         "$username"
         "$hostname"

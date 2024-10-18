@@ -1,7 +1,5 @@
 { config, lib, ... }:
 let
-  inherit (lib) listToAttrs mkIf;
-
   web_browser = [ "firefox.desktop" ];
   browser_types = [
     "x-scheme-handler/http"
@@ -20,9 +18,9 @@ let
     name = type;
     value = web_browser;
   };
-  browser_entries = map type_to_browser_entry browser_types |> listToAttrs;
+  browser_entries = map type_to_browser_entry browser_types |> lib.listToAttrs;
 in
-mkIf config.gui.enable {
+lib.mkIf config.gui.enable {
   xdg = {
     enable = true;
     mime.enable = true;

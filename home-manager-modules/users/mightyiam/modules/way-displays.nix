@@ -5,14 +5,11 @@
   ...
 }:
 let
-  inherit (lib) mkIf;
-
   dir = "$XDG_CONFIG_HOME/way-displays";
   file = "${dir}/cfg.yaml";
-  exe = "${lib.getBin way-displays}/bin/way-displays";
-  inherit (pkgs) way-displays;
+  exe = "${lib.getBin pkgs.way-displays}/bin/way-displays";
 in
-mkIf config.gui.enable {
+lib.mkIf config.gui.enable {
   wayland.windowManager.sway.config.startup = [
     {
       command = "${lib.getBin pkgs.coreutils}/bin/mkdir -p ${dir}";
@@ -28,5 +25,5 @@ mkIf config.gui.enable {
     }
   ];
 
-  home.packages = [ way-displays ];
+  home.packages = [ pkgs.way-displays ];
 }

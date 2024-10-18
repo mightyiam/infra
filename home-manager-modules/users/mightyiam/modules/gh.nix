@@ -1,11 +1,8 @@
 { pkgs, ... }:
-let
-  inherit (pkgs) gh makeWrapper;
-in
 {
   programs.gh = {
-    package = gh.overrideAttrs (oldAttrs: {
-      buildInputs = oldAttrs.buildInputs or [ ] ++ [ makeWrapper ];
+    package = pkgs.gh.overrideAttrs (oldAttrs: {
+      buildInputs = oldAttrs.buildInputs or [ ] ++ [ pkgs.makeWrapper ];
       postInstall =
         oldAttrs.postInstall or ""
         + ''

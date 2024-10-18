@@ -1,22 +1,19 @@
 { lib, ... }:
 let
-  inherit (builtins) isAttrs mapAttrs;
-
-  inherit (lib) mkOption types;
-
   directions = {
     left = "h";
     down = "j";
     up = "k";
     right = "l";
   };
-  applyRec = f: attrs: mapAttrs (_: v: if isAttrs v then applyRec f v else f v) attrs;
+  applyRec =
+    f: attrs: builtins.mapAttrs (_: v: if builtins.isAttrs v then applyRec f v else f v) attrs;
   prefixRec = str: applyRec (v: str + v);
   leader = ",";
 in
 {
-  options.keyboard = mkOption {
-    type = types.anything;
+  options.keyboard = lib.mkOption {
+    type = lib.types.anything;
     default = {
       inherit leader;
       easyMotion = ",";

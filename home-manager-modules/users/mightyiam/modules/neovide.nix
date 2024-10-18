@@ -5,9 +5,6 @@
   ...
 }:
 let
-  inherit (lib) mkIf;
-  inherit (pkgs.writers) writeTOML;
-
   options = {
     transparency = config.style.windowOpacity;
     cursor_animation_length = 8.0e-2;
@@ -16,7 +13,7 @@ let
     fork = true;
   };
 in
-mkIf config.gui.enable {
+lib.mkIf config.gui.enable {
   home.packages = [ pkgs.neovide ];
-  xdg.configFile."neovide/config.toml".source = writeTOML "neovide/config.toml" options;
+  xdg.configFile."neovide/config.toml".source = pkgs.writers.writeTOML "neovide/config.toml" options;
 }

@@ -4,24 +4,15 @@
   ...
 }:
 let
-  inherit (builtins) readDir;
-
-  inherit (lib)
-    attrNames
-    mkDefault
-    mkOption
-    types
-    ;
-
   username = "mightyiam";
   userAndHome.config = {
-    home.username = mkDefault username;
-    home.homeDirectory = mkDefault "/home/${username}";
+    home.username = lib.mkDefault username;
+    home.homeDirectory = lib.mkDefault "/home/${username}";
   };
   modules =
     let
       dir = ./. + "/modules";
-      relativePaths = attrNames (readDir dir);
+      relativePaths = lib.attrNames (builtins.readDir dir);
     in
     map (path: "${dir}/${path}") relativePaths;
   always = {
@@ -33,33 +24,33 @@ let
   };
 in
 {
-  options.gui.enable = mkOption {
-    type = types.bool;
+  options.gui.enable = lib.mkOption {
+    type = lib.types.bool;
     default = true;
   };
 
-  options.location.latitude = mkOption {
-    type = types.numbers.between (-90) 90;
+  options.location.latitude = lib.mkOption {
+    type = lib.types.numbers.between (-90) 90;
     default = 18.746;
   };
 
-  options.location.longitude = mkOption {
-    type = types.numbers.between (-180) 180;
+  options.location.longitude = lib.mkOption {
+    type = lib.types.numbers.between (-180) 180;
     default = 99.075;
   };
 
-  options.style.windowOpacity = mkOption {
-    type = types.numbers.between 0 1.0;
+  options.style.windowOpacity = lib.mkOption {
+    type = lib.types.numbers.between 0 1.0;
     default = 1.0;
   };
 
-  options.style.bellDuration = mkOption {
-    type = types.numbers.between 0 1000;
+  options.style.bellDuration = lib.mkOption {
+    type = lib.types.numbers.between 0 1000;
     default = 200.0;
   };
 
-  options.gui.fonts.packages = mkOption {
-    type = types.listOf types.package;
+  options.gui.fonts.packages = lib.mkOption {
+    type = lib.types.listOf lib.types.package;
     default = with pkgs; [
       open-dyslexic
       (nerdfonts.override { fonts = [ "OpenDyslexic" ]; })
@@ -69,32 +60,32 @@ in
     ];
   };
 
-  options.gui.fonts.default.family = mkOption {
-    type = types.str;
+  options.gui.fonts.default.family = lib.mkOption {
+    type = lib.types.str;
     default = "sans-serif";
   };
 
-  options.gui.fonts.default.size = mkOption {
-    type = types.float;
+  options.gui.fonts.default.size = lib.mkOption {
+    type = lib.types.float;
     default = 10.0;
   };
 
-  options.gui.fonts.monospace.family = mkOption {
-    type = types.str;
+  options.gui.fonts.monospace.family = lib.mkOption {
+    type = lib.types.str;
     default = "monospace";
   };
 
-  options.gui.fonts.monospace.size = mkOption {
-    type = types.float;
+  options.gui.fonts.monospace.size = lib.mkOption {
+    type = lib.types.float;
     default = 10.0;
   };
 
-  options.gui.fonts.aliases = mkOption {
-    type = types.listOf (
-      types.submodule {
-        options.family = mkOption { type = types.str; };
+  options.gui.fonts.aliases = lib.mkOption {
+    type = lib.types.listOf (
+      lib.types.submodule {
+        options.family = lib.mkOption { type = lib.types.str; };
 
-        options.prefer = mkOption { type = types.listOf types.str; };
+        options.prefer = lib.mkOption { type = lib.types.listOf lib.types.str; };
       }
     );
 

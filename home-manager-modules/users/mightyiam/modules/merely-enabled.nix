@@ -1,7 +1,5 @@
 { lib, ... }:
 let
-  inherit (lib) listToAttrs;
-
   programs = [
     "command-not-found"
     "info"
@@ -15,6 +13,6 @@ let
   };
 in
 {
-  programs = map mapper programs |> listToAttrs;
-  services = map mapper services |> listToAttrs;
+  programs = map mapper programs |> lib.listToAttrs;
+  services = map mapper services |> lib.listToAttrs;
 }

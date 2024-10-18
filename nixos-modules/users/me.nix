@@ -1,10 +1,7 @@
 { lib, config, ... }:
-let
-  inherit (lib) types mkOption;
-in
 {
-  options.me = mkOption {
-    type = types.str;
+  options.me = lib.mkOption {
+    type = lib.types.str;
     default = "mightyiam";
   };
   config.users.users.${config.me} = {
