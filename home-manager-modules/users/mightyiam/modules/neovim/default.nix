@@ -9,6 +9,7 @@
     ./guess-indent.nix
     ./leader.nix
     ./lsp
+    ./gitgutter.nix
     ./nvim-surround.nix
     ./rustaceanvim.nix
     ./telescope.nix
@@ -24,7 +25,6 @@
 # {
 #   programs.neovim = {
 #     plugins = [
-#       (omitPluginInVSCode pkgs.vimPlugins.vim-gitgutter "")
 #       (omitPluginInVSCode pkgs.vimPlugins.nvim-lspconfig "")
 #       (omitPluginInVSCode pkgs.vimPlugins.rustaceanvim (embedLua ''
 #         vim.g.rustaceanvim = {
