@@ -21,6 +21,7 @@
     ./vimdiff.nix
     ./which-key.nix
     ./nvim-autopairs.nix
+    ./fidget.nix
     self.inputs.nixvim.homeManagerModules.nixvim
   ];
 }
@@ -28,11 +29,6 @@
 # {
 #   programs.neovim = {
 #     plugins = [
-#       (omitPluginInVSCode pkgs.vimPlugins.nvim-autopairs (embedLua ''
-#         require("nvim-autopairs").setup{}
-#       ''))
-#       (omitPluginInVSCode lsp-zero ''
-#       '')
 #       (omitPluginInVSCode pkgs.vimPlugins.fidget-nvim (inlineLuaFile ./lua/lsp/fidget-nvim.lua))
 #       (omitPluginInVSCode pkgs.vimPlugins.symbols-outline-nvim "")
 #       pkgs.vimPlugins.plenary-nvim
@@ -105,8 +101,6 @@
 #     source = luafun;
 #   };
 # }
-
-# require("fidget").setup({})
 
 # require("luafun.fun")()
 # local lsp_zero = require("lsp-zero")
