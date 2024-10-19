@@ -10,6 +10,7 @@
     ./leader.nix
     ./lsp
     ./rustaceanvim.nix
+    ./telescope.nix
     ./treesitter.nix
     ./vimdiff.nix
     ./which-key.nix
