@@ -6,7 +6,7 @@
 }:
 {
   services.tailscale = {
-    enable = true;
+    #enable = true;
   };
   systemd.services.sshd = lib.mkIf config.services.tailscale.enable {
     after = [ "tailscaled.service" ];
