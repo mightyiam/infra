@@ -20,6 +20,7 @@
     ./treesitter.nix
     ./vimdiff.nix
     ./which-key.nix
+    ./nvim-autopairs.nix
     self.inputs.nixvim.homeManagerModules.nixvim
   ];
 }
@@ -27,7 +28,6 @@
 # {
 #   programs.neovim = {
 #     plugins = [
-#       (omitPluginInVSCode pkgs.vimPlugins.luasnip "")
 #       (omitPluginInVSCode pkgs.vimPlugins.nvim-autopairs (embedLua ''
 #         require("nvim-autopairs").setup{}
 #       ''))
