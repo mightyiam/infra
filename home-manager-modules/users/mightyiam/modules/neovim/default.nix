@@ -15,6 +15,7 @@
     ./treesitter.nix
     ./vimdiff.nix
     ./which-key.nix
+    ./comment.nix
     self.inputs.nixvim.homeManagerModules.nixvim
   ];
 }
@@ -22,12 +23,6 @@
 # {
 #   programs.neovim = {
 #     plugins = [
-#       {
-#         plugin = pkgs.vimPlugins.nvim-surround;
-#         config = embedLua ''
-#           require('nvim-surround').setup()
-#         '';
-#       }
 #       {
 #         plugin = pkgs.vimPlugins.comment-nvim;
 #         config = embedLua ''
