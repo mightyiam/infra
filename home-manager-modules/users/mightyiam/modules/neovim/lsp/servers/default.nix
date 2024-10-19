@@ -1,0 +1,5 @@
+{
+imports = [
+./nixd.nix
+];
+}

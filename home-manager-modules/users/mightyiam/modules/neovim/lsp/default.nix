@@ -6,6 +6,7 @@
     imports = [
 	    ./inlay-hints.nix
 	    ./keymaps.nix
+	    ./servers
     ];
   };
 }
