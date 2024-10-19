@@ -15,6 +15,7 @@
     ./treesitter.nix
     ./vimdiff.nix
     ./which-key.nix
+    ./lualine.nix
     ./comment.nix
     self.inputs.nixvim.homeManagerModules.nixvim
   ];
@@ -23,31 +24,6 @@
 # {
 #   programs.neovim = {
 #     plugins = [
-#       {
-#         plugin = pkgs.vimPlugins.comment-nvim;
-#         config = embedLua ''
-#           require('Comment').setup({
-#             mappings = { basic = false, extra = false },
-#           })
-# 
-#           require("which-key").add({
-#             { "<leader>c", group = "comment" },
-#             { "<leader>cl", "<Plug>(comment_toggle_linewise)", desc = "toggle line linewise" },
-#             { "<leader>cb", "<Plug>(comment_toggle_blockwise)", desc = "toggle line blockwise" },
-#             {
-#               mode = "v",
-#               { "<leader>cl", "<Plug>(comment_toggle_linewise_visual)", desc = "toggle line linewise" },
-#               { "<leader>cb", "<Plug>(comment_toggle_blockwise_visual)", desc = "toggle line blockwise" },
-#             }
-#           })
-#         '';
-#       }
-#       {
-#         plugin = pkgs.vimPlugins.guess-indent-nvim;
-#         config = embedLua ''
-#           require('guess-indent').setup {}
-#         '';
-#       }
 #       (omitPluginInVSCode pkgs.vimPlugins.lualine-nvim (embedLua ''
 #         local winbar = {
 #           lualine_a = {
