@@ -1,3 +1,3 @@
 {
-	programs.nixvim.clipboard.register = "unnamedplus";
+  programs.nixvim.clipboard.register = "unnamedplus";
 }

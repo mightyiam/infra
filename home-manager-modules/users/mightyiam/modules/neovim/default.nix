@@ -3,10 +3,11 @@
   programs.nixvim.enable = true;
   imports = [
     ./autoread.nix
+    ./clipboard.nix
     ./default-editor.nix
     ./flash.nix
+    ./guess-indent.nix
     ./leader.nix
-		./clipboard.nix
     ./lsp
     ./rustaceanvim.nix
     ./treesitter.nix
