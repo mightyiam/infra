@@ -22,7 +22,9 @@ in
   gtk.gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
   programs.nixvim.colorschemes.catppuccin = {
     enable = true;
-    inherit flavor;
-    # TODO integrations
+    settings = {
+      inherit flavor;
+      # TODO integrations
+    };
   };
 }

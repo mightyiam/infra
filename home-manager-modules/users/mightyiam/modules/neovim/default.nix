@@ -3,7 +3,7 @@
   programs.nixvim.enable = true;
   imports = [
     ./default-editor.nix
-    ./lsp.nix
+    ./lsp
     self.inputs.nixvim.homeManagerModules.nixvim
   ];
 }
