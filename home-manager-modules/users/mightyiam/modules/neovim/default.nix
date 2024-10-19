@@ -2,37 +2,13 @@
 {
   programs.nixvim.enable = true;
   imports = [
+    ./default-editor.nix
+    ./lsp.nix
     self.inputs.nixvim.homeManagerModules.nixvim
-    ./.
   ];
 }
 
-# {
-#   pkgs,
-#   config,
-#   lib,
-#   ...
-# }:
 # let
-#   omitVIMLInVSCode = import ./omitVIMLInVSCode.nix;
-#   omitPluginInVSCode = import ./omitPluginInVSCode.nix;
-#   inlineLuaFile =
-#     path:
-#     lib.concatStringsSep "" [
-#       "lua << EOF\n"
-#       (lib.readFile path)
-#       "EOF\n"
-#     ];
-#   lsp-zero = pkgs.vimUtils.buildVimPlugin rec {
-#     pname = "lsp-zero";
-#     version = "072e486271c7068b6732924d47ea0ac9ec55423b";
-#     src = pkgs.fetchFromGitHub {
-#       owner = "VonHeikemen";
-#       repo = "lsp-zero.nvim";
-#       rev = version;
-#       sha256 = "8zQoSYdh6Xf+guxxMdXtiVmJB+brNTEJWdrGefL0QwY=";
-#     };
-#   };
 #   vim-autoread = pkgs.vimUtils.buildVimPlugin rec {
 #     pname = "vim-autoread";
 #     version = "24061f84652d768bfb85d222c88580b3af138dab";
@@ -359,7 +335,6 @@
 #         set ignorecase
 #         vnoremap ${config.keyboard.text.dedent} <gv
 #         vnoremap ${config.keyboard.text.indent} >gv
-#         set clipboard+=unnamedplus
 #         set updatetime=100
 #         set scrolloff=0
 #         let g:loaded_perl_provider = 0
@@ -403,3 +378,5 @@
 # require("lsp.lua")(lsp_zero)
 # 
 # lsp_zero.setup()
+ 
+# catppuccin

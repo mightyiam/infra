@@ -22,26 +22,8 @@ in
         indent = ">";
       };
       refactor = prefixRec "<space>" {
-        actions = "a";
-        rename = "r";
         format = "f";
         nixfmt = "n";
-      };
-      goTo = prefixRec "g" {
-        declaration = "D";
-        definition = "d";
-        implementation = "i";
-        type = "o";
-        references = "r";
-        diagnostics = "l";
-      };
-      show = {
-        type = "K";
-        signature = "<C-k>";
-      };
-      diagnostic = {
-        prev = "[d";
-        next = "]d";
       };
       wm = prefixRec "Mod4+" {
         lock = "Ctrl+l";

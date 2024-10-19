@@ -127,4 +127,5 @@ lib.mkIf config.gui.enable {
   wayland.windowManager.sway.config.keybindings.${config.keyboard.wm.volume.toggleMuteSources} =
     toggleMuteSources;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-wlr ];
+  programs.nixvim.clipboard.providers.wl-copy.enable = true;
 }
