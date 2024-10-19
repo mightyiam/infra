@@ -10,7 +10,6 @@
 }
 
 # let
-#   vim-autoread = ;
 #   luafun = pkgs.fetchFromGitHub {
 #     owner = "luafun";
 #     repo = "luafun";
@@ -280,9 +279,6 @@
 #           { "<leader>xq", "<cmd>Trouble quickfix toggle<cr>" },
 #         })
 #       ''))
-#       (omitPluginInVSCode vim-autoread ''
-#         autocmd VimEnter * nested WatchForChangesAllFile!
-#       '')
 #       (omitPluginInVSCode pkgs.vimPlugins.unicode-vim "")
 #       # (omitPluginInVSCode vimPlugins.nvim-spectre (embedLua ''
 #       #   require('spectre').setup()
