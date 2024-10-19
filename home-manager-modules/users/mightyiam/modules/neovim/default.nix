@@ -13,6 +13,7 @@
     ./leader.nix
     ./lsp
     ./lualine.nix
+    ./luasnip.nix
     ./nvim-surround.nix
     ./rustaceanvim.nix
     ./telescope.nix

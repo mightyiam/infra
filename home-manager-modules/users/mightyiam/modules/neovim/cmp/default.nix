@@ -1,6 +1,15 @@
 {
-	programs.nixvim.plugins = {
-		cmp.enable = true;
-		cmp-nvim-lsp.enable = true;
-	};
+  programs.nixvim.plugins = {
+    cmp = {
+      enable = true;
+      settings = {
+        sources = [
+          {
+            name = "path";
+            group_index = 2;
+          }
+        ];
+      };
+    };
+  };
 }
