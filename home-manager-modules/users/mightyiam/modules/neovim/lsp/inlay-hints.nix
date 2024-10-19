@@ -1,3 +1,3 @@
 {
-  programs.nixvim.plugins.lsp.inlayHints = true; # TODO test
+  programs.nixvim.plugins.lsp.inlayHints = true;
 }
