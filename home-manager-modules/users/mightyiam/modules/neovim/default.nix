@@ -225,20 +225,6 @@
 #         require("nvim-autopairs").setup{}
 #       ''))
 #       (omitPluginInVSCode lsp-zero ''
-#         nnoremap ${config.keyboard.show.type} <cmd>lua vim.lsp.buf.hover()<CR>
-#         nnoremap ${config.keyboard.show.signature} <cmd>lua vim.lsp.buf.signature_help()<CR>
-#         nnoremap ${config.keyboard.goTo.definition} <cmd>lua vim.lsp.buf.definition()<CR>
-#         nnoremap ${config.keyboard.goTo.declaration} <cmd>lua vim.lsp.buf.declaration()<CR>
-#         nnoremap ${config.keyboard.goTo.implementation} <cmd>lua vim.lsp.buf.implementation()<CR>
-#         nnoremap ${config.keyboard.goTo.type} <cmd>lua vim.lsp.buf.type_definition()<CR>
-#         nnoremap ${config.keyboard.goTo.diagnostics} <cmd>lua vim.diagnostic.setloclist()<CR>
-#         nnoremap ${config.keyboard.refactor.rename} <cmd>lua vim.lsp.buf.rename()<CR>
-#         nnoremap ${config.keyboard.refactor.actions} <cmd>lua vim.lsp.buf.code_action()<CR>
-#         xnoremap ${config.keyboard.refactor.actions} <cmd>lua vim.lsp.buf.code_action()<CR>
-#         nnoremap ${config.keyboard.refactor.format} <cmd>lua vim.lsp.buf.format({ async = false })<CR>
-#         nnoremap ${config.keyboard.refactor.nixfmt} <cmd>!nix fmt %<cr>
-#         nnoremap ${config.keyboard.diagnostic.next} <cmd>lua vim.diagnostic.goto_next()<CR>
-#         nnoremap ${config.keyboard.diagnostic.prev} <cmd>lua vim.diagnostic.goto_prev()<CR>
 #       '')
 #       (omitPluginInVSCode pkgs.vimPlugins.fidget-nvim (inlineLuaFile ./lua/lsp/fidget-nvim.lua))
 #       (omitPluginInVSCode pkgs.vimPlugins.symbols-outline-nvim "")
@@ -378,5 +364,7 @@
 # require("lsp.lua")(lsp_zero)
 # 
 # lsp_zero.setup()
- 
+
+#         nnoremap ${config.keyboard.refactor.nixfmt} <cmd>!nix fmt %<cr>
+
 # catppuccin

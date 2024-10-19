@@ -1,12 +1,13 @@
 { self, ... }:
-let flavor = "mocha";
+let
+  flavor = "mocha";
 in
 {
   imports = [ self.inputs.catppuccin.homeManagerModules.catppuccin ];
   catppuccin = {
-  inherit flavor;
-  enable = true;
-  pointerCursor.enable = true;
+    inherit flavor;
+    enable = true;
+    pointerCursor.enable = true;
   };
 
   # IFD
@@ -20,8 +21,8 @@ in
   gtk.gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
   gtk.gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
   programs.nixvim.colorschemes.catppuccin = {
-  enable = true;
-  inherit flavor;
-  # TODO integrations
+    enable = true;
+    inherit flavor;
+    # TODO integrations
   };
 }

@@ -1,3 +1,3 @@
 {
-programs.nixvim.defaultEditor = true;
+  programs.nixvim.defaultEditor = true;
 }
