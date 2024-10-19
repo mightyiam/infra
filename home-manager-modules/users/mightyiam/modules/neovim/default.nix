@@ -6,6 +6,7 @@
     ./default-editor.nix
     ./flash.nix
     ./leader.nix
+		./clipboard.nix
     ./lsp
     ./rustaceanvim.nix
     ./treesitter.nix
@@ -18,14 +19,6 @@
 # {
 #   programs.neovim = {
 #     plugins = [
-#       # (omitPluginInVSCode vimPlugins.nvim-treesitter.withAllGrammars (embedLua ''
-#       #   require'nvim-treesitter.configs'.setup {
-#       #     auto_install = false,
-#       #     highlight = {
-#       #       enable = true,
-#       #     }
-#       #   }
-#       # ''))
 #       {
 #         plugin = pkgs.vimPlugins.nvim-surround;
 #         config = embedLua ''
