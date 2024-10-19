@@ -1,0 +1,3 @@
+{
+  programs.nixvim.vimdiffAlias = true;
+}

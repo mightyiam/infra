@@ -7,15 +7,14 @@
     ./leader.nix
     ./lsp
     ./rustaceanvim.nix
+    ./vimdiff.nix
+    ./which-key.nix
     self.inputs.nixvim.homeManagerModules.nixvim
   ];
 }
 
 # {
 #   programs.neovim = {
-#     enable = true;
-#     vimAlias = true;
-#     vimdiffAlias = true;
 #     plugins = [
 #       (omitPluginInVSCode pkgs.vimPlugins.which-key-nvim (embedLua ''
 #         require("which-key").setup {}
