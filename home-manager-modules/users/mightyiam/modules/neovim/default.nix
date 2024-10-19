@@ -29,10 +29,6 @@
 # {
 #   programs.neovim = {
 #     plugins = [
-#       (omitPluginInVSCode pkgs.vimPlugins.fidget-nvim (inlineLuaFile ./lua/lsp/fidget-nvim.lua))
-#       (omitPluginInVSCode pkgs.vimPlugins.symbols-outline-nvim "")
-#       pkgs.vimPlugins.plenary-nvim
-#       (omitPluginInVSCode pkgs.vimPlugins.null-ls-nvim (inlineLuaFile ./lua/lsp/null-ls.lua))
 #       (omitPluginInVSCode pkgs.vimPlugins.nvim-web-devicons "") # for trouble-nvim
 #       (omitPluginInVSCode pkgs.vimPlugins.trouble-nvim (embedLua ''
 #         require("trouble").setup {}
@@ -89,22 +85,10 @@
 #         set number
 #         set guifont=monospace:h${builtins.floor config.gui.fonts.monospace.size |> toString}
 #       '')
-#       (omitVIMLInVSCode "lua require('lsp.index')\n")
 #     ];
-#   };
-#   xdg.configFile."nvim/lua" = {
-#     recursive = true;
-#     source = ./lua;
-#   };
-#   xdg.configFile."nvim/lua/luafun" = {
-#     recursive = true;
-#     source = luafun;
 #   };
 # }
 
-# require("luafun.fun")()
-# local lsp_zero = require("lsp-zero")
-# lsp_zero.preset("system-lsp")
 # lsp_zero.setup_servers({
 # 	"eslint",
 # 	"lua_ls",
@@ -112,13 +96,7 @@
 # 	"ts_ls",
 # 	"yamlls",
 # })
-# lsp_zero.set_preferences({
-# 	set_lsp_keymaps = false,
-# })
 # 
-# require("lsp.lua")(lsp_zero)
-# 
-# lsp_zero.setup()
 
 #         nnoremap ${config.keyboard.refactor.nixfmt} <cmd>!nix fmt %<cr>
 
