@@ -5,18 +5,12 @@
     ./autoread.nix
     ./default-editor.nix
     ./lsp
+    ./rustaceanvim.nix
     self.inputs.nixvim.homeManagerModules.nixvim
   ];
 }
 
 # let
-#   luafun = pkgs.fetchFromGitHub {
-#     owner = "luafun";
-#     repo = "luafun";
-#     rev = "0.1.3";
-#     sha256 = "aOriC7VD29XzchvLOfmySNDR1MtO1xrqHYABRMaDoJo=";
-#   };
-# 
 #   lsp-inlayhints-nvim = pkgs.vimUtils.buildVimPlugin rec {
 #     pname = "lsp-inlayhints.nvim";
 #     version = "d981f65c9ae0b6062176f0accb9c151daeda6f16";
