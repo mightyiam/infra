@@ -4,32 +4,14 @@
   imports = [
     ./autoread.nix
     ./default-editor.nix
+    ./leader.nix
     ./lsp
     ./rustaceanvim.nix
     self.inputs.nixvim.homeManagerModules.nixvim
   ];
 }
 
-# let
-#   lsp-inlayhints-nvim = pkgs.vimUtils.buildVimPlugin rec {
-#     pname = "lsp-inlayhints.nvim";
-#     version = "d981f65c9ae0b6062176f0accb9c151daeda6f16";
-#     src = pkgs.fetchFromGitHub {
-#       owner = "lvimuser";
-#       repo = "lsp-inlayhints.nvim";
-#       rev = version;
-#       sha256 = "sha256-06CiJ+xeMO4+OJkckcslqwloJyt2gwg514JuxV6KOfQ=";
-#     };
-#     meta.homepage = "https://github.com/lvimuser/lsp-inlayhints.nvim/";
-#   };
-# 
-#   embedLua = lua: ''
-#     lua << EOF
-#     ${lua}EOF
-#   '';
-# in
 # {
-#   xdg.configFile."nvim/init.lua".text = lib.mkBefore ''vim.cmd [[let mapleader = "${config.keyboard.leader}"]]'';
 #   programs.neovim = {
 #     enable = true;
 #     vimAlias = true;
@@ -169,7 +151,6 @@
 #           },
 #           server = {
 #             on_attach = function(client, bufnr)
-#               require("lsp-inlayhints").on_attach(client, bufnr)
 #               require("which-key").add({
 #                 { "<space>", group = "Rust" },
 #                 { "<space>a", function() vim.cmd.RustLsp('codeAction') end, desc = "code action" },
@@ -193,15 +174,6 @@
 #           dap = {
 #           },
 #         }
-#       ''))
-#       (omitPluginInVSCode lsp-inlayhints-nvim (embedLua ''
-#         require("lsp-inlayhints").setup()
-# 
-#         require("which-key").add({
-#           { "<leader>h", group = "inlay hints" },
-#           { "<leader>ht", function() require('lsp-inlayhints').toggle() end, desc = "toggle" },
-#           { "<leader>hr", function() require('lsp-inlayhints').reset() end, desc = "reset" },
-#         })
 #       ''))
 #       (omitPluginInVSCode pkgs.vimPlugins.cmp-nvim-lsp "")
 #       (omitPluginInVSCode pkgs.vimPlugins.nvim-cmp "")
