@@ -4,9 +4,9 @@
     inlayHints = true; # TODO test
 
     imports = [
-	    ./inlay-hints.nix
-	    ./keymaps.nix
-	    ./servers
+      ./inlay-hints.nix
+      ./keymaps.nix
+      ./servers
     ];
   };
 }
