@@ -9,6 +9,7 @@
     ./guess-indent.nix
     ./leader.nix
     ./lsp
+    ./nvim-surround.nix
     ./rustaceanvim.nix
     ./telescope.nix
     ./treesitter.nix
@@ -170,49 +171,6 @@
 #       (omitPluginInVSCode pkgs.vimPlugins.symbols-outline-nvim "")
 #       pkgs.vimPlugins.plenary-nvim
 #       (omitPluginInVSCode pkgs.vimPlugins.null-ls-nvim (inlineLuaFile ./lua/lsp/null-ls.lua))
-#       (omitPluginInVSCode pkgs.vimPlugins.telescope-nvim (embedLua ''
-#         local telescope = require("telescope")
-#         local telescopeConfig = require("telescope.config")
-#         local builtin = require('telescope.builtin')
-# 
-#         local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) }
-# 
-#         -- I want to search in hidden/dot files.
-#         table.insert(vimgrep_arguments, "--hidden")
-#         -- I don't want to search in the `.git` directory.
-#         table.insert(vimgrep_arguments, "--glob")
-#         table.insert(vimgrep_arguments, "!**/.git/*")
-# 
-#         telescope.setup({
-#           defaults = {
-#             -- `hidden = true` is not supported in text grep commands.
-#             vimgrep_arguments = vimgrep_arguments,
-#           },
-#            pickers = {
-#              find_files = {
-#                -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
-#                find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
-#              },
-#            },
-#         })
-# 
-#         vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-#         vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-#         vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-#         vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-#         vim.keymap.set('n', '<leader>fc', builtin.commands, {})
-#         vim.keymap.set('n', '<leader>fq', builtin.quickfix, {})
-#         vim.keymap.set('n', '<leader>fk', builtin.keymaps, {})
-#         vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {})
-#         vim.keymap.set('n', '<leader>fds', builtin.lsp_document_symbols, {})
-#         vim.keymap.set('n', '<leader>fs', builtin.lsp_workspace_symbols, {})
-#         vim.keymap.set('n', '<leader>fp', builtin.diagnostics, {})
-#         vim.keymap.set('n', '<leader>fi', builtin.lsp_implementations, {})
-#         vim.keymap.set('n', '<leader>fd', builtin.lsp_definitions, {})
-#         vim.keymap.set('n', '<leader>ft', builtin.lsp_type_definitions, {})
-#         vim.keymap.set('n', '<leader>fa', builtin.builtin, {})
-#         vim.keymap.set('n', '<leader>f;', builtin.resume, {})
-#       ''))
 #       (omitPluginInVSCode pkgs.vimPlugins.nvim-web-devicons "") # for trouble-nvim
 #       (omitPluginInVSCode pkgs.vimPlugins.trouble-nvim (embedLua ''
 #         require("trouble").setup {}
