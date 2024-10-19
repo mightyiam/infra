@@ -1,3 +1,3 @@
 {
-  programs.nixvim.globalOpts.mapleader = ",";
+  programs.nixvim.globals.mapleader = ",";
 }

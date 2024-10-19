@@ -8,6 +8,7 @@
     ./leader.nix
     ./lsp
     ./rustaceanvim.nix
+    ./treesitter.nix
     ./vimdiff.nix
     ./which-key.nix
     self.inputs.nixvim.homeManagerModules.nixvim
@@ -17,15 +18,6 @@
 # {
 #   programs.neovim = {
 #     plugins = [
-#       {
-#         plugin = pkgs.vimPlugins.vim-easymotion;
-#         config = ''
-#           map ${config.keyboard.easyMotion} <Plug>(easymotion-prefix)
-#         '';
-#       }
-#       (omitPluginInVSCode pkgs.vimPlugins.ctrlp-vim ''
-#         let g:ctrlp_user_command = ['.git', 'cd %s && ${pkgs.git}/bin/git ls-files -co --exclude-standard']
-#       '')
 #       # (omitPluginInVSCode vimPlugins.nvim-treesitter.withAllGrammars (embedLua ''
 #       #   require'nvim-treesitter.configs'.setup {
 #       #     auto_install = false,

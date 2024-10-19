@@ -14,7 +14,6 @@ in
   options.keyboard = lib.mkOption {
     type = lib.types.anything;
     default = {
-      easyMotion = ",";
       text = {
         dedent = "<";
         indent = ">";
