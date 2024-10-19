@@ -8,7 +8,7 @@
   services.tailscale = {
     enable = true;
   };
-  systemd.services.sshd = {
+  systemd.services.sshd = lib.mkIf config.services.tailscale.enable {
     after = [ "tailscaled.service" ];
     serviceConfig.ExecStartPre = lib.getExe (
       pkgs.writeShellApplication {
