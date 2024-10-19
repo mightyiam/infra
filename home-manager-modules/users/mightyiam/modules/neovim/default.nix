@@ -4,6 +4,7 @@
   imports = [
     ./autoread.nix
     ./default-editor.nix
+    ./flash.nix
     ./leader.nix
     ./lsp
     ./rustaceanvim.nix
@@ -16,10 +17,6 @@
 # {
 #   programs.neovim = {
 #     plugins = [
-#       (omitPluginInVSCode pkgs.vimPlugins.which-key-nvim (embedLua ''
-#         require("which-key").setup {}
-#       ''))
-#       (omitPluginInVSCode pkgs.vimPlugins.vim-nix "")
 #       {
 #         plugin = pkgs.vimPlugins.vim-easymotion;
 #         config = ''
