@@ -4,20 +4,21 @@
   imports = [
     ./autoread.nix
     ./clipboard.nix
+    ./cmp
+    ./comment.nix
     ./default-editor.nix
     ./flash.nix
+    ./gitgutter.nix
     ./guess-indent.nix
     ./leader.nix
     ./lsp
-    ./gitgutter.nix
+    ./lualine.nix
     ./nvim-surround.nix
     ./rustaceanvim.nix
     ./telescope.nix
     ./treesitter.nix
     ./vimdiff.nix
     ./which-key.nix
-    ./lualine.nix
-    ./comment.nix
     self.inputs.nixvim.homeManagerModules.nixvim
   ];
 }
@@ -25,39 +26,6 @@
 # {
 #   programs.neovim = {
 #     plugins = [
-#       (omitPluginInVSCode pkgs.vimPlugins.nvim-lspconfig "")
-#       (omitPluginInVSCode pkgs.vimPlugins.rustaceanvim (embedLua ''
-#         vim.g.rustaceanvim = {
-#           tools = {
-#           },
-#           server = {
-#             on_attach = function(client, bufnr)
-#               require("which-key").add({
-#                 { "<space>", group = "Rust" },
-#                 { "<space>a", function() vim.cmd.RustLsp('codeAction') end, desc = "code action" },
-#                 { "<space>p", "<CMD>RustLsp parentModule<CR>", desc = "go to parent module" },
-#               })
-#             end,
-#             settings = {
-#               ['rust-analyzer'] = {
-#                 checkOnSave = {
-#                   command = "clippy"
-#                 },
-#                 inlayHints = {
-#                   maxLength = 99,
-#                 },
-#                 cargo = {
-#                   features = "all",
-#                 },
-#               },
-#             },
-#           },
-#           dap = {
-#           },
-#         }
-#       ''))
-#       (omitPluginInVSCode pkgs.vimPlugins.cmp-nvim-lsp "")
-#       (omitPluginInVSCode pkgs.vimPlugins.nvim-cmp "")
 #       (omitPluginInVSCode pkgs.vimPlugins.luasnip "")
 #       (omitPluginInVSCode pkgs.vimPlugins.nvim-autopairs (embedLua ''
 #         require("nvim-autopairs").setup{}

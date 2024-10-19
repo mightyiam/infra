@@ -1,1 +1,1 @@
-{programs.nixvim.plugins.gitgutter.enable = true;}
+{ programs.nixvim.plugins.gitgutter.enable = true; }
