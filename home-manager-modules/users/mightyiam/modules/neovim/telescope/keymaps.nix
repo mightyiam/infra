@@ -1,7 +1,5 @@
 {
-  programs.nixvim.plugins.telescope = {
-    enable = true;
-    keymaps = {
+  programs.nixvim.plugins.telescope.keymaps = {
       "<leader>ff" = {
         action = "find_files";
       };
@@ -50,10 +48,6 @@
       "<leader>f;" = {
         action = "resume";
       };
-    };
   };
-  imports = [
-    ./ripgrep.nix
-    ./keymaps.nix
-  ];
 }
+
