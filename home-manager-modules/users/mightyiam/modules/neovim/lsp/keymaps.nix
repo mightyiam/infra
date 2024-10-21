@@ -2,8 +2,8 @@
   programs.nixvim.plugins.lsp.keymaps = {
     diagnostic = {
       gl = "setloclist";
-      "[d" = "goto_next";
-      "]d" = "goto_prev";
+      "]d" = "goto_next";
+      "[d" = "goto_prev";
     };
     lspBuf = {
       K = "hover";

@@ -15,6 +15,7 @@
     ./lualine.nix
     ./luasnip.nix
     ./nvim-surround.nix
+    ./trouble.nix
     ./rustaceanvim.nix
     ./telescope.nix
     ./treesitter.nix
@@ -29,21 +30,6 @@
 # {
 #   programs.neovim = {
 #     plugins = [
-#       (omitPluginInVSCode pkgs.vimPlugins.nvim-web-devicons "") # for trouble-nvim
-#       (omitPluginInVSCode pkgs.vimPlugins.trouble-nvim (embedLua ''
-#         require("trouble").setup {}
-#         require("which-key").add({
-#           { "<leader>x", group = "trouble" },
-#           { "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>" },
-#           { "<leader>xl", "<cmd>Trouble lsp toggle<cr>" },
-#           { "<leader>xD", "<cmd>Trouble lsp_declarations toggle<cr>" },
-#           { "<leader>xd", "<cmd>Trouble lsp_definitions toggle<cr>" },
-#           { "<leader>xi", "<cmd>Trouble lsp_implementations toggle<cr>" },
-#           { "<leader>xr", "<cmd>Trouble lsp_references toggle<cr>" },
-#           { "<leader>xt", "<cmd>Trouble lsp_type_definitions toggle<cr>" },
-#           { "<leader>xq", "<cmd>Trouble quickfix toggle<cr>" },
-#         })
-#       ''))
 #       (omitPluginInVSCode pkgs.vimPlugins.unicode-vim "")
 #       # (omitPluginInVSCode vimPlugins.nvim-spectre (embedLua ''
 #       #   require('spectre').setup()
