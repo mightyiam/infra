@@ -17,7 +17,7 @@
     ./nvim-surround.nix
     ./trouble.nix
     ./rustaceanvim.nix
-    ./telescope.nix
+    ./telescope
     ./treesitter.nix
     ./vimdiff.nix
     ./which-key.nix

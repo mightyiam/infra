@@ -1,36 +1,6 @@
-{ lib, pkgs, ... }:
 {
   programs.nixvim.plugins.telescope = {
     enable = true;
-    settings =
-      let
-        rgArgs = [
-          "--hidden"
-          "--glob"
-          "!**/.git/*"
-        ];
-      in
-      {
-        defaults = {
-          vimgrep_arguments = [
-            (lib.getExe pkgs.ripgrep)
-            "--color=never"
-            "--no-heading"
-            "--with-filename"
-            "--line-number"
-            "--column"
-            "--smart-case"
-          ] ++ rgArgs;
-        };
-        pickers = {
-          find_files = {
-            find_command = [
-              "rg"
-              "--files"
-            ] ++ rgArgs;
-          };
-        };
-      };
     keymaps = {
       "<leader>ff" = {
         action = "find_files";
@@ -82,4 +52,7 @@
       };
     };
   };
+    imports = [
+    ./ripgrep.nix
+  ];
 }
