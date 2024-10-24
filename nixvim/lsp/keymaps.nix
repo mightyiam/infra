@@ -1,10 +1,5 @@
 {
   plugins.lsp.keymaps = {
-    diagnostic = {
-      gl = "setloclist";
-      "]d" = "goto_next";
-      "[d" = "goto_prev";
-    };
     lspBuf = {
       K = "hover";
       "<C-k>" = "signature_help";

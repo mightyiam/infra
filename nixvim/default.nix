@@ -25,6 +25,7 @@
         ./gitgutter.nix
         ./guess-indent.nix
         ./indent-keep-selection.nix
+        ./inline-diagnostics.nix
         ./leader.nix
         ./line-numbers.nix
         ./lsp
