@@ -1,3 +1,4 @@
+{ lib, ... }:
 {
   plugins.lsp.keymaps = {
     lspBuf = {
@@ -8,8 +9,17 @@
       gi = "implementation";
       go = "type_definition";
       "<space>r" = "rename";
-      "<space>a" = "code_action";
       "<space>f" = "format";
     };
+    extra = [
+      {
+        key = "<space>a";
+        action = lib.nixvim.mkRaw "vim.lsp.buf.code_action";
+        mode = [
+          "n"
+          "v"
+        ];
+      }
+    ];
   };
 }
