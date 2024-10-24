@@ -11,6 +11,12 @@ let
     cursor_vfx_mode = "railgun";
     cursor_vfx_particle_density = 20;
     fork = true;
+    font = {
+      normal = [
+        "monospace"
+      ];
+      inherit (config.gui.fonts.monospace) size;
+    };
   };
 in
 lib.mkIf config.gui.enable {

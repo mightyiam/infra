@@ -1,0 +1,3 @@
+{
+  globalOpts.number = true;
+}

@@ -1,0 +1,3 @@
+{
+  globalOpts.updatetime = 100;
+}

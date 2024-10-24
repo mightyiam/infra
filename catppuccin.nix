@@ -31,4 +31,9 @@ in
       gtk.gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
     };
   };
+
+  nixvimModules.default.colorschemes.catppuccin = {
+    enable = true;
+    settings.flavour = flavor;
+  };
 }

@@ -1,0 +1,3 @@
+{
+  plugins.comment.enable = true;
+}

@@ -9,40 +9,11 @@ let
   applyRec =
     f: attrs: builtins.mapAttrs (_: v: if builtins.isAttrs v then applyRec f v else f v) attrs;
   prefixRec = str: applyRec (v: str + v);
-  leader = ",";
 in
 {
   options.keyboard = lib.mkOption {
     type = lib.types.anything;
     default = {
-      inherit leader;
-      easyMotion = ",";
-      text = {
-        dedent = "<";
-        indent = ">";
-      };
-      refactor = prefixRec "<space>" {
-        actions = "a";
-        rename = "r";
-        format = "f";
-        nixfmt = "n";
-      };
-      goTo = prefixRec "g" {
-        declaration = "D";
-        definition = "d";
-        implementation = "i";
-        type = "o";
-        references = "r";
-        diagnostics = "l";
-      };
-      show = {
-        type = "K";
-        signature = "<C-k>";
-      };
-      diagnostic = {
-        prev = "[d";
-        next = "]d";
-      };
       wm = prefixRec "Mod4+" {
         lock = "Ctrl+l";
         terminal = "Return";

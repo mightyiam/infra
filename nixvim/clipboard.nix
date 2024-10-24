@@ -1,0 +1,3 @@
+{
+  clipboard.register = "unnamedplus";
+}
