@@ -1,7 +1,8 @@
 {
   nixConfig.extra-experimental-features = [ "pipe-operators" ];
   inputs = {
-    catppuccin.url = "github:catppuccin/nix";
+    # https://github.com/catppuccin/nix/pull/358
+    catppuccin.url = "github:/ryand56/catppuccin-nix/home-manager-kvantum-fix"; # "github:catppuccin/nix"
     devshell.inputs.nixpkgs.follows = "nixpkgs";
     devshell.url = "github:numtide/devshell";
     flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
