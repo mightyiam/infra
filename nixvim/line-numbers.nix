@@ -1,3 +1,3 @@
 {
-  globalOpts.number = true;
+  opts.number = true;
 }
