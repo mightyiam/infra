@@ -15,7 +15,10 @@
             specialArgs = {
               inherit self;
             };
-            modules = [ (./nixos-configurations + "/${hostname}") ];
+            modules = [
+              self.nixosModules.common
+              (./nixos-configurations + "/${hostname}")
+            ];
           };
 
           system = nixosConfiguration.config.nixpkgs.hostPlatform.system;

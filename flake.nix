@@ -27,6 +27,7 @@
     inputs:
     inputs.flake-parts.lib.mkFlake { inputs = inputs; } {
       imports = [
+        ./catppuccin.nix
         ./fmt.nix
         ./meta.nix
         ./nix-on-droid-configurations

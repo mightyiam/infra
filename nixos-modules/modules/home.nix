@@ -3,6 +3,7 @@
   imports = [ self.inputs.home-manager.nixosModules.home-manager ];
   home-manager.useGlobalPkgs = true;
   home-manager.users.mightyiam.imports = [
+    self.homeManagerModules.common
     ../../home-manager-modules/users/mightyiam
     (
       { osConfig, ... }:
