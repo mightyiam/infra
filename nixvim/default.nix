@@ -55,7 +55,9 @@
       {
         packages.nixvim = inputs'.nixvim.legacyPackages.makeNixvimWithModule {
           inherit pkgs;
-          extraSpecialArgs = { };
+          extraSpecialArgs = {
+            inherit self;
+          };
           module = self.nixvimModules.default;
         };
 

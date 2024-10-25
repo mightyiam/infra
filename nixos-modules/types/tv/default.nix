@@ -19,6 +19,7 @@ in
   nix.settings.auto-optimise-store = true;
   nixpkgs.config.allowUnfree = true;
 
+  # TODO flake input
   boot.loader.grub.splashImage = pkgs.fetchurl {
     url = "https://lh3.googleusercontent.com/pw/AM-JKLUPs72JvWu6ymLyefE9Rha6muA257zExWZqrxRLqxH-zt-Os0hrXTLMlK9wamnhUeThF77lRTZMQhq9K7GxOTSwIln0kSjTHtL__-_S7E4DWy0jP2EAdvv1LDjqONGdbawhPPBEF8J4VKyTWQHzqNhCAw=w1920-h1080-no";
     name = "splash.png";

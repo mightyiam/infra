@@ -528,7 +528,8 @@
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
         "sink-rotate": "sink-rotate",
-        "treefmt-nix": "treefmt-nix"
+        "treefmt-nix": "treefmt-nix",
+        "vim-autoread": "vim-autoread"
       }
     },
     "rust-overlay": {
@@ -646,6 +647,23 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "vim-autoread": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1691511602,
+        "narHash": "sha256-fSADjNt1V9jgAPjxggbh7Nogcxyisi18KaVve8j+c3w=",
+        "owner": "djoshea",
+        "repo": "vim-autoread",
+        "rev": "24061f84652d768bfb85d222c88580b3af138dab",
+        "type": "github"
+      },
+      "original": {
+        "owner": "djoshea",
+        "repo": "vim-autoread",
+        "rev": "24061f84652d768bfb85d222c88580b3af138dab",
         "type": "github"
       }
     }
