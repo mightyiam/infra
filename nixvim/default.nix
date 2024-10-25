@@ -35,6 +35,7 @@
         ./nvim-autopairs.nix
         ./nvim-surround.nix
         ./rustaceanvim.nix
+        ./scrolloff.nix
         ./search.nix
         ./spectre.nix
         ./telescope

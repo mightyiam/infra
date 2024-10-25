@@ -528,6 +528,7 @@
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
         "sink-rotate": "sink-rotate",
+        "smart-scrolloff-nvim": "smart-scrolloff-nvim",
         "treefmt-nix": "treefmt-nix",
         "vim-autoread": "vim-autoread"
       }
@@ -612,6 +613,22 @@
       "original": {
         "owner": "thomashoneyman",
         "repo": "slimlock",
+        "type": "github"
+      }
+    },
+    "smart-scrolloff-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1723704797,
+        "narHash": "sha256-Cg1TcEnUtT6GQHbOngox9WEjkMg1rEypqIlXQlJ7NF8=",
+        "owner": "tonymajestro",
+        "repo": "smart-scrolloff.nvim",
+        "rev": "36129b41cb260cfa743b6939f3badd2718dbb1b8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tonymajestro",
+        "repo": "smart-scrolloff.nvim",
         "type": "github"
       }
     },

@@ -57,6 +57,11 @@
       };
     };
 
+    smart-scrolloff-nvim = {
+      flake = false;
+      url = "github:tonymajestro/smart-scrolloff.nvim";
+    };
+
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
