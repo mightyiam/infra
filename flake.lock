@@ -2,17 +2,16 @@
   "nodes": {
     "catppuccin": {
       "locked": {
-        "lastModified": 1729730584,
-        "narHash": "sha256-iPrs6bLWdp7qdFRba2AfiHj604SpxC6AGASx7I692Lo=",
-        "owner": "ryand56",
-        "repo": "catppuccin-nix",
-        "rev": "037e2f091a2144433566c5122f385a388cb5d5d3",
+        "lastModified": 1729948644,
+        "narHash": "sha256-o91SqI7aFZZHMoqv99WfYcxu9czFV/nqWXV4v9WGFDg=",
+        "owner": "catppuccin",
+        "repo": "nix",
+        "rev": "f99984a7f4e2a7f92893443dc1d1971d0ff1fe23",
         "type": "github"
       },
       "original": {
-        "owner": "ryand56",
-        "ref": "home-manager-kvantum-fix",
-        "repo": "catppuccin-nix",
+        "owner": "catppuccin",
+        "repo": "nix",
         "type": "github"
       }
     },

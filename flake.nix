@@ -2,8 +2,7 @@
   nixConfig.extra-experimental-features = [ "pipe-operators" ];
 
   inputs = {
-    # https://github.com/catppuccin/nix/pull/358
-    catppuccin.url = "github:/ryand56/catppuccin-nix/home-manager-kvantum-fix"; # "github:catppuccin/nix"
+    catppuccin.url = "github:catppuccin/nix";
 
     devshell = {
       url = "github:numtide/devshell";
