@@ -11,8 +11,8 @@
     programs.stylua.enable = true;
     programs.yamlfmt.enable = true;
     settings.global.excludes = [
-      "*/.gitignore"
       "*.toml"
+      "*/.gitignore"
       "/LICENCE"
     ];
   };
