@@ -76,6 +76,7 @@
     inputs:
     inputs.flake-parts.lib.mkFlake { inputs = inputs; } {
       imports = [
+        ./boot-message.nix
         ./catppuccin.nix
         ./fmt.nix
         ./meta.nix

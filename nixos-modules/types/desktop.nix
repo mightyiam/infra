@@ -2,7 +2,6 @@
   imports = [
     ../modules/allow-unfree-packages.nix
     ../modules/bluetooth.nix
-    ../modules/boot-message.nix
     ../modules/dconf.nix
     ../modules/editor.nix
     ../modules/firmware.nix
