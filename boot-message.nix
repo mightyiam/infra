@@ -15,8 +15,11 @@
               @mightyiam:matrix.org
             '';
           in
-          ''echo -e ${message} | cowsay --bold --aurora -f dragon'';
-        runtimeInputs = [ pkgs.neo-cowsay ];
+          ''echo -e ${message} | boxes --design weave | lolcat --seed 38 --force'';
+        runtimeInputs = [
+          pkgs.lolcat
+          pkgs.boxes
+        ];
       };
     };
 
