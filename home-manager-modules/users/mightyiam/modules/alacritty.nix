@@ -3,7 +3,7 @@ lib.mkIf config.gui.enable {
   programs.alacritty = {
     enable = true;
     settings = {
-      live_config_reload = true;
+      general.live_config_reload = true;
       window.decorations = "none";
       window.dynamic_title = true;
       window.opacity = config.style.windowOpacity;
