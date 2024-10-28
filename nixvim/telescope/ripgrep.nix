@@ -22,7 +22,7 @@
         pickers = {
           find_files = {
             find_command = [
-              "rg"
+              (lib.getExe pkgs.ripgrep)
               "--files"
             ] ++ rgArgs;
           };
