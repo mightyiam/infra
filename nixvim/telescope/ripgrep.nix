@@ -9,24 +9,18 @@
       ];
     in
     {
-      defaults = {
-        vimgrep_arguments = [
-          (lib.getExe pkgs.ripgrep)
-          "--color=never"
-          "--no-heading"
-          "--with-filename"
-          "--line-number"
-          "--column"
-          "--smart-case"
-        ] ++ rgArgs;
-        pickers = {
-          find_files = {
-            find_command = [
-              (lib.getExe pkgs.ripgrep)
-              "--files"
-            ] ++ rgArgs;
-          };
-        };
-      };
+      defaults.vimgrep_arguments = [
+        (lib.getExe pkgs.ripgrep)
+        "--color=never"
+        "--no-heading"
+        "--with-filename"
+        "--line-number"
+        "--column"
+        "--smart-case"
+      ];
+      pickers.find_files.find_command = [
+        (lib.getExe pkgs.ripgrep)
+        "--files"
+      ] ++ rgArgs;
     };
 }
