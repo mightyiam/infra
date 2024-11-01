@@ -44,5 +44,9 @@
       key = "<leader>xq";
       action = "<cmd>Trouble quickfix toggle<cr>";
     }
+    {
+      key = "<leader>xf";
+      action = "<cmd>Trouble focus<cr>";
+    }
   ];
 }
