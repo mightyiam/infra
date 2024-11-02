@@ -42,6 +42,7 @@
         ./title.nix
         ./treesitter.nix
         ./trouble.nix
+        ./typescript-tools.nix
         ./updatetime.nix
         ./which-key.nix
       ];
