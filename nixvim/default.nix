@@ -31,6 +31,7 @@
         ./lsp
         ./lualine.nix
         ./luasnip.nix
+        ./neorepl.nix
         ./nix-fmt.nix
         ./nvim-autopairs.nix
         ./nvim-surround.nix
