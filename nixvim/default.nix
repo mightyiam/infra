@@ -35,6 +35,7 @@
         ./nix-fmt.nix
         ./nvim-autopairs.nix
         ./nvim-surround.nix
+        ./refjump.nix
         ./rustaceanvim.nix
         ./scrolloff.nix
         ./search.nix

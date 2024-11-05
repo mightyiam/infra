@@ -545,6 +545,22 @@
         "type": "github"
       }
     },
+    "refjump-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1727601650,
+        "narHash": "sha256-NPyPcrXPTpcePVi6JdI60oCoaRjIQgEv45ztODLEaRE=",
+        "owner": "mawkler",
+        "repo": "refjump.nvim",
+        "rev": "a78b585cff29505f7558f3a596bca567474cd663",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mawkler",
+        "repo": "refjump.nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "catppuccin": "catppuccin",
@@ -555,6 +571,7 @@
         "nix-on-droid": "nix-on-droid",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
+        "refjump-nvim": "refjump-nvim",
         "sink-rotate": "sink-rotate",
         "smart-scrolloff-nvim": "smart-scrolloff-nvim",
         "treefmt-nix": "treefmt-nix",

@@ -47,6 +47,11 @@
       };
     };
 
+    refjump-nvim = {
+      flake = false;
+      url = "github:mawkler/refjump.nvim";
+    };
+
     sink-rotate = {
       url = "github:mightyiam/sink-rotate";
       inputs = {
