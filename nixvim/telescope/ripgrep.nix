@@ -17,7 +17,7 @@
         "--line-number"
         "--column"
         "--smart-case"
-      ];
+      ] ++ rgArgs;
       pickers.find_files.find_command = [
         (lib.getExe pkgs.ripgrep)
         "--files"
