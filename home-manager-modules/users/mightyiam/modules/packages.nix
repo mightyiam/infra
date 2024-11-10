@@ -53,7 +53,7 @@ let
     # rust
     cargo-watch
     cargo-outdated
-    cargo-feature
+    #cargo-feature
 
     # yaml
     yaml-language-server
