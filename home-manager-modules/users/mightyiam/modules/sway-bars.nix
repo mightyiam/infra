@@ -67,7 +67,6 @@ lib.mkIf config.gui.enable {
   };
   wayland.windowManager.sway.config.bars = [
     {
-      mode = "hide";
       statusCommand = "i3status-rs ${config.xdg.configHome}/i3status-rust/config-${id}.toml";
       trayOutput = "none";
       fonts = {
