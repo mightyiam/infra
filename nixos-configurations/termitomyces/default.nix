@@ -5,6 +5,7 @@
     ./mobo.nix
     ./gpu.nix
     ./cpu.nix
+    ./docker.nix
     ./state-version.nix
   ];
 
