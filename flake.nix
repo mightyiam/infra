@@ -71,6 +71,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    ucodenix = {
+      url = "github:e-tho/ucodenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     vim-autoread = {
       flake = false;
       url = "github:djoshea/vim-autoread/24061f84652d768bfb85d222c88580b3af138dab";

@@ -575,6 +575,7 @@
         "sink-rotate": "sink-rotate",
         "smart-scrolloff-nvim": "smart-scrolloff-nvim",
         "treefmt-nix": "treefmt-nix",
+        "ucodenix": "ucodenix",
         "vim-autoread": "vim-autoread"
       }
     },
@@ -715,6 +716,26 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "ucodenix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1731370323,
+        "narHash": "sha256-o2+w8Eda2vUN5TtFiheUXReTxd1YNlAg1g1kVKXI1cI=",
+        "owner": "e-tho",
+        "repo": "ucodenix",
+        "rev": "718ff785d5c12cb2ec136b13d423b2e808ffeddc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "e-tho",
+        "repo": "ucodenix",
         "type": "github"
       }
     },
