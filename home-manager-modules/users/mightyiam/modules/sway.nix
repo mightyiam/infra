@@ -51,7 +51,8 @@ in
         modifier = "Mod4";
 
         keybindings = {
-          "${mod}+Shift+e" = "exec ${lib.getExe' config.wayland.windowManager.sway.package "swaymsg"} exit";
+          "${mod}+Shift+e" = null;
+          "--no-repeat ${mod}+Shift+e" = "exec ${lib.getExe' config.wayland.windowManager.sway.package "swaymsg"} exit";
           "--no-repeat ${mod}+x" = incVol "-";
           "--no-repeat ${mod}+Shift+x" = incVol "+";
           "--no-repeat ${mod}+z" = toggleMuteSources;
