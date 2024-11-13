@@ -23,6 +23,12 @@
       };
     };
 
-    wayland.windowManager.sway.config.keybindings."--no-repeat Mod4+Return" = "exec ${lib.getExe config.terminal}";
+    wayland.windowManager.sway.config = {
+      terminal = lib.getExe config.programs.alacritty.package;
+      keybindings = {
+        "Mod4+Return" = null;
+        "--no-repeat Mod4+Return" = "exec ${config.wayland.windowManager.sway.config.terminal}";
+      };
+    };
   };
 }

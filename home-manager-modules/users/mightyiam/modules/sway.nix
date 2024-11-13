@@ -1,4 +1,5 @@
 {
+  options,
   pkgs,
   lib,
   config,
@@ -22,6 +23,12 @@ let
   swayMsgPath = config.wayland.windowManager.sway.package + /bin/swaymsg;
 in
 {
+  imports = [
+    {
+      wayland.windowManager.sway.config.keybindings =
+        (options.wayland.windowManager.sway.config.type.getSubOptions { }).keybindings.default;
+    }
+  ];
   config = lib.mkIf config.gui.enable {
     wayland.windowManager.sway = {
       enable = true;
@@ -41,7 +48,6 @@ in
           "type:touchpad".tap = "enabled";
         };
 
-        terminal = "false";
         modifier = "Mod4";
 
         keybindings = {
