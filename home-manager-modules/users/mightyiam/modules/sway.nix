@@ -20,6 +20,7 @@ let
     "do ${pactl} set-source-mute \"$source\" toggle;"
     "done'"
   ];
+  mod = config.wayland.windowManager.sway.config.modifier;
 in
 {
   imports = [
@@ -50,10 +51,10 @@ in
         modifier = "Mod4";
 
         keybindings = {
-          "Mod4+Shift+e" = "exec ${lib.getExe' config.wayland.windowManager.sway.package "swaymsg"} exit";
-          "--no-repeat Mod4+x" = incVol "-";
-          "--no-repeat Mod4+Shift+x" = incVol "+";
-          "--no-repeat Mod4+z" = toggleMuteSources;
+          "${mod}+Shift+e" = "exec ${lib.getExe' config.wayland.windowManager.sway.package "swaymsg"} exit";
+          "--no-repeat ${mod}+x" = incVol "-";
+          "--no-repeat ${mod}+Shift+x" = incVol "+";
+          "--no-repeat ${mod}+z" = toggleMuteSources;
         };
       };
     };
