@@ -9,6 +9,6 @@ let
   sink-rotate = self.inputs.sink-rotate.packages.${pkgs.system}.default;
 in
 lib.mkIf config.gui.enable {
-  wayland.windowManager.sway.config.keybindings."--no-repeat Mod4+x" = "exec ${sink-rotate}/bin/sink-rotate";
+  wayland.windowManager.sway.config.keybindings."--no-repeat Mod4+c" = "exec ${sink-rotate}/bin/sink-rotate";
   home.packages = [ sink-rotate ];
 }

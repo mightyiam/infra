@@ -93,8 +93,8 @@ in
 
           ${config.keyboard.wm.resize} = "mode resize";
 
-          "--no-repeat Mod4+c" = incVol "-";
-          "--no-repeat Mod4+v" = incVol "+";
+          "--no-repeat Mod4+x" = incVol "-";
+          "--no-repeat Mod4+Shift+x" = incVol "+";
           "--no-repeat Mod4+z" = toggleMuteSources;
         };
       };
