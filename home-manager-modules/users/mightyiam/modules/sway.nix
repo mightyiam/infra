@@ -6,20 +6,6 @@
   ...
 }:
 let
-  step = 5;
-  pactl = lib.getExe' pkgs.pulseaudio "pactl";
-  incVol =
-    d:
-    lib.concatStringsSep " " [
-      "exec ${pactl}"
-      "set-sink-volume @DEFAULT_SINK@ ${d}${toString step}%"
-    ];
-  toggleMuteSources = lib.concatStringsSep " " [
-    "exec ${pkgs.zsh + /bin/zsh} -c '"
-    "for source in $(${pactl} list short sources | ${pkgs.gawk + /bin/awk} \"{print \\$2}\");"
-    "do ${pactl} set-source-mute \"$source\" toggle;"
-    "done'"
-  ];
   mod = config.wayland.windowManager.sway.config.modifier;
 in
 {
@@ -53,9 +39,6 @@ in
         keybindings = {
           "${mod}+Shift+e" = null;
           "--no-repeat ${mod}+Shift+e" = "exec ${lib.getExe' config.wayland.windowManager.sway.package "swaymsg"} exit";
-          "--no-repeat ${mod}+x" = incVol "-";
-          "--no-repeat ${mod}+Shift+x" = incVol "+";
-          "--no-repeat ${mod}+z" = toggleMuteSources;
         };
       };
     };
