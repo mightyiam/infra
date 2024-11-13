@@ -55,12 +55,6 @@ in
         reload = "Shift+c";
         exit = "Shift+e";
         resize = "r";
-        volume = {
-          decrement = "minus";
-          increment = "equal";
-          toggleMuteSources = "m";
-          sinkRotate = "s";
-        };
         screenshot = prefixRec "Shift+" {
           window = "w";
           output = "o";

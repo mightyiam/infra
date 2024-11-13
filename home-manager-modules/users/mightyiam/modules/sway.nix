@@ -122,9 +122,8 @@ lib.mkIf config.gui.enable {
 
   wayland.windowManager.sway.config.keybindings.${config.keyboard.wm.resize} = "mode resize";
 
-  wayland.windowManager.sway.config.keybindings.${config.keyboard.wm.volume.decrement} = incVol "-";
-  wayland.windowManager.sway.config.keybindings.${config.keyboard.wm.volume.increment} = incVol "+";
-  wayland.windowManager.sway.config.keybindings.${config.keyboard.wm.volume.toggleMuteSources} =
-    toggleMuteSources;
+    wayland.windowManager.sway.config.keybindings."--no-repeat Mod4+minus" = incVol "-";
+  wayland.windowManager.sway.config.keybindings."--no-repeat Mod4+equal" = incVol "+";
+  wayland.windowManager.sway.config.keybindings."--no-repeat Mod4+m" = toggleMuteSources;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-wlr ];
 }
