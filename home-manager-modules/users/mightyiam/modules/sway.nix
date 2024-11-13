@@ -44,7 +44,7 @@ lib.mkIf config.gui.enable {
       modifier = "Mod4";
 
       keybindings = {
-        ${config.keyboard.wm.terminal} = "exec ${config.programs.alacritty.package + /bin/alacritty}";
+        "--no-repeat Mod4+Return" = "exec ${config.programs.alacritty.package + /bin/alacritty}";
         ${config.keyboard.wm.kill} = "kill";
         ${config.keyboard.wm.menu} = "exec ${config.wayland.windowManager.sway.config.menu}";
 

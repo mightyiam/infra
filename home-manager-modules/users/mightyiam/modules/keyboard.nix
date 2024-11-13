@@ -16,7 +16,6 @@ in
     default = {
       wm = prefixRec "Mod4+" {
         lock = "Ctrl+l";
-        terminal = "Return";
         kill = "Shift+q";
         menu = "d";
         focus = directions // {
