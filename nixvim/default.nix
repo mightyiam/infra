@@ -19,6 +19,7 @@
         ./clipboard.nix
         ./cmp.nix
         ./comment.nix
+        ./dressing.nix
         ./easymotion.nix
         ./fidget.nix
         ./flash.nix
