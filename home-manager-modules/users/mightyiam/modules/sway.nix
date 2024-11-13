@@ -7,7 +7,7 @@
 }:
 let
   step = 5;
-  pactl = pkgs.pulseaudio + /bin/pactl;
+  pactl = lib.getExe' pkgs.pulseaudio "pactl";
   incVol =
     d:
     lib.concatStringsSep " " [
