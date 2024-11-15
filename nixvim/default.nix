@@ -42,6 +42,7 @@
         ./search.nix
         ./spectre.nix
         ./telescope
+        ./text-case.nix
         ./title.nix
         ./treesitter.nix
         ./trouble.nix
