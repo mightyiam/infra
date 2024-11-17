@@ -1,5 +1,11 @@
+{ self, ... }:
 {
   boot.kernelModules = [ "kvm-amd" ];
 
-  services.ucodenix.cpuModelId = "00A60F12";
+  imports = [ self.inputs.ucodenix.nixosModules.default ];
+
+  services.ucodenix = {
+    enable = true;
+    cpuModelId = "00A60F12";
+  };
 }
