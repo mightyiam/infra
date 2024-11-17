@@ -2,6 +2,7 @@
   imports = [
     ../modules/allow-unfree-packages.nix
     ../modules/bluetooth.nix
+    ../modules/cpu.nix
     ../modules/dconf.nix
     ../modules/editor.nix
     ../modules/firmware.nix
@@ -13,7 +14,6 @@
     ../modules/home-related-hacks.nix
     ../modules/home.nix
     ../modules/known-hosts.nix
-    ../modules/microcode.nix
     ../modules/networking.nix
     ../modules/nh.nix
     ../modules/nix-index.nix
