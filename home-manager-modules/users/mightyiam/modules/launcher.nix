@@ -24,7 +24,6 @@
         "exec"
       ];
       drun-display-format = "{icon} {name}";
-      window-display-format = "{icon} {name}";
       display-drun = "   Apps ";
       display-run = "   Run ";
       display-window = " 󰕰  Window";
