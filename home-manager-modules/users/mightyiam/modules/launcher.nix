@@ -45,4 +45,6 @@
       "${mod}+d" = null;
       "--no-repeat ${mod}+Shift+d" = "exec ${rofi} -show run";
     };
+
+  pinentry = pkgs.pinentry-rofi;
 }
