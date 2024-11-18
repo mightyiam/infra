@@ -44,6 +44,7 @@
       "--no-repeat ${mod}+d" = "exec ${rofi} -show drun";
       "${mod}+d" = null;
       "--no-repeat ${mod}+Shift+d" = "exec ${rofi} -show run";
+      "--no-repeat ${mod}+m" = "exec ${config.secretsMenu}";
     };
 
   pinentry = pkgs.pinentry-rofi;
