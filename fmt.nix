@@ -13,7 +13,7 @@
     settings.global.excludes = [
       "*.toml"
       "*/.gitignore"
-      "/LICENCE"
+      "LICENSE"
     ];
   };
 }
