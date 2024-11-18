@@ -1,12 +1,12 @@
 { config, lib, ... }:
 {
   options.terminal = lib.mkOption {
-    type = lib.types.package;
+    type = lib.types.path;
     default = null;
   };
 
   config = lib.mkIf config.gui.enable {
-    terminal = config.programs.alacritty.package;
+    terminal = lib.getExe config.programs.alacritty.package;
 
     programs.alacritty = {
       enable = true;
@@ -24,7 +24,7 @@
     };
 
     wayland.windowManager.sway.config = {
-      terminal = lib.getExe config.programs.alacritty.package;
+      terminal = config.terminal;
       keybindings = {
         "Mod4+Return" = null;
         "--no-repeat Mod4+Return" = "exec ${config.wayland.windowManager.sway.config.terminal}";
