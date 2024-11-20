@@ -9,7 +9,7 @@
     enable = true;
     catppuccin.enable = true;
     package = pkgs.rofi-wayland;
-    terminal = config.terminal;
+    terminal = config.terminal.path;
     extraConfig = {
       show-icons = true;
       modi = "run,drun,window";
@@ -28,6 +28,7 @@
       display-run = "   Run ";
       display-window = " 󰕰  Window";
       display-Network = " 󰤨  Network";
+      run-shell-command = config.terminal.withTitle "{cmd}";
     };
     theme = {
       listview.columns = 1;

@@ -1,12 +1,21 @@
 { config, lib, ... }:
 {
-  options.terminal = lib.mkOption {
-    type = lib.types.path;
-    default = null;
+  options.terminal = {
+    path = lib.mkOption {
+      type = lib.types.path;
+      default = null;
+    };
+    withTitle = lib.mkOption {
+      type = lib.types.functionTo lib.types.string;
+      default = null;
+    };
   };
 
   config = lib.mkIf config.gui.enable {
-    terminal = lib.getExe config.programs.alacritty.package;
+    terminal = {
+      path = lib.getExe config.programs.alacritty.package;
+      withTitle = cmd: "${config.terminal.path} --title ${cmd} --command ${cmd}";
+    };
 
     programs.alacritty = {
       enable = true;
@@ -15,7 +24,7 @@
         window.decorations = "none";
         window.dynamic_title = true;
         window.opacity = config.style.windowOpacity;
-        window.title = "";
+        window.title = "Terminal";
         bell = {
           duration = builtins.ceil config.style.bellDuration;
           color = "#000000";
@@ -24,7 +33,7 @@
     };
 
     wayland.windowManager.sway.config = {
-      terminal = config.terminal;
+      terminal = config.terminal.path;
       keybindings = {
         "Mod4+Return" = null;
         "--no-repeat Mod4+Return" = "exec ${config.wayland.windowManager.sway.config.terminal}";
