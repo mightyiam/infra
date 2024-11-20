@@ -5,6 +5,7 @@
     ./state-version.nix
     ./gdm.nix
     ./auto-upgrade.nix
+    ../../nixos-modules/users/1bowapinya.nix
   ];
 
   networking.hostName = "wingardiumleviosa";

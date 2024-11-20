@@ -12,15 +12,6 @@
       }
     )
   ];
-  home-manager.users."1bowapinya".imports = [
-    ../../home-manager-modules/users/1bowapinya
-    (
-      { osConfig, ... }:
-      {
-        home.stateVersion = osConfig.system.stateVersion;
-      }
-    )
-  ];
   home-manager.extraSpecialArgs = {
     inherit self;
   };
