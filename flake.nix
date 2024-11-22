@@ -81,7 +81,7 @@
 
   outputs =
     inputs:
-    inputs.flake-parts.lib.mkFlake { inputs = inputs; } {
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
         ./boot-message.nix
         ./catppuccin.nix
