@@ -17,11 +17,6 @@
         "drun"
         "window"
       ];
-      combi-modes = [
-        "drun"
-        "run"
-        "window"
-      ];
       drun-match-fields = [
         "name"
         "generic"
