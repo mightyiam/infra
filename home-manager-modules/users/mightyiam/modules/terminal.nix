@@ -6,7 +6,7 @@
       default = null;
     };
     withTitle = lib.mkOption {
-      type = lib.types.functionTo lib.types.string;
+      type = lib.types.functionTo lib.types.str;
       default = null;
     };
   };
