@@ -45,7 +45,7 @@
       mod = config.wayland.windowManager.sway.config.modifier;
     in
     {
-      "--no-repeat ${mod}+p" = "exec ${rofi} -show window";
+      "--no-repeat ${mod}+semicolon" = "exec ${rofi} -show window";
       "--no-repeat ${mod}+d" = "exec ${rofi} -show drun";
       "${mod}+d" = null;
       "--no-repeat ${mod}+Shift+d" = "exec ${rofi} -show run";
