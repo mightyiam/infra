@@ -12,7 +12,11 @@
     terminal = config.terminal.path;
     extraConfig = {
       show-icons = true;
-      modi = "run,drun,window";
+      modi = [
+        "run"
+        "drun"
+        "window"
+      ];
       combi-modes = [
         "drun"
         "run"
