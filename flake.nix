@@ -90,7 +90,6 @@
         ./nixvim
         ./nix-on-droid-configurations
         ./nixos-configurations.nix
-        ./system-diff.nix
         inputs.devshell.flakeModule
       ];
 
