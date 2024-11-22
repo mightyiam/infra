@@ -4,7 +4,10 @@
     lsp-lines = {
       enable = true;
       luaConfig.post = ''
-        vim.diagnostic.config({ virtual_text = false })
+        vim.diagnostic.config({
+          virtual_lines = false,
+          virtual_text = true,
+        })
       '';
     };
     lsp.keymaps.extra = [
