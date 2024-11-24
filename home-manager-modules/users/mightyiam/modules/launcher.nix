@@ -31,7 +31,10 @@
     };
     theme = {
       listview.columns = 1;
-      "*".font = "monospace ${config.gui.fonts.monospace.size |> builtins.floor |> toString}";
+      "*" = {
+        width = 900;
+        font = "monospace ${config.gui.fonts.monospace.size |> builtins.floor |> toString}";
+      };
     };
   };
   wayland.windowManager.sway.config.keybindings =
