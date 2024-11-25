@@ -58,6 +58,7 @@
         flake-parts.follows = "flake-parts";
         nixpkgs.follows = "nixpkgs";
         treefmt-nix.follows = "treefmt-nix";
+        devshell.follows = "devshell";
       };
     };
 
