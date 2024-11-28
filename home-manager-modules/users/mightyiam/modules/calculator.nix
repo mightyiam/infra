@@ -4,6 +4,6 @@
   config,
   ...
 }:
-lib.mkIf config.gui.enable {
-  home.packages = [ pkgs.qalculate-gtk ];
+{
+  home.packages = [ pkgs.bc ] ++ lib.optional config.gui.enable pkgs.qalculate-gtk;
 }
