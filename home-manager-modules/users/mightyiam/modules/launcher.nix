@@ -32,7 +32,7 @@ lib.mkIf config.gui.enable {
     theme = {
       listview.columns = 1;
       "*" = {
-        width = 900;
+        width = 1200;
         font = "monospace ${config.gui.fonts.monospace.size |> builtins.floor |> toString}";
       };
     };
@@ -43,7 +43,6 @@ lib.mkIf config.gui.enable {
       mod = config.wayland.windowManager.sway.config.modifier;
     in
     {
-      "--no-repeat ${mod}+semicolon" = "exec ${rofi} -show window";
       "--no-repeat ${mod}+d" = "exec ${rofi} -show drun";
       "${mod}+d" = null;
       "--no-repeat ${mod}+Shift+d" = "exec ${rofi} -show run";
