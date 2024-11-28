@@ -4,7 +4,7 @@
   home-manager.useGlobalPkgs = true;
   home-manager.users.mightyiam.imports = [
     self.homeManagerModules.common
-    ../../home-manager-modules/users/mightyiam
+    ../../home-manager-modules/mightyiam
     (
       { osConfig, ... }:
       {

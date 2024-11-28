@@ -9,7 +9,7 @@
       inherit (config.system) stateVersion;
     };
     sharedModules = [
-      (self + "/home-manager-modules/users/mightyiam")
+      (self + "/home-manager-modules/mightyiam")
       { gui.enable = false; }
     ];
   };
