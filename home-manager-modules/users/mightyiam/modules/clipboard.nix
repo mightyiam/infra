@@ -26,7 +26,7 @@ let
     '';
   };
 in
-{
+lib.mkIf config.gui.enable {
   services.cliphist.enable = true;
 
   wayland.windowManager.sway.config.keybindings = {

@@ -13,7 +13,7 @@
         pinentry = config.pinentry;
       };
     };
-    home.packages = [ pkgs.rofi-rbw-wayland ];
+    home.packages = lib.mkIf config.gui.enable [ pkgs.rofi-rbw-wayland ];
     xdg.configFile."rofi-rbw.rc".text = lib.generators.toINIWithGlobalSection { } {
       globalSection = {
         keybindings = lib.concatStringsSep "," [

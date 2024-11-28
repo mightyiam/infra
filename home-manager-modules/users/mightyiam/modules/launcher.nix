@@ -4,7 +4,7 @@
   pkgs,
   ...
 }:
-{
+lib.mkIf config.gui.enable {
   programs.rofi = {
     enable = true;
     catppuccin.enable = true;
@@ -49,6 +49,4 @@
       "--no-repeat ${mod}+Shift+d" = "exec ${rofi} -show run";
       "--no-repeat ${mod}+m" = "exec ${config.secretsMenu}";
     };
-
-  pinentry = pkgs.pinentry-rofi;
 }

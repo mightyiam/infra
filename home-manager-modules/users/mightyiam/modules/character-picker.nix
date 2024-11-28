@@ -10,7 +10,7 @@ let
   };
 in
 {
-  home.packages = [ rofimoji ];
+  home.packages = lib.mkIf config.gui.enable [ rofimoji ];
   wayland.windowManager.sway.config.keybindings =
     let
       mod = config.wayland.windowManager.sway.config.modifier;
