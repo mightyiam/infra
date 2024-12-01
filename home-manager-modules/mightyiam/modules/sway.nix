@@ -27,10 +27,12 @@ in
         fonts.size = config.gui.fonts.default.size;
 
         input = {
-          "type:keyboard".xkb_layout = "us,il";
-          "type:keyboard".xkb_options = "grp:lalt_lshift_toggle";
-          "type:keyboard".repeat_delay = "200";
-          "type:keyboard".repeat_rate = "50";
+          "type:keyboard" = {
+            xkb_layout = "us,il";
+            xkb_options = "grp:lalt_lshift_toggle";
+            repeat_delay = "200";
+            repeat_rate = "50";
+          };
           "type:touchpad".tap = "enabled";
         };
 
