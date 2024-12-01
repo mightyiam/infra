@@ -8,6 +8,5 @@
     ../../nixos-modules/users/1bowapinya.nix
   ];
 
-  networking.hostName = "wingardiumleviosa";
   networking.hostId = "abf835ae";
 }

@@ -9,6 +9,5 @@
     ./state-version.nix
   ];
 
-  networking.hostName = "termitomyces";
   networking.hostId = "6b5dea2a";
 }

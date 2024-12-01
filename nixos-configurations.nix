@@ -8,7 +8,7 @@
   imports =
     builtins.readDir ./nixos-configurations
     |> lib.attrNames
-    |> map (hostname: {
+    |> map (hostName: {
       flake =
         let
           nixosConfiguration = inputs.nixpkgs.lib.nixosSystem {
@@ -17,15 +17,20 @@
             };
             modules = [
               self.nixosModules.common
-              (./nixos-configurations + "/${hostname}")
+              (./nixos-configurations + "/${hostName}")
+              {
+                networking = {
+                  inherit hostName;
+                };
+              }
             ];
           };
 
           system = nixosConfiguration.config.nixpkgs.hostPlatform.system;
         in
         {
-          nixosConfigurations.${hostname} = nixosConfiguration;
-          checks.${system}."nixosConfigurations/${hostname}" =
+          nixosConfigurations.${hostName} = nixosConfiguration;
+          checks.${system}."nixosConfigurations/${hostName}" =
             nixosConfiguration.config.system.build.toplevel;
         };
     });

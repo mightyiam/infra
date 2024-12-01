@@ -6,6 +6,5 @@
     ./state-version.nix
   ];
 
-  networking.hostName = "ganoderma";
   networking.hostId = "0e8e163d";
 }
