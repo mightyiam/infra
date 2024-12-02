@@ -53,7 +53,7 @@ in
     type = lib.types.listOf lib.types.package;
     default = with pkgs; [
       open-dyslexic
-      (nerdfonts.override { fonts = [ "OpenDyslexic" ]; })
+      nerd-fonts.open-dyslexic
       font-awesome
       noto-fonts
       noto-fonts-emoji
