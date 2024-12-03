@@ -38,7 +38,7 @@
       terminal = config.terminal.path;
       keybindings = {
         "Mod4+Return" = null;
-        "--no-repeat Mod4+Return" = "exec ${config.wayland.windowManager.sway.config.terminal}";
+        "--no-repeat Mod4+Return" = "exec ${lib.getExe config.programs.alacritty.package}";
       };
     };
   };
