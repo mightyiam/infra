@@ -41,6 +41,7 @@ in
         keybindings = {
           "${mod}+Shift+e" = null;
           "--no-repeat ${mod}+Shift+e" = "exec ${lib.getExe' config.wayland.windowManager.sway.package "swaymsg"} exit";
+          "${mod}+Shift+a" = "focus child";
         };
       };
     };
