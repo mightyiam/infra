@@ -88,9 +88,9 @@
         ./catppuccin.nix
         ./fmt.nix
         ./meta.nix
-        ./nixvim
         ./nix-on-droid-configurations
         ./nixos-configurations.nix
+        ./nixvim
         inputs.devshell.flakeModule
       ];
 
