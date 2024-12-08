@@ -90,6 +90,7 @@
         ./meta.nix
         ./nix-on-droid-configurations
         ./nixos-configurations.nix
+        ./nixos-modules
         ./nixvim
         inputs.devshell.flakeModule
       ];
