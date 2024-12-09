@@ -44,7 +44,8 @@
       keybindings = {
         "Mod4+Return" = null;
         "--no-repeat Mod4+Return" = "exec ${lib.getExe config.programs.alacritty.package}";
-        "--no-repeat Mod4+Shift+Return" = "exec ${lib.getExe config.programs.alacritty.package} --working-directory `${lib.getExe pkgs.swaycwd}`";
+        "--no-repeat Mod4+Shift+Return" =
+          "exec ${lib.getExe config.programs.alacritty.package} --working-directory `${lib.getExe pkgs.swaycwd}`";
       };
     };
   };
