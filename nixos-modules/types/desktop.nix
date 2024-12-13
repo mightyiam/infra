@@ -25,9 +25,9 @@
     ../modules/steam.nix
     ../modules/storage.nix
     ../modules/sudo.nix
+    ../modules/tailscale.nix
     ../modules/tmp.nix
     ../modules/virtualbox.nix
-    ../modules/tailscale.nix
     ../users/me.nix
   ];
 }
