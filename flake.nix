@@ -86,6 +86,7 @@
       imports = [
         ./boot-message.nix
         ./catppuccin.nix
+        ./codeberg.nix
         ./fmt.nix
         ./meta.nix
         ./nix-on-droid-configurations
