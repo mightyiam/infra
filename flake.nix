@@ -100,6 +100,7 @@
         ./boot-message.nix
         ./catppuccin.nix
         ./codeberg.nix
+        ./drv-paths.nix
         ./fmt.nix
         ./git-hooks.nix
         ./meta.nix
