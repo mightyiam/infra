@@ -9,9 +9,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    flake-compat.url = "https://flakehub.com/f/edolstra/flake-compat/1.tar.gz";
+
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+
+    git-hooks = {
+      url = "github:cachix/git-hooks.nix";
+      inputs = {
+        flake-compat.follows = "flake-compat";
+        nixpkgs-stable.follows = "nixpkgs";
+        nixpkgs.follows = "nixpkgs";
+      };
     };
 
     home-manager = {
@@ -40,7 +51,9 @@
       url = "github:nix-community/nixvim";
       inputs = {
         devshell.follows = "devshell";
+        flake-compat.follows = "flake-compat";
         flake-parts.follows = "flake-parts";
+        git-hooks.follows = "git-hooks";
         home-manager.follows = "home-manager";
         nixpkgs.follows = "nixpkgs";
         treefmt-nix.follows = "treefmt-nix";
@@ -88,6 +101,7 @@
         ./catppuccin.nix
         ./codeberg.nix
         ./fmt.nix
+        ./git-hooks.nix
         ./meta.nix
         ./nix-on-droid-configurations
         ./nixos-configurations.nix
