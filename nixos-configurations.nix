@@ -8,6 +8,7 @@
   imports =
     builtins.readDir ./nixos-configurations
     |> lib.attrNames
+    |> lib.filter (path: !(lib.hasPrefix "_" path))
     |> map (hostName: {
       flake =
         let
