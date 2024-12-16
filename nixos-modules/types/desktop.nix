@@ -1,4 +1,5 @@
-{self,...}: {
+{ self, ... }:
+{
   imports = with self.nixosModules; [
     allow-unfree-packages
     bluetooth

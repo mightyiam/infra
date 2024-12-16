@@ -1,7 +1,8 @@
 let
   media = import ./media.nix;
 in
-  {self,...}: {
+{ self, ... }:
+{
   imports = with self.nixosModules; [
     common
     ./splash-image.nix
