@@ -1,8 +1,8 @@
 { self, ... }:
 {
   imports = with self.nixosModules; [
+    desktop
     swap
-    ../../nixos-modules/types/desktop.nix
     ./mobo.nix
     ./state-version.nix
   ];

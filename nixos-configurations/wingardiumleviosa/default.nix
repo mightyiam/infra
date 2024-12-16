@@ -1,6 +1,7 @@
+{ self, ... }:
 {
-  imports = [
-    ../../nixos-modules/types/desktop.nix
+  imports = with self.nixosModules; [
+    desktop
     ./mobo.nix
     ./state-version.nix
     ./gdm.nix
