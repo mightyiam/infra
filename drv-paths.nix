@@ -1,7 +1,7 @@
 { self, lib, ... }:
 {
   perSystem =
-    { pkgs, ... }:
+    { pkgs, config, ... }:
     {
       packages.drv-paths =
         self.nixosConfigurations
@@ -18,5 +18,7 @@
         |> map builtins.unsafeDiscardStringContext
         |> lib.concatStringsSep "\n"
         |> (pkgs.writeText "drv-paths");
+
+      checks.drv-paths = config.packages.drv-paths;
     };
 }
