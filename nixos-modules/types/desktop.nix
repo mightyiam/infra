@@ -1,33 +1,33 @@
-{
-  imports = [
-    ../modules/allow-unfree-packages.nix
-    ../modules/bluetooth.nix
-    ../modules/dconf.nix
-    ../modules/editor.nix
-    ../modules/firmware.nix
-    ../modules/flakes.nix
-    ../modules/flipper-zero.nix
-    ../modules/fonts.nix
-    ../modules/graphics.nix
-    ../modules/grub.nix
-    ../modules/home-related-hacks.nix
-    ../modules/home.nix
-    ../modules/known-hosts.nix
-    ../modules/networking.nix
-    ../modules/nh.nix
-    ../modules/nix-index.nix
-    ../modules/nix.nix
-    ../modules/pipewire.nix
-    ../modules/printing.nix
-    ../modules/service-discovery.nix
-    ../modules/shell.nix
-    ../modules/sshd.nix
-    ../modules/steam.nix
-    ../modules/storage.nix
-    ../modules/sudo.nix
-    ../modules/tailscale.nix
-    ../modules/tmp.nix
-    ../modules/virtualbox.nix
+{self,...}: {
+  imports = with self.nixosModules; [
+    allow-unfree-packages
+    bluetooth
+    dconf
+    editor
+    firmware
+    flakes
+    flipper-zero
+    fonts
+    graphics
+    grub
+    home-related-hacks
+    home
+    known-hosts
+    networking
+    nh
+    nix-index
+    nix
+    pipewire
+    printing
+    service-discovery
+    shell
+    sshd
+    steam
+    storage
+    sudo
+    tailscale
+    tmp
+    virtualbox
     ../users/me.nix
   ];
 }
