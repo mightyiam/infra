@@ -10,11 +10,15 @@
       programs.shfmt.enable = true;
       programs.stylua.enable = true;
       programs.yamlfmt.enable = true;
-      settings.global.excludes = [
-        "*.toml"
-        "*/.gitignore"
-        "LICENSE"
-      ];
+      settings = {
+        on-unmatched = "fatal";
+        global.excludes = [
+          "*.png"
+          "*.toml"
+          "*/.gitignore"
+          "LICENSE"
+        ];
+      };
     };
     pre-commit.settings.hooks.nix-fmt = {
       enable = true;
