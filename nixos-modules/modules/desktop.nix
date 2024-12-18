@@ -29,6 +29,6 @@
     tailscale
     tmp
     virtualbox
-    ../users/me.nix
+    me
   ];
 }
