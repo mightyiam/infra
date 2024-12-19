@@ -28,7 +28,7 @@
   ];
 
   home-manager.users."1bowapinya".imports = [
-    ../../home-manager-modules/1bowapinya
+    ../home-manager-modules/1bowapinya
     (
       { osConfig, ... }:
       {

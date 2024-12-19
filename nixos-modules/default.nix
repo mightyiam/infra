@@ -1,8 +1,7 @@
 { lib, ... }:
 {
   flake.nixosModules =
-    builtins.readDir ./modules
-    |> lib.mapAttrs' (
-      name: type: lib.nameValuePair (lib.removeSuffix ".nix" name) (./modules + "/${name}")
-    );
+    builtins.readDir ./.
+    |> lib.filterAttrs (name: _: name != "default.nix")
+    |> lib.mapAttrs' (name: type: lib.nameValuePair (lib.removeSuffix ".nix" name) (./. + "/${name}"));
 }
