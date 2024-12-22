@@ -9,18 +9,6 @@
       type = lib.types.bool;
       default = true;
     };
-
-    style = {
-      windowOpacity = lib.mkOption {
-        type = lib.types.numbers.between 0 1.0;
-        default = 1.0;
-      };
-
-      bellDuration = lib.mkOption {
-        type = lib.types.numbers.between 0 1000;
-        default = 200.0;
-      };
-    };
   };
 
   config = {
