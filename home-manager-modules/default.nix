@@ -26,88 +26,101 @@ let
   };
 in
 {
-  options.gui.enable = lib.mkOption {
-    type = lib.types.bool;
-    default = true;
-  };
+  options = {
+    gui.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+    };
 
-  options.location.latitude = lib.mkOption {
-    type = lib.types.numbers.between (-90) 90;
-    default = 18.746;
-  };
+    location = {
+      latitude = lib.mkOption {
+        type = lib.types.numbers.between (-90) 90;
+        default = 18.746;
+      };
+      longitude = lib.mkOption {
+        type = lib.types.numbers.between (-180) 180;
+        default = 99.075;
+      };
+    };
 
-  options.location.longitude = lib.mkOption {
-    type = lib.types.numbers.between (-180) 180;
-    default = 99.075;
-  };
+    style = {
+      windowOpacity = lib.mkOption {
+        type = lib.types.numbers.between 0 1.0;
+        default = 1.0;
+      };
 
-  options.style.windowOpacity = lib.mkOption {
-    type = lib.types.numbers.between 0 1.0;
-    default = 1.0;
-  };
+      bellDuration = lib.mkOption {
+        type = lib.types.numbers.between 0 1000;
+        default = 200.0;
+      };
+    };
 
-  options.style.bellDuration = lib.mkOption {
-    type = lib.types.numbers.between 0 1000;
-    default = 200.0;
-  };
+    gui = {
+      fonts = {
+        packages = lib.mkOption {
+          type = lib.types.listOf lib.types.package;
+          default = with pkgs; [
+            open-dyslexic
+            nerd-fonts.open-dyslexic
+            font-awesome
+            noto-fonts
+            noto-fonts-emoji
+          ];
+        };
 
-  options.gui.fonts.packages = lib.mkOption {
-    type = lib.types.listOf lib.types.package;
-    default = with pkgs; [
-      open-dyslexic
-      nerd-fonts.open-dyslexic
-      font-awesome
-      noto-fonts
-      noto-fonts-emoji
-    ];
-  };
+        default = {
+          family = lib.mkOption {
+            type = lib.types.str;
+            default = "sans-serif";
+          };
 
-  options.gui.fonts.default.family = lib.mkOption {
-    type = lib.types.str;
-    default = "sans-serif";
-  };
+          size = lib.mkOption {
+            type = lib.types.float;
+            default = 10.0;
+          };
+        };
 
-  options.gui.fonts.default.size = lib.mkOption {
-    type = lib.types.float;
-    default = 10.0;
-  };
+        monospace = {
+          family = lib.mkOption {
+            type = lib.types.str;
+            default = "monospace";
+          };
 
-  options.gui.fonts.monospace.family = lib.mkOption {
-    type = lib.types.str;
-    default = "monospace";
-  };
+          size = lib.mkOption {
+            type = lib.types.float;
+            default = 10.0;
+          };
+        };
 
-  options.gui.fonts.monospace.size = lib.mkOption {
-    type = lib.types.float;
-    default = 10.0;
-  };
+        aliases = lib.mkOption {
+          type = lib.types.listOf (
+            lib.types.submodule {
+              options.family = lib.mkOption { type = lib.types.str; };
 
-  options.gui.fonts.aliases = lib.mkOption {
-    type = lib.types.listOf (
-      lib.types.submodule {
-        options.family = lib.mkOption { type = lib.types.str; };
+              options.prefer = lib.mkOption { type = lib.types.listOf lib.types.str; };
+            }
+          );
 
-        options.prefer = lib.mkOption { type = lib.types.listOf lib.types.str; };
-      }
-    );
-
-    default = [
-      {
-        family = "monospace";
-        prefer = [
-          "OpenDyslexicM Nerd Font"
-          "Noto Color Emoji"
-        ];
-      }
-      {
-        family = "sans-serif";
-        prefer = [ "OpenDyslexic" ];
-      }
-      {
-        family = "serif";
-        prefer = [ "OpenDyslexic" ];
-      }
-    ];
+          default = [
+            {
+              family = "monospace";
+              prefer = [
+                "OpenDyslexicM Nerd Font"
+                "Noto Color Emoji"
+              ];
+            }
+            {
+              family = "sans-serif";
+              prefer = [ "OpenDyslexic" ];
+            }
+            {
+              family = "serif";
+              prefer = [ "OpenDyslexic" ];
+            }
+          ];
+        };
+      };
+    };
   };
 
   imports = [
