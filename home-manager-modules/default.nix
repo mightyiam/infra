@@ -9,17 +9,16 @@ let
     home.username = lib.mkDefault username;
     home.homeDirectory = lib.mkDefault "/home/${username}";
   };
-  modules =
-    let
-      dir = ./.;
-    in
-    dir
-    |> builtins.readDir
-    |> lib.attrNames
-    |> lib.filter (path: path != "default.nix")
-    |> map (path: "${dir}/${path}");
   always = {
-    imports = modules;
+    imports =
+      let
+        dir = ./.;
+      in
+      dir
+      |> builtins.readDir
+      |> lib.attrNames
+      |> lib.filter (path: path != "default.nix")
+      |> map (path: "${dir}/${path}");
 
     config.programs.home-manager.enable = true;
 
