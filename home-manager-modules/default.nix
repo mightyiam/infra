@@ -11,10 +11,13 @@ let
   };
   modules =
     let
-      dir = ./. + "/modules";
-      relativePaths = lib.attrNames (builtins.readDir dir);
+      dir = ./.;
     in
-    map (path: "${dir}/${path}") relativePaths;
+    dir
+    |> builtins.readDir
+    |> lib.attrNames
+    |> lib.filter (path: path != "default.nix")
+    |> map (path: "${dir}/${path}");
   always = {
     imports = modules;
 
