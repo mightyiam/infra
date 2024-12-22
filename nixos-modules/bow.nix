@@ -28,7 +28,9 @@
   ];
 
   home-manager.users."1bowapinya".imports = [
-    ../home-manager-modules/1bowapinya
+    {
+      programs.firefox.enable = true;
+    }
     (
       { osConfig, ... }:
       {
