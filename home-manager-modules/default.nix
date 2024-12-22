@@ -6,8 +6,8 @@
 let
   username = "mightyiam";
   userAndHome.config = {
-    home.username = lib.mkDefault username;
-    home.homeDirectory = lib.mkDefault "/home/${username}";
+    home.username = username;
+    home.homeDirectory = "/home/${username}";
   };
   always = {
     imports =
