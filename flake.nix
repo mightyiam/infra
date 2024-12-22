@@ -103,6 +103,7 @@
         ./drv-paths.nix
         ./fmt.nix
         ./git-hooks.nix
+        ./lib.nix
         ./meta.nix
         ./nix-on-droid-configurations
         ./nixos-configurations.nix
