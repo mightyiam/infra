@@ -4,29 +4,6 @@
   config,
   ...
 }:
-let
-  userAndHome.config = {
-    home.username = "mightyiam";
-    home.homeDirectory = "/home/${config.home.username}";
-  };
-  always = {
-    imports =
-      let
-        dir = ./.;
-      in
-      dir
-      |> builtins.readDir
-      |> lib.attrNames
-      |> lib.filter (path: path != "default.nix")
-      |> map (path: "${dir}/${path}");
-
-    config = {
-      programs.home-manager.enable = true;
-
-      home.sessionVariables.TZ = "\$(<~/.config/timezone)";
-    };
-  };
-in
 {
   options = {
     gui.enable = lib.mkOption {
@@ -125,8 +102,22 @@ in
     };
   };
 
-  imports = [
-    always
-    userAndHome
-  ];
+  config = {
+    home = {
+      username = "mightyiam";
+      homeDirectory = "/home/${config.home.username}";
+      sessionVariables.TZ = "\$(<~/.config/timezone)";
+    };
+    programs.home-manager.enable = true;
+  };
+
+  imports =
+    let
+      dir = ./.;
+    in
+    dir
+    |> builtins.readDir
+    |> lib.attrNames
+    |> lib.filter (path: path != "default.nix")
+    |> map (path: "${dir}/${path}");
 }
