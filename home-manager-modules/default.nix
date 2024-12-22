@@ -20,9 +20,11 @@ let
       |> lib.filter (path: path != "default.nix")
       |> map (path: "${dir}/${path}");
 
-    config.programs.home-manager.enable = true;
+    config = {
+      programs.home-manager.enable = true;
 
-    config.home.sessionVariables.TZ = "\$(<~/.config/timezone)";
+      home.sessionVariables.TZ = "\$(<~/.config/timezone)";
+    };
   };
 in
 {
