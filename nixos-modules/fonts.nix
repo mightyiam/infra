@@ -1,7 +1,11 @@
 {
-  fonts.enableDefaultPackages = true;
-  fonts.fontconfig.defaultFonts.serif = [ ];
-  fonts.fontconfig.defaultFonts.emoji = [ ];
-  fonts.fontconfig.defaultFonts.sansSerif = [ ];
-  fonts.fontconfig.defaultFonts.monospace = [ ];
+  fonts = {
+    enableDefaultPackages = true;
+    fontconfig.defaultFonts = {
+      serif = [ ];
+      emoji = [ ];
+      sansSerif = [ ];
+      monospace = [ ];
+    };
+  };
 }
