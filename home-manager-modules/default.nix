@@ -1,13 +1,13 @@
 {
   pkgs,
   lib,
+  config,
   ...
 }:
 let
-  username = "mightyiam";
   userAndHome.config = {
-    home.username = username;
-    home.homeDirectory = "/home/${username}";
+    home.username = "mightyiam";
+    home.homeDirectory = "/home/${config.home.username}";
   };
   always = {
     imports =
