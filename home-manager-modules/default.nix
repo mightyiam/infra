@@ -1,12 +1,7 @@
-{ lib, ... }:
+{ self, lib, ... }:
 {
-  imports =
-    let
-      dir = ./.;
-    in
-    dir
-    |> builtins.readDir
-    |> lib.attrNames
-    |> lib.filter (path: path != "default.nix")
-    |> map (path: "${dir}/${path}");
+  options.flake.homeManagerModules = lib.mkOption {
+    type = lib.types.attrsOf lib.types.anything;
+  };
+  config.flake.homeManagerModules = self.lib.readModulesDir ./.;
 }

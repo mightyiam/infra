@@ -1,18 +1,16 @@
-{ self, ... }:
+{ self, lib, ... }:
 {
   imports = [ self.inputs.home-manager.nixosModules.home-manager ];
   home-manager = {
     useGlobalPkgs = true;
     users.mightyiam.imports = [
-      self.homeManagerModules.common
-      ../home-manager-modules
       (
         { osConfig, ... }:
         {
           home.stateVersion = osConfig.system.stateVersion;
         }
       )
-    ];
+    ] ++ lib.attrValues self.homeManagerModules;
     extraSpecialArgs = {
       inherit self;
     };

@@ -103,6 +103,7 @@
         ./drv-paths.nix
         ./fmt.nix
         ./git-hooks.nix
+        ./home-manager-modules
         ./lib.nix
         ./meta.nix
         ./nix-on-droid-configurations
