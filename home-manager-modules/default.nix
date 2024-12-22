@@ -4,21 +4,12 @@
   ...
 }:
 {
-  options = {
-    gui.enable = lib.mkOption {
-      type = lib.types.bool;
-      default = true;
-    };
+  home = {
+    username = "mightyiam";
+    homeDirectory = "/home/${config.home.username}";
+    sessionVariables.TZ = "\$(<~/.config/timezone)";
   };
-
-  config = {
-    home = {
-      username = "mightyiam";
-      homeDirectory = "/home/${config.home.username}";
-      sessionVariables.TZ = "\$(<~/.config/timezone)";
-    };
-    programs.home-manager.enable = true;
-  };
+  programs.home-manager.enable = true;
 
   imports =
     let
