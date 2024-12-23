@@ -1,19 +1,15 @@
 {
   lib,
   self,
-  config,
   ...
 }:
 {
-  options.nixvimModules = lib.mkOption {
+  options.flake.nixvimModules = lib.mkOption {
     type = lib.types.attrsOf lib.types.anything;
-  };
-  config.flake = {
-    inherit (config) nixvimModules;
   };
 
   config = {
-    nixvimModules.default = {
+    flake.nixvimModules.default = {
       imports = [
         ./autoread.nix
         ./clipboard.nix

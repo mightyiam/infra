@@ -49,10 +49,9 @@ in
         };
       }
     ];
-  };
-
-  nixvimModules.default.colorschemes.catppuccin = {
-    enable = true;
-    settings.flavour = flavor;
+    nixvimModules.default.colorschemes.catppuccin = {
+      enable = true;
+      settings.flavour = flavor;
+    };
   };
 }
