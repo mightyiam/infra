@@ -1,5 +1,8 @@
 {
-  nixConfig.extra-experimental-features = [ "pipe-operators" ];
+  nixConfig = {
+    abort-on-warn = true;
+    extra-experimental-features = [ "pipe-operators" ];
+  };
 
   inputs = {
     catppuccin.url = "github:catppuccin/nix";
