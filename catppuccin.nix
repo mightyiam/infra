@@ -33,12 +33,12 @@ in
           catppuccin = {
             enable = true;
             inherit flavor;
-            pointerCursor.enable = true;
-          };
+            cursors.enable = true;
 
-          # IFD
-          programs.swaylock.catppuccin.enable = false;
-          services.mako.catppuccin.enable = false;
+            # IFD
+            swaylock.enable = false;
+            mako.enable = false;
+          };
 
           programs.chromium.extensions = [ { id = "bkkmolkhemgaeaeggcmfbghljjjoofoh"; } ];
           gtk.gtk2.extraConfig = ''

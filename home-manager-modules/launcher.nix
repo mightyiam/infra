@@ -7,7 +7,6 @@
 lib.mkIf config.gui.enable {
   programs.rofi = {
     enable = true;
-    catppuccin.enable = true;
     package = pkgs.rofi-wayland;
     terminal = config.terminal.path;
     extraConfig = {
