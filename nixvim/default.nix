@@ -9,44 +9,7 @@
   };
 
   config = {
-    flake.nixvimModules.default = {
-      imports = [
-        ./autoread.nix
-        ./clipboard.nix
-        ./cmp.nix
-        ./comment.nix
-        ./dressing.nix
-        ./easymotion.nix
-        ./fidget.nix
-        ./flash.nix
-        ./gitgutter.nix
-        ./guess-indent.nix
-        ./indent-keep-selection.nix
-        ./inline-diagnostics.nix
-        ./leader.nix
-        ./line-numbers.nix
-        ./lsp
-        ./lualine.nix
-        ./luasnip.nix
-        ./neorepl.nix
-        ./nix-fmt.nix
-        ./nvim-autopairs.nix
-        ./nvim-surround.nix
-        ./refjump.nix
-        ./rustaceanvim.nix
-        ./scrolloff.nix
-        ./search.nix
-        ./spectre.nix
-        ./telescope
-        ./text-case.nix
-        ./title.nix
-        ./treesitter.nix
-        ./trouble.nix
-        ./typescript-tools.nix
-        ./updatetime.nix
-        ./which-key.nix
-      ];
-    };
+    flake.nixvimModules = self.lib.readModulesDir ./.;
     perSystem =
       {
         inputs',
@@ -60,7 +23,7 @@
           extraSpecialArgs = {
             inherit self;
           };
-          module = self.nixvimModules.default;
+          module.imports = lib.attrValues self.nixvimModules;
         };
 
         checks."packages/nixvim" = self'.packages.nixvim;
