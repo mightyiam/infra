@@ -29,7 +29,7 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:mightyiam/home-manager/swayr-avoid-ifd";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
