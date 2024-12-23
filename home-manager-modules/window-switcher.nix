@@ -3,18 +3,14 @@
   lib,
   config,
   pkgs,
+  self,
   ...
 }:
 {
   programs.swayr = {
     package =
       let
-        src = pkgs.fetchFromSourcehut {
-          owner = "~tsdh";
-          repo = "swayr";
-          rev = "0512a9fadc43c64f25afbc9db39c1286b4ac1a8c";
-          sha256 = "sha256-tuqSt85wthhe7ywTjRvXz1vi1/eo9rqm7idecQlycWs=";
-        };
+        src = self.inputs.swayr;
       in
       pkgs.swayr.overrideAttrs (orig: {
         version = "unstable-2024-12-04";

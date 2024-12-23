@@ -80,6 +80,11 @@
       url = "github:tonymajestro/smart-scrolloff.nvim";
     };
 
+    swayr = {
+      flake = false;
+      url = "git+https://git.sr.ht/~tsdh/swayr?rev=0512a9fadc43c64f25afbc9db39c1286b4ac1a8c";
+    };
+
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
