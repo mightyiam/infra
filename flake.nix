@@ -119,7 +119,7 @@
           ./home-manager-modules
           ./meta.nix
           ./nix-on-droid-configurations
-          ./nixos-configurations.nix
+          ./nixos-configurations
           ./nixos-modules
           ./nixvim
           inputs.devshell.flakeModule
