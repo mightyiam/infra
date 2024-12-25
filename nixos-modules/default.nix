@@ -1,4 +1,4 @@
-{ readModulesDir, ... }:
+{ util, ... }:
 {
-  flake.nixosModules = readModulesDir ./.;
+  flake.nixosModules = util.readModulesDir ./.;
 }

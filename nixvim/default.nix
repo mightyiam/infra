@@ -1,7 +1,7 @@
 {
   lib,
   self,
-  readModulesDir,
+  util,
   ...
 }:
 {
@@ -10,7 +10,7 @@
   };
 
   config = {
-    flake.nixvimModules = readModulesDir ./.;
+    flake.nixvimModules = util.readModulesDir ./.;
     perSystem =
       {
         inputs',

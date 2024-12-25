@@ -103,27 +103,31 @@
 
   outputs =
     inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [
-        ./boot-message.nix
-        ./catppuccin.nix
-        ./codeberg.nix
-        ./drv-paths.nix
-        ./fmt.nix
-        ./git-hooks.nix
-        ./home-manager-modules
-        ./lib.nix
-        ./meta.nix
-        ./nix-on-droid-configurations
-        ./nixos-configurations.nix
-        ./nixos-modules
-        ./nixvim
-        inputs.devshell.flakeModule
-      ];
+    inputs.flake-parts.lib.mkFlake
+      {
+        inherit inputs;
+        specialArgs.util = import ./util.nix inputs;
+      }
+      {
+        imports = [
+          ./boot-message.nix
+          ./catppuccin.nix
+          ./codeberg.nix
+          ./drv-paths.nix
+          ./fmt.nix
+          ./git-hooks.nix
+          ./home-manager-modules
+          ./meta.nix
+          ./nix-on-droid-configurations
+          ./nixos-configurations.nix
+          ./nixos-modules
+          ./nixvim
+          inputs.devshell.flakeModule
+        ];
 
-      systems = [
-        "x86_64-linux"
-        "aarch64-linux"
-      ];
-    };
+        systems = [
+          "x86_64-linux"
+          "aarch64-linux"
+        ];
+      };
 }
