@@ -13,16 +13,10 @@
         flake =
           let
             nixosConfiguration = inputs.nixpkgs.lib.nixosSystem {
-              specialArgs = {
-                inherit self;
-              };
+              specialArgs = { inherit self; };
               modules = [
                 path
-                {
-                  networking = {
-                    inherit hostName;
-                  };
-                }
+                { networking = { inherit hostName; }; }
               ];
             };
 
