@@ -122,6 +122,7 @@
           ./nixos-configurations
           ./nixos-modules
           ./nixvim
+          inputs.flake-parts.flakeModules.modules
           inputs.devshell.flakeModule
         ];
 

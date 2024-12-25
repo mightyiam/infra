@@ -1,6 +1,6 @@
 { self, ... }:
 {
-  imports = with self.nixosModules; [
+  imports = with self.modules.nixos; [
     ./sshd.nix
     ./mobo.nix
     ./gpu.nix

@@ -1,6 +1,6 @@
 { self, ... }:
 {
-  imports = with self.nixosModules; [
+  imports = with self.modules.nixos; [
     desktop
     swap
     ./mobo.nix

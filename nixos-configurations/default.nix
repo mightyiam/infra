@@ -17,7 +17,6 @@
                 inherit self;
               };
               modules = [
-                self.nixosModules.common
                 path
                 {
                   networking = {

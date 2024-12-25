@@ -23,12 +23,9 @@
       };
     };
 
-  flake.nixosModules.common.imports = [
-    (
-      { pkgs, ... }:
-      {
-        boot.initrd.preDeviceCommands = lib.getExe self.packages.${pkgs.stdenv.system}.boot-message;
-      }
-    )
-  ];
+  flake.modules.nixos.desktop =
+    { pkgs, ... }:
+    {
+      boot.initrd.preDeviceCommands = lib.getExe self.packages.${pkgs.stdenv.system}.boot-message;
+    };
 }

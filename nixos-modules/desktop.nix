@@ -1,6 +1,6 @@
 { self, ... }:
 {
-  imports = with self.nixosModules; [
+  imports = with self.modules.nixos; [
     allow-unfree-packages
     bluetooth
     dconf

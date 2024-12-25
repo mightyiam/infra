@@ -10,7 +10,7 @@
           home.stateVersion = osConfig.system.stateVersion;
         }
       )
-    ] ++ lib.attrValues self.homeManagerModules;
+    ] ++ lib.attrValues self.modules.homeManager;
     extraSpecialArgs = {
       inherit self;
     };

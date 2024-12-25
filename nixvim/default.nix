@@ -1,16 +1,13 @@
 {
   lib,
+  config,
   self,
   util,
   ...
 }:
 {
-  options.flake.nixvimModules = lib.mkOption {
-    type = lib.types.attrsOf lib.types.anything;
-  };
-
   config = {
-    flake.nixvimModules = util.readModulesDir ./.;
+    flake.modules.nixvim = util.readModulesDir ./.;
     perSystem =
       {
         inputs',
@@ -24,7 +21,7 @@
           extraSpecialArgs = {
             inherit self;
           };
-          module.imports = lib.attrValues self.nixvimModules;
+          module.imports = lib.attrValues config.flake.modules.nixvim;
         };
 
         checks."packages/nixvim" = self'.packages.nixvim;

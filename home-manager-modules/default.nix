@@ -1,7 +1,4 @@
-{ lib, util, ... }:
+{ util, ... }:
 {
-  options.flake.homeManagerModules = lib.mkOption {
-    type = lib.types.attrsOf lib.types.anything;
-  };
-  config.flake.homeManagerModules = util.readModulesDir ./.;
+  flake.modules.homeManager = util.readModulesDir ./.;
 }
