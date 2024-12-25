@@ -1,6 +1,6 @@
 { lib, ... }:
 {
-  flake.lib = {
+  _module.args = {
     readModulesDir =
       path:
       builtins.readDir path

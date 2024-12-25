@@ -1,4 +1,4 @@
-{ self, ... }:
+{ readModulesDir, ... }:
 {
-  flake.nixosModules = self.lib.readModulesDir ./.;
+  flake.nixosModules = readModulesDir ./.;
 }
