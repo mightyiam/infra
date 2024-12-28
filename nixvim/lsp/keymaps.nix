@@ -9,7 +9,6 @@
       gi = "implementation";
       go = "type_definition";
       "<space>r" = "rename";
-      "<space>f" = "format";
     };
     extra = [
       {
