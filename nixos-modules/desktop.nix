@@ -11,13 +11,14 @@
     fonts
     graphics
     grub
-    home-related-hacks
     home
+    home-related-hacks
     known-hosts
+    me
     networking
     nh
-    nix-index
     nix
+    nix-index
     pipewire
     printing
     service-discovery
@@ -29,6 +30,5 @@
     tailscale
     tmp
     virtualbox
-    me
   ];
 }
