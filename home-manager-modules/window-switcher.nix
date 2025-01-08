@@ -29,6 +29,7 @@
         args = [
           "-dmenu"
           "-markup-rows"
+          "-i"
           "-no-case-sensitive"
           "-show-icons"
           "-p"
