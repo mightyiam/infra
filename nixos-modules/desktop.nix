@@ -28,6 +28,7 @@
     storage
     sudo
     tailscale
+    time-sync
     tmp
     virtualbox
   ];
