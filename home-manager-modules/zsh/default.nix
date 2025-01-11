@@ -31,7 +31,7 @@
 
       autoload -Uz edit-command-line
       zle -N edit-command-line
-      bindkey -M vicmd 'e' edit-command-line
+      bindkey -M vicmd '^e' edit-command-line
     '';
     initExtraBeforeCompInit = ''
       zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
