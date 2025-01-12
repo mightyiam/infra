@@ -5,7 +5,16 @@
   };
 
   inputs = {
-    catppuccin.url = "github:catppuccin/nix";
+    catppuccin = {
+      url = "github:catppuccin/nix";
+      inputs = {
+        home-manager.follows = "home-manager";
+        home-manager-stable.follows = "home-manager";
+        nixpkgs.follows = "nixpkgs";
+        nixpkgs-stable.follows = "nixpkgs";
+        nuscht-search.follows = "nuschtos-search";
+      };
+    };
 
     devshell = {
       url = "github:numtide/devshell";
@@ -23,7 +32,6 @@
       url = "github:cachix/git-hooks.nix";
       inputs = {
         flake-compat.follows = "flake-compat";
-        nixpkgs-stable.follows = "nixpkgs";
         nixpkgs.follows = "nixpkgs";
       };
     };
@@ -60,6 +68,14 @@
         home-manager.follows = "home-manager";
         nixpkgs.follows = "nixpkgs";
         treefmt-nix.follows = "treefmt-nix";
+        nuschtosSearch.follows = "nuschtos-search";
+      };
+    };
+
+    nuschtos-search = {
+      url = "github:NuschtOS/search";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
       };
     };
 
