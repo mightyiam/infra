@@ -72,6 +72,7 @@ let
       inkscape
       pavucontrol
       qpwgraph
+      signal-desktop
       tor-browser-bundle-bin
       vlc
       wl-clipboard
