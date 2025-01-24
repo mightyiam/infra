@@ -36,6 +36,8 @@ in
           "type:touchpad".tap = "enabled";
         };
 
+        workspaceLayout = "tabbed";
+
         modifier = "Mod4";
 
         keybindings = {
