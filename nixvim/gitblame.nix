@@ -1,6 +1,6 @@
 {
   plugins.gitblame = {
     enable = true;
-    settings = { };
+    settings.enabled = false;
   };
 }
