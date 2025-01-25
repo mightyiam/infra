@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ lib, ... }:
 {
   plugins = {
     lsp.keymaps.lspBuf."<space>f" = "format";
