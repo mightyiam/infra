@@ -7,13 +7,7 @@
   inputs = {
     catppuccin = {
       url = "github:catppuccin/nix";
-      inputs = {
-        home-manager.follows = "home-manager";
-        home-manager-stable.follows = "home-manager";
-        nixpkgs.follows = "nixpkgs";
-        nixpkgs-stable.follows = "nixpkgs";
-        nuscht-search.follows = "nuschtos-search";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     devshell = {

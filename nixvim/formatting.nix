@@ -10,21 +10,7 @@
 
     none-ls = {
       enable = true;
-
-      package = pkgs.vimPlugins.none-ls-nvim.overrideAttrs (oldAttrs: {
-        patches = (oldAttrs.patches or [ ]) ++ [
-          # https://github.com/nvimtools/none-ls.nvim/pull/192
-          (pkgs.fetchpatch {
-            name = "Add 'nix flake fmt' builtin formatter";
-            url = "https://patch-diff.githubusercontent.com/raw/nvimtools/none-ls.nvim/pull/192.diff";
-            hash = "sha256-F32gixa54g2o2G+L6ZGJv7+ldTbYoszvasOgCdtPwlE=";
-          })
-        ];
-      });
-
-      # Note: nixvim will generate a nice nixified option for this once
-      # https://github.com/nvimtools/none-ls.nvim/pull/192 lands in none-ls.
-      settings.sources = [ ''require("null-ls").builtins.formatting.nix_flake_fmt'' ];
+      sources.formatting.nix_flake_fmt.enable = true;
     };
   };
 
