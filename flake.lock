@@ -23,17 +23,16 @@
     "cpu-microcodes": {
       "flake": false,
       "locked": {
-        "lastModified": 1737223256,
-        "narHash": "sha256-aETUoryCkJSRWlxbgL8im40+2FfOm0u4X9aP5aZueME=",
+        "lastModified": 1737820704,
+        "narHash": "sha256-AZQ5WgCN5Aom8sgsw+LNXXOjQUx52HmoMu3+7DMEjsU=",
         "owner": "platomav",
         "repo": "CPUMicrocodes",
-        "rev": "984b766433e99c7e945b5cc17519bb088084b3fd",
+        "rev": "c0a15766a4bc8c4697da34f9c8972d5db94dca91",
         "type": "github"
       },
       "original": {
         "owner": "platomav",
         "repo": "CPUMicrocodes",
-        "rev": "984b766433e99c7e945b5cc17519bb088084b3fd",
         "type": "github"
       }
     },

@@ -12,7 +12,7 @@
 
     cpu-microcodes = {
       flake = false;
-      url = "github:platomav/CPUMicrocodes/984b766433e99c7e945b5cc17519bb088084b3fd";
+      url = "github:platomav/CPUMicrocodes";
     };
 
     devshell = {
