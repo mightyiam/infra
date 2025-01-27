@@ -10,6 +10,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    cpu-microcodes = {
+      flake = false;
+      url = "github:platomav/CPUMicrocodes/984b766433e99c7e945b5cc17519bb088084b3fd";
+    };
+
     devshell = {
       url = "github:numtide/devshell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -103,7 +108,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ucodenix.url = "github:e-tho/ucodenix";
+    ucodenix = {
+      url = "github:e-tho/ucodenix";
+      inputs.cpu-microcodes.follows = "cpu-microcodes";
+    };
 
     vim-autoread = {
       flake = false;

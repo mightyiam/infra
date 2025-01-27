@@ -434,6 +434,7 @@
     "root": {
       "inputs": {
         "catppuccin": "catppuccin",
+        "cpu-microcodes": "cpu-microcodes",
         "devshell": "devshell",
         "flake-compat": "flake-compat",
         "flake-parts": "flake-parts",
@@ -584,7 +585,9 @@
     },
     "ucodenix": {
       "inputs": {
-        "cpu-microcodes": "cpu-microcodes"
+        "cpu-microcodes": [
+          "cpu-microcodes"
+        ]
       },
       "locked": {
         "lastModified": 1737386190,
