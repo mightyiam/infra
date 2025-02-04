@@ -9,7 +9,6 @@
     catppuccin = {
       # https://github.com/catppuccin/nix/issues/289
       url = "github:catppuccin/nix/58d020d4c85416e2a75ec820e290d3d5b13b3427";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     catppuccin-qutebrowser = {
