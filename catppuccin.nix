@@ -1,4 +1,9 @@
-{ self, lib, ... }:
+{
+  self,
+  lib,
+  inputs,
+  ...
+}:
 let
   flavor = "mocha";
 in
@@ -35,9 +40,31 @@ in
           # IFD
           swaylock.enable = false;
           mako.enable = false;
+
         };
 
-        programs.chromium.extensions = [ { id = "bkkmolkhemgaeaeggcmfbghljjjoofoh"; } ];
+        xdg.configFile."qutebrowser/catppuccin" = {
+          recursive = true;
+          source = inputs.catppuccin-qutebrowser;
+        };
+
+        programs = {
+          qutebrowser.extraConfig = ''
+            import catppuccin
+            catppuccin.setup(
+              c,
+              '${flavor}',
+              # (default is False) enable the plain look for the menu rows
+              False
+            )
+          '';
+          qutebrowser.settings = {
+            colors.webpage.preferred_color_scheme = "dark";
+          };
+
+          chromium.extensions = [ { id = "bkkmolkhemgaeaeggcmfbghljjjoofoh"; } ];
+        };
+
         gtk.gtk2.extraConfig = ''
           gtk-theme-name="Adwaita-dark"
         '';

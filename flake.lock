@@ -16,6 +16,22 @@
         "type": "github"
       }
     },
+    "catppuccin-qutebrowser": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1719048808,
+        "narHash": "sha256-0QPssOh87pl55tV+6zLVtT3toUrZac+RAcEZKDcSdKE=",
+        "owner": "catppuccin",
+        "repo": "qutebrowser",
+        "rev": "715ebccaf8131eddaef3ef6960580735e4525244",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "repo": "qutebrowser",
+        "type": "github"
+      }
+    },
     "cpu-microcodes": {
       "flake": false,
       "locked": {
@@ -429,6 +445,7 @@
     "root": {
       "inputs": {
         "catppuccin": "catppuccin",
+        "catppuccin-qutebrowser": "catppuccin-qutebrowser",
         "cpu-microcodes": "cpu-microcodes",
         "devshell": "devshell",
         "flake-compat": "flake-compat",

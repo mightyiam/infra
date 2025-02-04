@@ -12,6 +12,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    catppuccin-qutebrowser = {
+      flake = false;
+      url = "github:catppuccin/qutebrowser";
+    };
+
     cpu-microcodes = {
       flake = false;
       url = "github:platomav/CPUMicrocodes";
