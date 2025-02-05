@@ -3,6 +3,13 @@
   config = lib.mkIf config.gui.enable {
     programs.qutebrowser = {
       enable = true;
+
+      keyBindings = {
+        normal = {
+          F = "hint all window";
+          tf = "hint all tab";
+        };
+      };
     };
 
     wayland.windowManager.sway.config.keybindings."Mod4+q" =
