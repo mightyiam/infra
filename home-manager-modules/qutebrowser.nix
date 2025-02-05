@@ -1,5 +1,8 @@
+{ config, lib, ... }:
 {
-  programs.qutebrowser = {
-    enable = true;
+  config = lib.mkIf config.gui.enable {
+    programs.qutebrowser = {
+      enable = true;
+    };
   };
 }
