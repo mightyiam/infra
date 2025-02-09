@@ -4,12 +4,14 @@
   perSystem = {
     treefmt = {
       projectRootFile = "flake.nix";
-      programs.nixfmt.enable = true;
-      programs.mdformat.enable = true;
-      programs.rustfmt.enable = true;
-      programs.shfmt.enable = true;
-      programs.stylua.enable = true;
-      programs.yamlfmt.enable = true;
+      programs = {
+        nixfmt.enable = true;
+        mdformat.enable = true;
+        rustfmt.enable = true;
+        shfmt.enable = true;
+        stylua.enable = true;
+        yamlfmt.enable = true;
+      };
       settings = {
         on-unmatched = "fatal";
         global.excludes = [
