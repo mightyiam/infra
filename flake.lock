@@ -19,16 +19,17 @@
     "catppuccin-qutebrowser": {
       "flake": false,
       "locked": {
-        "lastModified": 1719048808,
-        "narHash": "sha256-0QPssOh87pl55tV+6zLVtT3toUrZac+RAcEZKDcSdKE=",
-        "owner": "catppuccin",
-        "repo": "qutebrowser",
-        "rev": "715ebccaf8131eddaef3ef6960580735e4525244",
+        "lastModified": 1739112825,
+        "narHash": "sha256-FmxrgpFlp+cMUdCx5HHIiLMGWML23p+pfxTKT/X0UME=",
+        "owner": "mightyiam",
+        "repo": "catppuccin-qutebrowser",
+        "rev": "64acac040433078382cd57c593a11a12db542c14",
         "type": "github"
       },
       "original": {
-        "owner": "catppuccin",
-        "repo": "qutebrowser",
+        "owner": "mightyiam",
+        "ref": "no-web-manipulation",
+        "repo": "catppuccin-qutebrowser",
         "type": "github"
       }
     },

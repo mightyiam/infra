@@ -13,7 +13,7 @@
 
     catppuccin-qutebrowser = {
       flake = false;
-      url = "github:catppuccin/qutebrowser";
+      url = "github:mightyiam/catppuccin-qutebrowser/no-web-manipulation";
     };
 
     cpu-microcodes = {
