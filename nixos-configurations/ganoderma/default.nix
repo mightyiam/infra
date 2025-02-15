@@ -4,6 +4,7 @@
     desktop
     facter
     swap
+    ./mobo.nix
     ./networking.nix
     ./state-version.nix
   ];
