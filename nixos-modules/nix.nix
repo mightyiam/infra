@@ -25,7 +25,11 @@ in
       '';
       meta.mainProgram = "nix";
     };
-    settings.auto-optimise-store = true;
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = [ "recursive-nix" ];
+      extra-system-features = [ "recursive-nix" ];
+    };
     nixPath = [
       "nixpkgs=${self.inputs.nixpkgs}"
     ];
