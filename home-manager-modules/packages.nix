@@ -68,7 +68,6 @@ let
       gh-markdown-preview
       gimp
       gucharmap
-      imv
       inkscape
       pavucontrol
       qpwgraph
