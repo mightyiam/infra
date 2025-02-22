@@ -2,24 +2,10 @@
 {
   lib,
   config,
-  pkgs,
-  self,
   ...
 }:
 {
   programs.swayr = {
-    package =
-      let
-        src = self.inputs.swayr;
-      in
-      pkgs.swayr.overrideAttrs (orig: {
-        version = "unstable-2024-12-04";
-        inherit src;
-        cargoDeps = orig.cargoDeps.overrideAttrs {
-          inherit src;
-          outputHash = "sha256-eK9EJjTnjkIeFaWDO2bB3q+1IDu7hzUB44e5ZCmCj8c=";
-        };
-      });
     enable = true;
     systemd.enable = true;
     # https://sr.ht/~tsdh/swayr/#swayr-configuration

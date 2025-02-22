@@ -4,7 +4,8 @@ let
     pname = "generation-manager";
     version = "1.0.0";
     src = ./.;
-    cargoHash = "sha256-IrgdeufcGE4lQxTLz0m1mgIOCCsHCJdU77WOkV6ExvA=";
+    useFetchCargoVendor = true;
+    cargoHash = "sha256-AiRGXB6/LjM1WCMvHP5KeCnlruPaRWvwGPjATlf8sTA=";
   };
 in
 {
