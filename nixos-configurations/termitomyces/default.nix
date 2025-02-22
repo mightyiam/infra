@@ -2,6 +2,7 @@
 {
   imports = with self.modules.nixos; [
     ./sshd.nix
+    ./mouse.nix
     ./mobo.nix
     ./networking.nix
     ./gpu.nix
