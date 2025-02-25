@@ -4,6 +4,8 @@
     programs.qutebrowser = {
       enable = true;
 
+      loadAutoconfig = true;
+
       keyBindings = {
         normal = {
           F = "hint all window";
