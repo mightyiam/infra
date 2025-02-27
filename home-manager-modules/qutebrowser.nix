@@ -14,11 +14,15 @@
         };
       };
 
-      settings.editor.command = [
-        config.guiEditorCommand
-        "{file}"
-        "+{line}"
-      ];
+      settings = {
+        editor.command = [
+          config.guiEditorCommand
+          "{file}"
+          "+{line}"
+        ];
+        new_instance_open_target = "window";
+      };
+
     };
 
     wayland.windowManager.sway.config.keybindings."Mod4+q" =
