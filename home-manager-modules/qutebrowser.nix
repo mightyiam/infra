@@ -12,6 +12,12 @@
           tf = "hint all tab";
         };
       };
+
+      settings.editor.command = [
+        config.guiEditorCommand
+        "{file}"
+        "+{line}"
+      ];
     };
 
     wayland.windowManager.sway.config.keybindings."Mod4+q" =

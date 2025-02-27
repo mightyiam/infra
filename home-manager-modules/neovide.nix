@@ -18,8 +18,16 @@ let
       inherit (config.gui.fonts.monospace) size;
     };
   };
+  package = pkgs.neovide;
 in
-lib.mkIf config.gui.enable {
-  home.packages = [ pkgs.neovide ];
-  xdg.configFile."neovide/config.toml".source = pkgs.writers.writeTOML "neovide/config.toml" options;
+{
+  options.guiEditorCommand = lib.mkOption {
+    type = with lib.types; nullOr pathInStore;
+    default = if config.gui.enable then lib.getExe package else null;
+  };
+
+  config = lib.mkIf config.gui.enable {
+    home.packages = [ package ];
+    xdg.configFile."neovide/config.toml".source = pkgs.writers.writeTOML "neovide/config.toml" options;
+  };
 }
