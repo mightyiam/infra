@@ -10,6 +10,7 @@
         normal = {
           F = "hint all window";
           tf = "hint all tab";
+          e = "edit-url";
         };
       };
 
