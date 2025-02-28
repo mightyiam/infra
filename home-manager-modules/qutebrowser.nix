@@ -6,13 +6,7 @@
 
       loadAutoconfig = true;
 
-      keyBindings = {
-        normal = {
-          F = "hint all window";
-          tf = "hint all tab";
-          e = "edit-url";
-        };
-      };
+      keyBindings.normal.e = "edit-url";
 
       settings = {
         editor.command = [
@@ -20,7 +14,7 @@
           "{file}"
           "+{line}"
         ];
-        new_instance_open_target = "window";
+        tabs.tabs_are_windows = true;
       };
 
     };
