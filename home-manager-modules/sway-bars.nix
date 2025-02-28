@@ -16,21 +16,11 @@ lib.mkIf config.gui.enable {
         blocks = [
           {
             block = "sound";
-            format = " $output_description $icon {$volume.eng(w:2) |}";
+            device_kind = "source";
           }
           {
-            block = "custom";
-            format = "󰪛 ";
-            json = true;
-            command = ''
-              if ${pkgs.gnugrep}/bin/grep -q 1 /sys/class/leds/input*::capslock/brightness; then
-                echo '{ "state": "Warning" }'
-              else
-                echo '{}'
-              fi
-            '';
-            watch_files = [ "/dev/input" ];
-            interval = "once";
+            block = "sound";
+            format = " $output_description $icon {$volume.eng(w:2)|} ";
           }
           { block = "cpu"; }
           { block = "memory"; }
@@ -42,7 +32,21 @@ lib.mkIf config.gui.enable {
 
           {
             block = "time";
-            format = "$icon $timestamp.datetime(f:'%F %a %R')";
+            format = " $timestamp.datetime(f:'%F %a %R') ";
+          }
+          {
+            block = "custom";
+            format = " 󰪛 ";
+            json = true;
+            command = ''
+              if ${pkgs.gnugrep}/bin/grep -q 1 /sys/class/leds/input*::capslock/brightness; then
+                echo '{ "state": "Warning" }'
+              else
+                echo '{}'
+              fi
+            '';
+            watch_files = [ "/dev/input" ];
+            interval = "once";
           }
           {
             block = "keyboard_layout";
@@ -51,11 +55,6 @@ lib.mkIf config.gui.enable {
               "English (US)" = "EN";
               "Hebrew (N/A)" = "HE";
             };
-          }
-          {
-            block = "sound";
-            device_kind = "source";
-            format = "$icon ";
           }
           {
             block = "battery";
