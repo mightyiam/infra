@@ -19,7 +19,7 @@
 
     };
 
-    wayland.windowManager.sway.config.keybindings."Mod4+q" =
+    wayland.windowManager.sway.config.keybindings."--no-repeat Mod4+q" =
       "exec ${lib.getExe config.programs.qutebrowser.package}";
 
     xdg.mimeApps.defaultApplications =
