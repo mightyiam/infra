@@ -24,7 +24,8 @@
   };
 
   home.packages = with pkgs; [
-    git-instafix
+    # https://github.com/quodlibetor/git-instafix/issues/39
+    # git-instafix
     git-trim
   ];
 }
