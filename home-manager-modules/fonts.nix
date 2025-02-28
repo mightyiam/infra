@@ -29,17 +29,6 @@ let
 in
 {
   options.gui.fonts = {
-    packages = lib.mkOption {
-      type = lib.types.listOf lib.types.package;
-      default = with pkgs; [
-        open-dyslexic
-        nerd-fonts.open-dyslexic
-        font-awesome
-        noto-fonts
-        noto-fonts-emoji
-      ];
-    };
-
     default = {
       family = lib.mkOption {
         type = lib.types.str;
@@ -95,8 +84,19 @@ in
 
   config = lib.mkIf config.gui.enable {
     fonts.fontconfig.enable = true;
-    home.file."${config.xdg.configHome}/fontconfig/fonts.conf" = {
-      text = fontsConf { inherit (config.gui.fonts) aliases; };
+    home = {
+      file."${config.xdg.configHome}/fontconfig/fonts.conf" = {
+        text = fontsConf { inherit (config.gui.fonts) aliases; };
+      };
+      packages = with pkgs; [
+        open-dyslexic
+        nerd-fonts.open-dyslexic
+        font-awesome
+        noto-fonts
+        noto-fonts-emoji
+
+        gucharmap
+      ];
     };
   };
 }

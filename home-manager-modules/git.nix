@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
   programs.git = {
     enable = true;
@@ -22,4 +22,9 @@
       tag.sort = "taggerdate";
     };
   };
+
+  home.packages = with pkgs; [
+    git-instafix
+    git-trim
+  ];
 }

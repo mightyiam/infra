@@ -30,5 +30,12 @@ lib.mkIf config.gui.enable {
     "--no-repeat ${mod}+Shift+x" = incVol "+";
     "--no-repeat ${mod}+z" = toggleMuteSources;
   };
-  home.packages = [ sink-rotate ];
+  home.packages =
+    (with pkgs; [
+      pavucontrol
+      qpwgraph
+    ])
+    ++ [
+      sink-rotate
+    ];
 }
