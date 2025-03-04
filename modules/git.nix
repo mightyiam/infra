@@ -1,11 +1,12 @@
+{ config, ... }:
 {
   flake.modules.homeManager.git =
-    { config, pkgs, ... }:
+    { pkgs, ... }:
     {
       programs.git = {
         enable = true;
-        userName = config.accounts.email.accounts.default.realName;
-        userEmail = config.accounts.email.accounts.default.address;
+        userName = config.flake.meta.owner.name;
+        userEmail = config.flake.meta.owner.email;
         difftastic.enable = true;
         difftastic.background = "dark";
         #difftastic.display = "inline";
