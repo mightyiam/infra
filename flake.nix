@@ -119,25 +119,17 @@
 
   outputs =
     inputs:
+    let
+      util = import ./util.nix inputs;
+      modules = builtins.attrValues (util.readModulesDir ./modules);
+    in
     inputs.flake-parts.lib.mkFlake
       {
         inherit inputs;
-        specialArgs.util = import ./util.nix inputs;
+        specialArgs = { inherit util; };
       }
       {
-        imports = [
-          ./boot-message.nix
-          ./catppuccin.nix
-          ./codeberg.nix
-          ./drv-paths.nix
-          ./fmt.nix
-          ./git-hooks.nix
-          ./home-manager-modules
-          ./meta.nix
-          ./nix-on-droid-configurations
-          ./nixos-configurations
-          ./nixos-modules
-          ./nixvim
+        imports = modules ++ [
           inputs.flake-parts.flakeModules.modules
           inputs.devshell.flakeModule
         ];
