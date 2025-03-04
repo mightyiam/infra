@@ -3,7 +3,6 @@
   users.users."1bowapinya" = {
     isNormalUser = true;
     initialPassword = "";
-    extraGroups = [ "audio" ];
   };
 
   services.xserver.desktopManager.gnome.enable = true;

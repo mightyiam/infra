@@ -9,7 +9,6 @@
     initialPassword = "";
     extraGroups = [
       "wheel"
-      "audio"
       "docker"
       "input"
     ];

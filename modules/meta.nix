@@ -4,6 +4,10 @@
     owner = {
       email = "mightyiampresence@gmail.com";
       name = "Shahar \"Dawn\" Or";
+      username = "mightyiam";
+    };
+    wife = {
+      username = "1bowapinya";
     };
   };
 }

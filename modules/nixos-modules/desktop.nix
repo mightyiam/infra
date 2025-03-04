@@ -19,7 +19,6 @@
     nh
     nix
     nix-index
-    pipewire
     printing
     service-discovery
     shell
