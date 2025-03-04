@@ -2,7 +2,6 @@
 {
   imports = with self.modules.nixos; [
     allow-unfree-packages
-    bluetooth
     dconf
     editor
     firmware
