@@ -1,5 +1,5 @@
 {
-  programs.zsh = {
+  flake.modules.homeManager.zsh.programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
     enableCompletion = true;
