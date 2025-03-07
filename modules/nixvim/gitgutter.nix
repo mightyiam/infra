@@ -1,3 +1,3 @@
 {
-  plugins.gitgutter.enable = true;
+  flake.modules.nixvim.astrea.plugins.gitgutter.enable = true;
 }

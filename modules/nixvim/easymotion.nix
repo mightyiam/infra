@@ -1,4 +1,7 @@
-{ pkgs, ... }:
 {
-  extraPlugins = [ pkgs.vimPlugins.vim-easymotion ];
+  flake.modules.nixvim.astrea =
+    { pkgs, ... }:
+    {
+      extraPlugins = [ pkgs.vimPlugins.vim-easymotion ];
+    };
 }

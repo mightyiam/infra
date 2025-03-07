@@ -120,19 +120,30 @@
   outputs =
     inputs:
     let
-      util = import ./util.nix inputs;
-      modules = builtins.attrValues (util.readModulesDir ./modules);
+      lib = inputs.nixpkgs.lib;
+      modulesPath = ./modules;
     in
     inputs.flake-parts.lib.mkFlake
       {
         inherit inputs;
-        specialArgs = { inherit util; };
+        specialArgs = {
+          lib = lib // {
+            inherit (inputs.nixvim.lib) nixvim;
+          };
+        };
       }
       {
-        imports = modules ++ [
-          inputs.flake-parts.flakeModules.modules
-          inputs.devshell.flakeModule
-        ];
+        imports =
+          modulesPath
+          |> lib.filesystem.listFilesRecursive
+          |> lib.filter (lib.hasSuffix ".nix")
+          |> lib.filter (
+            path:
+            path
+            |> lib.path.removePrefix modulesPath
+            |> lib.path.subpath.components
+            |> lib.all (component: !(lib.hasPrefix "_" component))
+          );
 
         systems = [
           "x86_64-linux"

@@ -1,3 +1,3 @@
 {
-  plugins.nvim-surround.enable = true;
+  flake.modules.nixvim.astrea.plugins.nvim-surround.enable = true;
 }

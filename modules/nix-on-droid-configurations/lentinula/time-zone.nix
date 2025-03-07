@@ -1,3 +1,0 @@
-{
-  time.timeZone = "Asia/Bangkok";
-}

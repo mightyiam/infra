@@ -1,6 +1,6 @@
 { lib, ... }:
 {
-  plugins.lsp.keymaps = {
+  flake.modules.nixvim.astrea.plugins.lsp.keymaps = {
     lspBuf = {
       K = "hover";
       "<C-k>" = "signature_help";

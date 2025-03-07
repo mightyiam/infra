@@ -1,6 +1,6 @@
 { lib, ... }:
 {
-  plugins.lsp = {
+  flake.modules.nixvim.astrea.plugins.lsp = {
     inlayHints = true;
     keymaps.extra = [
       {

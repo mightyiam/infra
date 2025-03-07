@@ -1,3 +1,3 @@
 {
-  plugins.comment.enable = true;
+  flake.modules.nixvim.astrea.plugins.comment.enable = true;
 }

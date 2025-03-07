@@ -1,3 +1,3 @@
 {
-  plugins.fidget.enable = true;
+  flake.modules.nixvim.astrea.plugins.fidget.enable = true;
 }

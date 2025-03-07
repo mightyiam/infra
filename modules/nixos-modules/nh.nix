@@ -1,5 +1,0 @@
-{
-  programs.nh = {
-    enable = true;
-  };
-}

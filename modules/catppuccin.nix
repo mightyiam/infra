@@ -1,5 +1,4 @@
 {
-  self,
   lib,
   inputs,
   ...
@@ -10,14 +9,14 @@ in
 {
   flake.modules = {
     nixos.desktop = {
-      imports = [ self.inputs.catppuccin.nixosModules.catppuccin ];
+      imports = [ inputs.catppuccin.nixosModules.catppuccin ];
       catppuccin = {
         enable = true;
         inherit flavor;
       };
     };
     homeManager.home = {
-      imports = [ self.inputs.catppuccin.homeManagerModules.catppuccin ];
+      imports = [ inputs.catppuccin.homeManagerModules.catppuccin ];
       options = {
         style = {
           windowOpacity = lib.mkOption {
@@ -48,6 +47,11 @@ in
           source = inputs.catppuccin-qutebrowser;
         };
 
+        qt = {
+          style.name = "kvantum";
+          platformTheme.name = "kvantum";
+        };
+
         programs = {
           qutebrowser.extraConfig = ''
             import catppuccin
@@ -72,7 +76,7 @@ in
         gtk.gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
       };
     };
-    nixvim.default.colorschemes.catppuccin = {
+    nixvim.astrea.colorschemes.catppuccin = {
       enable = true;
       settings.flavour = flavor;
     };

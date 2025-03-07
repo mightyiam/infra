@@ -1,12 +1,15 @@
-{ pkgs, ... }:
 {
-  extraPlugins = [
-    pkgs.vimPlugins.neorepl-nvim
-  ];
-  keymaps = [
+  flake.modules.nixvim.astrea =
+    { pkgs, ... }:
     {
-      key = "<leader>r";
-      action = "<cmd>Repl<CR>";
-    }
-  ];
+      extraPlugins = [
+        pkgs.vimPlugins.neorepl-nvim
+      ];
+      keymaps = [
+        {
+          key = "<leader>r";
+          action = "<cmd>Repl<CR>";
+        }
+      ];
+    };
 }

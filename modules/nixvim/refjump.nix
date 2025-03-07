@@ -1,14 +1,18 @@
-{ pkgs, self, ... }:
+{ inputs, ... }:
 {
-  extraPlugins = [
-    (pkgs.vimUtils.buildVimPlugin {
-      pname = "refjump-nvim";
-      version = "unstable";
-      src = self.inputs.refjump-nvim;
-    })
-  ];
+  flake.modules.nixvim.astrea =
+    { pkgs, ... }:
+    {
+      extraPlugins = [
+        (pkgs.vimUtils.buildVimPlugin {
+          pname = "refjump-nvim";
+          version = "unstable";
+          src = inputs.refjump-nvim;
+        })
+      ];
 
-  extraConfigLua = ''
-    require('refjump').setup()
-  '';
+      extraConfigLua = ''
+        require('refjump').setup()
+      '';
+    };
 }

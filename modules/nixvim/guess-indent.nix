@@ -1,3 +1,3 @@
 {
-  plugins.guess-indent.enable = true;
+  flake.modules.nixvim.astrea.plugins.guess-indent.enable = true;
 }

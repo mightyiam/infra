@@ -1,6 +1,6 @@
 { lib, ... }:
 {
-  plugins.lualine = {
+  flake.modules.nixvim.astrea.plugins.lualine = {
     enable = true;
     settings =
       let
