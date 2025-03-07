@@ -11,3 +11,7 @@ For example, see the [`time`](modules/time.nix), [`ssh`](modules/nix.nix), [`rus
 - Configurations are declared by prefixing a module's name
 
 For example, see [`termitomyces/imports`](modules/termitomyces/imports.nix) module.
+
+- No literal path imports
+
+Files can be moved around and nested in directories freely.
