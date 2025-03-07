@@ -1,4 +1,4 @@
-# mightyiam's infrastructure
+# Shahar "Dawn" Or (mightyiam)'s personal Nix-powered IT infrastructure repository
 
 - Every Nix file is a flake-parts module
 - They're all automatically imported
