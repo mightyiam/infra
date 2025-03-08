@@ -1,3 +1,3 @@
 {
-  flake.modules.nixos.desktop.hardware.flipperzero.enable = true;
+  flake.modules.nixos.workstation.hardware.flipperzero.enable = true;
 }
