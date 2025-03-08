@@ -32,6 +32,7 @@
           bandwhich
           bind # for dig
           curl
+          ethtool
           gping
         ];
       };
