@@ -1,4 +1,3 @@
-{ lib, ... }:
 {
   flake.modules = {
     homeManager.home.programs.zsh = {
@@ -40,11 +39,5 @@
       '';
       shellAliases.nix-shell = "nix-shell --run zsh";
     };
-
-    nixOnDroid.base =
-      { pkgs, ... }:
-      {
-        user.shell = lib.getExe pkgs.zsh;
-      };
   };
 }
