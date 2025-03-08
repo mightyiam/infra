@@ -1,6 +1,6 @@
 # Shahar "Dawn" Or (mightyiam)'s personal Nix-powered IT infrastructure repository
 
-## Every Nix file is a flake-parts module
+## Every Nix file is a [flake-parts](https://flake.parts) module
 
 File paths convey what the contents mean to me, as opposed to adhering to a mechanism's design.
 Because each file, being a flake-parts module, can declare any number of nested modules (e.g. NixOS, home-manager, nixvim).
@@ -17,6 +17,6 @@ For example, see [`termitomyces/imports`](modules/termitomyces/imports.nix) modu
 
 ## Automatic import
 
-All Nix files (they're all flake-part modules) are automatically imported.
+All Nix files (they're all flake-parts modules) are automatically imported.
 No literal path imports are used.
 This means files can be moved around and nested in directories freely.
