@@ -1,5 +1,9 @@
 # Shahar "Dawn" Or (mightyiam)'s personal Nix-powered IT infrastructure repository
 
+> [!IMPORTANT]
+> If you have any questions or suggestions for me, please use the discussions feature or contact me.
+> I hope you find this helpful.
+
 ## Every Nix file is a [flake-parts](https://flake.parts) module
 
 File paths convey what the contents mean to me, as opposed to adhering to a mechanism's design.
@@ -20,3 +24,6 @@ For example, see [`termitomyces/imports`](modules/termitomyces/imports.nix) modu
 All Nix files (they're all flake-parts modules) are automatically imported.
 No literal path imports are used.
 This means files can be moved around and nested in directories freely.
+
+> [!NOTE]
+> Nix files prefixed with an underscore are ignored.
