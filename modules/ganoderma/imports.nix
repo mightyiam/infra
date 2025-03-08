@@ -1,9 +1,8 @@
 { config, ... }:
 {
   flake.modules.nixos."nixosConfigurations/ganoderma".imports = with config.flake.modules.nixos; [
-    desktop
+    workstation
     nvidia-gpu
     swap
-    virtualbox
   ];
 }
