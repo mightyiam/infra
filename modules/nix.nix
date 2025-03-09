@@ -22,7 +22,7 @@ let
 
   mkNix = pkgs: pkgs.nixVersions.latest |> mkWorkaround pkgs;
 
-  commonSettings = {
+  settings = {
     keep-outputs = true;
     experimental-features = [
       "nix-command"
@@ -46,9 +46,7 @@ in
           nixPath = [
             "nixpkgs=${inputs.nixpkgs}"
           ];
-          settings = {
-            auto-optimise-store = true;
-          } // commonSettings;
+          inherit settings;
         };
       };
 
@@ -57,7 +55,7 @@ in
       {
         nix = {
           package = pkgs |> mkNix |> lib.mkDefault;
-          settings = commonSettings;
+          inherit settings;
         };
         home.packages = with pkgs; [
           nix-fast-build
@@ -80,9 +78,7 @@ in
           package = mkNix pkgs;
 
           extraOptions =
-            commonSettings
-            |> lib.mapAttrsToList (name: value: "${name} = ${toString value}")
-            |> lib.concatLines;
+            settings |> lib.mapAttrsToList (name: value: "${name} = ${toString value}") |> lib.concatLines;
         };
       };
   };
