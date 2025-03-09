@@ -5,6 +5,7 @@
       email = "mightyiampresence@gmail.com";
       name = "Shahar \"Dawn\" Or";
       username = "mightyiam";
+      matrix = "@mightyiam:matrix.org";
     };
 
     modules = {
