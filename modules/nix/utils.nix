@@ -3,6 +3,7 @@
     { pkgs, ... }:
     {
       home.packages = with pkgs; [
+        cachix
         nix-fast-build
         nix-tree
         nvd
