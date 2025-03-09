@@ -442,7 +442,8 @@
         "smart-scrolloff-nvim": "smart-scrolloff-nvim",
         "treefmt-nix": "treefmt-nix",
         "ucodenix": "ucodenix",
-        "vim-autoread": "vim-autoread"
+        "vim-autoread": "vim-autoread",
+        "zsh-auto-notify": "zsh-auto-notify"
       }
     },
     "scss-reset": {
@@ -591,6 +592,22 @@
         "owner": "djoshea",
         "repo": "vim-autoread",
         "rev": "24061f84652d768bfb85d222c88580b3af138dab",
+        "type": "github"
+      }
+    },
+    "zsh-auto-notify": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1720453411,
+        "narHash": "sha256-ScBwky33leI8mFMpAz3Ng2Z0Gbou4EWMOAhkcMZAWIc=",
+        "owner": "MichaelAquilina",
+        "repo": "zsh-auto-notify",
+        "rev": "27c07dddb42f05b199319a9b66473c8de7935856",
+        "type": "github"
+      },
+      "original": {
+        "owner": "MichaelAquilina",
+        "repo": "zsh-auto-notify",
         "type": "github"
       }
     }
