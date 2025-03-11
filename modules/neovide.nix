@@ -26,7 +26,7 @@
           fork = true;
           font = {
             normal = [ "monospace" ];
-            inherit (config.gui.fonts.monospace) size;
+            inherit (config.fonts.monospace) size;
           };
         };
       };

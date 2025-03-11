@@ -41,7 +41,7 @@
           ];
       in
       {
-        options.gui.fonts = {
+        options.fonts = {
           default = {
             family = lib.mkOption {
               type = lib.types.str;
@@ -99,7 +99,7 @@
           fonts.fontconfig.enable = true;
           home = {
             file."${config.xdg.configHome}/fontconfig/fonts.conf" = {
-              text = fontsConf { inherit (config.gui.fonts) aliases; };
+              text = fontsConf { inherit (config.fonts) aliases; };
             };
             packages = with pkgs; [
               open-dyslexic
@@ -112,8 +112,8 @@
             ];
           };
           gtk.font = {
-            name = config.gui.fonts.default.family;
-            size = config.gui.fonts.default.size;
+            name = config.fonts.default.family;
+            size = config.fonts.default.size;
           };
         };
       };

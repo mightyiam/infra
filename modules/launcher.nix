@@ -34,7 +34,7 @@
           listview.columns = 1;
           "*" = {
             width = 1200;
-            font = "monospace ${config.gui.fonts.monospace.size |> builtins.floor |> toString}";
+            font = "monospace ${config.fonts.monospace.size |> builtins.floor |> toString}";
           };
         };
       };

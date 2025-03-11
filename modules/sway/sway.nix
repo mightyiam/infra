@@ -26,7 +26,7 @@
           '';
 
           config = {
-            fonts.size = config.gui.fonts.default.size;
+            fonts.size = config.fonts.default.size;
 
             input = {
               "type:keyboard" = {
