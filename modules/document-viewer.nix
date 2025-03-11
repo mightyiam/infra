@@ -1,0 +1,11 @@
+{ lib, ... }:
+{
+  flake.modules.homeManager.home =
+    { config, ... }:
+    lib.mkIf config.gui.enable {
+      programs.zathura.enable = true;
+      xdg.mimeApps.defaultApplications = {
+        "application/pdf" = [ "org.pwmt.zathura.desktop" ];
+      };
+    };
+}
