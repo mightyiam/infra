@@ -13,10 +13,13 @@
           imv
           inkscape
         ];
-        xdg.mimeApps.defaultApplications = {
-          # TODO more image formats
-          "image/png" = [ "imv.desktop" ];
-        };
+        xdg.mimeApps.defaultApplications =
+          [
+            "image/png"
+            "image/jpeg"
+          ]
+          |> map (lib.flip lib.nameValuePair [ "imv.desktop" ])
+          |> lib.listToAttrs;
       })
     ];
 }
