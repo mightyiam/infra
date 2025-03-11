@@ -1,6 +1,6 @@
 { lib, ... }:
 {
-  flake.modules.homeManager.base =
+  flake.modules.homeManager.gui =
     {
       config,
       pkgs,
@@ -12,10 +12,10 @@
     {
       options.guiEditorCommand = lib.mkOption {
         type = with lib.types; nullOr pathInStore;
-        default = if config.gui.enable then lib.getExe package else null;
+        default = lib.getExe package;
       };
 
-      config = lib.mkIf config.gui.enable {
+      config = {
         home.packages = [ package ];
 
         xdg.configFile."neovide/config.toml".source = pkgs.writers.writeTOML "neovide/config.toml" {

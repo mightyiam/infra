@@ -1,10 +1,10 @@
-{ inputs, lib, ... }:
+{ inputs, ... }:
 {
-  flake.modules.homeManager.base =
-    { config, pkgs, ... }:
+  flake.modules.homeManager.gui =
+    { pkgs, ... }:
     {
       home.packages = [ pkgs.libnotify ];
-      programs.zsh.plugins = lib.mkIf config.gui.enable [
+      programs.zsh.plugins = [
         {
           name = "auto-notify";
           src = inputs.zsh-auto-notify;

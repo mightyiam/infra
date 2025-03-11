@@ -11,7 +11,7 @@
       };
     };
 
-    homeManager.base =
+    homeManager.gui =
       {
         config,
         pkgs,
@@ -95,7 +95,7 @@
           };
         };
 
-        config = lib.mkIf config.gui.enable {
+        config = {
           fonts.fontconfig.enable = true;
           home = {
             file."${config.xdg.configHome}/fontconfig/fonts.conf" = {

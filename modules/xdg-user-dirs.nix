@@ -1,8 +1,7 @@
-{ lib, ... }:
 {
   flake.modules.homeManager.base =
     { config, ... }:
-    lib.mkIf config.gui.enable {
+    {
       xdg = {
         enable = true;
         userDirs =

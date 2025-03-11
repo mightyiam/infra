@@ -1,12 +1,7 @@
-{ lib, ... }:
 {
-  flake.modules.homeManager.base =
-    {
-      pkgs,
-      config,
-      ...
-    }:
-    lib.mkMerge [
+  flake.modules.homeManager = {
+    base =
+      { pkgs, ... }:
       {
         programs.gh = {
           package = pkgs.gh.overrideAttrs (oldAttrs: {
@@ -21,14 +16,13 @@
           settings.git_protocol = "ssh";
         };
 
-        home.packages = with pkgs; [
-          gh-dash
-        ];
-      }
-      (lib.mkIf config.gui.enable {
-        home.packages = with pkgs; [
-          gh-markdown-preview
-        ];
-      })
-    ];
+        home.packages = with pkgs; [ gh-dash ];
+      };
+    gui =
+      { pkgs, ... }:
+      {
+        home.packages = with pkgs; [ gh-markdown-preview ];
+      };
+  };
+
 }

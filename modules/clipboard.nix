@@ -1,7 +1,7 @@
 { lib, ... }:
 {
   flake.modules = {
-    homeManager.base =
+    homeManager.gui =
       {
         config,
         pkgs,
@@ -29,7 +29,7 @@
           '';
         };
       in
-      lib.mkIf config.gui.enable {
+      {
         services.cliphist.enable = true;
 
         wayland.windowManager.sway.config.keybindings = {

@@ -1,12 +1,7 @@
-{ lib, ... }:
 {
-  flake.modules.homeManager.base =
+  flake.modules.homeManager.gui =
+    { pkgs, ... }:
     {
-      pkgs,
-      config,
-      ...
-    }:
-    lib.mkIf config.gui.enable {
       home.packages = with pkgs; [ vlc ];
     };
 }

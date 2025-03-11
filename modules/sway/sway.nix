@@ -1,6 +1,6 @@
 { lib, ... }:
 {
-  flake.modules.homeManager.base =
+  flake.modules.homeManager.gui =
     {
       options,
       pkgs,
@@ -17,7 +17,7 @@
             (options.wayland.windowManager.sway.config.type.getSubOptions { }).keybindings.default;
         }
       ];
-      config = lib.mkIf config.gui.enable {
+      config = {
         wayland.windowManager.sway = {
           enable = true;
           wrapperFeatures.gtk = true;

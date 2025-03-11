@@ -1,23 +1,18 @@
-{ lib, ... }:
 {
-  flake.modules.homeManager.base =
-    { config, ... }:
-    lib.mkIf config.gui.enable {
-      programs.firefox = {
-        enable = true;
-        profiles = {
-          primary = {
-            id = 0;
-            settings."toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-            settings."browser.ctrlTab.sortByRecentlyUsed" = true;
-            settings."browser.tabs.closeWindowWithLastTab" = false;
-            userChrome = '''';
-            userContent = '''';
-          };
-          vpn = {
-            id = 1;
-          };
-        };
+  flake.modules.homeManager.gui.programs.firefox = {
+    enable = true;
+    profiles = {
+      primary = {
+        id = 0;
+        settings."toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+        settings."browser.ctrlTab.sortByRecentlyUsed" = true;
+        settings."browser.tabs.closeWindowWithLastTab" = false;
+        userChrome = '''';
+        userContent = '''';
+      };
+      vpn = {
+        id = 1;
       };
     };
+  };
 }

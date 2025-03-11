@@ -1,6 +1,6 @@
 { lib, ... }:
 {
-  flake.modules.homeManager.base =
+  flake.modules.homeManager.gui =
     {
       config,
       pkgs,
@@ -12,7 +12,7 @@
       };
     in
     {
-      home.packages = lib.mkIf config.gui.enable [ rofimoji ];
+      home.packages = [ rofimoji ];
       wayland.windowManager.sway.config.keybindings =
         let
           mod = config.wayland.windowManager.sway.config.modifier;

@@ -1,15 +1,10 @@
-{ lib, ... }:
 {
-  flake.modules.homeManager.base =
-    {
-      pkgs,
-      config,
-      ...
-    }:
+  flake.modules.homeManager.gui =
+    { pkgs, ... }:
     let
       mode = "screen-capture";
     in
-    lib.mkIf config.gui.enable {
+    {
       services.mako = {
         enable = true;
         anchor = "top-right";

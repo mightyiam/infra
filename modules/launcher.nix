@@ -1,12 +1,12 @@
 { lib, ... }:
 {
-  flake.modules.homeManager.base =
+  flake.modules.homeManager.gui =
     {
       config,
       pkgs,
       ...
     }:
-    lib.mkIf config.gui.enable {
+    {
       programs.rofi = {
         enable = true;
         package = pkgs.rofi-wayland;

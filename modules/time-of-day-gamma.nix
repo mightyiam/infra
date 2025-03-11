@@ -1,14 +1,10 @@
-{ config, lib, ... }:
+{ config, ... }:
 {
-  flake.modules.homeManager.base =
-    homeArgs:
-    lib.mkIf homeArgs.config.gui.enable {
-      services.wlsunset = {
-        enable = true;
-        latitude = toString config.location.latitude;
-        longitude = toString config.location.longitude;
-        temperature.day = 6500;
-        temperature.night = 4000;
-      };
-    };
+  flake.modules.homeManager.gui.services.wlsunset = {
+    enable = true;
+    latitude = toString config.location.latitude;
+    longitude = toString config.location.longitude;
+    temperature.day = 6500;
+    temperature.night = 4000;
+  };
 }

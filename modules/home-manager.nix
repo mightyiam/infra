@@ -21,6 +21,7 @@
             }
           )
           config.flake.modules.homeManager.base
+          config.flake.modules.homeManager.gui
         ];
       };
     };
@@ -44,7 +45,6 @@
         };
         config = {
           home.stateVersion = args.config.system.stateVersion;
-          gui.enable = false;
           imports = [ config.flake.modules.homeManager.base ];
         };
       };

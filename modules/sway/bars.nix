@@ -1,6 +1,5 @@
-{ lib, ... }:
 {
-  flake.modules.homeManager.base =
+  flake.modules.homeManager.gui =
     {
       config,
       pkgs,
@@ -9,7 +8,7 @@
     let
       id = "bottom";
     in
-    lib.mkIf config.gui.enable {
+    {
       programs.i3status-rust = {
         enable = true;
         bars = {

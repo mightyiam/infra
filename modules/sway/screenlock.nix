@@ -1,9 +1,8 @@
-{ lib, ... }:
 {
   flake.modules = {
     nixos.desktop.security.pam.services.swaylock = { };
 
-    homeManager.base =
+    homeManager.gui =
       {
         pkgs,
         config,
@@ -13,7 +12,7 @@
         lockCommand = pkgs.swaylock + /bin/swaylock;
         swayMsgPath = config.wayland.windowManager.sway.package + /bin/swaymsg;
       in
-      lib.mkIf config.gui.enable {
+      {
         wayland.windowManager.sway.config.keybindings."Mod4+Ctrl+l" = "exec ${lockCommand}";
         programs.swaylock = {
           enable = true;

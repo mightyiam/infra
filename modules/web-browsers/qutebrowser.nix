@@ -1,9 +1,9 @@
 { lib, ... }:
 {
-  flake.modules.homeManager.base =
+  flake.modules.homeManager.gui =
     { config, ... }:
     {
-      config = lib.mkIf config.gui.enable {
+      config = {
         programs.qutebrowser = {
           enable = true;
 

@@ -1,8 +1,3 @@
-{ lib, ... }:
 {
-  flake.modules.homeManager.base =
-    { config, ... }:
-    lib.mkIf config.gui.enable {
-      gtk.enable = true;
-    };
+  flake.modules.homeManager.gui.gtk.enable = true;
 }

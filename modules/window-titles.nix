@@ -1,14 +1,9 @@
-{ lib, ... }:
 {
-  flake.modules.homeManager.base =
-    { config, ... }:
-    {
-      programs.zsh.initExtra = lib.mkIf config.gui.enable ''
-        precmd() {
-          local cwd
-          cwd=''${PWD/#$HOME/\~}
-          print -Pn "\e]0;zsh ''${cwd}\a"
-        }
-      '';
-    };
+  flake.modules.homeManager.gui.programs.zsh.initExtra = ''
+    precmd() {
+      local cwd
+      cwd=''${PWD/#$HOME/\~}
+      print -Pn "\e]0;zsh ''${cwd}\a"
+    }
+  '';
 }
