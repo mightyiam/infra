@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.home =
+  flake.modules.homeManager.base =
     { pkgs, ... }:
     {
       home.packages = with pkgs; [ usbutils ];

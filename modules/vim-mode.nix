@@ -1,3 +1,3 @@
 {
-  flake.modules.homeManager.home.programs.zsh.defaultKeymap = "viins";
+  flake.modules.homeManager.base.programs.zsh.defaultKeymap = "viins";
 }

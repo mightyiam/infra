@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.home.programs.zsh.syntaxHighlighting = {
+  flake.modules.homeManager.base.programs.zsh.syntaxHighlighting = {
     enable = true;
     highlighters = [
       "main"

@@ -1,6 +1,6 @@
 { lib, ... }:
 {
-  flake.modules.homeManager.home.options.gui.enable = lib.mkOption {
+  flake.modules.homeManager.base.options.gui.enable = lib.mkOption {
     type = lib.types.bool;
     default = true;
   };

@@ -17,7 +17,7 @@ in
       inherit settings;
     };
 
-    homeManager.home.nix = {
+    homeManager.base.nix = {
       inherit settings;
     };
 

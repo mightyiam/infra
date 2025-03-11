@@ -1,3 +1,3 @@
 {
-  flake.modules.homeManager.home.qt.enable = true;
+  flake.modules.homeManager.base.qt.enable = true;
 }

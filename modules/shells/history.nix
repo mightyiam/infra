@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.home.programs.zsh = {
+  flake.modules.homeManager.base.programs.zsh = {
     history.ignorePatterns = [ "rm *" ];
     initExtra = ''
       bindkey '^[;' up-line-or-search

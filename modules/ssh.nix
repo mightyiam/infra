@@ -48,7 +48,7 @@ in
       };
     };
 
-    homeManager.home = args: {
+    homeManager.base = args: {
       programs.ssh = {
         enable = true;
         compression = true;

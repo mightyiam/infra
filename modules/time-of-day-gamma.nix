@@ -1,6 +1,6 @@
 { config, lib, ... }:
 {
-  flake.modules.homeManager.home =
+  flake.modules.homeManager.base =
     homeArgs:
     lib.mkIf homeArgs.config.gui.enable {
       services.wlsunset = {

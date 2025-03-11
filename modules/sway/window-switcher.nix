@@ -1,7 +1,7 @@
 # icons don't work because arbitrary codepoints cannot be expressed in Nix string literals
 { lib, ... }:
 {
-  flake.modules.homeManager.home =
+  flake.modules.homeManager.base =
     {
       config,
       ...

@@ -30,7 +30,7 @@ in
         nix.package = mkNix pkgs;
       };
 
-    homeManager.home =
+    homeManager.base =
       { pkgs, ... }:
       {
         nix.package = pkgs |> mkNix |> lib.mkDefault;

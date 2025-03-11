@@ -21,7 +21,7 @@
       };
     };
 
-    homeManager.home =
+    homeManager.base =
       {
         pkgs,
         config,

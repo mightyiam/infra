@@ -15,7 +15,7 @@ in
         inherit flavor;
       };
     };
-    homeManager.home = {
+    homeManager.base = {
       imports = [ inputs.catppuccin.homeManagerModules.catppuccin ];
       options = {
         style = {

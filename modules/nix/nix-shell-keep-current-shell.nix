@@ -1,6 +1,6 @@
 { lib, ... }:
 {
-  flake.modules.homeManager.home =
+  flake.modules.homeManager.base =
     { pkgs, ... }:
     {
       programs.zsh.shellAliases.nix-shell = "nix-shell --run ${lib.getExe pkgs.zsh}";

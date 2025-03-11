@@ -6,7 +6,7 @@
       facter.detected.dhcp.enable = false;
     };
 
-    homeManager.home =
+    homeManager.base =
       { pkgs, ... }:
       {
         home.packages = with pkgs; [ nixos-facter ];

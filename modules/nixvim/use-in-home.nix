@@ -4,7 +4,7 @@
   ...
 }:
 {
-  flake.modules.homeManager.home =
+  flake.modules.homeManager.base =
     {
       pkgs,
       ...

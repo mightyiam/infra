@@ -1,3 +1,3 @@
 {
-  flake.modules.homeManager.home.programs.zsh.enable = true;
+  flake.modules.homeManager.base.programs.zsh.enable = true;
 }

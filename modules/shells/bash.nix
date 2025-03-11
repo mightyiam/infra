@@ -1,3 +1,3 @@
 {
-  flake.modules.homeManager.home.programs.bash.enable = true;
+  flake.modules.homeManager.base.programs.bash.enable = true;
 }

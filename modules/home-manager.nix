@@ -20,12 +20,12 @@
               home.stateVersion = osConfig.system.stateVersion;
             }
           )
-          config.flake.modules.homeManager.home
+          config.flake.modules.homeManager.base
         ];
       };
     };
 
-    homeManager.home = args: {
+    homeManager.base = args: {
       home = lib.mkIf (!(args.hasDifferentUsername or false)) {
         username = config.flake.meta.owner.username;
         homeDirectory = "/home/${config.flake.meta.owner.username}";
@@ -45,7 +45,7 @@
         config = {
           home.stateVersion = args.config.system.stateVersion;
           gui.enable = false;
-          imports = [ config.flake.modules.homeManager.home ];
+          imports = [ config.flake.modules.homeManager.base ];
         };
       };
     };

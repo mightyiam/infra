@@ -25,7 +25,7 @@
         };
       };
 
-    homeManager.home =
+    homeManager.base =
       { pkgs, ... }:
       {
         home.packages = with pkgs; [

@@ -1,6 +1,6 @@
 { lib, ... }:
 {
-  flake.modules.homeManager.home =
+  flake.modules.homeManager.base =
     { config, ... }:
     {
       programs.zsh.initExtra = lib.mkIf config.gui.enable ''

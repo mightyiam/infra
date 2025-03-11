@@ -1,7 +1,7 @@
 {
   flake.modules = {
     nixvim.astrea.plugins.lsp.servers.nixd.enable = true;
-    homeManager.home =
+    homeManager.base =
       { pkgs, ... }:
       {
         home.packages = with pkgs; [

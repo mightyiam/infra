@@ -3,7 +3,7 @@
   flake.modules = {
     nixos.desktop.security.pam.services.swaylock = { };
 
-    homeManager.home =
+    homeManager.base =
       {
         pkgs,
         config,

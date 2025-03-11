@@ -1,6 +1,6 @@
 { lib, ... }:
 {
-  flake.modules.homeManager.home =
+  flake.modules.homeManager.base =
     { pkgs, ... }:
     let
       package = pkgs.dotool;
