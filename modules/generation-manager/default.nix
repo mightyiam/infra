@@ -1,7 +1,7 @@
 { config, ... }:
 {
   perSystem =
-    { pkgs, self', ... }:
+    { pkgs, ... }:
     {
       packages.generation-manager = pkgs.rustPlatform.buildRustPackage {
         pname = "generation-manager";
