@@ -18,7 +18,6 @@
             home.stateVersion = osConfig.system.stateVersion;
           }
         )
-        config.flake.modules.homeManager.base
         config.flake.modules.homeManager.gui
       ];
     };
