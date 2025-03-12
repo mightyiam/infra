@@ -1,16 +1,32 @@
+{ config, ... }:
 {
-  flake.modules.homeManager.base =
-    { pkgs, ... }:
-    let
-      generation-manager = pkgs.rustPlatform.buildRustPackage {
+  perSystem =
+    { pkgs, self', ... }:
+    {
+      packages.generation-manager = pkgs.rustPlatform.buildRustPackage {
         pname = "generation-manager";
         version = "1.0.0";
         src = ./crate;
         useFetchCargoVendor = true;
-        cargoHash = "sha256-AiRGXB6/LjM1WCMvHP5KeCnlruPaRWvwGPjATlf8sTA=";
+        cargoHash = "sha256-/LzxXS0SEyarigor0yXvb4rUbig1qS5p9BOef5/4blw=";
       };
-    in
+      devshells.generation-manager.devshell = {
+        packages = with pkgs; [
+          cargo
+          clippy
+          gcc
+          rust-analyzer
+          rustc
+        ];
+        packagesFrom = [
+          # > error: collision between `/nix/store/<hash>-cargo-1.84.1/bin/cargo' and `/nix/store/<hash>-auditable-cargo-1.84.1/bin/cargo'
+          # self'.packages.generation-manager
+        ];
+      };
+    };
+  flake.modules.homeManager.base =
+    { pkgs, ... }:
     {
-      home.packages = [ generation-manager ];
+      home.packages = [ config.flake.packages.${pkgs.system}.generation-manager ];
     };
 }
