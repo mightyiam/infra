@@ -978,8 +978,8 @@
     ],
     "camera": [
       {
-        "index": 49,
-        "attached_to": 58,
+        "index": 50,
+        "attached_to": 59,
         "class_list": ["camera", "usb"],
         "bus_type": {
           "hex": "0086",
@@ -1073,8 +1073,8 @@
         "module_alias": "usb:v046Dp082Dd0011dcEFdsc02dp01ic0Eisc02ip00in01"
       },
       {
-        "index": 61,
-        "attached_to": 58,
+        "index": 62,
+        "attached_to": 59,
         "class_list": ["camera", "usb"],
         "bus_type": {
           "hex": "0086",
@@ -1328,7 +1328,7 @@
           "[13]",
           "[14]"
         ],
-        "bogo": 7585.36,
+        "bogo": 7585.2,
         "cache": 512,
         "units": 8,
         "physical_id": 0,
@@ -1348,86 +1348,6 @@
       }
     ],
     "disk": [
-      {
-        "index": 42,
-        "attached_to": 32,
-        "class_list": ["disk", "ide", "block_device"],
-        "bus_type": {
-          "hex": "0085",
-          "name": "IDE",
-          "value": 133
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0106",
-          "name": "Mass Storage Device",
-          "value": 262
-        },
-        "sub_class": {
-          "hex": "0000",
-          "name": "Disk",
-          "value": 0
-        },
-        "vendor": {
-          "hex": "0000",
-          "name": "Samsung",
-          "value": 0
-        },
-        "device": {
-          "hex": "0000",
-          "name": "SSD 840",
-          "value": 0
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "BB0Q",
-          "value": 0
-        },
-        "serial": "S1DHNSADB53096A",
-        "model": "Samsung SSD 840",
-        "sysfs_id": "/class/block/sdb",
-        "sysfs_bus_id": "0:0:0:0",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:02.1/0000:02:00.1/ata1/host0/target0:0:0/0:0:0:0",
-        "unix_device_name": "/dev/sdb",
-        "unix_device_number": {
-          "type": 98,
-          "major": 8,
-          "minor": 16,
-          "range": 16
-        },
-        "unix_device_names": [
-          "/dev/disk/by-diskseq/2",
-          "/dev/disk/by-id/ata-Samsung_SSD_840_EVO_500GB_S1DHNSADB53096A",
-          "/dev/disk/by-id/wwn-0x50025388a0101c5b",
-          "/dev/disk/by-path/pci-0000:02:00.1-ata-1",
-          "/dev/disk/by-path/pci-0000:02:00.1-ata-1.0",
-          "/dev/sdb"
-        ],
-        "rom_id": "0x80",
-        "resources": [
-          {
-            "type": "disk_geo",
-            "cylinders": 60801,
-            "heads": 255,
-            "sectors": 63,
-            "size": 0,
-            "geo_type": "logical"
-          },
-          {
-            "type": "size",
-            "unit": "sectors",
-            "value_1": 976773168,
-            "value_2": 512
-          }
-        ],
-        "driver": "ahci",
-        "driver_module": "ahci",
-        "drivers": ["ahci", "sd"],
-        "driver_modules": ["ahci", "sd_mod"]
-      },
       {
         "index": 43,
         "attached_to": 32,
@@ -1468,9 +1388,89 @@
         },
         "serial": "S1DHNSAF312714M",
         "model": "Samsung SSD 840",
-        "sysfs_id": "/class/block/sda",
+        "sysfs_id": "/class/block/sdb",
         "sysfs_bus_id": "1:0:0:0",
         "sysfs_device_link": "/devices/pci0000:00/0000:00:02.1/0000:02:00.1/ata2/host1/target1:0:0/1:0:0:0",
+        "unix_device_name": "/dev/sdb",
+        "unix_device_number": {
+          "type": 98,
+          "major": 8,
+          "minor": 16,
+          "range": 16
+        },
+        "unix_device_names": [
+          "/dev/disk/by-diskseq/2",
+          "/dev/disk/by-id/ata-Samsung_SSD_840_EVO_500GB_S1DHNSAF312714M",
+          "/dev/disk/by-id/wwn-0x50025388a0299b7d",
+          "/dev/disk/by-path/pci-0000:02:00.1-ata-2",
+          "/dev/disk/by-path/pci-0000:02:00.1-ata-2.0",
+          "/dev/sdb"
+        ],
+        "rom_id": "0x80",
+        "resources": [
+          {
+            "type": "disk_geo",
+            "cylinders": 60801,
+            "heads": 255,
+            "sectors": 63,
+            "size": 0,
+            "geo_type": "logical"
+          },
+          {
+            "type": "size",
+            "unit": "sectors",
+            "value_1": 976773168,
+            "value_2": 512
+          }
+        ],
+        "driver": "ahci",
+        "driver_module": "ahci",
+        "drivers": ["ahci", "sd"],
+        "driver_modules": ["ahci", "sd_mod"]
+      },
+      {
+        "index": 44,
+        "attached_to": 32,
+        "class_list": ["disk", "ide", "block_device"],
+        "bus_type": {
+          "hex": "0085",
+          "name": "IDE",
+          "value": 133
+        },
+        "slot": {
+          "bus": 0,
+          "number": 0
+        },
+        "base_class": {
+          "hex": "0106",
+          "name": "Mass Storage Device",
+          "value": 262
+        },
+        "sub_class": {
+          "hex": "0000",
+          "name": "Disk",
+          "value": 0
+        },
+        "vendor": {
+          "hex": "0000",
+          "name": "Samsung",
+          "value": 0
+        },
+        "device": {
+          "hex": "0000",
+          "name": "SSD 840",
+          "value": 0
+        },
+        "revision": {
+          "hex": "0000",
+          "name": "BB0Q",
+          "value": 0
+        },
+        "serial": "S1DHNSADB53096A",
+        "model": "Samsung SSD 840",
+        "sysfs_id": "/class/block/sda",
+        "sysfs_bus_id": "0:0:0:0",
+        "sysfs_device_link": "/devices/pci0000:00/0000:00:02.1/0000:02:00.1/ata1/host0/target0:0:0/0:0:0:0",
         "unix_device_name": "/dev/sda",
         "unix_device_number": {
           "type": 98,
@@ -1480,10 +1480,10 @@
         },
         "unix_device_names": [
           "/dev/disk/by-diskseq/1",
-          "/dev/disk/by-id/ata-Samsung_SSD_840_EVO_500GB_S1DHNSAF312714M",
-          "/dev/disk/by-id/wwn-0x50025388a0299b7d",
-          "/dev/disk/by-path/pci-0000:02:00.1-ata-2",
-          "/dev/disk/by-path/pci-0000:02:00.1-ata-2.0",
+          "/dev/disk/by-id/ata-Samsung_SSD_840_EVO_500GB_S1DHNSADB53096A",
+          "/dev/disk/by-id/wwn-0x50025388a0101c5b",
+          "/dev/disk/by-path/pci-0000:02:00.1-ata-1",
+          "/dev/disk/by-path/pci-0000:02:00.1-ata-1.0",
           "/dev/sda"
         ],
         "rom_id": "0x81",
@@ -1539,34 +1539,34 @@
           "value": 0
         },
         "vendor": {
-          "hex": "1002",
-          "name": "ATI Technologies Inc",
-          "value": 4098
+          "hex": "10de",
+          "name": "nVidia Corporation",
+          "value": 4318
         },
         "sub_vendor": {
-          "hex": "1043",
-          "value": 4163
+          "hex": "3842",
+          "value": 14402
         },
         "device": {
-          "hex": "67df",
-          "value": 26591
+          "hex": "1b06",
+          "value": 6918
         },
         "sub_device": {
-          "hex": "051d",
-          "value": 1309
+          "hex": "6390",
+          "value": 25488
         },
         "revision": {
-          "hex": "00ef",
-          "value": 239
+          "hex": "00a1",
+          "value": 161
         },
-        "model": "ATI VGA compatible controller",
+        "model": "nVidia VGA compatible controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:01.1/0000:01:00.0",
         "sysfs_bus_id": "0000:01:00.0",
         "resources": [
           {
             "type": "io",
             "base": 61440,
-            "range": 256,
+            "range": 128,
             "enabled": true,
             "access": "read_write"
           },
@@ -1587,23 +1587,23 @@
           {
             "type": "mem",
             "base": 3758096384,
-            "range": 2097152,
+            "range": 33554432,
             "enabled": true,
             "access": "read_only",
             "prefetch": "no"
           },
           {
             "type": "mem",
-            "base": 4243587072,
-            "range": 262144,
+            "base": 4211081216,
+            "range": 16777216,
             "enabled": true,
             "access": "read_write",
             "prefetch": "no"
           },
           {
             "type": "mem",
-            "base": 4243849216,
-            "range": 131072,
+            "base": 4227858432,
+            "range": 524288,
             "enabled": false,
             "access": "read_only",
             "prefetch": "no"
@@ -1611,19 +1611,23 @@
         ],
         "detail": {
           "function": 0,
-          "command": 3,
+          "command": 1031,
           "header_type": 0,
           "secondary_bus": 0,
           "irq": 65,
           "prog_if": 0
         },
-        "module_alias": "pci:v00001002d000067DFsv00001043sd0000051Dbc03sc00i00"
+        "driver": "nouveau",
+        "driver_module": "nouveau",
+        "drivers": ["nouveau"],
+        "driver_modules": ["nouveau"],
+        "module_alias": "pci:v000010DEd00001B06sv00003842sd00006390bc03sc00i00"
       }
     ],
     "hub": [
       {
-        "index": 44,
-        "attached_to": 53,
+        "index": 45,
+        "attached_to": 54,
         "class_list": ["usb", "hub"],
         "bus_type": {
           "hex": "0086",
@@ -1689,7 +1693,7 @@
         "module_alias": "usb:v174Cp3074d0200dc09dsc00dp03ic09isc00ip00in00"
       },
       {
-        "index": 45,
+        "index": 46,
         "attached_to": 27,
         "class_list": ["usb", "hub"],
         "bus_type": {
@@ -1708,7 +1712,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.16 xhci-hcd",
+          "name": "Linux 6.12.18 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -1722,7 +1726,7 @@
           "value": 0
         },
         "serial": "0000:05:00.4",
-        "model": "Linux 6.12.16 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.12.18 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:05:00.4/usb6/6-0:1.0",
         "sysfs_bus_id": "6-0:1.0",
         "detail": {
@@ -1757,7 +1761,7 @@
         "module_alias": "usb:v1D6Bp0003d0612dc09dsc00dp03ic09isc00ip00in00"
       },
       {
-        "index": 48,
+        "index": 49,
         "attached_to": 13,
         "class_list": ["usb", "hub"],
         "bus_type": {
@@ -1776,7 +1780,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.16 xhci-hcd",
+          "name": "Linux 6.12.18 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -1790,7 +1794,7 @@
           "value": 0
         },
         "serial": "0000:05:00.3",
-        "model": "Linux 6.12.16 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.12.18 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:05:00.3/usb3/3-0:1.0",
         "sysfs_bus_id": "3-0:1.0",
         "resources": [
@@ -1835,8 +1839,8 @@
         "module_alias": "usb:v1D6Bp0002d0612dc09dsc00dp01ic09isc00ip00in00"
       },
       {
-        "index": 52,
-        "attached_to": 55,
+        "index": 53,
+        "attached_to": 56,
         "class_list": ["usb", "hub"],
         "bus_type": {
           "hex": "0086",
@@ -1911,7 +1915,7 @@
         "module_alias": "usb:v05E3p0610d6060dc09dsc00dp02ic09isc00ip02in00"
       },
       {
-        "index": 53,
+        "index": 54,
         "attached_to": 13,
         "class_list": ["usb", "hub"],
         "bus_type": {
@@ -1930,7 +1934,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.16 xhci-hcd",
+          "name": "Linux 6.12.18 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -1944,7 +1948,7 @@
           "value": 0
         },
         "serial": "0000:05:00.3",
-        "model": "Linux 6.12.16 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.12.18 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:05:00.3/usb4/4-0:1.0",
         "sysfs_bus_id": "4-0:1.0",
         "detail": {
@@ -1979,7 +1983,7 @@
         "module_alias": "usb:v1D6Bp0003d0612dc09dsc00dp03ic09isc00ip00in00"
       },
       {
-        "index": 55,
+        "index": 56,
         "attached_to": 18,
         "class_list": ["usb", "hub"],
         "bus_type": {
@@ -1998,7 +2002,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.16 xhci-hcd",
+          "name": "Linux 6.12.18 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -2012,7 +2016,7 @@
           "value": 0
         },
         "serial": "0000:02:00.0",
-        "model": "Linux 6.12.16 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.12.18 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:02:00.0/usb1/1-0:1.0",
         "sysfs_bus_id": "1-0:1.0",
         "resources": [
@@ -2057,8 +2061,8 @@
         "module_alias": "usb:v1D6Bp0002d0612dc09dsc00dp01ic09isc00ip00in00"
       },
       {
-        "index": 58,
-        "attached_to": 48,
+        "index": 59,
+        "attached_to": 49,
         "class_list": ["usb", "hub"],
         "bus_type": {
           "hex": "0086",
@@ -2134,7 +2138,7 @@
         "module_alias": "usb:v174Cp2074d0200dc09dsc00dp02ic09isc00ip02in00"
       },
       {
-        "index": 60,
+        "index": 61,
         "attached_to": 27,
         "class_list": ["usb", "hub"],
         "bus_type": {
@@ -2153,7 +2157,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.16 xhci-hcd",
+          "name": "Linux 6.12.18 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -2167,7 +2171,7 @@
           "value": 0
         },
         "serial": "0000:05:00.4",
-        "model": "Linux 6.12.16 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.12.18 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:05:00.4/usb5/5-0:1.0",
         "sysfs_bus_id": "5-0:1.0",
         "resources": [
@@ -2212,7 +2216,7 @@
         "module_alias": "usb:v1D6Bp0002d0612dc09dsc00dp01ic09isc00ip00in00"
       },
       {
-        "index": 62,
+        "index": 63,
         "attached_to": 18,
         "class_list": ["usb", "hub"],
         "bus_type": {
@@ -2231,7 +2235,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.16 xhci-hcd",
+          "name": "Linux 6.12.18 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -2245,7 +2249,7 @@
           "value": 0
         },
         "serial": "0000:02:00.0",
-        "model": "Linux 6.12.16 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.12.18 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:02:00.0/usb2/2-0:1.0",
         "sysfs_bus_id": "2-0:1.0",
         "detail": {
@@ -2282,8 +2286,8 @@
     ],
     "keyboard": [
       {
-        "index": 46,
-        "attached_to": 58,
+        "index": 47,
+        "attached_to": 59,
         "class_list": ["keyboard", "usb"],
         "bus_type": {
           "hex": "0086",
@@ -2416,10 +2420,219 @@
         ]
       }
     ],
+    "monitor": [
+      {
+        "index": 42,
+        "attached_to": 21,
+        "class_list": ["monitor"],
+        "base_class": {
+          "hex": "0100",
+          "name": "Monitor",
+          "value": 256
+        },
+        "sub_class": {
+          "hex": "0002",
+          "name": "LCD Monitor",
+          "value": 2
+        },
+        "vendor": {
+          "hex": "06b3",
+          "value": 1715
+        },
+        "device": {
+          "hex": "22cc",
+          "name": "VZ229",
+          "value": 8908
+        },
+        "serial": "J7LMRS026564",
+        "model": "VZ229",
+        "resources": [
+          {
+            "type": "monitor",
+            "width": 1024,
+            "height": 768,
+            "vertical_frequency": 60,
+            "interlaced": false
+          },
+          {
+            "type": "monitor",
+            "width": 1024,
+            "height": 768,
+            "vertical_frequency": 70,
+            "interlaced": false
+          },
+          {
+            "type": "monitor",
+            "width": 1024,
+            "height": 768,
+            "vertical_frequency": 75,
+            "interlaced": false
+          },
+          {
+            "type": "monitor",
+            "width": 1152,
+            "height": 864,
+            "vertical_frequency": 75,
+            "interlaced": false
+          },
+          {
+            "type": "monitor",
+            "width": 1280,
+            "height": 1024,
+            "vertical_frequency": 60,
+            "interlaced": false
+          },
+          {
+            "type": "monitor",
+            "width": 1280,
+            "height": 1024,
+            "vertical_frequency": 75,
+            "interlaced": false
+          },
+          {
+            "type": "monitor",
+            "width": 1280,
+            "height": 1024,
+            "vertical_frequency": 75,
+            "interlaced": false
+          },
+          {
+            "type": "monitor",
+            "width": 1920,
+            "height": 1080,
+            "vertical_frequency": 60,
+            "interlaced": false
+          },
+          {
+            "type": "monitor",
+            "width": 640,
+            "height": 480,
+            "vertical_frequency": 60,
+            "interlaced": false
+          },
+          {
+            "type": "monitor",
+            "width": 640,
+            "height": 480,
+            "vertical_frequency": 72,
+            "interlaced": false
+          },
+          {
+            "type": "monitor",
+            "width": 640,
+            "height": 480,
+            "vertical_frequency": 75,
+            "interlaced": false
+          },
+          {
+            "type": "monitor",
+            "width": 720,
+            "height": 400,
+            "vertical_frequency": 70,
+            "interlaced": false
+          },
+          {
+            "type": "monitor",
+            "width": 800,
+            "height": 600,
+            "vertical_frequency": 56,
+            "interlaced": false
+          },
+          {
+            "type": "monitor",
+            "width": 800,
+            "height": 600,
+            "vertical_frequency": 60,
+            "interlaced": false
+          },
+          {
+            "type": "monitor",
+            "width": 800,
+            "height": 600,
+            "vertical_frequency": 72,
+            "interlaced": false
+          },
+          {
+            "type": "monitor",
+            "width": 800,
+            "height": 600,
+            "vertical_frequency": 75,
+            "interlaced": false
+          },
+          {
+            "type": "size",
+            "unit": "mm",
+            "value_1": 476,
+            "value_2": 268
+          }
+        ],
+        "detail": {
+          "manufacture_year": 2018,
+          "manufacture_week": 29,
+          "vertical_sync": {
+            "min": 48,
+            "max": 76
+          },
+          "horizontal_sync": {
+            "min": 30,
+            "max": 85
+          },
+          "horizontal_sync_timings": {
+            "disp": 1920,
+            "sync_start": 2008,
+            "sync_end": 2052,
+            "total": 2200
+          },
+          "vertical_sync_timings": {
+            "disp": 1080,
+            "sync_start": 1084,
+            "sync_end": 1089,
+            "total": 1125
+          },
+          "clock": 148500,
+          "width": 1920,
+          "height": 1080,
+          "width_millimetres": 476,
+          "height_millimetres": 268,
+          "horizontal_flag": 43,
+          "vertical_flag": 43,
+          "vendor": "",
+          "name": "VZ229"
+        },
+        "driver_info": {
+          "type": "display",
+          "width": 1920,
+          "height": 1080,
+          "vertical_sync": {
+            "min": 48,
+            "max": 76
+          },
+          "horizontal_sync": {
+            "min": 30,
+            "max": 85
+          },
+          "bandwidth": 0,
+          "horizontal_sync_timings": {
+            "disp": 1920,
+            "sync_start": 2008,
+            "sync_end": 2052,
+            "total": 2200
+          },
+          "vertical_sync_timings": {
+            "disp": 1080,
+            "sync_start": 1084,
+            "sync_end": 1089,
+            "total": 1125
+          },
+          "horizontal_flag": 43,
+          "vertical_flag": 43
+        }
+      }
+    ],
     "mouse": [
       {
-        "index": 50,
-        "attached_to": 58,
+        "index": 51,
+        "attached_to": 59,
         "class_list": ["mouse", "usb"],
         "bus_type": {
           "hex": "0086",
@@ -2528,8 +2741,8 @@
         "module_alias": "usb:v046DpC08Bd2703dc00dsc00dp00ic03isc01ip02in00"
       },
       {
-        "index": 63,
-        "attached_to": 58,
+        "index": 64,
+        "attached_to": 59,
         "class_list": ["mouse", "usb"],
         "bus_type": {
           "hex": "0086",
@@ -2706,7 +2919,7 @@
           },
           {
             "type": "mem",
-            "base": 4241489920,
+            "base": 4234149888,
             "range": 16384,
             "enabled": true,
             "access": "read_write",
@@ -2714,7 +2927,7 @@
           },
           {
             "type": "mem",
-            "base": 4241506304,
+            "base": 4234166272,
             "range": 4096,
             "enabled": true,
             "access": "read_write",
@@ -2742,7 +2955,26 @@
     ],
     "network_interface": [
       {
-        "index": 64,
+        "index": 65,
+        "attached_to": 0,
+        "class_list": ["network_interface"],
+        "base_class": {
+          "hex": "0107",
+          "name": "Network Interface",
+          "value": 263
+        },
+        "sub_class": {
+          "hex": "0000",
+          "name": "Loopback",
+          "value": 0
+        },
+        "model": "Loopback network interface",
+        "sysfs_id": "/class/net/lo",
+        "unix_device_name": "lo",
+        "unix_device_names": ["lo"]
+      },
+      {
+        "index": 66,
         "attached_to": 37,
         "class_list": ["network_interface"],
         "base_class": {
@@ -2774,25 +3006,6 @@
         "driver_module": "r8169",
         "drivers": ["r8169"],
         "driver_modules": ["r8169"]
-      },
-      {
-        "index": 65,
-        "attached_to": 0,
-        "class_list": ["network_interface"],
-        "base_class": {
-          "hex": "0107",
-          "name": "Network Interface",
-          "value": 263
-        },
-        "sub_class": {
-          "hex": "0000",
-          "name": "Loopback",
-          "value": 0
-        },
-        "model": "Loopback network interface",
-        "sysfs_id": "/class/net/lo",
-        "unix_device_name": "lo",
-        "unix_device_names": ["lo"]
       }
     ],
     "pci": [
@@ -2849,7 +3062,7 @@
           },
           {
             "type": "mem",
-            "base": 4239392768,
+            "base": 4232052736,
             "range": 1048576,
             "enabled": true,
             "access": "read_write",
@@ -2857,7 +3070,7 @@
           },
           {
             "type": "mem",
-            "base": 4240490496,
+            "base": 4233150464,
             "range": 8192,
             "enabled": true,
             "access": "read_write",
@@ -3045,7 +3258,7 @@
           },
           {
             "type": "mem",
-            "base": 4240474112,
+            "base": 4233134080,
             "range": 16384,
             "enabled": true,
             "access": "read_write",
@@ -3117,7 +3330,7 @@
           },
           {
             "type": "mem",
-            "base": 4240441344,
+            "base": 4233101312,
             "range": 32768,
             "enabled": true,
             "access": "read_write",
@@ -3161,23 +3374,27 @@
           "value": 3
         },
         "vendor": {
-          "hex": "1002",
-          "name": "ATI Technologies Inc",
-          "value": 4098
+          "hex": "10de",
+          "name": "nVidia Corporation",
+          "value": 4318
         },
         "sub_vendor": {
-          "hex": "1043",
-          "value": 4163
+          "hex": "3842",
+          "value": 14402
         },
         "device": {
-          "hex": "aaf0",
-          "value": 43760
+          "hex": "10ef",
+          "value": 4335
         },
         "sub_device": {
-          "hex": "aaf0",
-          "value": 43760
+          "hex": "6390",
+          "value": 25488
         },
-        "model": "ATI Multimedia controller",
+        "revision": {
+          "hex": "00a1",
+          "value": 161
+        },
+        "model": "nVidia Multimedia controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:01.1/0000:01:00.1",
         "sysfs_bus_id": "0000:01:00.1",
         "resources": [
@@ -3189,7 +3406,7 @@
           },
           {
             "type": "mem",
-            "base": 4243980288,
+            "base": 4228382720,
             "range": 16384,
             "enabled": true,
             "access": "read_write",
@@ -3198,7 +3415,7 @@
         ],
         "detail": {
           "function": 1,
-          "command": 1030,
+          "command": 6,
           "header_type": 0,
           "secondary_bus": 0,
           "irq": 60,
@@ -3208,11 +3425,11 @@
         "driver_module": "snd_hda_intel",
         "drivers": ["snd_hda_intel"],
         "driver_modules": ["snd_hda_intel"],
-        "module_alias": "pci:v00001002d0000AAF0sv00001043sd0000AAF0bc04sc03i00"
+        "module_alias": "pci:v000010DEd000010EFsv00003842sd00006390bc04sc03i00"
       },
       {
-        "index": 47,
-        "attached_to": 58,
+        "index": 48,
+        "attached_to": 59,
         "class_list": ["sound", "usb"],
         "bus_type": {
           "hex": "0086",
@@ -3311,8 +3528,8 @@
         "module_alias": "usb:v046Dp082Dd0011dcEFdsc02dp01ic01isc02ip00in03"
       },
       {
-        "index": 56,
-        "attached_to": 58,
+        "index": 57,
+        "attached_to": 59,
         "class_list": ["sound", "usb"],
         "bus_type": {
           "hex": "0086",
@@ -3467,7 +3684,7 @@
           },
           {
             "type": "mem",
-            "base": 4242538496,
+            "base": 4235198464,
             "range": 524288,
             "enabled": false,
             "access": "read_only",
@@ -3475,7 +3692,7 @@
           },
           {
             "type": "mem",
-            "base": 4243062784,
+            "base": 4235722752,
             "range": 131072,
             "enabled": true,
             "access": "read_write",
@@ -3502,8 +3719,8 @@
     },
     "usb": [
       {
-        "index": 51,
-        "attached_to": 58,
+        "index": 52,
+        "attached_to": 59,
         "class_list": ["usb", "unknown"],
         "bus_type": {
           "hex": "0086",
@@ -3586,8 +3803,8 @@
         "module_alias": "usb:v04D9pA131d0106dc00dsc00dp00ic03isc00ip00in03"
       },
       {
-        "index": 54,
-        "attached_to": 58,
+        "index": 55,
+        "attached_to": 59,
         "class_list": ["usb", "unknown"],
         "bus_type": {
           "hex": "0086",
@@ -3670,8 +3887,8 @@
         "module_alias": "usb:v04D9pA131d0106dc00dsc00dp00ic03isc00ip00in01"
       },
       {
-        "index": 57,
-        "attached_to": 55,
+        "index": 58,
+        "attached_to": 56,
         "class_list": ["usb", "unknown"],
         "bus_type": {
           "hex": "0086",
@@ -3758,8 +3975,8 @@
         "module_alias": "usb:v26CEp01A2d0000dc00dsc00dp00ic03isc00ip00in00"
       },
       {
-        "index": 59,
-        "attached_to": 58,
+        "index": 60,
+        "attached_to": 59,
         "class_list": ["usb", "unknown"],
         "bus_type": {
           "hex": "0086",
@@ -3913,7 +4130,7 @@
           },
           {
             "type": "mem",
-            "base": 4238344192,
+            "base": 4231004160,
             "range": 1048576,
             "enabled": true,
             "access": "read_write",
@@ -3990,7 +4207,7 @@
           },
           {
             "type": "mem",
-            "base": 4243193856,
+            "base": 4235853824,
             "range": 32768,
             "enabled": true,
             "access": "read_write",
@@ -4067,7 +4284,7 @@
           },
           {
             "type": "mem",
-            "base": 4237295616,
+            "base": 4229955584,
             "range": 1048576,
             "enabled": true,
             "access": "read_write",
