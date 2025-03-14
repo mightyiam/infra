@@ -2893,7 +2893,7 @@
           "[13]",
           "[14]"
         ],
-        "bogo": 8982.53,
+        "bogo": 8982.52,
         "cache": 1024,
         "units": 32,
         "physical_id": 0,
@@ -2915,7 +2915,7 @@
     "disk": [
       {
         "index": 93,
-        "attached_to": 41,
+        "attached_to": 53,
         "class_list": ["disk", "block_device", "nvme"],
         "bus_type": {
           "hex": "0096",
@@ -2953,24 +2953,24 @@
           "hex": "a801",
           "value": 43009
         },
-        "serial": "S649NF0R636466Z",
+        "serial": "S649NF0R636457L",
         "model": "Samsung SSD 980 1TB",
         "sysfs_id": "/class/block/nvme0n1",
         "sysfs_bus_id": "nvme0",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:08.0/0000:07:00.0/0000:08:00.0/0000:09:00.0/nvme/nvme0",
+        "sysfs_device_link": "/devices/pci0000:00/0000:00:02.2/0000:13:00.0/nvme/nvme0",
         "unix_device_name": "/dev/nvme0n1",
         "unix_device_number": {
           "type": 98,
           "major": 259,
-          "minor": 0,
+          "minor": 1,
           "range": 0
         },
         "unix_device_names": [
-          "/dev/disk/by-diskseq/1",
-          "/dev/disk/by-id/nvme-Samsung_SSD_980_1TB_S649NF0R636466Z",
-          "/dev/disk/by-id/nvme-Samsung_SSD_980_1TB_S649NF0R636466Z_1",
-          "/dev/disk/by-id/nvme-eui.002538d611b13723",
-          "/dev/disk/by-path/pci-0000:09:00.0-nvme-1",
+          "/dev/disk/by-diskseq/2",
+          "/dev/disk/by-id/nvme-Samsung_SSD_980_1TB_S649NF0R636457L",
+          "/dev/disk/by-id/nvme-Samsung_SSD_980_1TB_S649NF0R636457L_1",
+          "/dev/disk/by-id/nvme-eui.002538d611b1371a",
+          "/dev/disk/by-path/pci-0000:13:00.0-nvme-1",
           "/dev/nvme0n1"
         ],
         "resources": [
@@ -2996,7 +2996,7 @@
       },
       {
         "index": 94,
-        "attached_to": 53,
+        "attached_to": 41,
         "class_list": ["disk", "block_device", "nvme"],
         "bus_type": {
           "hex": "0096",
@@ -3034,24 +3034,24 @@
           "hex": "a801",
           "value": 43009
         },
-        "serial": "S649NF0R636457L",
+        "serial": "S649NF0R636466Z",
         "model": "Samsung SSD 980 1TB",
         "sysfs_id": "/class/block/nvme1n1",
         "sysfs_bus_id": "nvme1",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:02.2/0000:13:00.0/nvme/nvme1",
+        "sysfs_device_link": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:08.0/0000:07:00.0/0000:08:00.0/0000:09:00.0/nvme/nvme1",
         "unix_device_name": "/dev/nvme1n1",
         "unix_device_number": {
           "type": 98,
           "major": 259,
-          "minor": 1,
+          "minor": 0,
           "range": 0
         },
         "unix_device_names": [
-          "/dev/disk/by-diskseq/2",
-          "/dev/disk/by-id/nvme-Samsung_SSD_980_1TB_S649NF0R636457L",
-          "/dev/disk/by-id/nvme-Samsung_SSD_980_1TB_S649NF0R636457L_1",
-          "/dev/disk/by-id/nvme-eui.002538d611b1371a",
-          "/dev/disk/by-path/pci-0000:13:00.0-nvme-1",
+          "/dev/disk/by-diskseq/1",
+          "/dev/disk/by-id/nvme-Samsung_SSD_980_1TB_S649NF0R636466Z",
+          "/dev/disk/by-id/nvme-Samsung_SSD_980_1TB_S649NF0R636466Z_1",
+          "/dev/disk/by-id/nvme-eui.002538d611b13723",
+          "/dev/disk/by-path/pci-0000:09:00.0-nvme-1",
           "/dev/nvme1n1"
         ],
         "resources": [
@@ -3219,7 +3219,7 @@
           },
           {
             "type": "irq",
-            "base": 128,
+            "base": 45,
             "triggered": 0,
             "enabled": true
           },
@@ -3261,7 +3261,7 @@
           "command": 1031,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 128,
+          "irq": 45,
           "prog_if": 0
         },
         "driver": "amdgpu",
@@ -3333,7 +3333,7 @@
           },
           {
             "type": "irq",
-            "base": 98,
+            "base": 46,
             "triggered": 0,
             "enabled": true
           },
@@ -3367,7 +3367,7 @@
           "command": 1031,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 98,
+          "irq": 46,
           "prog_if": 0
         },
         "driver": "amdgpu",
@@ -3398,7 +3398,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.11 xhci-hcd",
+          "name": "Linux 6.12.18 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -3412,7 +3412,7 @@
           "value": 0
         },
         "serial": "0000:14:00.3",
-        "model": "Linux 6.12.11 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.12.18 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:14:00.3/usb6/6-0:1.0",
         "sysfs_bus_id": "6-0:1.0",
         "detail": {
@@ -3466,7 +3466,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.11 xhci-hcd",
+          "name": "Linux 6.12.18 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -3480,7 +3480,7 @@
           "value": 0
         },
         "serial": "0000:11:00.0",
-        "model": "Linux 6.12.11 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.12.18 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:0c.0/0000:11:00.0/usb3/3-0:1.0",
         "sysfs_bus_id": "3-0:1.0",
         "resources": [
@@ -3544,7 +3544,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.11 xhci-hcd",
+          "name": "Linux 6.12.18 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -3558,7 +3558,7 @@
           "value": 0
         },
         "serial": "0000:14:00.4",
-        "model": "Linux 6.12.11 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.12.18 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:14:00.4/usb7/7-0:1.0",
         "sysfs_bus_id": "7-0:1.0",
         "resources": [
@@ -3622,7 +3622,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.11 xhci-hcd",
+          "name": "Linux 6.12.18 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -3636,7 +3636,7 @@
           "value": 0
         },
         "serial": "0000:15:00.0",
-        "model": "Linux 6.12.11 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.12.18 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:08.3/0000:15:00.0/usb10/10-0:1.0",
         "sysfs_bus_id": "10-0:1.0",
         "detail": {
@@ -3688,7 +3688,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.11 xhci-hcd",
+          "name": "Linux 6.12.18 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -3702,7 +3702,7 @@
           "value": 0
         },
         "serial": "0000:11:00.0",
-        "model": "Linux 6.12.11 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.12.18 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:0c.0/0000:11:00.0/usb4/4-0:1.0",
         "sysfs_bus_id": "4-0:1.0",
         "detail": {
@@ -3756,7 +3756,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.11 xhci-hcd",
+          "name": "Linux 6.12.18 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -3770,7 +3770,7 @@
           "value": 0
         },
         "serial": "0000:14:00.4",
-        "model": "Linux 6.12.11 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.12.18 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:14:00.4/usb8/8-0:1.0",
         "sysfs_bus_id": "8-0:1.0",
         "detail": {
@@ -3824,7 +3824,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.11 xhci-hcd",
+          "name": "Linux 6.12.18 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -3838,7 +3838,7 @@
           "value": 0
         },
         "serial": "0000:0f:00.0",
-        "model": "Linux 6.12.11 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.12.18 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:08.0/0000:07:00.0/0000:08:0c.0/0000:0f:00.0/usb1/1-0:1.0",
         "sysfs_bus_id": "1-0:1.0",
         "resources": [
@@ -3902,7 +3902,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.11 xhci-hcd",
+          "name": "Linux 6.12.18 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -3916,7 +3916,7 @@
           "value": 0
         },
         "serial": "0000:14:00.3",
-        "model": "Linux 6.12.11 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.12.18 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:14:00.3/usb5/5-0:1.0",
         "sysfs_bus_id": "5-0:1.0",
         "resources": [
@@ -3980,7 +3980,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.11 xhci-hcd",
+          "name": "Linux 6.12.18 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -3994,7 +3994,7 @@
           "value": 0
         },
         "serial": "0000:15:00.0",
-        "model": "Linux 6.12.11 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.12.18 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:08.3/0000:15:00.0/usb9/9-0:1.0",
         "sysfs_bus_id": "9-0:1.0",
         "resources": [
@@ -4058,7 +4058,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.11 xhci-hcd",
+          "name": "Linux 6.12.18 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -4072,7 +4072,7 @@
           "value": 0
         },
         "serial": "0000:0f:00.0",
-        "model": "Linux 6.12.11 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.12.18 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:08.0/0000:07:00.0/0000:08:0c.0/0000:0f:00.0/usb2/2-0:1.0",
         "sysfs_bus_id": "2-0:1.0",
         "detail": {
@@ -4149,18 +4149,18 @@
         "model": "Holtek Microelectronics USB-HID Keyboard",
         "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:08.0/0000:07:00.0/0000:08:0c.0/0000:0f:00.0/usb1/1-4/1-4:1.0",
         "sysfs_bus_id": "1-4:1.0",
-        "unix_device_name": "/dev/input/event4",
+        "unix_device_name": "/dev/input/event5",
         "unix_device_number": {
           "type": 99,
           "major": 13,
-          "minor": 68,
+          "minor": 69,
           "range": 1
         },
         "unix_device_names": [
           "/dev/input/by-id/usb-HOLTEK_USB-HID_Keyboard-event-kbd",
           "/dev/input/by-path/pci-0000:0f:00.0-usb-0:4:1.0-event-kbd",
           "/dev/input/by-path/pci-0000:0f:00.0-usbv2-0:4:1.0-event-kbd",
-          "/dev/input/event4"
+          "/dev/input/event5"
         ],
         "resources": [
           {
@@ -4231,7 +4231,7 @@
           {
             "type": "mem",
             "base": 0,
-            "range": 134151299072,
+            "range": 134172258304,
             "enabled": true,
             "access": "read_write",
             "prefetch": "unknown"
@@ -5038,7 +5038,7 @@
           },
           {
             "type": "irq",
-            "base": 127,
+            "base": 129,
             "triggered": 0,
             "enabled": true
           },
@@ -5141,7 +5141,7 @@
           "command": 1030,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 127,
+          "irq": 129,
           "prog_if": 0
         },
         "driver": "mt7921e",
@@ -5154,25 +5154,6 @@
     "network_interface": [
       {
         "index": 142,
-        "attached_to": 0,
-        "class_list": ["network_interface"],
-        "base_class": {
-          "hex": "0107",
-          "name": "Network Interface",
-          "value": 263
-        },
-        "sub_class": {
-          "hex": "0000",
-          "name": "Loopback",
-          "value": 0
-        },
-        "model": "Loopback network interface",
-        "sysfs_id": "/class/net/lo",
-        "unix_device_name": "lo",
-        "unix_device_names": ["lo"]
-      },
-      {
-        "index": 143,
         "attached_to": 57,
         "class_list": ["network_interface"],
         "base_class": {
@@ -5206,7 +5187,7 @@
         "driver_modules": ["mt7921e"]
       },
       {
-        "index": 144,
+        "index": 143,
         "attached_to": 0,
         "class_list": ["network_interface"],
         "base_class": {
@@ -5235,6 +5216,25 @@
         ],
         "driver": "vboxnet",
         "drivers": ["vboxnet"]
+      },
+      {
+        "index": 144,
+        "attached_to": 0,
+        "class_list": ["network_interface"],
+        "base_class": {
+          "hex": "0107",
+          "name": "Network Interface",
+          "value": 263
+        },
+        "sub_class": {
+          "hex": "0000",
+          "name": "Loopback",
+          "value": 0
+        },
+        "model": "Loopback network interface",
+        "sysfs_id": "/class/net/lo",
+        "unix_device_name": "lo",
+        "unix_device_names": ["lo"]
       },
       {
         "index": 145,
@@ -5319,7 +5319,7 @@
         "resources": [
           {
             "type": "irq",
-            "base": 115,
+            "base": 117,
             "triggered": 0,
             "enabled": true
           },
@@ -5345,7 +5345,7 @@
           "command": 1030,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 115,
+          "irq": 117,
           "prog_if": 0
         },
         "driver": "ccp",
@@ -5525,7 +5525,7 @@
         "resources": [
           {
             "type": "irq",
-            "base": 124,
+            "base": 126,
             "triggered": 0,
             "enabled": true
           },
@@ -5543,7 +5543,7 @@
           "command": 1030,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 124,
+          "irq": 126,
           "prog_if": 0
         },
         "driver": "snd_hda_intel",
@@ -5598,7 +5598,7 @@
         "resources": [
           {
             "type": "irq",
-            "base": 126,
+            "base": 128,
             "triggered": 0,
             "enabled": true
           },
@@ -5616,7 +5616,7 @@
           "command": 1030,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 126,
+          "irq": 128,
           "prog_if": 0
         },
         "driver": "snd_hda_intel",
@@ -7281,7 +7281,7 @@
         "resources": [
           {
             "type": "irq",
-            "base": 72,
+            "base": 75,
             "triggered": 0,
             "enabled": true
           },
@@ -7307,7 +7307,7 @@
           "command": 1030,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 72,
+          "irq": 75,
           "prog_if": 1
         },
         "driver": "ahci",
@@ -7371,7 +7371,7 @@
         "resources": [
           {
             "type": "irq",
-            "base": 71,
+            "base": 74,
             "triggered": 0,
             "enabled": true
           },
@@ -7397,7 +7397,7 @@
           "command": 1030,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 71,
+          "irq": 74,
           "prog_if": 1
         },
         "driver": "ahci",
@@ -8246,18 +8246,18 @@
         "model": "Logitech G502 X",
         "sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:14:00.4/usb7/7-2/7-2:1.1",
         "sysfs_bus_id": "7-2:1.1",
-        "unix_device_name": "/dev/input/event1",
+        "unix_device_name": "/dev/input/event2",
         "unix_device_number": {
           "type": 99,
           "major": 13,
-          "minor": 65,
+          "minor": 66,
           "range": 1
         },
         "unix_device_names": [
           "/dev/input/by-id/usb-Logitech_G502_X_206236903530-if01-event-kbd",
           "/dev/input/by-path/pci-0000:14:00.4-usb-0:2:1.1-event-kbd",
           "/dev/input/by-path/pci-0000:14:00.4-usbv2-0:2:1.1-event-kbd",
-          "/dev/input/event1"
+          "/dev/input/event2"
         ],
         "resources": [
           {
@@ -8351,12 +8351,7 @@
           "minor": 67,
           "range": 1
         },
-        "unix_device_names": [
-          "/dev/input/by-id/usb-Kingston_HyperX_Virtual_Surround_Sound_00000000-event-if03",
-          "/dev/input/by-path/pci-0000:14:00.3-usb-0:1:1.3-event",
-          "/dev/input/by-path/pci-0000:14:00.3-usbv2-0:1:1.3-event",
-          "/dev/input/event3"
-        ],
+        "unix_device_names": ["/dev/input/event3"],
         "resources": [
           {
             "type": "baud",
@@ -8707,7 +8702,7 @@
         "resources": [
           {
             "type": "irq",
-            "base": 89,
+            "base": 92,
             "triggered": 0,
             "enabled": true
           },
@@ -8725,7 +8720,7 @@
           "command": 1031,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 89,
+          "irq": 92,
           "prog_if": 48
         },
         "driver": "xhci_hcd",
@@ -8949,7 +8944,7 @@
         "resources": [
           {
             "type": "irq",
-            "base": 98,
+            "base": 46,
             "triggered": 0,
             "enabled": true
           },
@@ -8967,7 +8962,7 @@
           "command": 1031,
           "header_type": 0,
           "secondary_bus": 0,
-          "irq": 98,
+          "irq": 46,
           "prog_if": 48
         },
         "driver": "xhci_hcd",
@@ -9060,8 +9055,8 @@
     "bios": {
       "handle": 0,
       "vendor": "American Megatrends Inc.",
-      "version": "2401",
-      "date": "09/12/2024",
+      "version": "2806",
+      "date": "02/13/2025",
       "features": [
         "PCI supported",
         "BIOS flashable",
