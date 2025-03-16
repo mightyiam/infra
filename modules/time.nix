@@ -1,7 +1,7 @@
 {
   flake.modules =
     let
-      timeZone = "Asia/Bangkok";
+      timeZone = "Atlantic/Canary";
     in
     {
       nixos.desktop.services.ntpd-rs.enable = true;
