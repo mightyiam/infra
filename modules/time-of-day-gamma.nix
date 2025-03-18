@@ -5,6 +5,6 @@
     latitude = toString config.location.latitude;
     longitude = toString config.location.longitude;
     temperature.day = 6500;
-    temperature.night = 4000;
+    temperature.night = 3000;
   };
 }
