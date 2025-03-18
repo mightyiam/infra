@@ -34,6 +34,7 @@
           curl
           ethtool
           gping
+          inetutils
         ];
       };
   };
