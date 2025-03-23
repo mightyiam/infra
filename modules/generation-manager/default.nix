@@ -10,7 +10,7 @@
         useFetchCargoVendor = true;
         cargoHash = "sha256-/LzxXS0SEyarigor0yXvb4rUbig1qS5p9BOef5/4blw=";
       };
-      devshells.generation-manager.devshell = {
+      devshells.rust.devshell = {
         packages = with pkgs; [
           cargo
           clippy

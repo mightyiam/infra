@@ -1,0 +1,9 @@
+[package]
+name = "store-link-helper"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "store-link"
+
+[dependencies]
