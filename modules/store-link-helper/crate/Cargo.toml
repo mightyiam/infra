@@ -5,5 +5,7 @@ edition = "2024"
 
 [[bin]]
 name = "store-link"
+path = "src/main.rs"
 
 [dependencies]
+clap = { version = "4.5.32", features = ["derive"] }

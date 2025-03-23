@@ -1,7 +1,7 @@
 { config, ... }:
 {
   perSystem =
-    psArgs@{ pkgs, ... }:
+    { pkgs, ... }:
     {
       packages.store-link-helper = pkgs.rustPlatform.buildRustPackage {
         pname = "store-link-helper";
@@ -19,7 +19,8 @@
           rustc
         ];
         packagesFrom = [
-          psArgs.config.packages.store-link-helper
+          # > error: collision between `/nix/store/<hash>-cargo-1.84.1/bin/cargo' and `/nix/store/<hash>-auditable-cargo-1.84.1/bin/cargo'
+          # psArgs.config.packages.store-link-helper
         ];
       };
     };
