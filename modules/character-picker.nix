@@ -7,9 +7,7 @@
       ...
     }:
     let
-      rofimoji = pkgs.rofimoji.override {
-        rofi = pkgs.rofi-wayland;
-      };
+      rofimoji = pkgs.rofimoji;
     in
     {
       home.packages = [ rofimoji ];
