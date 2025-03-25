@@ -1,9 +1,22 @@
+{ lib, ... }:
 {
-  # cd from worktree into clone
-  flake.modules.homeManager.base.programs.zsh.initExtra = ''
-    git-cd () {
-      git_dir="$(git rev-parse --git-dir)"
-      cd "''${git_dir%/*/*}"
-    }
-  '';
+  flake.modules.homeManager.base.programs.zsh.initExtra = lib.mkMerge [
+    # cd from worktree into clone
+    ''
+      git-cd () {
+        git_dir="$(git rev-parse --git-dir)"
+        cd "''${git_dir%/*/*}"
+      }
+    ''
+
+    # create a new worktree by name and cd into it
+    ''
+      worktree-add () {
+        cd "$HOME/clones/$1" && \
+        worktree_path="$HOME/worktrees/$1/$2" && \
+        git --bare worktree add "$worktree_path" && \
+        cd "$worktree_path"
+      }
+    ''
+  ];
 }
