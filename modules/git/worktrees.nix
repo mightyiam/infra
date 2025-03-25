@@ -12,8 +12,8 @@
     # create a new worktree by name and cd into it
     ''
       worktree-add () {
-        cd "$HOME/clones/$1" && \
-        worktree_path="$HOME/worktrees/$1/$2" && \
+        cd "$1" && \
+        worktree_path="$HOME/worktrees/$2" && \
         git --bare worktree add "$worktree_path" && \
         cd "$worktree_path"
       }
