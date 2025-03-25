@@ -16,7 +16,21 @@
         yazi = {
           enable = true;
           enableZshIntegration = true;
-          settings.manager.show_hidden = true;
+          settings = {
+            manager.show_hidden = true;
+            open.rules = [
+              {
+                mime = "*";
+                use = "open";
+              }
+            ];
+            opener.open = [
+              {
+                run = ''xdg-open "$@"'';
+                desc = "Open";
+              }
+            ];
+          };
         };
         bat.enable = true;
       };
