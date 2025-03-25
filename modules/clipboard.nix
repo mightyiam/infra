@@ -36,6 +36,10 @@
           "--no-repeat ${mod}+p" = "exec ${lib.getExe rofi-cliphist} copy";
           "--no-repeat ${mod}+Shift+p" = "exec ${lib.getExe rofi-cliphist} type";
         };
+
+        home.packages = with pkgs; [
+          wl-clipboard
+        ];
       };
 
     nixvim.astrea.clipboard.register = "unnamedplus";

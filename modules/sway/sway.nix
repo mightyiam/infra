@@ -53,7 +53,6 @@
         xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-wlr ];
 
         home.packages = with pkgs; [
-          wl-clipboard
           wl-color-picker
           xdg-utils
         ];
