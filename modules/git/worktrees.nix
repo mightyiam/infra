@@ -14,7 +14,7 @@
       worktree-add () {
         cd "$1" && \
         worktree_path="$HOME/worktrees/$2" && \
-        git --bare worktree add "$worktree_path" && \
+        git --bare worktree add --detach "$worktree_path" && \
         cd "$worktree_path"
       }
     ''
