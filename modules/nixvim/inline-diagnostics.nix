@@ -1,16 +1,11 @@
 { lib, ... }:
 {
   flake.modules.nixvim.astrea = {
+    diagnostics = {
+      virtual_lines = false;
+      virtual_text = true;
+    };
     plugins = {
-      lsp-lines = {
-        enable = true;
-        luaConfig.post = ''
-          vim.diagnostic.config({
-            virtual_lines = false,
-            virtual_text = true,
-          })
-        '';
-      };
       lsp.keymaps.extra = [
         {
           key = "<leader>l";
