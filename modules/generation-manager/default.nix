@@ -10,7 +10,7 @@
         useFetchCargoVendor = true;
         cargoHash = "sha256-/LzxXS0SEyarigor0yXvb4rUbig1qS5p9BOef5/4blw=";
       };
-      devshells.generation-manager.devshell = {
+      make-shells.generation-manager = {
         packages = with pkgs; [
           cargo
           clippy
@@ -18,7 +18,7 @@
           rust-analyzer
           rustc
         ];
-        packagesFrom = [
+        inputsFrom = [
           # > error: collision between `/nix/store/<hash>-cargo-1.84.1/bin/cargo' and `/nix/store/<hash>-auditable-cargo-1.84.1/bin/cargo'
           # self'.packages.generation-manager
         ];

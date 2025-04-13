@@ -1,6 +1,6 @@
 { inputs, lib, ... }:
 {
-  imports = [ inputs.devshell.flakeModule ];
+  imports = [ inputs.make-shell.flakeModules.default ];
   perSystem =
     { self', ... }:
     {

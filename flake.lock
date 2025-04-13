@@ -51,6 +51,7 @@
     "devshell": {
       "inputs": {
         "nixpkgs": [
+          "sink-rotate",
           "nixpkgs"
         ]
       },
@@ -208,6 +209,26 @@
         "owner": "NuschtOS",
         "ref": "v0.0.6",
         "repo": "ixx",
+        "type": "github"
+      }
+    },
+    "make-shell": {
+      "inputs": {
+        "flake-compat": [
+          "flake-compat"
+        ]
+      },
+      "locked": {
+        "lastModified": 1733933815,
+        "narHash": "sha256-9JjM7eT66W4NJAXpGUsdyAFXhBxFWR2Z9LZwUa7Hli0=",
+        "owner": "nicknovitski",
+        "repo": "make-shell",
+        "rev": "ffeceae9956df03571ea8e96ef77c2924f13a63c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nicknovitski",
+        "repo": "make-shell",
         "type": "github"
       }
     },
@@ -425,11 +446,11 @@
         "catppuccin": "catppuccin",
         "catppuccin-qutebrowser": "catppuccin-qutebrowser",
         "cpu-microcodes": "cpu-microcodes",
-        "devshell": "devshell",
         "flake-compat": "flake-compat",
         "flake-parts": "flake-parts",
         "git-hooks": "git-hooks",
         "home-manager": "home-manager",
+        "make-shell": "make-shell",
         "nix-index-database": "nix-index-database",
         "nix-on-droid": "nix-on-droid",
         "nixos-facter-modules": "nixos-facter-modules",
@@ -463,9 +484,7 @@
     },
     "sink-rotate": {
       "inputs": {
-        "devshell": [
-          "devshell"
-        ],
+        "devshell": "devshell",
         "flake-parts": [
           "flake-parts"
         ],

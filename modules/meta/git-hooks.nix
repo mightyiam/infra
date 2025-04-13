@@ -4,7 +4,7 @@
   perSystem =
     { config, ... }:
     {
-      devshells.default.devshell.startup.git-hooks.text = config.pre-commit.installationScript;
+      make-shells.default.shellHook = config.pre-commit.installationScript;
       pre-commit.check.enable = false;
     };
 }
