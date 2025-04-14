@@ -10,6 +10,7 @@
     home-manager = {
       useGlobalPkgs = true;
       extraSpecialArgs.hasGlobalPkgs = true;
+      useUserPackages = true;
 
       users.${config.flake.meta.owner.username}.imports = [
         (
