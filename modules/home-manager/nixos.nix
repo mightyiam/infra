@@ -10,7 +10,8 @@
     home-manager = {
       useGlobalPkgs = true;
       extraSpecialArgs.hasGlobalPkgs = true;
-      useUserPackages = true;
+      # https://github.com/nix-community/home-manager/issues/6770
+      #useUserPackages = true;
 
       users.${config.flake.meta.owner.username}.imports = [
         (
