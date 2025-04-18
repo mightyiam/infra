@@ -9,7 +9,7 @@
 File paths convey what the contents mean to me, as opposed to adhering to a mechanism's design.
 Because each file, being a flake-parts module, can declare any number of nested modules (e.g. NixOS, home-manager, nixvim).
 Thus, a single file can implement cross-cutting concerns.
-For example, see the [`time`](modules/time.nix), [`ssh`](modules/ssh.nix), [`languages/rust`](modules/languages/rust.nix), and [`catppuccin`](modules.catppuccin.nix) modules.
+For example, see the [`time`](modules/time.nix), [`ssh`](modules/ssh.nix), [`languages/rust`](modules/languages/rust.nix), and [`catppuccin`](modules/catppuccin.nix) modules.
 
 I have previously threaded `self` once from the flake-parts evaluation through to NixOS evaluation and a second time deeper into home-manager evaluation.
 Instead, in this pattern, the flake-parts `config` can always be in scope when needed.
