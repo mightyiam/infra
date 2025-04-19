@@ -23,7 +23,7 @@
       };
     };
 
-  flake.modules.nixos.desktop =
+  flake.modules.nixos.mobile-device =
     { pkgs, ... }:
     {
       boot.initrd.preDeviceCommands = lib.getExe config.flake.packages.${pkgs.stdenv.system}.boot-message;
