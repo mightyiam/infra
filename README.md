@@ -30,7 +30,8 @@ This means files can be moved around and nested in directories freely.
 
 ## Named modules as needed
 
-_Named modules_ are modules under the [`flake.modules`](https://flake.parts/options/flake-parts-modules.html) option.
+> [!NOTE]
+> Named modules are modules under the [`flake.modules`](https://flake.parts/options/flake-parts-modules.html) option.
 
 I was once tempted to name them with great granularity, as to for example have `flake.modules.nixos.fonts`.
 Such granularity would result in a great number of named modules.
