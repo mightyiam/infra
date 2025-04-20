@@ -47,3 +47,16 @@ So what is the test for whether a certain set of option values deserves a distin
 It is whether that named module will (_today_ not tomorrow) be imported in some modules and not in others.
 An example of a set of option values that deserve a distinct named module is `flake.modules.nixos.mobile-device`
 because it is imported by laptop configurations and not by desktop configurations.
+
+## Unfree packages
+
+What Nixpkgs unfree packages are allowed is configured at the flake level via an option.
+That is then used in the configuration of Nixpkgs used in NixOS, home-manager or elsewhere.
+See definition at [`unfree-packages.nix`](modules/unfree-packages.nix).
+See usage at [`steam.nix`](modules/steam.nix).
+Value of this option available as flake output:
+
+```console
+$ nix eval .#meta.nixpkgs.allowedUnfreePackages
+[ "steam" "steam-unwrapped" "nvidia-x11" "nvidia-settings" ]
+```
