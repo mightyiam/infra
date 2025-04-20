@@ -7,13 +7,16 @@
         name = "boot-message";
         text =
           let
-            message = lib.escapeShellArg ''
-              If found, please contact:
-              Shahar "Dawn" Or
-              +66613657506
-              mightyiampresence@gmail.com
-              @mightyiam:matrix.org
-            '';
+            message = lib.escapeShellArg (
+              with config.flake.meta.owner;
+              ''
+                If found, please contact:
+                ${name}
+                ${phone}
+                ${email}
+                ${matrix}
+              ''
+            );
           in
           ''echo -e ${message} | boxes --design weave | lolcat --seed 38 --force'';
         runtimeInputs = [
