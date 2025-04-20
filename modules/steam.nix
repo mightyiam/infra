@@ -1,5 +1,5 @@
 {
-  nixpkgs.allowUnfreePackages = [
+  nixpkgs.allowedUnfreePackages = [
     "steam"
     "steam-unwrapped"
   ];
