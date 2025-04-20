@@ -7,11 +7,11 @@
 ## Every Nix file is a [flake-parts](https://flake.parts) module
 
 File paths convey what the contents mean to me, as opposed to adhering to a mechanism's design.
-Because each file, being a flake-parts module, can declare any number of nested modules (e.g. NixOS, home-manager, nixvim).
+Because each file, being a flake-parts module, can declare any number of nested modules (e.g. NixOS, Home Manager, NixVim).
 Thus, a single file can implement cross-cutting concerns.
 For example, see the [`time`](modules/time.nix), [`ssh`](modules/ssh.nix), [`languages/rust`](modules/languages/rust.nix), and [`catppuccin`](modules/catppuccin.nix) modules.
 
-I have previously threaded `self` once from the flake-parts evaluation through to NixOS evaluation and a second time deeper into home-manager evaluation.
+I have previously threaded `self` once from the flake-parts evaluation through to NixOS evaluation and a second time deeper into Home Manager evaluation.
 Instead, in this pattern, the flake-parts `config` can always be in scope when needed.
 
 ## Configurations are declared by prefixing a module's name
@@ -51,7 +51,7 @@ because it is imported by laptop configurations and not by desktop configuration
 ## Unfree packages
 
 What Nixpkgs unfree packages are allowed is configured at the flake level via an option.
-That is then used in the configuration of Nixpkgs used in NixOS, home-manager or elsewhere.
+That is then used in the configuration of Nixpkgs used in NixOS, Home Manager or elsewhere.
 See definition at [`unfree-packages.nix`](modules/unfree-packages.nix).
 See usage at [`steam.nix`](modules/steam.nix).
 Value of this option available as flake output:
