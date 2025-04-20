@@ -7,9 +7,6 @@
 ## Every Nix file is a [flake-parts](https://flake.parts) module
 
 > [!NOTE]
-> Some [discussion about this pattern where I shared it](https://discourse.nixos.org/t/pattern-every-file-is-a-flake-parts-module/61271?u=mightyiam).
-
-> [!NOTE]
 > This pattern has been the inspiration of [an auto-imports library, import-tree](https://github.com/vic/import-tree).
 
 File paths convey what the contents mean to me, as opposed to adhering to a mechanism's design.
@@ -19,6 +16,18 @@ For example, see the [`time`](modules/time.nix), [`ssh`](modules/ssh.nix), [`lan
 
 I have previously threaded `self` once from the flake-parts evaluation through to NixOS evaluation and a second time deeper into Home Manager evaluation.
 Instead, in this pattern, the flake-parts `config` can always be in scope when needed.
+
+> Massive, very interesting!
+
+—[drupol](https://discourse.nixos.org/t/pattern-every-file-is-a-flake-parts-module/61271/2?u=mightyiam)
+
+> I adore this idea by @mightyiam of every file is a flake parts module and I think I will adopt it everywhere.
+
+—[Daniel Firth](https://x.com/locallycompact/status/1909188620038046038)
+
+> I’ve adopted your method. Really preferring it.
+
+—[gerred](https://x.com/devgerred/status/1909206297532117469)
 
 ## Configurations are declared by prefixing a module's name
 
