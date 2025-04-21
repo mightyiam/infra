@@ -19,6 +19,7 @@
         home.packages = [ package ];
 
         xdg.configFile."neovide/config.toml".source = pkgs.writers.writeTOML "neovide/config.toml" {
+          box-drawing.mode = "native";
           transparency = config.style.windowOpacity;
           cursor_animation_length = 8.0e-2;
           cursor_vfx_mode = "railgun";
