@@ -1,6 +1,6 @@
 # Shahar "Dawn" Or (mightyiam)'s personal Nix-powered IT infrastructure repository
 
-> [!IMPORTANT]
+> [!NOTE]
 > If you have any questions or suggestions for me, please use the discussions feature or contact me.
 > I hope you find this helpful.
 
