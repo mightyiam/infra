@@ -37,7 +37,7 @@ All Nix files (they're all flake-parts modules) are automatically imported.
 No literal path imports are used.
 This means files can be moved around and nested in directories freely.
 
-> [!NOTE]
+> [!IMPORTANT]
 > Nix files prefixed with an underscore are ignored.
 
 > [!NOTE]
