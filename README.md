@@ -59,7 +59,7 @@ Second, all modules that would import the `flake.modules.nixos.fonts` would also
 The pattern used instead is that `modules/fonts.nix` defines `flake.modules.nixos.desktop`.
 
 So what is the test for whether a certain set of option values deserves a distinct named module?
-It is whether that named module will (_today_ not tomorrow) be imported in some modules and not in others.
+It is whether that set of option values is to be imported in some configurations and not in others.
 An example of a set of option values that deserve a distinct named module is `flake.modules.nixos.mobile-device`
 because it is imported by laptop configurations and not by desktop configurations.
 
