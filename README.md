@@ -6,9 +6,6 @@
 
 ## Every Nix file is a [flake-parts](https://flake.parts) module
 
-> [!NOTE]
-> This pattern has been the inspiration of [an auto-imports library, import-tree](https://github.com/vic/import-tree).
-
 File paths convey what the contents mean to me, as opposed to adhering to a mechanism's design.
 Because each file, being a flake-parts module, can declare any number of nested modules (e.g. NixOS, Home Manager, NixVim).
 Thus, a single file can implement cross-cutting concerns.
@@ -42,6 +39,9 @@ This means files can be moved around and nested in directories freely.
 
 > [!NOTE]
 > Nix files prefixed with an underscore are ignored.
+
+> [!NOTE]
+> This pattern has been the inspiration of [an auto-imports library, import-tree](https://github.com/vic/import-tree).
 
 ## Named modules as needed
 
