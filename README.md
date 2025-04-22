@@ -8,7 +8,7 @@
 
 > I adore this idea by @mightyiam of every file is a flake parts module and I think I will adopt it everywhere.
 
-—[Daniel Firth](https://x.com/locallycompact/status/1909188620038046038)
+—Daniel Firth ([source](https://x.com/locallycompact/status/1909188620038046038))
 
 File paths convey what the contents mean to me, as opposed to adhering to a mechanism's design.
 Because each file, being a flake-parts module, can declare any number of nested modules (e.g. NixOS, Home Manager, NixVim).
@@ -17,14 +17,14 @@ For example, see the [`time`](modules/time.nix), [`ssh`](modules/ssh.nix), [`lan
 
 > I’ve adopted your method. Really preferring it.
 
-—[gerred](https://x.com/devgerred/status/1909206297532117469)
+—gerred ([source](https://x.com/devgerred/status/1909206297532117469))
 
 I have previously threaded `self` once from the flake-parts evaluation through to NixOS evaluation and a second time deeper into Home Manager evaluation.
 Instead, in this pattern, the flake-parts `config` can always be in scope when needed.
 
 > Massive, very interesting!
 
-—[drupol](https://discourse.nixos.org/t/pattern-every-file-is-a-flake-parts-module/61271/2?u=mightyiam)
+—drupol ([source](https://discourse.nixos.org/t/pattern-every-file-is-a-flake-parts-module/61271/2?u=mightyiam))
 
 ## Configurations are declared by prefixing a module's name
 
