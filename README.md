@@ -77,7 +77,7 @@ $ nix eval .#meta.nixpkgs.allowedUnfreePackages
 ## Refactoring
 
 To help determine whether a Nix change results in changes to derivations,
-a package `.#all-check-store-paths` builds a TOML file silimar to the following:
+a package `.#all-check-store-paths` builds a TOML file that maps from `.#checks`:
 
 ```toml
 default-shell = "/nix/store/9nx7s96vwz2h384zm8las332cbkqdszf-nix-shell"
