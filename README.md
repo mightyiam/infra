@@ -86,4 +86,4 @@ default-shell = "/nix/store/9nx7s96vwz2h384zm8las332cbkqdszf-nix-shell"
 ```
 
 > [!NOTE]
-> This can be found in [`meta/all-check-store-paths`](modules/meta/all-check-store-paths.nix)
+> Implemented in [`meta/all-check-store-paths`](modules/meta/all-check-store-paths.nix)
