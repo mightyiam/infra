@@ -186,6 +186,21 @@
         "type": "github"
       }
     },
+    "import-tree": {
+      "locked": {
+        "lastModified": 1745565707,
+        "narHash": "sha256-ccFeWWQ9RLgCd1k+xwV/ASUkJ7AGTTaGDhlRWZgytxY=",
+        "owner": "vic",
+        "repo": "import-tree",
+        "rev": "ed504db425c363b13f13d5ca52f1a2600c4a7703",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vic",
+        "repo": "import-tree",
+        "type": "github"
+      }
+    },
     "ixx": {
       "inputs": {
         "flake-utils": [
@@ -450,6 +465,7 @@
         "flake-parts": "flake-parts",
         "git-hooks": "git-hooks",
         "home-manager": "home-manager",
+        "import-tree": "import-tree",
         "make-shell": "make-shell",
         "nix-index-database": "nix-index-database",
         "nix-on-droid": "nix-on-droid",

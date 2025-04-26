@@ -41,6 +41,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    import-tree.url = "github:vic/import-tree";
+
     make-shell = {
       url = "github:nicknovitski/make-shell";
       inputs.flake-compat.follows = "flake-compat";
@@ -123,30 +125,12 @@
 
   outputs =
     inputs:
-    let
-      lib = inputs.nixpkgs.lib;
-      modulesPath = ./modules;
-    in
-    inputs.flake-parts.lib.mkFlake
-      {
-        inherit inputs;
-        specialArgs = {
-          lib = lib // {
-            inherit (inputs.nixvim.lib) nixvim;
-          };
+    inputs.flake-parts.lib.mkFlake {
+      inherit inputs;
+      specialArgs = {
+        lib = inputs.nixpkgs.lib // {
+          inherit (inputs.nixvim.lib) nixvim;
         };
-      }
-      {
-        imports =
-          modulesPath
-          |> lib.filesystem.listFilesRecursive
-          |> lib.filter (lib.hasSuffix ".nix")
-          |> lib.filter (
-            path:
-            path
-            |> lib.path.removePrefix modulesPath
-            |> lib.path.subpath.components
-            |> lib.all (component: !(lib.hasPrefix "_" component))
-          );
       };
+    } (inputs.import-tree ./modules);
 }
