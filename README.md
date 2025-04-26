@@ -73,3 +73,17 @@ Value of this option available as flake output:
 $ nix eval .#meta.nixpkgs.allowedUnfreePackages
 [ "steam" "steam-unwrapped" "nvidia-x11" "nvidia-settings" ]
 ```
+
+## Refactoring
+
+To help determine whether a Nix change results in changes to derivations,
+a package `.#all-check-store-paths` builds a TOML file silimar to the following:
+
+```toml
+default-shell = "/nix/store/9nx7s96vwz2h384zm8las332cbkqdszf-nix-shell"
+"nixosConfigurations/termitomyces" = "/nix/store/33iv0fagxiwfbzb81ixypn14vxl6s468-nixos-system-termitomyces-25.05.20250417.ebe4301"
+"packages/nixvim" = "/nix/store/p2rrqir5ig2v4wb3whvb8y0fmdc0kmhk-nixvim"
+```
+
+> [!NOTE]
+> This can be found in [`meta/all-check-store-paths`](modules/meta/all-check-store-paths.nix)
