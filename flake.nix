@@ -11,22 +11,15 @@
       url = "github:platomav/CPUMicrocodes";
     };
 
-    flake-compat.url = "https://flakehub.com/f/edolstra/flake-compat/1.tar.gz";
-
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
 
-    flake-utils = {
-      url = "github:numtide/flake-utils";
-      inputs.systems.follows = "systems";
-    };
-
     git-hooks = {
       url = "github:cachix/git-hooks.nix";
       inputs = {
-        flake-compat.follows = "flake-compat";
+        flake-compat.follows = "dedupe_flake-compat";
         nixpkgs.follows = "nixpkgs";
       };
     };
@@ -40,7 +33,7 @@
 
     make-shell = {
       url = "github:nicknovitski/make-shell";
-      inputs.flake-compat.follows = "flake-compat";
+      inputs.flake-compat.follows = "dedupe_flake-compat";
     };
 
     nix-index-database = {
@@ -67,24 +60,7 @@
       inputs = {
         flake-parts.follows = "flake-parts";
         nixpkgs.follows = "nixpkgs";
-        nuschtosSearch.follows = "nuschtos-search";
-      };
-    };
-
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs = {
-        flake-parts.follows = "flake-parts";
-        nixpkgs.follows = "nixpkgs";
-        treefmt-nix.follows = "treefmt-nix";
-      };
-    };
-
-    nuschtos-search = {
-      url = "github:NuschtOS/search";
-      inputs = {
-        flake-utils.follows = "flake-utils";
-        nixpkgs.follows = "nixpkgs";
+        nuschtosSearch.follows = "dedupe_nuschtos-search";
       };
     };
 
@@ -98,7 +74,7 @@
       inputs = {
         flake-parts.follows = "flake-parts";
         nixpkgs.follows = "nixpkgs";
-        systems.follows = "systems";
+        systems.follows = "dedupe_systems";
         treefmt-nix.follows = "treefmt-nix";
       };
     };
@@ -111,18 +87,16 @@
     stylix = {
       url = "github:danth/stylix";
       inputs = {
-        flake-compat.follows = "flake-compat";
-        flake-utils.follows = "flake-utils";
+        flake-compat.follows = "dedupe_flake-compat";
+        flake-utils.follows = "dedupe_flake-utils";
         git-hooks.follows = "git-hooks";
         home-manager.follows = "home-manager";
         nixpkgs.follows = "nixpkgs";
-        nur.follows = "nur";
-        systems.follows = "systems";
+        nur.follows = "dedupe_nur";
+        systems.follows = "dedupe_systems";
         tinted-schemes.follows = "tinted-schemes";
       };
     };
-
-    systems.url = "github:nix-systems/default";
 
     tinted-schemes = {
       flake = false;
@@ -148,6 +122,35 @@
       flake = false;
       url = "github:MichaelAquilina/zsh-auto-notify";
     };
+  };
+
+  # _additional_ `inputs` only for deduplication
+  inputs = {
+    dedupe_flake-compat.url = "https://flakehub.com/f/edolstra/flake-compat/1.tar.gz";
+
+    dedupe_flake-utils = {
+      url = "github:numtide/flake-utils";
+      inputs.systems.follows = "dedupe_systems";
+    };
+
+    dedupe_nur = {
+      url = "github:nix-community/NUR";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+        treefmt-nix.follows = "treefmt-nix";
+      };
+    };
+
+    dedupe_nuschtos-search = {
+      url = "github:NuschtOS/search";
+      inputs = {
+        flake-utils.follows = "dedupe_flake-utils";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+
+    dedupe_systems.url = "github:nix-systems/default";
   };
 
   outputs =
