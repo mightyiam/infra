@@ -1,6 +1,6 @@
-{ inputs, ... }:
+{ inputs, lib, ... }:
 let
-  polyModule.stylix = {
+  polyModule.stylix = lib.mkDefault {
     base16Scheme = "${inputs.tinted-schemes}/base16/gruvbox-dark-medium.yaml";
     polarity = "dark";
   };
