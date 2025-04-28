@@ -1,7 +1,7 @@
 {
   flake.modules.homeManager.base.programs.zsh = {
     autosuggestion.enable = true;
-    initExtra = ''
+    initContent = ''
       bindkey '^[^M' autosuggest-execute
     '';
   };

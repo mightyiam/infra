@@ -1,7 +1,7 @@
 { lib, ... }:
 {
   flake.modules.nixvim.astrea = {
-    diagnostics = {
+    diagnostic.config = {
       virtual_lines = false;
       virtual_text = true;
     };

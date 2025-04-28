@@ -109,7 +109,7 @@
     };
 
     stylix = {
-      url = "github:danth/stylix/039e938b29ce870ba326be1d60ae6d7c0a58f84e";
+      url = "github:danth/stylix";
       inputs = {
         flake-compat.follows = "flake-compat";
         flake-utils.follows = "flake-utils";

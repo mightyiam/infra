@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.base.programs.zsh.initExtra = ''
+  flake.modules.homeManager.base.programs.zsh.initContent = ''
     bindkey '^w' backward-kill-word
 
     autoload -Uz edit-command-line
