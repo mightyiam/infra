@@ -1,24 +1,15 @@
 {
   flake.modules.homeManager.wife =
     { pkgs, ... }:
-    let
-      firefoxProfile = "primary";
-    in
     {
-      programs = {
-        chromium = {
-          enable = true;
-          package = pkgs.brave;
-        };
-
-        firefox = {
-          enable = true;
-          profiles.${firefoxProfile} = { };
-        };
+      programs.chromium = {
+        enable = true;
+        package = pkgs.brave;
       };
 
-      stylix.targets.firefox.profileNames = [ firefoxProfile ];
-
-      home.packages = [ pkgs.chromium ];
+      home.packages = [
+        pkgs.chromium
+        pkgs.firefox
+      ];
     };
 }
