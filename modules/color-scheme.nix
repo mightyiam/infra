@@ -8,7 +8,12 @@ in
 {
   flake.modules = {
     nixos.desktop = polyModule;
-    homeManager.base = polyModule;
+    homeManager.base = {
+      imports = [ polyModule ];
+
+      # https://github.com/danth/stylix/issues/1183
+      programs.qutebrowser.settings.colors.webpage.darkmode.enabled = false;
+    };
     nixOnDroid.base = polyModule;
     # https://github.com/danth/stylix/pull/415#issuecomment-2832398958
     #nixvim.astrea = polyModule;
