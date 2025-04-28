@@ -6,16 +6,6 @@
   };
 
   inputs = {
-    catppuccin = {
-      # https://github.com/catppuccin/nix/issues/289
-      url = "github:catppuccin/nix/58d020d4c85416e2a75ec820e290d3d5b13b3427";
-    };
-
-    catppuccin-qutebrowser = {
-      flake = false;
-      url = "github:catppuccin/qutebrowser";
-    };
-
     cpu-microcodes = {
       flake = false;
       url = "github:platomav/CPUMicrocodes";
@@ -26,6 +16,11 @@
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+      inputs.systems.follows = "systems";
     };
 
     git-hooks = {
@@ -76,9 +71,19 @@
       };
     };
 
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+        treefmt-nix.follows = "treefmt-nix";
+      };
+    };
+
     nuschtos-search = {
       url = "github:NuschtOS/search";
       inputs = {
+        flake-utils.follows = "flake-utils";
         nixpkgs.follows = "nixpkgs";
       };
     };
@@ -93,6 +98,7 @@
       inputs = {
         flake-parts.follows = "flake-parts";
         nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
         treefmt-nix.follows = "treefmt-nix";
       };
     };
@@ -100,6 +106,27 @@
     smart-scrolloff-nvim = {
       flake = false;
       url = "github:tonymajestro/smart-scrolloff.nvim";
+    };
+
+    stylix = {
+      url = "github:danth/stylix/039e938b29ce870ba326be1d60ae6d7c0a58f84e";
+      inputs = {
+        flake-compat.follows = "flake-compat";
+        flake-utils.follows = "flake-utils";
+        git-hooks.follows = "git-hooks";
+        home-manager.follows = "home-manager";
+        nixpkgs.follows = "nixpkgs";
+        nur.follows = "nur";
+        systems.follows = "systems";
+        tinted-schemes.follows = "tinted-schemes";
+      };
+    };
+
+    systems.url = "github:nix-systems/default";
+
+    tinted-schemes = {
+      flake = false;
+      url = "github:tinted-theming/schemes";
     };
 
     treefmt-nix = {

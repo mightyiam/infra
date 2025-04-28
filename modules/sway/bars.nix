@@ -70,8 +70,8 @@
           statusCommand = "i3status-rs ${config.xdg.configHome}/i3status-rust/config-${id}.toml";
           trayOutput = "none";
           fonts = {
-            names = [ "monospace" ];
-            size = 12.0;
+            names = [ config.stylix.fonts.monospace.name ];
+            size = config.stylix.fonts.sizes.desktop / 1.0;
             style = "Bold";
           };
         }

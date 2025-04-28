@@ -26,8 +26,6 @@
           '';
 
           config = {
-            fonts.size = config.fonts.default.size;
-
             input = {
               "type:keyboard" = {
                 xkb_layout = "us,il";

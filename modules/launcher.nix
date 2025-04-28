@@ -32,10 +32,7 @@
         };
         theme = {
           listview.columns = 1;
-          "*" = {
-            width = 1200;
-            font = "monospace ${config.fonts.monospace.size |> builtins.floor |> toString}";
-          };
+          "*".width = 1200;
         };
       };
       wayland.windowManager.sway.config.keybindings =

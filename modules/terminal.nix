@@ -32,13 +32,9 @@
             window = {
               decorations = "none";
               dynamic_title = true;
-              opacity = config.style.windowOpacity;
               title = "Terminal";
             };
-            bell = {
-              duration = builtins.ceil config.style.bellDuration;
-              color = "#000000";
-            };
+            bell.duration = 200;
           };
         };
 

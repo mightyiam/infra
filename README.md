@@ -13,7 +13,7 @@
 File paths convey what the contents mean to me, as opposed to adhering to a mechanism's design.
 Because each file, being a flake-parts module, can declare any number of nested modules (e.g. NixOS, Home Manager, NixVim).
 Thus, a single file can implement cross-cutting concerns.
-For example, see the [`time`](modules/time.nix), [`ssh`](modules/ssh.nix), [`languages/rust`](modules/languages/rust.nix), and [`catppuccin`](modules/catppuccin.nix) modules.
+For example, see the [`time`](modules/time.nix), [`ssh`](modules/ssh.nix), [`languages/rust`](modules/languages/rust.nix), and [`stylix`](modules/stylix.nix) modules.
 
 > I’ve adopted your method. Really preferring it.
 

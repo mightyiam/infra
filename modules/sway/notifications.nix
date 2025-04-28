@@ -10,7 +10,6 @@
         anchor = "top-right";
         defaultTimeout = 3000;
         ignoreTimeout = true;
-        font = "sans-serif 12.0";
         extraConfig = ''
           [mode=${mode}]
           invisible=1
