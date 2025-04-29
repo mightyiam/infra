@@ -7,14 +7,10 @@ let
 in
 {
   flake.modules = {
-    nixos.wife = {
-      imports = [ polyModule ];
-      home-manager.users.${config.flake.meta.wife.username} = {
-        imports = [
-          inputs.stylix.homeManagerModules.stylix
-          polyModule
-        ];
-      };
-    };
+    nixos.wife = polyModule;
+    homeManager.wife.imports = [
+      inputs.stylix.homeManagerModules.stylix
+      polyModule
+    ];
   };
 }
