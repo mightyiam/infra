@@ -1,16 +1,12 @@
 { lib, ... }:
 {
   flake.modules.homeManager.gui =
-    {
-      config,
-      pkgs,
-      ...
-    }:
+    hmArgs@{ pkgs, ... }:
     {
       programs.rofi = {
         enable = true;
         package = pkgs.rofi-wayland;
-        terminal = config.terminal.path;
+        terminal = hmArgs.config.terminal.path;
         extraConfig = {
           show-icons = true;
           modes = [
@@ -28,7 +24,7 @@
           display-run = "   Run ";
           display-window = " 󰕰  Window";
           display-Network = " 󰤨  Network";
-          run-shell-command = config.terminal.withTitle "{cmd}";
+          run-shell-command = hmArgs.config.terminal.withTitle "{cmd}";
         };
         theme = {
           listview.columns = 1;
@@ -37,8 +33,8 @@
       };
       wayland.windowManager.sway.config.keybindings =
         let
-          rofi = lib.getExe config.programs.rofi.package;
-          mod = config.wayland.windowManager.sway.config.modifier;
+          rofi = lib.getExe hmArgs.config.programs.rofi.package;
+          mod = hmArgs.config.wayland.windowManager.sway.config.modifier;
         in
         {
           "--no-repeat ${mod}+d" = "exec ${rofi} -show drun";
