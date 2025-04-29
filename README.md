@@ -97,3 +97,14 @@ Ideally, Nix would detect that and warn.
 Until that feature is available those inputs are prefixed with `dedupe_`
 and placed in an additional separate `inputs` attribute literal
 for easy identification.
+
+## Trying to disallow warnings
+
+This at the top level of the `flake.nix` file:
+
+```nix
+nixConfig.abort-on-warn = true;
+```
+
+> [!NOTE]
+> It does not currently catch all warnings Nix can produce, but perhaps only evaluation warnings.
