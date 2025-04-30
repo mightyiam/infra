@@ -13,7 +13,7 @@ let
 in
 {
   flake.modules = {
-    nixos.desktop = polyModule;
+    nixos.pc = polyModule;
     homeManager.gui = polyModule;
   };
 }

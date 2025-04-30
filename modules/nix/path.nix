@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.modules.nixos.desktop.nix.nixPath = [
+  flake.modules.nixos.pc.nix.nixPath = [
     "nixpkgs=${inputs.nixpkgs}"
   ];
 }

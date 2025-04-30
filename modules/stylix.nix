@@ -5,7 +5,7 @@
 }:
 {
   flake.modules = {
-    nixos.desktop = {
+    nixos.pc = {
       imports = [ inputs.stylix.nixosModules.stylix ];
       stylix = {
         enable = true;

@@ -1,3 +1,3 @@
 {
-  flake.modules.nixos.desktop.boot.loader.grub.enable = true;
+  flake.modules.nixos.pc.boot.loader.grub.enable = true;
 }

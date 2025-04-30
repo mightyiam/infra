@@ -1,6 +1,6 @@
 {
   flake.modules = {
-    nixos.desktop.security.pam.services.swaylock = { };
+    nixos.pc.security.pam.services.swaylock = { };
 
     homeManager.gui =
       {

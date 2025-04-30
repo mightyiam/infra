@@ -5,7 +5,7 @@
 }:
 {
   flake.modules = {
-    nixos.desktop = {
+    nixos.pc = {
       security.rtkit.enable = true;
 
       services = {

@@ -4,7 +4,7 @@
   ...
 }:
 {
-  flake.modules.nixos.desktop = {
+  flake.modules.nixos.pc = {
     imports = [ inputs.home-manager.nixosModules.home-manager ];
 
     home-manager = {

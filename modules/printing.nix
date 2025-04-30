@@ -1,3 +1,3 @@
 {
-  flake.modules.nixos.desktop.services.printing.enable = true;
+  flake.modules.nixos.pc.services.printing.enable = true;
 }

@@ -1,3 +1,3 @@
 {
-  flake.modules.nixos.desktop.boot.initrd.systemd.enable = true;
+  flake.modules.nixos.pc.boot.initrd.systemd.enable = true;
 }

@@ -1,3 +1,3 @@
 {
-  flake.modules.nixos.desktop.boot.loader.timeout = 2;
+  flake.modules.nixos.pc.boot.loader.timeout = 2;
 }

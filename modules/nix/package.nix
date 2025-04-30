@@ -24,7 +24,7 @@ let
 in
 {
   flake.modules = {
-    nixos.desktop =
+    nixos.pc =
       { pkgs, ... }:
       {
         nix.package = mkNix pkgs;

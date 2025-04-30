@@ -13,7 +13,7 @@ let
 in
 {
   flake.modules = {
-    nixos.desktop = {
+    nixos.pc = {
       options.services.openssh.publicKey = lib.mkOption {
         type = lib.types.nullOr lib.types.str;
         default = null;

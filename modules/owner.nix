@@ -9,7 +9,7 @@
     };
 
     modules = {
-      nixos.desktop = {
+      nixos.pc = {
         security.sudo-rs.enable = true;
 
         users.users.${config.flake.meta.owner.username} = {
