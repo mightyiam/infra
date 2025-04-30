@@ -4,7 +4,6 @@
     { config, ... }:
     {
       boot.loader = {
-        timeout = 4;
         grub = {
           enable = true;
           mirroredBoots =
