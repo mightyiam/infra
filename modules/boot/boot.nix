@@ -5,10 +5,8 @@
     {
       boot.loader = {
         timeout = 4;
-        efi.canTouchEfiVariables = true;
         grub = {
           enable = true;
-          efiSupport = true;
           mirroredBoots =
             config.storage.redundancy.range
             |> map (i: [
