@@ -58,8 +58,8 @@ The pattern used instead is that `modules/fonts.nix` defines `flake.modules.nixo
 
 So what is the test for whether a certain set of option values deserves a distinct named module?
 It is whether that set of option values is to be imported in some configurations and not in others.
-An example of a set of option values that deserve a distinct named module is `flake.modules.nixos.laptop`
-because it is imported by laptop configurations and not by desktop configurations.
+An example of a set of option values that would deserve a distinct named module is `flake.modules.nixos.laptop`
+because it would be imported by laptop configurations and not by desktop configurations.
 
 ## Unfree packages
 
