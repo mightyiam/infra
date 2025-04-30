@@ -5,6 +5,5 @@
     workstation
     nvidia-gpu
     swap
-    mobile-device
   ];
 }

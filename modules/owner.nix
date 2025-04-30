@@ -5,7 +5,6 @@
       email = "mightyiampresence@gmail.com";
       name = "Shahar \"Dawn\" Or";
       username = "mightyiam";
-      phone = "+66613657506";
       matrix = "@mightyiam:matrix.org";
     };
 
