@@ -1,14 +1,15 @@
+{ lib, ... }:
 let
   polyModule =
     polyArgs@{ pkgs, ... }:
     {
       stylix.fonts = {
-        sansSerif = {
+        sansSerif = lib.mkDefault {
           package = pkgs.open-dyslexic;
           name = "OpenDyslexic";
         };
 
-        serif = polyArgs.config.stylix.fonts.sansSerif;
+        serif = lib.mkDefault polyArgs.config.stylix.fonts.sansSerif;
 
         monospace = {
           package = pkgs.nerd-fonts.open-dyslexic;
