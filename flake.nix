@@ -16,11 +16,6 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
 
-    fredoka-font = {
-      flake = false;
-      url = "https://github.com/google/fonts/blob/9483a03c1f71dfc4fa89ca492613e1d8116b6d28/ofl/fredoka/Fredoka%5Bwdth%2Cwght%5D.ttf";
-    };
-
     git-hooks = {
       url = "github:cachix/git-hooks.nix";
       inputs = {

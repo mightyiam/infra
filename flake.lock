@@ -239,18 +239,6 @@
         "type": "github"
       }
     },
-    "fredoka-font": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-s1ZkmO3UrXYXLFsM3e3MgZHV0hekHxZjZ3mj90aBSAs=",
-        "type": "file",
-        "url": "https://github.com/google/fonts/blob/9483a03c1f71dfc4fa89ca492613e1d8116b6d28/ofl/fredoka/Fredoka%5Bwdth%2Cwght%5D.ttf"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/google/fonts/blob/9483a03c1f71dfc4fa89ca492613e1d8116b6d28/ofl/fredoka/Fredoka%5Bwdth%2Cwght%5D.ttf"
-      }
-    },
     "fromYaml": {
       "flake": false,
       "locked": {
@@ -606,7 +594,6 @@
         "dedupe_nuschtos-search": "dedupe_nuschtos-search",
         "dedupe_systems": "dedupe_systems",
         "flake-parts": "flake-parts",
-        "fredoka-font": "fredoka-font",
         "git-hooks": "git-hooks",
         "home-manager": "home-manager",
         "import-tree": "import-tree",
