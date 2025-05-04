@@ -65,6 +65,9 @@
           };
         };
       };
+
+      home.packages = [ pkgs.font-awesome ];
+
       wayland.windowManager.sway.config.bars = [
         {
           statusCommand = "i3status-rs ${config.xdg.configHome}/i3status-rust/config-${id}.toml";
