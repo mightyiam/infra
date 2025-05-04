@@ -36,7 +36,7 @@ in
       { pkgs, ... }:
       {
         imports = [ polyModule ];
-        environment.systemPackages = [ pkgs.noto-fonts ];
+        fonts.packages = [ pkgs.noto-fonts ];
       };
 
     homeManager.base =
