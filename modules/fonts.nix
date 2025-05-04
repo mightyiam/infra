@@ -32,14 +32,18 @@ let
 in
 {
   flake.modules = {
-    nixos.pc = polyModule;
+    nixos.pc =
+      { pkgs, ... }:
+      {
+        imports = [ polyModule ];
+        environment.systemPackages = [ pkgs.noto-fonts ];
+      };
 
     homeManager.base =
       { pkgs, ... }:
       {
         imports = [ polyModule ];
         home.packages = [
-          pkgs.noto-fonts
           pkgs.gucharmap
         ];
       };
