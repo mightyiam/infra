@@ -39,7 +39,6 @@ in
       {
         imports = [ polyModule ];
         home.packages = [
-          pkgs.font-awesome
           pkgs.noto-fonts
           pkgs.gucharmap
         ];
