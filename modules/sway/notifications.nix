@@ -7,13 +7,12 @@
     {
       services.mako = {
         enable = true;
-        anchor = "top-right";
-        defaultTimeout = 3000;
-        ignoreTimeout = true;
-        extraConfig = ''
-          [mode=${mode}]
-          invisible=1
-        '';
+        settings = {
+          anchor = "top-right";
+          defaultTimeout = 3000;
+          ignoreTimeout = true;
+        };
+        criteria."mode=${mode}".invisible = 1;
       };
       xdg.configFile."xdg-desktop-portal-wlr/config".text = ''
         [screencast]
