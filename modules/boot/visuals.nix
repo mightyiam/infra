@@ -4,7 +4,10 @@
     stylix.targets.grub.enable = false;
 
     boot = {
-      kernelParams = [ "systemd.show_status=error" ];
+      kernelParams = [
+        "quiet"
+        "systemd.show_status=error"
+      ];
       plymouth.enable = true;
     };
   };
