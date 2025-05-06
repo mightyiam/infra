@@ -5,7 +5,7 @@
       grub.efiSupport = true;
     };
 
-    home-manager.base =
+    homeManager.base =
       { pkgs, ... }:
       {
         home.packages = [
