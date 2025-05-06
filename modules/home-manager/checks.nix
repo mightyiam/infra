@@ -18,7 +18,7 @@
         }
         |> lib.mapAttrs' (
           name: modules: {
-            name = "homeManagerConfigurations/${name}";
+            name = "home-manager/${name}";
             value =
               {
                 inherit pkgs;
