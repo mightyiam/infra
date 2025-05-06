@@ -43,7 +43,7 @@ in
         ];
       };
 
-    homeManager.base =
+    homeManager.gui =
       { pkgs, ... }:
       {
         imports = [ polyModule ];
