@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ inputs, ... }:
 {
   flake.modules.nixvim.astrea.plugins.lsp.keymaps = {
     lspBuf = {
@@ -13,7 +13,7 @@
     extra = [
       {
         key = "<space>a";
-        action = lib.nixvim.mkRaw "vim.lsp.buf.code_action";
+        action = inputs.nixvim.lib.nixvim.mkRaw "vim.lsp.buf.code_action";
         mode = [
           "n"
           "v"

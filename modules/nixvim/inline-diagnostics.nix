@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ inputs, ... }:
 {
   flake.modules.nixvim.astrea = {
     diagnostic.settings = {
@@ -9,7 +9,7 @@
       lsp.keymaps.extra = [
         {
           key = "<leader>l";
-          action = lib.nixvim.mkRaw ''
+          action = inputs.nixvim.lib.nixvim.mkRaw ''
             function()
               local current = vim.diagnostic.config()
               vim.diagnostic.config({
@@ -21,7 +21,7 @@
         }
         {
           key = "[d";
-          action = lib.nixvim.mkRaw ''
+          action = inputs.nixvim.lib.nixvim.mkRaw ''
             function()
               vim.diagnostic.goto_prev({ float = false })
             end
@@ -29,7 +29,7 @@
         }
         {
           key = "]d";
-          action = lib.nixvim.mkRaw ''
+          action = inputs.nixvim.lib.nixvim.mkRaw ''
             function()
               vim.diagnostic.goto_next({ float = false })
             end

@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ inputs, ... }:
 {
   flake.modules.nixvim.astrea = {
     plugins = {
@@ -19,7 +19,7 @@
       {
         key = "<leader>a";
         options.desc = "Toggle autoformatting";
-        action = lib.nixvim.mkRaw ''
+        action = inputs.nixvim.lib.nixvim.mkRaw ''
           function()
             local lsp_format = require("lsp-format")
 

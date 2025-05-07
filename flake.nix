@@ -153,14 +153,5 @@
     dedupe_systems.url = "github:nix-systems/default";
   };
 
-  outputs =
-    inputs:
-    inputs.flake-parts.lib.mkFlake {
-      inherit inputs;
-      specialArgs = {
-        lib = inputs.nixpkgs.lib // {
-          inherit (inputs.nixvim.lib) nixvim;
-        };
-      };
-    } (inputs.import-tree ./modules);
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 }

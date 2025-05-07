@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ inputs, ... }:
 {
   flake.modules.nixvim.astrea.plugins.lsp = {
     inlayHints = true;
@@ -6,7 +6,7 @@
       {
         key = "<leader>ht";
         mode = "n";
-        action = lib.nixvim.mkRaw ''
+        action = inputs.nixvim.lib.nixvim.mkRaw ''
           function()
             vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
           end
