@@ -1,5 +1,7 @@
 {
-  flake.modules.homeManager.gui = {pkgs,...}: {
-    home.packages = [pkgs.kooha];
-  };
+  flake.modules.homeManager.gui =
+    { pkgs, ... }:
+    {
+      home.packages = [ pkgs.kooha ];
+    };
 }
