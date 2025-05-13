@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos."nixosConfigurations/termitomyces" =
+  flake.modules.nixos.pc =
     { pkgs, ... }:
     {
       services.ratbagd.enable = true;
