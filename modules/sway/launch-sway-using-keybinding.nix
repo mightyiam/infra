@@ -7,7 +7,7 @@
     in
     {
       programs.zsh.initContent = ''
-        bindkey -s '^@' 'exec ${lib.getExe package}\n'
+        bindkey -s '^@' '[ -v XDG_CURRENT_DESKTOP ] || exec ${lib.getExe package}\n'
       '';
     };
 
