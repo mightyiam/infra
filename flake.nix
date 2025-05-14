@@ -85,7 +85,7 @@
     };
 
     stylix = {
-      url = "github:danth/stylix";
+      url = "github:mightyiam/stylix/mako-no-criteria-option";
       inputs = {
         flake-compat.follows = "dedupe_flake-compat";
         flake-utils.follows = "dedupe_flake-utils";

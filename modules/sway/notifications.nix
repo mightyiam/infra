@@ -11,8 +11,8 @@
           anchor = "top-right";
           default-timeout = 3000;
           ignore-timeout = 1;
+          "mode=${mode}".invisible = 1;
         };
-        criteria."mode=${mode}".invisible = 1;
       };
       xdg.configFile."xdg-desktop-portal-wlr/config".text = ''
         [screencast]
