@@ -1,11 +1,7 @@
-{
-  config,
-  lib,
-  ...
-}:
+{ config, ... }:
 {
   flake.modules.homeManager.base = args: {
-    home = lib.mkIf (!(args.hasDifferentUsername or false)) {
+    home = {
       username = config.flake.meta.owner.username;
       homeDirectory = "/home/${config.flake.meta.owner.username}";
     };
