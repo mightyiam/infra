@@ -9,7 +9,7 @@ in
   flake.modules = {
     nixos.wife = polyModule;
     homeManager.wife.imports = [
-      inputs.stylix.homeManagerModules.stylix
+      inputs.stylix.homeModules.stylix
       polyModule
     ];
   };

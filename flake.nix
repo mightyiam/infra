@@ -88,7 +88,7 @@
       url = "github:danth/stylix";
       inputs = {
         flake-compat.follows = "dedupe_flake-compat";
-        flake-utils.follows = "dedupe_flake-utils";
+        flake-parts.follows = "flake-parts";
         git-hooks.follows = "git-hooks";
         home-manager.follows = "home-manager";
         nixpkgs.follows = "nixpkgs";
