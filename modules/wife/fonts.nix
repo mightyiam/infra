@@ -34,7 +34,10 @@ in
     };
 
   flake.modules = {
-    homeManager.wife = polyModule;
+    homeManager.wife = {
+      imports = [ polyModule ];
+      fonts.fontconfig.enable = true;
+    };
     nixos.wife = polyModule;
   };
 }
