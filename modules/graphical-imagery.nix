@@ -9,6 +9,7 @@
         imagemagick
         imv
         inkscape
+        jpeginfo
       ];
       xdg.mimeApps.defaultApplications =
         [
