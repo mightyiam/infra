@@ -4,6 +4,7 @@
     { pkgs, ... }:
     {
       home.packages = with pkgs; [
+        exiftool
         gimp
         imv
         inkscape
