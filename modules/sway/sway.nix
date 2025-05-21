@@ -8,7 +8,6 @@
     {
       wayland.windowManager.sway = {
         enable = true;
-        wrapperFeatures.gtk = true;
         extraSessionCommands = ''
           export MOZ_ENABLE_WAYLAND=1
         '';
