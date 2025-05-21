@@ -1,10 +1,13 @@
 { lib, config, ... }:
 {
   flake.modules.homeManager.gui = {
-    wayland.windowManager.sway.config.input."type:keyboard".xkb_layout = lib.concatStringsSep "," [
-      "us"
-      "il"
-    ];
+    wayland.windowManager.sway.config.input."type:keyboard" = {
+      xkb_layout = lib.concatStringsSep "," [
+        "us"
+        "il"
+      ];
+      xkb_options = "grp:lalt_lshift_toggle";
+    };
 
     programs.i3status-rust.bars.bottom.blocks = lib.mkOrder 1200 [
       {
