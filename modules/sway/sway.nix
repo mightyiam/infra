@@ -10,13 +10,7 @@
         enable = true;
 
         config = {
-          input = {
-            "type:keyboard" = {
-              repeat_delay = "200";
-              repeat_rate = "50";
-            };
-            "type:touchpad".tap = "enabled";
-          };
+          input."type:touchpad".tap = "enabled";
 
           workspaceLayout = "tabbed";
 
