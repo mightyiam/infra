@@ -8,9 +8,6 @@
     {
       wayland.windowManager.sway = {
         enable = true;
-        extraSessionCommands = ''
-          export MOZ_ENABLE_WAYLAND=1
-        '';
 
         config = {
           input = {
