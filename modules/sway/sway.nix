@@ -10,8 +10,6 @@
         enable = true;
 
         config = {
-          input."type:touchpad".tap = "enabled";
-
           workspaceLayout = "tabbed";
 
           modifier = "Mod4";
