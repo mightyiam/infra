@@ -10,6 +10,7 @@
         imv
         inkscape
         jpeginfo
+        wl-color-picker
       ];
       xdg.mimeApps.defaultApplications =
         [
