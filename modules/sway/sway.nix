@@ -1,22 +1,11 @@
 { lib, ... }:
 {
   flake.modules.homeManager.gui =
-    {
-      options,
-      pkgs,
-      config,
-      ...
-    }:
+    { pkgs, config, ... }:
     let
       mod = config.wayland.windowManager.sway.config.modifier;
     in
     {
-      imports = [
-        {
-          wayland.windowManager.sway.config.keybindings =
-            (options.wayland.windowManager.sway.config.type.getSubOptions { }).keybindings.default;
-        }
-      ];
       wayland.windowManager.sway = {
         enable = true;
         wrapperFeatures.gtk = true;
