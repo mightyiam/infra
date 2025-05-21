@@ -12,7 +12,6 @@
         config = {
           input = {
             "type:keyboard" = {
-              xkb_layout = "us,il";
               xkb_options = "grp:lalt_lshift_toggle";
               repeat_delay = "200";
               repeat_rate = "50";

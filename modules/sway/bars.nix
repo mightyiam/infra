@@ -1,3 +1,4 @@
+{ lib, ... }:
 {
   flake.modules.homeManager.gui =
     {
@@ -14,53 +15,49 @@
         bars = {
           "${id}" = {
             icons = "awesome5";
-            blocks = [
-              {
-                block = "sound";
-                device_kind = "source";
-              }
-              {
-                block = "sound";
-                format = " $output_description $icon {$volume.eng(w:2)|} ";
-              }
-              { block = "cpu"; }
-              { block = "memory"; }
-              { block = "disk_space"; }
+            blocks = lib.mkMerge [
+              [
+                {
+                  block = "sound";
+                  device_kind = "source";
+                }
+                {
+                  block = "sound";
+                  format = " $output_description $icon {$volume.eng(w:2)|} ";
+                }
+                { block = "cpu"; }
+                { block = "memory"; }
+                { block = "disk_space"; }
 
-              #{ block = "docker"; }
+                #{ block = "docker"; }
 
-              { block = "net"; }
+                { block = "net"; }
 
-              {
-                block = "time";
-                format = " $timestamp.datetime(f:'%F %a %R') ";
-              }
-              {
-                block = "custom";
-                format = " 󰪛 ";
-                json = true;
-                command = ''
-                  if ${pkgs.gnugrep}/bin/grep -q 1 /sys/class/leds/input*::capslock/brightness; then
-                    echo '{ "state": "Warning" }'
-                  else
-                    echo '{}'
-                  fi
-                '';
-                watch_files = [ "/dev/input" ];
-                interval = "once";
-              }
-              {
-                block = "keyboard_layout";
-                driver = "sway";
-                mappings = {
-                  "English (US)" = "EN";
-                  "Hebrew (N/A)" = "HE";
-                };
-              }
-              {
-                block = "battery";
-                missing_format = "";
-              }
+                {
+                  block = "time";
+                  format = " $timestamp.datetime(f:'%F %a %R') ";
+                }
+                {
+                  block = "custom";
+                  format = " 󰪛 ";
+                  json = true;
+                  command = ''
+                    if ${pkgs.gnugrep}/bin/grep -q 1 /sys/class/leds/input*::capslock/brightness; then
+                      echo '{ "state": "Warning" }'
+                    else
+                      echo '{}'
+                    fi
+                  '';
+                  watch_files = [ "/dev/input" ];
+                  interval = "once";
+                }
+              ]
+              (lib.mkOrder 1300 [
+                {
+                  block = "battery";
+                  missing_format = "";
+                }
+              ])
             ];
           };
         };
