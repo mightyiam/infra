@@ -12,8 +12,6 @@
         config = {
           workspaceLayout = "tabbed";
 
-          modifier = "Mod4";
-
           keybindings = {
             "${mod}+Shift+e" = null;
             "--no-repeat ${mod}+Shift+e" =
