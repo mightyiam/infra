@@ -25,8 +25,13 @@
 
       };
 
-      wayland.windowManager.sway.config.keybindings."--no-repeat Mod4+q" =
-        "exec ${lib.getExe hmArgs.config.programs.qutebrowser.package}";
+      wayland.windowManager.sway.config.keybindings =
+        let
+          mod = hmArgs.config.wayland.windowManager.sway.config.modifier;
+        in
+        {
+          "--no-repeat ${mod}+q" = "exec ${lib.getExe hmArgs.config.programs.qutebrowser.package}";
+        };
 
       xdg.mimeApps.defaultApplications =
         [

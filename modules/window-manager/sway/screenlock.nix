@@ -10,7 +10,14 @@
         swayMsgPath = lib.getExe' hmArgs.config.wayland.windowManager.sway.package "swaymsg";
       in
       {
-        wayland.windowManager.sway.config.keybindings."Mod4+Ctrl+l" = "exec ${lockCommand}";
+        wayland.windowManager.sway.config.keybindings =
+          let
+            mod = hmArgs.config.wayland.windowManager.sway.config.modifier;
+          in
+          {
+            "${mod}+Ctrl+l" = "exec ${lockCommand}";
+          };
+
         programs.swaylock = {
           enable = true;
           settings = {
