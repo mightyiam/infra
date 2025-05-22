@@ -4,14 +4,10 @@
     nixos.pc.security.pam.services.swaylock = { };
 
     homeManager.gui =
-      {
-        pkgs,
-        config,
-        ...
-      }:
+      hmArgs@{ pkgs, ... }:
       let
         lockCommand = lib.getExe pkgs.swaylock;
-        swayMsgPath = lib.getExe' config.wayland.windowManager.sway.package "swaymsg";
+        swayMsgPath = lib.getExe' hmArgs.config.wayland.windowManager.sway.package "swaymsg";
       in
       {
         wayland.windowManager.sway.config.keybindings."Mod4+Ctrl+l" = "exec ${lockCommand}";
