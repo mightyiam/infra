@@ -18,11 +18,11 @@
         config.home.packages = with pkgs; [ ansifilter ];
       };
     gui =
-      { config, pkgs, ... }:
+      hmArgs@{ pkgs, ... }:
       {
         terminal = {
-          path = lib.getExe config.programs.alacritty.package;
-          withTitle = cmd: "${config.terminal.path} --title ${cmd} --command ${cmd}";
+          path = lib.getExe hmArgs.config.programs.alacritty.package;
+          withTitle = cmd: "${hmArgs.config.terminal.path} --title ${cmd} --command ${cmd}";
         };
 
         programs.alacritty = {
@@ -44,12 +44,12 @@
         };
 
         wayland.windowManager.sway.config = {
-          terminal = config.terminal.path;
+          terminal = hmArgs.config.terminal.path;
           keybindings = {
             "Mod4+Return" = null;
-            "--no-repeat Mod4+Return" = "exec ${lib.getExe config.programs.alacritty.package}";
+            "--no-repeat Mod4+Return" = "exec ${lib.getExe hmArgs.config.programs.alacritty.package}";
             "--no-repeat Mod4+Shift+Return" =
-              "exec ${lib.getExe config.programs.alacritty.package} --working-directory `${lib.getExe pkgs.swaycwd}`";
+              "exec ${lib.getExe hmArgs.config.programs.alacritty.package} --working-directory `${lib.getExe pkgs.swaycwd}`";
           };
         };
       };
