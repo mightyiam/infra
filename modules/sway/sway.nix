@@ -19,9 +19,5 @@
         };
       };
       xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-wlr ];
-
-      home.packages = with pkgs; [
-        xdg-utils
-      ];
     };
 }
