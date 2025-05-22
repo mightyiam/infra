@@ -22,7 +22,6 @@
 
           auto_save.session = true;
         };
-
       };
 
       wayland.windowManager.sway.config.keybindings =
