@@ -1,3 +1,4 @@
+{ lib, ... }:
 {
   flake.modules.homeManager.gui =
     { config, ... }:
@@ -9,6 +10,9 @@
         workspaceLayout = "tabbed";
         keybindings = {
           "${mod}+Shift+a" = "focus child";
+          "${mod}+Shift+e" = null;
+          "--no-repeat ${mod}+Shift+e" =
+            "exec ${lib.getExe' config.wayland.windowManager.sway.package "swaymsg"} exit";
         };
       };
     };
