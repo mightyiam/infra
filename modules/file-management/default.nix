@@ -1,3 +1,4 @@
+{ lib, ... }:
 {
   flake.modules.homeManager.base =
     { pkgs, ... }:
@@ -26,7 +27,7 @@
             ];
             opener.open = [
               {
-                run = ''xdg-open "$@"'';
+                run = ''${lib.getExe' pkgs.xdg-utils "xdg-open"} "$@"'';
                 desc = "Open";
               }
             ];
