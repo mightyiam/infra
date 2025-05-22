@@ -10,7 +10,6 @@
         enable = true;
 
         config = {
-
           keybindings = {
             "${mod}+Shift+e" = null;
             "--no-repeat ${mod}+Shift+e" =
