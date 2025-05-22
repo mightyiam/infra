@@ -1,3 +1,4 @@
+{ lib, ... }:
 {
   flake.modules.homeManager.gui =
     { pkgs, ... }:
@@ -16,8 +17,8 @@
       };
       xdg.configFile."xdg-desktop-portal-wlr/config".text = ''
         [screencast]
-        exec_before=${pkgs.mako}/bin/makoctl mode -a ${mode}
-        exec_after=${pkgs.mako}/bin/makoctl mode -r ${mode}
+        exec_before=${lib.getExe' pkgs.mako "makoctl"} mode -a ${mode}
+        exec_after=${lib.getExe' pkgs.mako "makoctl"} mode -r ${mode}
       '';
       services.systembus-notify.enable = true;
     };
