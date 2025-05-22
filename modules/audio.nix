@@ -31,7 +31,7 @@
         {
           home.packages = [ sink-rotate ];
           wayland.windowManager.sway.config.keybindings = {
-            "--no-repeat ${mod}+c" = "exec ${sink-rotate}/bin/sink-rotate";
+            "--no-repeat ${mod}+c" = "exec ${lib.getExe sink-rotate}";
           };
         };
 

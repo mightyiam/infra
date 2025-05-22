@@ -648,11 +648,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1746923620,
-        "narHash": "sha256-1x5/KqWRO6sZpgF38p554dT8wsE0SgPONne8fqJrmvg=",
+        "lastModified": 1747908472,
+        "narHash": "sha256-gGmnji7KqmCxUaeXOGMnHMI6b8AJ6Np+xVjibqgGSKM=",
         "owner": "mightyiam",
         "repo": "sink-rotate",
-        "rev": "b33d916daf123d9d52590bedfba22b2d6593ecb8",
+        "rev": "fe4763df5143eff5d48ee6084cd1a47e1816f087",
         "type": "github"
       },
       "original": {
