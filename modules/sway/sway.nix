@@ -1,7 +1,7 @@
 { lib, ... }:
 {
   flake.modules.homeManager.gui =
-    { pkgs, config, ... }:
+    { config, ... }:
     let
       mod = config.wayland.windowManager.sway.config.modifier;
     in
@@ -18,6 +18,5 @@
           };
         };
       };
-      xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-wlr ];
     };
 }
