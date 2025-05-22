@@ -1,8 +1,4 @@
-{
-  lib,
-  inputs,
-  ...
-}:
+{ lib, withSystem, ... }:
 {
   flake.modules = {
     nixos.pc = {
@@ -23,9 +19,13 @@
 
     homeManager = {
       base =
-        { pkgs, config, ... }:
+        {
+          pkgs,
+          config,
+          ...
+        }:
         let
-          sink-rotate = inputs.sink-rotate.packages.${pkgs.system}.default;
+          sink-rotate = withSystem pkgs.system ({ inputs', ... }: inputs'.sink-rotate.packages.default);
           mod = config.wayland.windowManager.sway.config.modifier;
         in
         {
