@@ -1,3 +1,4 @@
+{ lib, ... }:
 {
   flake.modules = {
     nixos.pc.security.pam.services.swaylock = { };
@@ -9,8 +10,8 @@
         ...
       }:
       let
-        lockCommand = pkgs.swaylock + /bin/swaylock;
-        swayMsgPath = config.wayland.windowManager.sway.package + /bin/swaymsg;
+        lockCommand = lib.getExe pkgs.swaylock;
+        swayMsgPath = lib.getExe' config.wayland.windowManager.sway.package "swaymsg";
       in
       {
         wayland.windowManager.sway.config.keybindings."Mod4+Ctrl+l" = "exec ${lockCommand}";
