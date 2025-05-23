@@ -1,4 +1,8 @@
-{ lib, ... }:
+{
+  lib,
+  withSystem,
+  ...
+}:
 {
   flake.modules = {
     nixos.pc.security.pam.services.swaylock = { };
@@ -7,7 +11,7 @@
       hmArgs@{ pkgs, ... }:
       let
         lockCommand = lib.getExe pkgs.swaylock;
-        swayMsgPath = lib.getExe' hmArgs.config.wayland.windowManager.sway.package "swaymsg";
+        dpms-all = withSystem pkgs.system (psArgs: psArgs.config.packages.dpms-all);
       in
       {
         wayland.windowManager.sway.config.keybindings =
@@ -36,8 +40,8 @@
             }
             {
               timeout = 60 * 11;
-              command = "${swayMsgPath} \"output * dpms off\"";
-              resumeCommand = "${swayMsgPath} \"output * dpms on\"";
+              command = "${lib.getExe dpms-all} off";
+              resumeCommand = "${lib.getExe dpms-all} on";
             }
           ];
         };
