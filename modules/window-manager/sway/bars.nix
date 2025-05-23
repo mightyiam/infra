@@ -11,6 +11,7 @@
         bars = {
           "${id}" = {
             icons = "awesome5";
+            settings.theme.overrides = hmArgs.config.lib.stylix.i3status-rust.bar;
             blocks = lib.mkMerge [
               [
                 {
@@ -61,16 +62,52 @@
 
       home.packages = [ pkgs.font-awesome ];
 
-      wayland.windowManager.sway.config.bars = [
-        {
-          statusCommand = "i3status-rs ${hmArgs.config.xdg.configHome}/i3status-rust/config-${id}.toml";
-          trayOutput = "none";
-          fonts = {
-            names = [ hmArgs.config.stylix.fonts.monospace.name ];
-            size = hmArgs.config.stylix.fonts.sizes.desktop / 1.0;
-            style = "Bold";
-          };
-        }
-      ];
+      wayland.windowManager.sway.config = {
+        bars = [
+          {
+            extraConfig = ''
+              mode overlay
+            '';
+            colors = hmArgs.config.lib.stylix.i3.bar.colors // {
+              background = "#00000000";
+            };
+            fonts = hmArgs.config.lib.stylix.i3.bar.fonts // {
+              style = "Bold";
+            };
+          }
+        ];
+
+        startup = [
+          { command = lib.getExe hmArgs.config.programs.i3bar-river.package; }
+        ];
+      };
+
+      programs.i3bar-river = {
+        enable = true;
+
+        settings = {
+          command =
+            [
+              (lib.getExe hmArgs.config.programs.i3status-rust.package)
+              "${hmArgs.config.xdg.configHome}/i3status-rust/config-${id}.toml"
+            ]
+            |> lib.concatStringsSep " ";
+          position = "bottom";
+
+          font =
+            [
+              hmArgs.config.stylix.fonts.monospace.name
+              "Bold"
+              hmArgs.config.stylix.fonts.sizes.desktop
+            ]
+            |> map toString
+            |> lib.concatStringsSep " ";
+
+          # on sway this matches the swaybar that is overlayed on top of it
+          height = 36;
+
+          background = hmArgs.config.lib.stylix.colors.withHashtag.base00;
+        };
+      };
     };
 }
