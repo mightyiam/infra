@@ -1,11 +1,7 @@
 { lib, ... }:
 {
   flake.modules.homeManager.gui =
-    {
-      config,
-      pkgs,
-      ...
-    }:
+    hmArgs@{ pkgs, ... }:
     let
       id = "bottom";
     in
@@ -67,11 +63,11 @@
 
       wayland.windowManager.sway.config.bars = [
         {
-          statusCommand = "i3status-rs ${config.xdg.configHome}/i3status-rust/config-${id}.toml";
+          statusCommand = "i3status-rs ${hmArgs.config.xdg.configHome}/i3status-rust/config-${id}.toml";
           trayOutput = "none";
           fonts = {
-            names = [ config.stylix.fonts.monospace.name ];
-            size = config.stylix.fonts.sizes.desktop / 1.0;
+            names = [ hmArgs.config.stylix.fonts.monospace.name ];
+            size = hmArgs.config.stylix.fonts.sizes.desktop / 1.0;
             style = "Bold";
           };
         }
