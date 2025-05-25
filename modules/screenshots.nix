@@ -1,8 +1,9 @@
+{ lib, ... }:
 {
   flake.modules.homeManager.gui =
     hmArgs@{ pkgs, ... }:
     let
-      shotman = "${pkgs.shotman}/bin/shotman --capture";
+      shotman = "${lib.getExe' pkgs.shotman "shotman"} --capture";
     in
     {
       wayland.windowManager.sway.config.keybindings =
