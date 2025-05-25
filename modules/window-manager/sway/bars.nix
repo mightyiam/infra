@@ -74,6 +74,7 @@
             fonts = hmArgs.config.lib.stylix.i3.bar.fonts // {
               style = "Bold";
             };
+            trayOutput = "none";
           }
         ];
 
