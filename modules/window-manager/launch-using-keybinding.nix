@@ -3,7 +3,7 @@
   flake.modules.homeManager.gui =
     hmArgs:
     let
-      package = hmArgs.config.wayland.windowManager.sway.package;
+      package = hmArgs.config.wayland.windowManager.hyprland.package;
     in
     {
       programs.zsh.initContent = ''

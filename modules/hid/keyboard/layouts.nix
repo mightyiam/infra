@@ -1,14 +1,58 @@
-{ lib, ... }:
+{ lib, withSystem, ... }:
+let
+  layout =
+    [
+      "us"
+      "il"
+    ]
+    |> lib.concatStringsSep ",";
+
+  hyprlandStateFile = "$XDG_STATE_HOME/hyprland-rotate-kb-layout";
+in
 {
+  perSystem =
+    { pkgs, ... }:
+    {
+      packages = {
+        hyprland-rotate-kb-layout = pkgs.writeShellApplication {
+          name = "hyprland-rotate-kb-layout";
+          runtimeInputs = with pkgs; [ hyprland ];
+          text = ''
+            hyprctl switchxkblayout main next 
+            touch "${hyprlandStateFile}"
+          '';
+        };
+
+        get-hyprland-main-keyboard-layout = pkgs.writeShellApplication {
+          name = "get-hyprland-main-keyboard-layout";
+          runtimeInputs = with pkgs; [
+            hyprland
+            jq
+          ];
+          text = ''
+            hyprctl devices -j | jq -r '.keyboards[] | select(.main == true) | .active_keymap | select(. == "English (US)" or . == "Hebrew") | if . == "English (US)" then "us" else "il" end'
+          '';
+        };
+      };
+    };
+
   flake.modules.homeManager.gui =
     { pkgs, ... }:
     {
-      wayland.windowManager.sway.config.input."type:keyboard" = {
-        xkb_layout = lib.concatStringsSep "," [
-          "us"
-          "il"
-        ];
-        xkb_options = "grp:lalt_lshift_toggle";
+      wayland.windowManager = {
+        sway.config.input."type:keyboard" = {
+          xkb_layout = layout;
+          xkb_options = "grp:lalt_lshift_toggle";
+        };
+
+        hyprland.settings = {
+          bind = [
+            "ALT+SHIFT, SHIFT_L, exec, ${
+              withSystem pkgs.system (psArgs: psArgs.config.packages.hyprland-rotate-kb-layout) |> lib.getExe
+            }"
+          ];
+          input.kb_layout = layout;
+        };
       };
 
       programs.i3status-rust.bars.bottom.blocks = lib.mkOrder 1200 [
@@ -22,6 +66,17 @@
             "English (US)" = "EN";
             "Hebrew (N/A)" = "HE";
           };
+        }
+        {
+          block = "custom";
+          if_command = pkgs.writeShellScript "in-hyprland" ''
+            [ "$XDG_CURRENT_DESKTOP" = "Hyprland" ]
+          '';
+          watch_files = [ hyprlandStateFile ];
+          interval = "once";
+          command =
+            withSystem pkgs.system (psArgs: psArgs.config.packages.get-hyprland-main-keyboard-layout)
+            |> lib.getExe;
         }
       ];
     };
