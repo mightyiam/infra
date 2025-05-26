@@ -12,6 +12,8 @@
             resize_on_border = true;
           };
 
+          plugin.hy3.tab_first_window = true;
+
           bind =
             let
               hjkl =
