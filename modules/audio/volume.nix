@@ -15,9 +15,15 @@
         ];
     in
     {
-      wayland.windowManager.sway.config.keybindings = {
-        "--no-repeat ${mod}+x" = "exec ${incVol "-"}";
-        "--no-repeat ${mod}+Shift+x" = "exec ${incVol "+"}";
+      wayland.windowManager = {
+        sway.config.keybindings = {
+          "--no-repeat ${mod}+x" = "exec ${incVol "-"}";
+          "--no-repeat ${mod}+Shift+x" = "exec ${incVol "+"}";
+        };
+        hyprland.settings.bind = [
+          "SUPER, x, exec, ${incVol "-"}"
+          "SUPER+SHIFT, x, exec, ${incVol "+"}"
+        ];
       };
     };
 }

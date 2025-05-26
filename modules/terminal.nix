@@ -43,18 +43,22 @@
           };
         };
 
-        wayland.windowManager.sway.config = {
-          terminal = hmArgs.config.terminal.path;
-          keybindings =
-            let
-              mod = hmArgs.config.wayland.windowManager.sway.config.modifier;
-            in
-            {
-              "${mod}+Return" = null;
-              "--no-repeat ${mod}+Return" = "exec ${lib.getExe hmArgs.config.programs.alacritty.package}";
-              "--no-repeat ${mod}+Shift+Return" =
-                "exec ${lib.getExe hmArgs.config.programs.alacritty.package} --working-directory `${lib.getExe pkgs.swaycwd}`";
-            };
+        wayland.windowManager = {
+          hyprland.settings.bind = [ "SUPER, Return, exec, ${hmArgs.config.terminal.path}" ];
+
+          sway.config = {
+            terminal = hmArgs.config.terminal.path;
+            keybindings =
+              let
+                mod = hmArgs.config.wayland.windowManager.sway.config.modifier;
+              in
+              {
+                "${mod}+Return" = null;
+                "--no-repeat ${mod}+Return" = "exec ${lib.getExe hmArgs.config.programs.alacritty.package}";
+                "--no-repeat ${mod}+Shift+Return" =
+                  "exec ${lib.getExe hmArgs.config.programs.alacritty.package} --working-directory `${lib.getExe pkgs.swaycwd}`";
+              };
+          };
         };
       };
   };

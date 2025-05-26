@@ -31,15 +31,22 @@
           "*".width = 1200;
         };
       };
-      wayland.windowManager.sway.config.keybindings =
+      wayland.windowManager =
         let
           rofi = lib.getExe hmArgs.config.programs.rofi.package;
           mod = hmArgs.config.wayland.windowManager.sway.config.modifier;
         in
         {
-          "--no-repeat ${mod}+d" = "exec ${rofi} -show drun";
-          "${mod}+d" = null;
-          "--no-repeat ${mod}+Shift+d" = "exec ${rofi} -show run";
+          sway.config.keybindings = {
+            "--no-repeat ${mod}+d" = "exec ${rofi} -show drun";
+            "${mod}+d" = null;
+            "--no-repeat ${mod}+Shift+d" = "exec ${rofi} -show run";
+          };
+
+          hyprland.settings.bind = [
+            "SUPER, d, exec, ${rofi} -show drun"
+            "SUPER+SHIFT, d, exec, ${rofi} -show run"
+          ];
         };
     };
 }

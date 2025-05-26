@@ -62,24 +62,30 @@
 
       home.packages = [ pkgs.font-awesome ];
 
-      wayland.windowManager.sway.config = {
-        bars = [
-          {
-            extraConfig = ''
-              mode overlay
-            '';
-            colors = hmArgs.config.lib.stylix.i3.bar.colors // {
-              background = "#00000000";
-            };
-            fonts = hmArgs.config.lib.stylix.i3.bar.fonts // {
-              style = "Bold";
-            };
-            trayOutput = "none";
-          }
-        ];
+      wayland.windowManager = {
+        sway.config = {
+          bars = [
+            {
+              extraConfig = ''
+                mode overlay
+              '';
+              colors = hmArgs.config.lib.stylix.i3.bar.colors // {
+                background = "#00000000";
+              };
+              fonts = hmArgs.config.lib.stylix.i3.bar.fonts // {
+                style = "Bold";
+              };
+              trayOutput = "none";
+            }
+          ];
 
-        startup = [
-          { command = lib.getExe hmArgs.config.programs.i3bar-river.package; }
+          startup = [
+            { command = lib.getExe hmArgs.config.programs.i3bar-river.package; }
+          ];
+        };
+
+        hyprland.settings.exec-once = [
+          (lib.getExe hmArgs.config.programs.i3bar-river.package)
         ];
       };
 

@@ -32,9 +32,16 @@
       {
         services.cliphist.enable = true;
 
-        wayland.windowManager.sway.config.keybindings = {
-          "--no-repeat ${mod}+p" = "exec ${lib.getExe rofi-cliphist} copy";
-          "--no-repeat ${mod}+Shift+p" = "exec ${lib.getExe rofi-cliphist} type";
+        wayland.windowManager = {
+          sway.config.keybindings = {
+            "--no-repeat ${mod}+p" = "exec ${lib.getExe rofi-cliphist} copy";
+            "--no-repeat ${mod}+Shift+p" = "exec ${lib.getExe rofi-cliphist} type";
+          };
+
+          hyprland.settings.bind = [
+            "SUPER, p, exec, ${lib.getExe rofi-cliphist} copy"
+            "SUPER+SHIFT, p, exec, ${lib.getExe rofi-cliphist} type"
+          ];
         };
 
         home.packages = with pkgs; [

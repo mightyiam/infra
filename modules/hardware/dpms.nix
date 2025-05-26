@@ -7,7 +7,7 @@
         name = "dpms-all";
         runtimeInputs = with pkgs; [
           sway
-          #hyprland
+          hyprland
         ];
         text = ''
           if [ $# -ne 1 ]; then
@@ -23,9 +23,9 @@
               "sway")
                   swaymsg "output * dpms $1"
                   ;;
-              # "Hyprland")
-              #     hyprctl dispatch dpms "$1"
-              #     ;;
+              "Hyprland")
+                  hyprctl dispatch dpms "$1"
+                  ;;
               *)
                   echo "Unsupported XDG_CURRENT_DESKTOP" >&2
                   exit 1

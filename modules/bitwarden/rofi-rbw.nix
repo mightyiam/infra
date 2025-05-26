@@ -13,12 +13,18 @@
         globalSection = { };
       };
 
-      wayland.windowManager.sway.config.keybindings =
-        let
-          mod = hmArgs.config.wayland.windowManager.sway.config.modifier;
-        in
-        {
-          "--no-repeat ${mod}+m" = "exec ${lib.getExe package}";
-        };
+      wayland.windowManager = {
+        sway.config.keybindings =
+          let
+            mod = hmArgs.config.wayland.windowManager.sway.config.modifier;
+          in
+          {
+            "--no-repeat ${mod}+m" = "exec ${lib.getExe package}";
+          };
+
+        hyprland.settings.bind = [
+          "SUPER, m, exec, ${lib.getExe package}"
+        ];
+      };
     };
 }

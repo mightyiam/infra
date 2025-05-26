@@ -24,8 +24,12 @@
       toggle-mute-sources = withSystem pkgs.system (psArgs: psArgs.config.packages.toggle-mute-sources);
     in
     {
-      wayland.windowManager.sway.config.keybindings."--no-repeat ${mod}+z" =
-        "exec ${lib.getExe toggle-mute-sources}";
+      wayland.windowManager = {
+        sway.config.keybindings."--no-repeat ${mod}+z" = "exec ${lib.getExe toggle-mute-sources}";
+        hyprland.settings.bind = [
+          "SUPER, z, exec, ${lib.getExe toggle-mute-sources}"
+        ];
+      };
 
       home.packages = [ toggle-mute-sources ];
     };
