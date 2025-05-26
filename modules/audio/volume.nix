@@ -10,14 +10,14 @@
       incVol =
         d:
         lib.concatStringsSep " " [
-          "exec ${pactl}"
+          pactl
           "set-sink-volume @DEFAULT_SINK@ ${d}${toString step}%"
         ];
     in
     {
       wayland.windowManager.sway.config.keybindings = {
-        "--no-repeat ${mod}+x" = incVol "-";
-        "--no-repeat ${mod}+Shift+x" = incVol "+";
+        "--no-repeat ${mod}+x" = "exec ${incVol "-"}";
+        "--no-repeat ${mod}+Shift+x" = "exec ${incVol "+"}";
       };
     };
 }
