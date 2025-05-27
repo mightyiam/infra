@@ -33,7 +33,7 @@
                 "128x128"
               ]
               |> map (variant: [
-                "${config.home.path}/share/icons/hicolor/${variant}/apps"
+                "${config.home.homeDirectory}/share/icons/hicolor/${variant}/apps"
                 "/run/current-system/sw/share/icons/hicolor/${variant}/apps"
               ])
               |> lib.flatten;
