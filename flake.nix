@@ -25,7 +25,8 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      # https://github.com/nix-community/home-manager/pull/7138
+      url = "github:mightyiam/home-manager/way-displays-stateful";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

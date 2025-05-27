@@ -6,9 +6,11 @@
       command = ''${lib.getExe' pkgs.systemd "systemctl"} --user start "way-displays@$XDG_VTNR".service'';
     in
     {
-      imports = [ ./_way-displays.nix ];
-
-      services.way-displays-stateful.enable = true;
+      services.way-displays = {
+        enable = true;
+        statefulConfiguration = true;
+        settings = null;
+      };
 
       wayland.windowManager = {
         sway.config.startup = [ { inherit command; } ];
