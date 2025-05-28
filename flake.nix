@@ -86,8 +86,7 @@
     };
 
     stylix = {
-      # https://github.com/danth/stylix/pull/1292
-      url = "github:mightyiam/stylix/home-manager-fontconfig";
+      url = "github:mightyiam/stylix/for-infra";
       inputs = {
         flake-compat.follows = "dedupe_flake-compat";
         flake-parts.follows = "flake-parts";

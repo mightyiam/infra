@@ -716,16 +716,16 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "lastModified": 1748100619,
-        "narHash": "sha256-8zJZMfGZzK+bwziJkXHXUxZ8aMDvU16pU0OtBwdOKAU=",
+        "lastModified": 1748453639,
+        "narHash": "sha256-LW4Otdg+a+N3l8V+q4s8z+f88GtfBuOd49PulCo+9fI=",
         "owner": "mightyiam",
         "repo": "stylix",
-        "rev": "ddf7bb22aafbe835845322648161b927a74c419b",
+        "rev": "203aea6428172cb18a1c2d0b701214cd5dc41e9a",
         "type": "github"
       },
       "original": {
         "owner": "mightyiam",
-        "ref": "home-manager-fontconfig",
+        "ref": "for-infra",
         "repo": "stylix",
         "type": "github"
       }
