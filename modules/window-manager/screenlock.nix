@@ -14,13 +14,18 @@
         dpms-all = withSystem pkgs.system (psArgs: psArgs.config.packages.dpms-all);
       in
       {
-        wayland.windowManager.sway.config.keybindings =
-          let
-            mod = hmArgs.config.wayland.windowManager.sway.config.modifier;
-          in
-          {
-            "${mod}+Ctrl+l" = "exec ${lockCommand}";
-          };
+        wayland.windowManager = {
+          sway.config.keybindings =
+            let
+              mod = hmArgs.config.wayland.windowManager.sway.config.modifier;
+            in
+            {
+              "${mod}+Ctrl+l" = "exec ${lockCommand}";
+            };
+          hyprland.settings.bind = [
+            "SUPER+Ctrl, l, exec, ${lockCommand}"
+          ];
+        };
 
         programs.swaylock = {
           enable = true;
