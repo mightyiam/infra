@@ -3,7 +3,7 @@
     nixos.wife =
       { pkgs, ... }:
       {
-        services.xserver.desktopManager.gnome.enable = true;
+        services.desktopManager.gnome.enable = true;
 
         environment.gnome.excludePackages = with pkgs; [
           epiphany
