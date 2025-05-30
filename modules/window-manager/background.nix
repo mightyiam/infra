@@ -25,7 +25,7 @@
           path = "${hmArgs.config.home.homeDirectory}/backgrounds";
           duration = "4h";
           sorting = "random";
-          queue-size = 999;
+          queue-size = 20;
           mode = "center";
         };
       };
