@@ -1,4 +1,3 @@
-{ lib, ... }:
 let
   polyModule =
     { pkgs, ... }:

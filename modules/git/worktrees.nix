@@ -1,4 +1,4 @@
-{ lib, withSystem, ... }:
+{ withSystem, ... }:
 {
   perSystem =
     { pkgs, ... }:
