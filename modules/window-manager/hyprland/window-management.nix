@@ -37,7 +37,7 @@
 
                 "SUPER, tab, hy3:togglefocuslayer"
 
-                "SUPER, h, hy3:makegroup, h"
+                "SUPER, s, hy3:makegroup, h"
                 "SUPER, v, hy3:makegroup, v"
 
                 "SUPER, t, hy3:makegroup, tab"
