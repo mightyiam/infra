@@ -35,6 +35,7 @@
           ethtool
           gping
           inetutils
+          socat
         ];
       };
   };
