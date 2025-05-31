@@ -1,10 +1,50 @@
-{ lib, ... }:
+{ lib, withSystem, ... }:
+let
+  mode = "privacy";
+in
 {
+  perSystem =
+    psArgs@{ pkgs, ... }:
+    {
+      packages = {
+        notification-privacy-off = pkgs.writeShellApplication {
+          name = "notification-privacy-off";
+          runtimeInputs = [ pkgs.mako ];
+          text = ''
+            makoctl mode -r ${mode}
+          '';
+        };
+        notification-privacy-on = pkgs.writeShellApplication {
+          name = "notification-privacy-on";
+          runtimeInputs = [ pkgs.mako ];
+          text = ''
+            makoctl mode -a ${mode}
+          '';
+        };
+        handle-hyprland-screencast = pkgs.writeShellApplication {
+          name = "handle-hyprland-screencast";
+          runtimeInputs = [
+            pkgs.socat
+            psArgs.config.packages.notification-privacy-off
+            psArgs.config.packages.notification-privacy-on
+          ];
+          text = ''
+            handle() {
+              case $1 in
+                "screencast>>0"*) notification-privacy-off ;;
+                "screencast>>1"*) notification-privacy-on ;;
+              esac
+            }
+
+            socat -U - "UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock" \
+            | while read -r line; do handle "$line"; done
+          '';
+        };
+      };
+    };
+
   flake.modules.homeManager.gui =
     { pkgs, ... }:
-    let
-      mode = "screen-capture";
-    in
     {
       services.mako = {
         enable = true;
@@ -17,9 +57,17 @@
       };
       xdg.configFile."xdg-desktop-portal-wlr/config".text = ''
         [screencast]
-        exec_before=${lib.getExe' pkgs.mako "makoctl"} mode -a ${mode}
-        exec_after=${lib.getExe' pkgs.mako "makoctl"} mode -r ${mode}
+        exec_before=${
+          withSystem pkgs.system (psArgs: lib.getExe psArgs.config.packages.notification-privacy-on)
+        }
+        exec_after=${
+          withSystem pkgs.system (psArgs: lib.getExe psArgs.config.packages.notification-privacy-off)
+        }
       '';
       services.systembus-notify.enable = true;
+
+      wayland.windowManager.hyprland.settings.exec-once = [
+        (withSystem pkgs.system (psArgs: lib.getExe psArgs.config.packages.handle-hyprland-screencast))
+      ];
     };
 }
