@@ -324,19 +324,14 @@
         ]
       },
       "locked": {
-        "lastModified": 1748592654,
-        "narHash": "sha256-m1cuCU7xQCDHRMIAMe6jzpAGInkYjAIxDMkJlsWRisk=",
-        "owner": "mightyiam",
-        "repo": "home-manager",
-        "rev": "7703bc713e5c59d6585c312c122c65572fcc2bec",
-        "type": "github"
+        "path": "./forks/home-manager",
+        "type": "path"
       },
       "original": {
-        "owner": "mightyiam",
-        "ref": "way-displays-stateful",
-        "repo": "home-manager",
-        "type": "github"
-      }
+        "path": "./forks/home-manager",
+        "type": "path"
+      },
+      "parent": []
     },
     "import-tree": {
       "locked": {
@@ -716,19 +711,14 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "lastModified": 1748592603,
-        "narHash": "sha256-vNWhS6LdZOQqVZkYZvWtvxvcIyK+nc0aSKSOdInB0hs=",
-        "owner": "mightyiam",
-        "repo": "stylix",
-        "rev": "2d01077f1acb686f56fe1152959f3a13cf6ba776",
-        "type": "github"
+        "path": "./forks/stylix",
+        "type": "path"
       },
       "original": {
-        "owner": "mightyiam",
-        "ref": "for-infra",
-        "repo": "stylix",
-        "type": "github"
-      }
+        "path": "./forks/stylix",
+        "type": "path"
+      },
+      "parent": []
     },
     "systems": {
       "locked": {

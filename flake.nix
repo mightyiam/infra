@@ -5,6 +5,8 @@
     allow-import-from-derivation = false;
   };
 
+  inputs.self.submodules = true;
+
   inputs = {
     cpu-microcodes = {
       flake = false;
@@ -25,8 +27,8 @@
     };
 
     home-manager = {
-      # https://github.com/nix-community/home-manager/pull/7138
-      url = "github:mightyiam/home-manager/way-displays-stateful";
+      url = "path:./forks/home-manager";
+      flake = true;
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -86,7 +88,8 @@
     };
 
     stylix = {
-      url = "github:mightyiam/stylix/for-infra";
+      url = "path:./forks/stylix";
+      flake = true;
       inputs = {
         flake-compat.follows = "dedupe_flake-compat";
         flake-parts.follows = "flake-parts";
