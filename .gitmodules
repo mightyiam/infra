@@ -1,6 +1,6 @@
 [submodule "forks/home-manager"]
 	path = forks/home-manager
-	url = https://github.com/mightyiam/infra
+	url = ./.
 [submodule "forks/stylix"]
 	path = forks/stylix
-	url = https://github.com/mightyiam/infra
+	url = ./.

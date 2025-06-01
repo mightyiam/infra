@@ -44,6 +44,69 @@ It is whether that set of option values is to be imported in some configurations
 An example of a set of option values that would deserve a distinct named module is `flake.modules.nixos.laptop`
 because it would be imported by laptop configurations and not by desktop configurations.
 
+## Integrated flake input forks
+
+While I attempt to have an upstream-first approach,
+There are typically periods in which a branch with changes on top of upstream exists.
+I refer to such a branch as an _input fork_.
+
+All my input fork branches are stored in this very repository.
+Yes, even though they are branches from disparate repositories,
+they are stored in this repository.
+
+They are then checked out locally as git submodules.
+Yes, this very repository is a submodule within itself (possibly multiple times).
+But the submodules don't typically share any history with the repository itself,
+so this is not _that_ weird.
+
+Finally, flake input path URLs are used to refer to them.
+
+### Creating an input fork
+
+An input fork is created by running `nix run .#input-forks-add <input> <upstream-url> <rev> <base-ref>`.
+
+- `input`: name of the flake input
+- `upstream-url`: git URL of the upstream repo
+- `rev`: upstream rev to fork at
+- `base-ref`: base ref for future rebasing, such as `main`
+
+> [!TIP]
+> The `rev` should probably be the one to which that input is currently locked.
+> Run `nix flake metadata` to see what rev that is.
+
+For example
+
+```console-session
+$ nix run .#input-fork-add flake-parts https://github.com/hercules-ci/flake-parts 64b9f2c2df31bb87bdd2360a2feb58c817b4d16c
+```
+
+And you end up with a git submodule at `./forks/<input>`.
+It can be used this way:
+
+```nix
+{
+  inputs.flake-parts.url = "./forks/flake-parts";
+}
+```
+
+### Cherry picking for an input fork
+
+1. `cd forks/<input>`
+1. Get on the `forks/<input>` branch.
+1. Add a remote for a fork and `git cherry-pick` from it.
+1. Make sure to push.
+
+### Rebasing an input fork
+
+To rebase an input fork (or fail to do so):
+`nix run .#input-fork-rebase <input>`
+
+For example
+
+```
+$ nix run .#input-fork-rebase flake-parts
+```
+
 ## Unfree packages
 
 What Nixpkgs unfree packages are allowed is configured at the flake level via an option.
