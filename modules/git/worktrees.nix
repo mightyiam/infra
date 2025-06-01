@@ -4,14 +4,6 @@
     { pkgs, ... }:
     {
       packages = {
-        git-dir = pkgs.writeShellApplication {
-          name = "git-dir";
-          runtimeInputs = [ pkgs.git ];
-          text = ''
-            git_dir=$(git rev-parse --git-dir)
-            echo "''${git_dir%/*/*}"
-          '';
-        };
         git-worktree-add = pkgs.writeShellApplication {
           name = "git-worktree-add";
           runtimeInputs = [ pkgs.git ];
@@ -30,7 +22,6 @@
     {
       home.packages = withSystem pkgs.system (
         psArgs: with psArgs.config.packages; [
-          git-dir
           git-worktree-add
         ]
       );
