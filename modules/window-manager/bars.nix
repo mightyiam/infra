@@ -72,9 +72,6 @@
               colors = hmArgs.config.lib.stylix.i3.bar.colors // {
                 background = "#00000000";
               };
-              fonts = hmArgs.config.lib.stylix.i3.bar.fonts // {
-                style = "Bold";
-              };
               trayOutput = "none";
             }
           ];
@@ -101,19 +98,8 @@
             |> lib.concatStringsSep " ";
           position = "bottom";
 
-          font =
-            [
-              hmArgs.config.stylix.fonts.monospace.name
-              "Bold"
-              hmArgs.config.stylix.fonts.sizes.desktop
-            ]
-            |> map toString
-            |> lib.concatStringsSep " ";
-
           # on sway this matches the swaybar that is overlayed on top of it
           height = 36;
-
-          background = hmArgs.config.lib.stylix.colors.withHashtag.base00;
         };
       };
     };
