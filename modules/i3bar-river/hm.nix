@@ -24,13 +24,13 @@ mkTarget {
           color = c.base05;
           separator = c.base01;
           tag_fg = c.base05;
-          tag_bg = c.base00;
+          tag_bg = c.base00 + opacityHex;
           tag_focused_fg = c.base00;
-          tag_focused_bg = c.base05;
+          tag_focused_bg = c.base05 + opacityHex;
           tag_urgent_fg = c.base00;
-          tag_urgent_bg = c.base0A;
+          tag_urgent_bg = c.base0A + opacityHex;
           tag_inactive_fg = c.base05;
-          tag_inactive_bg = c.base01;
+          tag_inactive_bg = c.base01 + opacityHex;
         };
       }
     )
