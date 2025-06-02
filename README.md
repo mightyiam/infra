@@ -46,6 +46,11 @@ because it would be imported by laptop configurations and not by desktop configu
 
 ## Integrated flake input forks
 
+- 🕺 no need to use the `--override-input` flag
+- 🤔 forks are in the same repository in which they are used
+  (whatever that may mean to you)
+- 😮‍💨 involvement of submodules may incur operational overhead (e.g. `git submodule update`)
+
 While I attempt to have an upstream-first approach,
 There are typically periods in which a branch with changes on top of upstream exists.
 I refer to such a branch as an _input fork_.
