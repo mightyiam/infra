@@ -90,6 +90,7 @@
         enable = true;
 
         settings = {
+          blend = false;
           command =
             [
               (lib.getExe hmArgs.config.programs.i3status-rust.package)
