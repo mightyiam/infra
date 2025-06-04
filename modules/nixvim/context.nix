@@ -5,7 +5,7 @@
       {
         mode = "n";
         key = "<leader>c";
-        action = "<CMD>TSContextToggle<CR>";
+        action = "<CMD>TSContext toggle<CR>";
       }
     ];
   };
