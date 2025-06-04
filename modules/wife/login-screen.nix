@@ -1,6 +1,5 @@
 {
-  flake.modules.nixos.wife.services.xserver = {
-    enable = true;
-    displayManager.gdm.enable = true;
+  flake.modules.nixos.wife = {
+    services.displayManager.gdm.enable = true;
   };
 }
