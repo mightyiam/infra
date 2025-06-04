@@ -1,3 +1,7 @@
 {
-  flake.modules.nixos."nixosConfigurations/termitomyces".facter.reportPath = ./facter.json;
+  configurations.nixos.termitomyces.modules = [
+    {
+      facter.reportPath = ./facter.json;
+    }
+  ];
 }

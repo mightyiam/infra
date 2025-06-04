@@ -1,7 +1,7 @@
 {
   configurations.nixos.ganoderma.modules = [
     {
-      facter.reportPath = ./facter.json;
+      networking.hostName = "ganoderma";
     }
   ];
 }

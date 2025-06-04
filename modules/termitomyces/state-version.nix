@@ -1,3 +1,7 @@
 {
-  flake.modules.nixos."nixosConfigurations/termitomyces".system.stateVersion = "24.11";
+  configurations.nixos.termitomyces.modules = [
+    {
+      system.stateVersion = "24.11";
+    }
+  ];
 }

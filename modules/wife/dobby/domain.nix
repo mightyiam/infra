@@ -1,3 +1,7 @@
 {
-  flake.modules.nixos."nixosConfigurations/dobby".networking.domain = "local";
+  configurations.nixos.dobby.modules = [
+    {
+      networking.domain = "local";
+    }
+  ];
 }

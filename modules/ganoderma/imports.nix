@@ -1,6 +1,6 @@
 { config, ... }:
 {
-  flake.modules.nixos."nixosConfigurations/ganoderma".imports = with config.flake.modules.nixos; [
+  configurations.nixos.ganoderma.modules = with config.flake.modules.nixos; [
     efi
     workstation
     nvidia-gpu

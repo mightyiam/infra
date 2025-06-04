@@ -1,7 +1,7 @@
 {
   configurations.nixos.dobby.modules = [
     {
-      hardware.nvidia.open = false;
+      networking.hostName = "dobby";
     }
   ];
 }

@@ -1,3 +1,7 @@
 {
-  flake.modules.nixos."nixosConfigurations/ganoderma".system.stateVersion = "24.11";
+  configurations.nixos.ganoderma.modules = [
+    {
+      system.stateVersion = "24.11";
+    }
+  ];
 }

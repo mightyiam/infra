@@ -1,3 +1,7 @@
 {
-  flake.modules.nixos."nixosConfigurations/dobby".system.stateVersion = "24.11";
+  configurations.nixos.dobby.modules = [
+    {
+      system.stateVersion = "24.11";
+    }
+  ];
 }

@@ -1,3 +1,7 @@
 {
-  flake.modules.nixos."nixosConfigurations/termitomyces".networking.domain = "local";
+  configurations.nixos.termitomyces.modules = [
+    {
+      networking.domain = "local";
+    }
+  ];
 }

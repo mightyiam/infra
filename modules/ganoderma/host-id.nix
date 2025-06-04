@@ -1,3 +1,7 @@
 {
-  flake.modules.nixos."nixosConfigurations/ganoderma".networking.hostId = "0e8e163d";
+  configurations.nixos.ganoderma.modules = [
+    {
+      networking.hostId = "0e8e163d";
+    }
+  ];
 }
