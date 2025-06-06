@@ -44,35 +44,42 @@ It is whether that set of option values is to be imported in some configurations
 An example of a set of option values that would deserve a distinct named module is `flake.modules.nixos.laptop`
 because it would be imported by laptop configurations and not by desktop configurations.
 
-## Integrated flake input forks
+## Integrated Patched Flake Inputs pattern
 
+- 🪶 edit/patch the repo's inputs without leaving its clone directory
 - 🕺 no need to use the `--override-input` flag
-- 🤔 forks are in the same repository in which they are used
-  (whatever that may mean to you)
-- 😮‍💨 involvement of submodules may incur operational overhead (e.g. `git submodule update`)
+- 🧩 patched inputs are stored in the repository in which they are used
+- ⚡ some scripts provided
+- 😮‍💨 some mental and operational overhead such as an occasional `git submodule update`
 
-While I attempt to have an upstream-first approach,
-There are typically periods in which a branch with changes on top of upstream exists.
-I refer to such a branch as an _input fork_.
+I attempt to maintain an upstream-first approach.
+That means contributing my changes to inputs upstream.
+While collaborating with upstream on the refinement and merge of those changes
+I maintain a branch of that input with those changes cherry-picked.
+I call these branches _integrated patched flake inputs_ (IPFIs).
 
-All my input fork branches are stored in this very repository.
+IPFIs are stored in this very repository.
 Yes, even though they are branches from disparate repositories,
-they are stored in this repository.
+they are stored in the repository in which they are used.
+Git doesn't mind.
 
-They are then checked out locally as git submodules.
-Yes, this very repository is a submodule within itself (possibly multiple times).
-But the submodules don't typically share any history with the repository itself,
-so this is not _that_ weird.
+For each IPFI a git submodule exists.
+That submodule is a clone of this very same repository.
+The head of that submodule is set to the head of the IPFI branch.
 
-Finally, flake input path URLs are used to refer to them.
+Finally, each `inputs.<name>.url` value is a path to the corresponding IPFI submodule directory.
 
-### Creating an input fork
+> [!WARNING]
+> There seems to be an issue with Nix that affects the IPFI pattern.
+> Workaround: artificially make the repository dirty.
 
-An input fork is created by running `input-forks-add <input> <upstream-url> <rev> <base-ref>`.
+### Creating an IPFI
+
+An IPFI is created by running `ipfi-add <input> <upstream-url> <rev> <base-ref>`.
 
 - `input`: name of the flake input
 - `upstream-url`: git URL of the upstream repo
-- `rev`: upstream rev to fork at
+- `rev`: upstream rev to branch from
 - `base-ref`: base ref for future rebasing, such as `main`
 
 > [!TIP]
@@ -82,34 +89,34 @@ An input fork is created by running `input-forks-add <input> <upstream-url> <rev
 For example
 
 ```console-session
-$ input-fork-add flake-parts https://github.com/hercules-ci/flake-parts 64b9f2c2df31bb87bdd2360a2feb58c817b4d16c
+$ ipfi-add flake-parts https://github.com/hercules-ci/flake-parts 64b9f2c2df31bb87bdd2360a2feb58c817b4d16c
 ```
 
-And you end up with a git submodule at `./forks/<input>`.
+And you end up with a git submodule at `./patched-inputs/<input>`.
 It can be used this way:
 
 ```nix
 {
-  inputs.flake-parts.url = "./forks/flake-parts";
+  inputs.flake-parts.url = "./patched-inputs/flake-parts";
 }
 ```
 
 ### Cherry picking for an input fork
 
-1. `cd forks/<input>`
-1. Get on the `forks/<input>` branch.
-1. Add a remote for a fork and `git cherry-pick` from it.
+1. `cd patched-inputs/<input>`
+1. Get on the `patched-inputs/<input>` branch.
+1. Add a remote for a fork and cherry-pick from it.
 1. Make sure to push.
 
-### Rebasing an input fork
+### Rebasing an IPFI
 
-To rebase an input fork (or fail to do so):
-`input-fork-rebase <input>`
+To rebase an IPFI (or run into a conflict):
+`ipfi-rebase <input>`
 
 For example
 
 ```
-$ input-fork-rebase flake-parts
+$ ipfi-rebase flake-parts
 ```
 
 ## Unfree packages

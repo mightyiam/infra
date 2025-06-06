@@ -27,7 +27,7 @@
     };
 
     home-manager = {
-      url = "path:./forks/home-manager";
+      url = "./patched-inputs/home-manager";
       flake = true;
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -88,7 +88,7 @@
     };
 
     stylix = {
-      url = "path:./forks/stylix";
+      url = "./patched-inputs/stylix";
       flake = true;
       inputs = {
         flake-compat.follows = "dedupe_flake-compat";

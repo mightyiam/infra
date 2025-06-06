@@ -1,6 +1,6 @@
-[submodule "forks/home-manager"]
-	path = forks/home-manager
+[submodule "patched-inputs/home-manager"]
+	path = patched-inputs/home-manager
 	url = ./.
-[submodule "forks/stylix"]
-	path = forks/stylix
+[submodule "patched-inputs/stylix"]
+	path = patched-inputs/stylix
 	url = ./.

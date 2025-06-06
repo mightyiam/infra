@@ -3,7 +3,7 @@
   perSystem =
     { pkgs, ... }:
     let
-      prefix = "forks";
+      prefix = "patched-inputs";
       dotUpstreamUrl = ".upstream-url";
       dotBaseRef = ".base-ref";
 
@@ -17,9 +17,9 @@
         name = "ensure-upstream";
         runtimeInputs = [ pkgs.git ];
         text = ''
-          name="$1"
-          remote_url="$( <"$name${dotUpstreamUrl}" )"
-          cd "$name"
+          path="$1"
+          remote_url="$( <"$path${dotUpstreamUrl}" )"
+          cd "$path"
           if ! git remote get-url ${upstream} > /dev/null 2>&1; then
             git remote add ${upstream} "$remote_url"
           fi
@@ -31,40 +31,42 @@
 
       make-shells.default.packages = [
         (pkgs.writeShellApplication {
-          name = "input-fork-add";
+          name = "ipfi-add";
           runtimeInputs = [ pkgs.git ];
           text = ''
             set -x
-            name="${prefix}/$1"
+            path="${prefix}/$1"
+            branch="${prefix}/$1"
             upstream_url="$2"
             rev="$3"
             base_ref="$4"
             cd "$(git rev-parse --show-toplevel)"
-            git submodule add "./." "$name"
-            echo -n "$upstream_url" > "$name${dotUpstreamUrl}"
-            echo -n "$base_ref" > "$name${dotBaseRef}"
-            ${lib.getExe ensure-upstream} "$name"
-            cd "$name"
+            git submodule add "./." "$path"
+            echo -n "$upstream_url" > "$path${dotUpstreamUrl}"
+            echo -n "$base_ref" > "$path${dotBaseRef}"
+            ${lib.getExe ensure-upstream} "$path"
+            cd "$path"
             git fetch ${upstream} "$rev"
-            git switch -c "$name" "$rev"
-            git push --set-upstream ${origin} "$name"
+            git switch -c "$branch" "$rev"
+            git push --set-upstream ${origin} "$branch"
           '';
         })
         (pkgs.writeShellApplication {
-          name = "input-fork-rebase";
+          name = "ipfi-rebase";
           runtimeInputs = [ pkgs.git ];
           text = ''
             set -x
-            name="${prefix}/$1"
-            base_ref="$( <"$name${dotBaseRef}" )"
+            path="${prefix}/$1"
+            branch="${prefix}/$1"
+            base_ref="$( <"$path${dotBaseRef}" )"
             cd "$(git rev-parse --show-toplevel)"
-            ${lib.getExe ensure-upstream} "$name"
-            cd "$name"
+            ${lib.getExe ensure-upstream} "$path"
+            cd "$path"
             git fetch ${origin}
-            git switch "$name"
+            git switch "$branch"
             git fetch ${upstream} "$base_ref"
             git rebase "${upstream}/$base_ref"
-            git push -f ${origin} "$name:$name"
+            git push -f ${origin} "$branch:$branch"
           '';
         })
       ];

@@ -325,11 +325,11 @@
         ]
       },
       "locked": {
-        "path": "./forks/home-manager",
+        "path": "./patched-inputs/home-manager",
         "type": "path"
       },
       "original": {
-        "path": "./forks/home-manager",
+        "path": "./patched-inputs/home-manager",
         "type": "path"
       },
       "parent": []
@@ -712,11 +712,11 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "path": "./forks/stylix",
+        "path": "./patched-inputs/stylix",
         "type": "path"
       },
       "original": {
-        "path": "./forks/stylix",
+        "path": "./patched-inputs/stylix",
         "type": "path"
       },
       "parent": []
