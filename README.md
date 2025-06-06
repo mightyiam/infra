@@ -101,7 +101,7 @@ It can be used this way:
 }
 ```
 
-### Cherry picking for an input fork
+### Cherry picking for an IPFI
 
 1. `cd patched-inputs/<input>`
 1. Get on the `patched-inputs/<input>` branch.
