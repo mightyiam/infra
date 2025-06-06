@@ -130,7 +130,7 @@
 
   # _additional_ `inputs` only for deduplication
   inputs = {
-    dedupe_flake-compat.url = "https://flakehub.com/f/edolstra/flake-compat/1.tar.gz";
+    dedupe_flake-compat.url = "github:edolstra/flake-compat";
 
     dedupe_flake-utils = {
       url = "github:numtide/flake-utils";
