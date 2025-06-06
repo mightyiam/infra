@@ -47,9 +47,9 @@ because it would be imported by laptop configurations and not by desktop configu
 ## Integrated patched flake inputs pattern
 
 - 🪶 edit/patch the repo's inputs without leaving its clone directory
-- 🕺 no need to use the `--override-input` flag
+- 🕺 no `--override-input` flag; less typing and avoids confusion in case omitted
 - 🧩 patched inputs are stored in the repository in which they are used
-- ⚡ some time-saving scripts provided
+- ⚡ provided scripts save time and produce consistency
 - 😮‍💨 some mental and operational overhead such as an occasional `git submodule update`
 
 I attempt to maintain an upstream-first approach.
