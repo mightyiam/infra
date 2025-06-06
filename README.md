@@ -44,7 +44,7 @@ It is whether that set of option values is to be imported in some configurations
 An example of a set of option values that would deserve a distinct named module is `flake.modules.nixos.laptop`
 because it would be imported by laptop configurations and not by desktop configurations.
 
-## Integrated Patched Flake Inputs pattern
+## Integrated patched flake inputs pattern
 
 - 🪶 edit/patch the repo's inputs without leaving its clone directory
 - 🕺 no need to use the `--override-input` flag
