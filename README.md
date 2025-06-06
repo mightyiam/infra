@@ -68,7 +68,7 @@ Finally, flake input path URLs are used to refer to them.
 
 ### Creating an input fork
 
-An input fork is created by running `nix run .#input-forks-add <input> <upstream-url> <rev> <base-ref>`.
+An input fork is created by running `input-forks-add <input> <upstream-url> <rev> <base-ref>`.
 
 - `input`: name of the flake input
 - `upstream-url`: git URL of the upstream repo
@@ -82,7 +82,7 @@ An input fork is created by running `nix run .#input-forks-add <input> <upstream
 For example
 
 ```console-session
-$ nix run .#input-fork-add flake-parts https://github.com/hercules-ci/flake-parts 64b9f2c2df31bb87bdd2360a2feb58c817b4d16c
+$ input-fork-add flake-parts https://github.com/hercules-ci/flake-parts 64b9f2c2df31bb87bdd2360a2feb58c817b4d16c
 ```
 
 And you end up with a git submodule at `./forks/<input>`.
@@ -104,12 +104,12 @@ It can be used this way:
 ### Rebasing an input fork
 
 To rebase an input fork (or fail to do so):
-`nix run .#input-fork-rebase <input>`
+`input-fork-rebase <input>`
 
 For example
 
 ```
-$ nix run .#input-fork-rebase flake-parts
+$ input-fork-rebase flake-parts
 ```
 
 ## Unfree packages

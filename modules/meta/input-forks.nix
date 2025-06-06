@@ -31,8 +31,8 @@
     {
       treefmt.settings.global.excludes = [ "${prefix}/*" ];
 
-      packages = {
-        input-fork-add = pkgs.writeShellApplication {
+      make-shells.default.packages = [
+        (pkgs.writeShellApplication {
           name = "input-fork-add";
           runtimeInputs = [ pkgs.git ];
           text = ''
@@ -51,9 +51,8 @@
             git switch -c "$name" "$rev"
             git push --set-upstream ${origin} "$name"
           '';
-        };
-
-        input-fork-rebase = pkgs.writeShellApplication {
+        })
+        (pkgs.writeShellApplication {
           name = "input-fork-rebase";
           runtimeInputs = [ pkgs.git ];
           text = ''
@@ -69,7 +68,7 @@
             git rebase "${upstream}/$base_ref"
             git push -f ${origin} "$name:$name"
           '';
-        };
-      };
+        })
+      ];
     };
 }
