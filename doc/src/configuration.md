@@ -162,6 +162,27 @@ Or even choose monospace for everything:
 }
 ```
 
+### Font packages
+
+Stylix fonts are made available in the environments of platforms.
+See [the font packages module](/options/modules/font-packages.html).
+
+### Target-specific font application
+
+Some apps allow fonts to be set—typically via their configuration file.
+Some Stylix modules do that.
+For example, [the Alacritty module](/options/modules/alacritty.html) sets home-manager's
+`programs.alacritty.settings.font`.
+
+### General font application via Fontconfig
+
+Stylix fonts are applied via Fontconfig on some platforms.
+
+> [!WARNING]
+> Stylix does not enable Fontconfig itself.
+
+See [the Fontconfig module](/options/modules/fontconfig.html).
+
 ## Home Manager inheritance
 
 By default, if Home Manager is used as part of NixOS, then Stylix will be
