@@ -1,7 +1,5 @@
-{ inputs, lib, ... }:
+{ lib, ... }:
 {
-  flake.meta.inputs = inputs |> lib.mapAttrs (name: value: lib.break value.url);
-
   perSystem =
     { pkgs, ... }:
     let
