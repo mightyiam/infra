@@ -49,7 +49,7 @@ because it would be imported by laptop configurations and not by desktop configu
 - 🪶 edit/patch the repo's inputs without leaving its clone directory
 - 🕺 no need to use the `--override-input` flag
 - 🧩 patched inputs are stored in the repository in which they are used
-- ⚡ some scripts provided
+- ⚡ some time-saving scripts provided
 - 😮‍💨 some mental and operational overhead such as an occasional `git submodule update`
 
 I attempt to maintain an upstream-first approach.
