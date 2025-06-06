@@ -28,6 +28,8 @@ let
           terminal = 12;
         };
       };
+
+      fonts.fontconfig.enable = true;
     };
 in
 {

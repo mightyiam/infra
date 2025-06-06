@@ -15,7 +15,10 @@
 
     homeManager.base = {
       imports = [ inputs.stylix.homeModules.stylix ];
-      stylix.enable = true;
+      stylix = {
+        enable = true;
+        targets.blender.enable = false;
+      };
     };
 
     nixOnDroid.base = {
