@@ -48,7 +48,7 @@ because it would be imported by laptop configurations and not by desktop configu
 
 - 🪶 edit/patch the repo's inputs without leaving its clone directory
 - 🕺 no `--override-input` flag; less typing and avoids confusion in case omitted
-- 🧩 patched inputs are stored in the repository in which they are used
+- 🐬 single-repo setup; less to keep track of, more self-contained
 - ⚡ provided scripts save time and produce consistency
 - 😮‍💨 some mental and operational overhead such as an occasional `git submodule update`
 
