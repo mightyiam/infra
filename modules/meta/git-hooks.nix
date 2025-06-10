@@ -1,6 +1,11 @@
 { inputs, ... }:
 {
   imports = [ inputs.git-hooks.flakeModule ];
+
+  files.".gitignore".parts."pre-commit-config.yaml" = ''
+    /.pre-commit-config.yaml
+  '';
+
   perSystem =
     { config, ... }:
     {

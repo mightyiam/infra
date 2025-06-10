@@ -7,6 +7,16 @@ let
   prefix = "nixosConfigurations/";
 in
 {
+  files."README.md".parts.nixos-configurations =
+    # markdown
+    ''
+      ## Configurations are declared by prefixing a module's name
+
+      This spares me of some boilerplate.
+      For example, see [`termitomyces/imports`](modules/termitomyces/imports.nix) module.
+
+    '';
+
   flake = {
     nixosConfigurations =
       config.flake.modules.nixos or { }
