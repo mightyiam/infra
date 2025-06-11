@@ -10,18 +10,18 @@
     files = lib.mkOption {
       default = { };
       type = lib.types.lazyAttrsOf (
-        lib.types.submodule (smArgs: {
-          options = {
-            parts = lib.mkOption {
-              default = { };
-              type = lib.types.lazyAttrsOf lib.types.str;
+        lib.types.either (lib.types.separatedString "") (
+          lib.types.submodule {
+            options = {
+              parts = lib.mkOption {
+                type = lib.types.lazyAttrsOf lib.types.str;
+              };
+              order = lib.mkOption {
+                type = lib.types.listOf lib.types.str;
+              };
             };
-            order = lib.mkOption {
-              default = lib.attrNames smArgs.config.parts;
-              type = lib.types.listOf lib.types.str;
-            };
-          };
-        })
+          }
+        )
       );
     };
 
@@ -37,13 +37,16 @@
               type = lib.types.lazyAttrsOf lib.types.package;
               readOnly = true;
               default = lib.flip lib.mapAttrs config.files (
-                path:
-                { parts, order }:
-                lib.pipe order [
-                  (map (lib.flip lib.getAttr parts))
-                  lib.concatStrings
-                  (pkgs.writeText "file-${path}")
-                ]
+                filePath: file:
+                pkgs.writeText "file-${filePath}" (
+                  if lib.isAttrs file then
+                    lib.pipe file.order [
+                      (map (lib.flip lib.getAttr file.parts))
+                      lib.concatStrings
+                    ]
+                  else
+                    file
+                )
               );
             };
 
@@ -52,7 +55,7 @@
               default = pkgs.writeShellApplication {
                 name = "write-files";
                 text = lib.pipe cfg.drvs [
-                  (lib.mapAttrsToList (path: drv: "cat ${drv} > ${lib.escapeShellArg path}"))
+                  (lib.mapAttrsToList (filePath: drv: "cat ${drv} > ${lib.escapeShellArg filePath}"))
                   (lib.concat [ ''cd "$(git rev-parse --show-toplevel)"'' ])
                   lib.concatLines
                 ];
@@ -62,15 +65,15 @@
           };
         };
         config.checks = lib.flip lib.mapAttrs' cfg.drvs (
-          path: drv: {
-            name = "files/${path}";
+          filePath: drv: {
+            name = "files/${filePath}";
             value =
-              pkgs.runCommand "check-file-${path}"
+              pkgs.runCommand "check-file-${filePath}"
                 {
                   nativeBuildInputs = [ pkgs.difftastic ];
                 }
                 ''
-                  difft --exit-code --display inline ${drv} ${self + "/" + path}
+                  difft --exit-code --display inline ${drv} ${self + "/${filePath}"}
                   touch $out
                 '';
           }

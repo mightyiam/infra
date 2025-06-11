@@ -1,5 +1,5 @@
 {
-  files.".gitignore".parts.nix = ''
+  files.".gitignore" = ''
     /result
     /result.*
   '';

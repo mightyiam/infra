@@ -2,7 +2,7 @@
 {
   imports = [ inputs.git-hooks.flakeModule ];
 
-  files.".gitignore".parts."pre-commit-config.yaml" = ''
+  files.".gitignore" = ''
     /.pre-commit-config.yaml
   '';
 
