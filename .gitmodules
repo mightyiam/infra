@@ -4,3 +4,6 @@
 [submodule "patched-inputs/stylix"]
 	path = patched-inputs/stylix
 	url = ./.
+[submodule "patched-inputs/nixpkgs"]
+	path = patched-inputs/nixpkgs
+	url = ./.

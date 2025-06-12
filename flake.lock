@@ -502,18 +502,14 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1749558678,
-        "narHash": "sha256-DUVAe8E2X2QM0dAnTGlTiqemMqUMMyIeCH7UeNo0g64=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "a12f3a99614894502e73eb816e9e076b0ab05730",
-        "type": "github"
+        "path": "./patched-inputs/nixpkgs",
+        "type": "path"
       },
       "original": {
-        "id": "nixpkgs",
-        "ref": "nixpkgs-unstable",
-        "type": "indirect"
-      }
+        "path": "./patched-inputs/nixpkgs",
+        "type": "path"
+      },
+      "parent": []
     },
     "nixvim": {
       "inputs": {

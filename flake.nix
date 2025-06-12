@@ -56,7 +56,7 @@
 
     nixos-facter-modules.url = "github:numtide/nixos-facter-modules";
 
-    nixpkgs.url = "nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "./patched-inputs/nixpkgs";
 
     nixvim = {
       url = "github:nix-community/nixvim";
