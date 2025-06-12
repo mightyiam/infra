@@ -1,6 +1,9 @@
-{ rootPath, ... }:
+{ rootPath, lib, ... }:
 {
-  flake.modules.nixos.pc.nix.nixPath = [
-    "nixpkgs=${rootPath + "/patched-inputs/nixpkgs"}"
-  ];
+  flake.modules.nixos.pc = nixosArgs: {
+    nixpkgs.flake.source = lib.mkForce (rootPath + "/patched-inputs/nixpkgs");
+    nix.nixPath = [
+      "nixpkgs=${nixosArgs.config.nixpkgs.flake.source}"
+    ];
+  };
 }
