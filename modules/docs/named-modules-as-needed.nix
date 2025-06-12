@@ -1,5 +1,5 @@
 {
-  files."README.md".parts.named-modules-as-needed =
+  files.files."README.md".parts.named-modules-as-needed =
     # markdown
     ''
       ## Named modules as needed

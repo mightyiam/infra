@@ -7,7 +7,7 @@
 }:
 {
   options = {
-    files = lib.mkOption {
+    files.files = lib.mkOption {
       default = { };
       type = lib.types.lazyAttrsOf (
         lib.types.either (lib.types.separatedString "") (
@@ -36,7 +36,7 @@
             drvs = lib.mkOption {
               type = lib.types.lazyAttrsOf lib.types.package;
               readOnly = true;
-              default = lib.flip lib.mapAttrs config.files (
+              default = lib.flip lib.mapAttrs config.files.files (
                 filePath: file:
                 pkgs.writeText "file-${filePath}" (
                   if lib.isAttrs file then

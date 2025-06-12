@@ -1,6 +1,6 @@
 { config, ... }:
 {
-  files.LICENSE = ''
+  files.files.LICENSE = ''
     MIT License
 
     Copyright (c) 2024 ${config.flake.meta.owner.name}

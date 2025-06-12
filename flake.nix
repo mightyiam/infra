@@ -160,7 +160,7 @@
   outputs =
     inputs:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      files."README.md".parts = {
+      files.files."README.md".parts = {
         disallow-warnings =
           # markdown
           ''

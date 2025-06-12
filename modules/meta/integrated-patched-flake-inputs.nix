@@ -1,6 +1,6 @@
 { lib, ... }:
 {
-  files."README.md".parts.ifdi =
+  files.files."README.md".parts.ifdi =
     # markdown
     ''
       ## Integrated patched flake inputs pattern
