@@ -14,6 +14,8 @@
     parts.top =
       # markdown
       ''
+        ![Sci-fi looking server room](./modules/docs/logo.jpg)
+
         # Shahar "Dawn" Or (mightyiam)'s personal Nix-powered IT infrastructure repository
 
         > [!NOTE]

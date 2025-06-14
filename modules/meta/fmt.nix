@@ -16,6 +16,7 @@
         settings = {
           on-unmatched = "fatal";
           global.excludes = [
+            "*.jpg"
             "*.png"
             "*.toml"
             "*/.gitignore"
