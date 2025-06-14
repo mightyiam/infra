@@ -1,5 +1,5 @@
 {
-  files.files.".gitignore" = ''
+  perSystem.files.files.".gitignore" = ''
     /result
     /result.*
   '';

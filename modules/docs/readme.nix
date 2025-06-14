@@ -1,5 +1,5 @@
 {
-  files.files."README.md" = {
+  perSystem.files.files."README.md" = {
     order = [
       "top"
       "dendritic"
