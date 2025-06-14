@@ -84,36 +84,65 @@ in
 
       settings = mkOption {
         type = types.submodule {
-          freeformType = tomlFormat.type;
-        };
-        example = lib.literalExample ''
-          {
-          shortcuts = {
-          contact-list = {
+          freeformType = (pkgs.formats.toml { }).type;
+          options = {
+            shortcuts = mkOption {
+              type = types.submodule {
+                options = {
+                  general = mkOption {
+                    type = types.attrsOf types.str;
+                    default = { };
+                    description = "general shortcut configuration";
+                    example = {
+                      scroll_up = "e";
+                      scroll_down = "n";
+                      next_page = "C-d";
+                    };
+                  };
+                  composing = mkOption {
+                    type = types.attrsOf types.str;
+                    default = { };
+                    description = "composing shortcut configuration";
+                    example = {
+                      edit = "m";
+                      scroll_up = "e";
+                      scroll_down = "n";
+                    };
+                  };
+                  contact-list = mkOption {
+                    type = types.attrsOf types.str;
+                    default = { };
+                    description = "contact-list shortcut configuration";
+                    example = {
                       create_contact = "c";
                       edit_contact = "m";
                     };
-          general = {
-            edit = "m";
-            scroll_up = "e";
-            scroll_down = "n";
-          };
-          composing = {
-            edit = "m";
-            scroll_up = "e";
-            scroll_down = "n";
-          };
-          listing = {
-            new_mail = "t";
-            set_seen = "s";
-          };
-          pager = {
+                  };
+                  listing = mkOption {
+                    type = types.attrsOf types.str;
+                    default = { };
+                    description = "general shortcut configuration";
+                    example = {
+                      new_mail = "t";
+                      set_seen = "s";
+                    };
+                  };
+                  pager = mkOption {
+                    type = types.attrsOf types.str;
+                    default = { };
+                    description = "general shortcut configuration";
+                    example = {
                       scroll_up = "e";
                       scroll_down = "n";
+                    };
+                  };
+                };
+              };
+              default = { };
+              description = "Shortcut Settings";
+            };
           };
-
-          }
-          }'';
+        };
         default = { };
         description = "Meli Configuration";
       };
