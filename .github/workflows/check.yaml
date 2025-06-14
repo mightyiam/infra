@@ -57,6 +57,7 @@
       ]
     }
   },
+  "name": "Check",
   "on": {
     "push": {},
     "workflow_call": {}

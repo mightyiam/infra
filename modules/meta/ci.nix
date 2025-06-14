@@ -1,5 +1,10 @@
+{ config, ... }:
 let
-  filePath = ".github/workflows/check.yaml";
+  inherit (config.flake.meta) repo;
+  filename = "check.yaml";
+  filePath = ".github/workflows/${filename}";
+
+  workflowName = "Check";
 
   ids = {
     jobs = {
@@ -41,46 +46,59 @@ in
   perSystem =
     { pkgs, ... }:
     {
-      files.files.${filePath} = pkgs.writers.writeJSON "gh-actions-workflow-check.yaml" {
-        on = {
-          push = { };
-          workflow_call = { };
-        };
-        jobs = {
-          ${ids.jobs.getCheckNames} = {
-            runs-on = runner.name;
-            outputs.${ids.outputs.jobs.getCheckNames} =
-              "\${{ steps.${ids.steps.getCheckNames}.outputs.${ids.outputs.steps.getCheckNames} }}";
-            steps = [
-              steps.checkout
-              steps.detsysNixInstaller
-              steps.magicNixCache
-              {
-                id = ids.steps.getCheckNames;
-                run = ''
-                  checks="$(nix ${nixArgs} eval --json .#checks.${runner.system} --apply builtins.attrNames)"
-                  echo "${ids.outputs.steps.getCheckNames}=$checks" >> $GITHUB_OUTPUT
-                '';
-              }
-            ];
-          };
+      files.files = {
+        "README.md".parts.ci = ''
+          <a href="https://github.com/${repo.owner}/${repo.name}/actions/workflows/${filename}?query=branch%3A${repo.defaultBranch}">
+          <img
+            alt="CI status"
+            src="https://img.shields.io/${repo.forge}/actions/workflow/status/${repo.owner}/${repo.name}/${filename}?style=for-the-badge&branch=${repo.defaultBranch}&label=${workflowName}"
+          >
+          </a>
 
-          ${ids.jobs.check} = {
-            needs = ids.jobs.getCheckNames;
-            runs-on = runner.name;
-            strategy.matrix.${matrixParam} =
-              "\${{ fromJson(needs.${ids.jobs.getCheckNames}.outputs.${ids.outputs.jobs.getCheckNames}) }}";
-            steps = [
-              steps.checkout
-              steps.nothingButNix
-              steps.detsysNixInstaller
-              steps.magicNixCache
-              {
-                run = ''
-                  nix ${nixArgs} build '.#checks.${runner.system}."''${{ matrix.${matrixParam} }}"'
-                '';
-              }
-            ];
+        '';
+
+        ${filePath} = pkgs.writers.writeJSON "gh-actions-workflow-check.yaml" {
+          name = workflowName;
+          on = {
+            push = { };
+            workflow_call = { };
+          };
+          jobs = {
+            ${ids.jobs.getCheckNames} = {
+              runs-on = runner.name;
+              outputs.${ids.outputs.jobs.getCheckNames} =
+                "\${{ steps.${ids.steps.getCheckNames}.outputs.${ids.outputs.steps.getCheckNames} }}";
+              steps = [
+                steps.checkout
+                steps.detsysNixInstaller
+                steps.magicNixCache
+                {
+                  id = ids.steps.getCheckNames;
+                  run = ''
+                    checks="$(nix ${nixArgs} eval --json .#checks.${runner.system} --apply builtins.attrNames)"
+                    echo "${ids.outputs.steps.getCheckNames}=$checks" >> $GITHUB_OUTPUT
+                  '';
+                }
+              ];
+            };
+
+            ${ids.jobs.check} = {
+              needs = ids.jobs.getCheckNames;
+              runs-on = runner.name;
+              strategy.matrix.${matrixParam} =
+                "\${{ fromJson(needs.${ids.jobs.getCheckNames}.outputs.${ids.outputs.jobs.getCheckNames}) }}";
+              steps = [
+                steps.checkout
+                steps.nothingButNix
+                steps.detsysNixInstaller
+                steps.magicNixCache
+                {
+                  run = ''
+                    nix ${nixArgs} build '.#checks.${runner.system}."''${{ matrix.${matrixParam} }}"'
+                  '';
+                }
+              ];
+            };
           };
         };
       };

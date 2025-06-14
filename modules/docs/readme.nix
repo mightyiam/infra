@@ -1,7 +1,9 @@
 {
   perSystem.files.files."README.md" = {
     order = [
-      "top"
+      "logo"
+      "ci"
+      "intro"
       "dendritic"
       "nixos-configurations"
       "automatic-import"
@@ -11,11 +13,9 @@
       "disallow-warnings"
     ];
 
-    parts.top =
+    parts.intro =
       # markdown
       ''
-        ![Sci-fi looking server room](./modules/docs/logo.jpg)
-
         # Shahar "Dawn" Or (mightyiam)'s personal Nix-powered IT infrastructure repository
 
         > [!NOTE]

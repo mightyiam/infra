@@ -1,4 +1,11 @@
-![Sci-fi looking server room](./modules/docs/logo.jpg)
+![Sci-fi looking server room](./modules/meta/logo/logo.jpg)
+
+<a href="https://github.com/mightyiam/infra/actions/workflows/check.yaml?query=branch%3Amain">
+<img
+  alt="CI status"
+  src="https://img.shields.io/github/actions/workflow/status/mightyiam/infra/check.yaml?style=for-the-badge&branch=main&label=Check"
+>
+</a>
 
 # Shahar "Dawn" Or (mightyiam)'s personal Nix-powered IT infrastructure repository
 
