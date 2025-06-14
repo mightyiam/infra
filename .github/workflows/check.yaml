@@ -1,0 +1,64 @@
+{
+  "jobs": {
+    "check": {
+      "needs": "get-check-names",
+      "runs-on": "ubuntu-latest",
+      "steps": [
+        {
+          "uses": "actions/checkout@v4",
+          "with": {
+            "submodules": true
+          }
+        },
+        {
+          "uses": "wimpysworld/nothing-but-nix@main",
+          "with": {
+            "hatchet-protocol": "holster"
+          }
+        },
+        {
+          "uses": "DeterminateSystems/nix-installer-action@main"
+        },
+        {
+          "uses": "DeterminateSystems/magic-nix-cache-action@main"
+        },
+        {
+          "run": "nix --accept-flake-config build '.#checks.x86_64-linux.\"${{ matrix.checks }}\"'\n"
+        }
+      ],
+      "strategy": {
+        "matrix": {
+          "checks": "${{ fromJson(needs.get-check-names.outputs.checks) }}"
+        }
+      }
+    },
+    "get-check-names": {
+      "outputs": {
+        "checks": "${{ steps.get-check-names.outputs.checks }}"
+      },
+      "runs-on": "ubuntu-latest",
+      "steps": [
+        {
+          "uses": "actions/checkout@v4",
+          "with": {
+            "submodules": true
+          }
+        },
+        {
+          "uses": "DeterminateSystems/nix-installer-action@main"
+        },
+        {
+          "uses": "DeterminateSystems/magic-nix-cache-action@main"
+        },
+        {
+          "id": "get-check-names",
+          "run": "checks=\"$(nix --accept-flake-config eval --json .#checks.x86_64-linux --apply builtins.attrNames)\"\necho \"checks=$checks\" >> $GITHUB_OUTPUT\n"
+        }
+      ]
+    }
+  },
+  "on": {
+    "push": {},
+    "workflow_call": {}
+  }
+}
