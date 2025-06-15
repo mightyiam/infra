@@ -42,22 +42,24 @@
           };
         };
       };
-      config.checks = lib.flip lib.mapAttrs' cfg.files (
-        filePath:
-        { drv }:
-        {
-          name = "files/${filePath}";
-          value =
-            pkgs.runCommand "check-file-${filePath}"
-              {
-                nativeBuildInputs = [ pkgs.difftastic ];
-              }
-              ''
-                difft --exit-code --display inline ${drv} ${self + "/${filePath}"}
-                touch $out
-              '';
-        }
-      );
+      config.checks = lib.pipe cfg.files [
+        (map (
+          { path_, drv }:
+          {
+            name = "files/${path_}";
+            value =
+              pkgs.runCommand "check-file-${path_}"
+                {
+                  nativeBuildInputs = [ pkgs.difftastic ];
+                }
+                ''
+                  difft --exit-code --display inline ${drv} ${self + "/${path_}"}
+                  touch $out
+                '';
+          }
+        ))
+        lib.listToAttrs
+      ];
     }
   );
 }
