@@ -14,41 +14,17 @@
       options = {
         files = {
           files = lib.mkOption {
-            default = { };
-            type = lib.types.lazyAttrsOf (
-              lib.types.oneOf [
-                lib.types.package
-                (lib.types.separatedString "")
-                (lib.types.submodule {
-                  options = {
-                    parts = lib.mkOption {
-                      type = lib.types.lazyAttrsOf lib.types.str;
-                    };
-                    order = lib.mkOption {
-                      type = lib.types.listOf lib.types.str;
-                    };
+            type = lib.types.listOf (
+              lib.types.submodule {
+                options = {
+                  path_ = lib.mkOption {
+                    type = lib.types.singleLineStr;
                   };
-                })
-              ]
-            );
-          };
-          drvs = lib.mkOption {
-            type = lib.types.lazyAttrsOf lib.types.package;
-            readOnly = true;
-            default = lib.flip lib.mapAttrs psArgs.config.files.files (
-              filePath: file:
-              if lib.isDerivation file then
-                file
-              else
-                pkgs.writeText "file-${filePath}" (
-                  if lib.isAttrs file then
-                    lib.pipe file.order [
-                      (map (lib.flip lib.getAttr file.parts))
-                      lib.concatStrings
-                    ]
-                  else
-                    file
-                )
+                  drv = lib.mkOption {
+                    type = lib.types.package;
+                  };
+                };
+              }
             );
           };
 
@@ -56,8 +32,8 @@
             type = lib.types.package;
             default = pkgs.writeShellApplication {
               name = "write-files";
-              text = lib.pipe cfg.drvs [
-                (lib.mapAttrsToList (filePath: drv: "cat ${drv} > ${lib.escapeShellArg filePath}"))
+              text = lib.pipe cfg.files [
+                (map ({ path_, drv }: "cat ${drv} > ${lib.escapeShellArg path_}"))
                 (lib.concat [ ''cd "$(git rev-parse --show-toplevel)"'' ])
                 lib.concatLines
               ];
@@ -66,8 +42,10 @@
           };
         };
       };
-      config.checks = lib.flip lib.mapAttrs' cfg.drvs (
-        filePath: drv: {
+      config.checks = lib.flip lib.mapAttrs' cfg.files (
+        filePath:
+        { drv }:
+        {
           name = "files/${filePath}";
           value =
             pkgs.runCommand "check-file-${filePath}"

@@ -1,5 +1,5 @@
 {
-  perSystem.files.files."README.md".parts.dendritic =
+  text.readme.parts.dendritic =
     # markdown
     ''
       ## Origin of the dendritic pattern

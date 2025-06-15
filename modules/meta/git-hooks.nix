@@ -2,13 +2,13 @@
 {
   imports = [ inputs.git-hooks.flakeModule ];
 
+  text.gitignore = ''
+    /.pre-commit-config.yaml
+  '';
+
   perSystem =
     { config, ... }:
     {
-      files.files.".gitignore" = ''
-        /.pre-commit-config.yaml
-      '';
-
       make-shells.default.shellHook = config.pre-commit.installationScript;
       pre-commit.check.enable = false;
     };

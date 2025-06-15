@@ -7,7 +7,7 @@ let
   prefix = "nixosConfigurations/";
 in
 {
-  perSystem.files.files."README.md".parts.nixos-configurations =
+  text.readme.parts.nixos-configurations =
     # markdown
     ''
       ## Configurations are declared by prefixing a module's name
