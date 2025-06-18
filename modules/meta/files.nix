@@ -1,6 +1,5 @@
 {
   inputs,
-  rootPath,
   config,
   withSystem,
   lib,
@@ -25,7 +24,6 @@
     |> (s: s + "\n");
 
   perSystem = psArgs: {
-    files.projectRoot = rootPath;
     make-shells.default.packages = [ psArgs.config.files.writer.drv ];
   };
 }
