@@ -33,6 +33,16 @@ This means files can be moved around and nested in directories freely.
 > [!NOTE]
 > This pattern has been the inspiration of [an auto-imports library, import-tree](https://github.com/vic/import-tree).
 
+## Generated files
+
+The following files in this repository are generated and checked
+using [the _files_ flake-parts module](https://github.com/mightyiam/files):
+
+- `README.md`
+- `.github/workflows/check.yaml`
+- `.gitignore`
+- `LICENSE`
+
 ## Named modules as needed
 
 > [!NOTE]

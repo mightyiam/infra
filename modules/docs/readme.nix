@@ -8,6 +8,7 @@
       "dendritic"
       "nixos-configurations"
       "automatic-import"
+      "files"
       "named-modules-as-needed"
       "ifdi"
       "flake-inputs-dedupe-prefix"
