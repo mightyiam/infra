@@ -1,5 +1,8 @@
+{ inputs, rootPath, ... }:
 {
+  imports = [ inputs.files.flakeModules.default ];
   perSystem = psArgs: {
-    make-shells.default.packages = [ psArgs.config.files.writer ];
+    files.projectRoot = rootPath;
+    make-shells.default.packages = [ psArgs.config.files.writer.drv ];
   };
 }

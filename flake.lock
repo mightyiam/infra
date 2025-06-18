@@ -183,6 +183,21 @@
         "type": "github"
       }
     },
+    "files": {
+      "locked": {
+        "lastModified": 1750238883,
+        "narHash": "sha256-fJpyA/hOPb6vAw1LKLGIOlxopUxv6gXYn1cz6a+34m4=",
+        "owner": "mightyiam",
+        "repo": "files",
+        "rev": "98b710b97feeea71796e0359b22058677bd1abfa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mightyiam",
+        "repo": "files",
+        "type": "github"
+      }
+    },
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
@@ -600,6 +615,7 @@
         "dedupe_nur": "dedupe_nur",
         "dedupe_nuschtos-search": "dedupe_nuschtos-search",
         "dedupe_systems": "dedupe_systems",
+        "files": "files",
         "flake-parts": "flake-parts",
         "git-hooks": "git-hooks",
         "home-manager": "home-manager",

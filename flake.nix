@@ -13,6 +13,8 @@
       url = "github:platomav/CPUMicrocodes";
     };
 
+    files.url = "github:mightyiam/files";
+
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
