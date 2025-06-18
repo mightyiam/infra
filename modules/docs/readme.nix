@@ -18,11 +18,13 @@
     parts.intro =
       # markdown
       ''
-        # Shahar "Dawn" Or (mightyiam)'s personal Nix-powered IT infrastructure repository
+        # ${config.flake.meta.repo.owner}/${config.flake.meta.repo.name}
+
+        ${config.flake.meta.owner.name}'s [Nix](https://nix.dev)-powered "IT infrastructure" repository
 
         > [!NOTE]
-        > If you have any questions or suggestions for me, please use the discussions feature or contact me.
         > I hope you find this helpful.
+        > If you have any questions or suggestions for me, feel free to use the discussions feature or contact me.
 
       '';
   };
