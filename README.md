@@ -7,11 +7,13 @@
 >
 </a>
 
-# Shahar "Dawn" Or (mightyiam)'s personal Nix-powered IT infrastructure repository
+# mightyiam/infra
+
+Shahar "Dawn" Or's [Nix](https://nix.dev)-powered "IT infrastructure" repository
 
 > [!NOTE]
-> If you have any questions or suggestions for me, please use the discussions feature or contact me.
 > I hope you find this helpful.
+> If you have any questions or suggestions for me, feel free to use the discussions feature or contact me.
 
 ## Origin of the dendritic pattern
 
