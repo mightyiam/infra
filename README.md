@@ -171,6 +171,23 @@ default-shell = "/nix/store/9nx7s96vwz2h384zm8las332cbkqdszf-nix-shell"
 > [!NOTE]
 > Implemented in [`meta/all-check-store-paths`](modules/meta/all-check-store-paths.nix)
 
+## Running checks on GitHub Actions
+
+Running this repository's flake checks on GitHub Actions is merely a bonus
+and possibly more of a liability.
+
+Workflow files are generated using
+[the _files_ flake-parts module](https://github.com/mightyiam/files).
+
+For better visibility, a job is spawned for each flake check.
+This is done dynamically.
+
+To prevent runners from running out of space,
+The action [Nothing but Nix](https://github.com/marketplace/actions/nothing-but-nix)
+is used.
+
+See [`modules/meta/ci.nix`](modules/meta/ci.nix).
+
 ## Flake inputs for deduplication are prefixed
 
 Some explicit flake inputs exist solely for the purpose of deduplication.

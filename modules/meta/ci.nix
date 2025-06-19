@@ -43,15 +43,44 @@ let
   };
 in
 {
-  text.readme.parts.ci = ''
-    <a href="https://github.com/${repo.owner}/${repo.name}/actions/workflows/${filename}?query=branch%3A${repo.defaultBranch}">
-    <img
-      alt="CI status"
-      src="https://img.shields.io/${repo.forge}/actions/workflow/status/${repo.owner}/${repo.name}/${filename}?style=for-the-badge&branch=${repo.defaultBranch}&label=${workflowName}"
-    >
-    </a>
+  text.readme.parts = {
+    ci-badge = ''
+      <a href="https://github.com/${repo.owner}/${repo.name}/actions/workflows/${filename}?query=branch%3A${repo.defaultBranch}">
+      <img
+        alt="CI status"
+        src="https://img.shields.io/${repo.forge}/actions/workflow/status/${repo.owner}/${repo.name}/${filename}?style=for-the-badge&branch=${repo.defaultBranch}&label=${workflowName}"
+      >
+      </a>
 
-  '';
+    '';
+    github-actions =
+      ''
+        ## Running checks on GitHub Actions
+
+        Running this repository's flake checks on GitHub Actions is merely a bonus
+        and possibly more of a liability.
+
+        Workflow files are generated using
+        [the _files_ flake-parts module](https://github.com/mightyiam/files).
+
+        For better visibility, a job is spawned for each flake check.
+        This is done dynamically.
+
+      ''
+      + (
+        assert steps ? nothingButNix;
+        ''
+          To prevent runners from running out of space,
+          The action [Nothing but Nix](https://github.com/marketplace/actions/nothing-but-nix)
+          is used.
+
+        ''
+      )
+      + ''
+        See [`modules/meta/ci.nix`](modules/meta/ci.nix).
+
+      '';
+  };
 
   perSystem =
     { pkgs, ... }:
