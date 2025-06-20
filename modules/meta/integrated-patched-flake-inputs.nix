@@ -82,33 +82,6 @@
       $ ipfi-rebase flake-parts
       ```
 
-      ## Unfree packages
-
-      What Nixpkgs unfree packages are allowed is configured at the flake level via an option.
-      That is then used in the configuration of Nixpkgs used in NixOS, Home Manager or elsewhere.
-      See definition at [`unfree-packages.nix`](modules/unfree-packages.nix).
-      See usage at [`steam.nix`](modules/steam.nix).
-      Value of this option available as flake output:
-
-      ```console
-      $ nix eval .#meta.nixpkgs.allowedUnfreePackages
-      [ "steam" "steam-unwrapped" "nvidia-x11" "nvidia-settings" ]
-      ```
-
-      ## Refactoring
-
-      To help determine whether a Nix change results in changes to derivations,
-      a package `.#all-check-store-paths` builds a TOML file that maps from `.#checks`:
-
-      ```toml
-      default-shell = "/nix/store/9nx7s96vwz2h384zm8las332cbkqdszf-nix-shell"
-      "nixosConfigurations/termitomyces" = "/nix/store/33iv0fagxiwfbzb81ixypn14vxl6s468-nixos-system-termitomyces-25.05.20250417.ebe4301"
-      "packages/nixvim" = "/nix/store/p2rrqir5ig2v4wb3whvb8y0fmdc0kmhk-nixvim"
-      ```
-
-      > [!NOTE]
-      > Implemented in [`meta/all-check-store-paths`](modules/meta/all-check-store-paths.nix)
-
     '';
 
   perSystem =

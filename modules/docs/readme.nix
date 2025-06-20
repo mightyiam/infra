@@ -11,6 +11,8 @@
       "files"
       "named-modules-as-needed"
       "ifdi"
+      "unfree-packages"
+      "all-check-store-paths"
       "github-actions"
       "flake-inputs-dedupe-prefix"
       "disallow-warnings"
