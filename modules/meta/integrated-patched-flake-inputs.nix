@@ -189,16 +189,15 @@ in
               branch,
             }:
             let
-              ensure-upstream = pkgs.writeShellApplication {
-                name = "ensure-upstream";
-                runtimeInputs = [ pkgs.git ];
-                text = ''
-                  cd "${path_}"
-                  if ! git remote get-url ${upstream.name} > /dev/null 2>&1; then
-                    git remote add ${upstream.name} "${upstream.url}"
-                  fi
-                '';
-              };
+              cdToplevel = ''
+                toplevel=$(git rev-parse --show-toplevel)
+                cd "$toplevel"
+              '';
+              ensure-upstream = ''
+                if ! git remote get-url ${upstream.name} > /dev/null 2>&1; then
+                  git remote add ${upstream.name} "${upstream.url}"
+                fi
+              '';
             in
             (lib.optional (inputs.${name} ? rev) (
               pkgs.writeShellApplication {
@@ -206,11 +205,10 @@ in
                 runtimeInputs = [ pkgs.git ];
                 text = ''
                   set -o xtrace
-                  toplevel=$(git rev-parse --show-toplevel)
-                  cd "$toplevel"
+                  ${cdToplevel}
                   git submodule add "./." "${path_}"
                   cd "${path_}"
-                  ${lib.getExe ensure-upstream}
+                  ${ensure-upstream}
                   git fetch ${upstream.name} "${inputs.${name}.rev}"
                   git switch -c "${branch}" "${inputs.${name}.rev}"
                   git push --set-upstream ${remoteName} "${branch}"
@@ -223,10 +221,9 @@ in
                 runtimeInputs = [ pkgs.git ];
                 text = ''
                   set -o xtrace
-                  toplevel=$(git rev-parse --show-toplevel)
-                  cd "$toplevel"
+                  ${cdToplevel}
                   cd "${path_}"
-                  ${lib.getExe ensure-upstream}
+                  ${ensure-upstream}
                   git fetch ${remoteName}
                   git switch "${branch}"
                   git fetch ${upstream.name} "${upstream.ref}"
