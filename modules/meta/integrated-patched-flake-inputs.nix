@@ -1,4 +1,5 @@
 {
+  inputs,
   lib,
   flake-parts-lib,
   config,
@@ -89,6 +90,14 @@ in
                     '';
                     example = lib.literalExpression ''"master"'';
                   };
+                  name = lib.mkOption {
+                    readOnly = true;
+                    type = lib.types.str;
+                    default = "upstream";
+                    description = ''
+                      Remote upstream name.
+                    '';
+                  };
                 };
                 path_ = lib.mkOption {
                   type = lib.types.str;
@@ -108,6 +117,7 @@ in
               config = {
                 inherit name;
                 path_ = "${cfg.baseDir}/${name}";
+                branch = "patched-inputs/${name}";
               };
             }
           )
@@ -121,18 +131,14 @@ in
           readOnly = true;
           # TODO DRY out
           description = ''
-            ### `ipfi-init-<INPUT> <REV>`
+            ### `ipfi-init-<INPUT>`
 
-            Initializes IPFI `INPUT` at `REV`.
-
-            > [!TIP]
-            > `REV` should probably be the one to which that input is currently locked.
-            > Run `nix flake metadata` to see what rev that is.
+            Initializes IPFI `INPUT` at its current revision.
 
             For example
 
             ``` console-session
-            $ ipfi-init-flake-parts 64b9f2c2df31bb87bdd2360a2feb58c817b4d16c
+            $ ipfi-init-flake-parts
             ```
 
             And you end up with a git submodule at `./patched-inputs/flake-parts`.
@@ -174,7 +180,7 @@ in
     {
       ipfi = {
         commands = lib.pipe cfg.inputs [
-          lib.attrVals
+          lib.attrValues
           (map (
             {
               name,
@@ -194,24 +200,24 @@ in
                 '';
               };
             in
-            [
-              (pkgs.writeShellApplication {
+            (lib.optional (inputs.${name} ? rev) (
+              pkgs.writeShellApplication {
                 name = "ipfi-init-${name}";
                 runtimeInputs = [ pkgs.git ];
                 text = ''
                   set -o xtrace
-                  rev="$1"
                   toplevel=$(git rev-parse --show-toplevel)
                   cd "$toplevel"
                   git submodule add "./." "${path_}"
                   cd "${path_}"
                   ${lib.getExe ensure-upstream}
-                  git fetch ${upstream.name} "$rev"
-                  git switch -c "${branch}" "$rev"
+                  git fetch ${upstream.name} "${inputs.${name}.rev}"
+                  git switch -c "${branch}" "${inputs.${name}.rev}"
                   git push --set-upstream ${remoteName} "${branch}"
                 '';
-              })
-
+              }
+            ))
+            ++ [
               (pkgs.writeShellApplication {
                 name = "ipfi-rebase-${name}";
                 runtimeInputs = [ pkgs.git ];
