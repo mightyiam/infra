@@ -19,5 +19,6 @@
 
   perSystem = psArgs: {
     make-shells.default.packages = [ psArgs.config.ipfi.commands ];
+    treefmt.settings.global.excludes = [ "${config.ipfi.dir}/*" ];
   };
 }

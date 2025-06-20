@@ -107,21 +107,34 @@
         1. Add a remote for a fork and cherry-pick from it.
         1. Make sure to push.
 
-        ### Rebasing an IPFI
-
-        To rebase an IPFI (or run into a conflict):
-        `ipfi-rebase <input>`
-
-        For example
-
-        ```
-        $ ipfi-rebase flake-parts
-        ```
-
       '';
 
     perSystem = flake-parts-lib.mkPerSystemOption (
       { pkgs, ... }:
+      let
+        prefix = "patched-inputs";
+        dotUpstreamUrl = ".upstream-url";
+        dotBaseRef = ".base-ref";
+
+        # Ideally not hard-coded but `git submodule add` does not allow setting remote name
+        origin = "origin";
+
+        # Seems okay to hardcode
+        upstream = "upstream";
+
+        ensure-upstream = pkgs.writeShellApplication {
+          name = "ensure-upstream";
+          runtimeInputs = [ pkgs.git ];
+          text = ''
+            path="$1"
+            remote_url="$( <"$path${dotUpstreamUrl}" )"
+            cd "$path"
+            if ! git remote get-url ${upstream} > /dev/null 2>&1; then
+              git remote add ${upstream} "$remote_url"
+            fi
+          '';
+        };
+      in
       {
         options = {
           commands = lib.mkOption {
@@ -129,7 +142,7 @@
             readOnly = true;
             # TODO DRY out
             description = ''
-              ## `ipfi-init-<INPUT> <REV>`
+              ### `ipfi-init-<INPUT> <REV>`
 
               Initializes IPFI `INPUT` at `REV`.
 
@@ -139,7 +152,7 @@
 
               For example
 
-              ```console-session
+              ``` console-session
               $ ipfi-init-flake-parts 64b9f2c2df31bb87bdd2360a2feb58c817b4d16c
               ```
 
@@ -156,79 +169,65 @@
               > With repositories with huge history such as Nixpkgs
               > you might need to work around git push limits
               > such as [GitHub's](https://docs.github.com/en/get-started/using-git/troubleshooting-the-2-gb-push-limit).
+
+              ### `ipfi-rebase-<INPUT>`
+
+              Attempts to rebase an IPFI.
+
+              For example
+
+              ``` console-session
+              $ ipfi-rebase-flake-parts
+              ```
+
             '';
           };
         };
-        config =
-          let
-            prefix = "patched-inputs";
-            dotUpstreamUrl = ".upstream-url";
-            dotBaseRef = ".base-ref";
+        config = {
+          treefmt.settings.global.excludes = [ "${prefix}/*" ];
 
-            # Ideally not hard-coded but `git submodule add` does not allow setting remote name
-            origin = "origin";
-
-            # Seems okay to hardcode
-            upstream = "upstream";
-
-            ensure-upstream = pkgs.writeShellApplication {
-              name = "ensure-upstream";
+          make-shells.default.packages = [
+            (pkgs.writeShellApplication {
+              name = "ipfi-add";
               runtimeInputs = [ pkgs.git ];
               text = ''
-                path="$1"
-                remote_url="$( <"$path${dotUpstreamUrl}" )"
+                set -x
+                path="${prefix}/$1"
+                branch="${prefix}/$1"
+                upstream_url="$2"
+                rev="$3"
+                base_ref="$4"
+                cd "$(git rev-parse --show-toplevel)"
+                git submodule add "./." "$path"
+                echo -n "$upstream_url" > "$path${dotUpstreamUrl}"
+                echo -n "$base_ref" > "$path${dotBaseRef}"
+                ${lib.getExe ensure-upstream} "$path"
                 cd "$path"
-                if ! git remote get-url ${upstream} > /dev/null 2>&1; then
-                  git remote add ${upstream} "$remote_url"
-                fi
+                git fetch ${upstream} "$rev"
+                git switch -c "$branch" "$rev"
+                git push --set-upstream ${origin} "$branch"
               '';
-            };
-          in
-          {
-            treefmt.settings.global.excludes = [ "${prefix}/*" ];
-
-            make-shells.default.packages = [
-              (pkgs.writeShellApplication {
-                name = "ipfi-add";
-                runtimeInputs = [ pkgs.git ];
-                text = ''
-                  set -x
-                  path="${prefix}/$1"
-                  branch="${prefix}/$1"
-                  upstream_url="$2"
-                  rev="$3"
-                  base_ref="$4"
-                  cd "$(git rev-parse --show-toplevel)"
-                  git submodule add "./." "$path"
-                  echo -n "$upstream_url" > "$path${dotUpstreamUrl}"
-                  echo -n "$base_ref" > "$path${dotBaseRef}"
-                  ${lib.getExe ensure-upstream} "$path"
-                  cd "$path"
-                  git fetch ${upstream} "$rev"
-                  git switch -c "$branch" "$rev"
-                  git push --set-upstream ${origin} "$branch"
-                '';
-              })
-              (pkgs.writeShellApplication {
-                name = "ipfi-rebase";
-                runtimeInputs = [ pkgs.git ];
-                text = ''
-                  set -x
-                  path="${prefix}/$1"
-                  branch="${prefix}/$1"
-                  base_ref="$( <"$path${dotBaseRef}" )"
-                  cd "$(git rev-parse --show-toplevel)"
-                  ${lib.getExe ensure-upstream} "$path"
-                  cd "$path"
-                  git fetch ${origin}
-                  git switch "$branch"
-                  git fetch ${upstream} "$base_ref"
-                  git rebase "${upstream}/$base_ref"
-                  git push -f ${origin} "$branch:$branch"
-                '';
-              })
-            ];
-          };
+            })
+            (pkgs.writeShellApplication {
+              name = "ipfi-rebase";
+              runtimeInputs = [ pkgs.git ];
+              text = ''
+                set -x
+                path="${prefix}/$1"
+                branch="${prefix}/$1"
+                base_ref="$( <"$path${dotBaseRef}" )"
+                cd "$(git rev-parse --show-toplevel)"
+                ${lib.getExe ensure-upstream} "$path"
+                cd "$path"
+                git fetch ${origin}
+                git switch "$branch"
+                git fetch ${upstream} "$base_ref"
+                git rebase "${upstream}/$base_ref"
+                git push -f ${origin} "$branch:$branch"
+              '';
+            })
+          ];
+        };
       }
     );
 
