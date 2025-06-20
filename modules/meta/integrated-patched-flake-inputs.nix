@@ -1,4 +1,9 @@
-{ lib, flake-parts-lib, ... }:
+{
+  lib,
+  flake-parts-lib,
+  config,
+  ...
+}:
 {
   options.ipfi = {
     nixosModule = lib.mkOption {
@@ -24,6 +29,15 @@
           tools.nixos-version.enable = false;
         };
       };
+    };
+
+    baseDir = lib.mkOption {
+      type = lib.types.str;
+      description = ''
+        Directory relative to Git top-level for IPFI git submodules.
+      '';
+      readOnly = true;
+      default = "patched-inputs";
     };
 
     inputs = lib.mkOption {
@@ -68,50 +82,10 @@
   };
 
   config = {
-    text.readme.parts.ifdi =
-      # markdown
-      ''
-        ## Integrated patched flake inputs pattern
-
-        - 🪶 edit/patch the repo's inputs without leaving its clone directory
-        - 🕺 no `--override-input` flag; less typing and avoids confusion in case omitted
-        - 🐬 single-repo setup; less to keep track of, more self-contained
-        - ⚡ provided scripts save time and produce consistency
-        - 😮‍💨 some mental and operational overhead such as an occasional `git submodule update`
-
-        I attempt to maintain an upstream-first approach.
-        That means contributing my changes to inputs upstream.
-        While collaborating with upstream on the refinement and merge of those changes
-        I maintain a branch of that input with those changes cherry-picked.
-        I call these branches _integrated patched flake inputs_ (IPFIs).
-
-        IPFIs are stored in this very repository.
-        Yes, even though they are branches from disparate repositories,
-        they are stored in the repository in which they are used.
-        Git doesn't mind.
-
-        For each IPFI a git submodule exists.
-        That submodule is a clone of this very same repository.
-        The head of that submodule is set to the head of the IPFI branch.
-
-        Finally, each `inputs.<name>.url` value is a path to the corresponding IPFI submodule directory.
-
-        > [!WARNING]
-        > There seems to be an issue with Nix that affects the IPFI pattern.
-        > Workaround: artificially make the repository dirty.
-
-        ### Cherry picking for an IPFI
-
-        1. `cd patched-inputs/<input>`
-        1. Get on the `patched-inputs/<input>` branch.
-        1. Add a remote for a fork and cherry-pick from it.
-        1. Make sure to push.
-
-      '';
-
     perSystem = flake-parts-lib.mkPerSystemOption (
       { pkgs, ... }:
       let
+        cfg = config.ipfi;
         prefix = "patched-inputs";
         dotUpstreamUrl = ".upstream-url";
         dotBaseRef = ".base-ref";
@@ -172,7 +146,7 @@
 
               ### `ipfi-rebase-<INPUT>`
 
-              Attempts to rebase an IPFI.
+              Attempt to rebase an IPFI.
 
               For example
 
@@ -183,31 +157,41 @@
             '';
           };
         };
-        config = {
-          treefmt.settings.global.excludes = [ "${prefix}/*" ];
+        config.ipfi = {
 
-          make-shells.default.packages = [
-            (pkgs.writeShellApplication {
-              name = "ipfi-add";
-              runtimeInputs = [ pkgs.git ];
-              text = ''
-                set -x
-                path="${prefix}/$1"
-                branch="${prefix}/$1"
-                upstream_url="$2"
-                rev="$3"
-                base_ref="$4"
-                cd "$(git rev-parse --show-toplevel)"
-                git submodule add "./." "$path"
-                echo -n "$upstream_url" > "$path${dotUpstreamUrl}"
-                echo -n "$base_ref" > "$path${dotBaseRef}"
-                ${lib.getExe ensure-upstream} "$path"
-                cd "$path"
-                git fetch ${upstream} "$rev"
-                git switch -c "$branch" "$rev"
-                git push --set-upstream ${origin} "$branch"
-              '';
-            })
+          commands = lib.flip config.ipfi.inputs [
+            (lib.mapAttrsToList (
+              name:
+              { upstream }:
+              [
+                (pkgs.writeShellApplication {
+                  name = "ipfi-init-${name}";
+                  runtimeInputs = [ pkgs.git ];
+                  text = ''
+                    set -o xtrace
+
+                    path="${cfg.baseDir}/$1"
+                    branch="${prefix}/$1"
+                    upstream_url="$2"
+                    rev="$3"
+                    base_ref="$4"
+                    cd "$(git rev-parse --show-toplevel)"
+                    git submodule add "./." "$path"
+                    echo -n "$upstream_url" > "$path${dotUpstreamUrl}"
+                    echo -n "$base_ref" > "$path${dotBaseRef}"
+                    ${lib.getExe ensure-upstream} "$path"
+                    cd "$path"
+                    git fetch ${upstream} "$rev"
+                    git switch -c "$branch" "$rev"
+                    git push --set-upstream ${origin} "$branch"
+                  '';
+                })
+              ]
+            ))
+            lib.flatten
+          ];
+          commands_ = [
+
             (pkgs.writeShellApplication {
               name = "ipfi-rebase";
               runtimeInputs = [ pkgs.git ];
