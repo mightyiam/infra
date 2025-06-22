@@ -6,7 +6,7 @@ in
   flake.modules.nixos.wife = {
     system.autoUpgrade = {
       enable = true;
-      flake = "${repo.forge}:${repo.owner}/${repo.name}";
+      flake = repo.flakeUri;
       operation = "boot";
     };
     programs.nh = {

@@ -1,6 +1,9 @@
 {
   flake = {
-    meta.accounts.github.username = "mightyiam";
+    meta.accounts.github = {
+      domain = "github.com";
+      username = "mightyiam";
+    };
 
     modules.homeManager = {
       base =
