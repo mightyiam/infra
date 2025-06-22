@@ -1,14 +1,20 @@
 { config, ... }:
 let
   inherit (config.flake.meta.accounts) github;
-  inherit (config.flake.meta) repo;
+  forge = "github";
+  owner = github.username;
+  name = "infra";
+  defaultBranch = "main";
+  flakeUri = "git+https://${github.domain}/${owner}/${name}?submodules=1";
 in
 {
   flake.meta.repo = {
-    forge = "github";
-    owner = config.flake.meta.accounts.github.username;
-    name = "infra";
-    defaultBranch = "main";
-    flakeUri = "git+https://${github.domain}/${repo.owner}/${repo.name}?submodules=1";
+    inherit
+      forge
+      owner
+      name
+      defaultBranch
+      flakeUri
+      ;
   };
 }
