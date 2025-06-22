@@ -3,7 +3,7 @@
   perSystem =
     { pkgs, ... }:
     {
-      packages.system = pkgs.writeShellScriptBin "system" "nix-instantiate --eval --expr builtins.currentSystem";
+      packages.system = pkgs.writeShellScriptBin "system" "nix-instantiate --eval --expr builtins.currentSystem --raw";
     };
   flake.modules.homeManager.base =
     { pkgs, ... }:
