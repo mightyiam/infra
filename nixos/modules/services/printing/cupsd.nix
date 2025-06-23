@@ -71,7 +71,7 @@ let
     };
 
   cupsFilesFile = writeConf "cups-files.conf" ''
-    SystemGroup root wheel
+    SystemGroup root wheel ${lib.optionalString (cfg.extraSystemGroup != null) cfg.extraSystemGroup}
 
     ServerBin ${bindir}/lib/cups
     DataDir ${bindir}/share/cups
@@ -188,6 +188,15 @@ in
           If set, CUPS is socket-activated; that is,
           instead of having it permanently running as a daemon,
           systemd will start it on the first incoming connection.
+        '';
+      };
+
+      extraSystemGroup = mkOption {
+        type = types.nullOr types.str;
+        default = null;
+        example = "lpadmin";
+        description = ''
+          Optional extra `SystemGroup`. See `cups-files.conf(5)`.
         '';
       };
 
@@ -360,6 +369,14 @@ in
   ###### implementation
 
   config = mkIf config.services.printing.enable {
+    assertions = [
+      {
+        assertion =
+          cfg.extraSystemGroup != null
+          -> lib.any (group: group.name == cfg.extraSystemGroup) (lib.attrValues config.users.groups);
+        message = "`services.printing.extraSystemGroup` must be an existing group";
+      }
+    ];
 
     users.users.cups = {
       uid = config.ids.uids.cups;
