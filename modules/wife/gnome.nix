@@ -14,14 +14,9 @@
           gnome-logs
           gnome-maps
           gnome-music
-          gnome-text-editor
           gnome-tour
-          gnome-user-docs
           gnome-weather
           orca
-          simple-scan
-          snapshot
-          yelp
         ];
       };
 
