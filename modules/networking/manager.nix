@@ -1,7 +1,6 @@
 {
-  flake.modules.nixos.pc =
-    { pkgs, ... }:
-    {
+  flake.modules = {
+    nixos.pc = {
       networking = {
         wireless.iwd = {
           enable = true;
@@ -12,7 +11,12 @@
         };
         networkmanager.wifi.backend = "iwd";
       };
-
-      environment.systemPackages = [ pkgs.impala ];
     };
+
+    homeManager.base =
+      { pkgs, ... }:
+      {
+        home.packages = [ pkgs.impala ];
+      };
+  };
 }
