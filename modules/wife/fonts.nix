@@ -34,10 +34,22 @@ in
     };
 
   flake.modules = {
-    homeManager.wife = {
-      imports = [ polyModule ];
-      fonts.fontconfig.enable = true;
-    };
+    homeManager.wife =
+      { pkgs, ... }:
+      {
+        imports = [ polyModule ];
+        fonts.fontconfig.enable = true;
+        home.packages = with pkgs; [
+          # https://fonts.google.com/specimen/Chonburi
+          chonburi-font
+          # https://fonts.google.com/specimen/Kanit
+          kanit-font
+          # https://fonts.google.com/specimen/Sarabun
+          sarabun-font
+          # https://github.com/tlwg/fonts-tlwg
+          tlwg
+        ];
+      };
     nixos.wife = polyModule;
   };
 }
