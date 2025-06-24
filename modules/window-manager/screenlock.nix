@@ -20,10 +20,10 @@
               mod = hmArgs.config.wayland.windowManager.sway.config.modifier;
             in
             {
-              "${mod}+Ctrl+l" = "exec ${lockCommand}";
+              "${mod}+Alt+l" = "exec ${lockCommand}";
             };
           hyprland.settings.bind = [
-            "SUPER+Ctrl, l, exec, ${lockCommand}"
+            "SUPER+Alt, l, exec, ${lockCommand}"
           ];
         };
 
