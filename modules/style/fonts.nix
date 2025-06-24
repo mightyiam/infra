@@ -34,22 +34,14 @@ let
 in
 {
   flake.modules = {
-    nixos.pc =
-      { pkgs, ... }:
-      {
-        imports = [ polyModule ];
-        fonts.packages = with pkgs; [
-          noto-fonts
-          noto-fonts-cjk-sans
-          noto-fonts-cjk-serif
-        ];
-      };
+    nixos.pc = polyModule;
 
     homeManager.gui =
       { pkgs, ... }:
       {
         imports = [ polyModule ];
         home.packages = [
+          pkgs.google-fonts
           pkgs.gucharmap
         ];
       };
