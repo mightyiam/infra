@@ -41,6 +41,7 @@ The following files in this repository are generated and checked
 using [the _files_ flake-parts module](https://github.com/mightyiam/files):
 
 - `README.md`
+- `modules/ipfi/README.md`
 - `.github/workflows/check.yaml`
 - `.gitignore`
 - `LICENSE`
@@ -65,13 +66,7 @@ It is whether that set of option values is to be imported in some configurations
 An example of a set of option values that would deserve a distinct named module is `flake.modules.nixos.laptop`
 because it would be imported by laptop configurations and not by desktop configurations.
 
-## Integrated patched flake inputs pattern
-
-- 🪶 edit/patch the repo's inputs without leaving its clone directory
-- 🕺 no `--override-input` flag; less typing and avoids confusion in case omitted
-- 🐬 single-repo setup; less to keep track of, more self-contained
-- ⚡ provided scripts save time and produce consistency
-- 😮‍💨 some mental and operational overhead such as an occasional `git submodule update`
+## Integrated patched flake inputs
 
 I attempt to maintain an upstream-first approach.
 That means contributing my changes to inputs upstream.
@@ -79,70 +74,7 @@ While collaborating with upstream on the refinement and merge of those changes
 I maintain a branch of that input with those changes cherry-picked.
 I call these branches _integrated patched flake inputs_ (IPFIs).
 
-IPFIs are stored in this very repository.
-Yes, even though they are branches from disparate repositories,
-they are stored in the repository in which they are used.
-Git doesn't mind.
-
-For each IPFI a git submodule exists.
-That submodule is a clone of this very same repository.
-The head of that submodule is set to the head of the IPFI branch.
-
-Finally, each `inputs.<name>.url` value is a path to the corresponding IPFI submodule directory.
-
-> [!WARNING]
-> There seems to be an issue with Nix that affects the IPFI pattern.
-> Workaround: artificially make the repository dirty.
-
-### Creating an IPFI
-
-An IPFI is created by running `ipfi-add <input> <upstream-url> <rev> <base-ref>`.
-
-- `input`: name of the flake input
-- `upstream-url`: git URL of the upstream repo
-- `rev`: upstream rev to branch from
-- `base-ref`: base ref for future rebasing, such as `main`
-
-> [!TIP]
-> The `rev` should probably be the one to which that input is currently locked.
-> Run `nix flake metadata` to see what rev that is.
-
-For example
-
-```console-session
-$ ipfi-add flake-parts https://github.com/hercules-ci/flake-parts 64b9f2c2df31bb87bdd2360a2feb58c817b4d16c
-```
-
-And you end up with a git submodule at `./patched-inputs/<input>`.
-It can be used this way:
-
-```nix
-{
-  inputs.flake-parts.url = "./patched-inputs/flake-parts";
-}
-```
-
-> [!TIP]
-> You might need to work around git push limits
-> such as [GitHub's](https://docs.github.com/en/get-started/using-git/troubleshooting-the-2-gb-push-limit).
-
-### Cherry picking for an IPFI
-
-1. `cd patched-inputs/<input>`
-1. Get on the `patched-inputs/<input>` branch.
-1. Add a remote for a fork and cherry-pick from it.
-1. Make sure to push.
-
-### Rebasing an IPFI
-
-To rebase an IPFI (or run into a conflict):
-`ipfi-rebase <input>`
-
-For example
-
-```
-$ ipfi-rebase flake-parts
-```
+See [`modules/ipfi`](modules/ipfi).
 
 ## Unfree packages
 
