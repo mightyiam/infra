@@ -1,9 +1,5 @@
 {
-  flake.modules.nixos.pc = nixosArgs: {
-    services.printing = {
-      enable = true;
-      extraSystemGroup = "lpadmin";
-    };
-    users.groups.${nixosArgs.config.services.printing.extraSystemGroup} = { };
+  flake.modules.nixos.pc = {
+    services.printing.enable = true;
   };
 }
