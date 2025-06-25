@@ -10,7 +10,7 @@
         enable = true;
         bars = {
           "${id}" = {
-            icons = "awesome5";
+            icons = "material-nf";
             settings.theme.overrides = hmArgs.config.lib.stylix.i3status-rust.bar;
             blocks = lib.mkMerge [
               [
@@ -59,8 +59,6 @@
           };
         };
       };
-
-      home.packages = [ pkgs.font-awesome ];
 
       wayland.windowManager = {
         sway.config = {
