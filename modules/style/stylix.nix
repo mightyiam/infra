@@ -25,7 +25,9 @@
 
     nixvim.astrea = nixvimArgs: {
       # https://github.com/danth/stylix/pull/415#issuecomment-2832398958
-      imports = lib.optional (nixvimArgs ? homeConfig) nixvimArgs.homeConfig.lib.stylix.nixvim.config;
+      imports = lib.optional (
+        nixvimArgs ? homeConfig
+      ) nixvimArgs.homeConfig.stylix.targets.nixvim.exportedModule;
     };
   };
 }
