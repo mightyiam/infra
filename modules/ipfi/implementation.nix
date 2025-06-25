@@ -165,6 +165,9 @@ in
             $ ipfi-rebase-flake-parts
             ```
 
+            ### `ipfi-push-<INPUT>`
+
+            Force-push an IPFI branch.
           '';
         };
       };
