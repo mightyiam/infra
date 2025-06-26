@@ -126,49 +126,68 @@ in
     };
     perSystem = flake-parts-lib.mkPerSystemOption {
       options.ipfi = {
-        commands = lib.mkOption {
-          type = lib.types.listOf lib.types.package;
-          readOnly = true;
-          # TODO DRY out
-          description = ''
-            ### `ipfi-init-<INPUT>`
+        commands = {
+          init = lib.mkOption {
+            type = lib.types.listOf lib.types.package;
+            readOnly = true;
+            description = ''
+              `ipfi-init-<INPUT>`
 
-            Initializes IPFI `INPUT` at its current revision.
+              Initializes IPFI `INPUT` at its current revision.
 
-            For example
+              For example
 
-            ``` console-session
-            $ ipfi-init-flake-parts
-            ```
+              ``` console-session
+              $ ipfi-init-flake-parts
+              ```
 
-            And you end up with a git submodule at `./patched-inputs/flake-parts`.
-            It can be used this way:
+              And you end up with a git submodule at `./patched-inputs/flake-parts`.
+              It can be used this way:
 
-            ```nix
-            {
-              inputs.flake-parts.url = "./patched-inputs/flake-parts";
-            }
-            ```
+              ```nix
+              {
+                inputs.flake-parts.url = "./patched-inputs/flake-parts";
+              }
+              ```
 
-            > [!TIP]
-            > With repositories with huge history such as Nixpkgs
-            > you might need to work around git push limits
-            > such as [GitHub's](https://docs.github.com/en/get-started/using-git/troubleshooting-the-2-gb-push-limit).
+              > [!TIP]
+              > With repositories with huge history such as Nixpkgs
+              > you might need to work around git push limits
+              > such as [GitHub's](https://docs.github.com/en/get-started/using-git/troubleshooting-the-2-gb-push-limit).
+            '';
+          };
+          rebase = lib.mkOption {
+            type = lib.types.listOf lib.types.package;
+            readOnly = true;
+            description = ''
+              `ipfi-rebase-<INPUT>`
 
-            ### `ipfi-rebase-<INPUT>`
+              Attempt to rebase an IPFI.
 
-            Attempt to rebase an IPFI.
+              For example
 
-            For example
+              ``` console-session
+              $ ipfi-rebase-flake-parts
+              ```
+            '';
+          };
+          push = lib.mkOption {
+            type = lib.types.listOf lib.types.package;
+            readOnly = true;
+            description = ''
+              `ipfi-push-<INPUT>`
 
-            ``` console-session
-            $ ipfi-rebase-flake-parts
-            ```
+              Force-push an IPFI branch.
+            '';
+          };
 
-            ### `ipfi-push-<INPUT>`
-
-            Force-push an IPFI branch.
-          '';
+          all = lib.mkOption {
+            type = lib.types.listOf lib.types.package;
+            readOnly = true;
+            description = ''
+              All of the commands.
+            '';
+          };
         };
       };
     };
@@ -239,24 +258,26 @@ in
                 fi
               '';
             in
-            (lib.optional (inputs.${name} ? rev) (
-              pkgs.writeShellApplication {
-                name = "ipfi-init-${name}";
-                runtimeInputs = [ pkgs.git ];
-                text = ''
-                  set -o xtrace
-                  ${cdToplevel}
-                  git submodule add "./." "${path_}"
-                  cd "${path_}"
-                  ${ensure-upstream}
-                  git fetch ${upstream.name} "${inputs.${name}.rev}"
-                  git switch -c "${branch}" "${inputs.${name}.rev}"
-                  git push --set-upstream ${remoteName} "${branch}"
-                '';
-              }
-            ))
-            ++ [
-              (pkgs.writeShellApplication {
+            {
+              init =
+                if (inputs.${name} ? rev) then
+                  (pkgs.writeShellApplication {
+                    name = "ipfi-init-${name}";
+                    runtimeInputs = [ pkgs.git ];
+                    text = ''
+                      set -o xtrace
+                      ${cdToplevel}
+                      git submodule add "./." "${path_}"
+                      cd "${path_}"
+                      ${ensure-upstream}
+                      git fetch ${upstream.name} "${inputs.${name}.rev}"
+                      git switch -c "${branch}" "${inputs.${name}.rev}"
+                      git push --set-upstream ${remoteName} "${branch}"
+                    '';
+                  })
+                else
+                  null;
+              rebase = pkgs.writeShellApplication {
                 name = "ipfi-rebase-${name}";
                 runtimeInputs = [ pkgs.git ];
                 text = ''
@@ -269,8 +290,8 @@ in
                   git fetch ${upstream.name} "${upstream.ref}"
                   git rebase "${upstream.name}/${upstream.ref}"
                 '';
-              })
-              (pkgs.writeShellApplication {
+              };
+              push = pkgs.writeShellApplication {
                 name = "ipfi-push-${name}";
                 runtimeInputs = [ pkgs.git ];
                 text = ''
@@ -280,10 +301,27 @@ in
                   ${ensure-upstream}
                   git push -f ${remoteName} "${branch}:${branch}"
                 '';
-              })
-            ]
+              };
+            }
           ))
-          lib.flatten
+
+          (lib.fold (cur: acc: {
+            init = acc.init ++ (if cur.init != null then [ cur.init ] else [ ]);
+            rebase = acc.rebase ++ [ cur.rebase ];
+            push = acc.push ++ [ cur.push ];
+          }) (lib.genAttrs [ "init" "rebase" "push" ] (_: [ ])))
+
+          (commands: {
+            inherit (commands) init rebase push;
+            all = lib.concatLists (
+              with commands;
+              [
+                init
+                rebase
+                push
+              ]
+            );
+          })
         ];
       };
     };

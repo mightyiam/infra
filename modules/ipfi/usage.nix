@@ -33,7 +33,7 @@
   flake.modules.nixos.pc = config.ipfi.nixosModule;
 
   perSystem = psArgs: {
-    make-shells.default.packages = psArgs.config.ipfi.commands;
+    make-shells.default.packages = psArgs.config.ipfi.commands.all;
     treefmt.settings.global.excludes = [ "${config.ipfi.baseDir}/*" ];
   };
 }
