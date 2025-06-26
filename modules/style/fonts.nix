@@ -17,7 +17,7 @@ let
         };
 
         emoji = {
-          package = pkgs.noto-fonts-color-emoji;
+          package = pkgs.google-fonts;
           name = "Noto Color Emoji";
         };
 
