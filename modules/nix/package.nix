@@ -1,5 +1,7 @@
 { lib, ... }:
 let
+  nixVersion = "nix_2_29";
+
   # https://github.com/NixOS/nix/issues/11358
   mkWorkaround =
     pkgs: original:
@@ -20,7 +22,7 @@ let
       meta.mainProgram = "nix";
     };
 
-  mkNix = pkgs: pkgs.nixVersions.latest |> mkWorkaround pkgs;
+  mkNix = pkgs: pkgs.nixVersions.${nixVersion} |> mkWorkaround pkgs;
 in
 {
   flake.modules = {
