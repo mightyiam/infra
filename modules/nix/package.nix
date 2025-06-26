@@ -1,25 +1,22 @@
 { lib, ... }:
 let
-  getNix = pkgs: pkgs.nixVersions.nix_2_29;
+  polyModule =
+    { pkgs, ... }:
+    {
+      nix.package =
+        pkgs.nixVersions
+        |> lib.attrNames
+        |> lib.filter (lib.hasPrefix "nix_")
+        |> lib.naturalSort
+        |> lib.last
+        |> lib.flip lib.getAttr pkgs.nixVersions
+        |> lib.mkDefault;
+    };
 in
 {
   flake.modules = {
-    nixos.pc =
-      { pkgs, ... }:
-      {
-        nix.package = getNix pkgs;
-      };
-
-    homeManager.base =
-      { pkgs, ... }:
-      {
-        nix.package = pkgs |> getNix |> lib.mkDefault;
-      };
-
-    nixOnDroid.base =
-      { pkgs, ... }:
-      {
-        nix.package = getNix pkgs;
-      };
+    nixos.pc = polyModule;
+    homeManager.base = polyModule;
+    nixOnDroid.base = polyModule;
   };
 }
