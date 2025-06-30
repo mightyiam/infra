@@ -1,9 +1,9 @@
-[submodule "patched-inputs/home-manager"]
-	path = patched-inputs/home-manager
+[submodule "inputs/home-manager"]
+	path = inputs/home-manager
 	url = ./.
-[submodule "patched-inputs/stylix"]
-	path = patched-inputs/stylix
+[submodule "inputs/stylix"]
+	path = inputs/stylix
 	url = ./.
-[submodule "patched-inputs/nixpkgs"]
-	path = patched-inputs/nixpkgs
+[submodule "inputs/nixpkgs"]
+	path = inputs/nixpkgs
 	url = ./.

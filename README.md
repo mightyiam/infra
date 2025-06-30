@@ -41,7 +41,6 @@ The following files in this repository are generated and checked
 using [the _files_ flake-parts module](https://github.com/mightyiam/files):
 
 - `README.md`
-- `modules/ipfi/README.md`
 - `.github/workflows/check.yaml`
 - `.gitignore`
 - `LICENSE`
@@ -66,15 +65,16 @@ It is whether that set of option values is to be imported in some configurations
 An example of a set of option values that would deserve a distinct named module is `flake.modules.nixos.laptop`
 because it would be imported by laptop configurations and not by desktop configurations.
 
-## Integrated patched flake inputs
+## Patching of inputs
 
 I attempt to maintain an upstream-first approach.
-That means contributing my changes to inputs upstream.
 While collaborating with upstream on the refinement and merge of those changes
 I maintain a branch of that input with those changes cherry-picked.
-I call these branches _integrated patched flake inputs_ (IPFIs).
 
-See [`modules/ipfi`](modules/ipfi).
+This repository is the origin of the
+[_input branches_](https://github.com/mightyiam/input-branches)
+project
+which is used here.
 
 ## Unfree packages
 

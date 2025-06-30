@@ -10,7 +10,7 @@
       "automatic-import"
       "files"
       "named-modules-as-needed"
-      "ipfi"
+      "patching-of-inputs"
       "unfree-packages"
       "all-check-store-paths"
       "github-actions"

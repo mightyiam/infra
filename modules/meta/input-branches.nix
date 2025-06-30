@@ -1,21 +1,24 @@
-{ config, ... }:
+{ config, inputs, ... }:
 {
-  text.readme.parts.ipfi =
+  text.readme.parts.patching-of-inputs =
     # markdown
     ''
-      ## Integrated patched flake inputs
+      ## Patching of inputs
 
       I attempt to maintain an upstream-first approach.
-      That means contributing my changes to inputs upstream.
       While collaborating with upstream on the refinement and merge of those changes
       I maintain a branch of that input with those changes cherry-picked.
-      I call these branches _integrated patched flake inputs_ (IPFIs).
 
-      See [`modules/ipfi`](modules/ipfi).
+      This repository is the origin of the
+      [_input branches_](https://github.com/mightyiam/input-branches)
+      project
+      which is used here.
 
     '';
 
-  ipfi.inputs = {
+  imports = [ inputs.input-branches.flakeModules.default ];
+
+  input-branches.inputs = {
     nixpkgs.upstream = {
       url = "https://github.com/NixOS/nixpkgs.git";
       ref = "nixpkgs-unstable";
@@ -30,10 +33,10 @@
     };
   };
 
-  flake.modules.nixos.pc = config.ipfi.nixosModule;
+  flake.modules.nixos.pc = inputs.input-branches.modules.nixos.pure;
 
   perSystem = psArgs: {
-    make-shells.default.packages = psArgs.config.ipfi.commands.all;
-    treefmt.settings.global.excludes = [ "${config.ipfi.baseDir}/*" ];
+    make-shells.default.packages = psArgs.config.input-branches.commands.all;
+    treefmt.settings.global.excludes = [ "${config.input-branches.baseDir}/*" ];
   };
 }

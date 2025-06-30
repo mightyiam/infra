@@ -29,12 +29,14 @@
     };
 
     home-manager = {
-      url = "./patched-inputs/home-manager";
+      url = "./inputs/home-manager";
       flake = true;
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     import-tree.url = "github:vic/import-tree";
+
+    input-branches.url = "github:mightyiam/input-branches";
 
     make-shell = {
       url = "github:nicknovitski/make-shell";
@@ -58,7 +60,7 @@
 
     nixos-facter-modules.url = "github:numtide/nixos-facter-modules";
 
-    nixpkgs.url = "./patched-inputs/nixpkgs";
+    nixpkgs.url = "./inputs/nixpkgs";
 
     nixvim = {
       url = "github:nix-community/nixvim";
@@ -90,7 +92,7 @@
     };
 
     stylix = {
-      url = "./patched-inputs/stylix";
+      url = "./inputs/stylix";
       flake = true;
       inputs = {
         flake-compat.follows = "dedupe_flake-compat";
