@@ -361,11 +361,11 @@
     },
     "input-branches": {
       "locked": {
-        "lastModified": 1751336850,
-        "narHash": "sha256-Hdmg7Ojr9zfKEsz3YBgzJmizphOBE3qGE29hqD5vdYk=",
+        "lastModified": 1751365220,
+        "narHash": "sha256-+af8lomTMYfxWGXiu8peQjhEIfhq7eQmXBJ25ViFf6M=",
         "owner": "mightyiam",
         "repo": "input-branches",
-        "rev": "146fc110b6862528425042f7eb7639c0d65fb487",
+        "rev": "ea6fa2c8a3d2bbd6d93ce4baf4689a3efb13240b",
         "type": "github"
       },
       "original": {
