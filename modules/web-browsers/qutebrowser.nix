@@ -9,6 +9,10 @@
 
         keyBindings.normal.e = "edit-url";
 
+        extraConfig = ''
+          config.unbind("d")
+        '';
+
         settings = {
           editor.command = [
             hmArgs.config.guiEditorCommand
