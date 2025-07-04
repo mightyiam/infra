@@ -18,6 +18,7 @@
             inherit (oldAttrs) src;
             prePatch =
               let
+                inherit (builtins) stringLength;
                 inherit (config.lib.stylix) colors;
 
                 inherit (lib)
@@ -46,6 +47,8 @@
                     (map (max 0))
                     # convert each to hex string
                     (map toHexString)
+                    # add leading 0 if necessary
+                    (map (hex: if (stringLength hex < 2) then "0" + hex else hex))
                     # to one string
                     concatStrings
                   ];
