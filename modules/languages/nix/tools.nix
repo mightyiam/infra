@@ -6,7 +6,6 @@
         #nix-melt
         nix-prefetch-scripts
         nurl
-        statix
       ];
     };
 }
