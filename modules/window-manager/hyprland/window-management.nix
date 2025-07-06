@@ -50,8 +50,6 @@
 
                 "SUPER, r, hy3:changegroup, opposite"
 
-                "SUPER, c, hy3:warpcursor"
-
                 "SUPER+SHIFT, tab, togglefloating"
               ]
 
