@@ -67,7 +67,7 @@
               extraConfig = ''
                 mode overlay
               '';
-              colors = hmArgs.config.lib.stylix.i3.bar.colors // {
+              colors = hmArgs.config.stylix.targets.i3.exportedBarConfig.colors // {
                 background = "#00000000";
               };
               trayOutput = "none";
