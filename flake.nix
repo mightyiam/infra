@@ -95,10 +95,7 @@
       url = "./inputs/stylix";
       flake = true;
       inputs = {
-        flake-compat.follows = "dedupe_flake-compat";
         flake-parts.follows = "flake-parts";
-        git-hooks.follows = "git-hooks";
-        home-manager.follows = "home-manager";
         nixpkgs.follows = "nixpkgs";
         nur.follows = "dedupe_nur";
         systems.follows = "dedupe_systems";
