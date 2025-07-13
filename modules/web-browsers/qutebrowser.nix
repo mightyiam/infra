@@ -11,6 +11,7 @@
 
         extraConfig = ''
           config.unbind("d")
+          config.unbind("D")
         '';
 
         settings = {
