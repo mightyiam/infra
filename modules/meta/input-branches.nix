@@ -25,9 +25,12 @@
   imports = [ inputs.input-branches.flakeModules.default ];
 
   input-branches.inputs = {
-    nixpkgs.upstream = {
-      url = "https://github.com/NixOS/nixpkgs.git";
-      ref = "nixpkgs-unstable";
+    nixpkgs = {
+      upstream = {
+        url = "https://github.com/NixOS/nixpkgs.git";
+        ref = "nixpkgs-unstable";
+      };
+      shallow = true;
     };
     home-manager.upstream = {
       url = "https://github.com/nix-community/home-manager.git";
