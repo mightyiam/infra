@@ -40,7 +40,7 @@
   };
 
   flake.modules.nixos.pc = {
-    imports = [ inputs.input-branches.modules.nixos.no-git-metadata ];
+    imports = [ inputs.input-branches.modules.nixos.default ];
     nixpkgs.flake.source = lib.mkForce (rootPath + "/inputs/nixpkgs");
   };
 
