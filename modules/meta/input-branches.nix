@@ -1,4 +1,10 @@
-{ config, inputs, ... }:
+{
+  config,
+  inputs,
+  lib,
+  rootPath,
+  ...
+}:
 {
   text.readme.parts.patching-of-inputs =
     # markdown
@@ -33,7 +39,10 @@
     };
   };
 
-  flake.modules.nixos.pc = inputs.input-branches.modules.nixos.no-git-metadata;
+  flake.modules.nixos.pc = {
+    imports = [ inputs.input-branches.modules.nixos.no-git-metadata ];
+    nixpkgs.flake.source = lib.mkForce (rootPath + "/inputs/nixpkgs");
+  };
 
   perSystem = psArgs: {
     make-shells.default.packages = psArgs.config.input-branches.commands.all;
