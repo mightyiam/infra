@@ -33,7 +33,7 @@
     };
   };
 
-  flake.modules.nixos.pc = inputs.input-branches.modules.nixos.pure;
+  flake.modules.nixos.pc = inputs.input-branches.modules.nixos.no-git-metadata;
 
   perSystem = psArgs: {
     make-shells.default.packages = psArgs.config.input-branches.commands.all;
