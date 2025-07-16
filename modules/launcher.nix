@@ -24,7 +24,6 @@
           display-run = "   Run ";
           display-window = " 󰕰  Window";
           display-Network = " 󰤨  Network";
-          run-shell-command = hmArgs.config.terminal.withTitle "{cmd}";
         };
         theme = {
           listview.columns = 1;
