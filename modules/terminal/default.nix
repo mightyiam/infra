@@ -1,21 +1,18 @@
 { lib, withSystem, ... }:
 {
-  flake.modules.homeManager = {
-    base = {
+  flake.modules.homeManager.gui =
+    hmArgs@{ pkgs, ... }:
+    let
+      hyprcwd = withSystem pkgs.system (psArgs: psArgs.config.packages.hyprcwd);
+    in
+    {
       options.terminal = {
         path = lib.mkOption {
           type = lib.types.path;
           default = null;
         };
       };
-
-    };
-    gui =
-      hmArgs@{ pkgs, ... }:
-      let
-        hyprcwd = withSystem pkgs.system (psArgs: psArgs.config.packages.hyprcwd);
-      in
-      {
+      config = {
         wayland.windowManager = {
           hyprland.settings.bind = [
             "SUPER, Return, exec, ${hmArgs.config.terminal.path}"
@@ -37,5 +34,5 @@
           };
         };
       };
-  };
+    };
 }
