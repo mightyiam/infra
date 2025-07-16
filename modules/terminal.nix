@@ -9,10 +9,6 @@
             type = lib.types.path;
             default = null;
           };
-          withTitle = lib.mkOption {
-            type = lib.types.functionTo lib.types.str;
-            default = null;
-          };
         };
 
         config.home.packages = with pkgs; [ ansifilter ];
@@ -25,7 +21,6 @@
       {
         terminal = {
           path = lib.getExe hmArgs.config.programs.alacritty.package;
-          withTitle = cmd: "${hmArgs.config.terminal.path} --title ${cmd} --command ${cmd}";
         };
 
         programs.alacritty = {
