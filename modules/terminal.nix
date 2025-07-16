@@ -55,9 +55,9 @@
               in
               {
                 "${mod}+Return" = null;
-                "--no-repeat ${mod}+Return" = "exec ${lib.getExe hmArgs.config.programs.alacritty.package}";
+                "--no-repeat ${mod}+Return" = "exec ${hmArgs.config.terminal.path}";
                 "--no-repeat ${mod}+Shift+Return" =
-                  "exec ${lib.getExe hmArgs.config.programs.alacritty.package} --working-directory `${lib.getExe pkgs.swaycwd}`";
+                  "exec ${hmArgs.config.terminal.path} --working-directory `${lib.getExe pkgs.swaycwd}`";
               };
           };
         };
