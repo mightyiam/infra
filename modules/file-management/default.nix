@@ -4,7 +4,6 @@
     { pkgs, ... }:
     {
       home.packages = with pkgs; [
-        du-dust
         fd
         file
         ripgrep
