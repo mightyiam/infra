@@ -4,10 +4,7 @@
     { pkgs, ... }:
     {
       home.packages = with pkgs; [
-        fd
         file
-        ripgrep
-        ripgrep-all
         tokei
       ];
       programs = {
