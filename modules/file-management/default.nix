@@ -3,10 +3,6 @@
   flake.modules.homeManager.base =
     { pkgs, ... }:
     {
-      home.packages = with pkgs; [
-        file
-        tokei
-      ];
       programs = {
         yazi = {
           enable = true;
