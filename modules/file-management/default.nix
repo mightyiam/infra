@@ -4,13 +4,11 @@
     { pkgs, ... }:
     {
       home.packages = with pkgs; [
-        atool
         du-dust
         fd
         file
         ripgrep
         ripgrep-all
-        unzip
         tokei
       ];
       programs = {
