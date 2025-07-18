@@ -4,7 +4,7 @@
     { pkgs, ... }:
     {
       programs.yazi.settings = {
-        open.rules = [
+        open.append_rules = [
           {
             mime = "*";
             use = "open";
