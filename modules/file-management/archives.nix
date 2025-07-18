@@ -3,8 +3,7 @@
     { pkgs, ... }:
     {
       home.packages = [
-        pkgs.atool
-        pkgs.unzip
+        pkgs.ouch
       ];
     };
 }
