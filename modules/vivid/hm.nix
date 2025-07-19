@@ -3,7 +3,7 @@ mkTarget {
   name = "vivid";
   humanName = "vivid";
 
-  configElements =
+  config =
     { colors }:
     let
       theme = "stylix";
