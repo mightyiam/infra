@@ -1,8 +1,5 @@
 { mkTarget, ... }:
 mkTarget {
-  name = "vivid";
-  humanName = "vivid";
-
   config =
     { colors }:
     let
