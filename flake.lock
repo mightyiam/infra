@@ -383,11 +383,11 @@
         "nixpkgs-lib": "nixpkgs-lib"
       },
       "locked": {
-        "lastModified": 1752583770,
-        "narHash": "sha256-A98whAm4DsayAX/4DP7opIpTUAu6GKEJTAIspvTfaGk=",
+        "lastModified": 1753090385,
+        "narHash": "sha256-jCb6A4dub+ZSivW6GshGZXGbG1vH0cNIu0pQ3yiJXlU=",
         "owner": "mightyiam",
         "repo": "input-branches",
-        "rev": "c7f3e2fc4e1b7c88e0c5112de9a3435a33150b1b",
+        "rev": "a9b6fb7b3605c30eebe54ed9e6fb8f17df7fe528",
         "type": "github"
       },
       "original": {
