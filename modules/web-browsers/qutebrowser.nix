@@ -22,9 +22,6 @@
           ];
           tabs.tabs_are_windows = true;
 
-          # https://github.com/qutebrowser/qutebrowser/issues/8535
-          qt.force_software_rendering = "chromium";
-
           auto_save.session = true;
         };
       };
