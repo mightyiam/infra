@@ -4,7 +4,8 @@
     {
       home.packages = with pkgs; [
         inkscape
-        gimp-with-plugins
+        # https://github.com/NixOS/nixpkgs/issues/427155
+        # gimp-with-plugins
       ];
     };
 }
