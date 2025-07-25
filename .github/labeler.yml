@@ -4,8 +4,7 @@
 ---
 "backport: release-25.05":
   - changed-files:
-      - any-glob-to-any-file:
-          - ".github/workflows/*"
+      - any-glob-to-any-file: ".github/workflows/*"
 
 "topic: dependencies":
   - changed-files:
