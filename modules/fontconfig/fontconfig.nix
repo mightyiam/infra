@@ -1,16 +1,17 @@
-{ mkTarget, lib, ... }:
+{ mkTarget }:
+{ lib, ... }:
 mkTarget {
   name = "fontconfig";
   humanName = "Fontconfig";
 
   configElements =
-    { fonts }:
+    { listTargetIndex, fonts }:
     {
       fonts.fontconfig.defaultFonts = lib.genAttrs [
         "monospace"
         "serif"
         "sansSerif"
         "emoji"
-      ] (family: [ fonts.${family}.name ]);
+      ] (family: lib.mkOrder listTargetIndex [ fonts.${family}.name ]);
     };
 }
