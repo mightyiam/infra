@@ -7,7 +7,6 @@
         pname = "generation-manager";
         version = "1.0.0";
         src = ./crate;
-        useFetchCargoVendor = true;
         cargoHash = "sha256-/LzxXS0SEyarigor0yXvb4rUbig1qS5p9BOef5/4blw=";
       };
       make-shells.generation-manager = {
