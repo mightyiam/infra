@@ -1,7 +1,7 @@
 { lib, ... }:
 {
   flake.modules = {
-    nixos.pc =
+    nixos.base =
       { pkgs, ... }:
       {
         programs.zsh.enable = true;

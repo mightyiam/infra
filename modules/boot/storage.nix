@@ -1,6 +1,6 @@
 { lib, ... }:
 {
-  flake.modules.nixos.pc = nixosArgs: {
+  flake.modules.nixos.base = nixosArgs: {
     boot.loader.grub.mirroredBoots =
       nixosArgs.config.storage.redundancy.range
       |> map (i: [

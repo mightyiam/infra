@@ -1,7 +1,7 @@
 { lib, ... }:
 {
   flake.modules = {
-    nixos.pc = {
+    nixos.base = {
       services = {
         ntpd-rs.enable = true;
         automatic-timezoned.enable = true;

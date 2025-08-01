@@ -9,7 +9,7 @@
     };
 
     modules = {
-      nixos.pc = {
+      nixos.base = {
         users.users.${config.flake.meta.owner.username} = {
           isNormalUser = true;
           initialPassword = "";

@@ -28,7 +28,7 @@
           predicate = pkg: builtins.elem (lib.getName pkg) config.nixpkgs.allowedUnfreePackages;
         in
         {
-          nixos.pc.nixpkgs.config.allowUnfreePredicate = predicate;
+          nixos.base.nixpkgs.config.allowUnfreePredicate = predicate;
 
           homeManager.base = args: {
             nixpkgs.config = lib.mkIf (!(args.hasGlobalPkgs or false)) {

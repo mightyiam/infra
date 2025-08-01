@@ -1,14 +1,16 @@
 {
-  flake.modules.nixos.pc = {
-    # https://github.com/danth/stylix/discussions/1206
-    stylix.targets.grub.enable = false;
+  flake.modules.nixos = {
+    base = {
+      # https://github.com/danth/stylix/discussions/1206
+      stylix.targets.grub.enable = false;
 
-    boot = {
-      kernelParams = [
+      boot.kernelParams = [
         "quiet"
         "systemd.show_status=error"
       ];
-      plymouth.enable = true;
+    };
+    pc = {
+      boot.plymouth.enable = true;
     };
   };
 }

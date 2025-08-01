@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.pc = {
+  flake.modules.nixos.base = {
     boot.zfs.forceImportRoot = false;
     services.zfs.autoScrub.enable = true;
     services.zfs.autoScrub.interval = "monthly";

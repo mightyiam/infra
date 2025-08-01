@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.pc = {
+  flake.modules.nixos.base = {
     networking.nameservers = [
       # https://developers.cloudflare.com/1.1.1.1
       "1.1.1.1"

@@ -1,6 +1,6 @@
 { lib, ... }:
 {
-  flake.modules.nixos.pc =
+  flake.modules.nixos.base =
     { config, ... }:
     {
       options.storage.redundancy = {

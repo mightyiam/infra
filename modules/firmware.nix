@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.pc = {
+  flake.modules.nixos.base = {
     services.fwupd.enable = true;
   };
 }

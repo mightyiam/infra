@@ -15,7 +15,7 @@
       extra-system-features = [ "recursive-nix" ];
     };
     flake.modules = {
-      nixos.pc.nix = {
+      nixos.base.nix = {
         inherit (config.nix) settings;
       };
 
