@@ -1,5 +1,5 @@
 {
   configurations.nixos.fawkes.module = {
-    networking.domain = "local";
+    networking.hostName = "fawkes";
   };
 }

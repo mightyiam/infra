@@ -1,3 +1,5 @@
 {
-  flake.modules.nixos."nixosConfigurations/dobby".facter.reportPath = ./facter.json;
+  configurations.nixos.dobby.module = {
+    facter.reportPath = ./facter.json;
+  };
 }

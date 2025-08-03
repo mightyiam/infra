@@ -4,7 +4,7 @@
     "epson_201207w"
   ];
 
-  flake.modules.nixos."nixosConfigurations/fawkes" =
+  configurations.nixos.fawkes.module =
     { pkgs, ... }:
     {
       services.printing.drivers = with pkgs; [

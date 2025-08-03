@@ -1,3 +1,5 @@
 {
-  flake.modules.nixos."nixosConfigurations/fawkes".facter.reportPath = ./facter.json;
+  configurations.nixos.fawkes.module = {
+    facter.reportPath = ./facter.json;
+  };
 }

@@ -1,3 +1,5 @@
 {
-  flake.modules.nixos."nixosConfigurations/dobby".networking.hostId = "abf835ae";
+  configurations.nixos.dobby.module = {
+    networking.hostId = "abf835ae";
+  };
 }

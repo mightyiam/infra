@@ -1,3 +1,5 @@
 {
-  flake.modules.nixos."nixosConfigurations/dobby".hardware.nvidia.open = false;
+  configurations.nixos.dobby.module = {
+    hardware.nvidia.open = false;
+  };
 }

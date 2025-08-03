@@ -1,9 +1,11 @@
 { config, ... }:
 {
-  flake.modules.nixos."nixosConfigurations/dobby".imports = with config.flake.modules.nixos; [
-    efi
-    pc
-    nvidia-gpu
-    wife
-  ];
+  configurations.nixos.dobby.module = {
+    imports = with config.flake.modules.nixos; [
+      efi
+      pc
+      nvidia-gpu
+      wife
+    ];
+  };
 }

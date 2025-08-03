@@ -20,11 +20,6 @@ Shahar "Dawn" Or's [Nix](https://nix.dev)-powered "IT infrastructure" repository
 This repository follows [the dendritic pattern](https://github.com/mightyiam/dendritic)
 and happens to be the place in which it was discovered by its author.
 
-## Configurations are declared by prefixing a module's name
-
-This spares me of some boilerplate.
-For example, see [`termitomyces/imports`](modules/termitomyces/imports.nix) module.
-
 ## Automatic import
 
 Nix files (they're all flake-parts modules) are automatically imported.

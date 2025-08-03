@@ -6,7 +6,6 @@
       "ci-badge"
       "intro"
       "dendritic"
-      "nixos-configurations"
       "automatic-import"
       "files"
       "named-modules-as-needed"

@@ -1,5 +1,5 @@
 {
   configurations.nixos.ganoderma.module = {
-    hardware.nvidia.open = false;
+    networking.hostName = "ganoderma";
   };
 }

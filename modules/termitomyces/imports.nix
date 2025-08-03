@@ -1,10 +1,9 @@
+{ config, ... }:
 {
-  config,
-  ...
-}:
-{
-  flake.modules.nixos."nixosConfigurations/termitomyces".imports = with config.flake.modules.nixos; [
-    efi
-    workstation
-  ];
+  configurations.nixos.termitomyces.module = {
+    imports = with config.flake.modules.nixos; [
+      efi
+      workstation
+    ];
+  };
 }

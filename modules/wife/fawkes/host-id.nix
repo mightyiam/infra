@@ -1,3 +1,5 @@
 {
-  flake.modules.nixos."nixosConfigurations/fawkes".networking.hostId = "a1f5f4ab";
+  configurations.nixos.fawkes.module = {
+    networking.hostId = "a1f5f4ab";
+  };
 }
