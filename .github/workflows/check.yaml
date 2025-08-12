@@ -27,6 +27,7 @@
         }
       ],
       "strategy": {
+        "fail-fast": false,
         "matrix": {
           "checks": "${{ fromJson(needs.get-check-names.outputs.checks) }}"
         }

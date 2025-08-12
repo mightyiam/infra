@@ -115,8 +115,11 @@ in
               ${ids.jobs.check} = {
                 needs = ids.jobs.getCheckNames;
                 runs-on = runner.name;
-                strategy.matrix.${matrixParam} =
-                  "\${{ fromJson(needs.${ids.jobs.getCheckNames}.outputs.${ids.outputs.jobs.getCheckNames}) }}";
+                strategy = {
+                  fail-fast = false;
+                  matrix.${matrixParam} =
+                    "\${{ fromJson(needs.${ids.jobs.getCheckNames}.outputs.${ids.outputs.jobs.getCheckNames}) }}";
+                };
                 steps = [
                   steps.checkout
                   steps.nothingButNix
