@@ -8,24 +8,15 @@
     nixos.pc.security.pam.services.swaylock = { };
 
     homeManager.gui =
-      hmArgs@{ pkgs, ... }:
+      { pkgs, ... }:
       let
         lockCommand = lib.getExe pkgs.swaylock;
         dpms-all = withSystem pkgs.system (psArgs: psArgs.config.packages.dpms-all);
       in
       {
-        wayland.windowManager = {
-          sway.config.keybindings =
-            let
-              mod = hmArgs.config.wayland.windowManager.sway.config.modifier;
-            in
-            {
-              "${mod}+Alt+l" = "exec ${lockCommand}";
-            };
-          hyprland.settings.bind = [
-            "SUPER+Alt, l, exec, ${lockCommand}"
-          ];
-        };
+        wayland.windowManager.hyprland.settings.bind = [
+          "SUPER+Alt, l, exec, ${lockCommand}"
+        ];
 
         programs.swaylock = {
           enable = true;

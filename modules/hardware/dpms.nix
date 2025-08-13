@@ -5,10 +5,7 @@
     {
       packages.dpms-all = pkgs.writeShellApplication {
         name = "dpms-all";
-        runtimeInputs = with pkgs; [
-          sway
-          hyprland
-        ];
+        runtimeInputs = with pkgs; [ hyprland ];
         text = ''
           if [ $# -ne 1 ]; then
               echo "Usage: $0 [on|off]" >&2
@@ -20,9 +17,6 @@
           fi
 
           case "$XDG_CURRENT_DESKTOP" in
-              "sway")
-                  swaymsg "output * dpms $1"
-                  ;;
               "Hyprland")
                   hyprctl dispatch dpms "$1"
                   ;;

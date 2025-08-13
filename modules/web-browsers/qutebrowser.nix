@@ -26,19 +26,9 @@
         };
       };
 
-      wayland.windowManager = {
-        hyprland.settings.bind = [
-          "SUPER, q, exec, ${lib.getExe hmArgs.config.programs.qutebrowser.package}"
-        ];
-
-        sway.config.keybindings =
-          let
-            mod = hmArgs.config.wayland.windowManager.sway.config.modifier;
-          in
-          {
-            "--no-repeat ${mod}+q" = "exec ${lib.getExe hmArgs.config.programs.qutebrowser.package}";
-          };
-      };
+      wayland.windowManager.hyprland.settings.bind = [
+        "SUPER, q, exec, ${lib.getExe hmArgs.config.programs.qutebrowser.package}"
+      ];
 
       xdg.mimeApps.defaultApplications =
         [

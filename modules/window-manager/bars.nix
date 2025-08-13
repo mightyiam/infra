@@ -60,29 +60,9 @@
         };
       };
 
-      wayland.windowManager = {
-        sway.config = {
-          bars = [
-            {
-              extraConfig = ''
-                mode overlay
-              '';
-              colors = hmArgs.config.stylix.targets.i3.exportedBarConfig.colors // {
-                background = "#00000000";
-              };
-              trayOutput = "none";
-            }
-          ];
-
-          startup = [
-            { command = lib.getExe hmArgs.config.programs.i3bar-river.package; }
-          ];
-        };
-
-        hyprland.settings.exec-once = [
-          (lib.getExe hmArgs.config.programs.i3bar-river.package)
-        ];
-      };
+      wayland.windowManager.hyprland.settings.exec-once = [
+        (lib.getExe hmArgs.config.programs.i3bar-river.package)
+      ];
 
       programs.i3bar-river = {
         enable = true;
@@ -96,9 +76,6 @@
             ]
             |> lib.concatStringsSep " ";
           position = "bottom";
-
-          # on sway this matches the swaybar that is overlayed on top of it
-          height = 36;
         };
       };
     };

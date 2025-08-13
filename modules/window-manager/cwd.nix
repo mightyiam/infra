@@ -25,7 +25,6 @@
     { pkgs, ... }:
     {
       home.packages = [
-        pkgs.swaycwd
         (withSystem pkgs.system (psArgs: psArgs.config.packages.hyprcwd))
       ];
     };

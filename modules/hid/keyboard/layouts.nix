@@ -37,37 +37,16 @@
       };
     in
     {
-      wayland.windowManager = {
-        sway.config.input."type:keyboard" = {
-          xkb_layout = layout;
-          xkb_options = "grp:lalt_lshift_toggle";
-        };
-
-        hyprland.settings = {
-          bind = [
-            "ALT+SHIFT, SHIFT_L, exec, ${hyprland-rotate-keyboard-layout |> lib.getExe}"
-          ];
-          input.kb_layout = layout;
-        };
+      wayland.windowManager.hyprland.settings = {
+        bind = [
+          "ALT+SHIFT, SHIFT_L, exec, ${hyprland-rotate-keyboard-layout |> lib.getExe}"
+        ];
+        input.kb_layout = layout;
       };
 
       programs.i3status-rust.bars.bottom.blocks = lib.mkOrder 1200 [
         {
-          block = "keyboard_layout";
-          if_command = pkgs.writeShellScript "in-sway" ''
-            [ "$XDG_CURRENT_DESKTOP" = "sway" ]
-          '';
-          driver = "sway";
-          mappings = {
-            "English (US)" = "EN";
-            "Hebrew (N/A)" = "HE";
-          };
-        }
-        {
           block = "custom";
-          if_command = pkgs.writeShellScript "in-hyprland" ''
-            [ "$XDG_CURRENT_DESKTOP" = "Hyprland" ]
-          '';
           watch_files = [ hyprlandStateFile ];
           interval = "once";
           command =

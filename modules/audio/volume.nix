@@ -1,11 +1,10 @@
 { lib, ... }:
 {
   flake.modules.homeManager.gui =
-    { pkgs, config, ... }:
+    { pkgs, ... }:
     let
       step = 5;
       pactl = lib.getExe' pkgs.pulseaudio "pactl";
-      mod = config.wayland.windowManager.sway.config.modifier;
 
       incVol =
         d:
@@ -15,15 +14,9 @@
         ];
     in
     {
-      wayland.windowManager = {
-        sway.config.keybindings = {
-          "--no-repeat ${mod}+x" = "exec ${incVol "-"}";
-          "--no-repeat ${mod}+Shift+x" = "exec ${incVol "+"}";
-        };
-        hyprland.settings.bind = [
-          "SUPER, x, exec, ${incVol "-"}"
-          "SUPER+SHIFT, x, exec, ${incVol "+"}"
-        ];
-      };
+      wayland.windowManager.hyprland.settings.bind = [
+        "SUPER, x, exec, ${incVol "-"}"
+        "SUPER+SHIFT, x, exec, ${incVol "+"}"
+      ];
     };
 }
