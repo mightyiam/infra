@@ -16,7 +16,6 @@
         global.excludes = [
           "*.jpg"
           "*.png"
-          "*.toml"
           "*/.gitignore"
           "LICENSE"
         ];
