@@ -7,7 +7,6 @@
       programs = {
         prettier.enable = true;
         shfmt.enable = true;
-        yamlfmt.enable = true;
       };
       settings = {
         on-unmatched = "fatal";
