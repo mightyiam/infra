@@ -4,7 +4,10 @@
       rustaceanvim = {
         enable = true;
         settings.server.default_settings.rust-analyzer = {
-          check.allTargets = true;
+          check = {
+            allTargets = true;
+            command = "clippy";
+          };
           inlayHints = {
             maxLength = 99;
             lifetimeElisionHints.enable = "always";
