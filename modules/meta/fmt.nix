@@ -6,7 +6,6 @@
       projectRootFile = "flake.nix";
       programs = {
         prettier.enable = true;
-        rustfmt.enable = true;
         shfmt.enable = true;
         yamlfmt.enable = true;
       };
