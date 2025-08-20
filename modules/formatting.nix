@@ -14,7 +14,6 @@
         global.excludes = [
           "*.jpg"
           "*.png"
-          "*/.gitignore"
           "LICENSE"
         ];
       };

@@ -11,6 +11,7 @@
   text.readme.parts.files =
     withSystem (builtins.head config.systems) (psArgs: psArgs.config.files.files)
     |> map (file: "- `${file.path_}`")
+    |> lib.naturalSort
     |> lib.concat [
       # markdown
       ''

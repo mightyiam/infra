@@ -35,10 +35,10 @@ This means files can be moved around and nested in directories freely.
 The following files in this repository are generated and checked
 using [the _files_ flake-parts module](https://github.com/mightyiam/files):
 
-- `README.md`
 - `.github/workflows/check.yaml`
 - `.gitignore`
 - `LICENSE`
+- `README.md`
 
 ## Named modules as needed
 

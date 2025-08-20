@@ -1,6 +1,6 @@
 {
-  text.gitignore = ''
-    /result
-    /result.*
-  '';
+  gitignore = [
+    "/result"
+    "/result.*"
+  ];
 }
