@@ -15,8 +15,6 @@
             "https://news.ycombinator.com/submit"
             "https://discourse.nixos.org/c/links/12"
             "https://bsky.app/"
-            # tags: nix audio
-            "https://lobste.rs/stories/new"
             "https://discord.com/channels/568306982717751326/785982126243315762"
           ]
           |> map (url: "xdg-open ${lib.escapeShellArg url}")
