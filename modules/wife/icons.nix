@@ -2,12 +2,17 @@
   flake.modules = {
     homeManager.wife =
       { pkgs, ... }:
+      let
+        variant = "-pink";
+      in
       {
         stylix.icons = {
           enable = true;
-          dark = "Reversal-dark";
-          light = "Reversal";
-          package = pkgs.reversal-icon-theme;
+          dark = "Reversal${variant}-dark";
+          light = "Reversal${variant}";
+          package = pkgs.reversal-icon-theme.override {
+            colorVariants = [ variant ];
+          };
         };
       };
   };
