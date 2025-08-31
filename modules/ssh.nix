@@ -51,8 +51,7 @@ in
     homeManager.base = args: {
       programs.ssh = {
         enable = true;
-        compression = true;
-        hashKnownHosts = false;
+        enableDefaultConfig = false;
         includes = [ "${args.config.home.homeDirectory}/.ssh/hosts/*" ];
         matchBlocks =
           reachableNixoss
@@ -67,7 +66,9 @@ in
             {
               "*" = {
                 setEnv.TERM = "xterm-256color";
+                compression = true;
                 identitiesOnly = true;
+                hashKnownHosts = false;
               };
             }
           ]
