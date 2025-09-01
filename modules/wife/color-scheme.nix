@@ -1,7 +1,7 @@
 { inputs, ... }:
 let
   polyModule.stylix = {
-    base16Scheme = "${inputs.tinted-schemes}/base16/moonlight.yaml";
+    base16Scheme = "${inputs.tinted-schemes}/base16/zenburn.yaml";
     polarity = "dark";
   };
 in
