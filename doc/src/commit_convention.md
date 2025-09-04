@@ -21,7 +21,7 @@ where
 
 | Element               | Description |
 |-----------------------|-------------|
-| `«SUBSYSTEM»`         | Area of patched files, optionally nested using `:` for general subsystems and `/` for paths.<br><br>For example, a patch to `/stylix/hm/` should be formatted as `stylix/hm` instead of `stylix: hm`, while `/stylix/*/palette.nix` should be formatted as `stylix: palette`.<br><br>Specific conventions include simplifying `modules/«MODULE»` to `«MODULE»`, mapping `/flake.{lock,nix}` and `/flake/` to `flake`, mapping `/.github/` to `ci`, and using `treewide` for changes that cannot be categorized under a more specific subsystem. |
+| `«SUBSYSTEM»`         | Area of patched files, optionally nested using `:` for general subsystems and `/` for paths.<br><br>For example, a patch to `/stylix/hm/` should be formatted as `stylix/hm` instead of `stylix: hm`, while `/stylix/*/palette.nix` should be formatted as `stylix: palette`.<br><br>Specific conventions include simplifying `/modules/«MODULE»` to `«MODULE»`, mapping `/flake.{lock,nix}` and `/flake/` to `flake`, mapping `/.github/` to `ci`, and using `treewide` for changes that cannot be categorized under a more specific subsystem. |
 | `«SUMMARY»`           | Concise, single-line explanation of up to 72 characters, written in the imperative mood, starting lowercase, and not ending with punctuation. |
 | `«BODY»`              | Detailed, self-contained explanation of the problem, its user impact, the technical solution, and any optimizations or trade-offs, focusing on one problem per patch. |
 | `«BREAKING_CHANGE»`   | Dedicated `BREAKING CHANGE: «BODY»` section for breaking changes. |
@@ -41,6 +41,9 @@ The following examples should demonstrate everything:
 
 - [`kde: replace systemd unit with AutostartScript for theme application`](
   https://github.com/nix-community/stylix/commit/e0a41d3a2562ce1b43cad8560333673d04b111b8)
+
+- [`stylix/droid: fix import droid modules`](
+  https://github.com/nix-community/stylix/commit/e01d56cf5c00449f4d0af4013512ed906ed7d3c9)
 
 - [`stylix: do not check lambda pattern names with deadnix`](
   https://github.com/nix-community/stylix/commit/4add678fe3978177744e8af3c72a6a8a1288227b)
