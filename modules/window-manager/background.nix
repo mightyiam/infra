@@ -10,13 +10,20 @@
       wayland.windowManager.hyprland = {
         settings.misc.disable_hyprland_logo = true;
 
-        extraConfig = ''
-          submap = ${submap}
-          binde = , n, exec, ${wpaperctl} next-wallpaper
-          binde = , p, exec, ${wpaperctl} previous-wallpaper
-          ${hmArgs.config.wayland.windowManager.hyprland.submapEnd}
-          bind = SUPER, b, submap, ${submap}
-        '';
+        settings.bind = [
+          "SUPER, b, submap, ${submap}"
+        ];
+
+        submaps.${submap}.settings = {
+          binde = [
+            ", n, exec, ${wpaperctl} next-wallpaper"
+            ", p, exec, ${wpaperctl} previous-wallpaper"
+          ];
+          bind = [
+            ", escape, submap, reset"
+            ", catchall, exec, true"
+          ];
+        };
       };
 
       services.wpaperd = {
