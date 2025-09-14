@@ -3,7 +3,10 @@
   flake.modules = {
     nixos.base = {
       services = {
-        ntpd-rs.enable = true;
+        ntpd-rs = {
+          enable = true;
+          settings.observability.log-level = "warn";
+        };
         automatic-timezoned.enable = true;
 
         # https://github.com/NixOS/nixpkgs/issues/68489#issuecomment-1484030107
