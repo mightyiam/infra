@@ -37,10 +37,7 @@
           };
           typos = {
             enable = true;
-            settings.configuration = ''
-              [default.extend-identifiers]
-              MrSom3body="MrSom3body"
-            '';
+            settings.config.default.extend-identifiers.MrSom3body = "MrSom3body";
           };
           yamllint.enable = true;
           # keep-sorted end
