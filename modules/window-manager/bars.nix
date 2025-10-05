@@ -38,13 +38,19 @@
                   block = "custom";
                   format = " 󰪛 ";
                   json = true;
-                  command = ''
-                    if ${pkgs.gnugrep}/bin/grep -q 1 /sys/class/leds/input*::capslock/brightness; then
-                      echo '{ "state": "Warning" }'
-                    else
-                      echo '{}'
-                    fi
-                  '';
+                  command =
+                    pkgs.writeShellApplication {
+                      name = "i3status-capslock-util";
+                      runtimeInputs = [ pkgs.gnugrep ];
+                      text = ''
+                        if grep -q 1 /sys/class/leds/input*::capslock/brightness; then
+                          echo '{ "state": "Warning" }'
+                        else
+                          echo '{}'
+                        fi
+                      '';
+                    }
+                    |> lib.getExe;
                   watch_files = [ "/dev/input" ];
                   interval = "once";
                 }
