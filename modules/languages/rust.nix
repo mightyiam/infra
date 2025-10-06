@@ -2,7 +2,7 @@
   perSystem.treefmt.programs.rustfmt.enable = true;
 
   flake.modules = {
-    nixvim.astrea.plugins = {
+    nixvim.base.plugins = {
       rustaceanvim = {
         enable = true;
         settings.server.default_settings.rust-analyzer = {

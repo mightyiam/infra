@@ -1,3 +1,3 @@
 {
-  flake.modules.nixvim.astrea.plugins.lsp.enable = true;
+  flake.modules.nixvim.base.plugins.lsp.enable = true;
 }

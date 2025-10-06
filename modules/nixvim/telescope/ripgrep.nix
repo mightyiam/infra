@@ -1,6 +1,6 @@
 { lib, ... }:
 {
-  flake.modules.nixvim.astrea =
+  flake.modules.nixvim.base =
     { pkgs, ... }:
     {
       plugins.telescope.settings =

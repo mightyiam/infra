@@ -1,5 +1,5 @@
 {
-  flake.modules.nixvim.astrea.plugins = {
+  flake.modules.nixvim.base.plugins = {
     luasnip.enable = true;
     cmp_luasnip.enable = true;
     cmp.settings.sources = [

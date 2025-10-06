@@ -2,7 +2,7 @@
   perSystem.treefmt.programs.yamlfmt.enable = true;
 
   flake.modules = {
-    nixvim.astrea.plugins.lsp.servers.yamlls.enable = true;
+    nixvim.base.plugins.lsp.servers.yamlls.enable = true;
     homeManager.base =
       { pkgs, ... }:
       {

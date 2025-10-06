@@ -11,6 +11,6 @@ in
     homeManager.base = polyModule;
     nixOnDroid.base = polyModule;
     # https://github.com/danth/stylix/pull/415#issuecomment-2832398958
-    #nixvim.astrea = polyModule;
+    #nixvim.base = polyModule;
   };
 }

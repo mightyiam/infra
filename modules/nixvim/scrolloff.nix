@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.modules.nixvim.astrea =
+  flake.modules.nixvim.base =
     {
       pkgs,
       ...

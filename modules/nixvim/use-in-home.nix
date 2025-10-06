@@ -14,7 +14,7 @@
       nixvim = inputs.nixvim.legacyPackages.${pkgs.system}.makeNixvimWithModule {
         inherit pkgs;
         extraSpecialArgs.homeConfig = hmArgs.config;
-        module = config.flake.modules.nixvim.astrea;
+        module = config.flake.modules.nixvim.base;
       };
     in
     {

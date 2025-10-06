@@ -3,7 +3,7 @@
     homeManager.base = {
       programs.nushell.settings.show_banner = false;
     };
-    nixvim.astrea = {
+    nixvim.base = {
       extraConfigLua =
         # lua
         ''

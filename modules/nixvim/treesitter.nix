@@ -1,5 +1,5 @@
 {
-  flake.modules.nixvim.astrea.plugins.treesitter = {
+  flake.modules.nixvim.base.plugins.treesitter = {
     enable = true;
     settings = {
       highlight.enable = true;

@@ -23,7 +23,7 @@
       stylix.enable = true;
     };
 
-    nixvim.astrea = nixvimArgs: {
+    nixvim.base = nixvimArgs: {
       # https://github.com/danth/stylix/pull/415#issuecomment-2832398958
       imports = lib.optional (
         nixvimArgs ? homeConfig

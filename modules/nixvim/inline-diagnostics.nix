@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.modules.nixvim.astrea = {
+  flake.modules.nixvim.base = {
     diagnostic.settings = {
       virtual_lines = false;
       virtual_text = true;

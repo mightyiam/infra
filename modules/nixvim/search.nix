@@ -1,3 +1,3 @@
 {
-  flake.modules.nixvim.astrea.globalOpts.ignorecase = true;
+  flake.modules.nixvim.base.globalOpts.ignorecase = true;
 }

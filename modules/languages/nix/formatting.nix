@@ -2,7 +2,7 @@
 {
   perSystem.treefmt.programs.nixfmt.enable = true;
 
-  flake.modules.nixvim.astrea =
+  flake.modules.nixvim.base =
     { pkgs, ... }:
     {
       extraConfigLua = ''

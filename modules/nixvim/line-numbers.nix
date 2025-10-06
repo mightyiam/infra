@@ -1,3 +1,3 @@
 {
-  flake.modules.nixvim.astrea.opts.number = true;
+  flake.modules.nixvim.base.opts.number = true;
 }

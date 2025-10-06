@@ -8,7 +8,7 @@
     {
       packages.nixvim = inputs'.nixvim.legacyPackages.makeNixvimWithModule {
         inherit pkgs;
-        module = config.flake.modules.nixvim.astrea;
+        module = config.flake.modules.nixvim.base;
       };
     };
 }

@@ -21,7 +21,7 @@
     pre-commit.settings.hooks.treefmt.enable = true;
   };
 
-  flake.modules.nixvim.astrea = {
+  flake.modules.nixvim.base = {
     plugins = {
       lsp.keymaps.lspBuf."<space>f" = "format";
 

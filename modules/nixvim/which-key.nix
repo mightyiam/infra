@@ -1,3 +1,3 @@
 {
-  flake.modules.nixvim.astrea.plugins.which-key.enable = true;
+  flake.modules.nixvim.base.plugins.which-key.enable = true;
 }

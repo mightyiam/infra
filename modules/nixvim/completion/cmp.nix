@@ -1,5 +1,5 @@
 {
-  flake.modules.nixvim.astrea.plugins = {
+  flake.modules.nixvim.base.plugins = {
     cmp = {
       enable = true;
       settings = {
