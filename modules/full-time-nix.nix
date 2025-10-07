@@ -8,8 +8,8 @@
         runtimeInputs = [ pkgs.xdg-utils ];
         text =
           [
-            # and r/NixOS
             "https://www.reddit.com/r/Nix/"
+            "https://www.reddit.com/r/NixOS/"
             "https://x.com/i/communities/1579185771939958785"
             "https://www.linkedin.com/"
             "https://news.ycombinator.com/submit"
