@@ -2,7 +2,7 @@
   flake.modules.homeManager.base.programs.git = {
     difftastic = {
       enable = true;
-      background = "dark";
+      options.background = "dark";
     };
     extraConfig.diff.algorithm = "histogram";
   };
