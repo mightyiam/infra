@@ -309,11 +309,17 @@ let
   # config files alone.
   activatorPackage = pkgs.writeShellApplication {
     name = "stylix-kde-apply-plasma-theme";
+    runtimeEnv = { inherit (config.home) username; };
     text =
       mergeWithImage
         ''
           get_exe() {
-            for directory in /run/current-system/sw/bin /usr/bin /bin; do
+            for directory in \
+              /run/current-system/sw/bin \
+              "/etc/profiles/per-user/$username/bin" \
+              /usr/bin \
+              /bin
+            do
               if [[ -f "$directory/$1" ]]; then
                 printf '%s\n' "$directory/$1"
                 return 0
