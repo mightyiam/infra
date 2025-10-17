@@ -4,7 +4,7 @@
     {
       home.packages = with pkgs; [
         hollywood
-        neofetch
+        fastfetch
         lolcat
       ];
     };
