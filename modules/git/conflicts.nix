@@ -1,6 +1,6 @@
 {
   flake.modules.homeManager.base.programs.git = {
-    extraConfig = {
+    settings = {
       merge.conflictstyle = "zdiff3";
       rerere.enabled = true;
     };
