@@ -1,7 +1,0 @@
-[package]
-edition = "2021"
-name = "generation-manager"
-version = "1.0.0"
-
-[dependencies]
-clap = { features = ["derive"], version = "*" }
