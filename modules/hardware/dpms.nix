@@ -32,7 +32,7 @@
   flake.modules.homeManager.gui =
     { pkgs, ... }:
     let
-      dpms-all = withSystem pkgs.system (psArgs: psArgs.config.packages.dpms-all);
+      dpms-all = withSystem pkgs.stdenv.hostPlatform.system (psArgs: psArgs.config.packages.dpms-all);
     in
     {
       home.packages = [ dpms-all ];

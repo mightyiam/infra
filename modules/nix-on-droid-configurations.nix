@@ -30,7 +30,7 @@ in
       config.flake.nixOnDroidConfigurations
       |> lib.mapAttrsToList (
         name: nixOnDroid: {
-          ${nixOnDroid.pkgs.system} = {
+          ${nixOnDroid.pkgs.stdenv.hostPlatform.system} = {
             "${prefix}${name}" = nixOnDroid.activationPackage;
           };
         }

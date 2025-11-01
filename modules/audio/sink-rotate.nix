@@ -3,7 +3,9 @@
   flake.modules.homeManager.base =
     { pkgs, ... }:
     let
-      sink-rotate = withSystem pkgs.system ({ inputs', ... }: inputs'.sink-rotate.packages.default);
+      sink-rotate = withSystem pkgs.stdenv.hostPlatform.system (
+        { inputs', ... }: inputs'.sink-rotate.packages.default
+      );
     in
     {
       home.packages = [ sink-rotate ];

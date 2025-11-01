@@ -17,7 +17,7 @@
           nix-diff
         ])
         ++ [
-          (withSystem pkgs.system (psArgs: psArgs.config.packages.system))
+          (withSystem pkgs.stdenv.hostPlatform.system (psArgs: psArgs.config.packages.system))
         ];
       programs.nh.enable = true;
     };

@@ -20,7 +20,9 @@
   flake.modules.homeManager.gui =
     { pkgs, ... }:
     let
-      toggle-mute-sources = withSystem pkgs.system (psArgs: psArgs.config.packages.toggle-mute-sources);
+      toggle-mute-sources = withSystem pkgs.stdenv.hostPlatform.system (
+        psArgs: psArgs.config.packages.toggle-mute-sources
+      );
     in
     {
       wayland.windowManager.hyprland.settings.bind = [

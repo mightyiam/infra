@@ -25,7 +25,7 @@
     { pkgs, ... }:
     {
       home.packages = [
-        (withSystem pkgs.system (psArgs: psArgs.config.packages.hyprcwd))
+        (withSystem pkgs.stdenv.hostPlatform.system (psArgs: psArgs.config.packages.hyprcwd))
       ];
     };
 }

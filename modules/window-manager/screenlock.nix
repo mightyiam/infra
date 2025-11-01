@@ -11,7 +11,7 @@
       { pkgs, ... }:
       let
         lockCommand = lib.getExe pkgs.swaylock;
-        dpms-all = withSystem pkgs.system (psArgs: psArgs.config.packages.dpms-all);
+        dpms-all = withSystem pkgs.stdenv.hostPlatform.system (psArgs: psArgs.config.packages.dpms-all);
       in
       {
         wayland.windowManager.hyprland.settings.bind = [

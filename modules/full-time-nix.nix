@@ -23,6 +23,8 @@
   flake.modules.homeManager.gui =
     { pkgs, ... }:
     {
-      home.packages = withSystem pkgs.system (psArgs: [ psArgs.config.packages.ftn-advertise ]);
+      home.packages = withSystem pkgs.stdenv.hostPlatform.system (psArgs: [
+        psArgs.config.packages.ftn-advertise
+      ]);
     };
 }

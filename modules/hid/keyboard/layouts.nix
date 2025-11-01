@@ -50,7 +50,9 @@
           watch_files = [ hyprlandStateFile ];
           interval = "once";
           command =
-            withSystem pkgs.system (psArgs: psArgs.config.packages.get-hyprland-main-keyboard-layout)
+            withSystem pkgs.stdenv.hostPlatform.system (
+              psArgs: psArgs.config.packages.get-hyprland-main-keyboard-layout
+            )
             |> lib.getExe;
         }
       ];

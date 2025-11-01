@@ -26,6 +26,6 @@
   flake.modules.homeManager.base =
     { pkgs, ... }:
     {
-      home.packages = [ config.flake.packages.${pkgs.system}.generation-manager ];
+      home.packages = [ config.flake.packages.${pkgs.stdenv.hostPlatform.system}.generation-manager ];
     };
 }

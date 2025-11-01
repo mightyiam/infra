@@ -3,7 +3,7 @@
   flake.modules.homeManager.gui =
     hmArgs@{ pkgs, ... }:
     let
-      hyprcwd = withSystem pkgs.system (psArgs: psArgs.config.packages.hyprcwd);
+      hyprcwd = withSystem pkgs.stdenv.hostPlatform.system (psArgs: psArgs.config.packages.hyprcwd);
     in
     {
       options.terminal = {

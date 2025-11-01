@@ -58,16 +58,22 @@ in
       xdg.configFile."xdg-desktop-portal-wlr/config".text = ''
         [screencast]
         exec_before=${
-          withSystem pkgs.system (psArgs: lib.getExe psArgs.config.packages.notification-privacy-on)
+          withSystem pkgs.stdenv.hostPlatform.system (
+            psArgs: lib.getExe psArgs.config.packages.notification-privacy-on
+          )
         }
         exec_after=${
-          withSystem pkgs.system (psArgs: lib.getExe psArgs.config.packages.notification-privacy-off)
+          withSystem pkgs.stdenv.hostPlatform.system (
+            psArgs: lib.getExe psArgs.config.packages.notification-privacy-off
+          )
         }
       '';
       services.systembus-notify.enable = true;
 
       wayland.windowManager.hyprland.settings.exec-once = [
-        (withSystem pkgs.system (psArgs: lib.getExe psArgs.config.packages.handle-hyprland-screencast))
+        (withSystem pkgs.stdenv.hostPlatform.system (
+          psArgs: lib.getExe psArgs.config.packages.handle-hyprland-screencast
+        ))
       ];
     };
 }
