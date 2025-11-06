@@ -684,6 +684,7 @@
         "refjump-nvim": "refjump-nvim",
         "sink-rotate": "sink-rotate",
         "smart-scrolloff-nvim": "smart-scrolloff-nvim",
+        "statix": "statix",
         "stylix": "stylix",
         "tinted-schemes": "tinted-schemes",
         "treefmt-nix": "treefmt-nix",
@@ -751,6 +752,32 @@
       "original": {
         "owner": "tonymajestro",
         "repo": "smart-scrolloff.nvim",
+        "type": "github"
+      }
+    },
+    "statix": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "systems": [
+          "dedupe_systems"
+        ]
+      },
+      "locked": {
+        "lastModified": 1760767377,
+        "narHash": "sha256-kxMSSFVU3Vn9tKbNU7uBVpByfZhtczrhcEfzjHsP6Gg=",
+        "owner": "molybdenumsoftware",
+        "repo": "statix",
+        "rev": "dd6e004126587376bbf378abf7fc77c7732b4002",
+        "type": "github"
+      },
+      "original": {
+        "owner": "molybdenumsoftware",
+        "repo": "statix",
         "type": "github"
       }
     },

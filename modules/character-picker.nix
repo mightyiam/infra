@@ -3,7 +3,7 @@
   flake.modules.homeManager.gui =
     { pkgs, ... }:
     let
-      rofimoji = pkgs.rofimoji;
+      inherit (pkgs) rofimoji;
     in
     {
       home.packages = [ rofimoji ];

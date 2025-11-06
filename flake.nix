@@ -91,6 +91,15 @@
       url = "github:tonymajestro/smart-scrolloff.nvim";
     };
 
+    statix = {
+      url = "github:molybdenumsoftware/statix";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "dedupe_systems";
+      };
+    };
+
     stylix = {
       url = "./inputs/stylix";
       flake = true;
