@@ -35,6 +35,7 @@
           "x-scheme-handler/http"
           "x-scheme-handler/https"
           "x-scheme-handler/chrome"
+          "x-scheme-handler/file"
           "text/html"
           "application/x-extension-htm"
           "application/x-extension-html"
