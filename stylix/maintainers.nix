@@ -53,6 +53,12 @@
     github = "osipog";
     githubId = 87434959;
   };
+  skiletro = {
+    email = "git@skilet.ro";
+    name = "jamie";
+    github = "skiletro";
+    githubId = 19377854;
+  };
   skoove = {
     email = "zie@sturges.com.au";
     name = "Zie Sturges";
