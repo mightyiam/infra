@@ -69,6 +69,7 @@ in
                 compression = true;
                 identitiesOnly = true;
                 hashKnownHosts = false;
+                identityFile = "${args.config.home.homeDirectory}/.ssh/id_ed25519";
               };
             }
           ]
