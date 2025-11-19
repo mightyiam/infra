@@ -1,6 +1,6 @@
 {
   flake = {
-    meta.accounts.github = {
+    meta.accounts.gitlab = {
       domain = "gitlab.com";
       username = "mightyiam";
     };
