@@ -160,6 +160,7 @@
         nixpkgs.follows = "dev-nixpkgs";
         systems.follows = "dev-systems";
         flake-compat.follows = "";
+        flake-parts.follows = "dev-flake-parts";
       };
     };
 
