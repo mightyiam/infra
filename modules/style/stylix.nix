@@ -3,24 +3,36 @@
   lib,
   ...
 }:
+let
+  polyModule = {
+    stylix = {
+      enable = true;
+      enableReleaseChecks = false;
+    };
+  };
+in
 {
   flake.modules = {
     nixos.base = {
-      imports = [ inputs.stylix.nixosModules.stylix ];
-      stylix = {
-        enable = true;
-        homeManagerIntegration.autoImport = false;
-      };
+      imports = [
+        inputs.stylix.nixosModules.stylix
+        polyModule
+      ];
+      stylix.homeManagerIntegration.autoImport = false;
     };
 
     homeManager.base = {
-      imports = [ inputs.stylix.homeModules.stylix ];
-      stylix.enable = true;
+      imports = [
+        inputs.stylix.homeModules.stylix
+        polyModule
+      ];
     };
 
     nixOnDroid.base = {
-      imports = [ inputs.stylix.nixOnDroidModules.stylix ];
-      stylix.enable = true;
+      imports = [
+        inputs.stylix.nixOnDroidModules.stylix
+        polyModule
+      ];
     };
 
     nixvim.base = nixvimArgs: {
