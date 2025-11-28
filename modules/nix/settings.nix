@@ -9,7 +9,6 @@
       experimental-features = [
         "nix-command"
         "flakes"
-        "pipe-operators"
         "recursive-nix"
       ];
       extra-system-features = [ "recursive-nix" ];
