@@ -42,9 +42,15 @@
     };
   };
 
-  flake.modules.nixos.base = {
-    imports = [ inputs.input-branches.modules.nixos.default ];
-    nixpkgs.flake.source = lib.mkForce (rootPath + "/inputs/nixpkgs");
+  flake.modules = {
+    nixos.base = {
+      imports = [ inputs.input-branches.modules.nixos.default ];
+      nixpkgs.flake.source = lib.mkForce (rootPath + "/inputs/nixpkgs");
+    };
+    homeManager.base = {
+      # they include declaration paths
+      manual.manpages.enable = false;
+    };
   };
 
   perSystem =
