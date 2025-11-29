@@ -13,6 +13,10 @@
         default = _: false;
       };
     };
+    overlays = lib.mkOption {
+      type = lib.types.listOf lib.types.unspecified;
+      default = [ ];
+    };
   };
 
   config = {
@@ -21,7 +25,7 @@
       {
         _module.args.pkgs = import inputs.nixpkgs {
           inherit system;
-          inherit (config.nixpkgs) config;
+          inherit (config.nixpkgs) config overlays;
         };
       };
 
