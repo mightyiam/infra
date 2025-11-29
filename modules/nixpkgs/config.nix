@@ -1,4 +1,11 @@
 { lib, config, ... }:
+let
+  polyModule =
+    args:
+    lib.mkIf (!args.hasGlobalPkgs or false) {
+      nixpkgs = { inherit (config.nixpkgs) config; };
+    };
+in
 {
   options.nixpkgs.config = {
     allowUnfreePredicate = lib.mkOption {
@@ -9,11 +16,8 @@
 
   config.flake = {
     modules = {
-      nixos.base.nixpkgs = { inherit (config.nixpkgs) config; };
-
-      homeManager.base = args: {
-        nixpkgs = lib.mkIf (!args.hasGlobalPkgs or false) { inherit (config.nixpkgs) config; };
-      };
+      nixos.base = polyModule;
+      homeManager.base = polyModule;
     };
   };
 }
