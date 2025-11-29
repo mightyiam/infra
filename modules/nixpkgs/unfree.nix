@@ -1,17 +1,20 @@
 { lib, config, ... }:
 {
   options.nixpkgs.allowedUnfreePackages = lib.mkOption {
-    type = lib.types.listOf lib.types.str;
+    type = lib.types.listOf lib.types.singleLineStr;
     default = [ ];
   };
 
   config = {
+    nixpkgs.config.allowUnfreePredicate =
+      pkg: builtins.elem (lib.getName pkg) config.nixpkgs.allowedUnfreePackages;
+
     text.readme.parts.unfree-packages = ''
       ## Unfree packages
 
       What Nixpkgs unfree packages are allowed is configured at the flake level via an option.
       That is then used in the configuration of Nixpkgs used in NixOS, Home Manager or elsewhere.
-      See definition at [`unfree.nix`](modules/nixpkgs/unfree.nix).
+      See definition at [`nixpkgs/unfree.nix`](modules/nixpkgs/unfree.nix).
       See usage at [`steam.nix`](modules/steam.nix).
       Value of this option available as flake output:
 
@@ -22,22 +25,6 @@
 
     '';
 
-    flake = {
-      modules =
-        let
-          predicate = pkg: builtins.elem (lib.getName pkg) config.nixpkgs.allowedUnfreePackages;
-        in
-        {
-          nixos.base.nixpkgs.config.allowUnfreePredicate = predicate;
-
-          homeManager.base = args: {
-            nixpkgs.config = lib.mkIf (!(args.hasGlobalPkgs or false)) {
-              allowUnfreePredicate = predicate;
-            };
-          };
-        };
-
-      meta.nixpkgs.allowedUnfreePackages = config.nixpkgs.allowedUnfreePackages;
-    };
+    flake.meta.nixpkgs.allowedUnfreePackages = config.nixpkgs.allowedUnfreePackages;
   };
 }
