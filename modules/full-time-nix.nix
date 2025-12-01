@@ -14,7 +14,7 @@
             "https://www.linkedin.com/"
             "https://discourse.nixos.org/c/links/12"
             "https://bsky.app/"
-            "https://discord.com/channels/568306982717751326/785982126243315762"
+            "https://discord.com/channels/568306982717751326/1444903344719138937"
           ]
           |> map (url: "xdg-open ${lib.escapeShellArg url}")
           |> lib.concatLines;
