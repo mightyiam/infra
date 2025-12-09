@@ -38,8 +38,20 @@ let
       uses = "actions/checkout@v4";
       "with".submodules = true;
     };
-    detsysNixInstaller.uses = "DeterminateSystems/nix-installer-action@main";
-    magicNixCache.uses = "DeterminateSystems/magic-nix-cache-action@main";
+    installNix = {
+      uses = "nixbuild/nix-quick-install-action@master";
+      "with" = {
+        nix_conf = ''
+          keep-env-derivations = true
+          keep-outputs = true
+        '';
+        github_access_token = "\${{ secrets.GITHUB_TOKEN }}";
+      };
+    };
+    cacheNix = {
+      uses = "nix-community/cache-nix-action@main";
+      "with".primary-key = "nix-\${{ runner.os }}";
+    };
   };
 in
 {
@@ -100,8 +112,8 @@ in
                   "\${{ steps.${ids.steps.getCheckNames}.outputs.${ids.outputs.steps.getCheckNames} }}";
                 steps = [
                   steps.checkout
-                  steps.detsysNixInstaller
-                  steps.magicNixCache
+                  steps.installNix
+                  steps.cacheNix
                   {
                     id = ids.steps.getCheckNames;
                     run = ''
@@ -123,8 +135,8 @@ in
                 steps = [
                   steps.checkout
                   steps.nothingButNix
-                  steps.detsysNixInstaller
-                  steps.magicNixCache
+                  steps.installNix
+                  steps.cacheNix
                   {
                     run = ''
                       nix ${nixArgs} build '.#checks.${runner.system}."''${{ matrix.${matrixParam} }}"'
