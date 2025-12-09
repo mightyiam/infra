@@ -32,7 +32,6 @@ let
       uses = "wimpysworld/nothing-but-nix@main";
       "with" = {
         hatchet-protocol = "holster";
-        nix-permission-edict = true;
       };
     };
     checkout = {

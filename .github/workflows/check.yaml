@@ -13,8 +13,7 @@
         {
           "uses": "wimpysworld/nothing-but-nix@main",
           "with": {
-            "hatchet-protocol": "holster",
-            "nix-permission-edict": true
+            "hatchet-protocol": "holster"
           }
         },
         {
