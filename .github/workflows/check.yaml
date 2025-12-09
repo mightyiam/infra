@@ -17,17 +17,10 @@
           }
         },
         {
-          "uses": "nixbuild/nix-quick-install-action@master",
-          "with": {
-            "github_access_token": "${{ secrets.GITHUB_TOKEN }}",
-            "nix_conf": "keep-env-derivations = true\nkeep-outputs = true\n"
-          }
+          "uses": "DeterminateSystems/nix-installer-action@main"
         },
         {
-          "uses": "nix-community/cache-nix-action@main",
-          "with": {
-            "primary-key": "nix-${{ runner.os }}"
-          }
+          "uses": "DeterminateSystems/magic-nix-cache-action@main"
         },
         {
           "run": "nix --accept-flake-config build '.#checks.x86_64-linux.\"${{ matrix.checks }}\"'\n"
@@ -53,17 +46,10 @@
           }
         },
         {
-          "uses": "nixbuild/nix-quick-install-action@master",
-          "with": {
-            "github_access_token": "${{ secrets.GITHUB_TOKEN }}",
-            "nix_conf": "keep-env-derivations = true\nkeep-outputs = true\n"
-          }
+          "uses": "DeterminateSystems/nix-installer-action@main"
         },
         {
-          "uses": "nix-community/cache-nix-action@main",
-          "with": {
-            "primary-key": "nix-${{ runner.os }}"
-          }
+          "uses": "DeterminateSystems/magic-nix-cache-action@main"
         },
         {
           "id": "get-check-names",
