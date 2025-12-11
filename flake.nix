@@ -67,7 +67,6 @@
       inputs = {
         flake-parts.follows = "flake-parts";
         nixpkgs.follows = "nixpkgs";
-        nuschtosSearch.follows = "dedupe_nuschtos-search";
       };
     };
 
@@ -142,23 +141,10 @@
   inputs = {
     dedupe_flake-compat.url = "github:edolstra/flake-compat";
 
-    dedupe_flake-utils = {
-      url = "github:numtide/flake-utils";
-      inputs.systems.follows = "dedupe_systems";
-    };
-
     dedupe_nur = {
       url = "github:nix-community/NUR";
       inputs = {
         flake-parts.follows = "flake-parts";
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
-
-    dedupe_nuschtos-search = {
-      url = "github:NuschtOS/search";
-      inputs = {
-        flake-utils.follows = "dedupe_flake-utils";
         nixpkgs.follows = "nixpkgs";
       };
     };
