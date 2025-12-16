@@ -8,6 +8,7 @@
         runtimeInputs = [ pkgs.xdg-utils ];
         text =
           [
+            "https://studio.youtube.com/channel/UCfOoOAT2AsD_ZgJaviAU3iA/videos/upload"
             "https://www.reddit.com/r/Nix/"
             "https://www.reddit.com/r/NixOS/"
             "https://x.com/i/communities/1579185771939958785"
