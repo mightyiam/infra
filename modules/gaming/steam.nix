@@ -4,6 +4,9 @@
     "steam-unwrapped"
   ];
   flake.modules.nixos.pc = {
-    programs.steam.enable = true;
+    programs.steam = {
+      enable = true;
+      localNetworkGameTransfers.openFirewall = true;
+    };
   };
 }
