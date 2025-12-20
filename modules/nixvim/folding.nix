@@ -1,6 +1,6 @@
 {
   flake.modules.nixvim.base = {
-    plugins.treesitter.folding = true;
+    plugins.treesitter.folding.enable = true;
     opts.foldlevel = 99;
   };
 }
