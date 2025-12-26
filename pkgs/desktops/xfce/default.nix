@@ -1,0 +1,173 @@
+{
+  config,
+  lib,
+  linuxPackages,
+  pkgs,
+  generateSplicesForMkScope,
+  makeScopeWithSplicing',
+}:
+
+makeScopeWithSplicing' {
+  otherSplices = generateSplicesForMkScope "xfce";
+  f = (
+    self:
+    let
+      inherit (self) callPackage;
+    in
+    {
+      #### CORE
+
+      thunar-unwrapped = callPackage ./core/thunar { };
+
+      thunar = callPackage ./core/thunar/wrapper.nix { };
+
+      thunar-volman = callPackage ./core/thunar-volman { };
+
+      thunar-archive-plugin = callPackage ./thunar-plugins/archive { };
+
+      thunar-dropbox-plugin = callPackage ./thunar-plugins/dropbox { };
+
+      thunar-media-tags-plugin = callPackage ./thunar-plugins/media-tags { };
+
+      thunar-vcs-plugin = callPackage ./thunar-plugins/vcs { };
+
+      tumbler = callPackage ./core/tumbler { };
+
+      xfce4-session = callPackage ./core/xfce4-session { };
+
+      xfce4-settings = callPackage ./core/xfce4-settings { };
+
+      xfce4-power-manager = callPackage ./core/xfce4-power-manager { };
+
+      xfdesktop = callPackage ./core/xfdesktop { };
+
+      xfwm4 = callPackage ./core/xfwm4 { };
+
+      xfce4-appfinder = callPackage ./core/xfce4-appfinder { };
+
+      #### APPLICATIONS
+
+      catfish = callPackage ./applications/catfish { };
+
+      gigolo = callPackage ./applications/gigolo { };
+
+      mousepad = callPackage ./applications/mousepad { };
+
+      orage = callPackage ./applications/orage { };
+
+      parole = callPackage ./applications/parole { };
+
+      ristretto = callPackage ./applications/ristretto { };
+
+      xfmpc = callPackage ./applications/xfmpc { };
+
+      xfce4-taskmanager = callPackage ./applications/xfce4-taskmanager { };
+
+      xfce4-dict = callPackage ./applications/xfce4-dict { };
+
+      xfce4-terminal = callPackage ./applications/xfce4-terminal { };
+
+      xfce4-screensaver = callPackage ./applications/xfce4-screensaver { };
+
+      xfce4-screenshooter = callPackage ./applications/xfce4-screenshooter { };
+
+      xfdashboard = callPackage ./applications/xfdashboard { };
+
+      xfce4-volumed-pulse = callPackage ./applications/xfce4-volumed-pulse { };
+
+      xfce4-notifyd = callPackage ./applications/xfce4-notifyd { };
+
+      xfburn = callPackage ./applications/xfburn { };
+
+      xfce4-panel-profiles = callPackage ./applications/xfce4-panel-profiles { };
+
+      #### ART
+
+      xfce4-icon-theme = callPackage ./art/xfce4-icon-theme { };
+
+      xfwm4-themes = callPackage ./art/xfwm4-themes { };
+
+      #### PANEL PLUGINS
+
+      xfce4-alsa-plugin = callPackage ./panel-plugins/xfce4-alsa-plugin { };
+
+      xfce4-battery-plugin = callPackage ./panel-plugins/xfce4-battery-plugin { };
+
+      xfce4-clipman-plugin = callPackage ./panel-plugins/xfce4-clipman-plugin { };
+
+      xfce4-cpufreq-plugin = callPackage ./panel-plugins/xfce4-cpufreq-plugin { };
+
+      xfce4-cpugraph-plugin = callPackage ./panel-plugins/xfce4-cpugraph-plugin { };
+
+      xfce4-dockbarx-plugin = callPackage ./panel-plugins/xfce4-dockbarx-plugin { };
+
+      xfce4-docklike-plugin = callPackage ./panel-plugins/xfce4-docklike-plugin { };
+
+      xfce4-eyes-plugin = callPackage ./panel-plugins/xfce4-eyes-plugin { };
+
+      xfce4-fsguard-plugin = callPackage ./panel-plugins/xfce4-fsguard-plugin { };
+
+      xfce4-genmon-plugin = callPackage ./panel-plugins/xfce4-genmon-plugin { };
+
+      xfce4-i3-workspaces-plugin = callPackage ./panel-plugins/xfce4-i3-workspaces-plugin { };
+
+      xfce4-netload-plugin = callPackage ./panel-plugins/xfce4-netload-plugin { };
+
+      xfce4-notes-plugin = callPackage ./panel-plugins/xfce4-notes-plugin { };
+
+      xfce4-mailwatch-plugin = callPackage ./panel-plugins/xfce4-mailwatch-plugin { };
+
+      xfce4-mpc-plugin = callPackage ./panel-plugins/xfce4-mpc-plugin { };
+
+      xfce4-sensors-plugin = callPackage ./panel-plugins/xfce4-sensors-plugin {
+        libXNVCtrl = linuxPackages.nvidia_x11.settings.libXNVCtrl;
+      };
+
+      xfce4-systemload-plugin = callPackage ./panel-plugins/xfce4-systemload-plugin { };
+
+      xfce4-time-out-plugin = callPackage ./panel-plugins/xfce4-time-out-plugin { };
+
+      xfce4-timer-plugin = callPackage ./panel-plugins/xfce4-timer-plugin { };
+
+      xfce4-verve-plugin = callPackage ./panel-plugins/xfce4-verve-plugin { };
+
+      xfce4-xkb-plugin = callPackage ./panel-plugins/xfce4-xkb-plugin { };
+
+      xfce4-weather-plugin = callPackage ./panel-plugins/xfce4-weather-plugin { };
+
+      xfce4-whiskermenu-plugin = callPackage ./panel-plugins/xfce4-whiskermenu-plugin { };
+
+      xfce4-windowck-plugin = callPackage ./panel-plugins/xfce4-windowck-plugin { };
+
+      xfce4-pulseaudio-plugin = callPackage ./panel-plugins/xfce4-pulseaudio-plugin { };
+
+    }
+    // lib.optionalAttrs config.allowAliases {
+      #### ALIASES
+      genericUpdater = throw "xfce.genericUpdater has been removed: use pkgs.genericUpdater directly"; # added 2025-12-22
+
+      mkXfceDerivation = lib.warnOnInstantiate ''
+        xfce.mkXfceDerivation has been deprecated, please use stdenv.mkDerivation
+        directly. You can migrate by adding `pkg-config`, `xfce4-dev-tools`, and
+        `wrapGAppsHook3` to your nativeBuildInputs and `--enable-maintainer-mode`
+        to your configureFlags.
+      '' (callPackage ./mkXfceDerivation.nix { }); # added 2025-12-22
+
+      xfce4-datetime-plugin = throw ''
+        xfce4-datetime-plugin has been removed: this plugin has been merged into the xfce4-panel's built-in clock
+        plugin and thus no longer maintained upstream, see https://gitlab.xfce.org/xfce/xfce4-panel/-/issues/563.
+      ''; # Added 2025-05-20
+    }
+  );
+}
+// lib.optionalAttrs config.allowAliases {
+  # These aliases need to be placed outside the scope or they will shadow the attributes from parent scope.
+  exo = lib.warnOnInstantiate "‘xfce.exo’ was moved to top-level. Please use ‘pkgs.xfce4-exo’ directly" pkgs.xfce4-exo; # Added on 2025-12-23
+  garcon = lib.warnOnInstantiate "‘xfce.garcon’ was moved to top-level. Please use ‘pkgs.garcon’ directly" pkgs.garcon; # Added on 2025-12-23
+  libxfce4ui = lib.warnOnInstantiate "‘xfce.libxfce4ui’ was moved to top-level. Please use ‘pkgs.libxfce4ui’ directly" pkgs.libxfce4ui; # Added on 2025-12-23
+  libxfce4util = lib.warnOnInstantiate "‘xfce.libxfce4util’ was moved to top-level. Please use ‘pkgs.libxfce4util’ directly" pkgs.libxfce4util; # Added on 2025-12-23
+  libxfce4windowing = lib.warnOnInstantiate "‘xfce.libxfce4windowing’ was moved to top-level. Please use ‘pkgs.libxfce4windowing’ directly" pkgs.libxfce4windowing; # Added on 2025-12-23
+  xfce4-dev-tools = lib.warnOnInstantiate "‘xfce.xfce4-dev-tools’ was moved to top-level. Please use ‘pkgs.xfce4-dev-tools’ directly" pkgs.xfce4-dev-tools; # Added on 2025-12-23
+  xfce4-panel = lib.warnOnInstantiate "‘xfce.xfce4-panel’ was moved to top-level. Please use ‘pkgs.xfce4-panel’ directly" pkgs.xfce4-panel; # Added on 2025-12-23
+  xfconf = lib.warnOnInstantiate "‘xfce.xfconf’ was moved to top-level. Please use ‘pkgs.xfconf’ directly" pkgs.xfconf; # Added on 2025-12-23
+}
