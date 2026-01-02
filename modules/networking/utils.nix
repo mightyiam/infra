@@ -10,6 +10,7 @@
         gping
         inetutils
         socat
+        wifite2
       ];
     };
 }
