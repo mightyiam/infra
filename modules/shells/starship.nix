@@ -48,7 +48,6 @@
         "$vagrant"
         "$zig"
         "$nix_shell"
-        "\${custom.mob}"
         "$conda"
         "$memory_usage"
         "$aws"
@@ -98,11 +97,6 @@
       };
       nix_shell = {
         format = "via [$symbol$state]($style) ";
-      };
-      custom.mob = {
-        command = "echo $MOB_TIMER_ROOM";
-        format = "[ ($output)]($style) ";
-        when = "[[ -v MOB_TIMER_ROOM ]]";
       };
 
       # https://starship.rs/presets/nerd-font.html
