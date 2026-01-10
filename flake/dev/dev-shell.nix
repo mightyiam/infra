@@ -43,7 +43,7 @@
 
       devShells = {
         default = pkgs.mkShell {
-          shellHook = config.pre-commit.installationScript;
+          inherit (config.pre-commit) shellHook;
 
           packages = [
             stylix-check
