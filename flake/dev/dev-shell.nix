@@ -43,7 +43,6 @@
 
       devShells = {
         default = pkgs.mkShell {
-          # Install git-hooks when activating the shell
           shellHook = config.pre-commit.installationScript;
 
           packages = [
