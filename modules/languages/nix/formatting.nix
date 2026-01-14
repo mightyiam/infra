@@ -33,7 +33,7 @@
         enable = true;
         sources.formatting.nixfmt = {
           enable = true;
-          package = pkgs.nixfmt-rfc-style;
+          package = pkgs.nixfmt;
           settings.runtime_condition = inputs.nixvim.lib.nixvim.mkRaw ''
             function() return vim.g.nixfmt_enabled end
           '';

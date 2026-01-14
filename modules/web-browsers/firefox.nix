@@ -8,8 +8,8 @@
           settings."toolkit.legacyUserProfileCustomizations.stylesheets" = true;
           settings."browser.ctrlTab.sortByRecentlyUsed" = true;
           settings."browser.tabs.closeWindowWithLastTab" = false;
-          userChrome = '''';
-          userContent = '''';
+          userChrome = "";
+          userContent = "";
         };
         vpn = {
           id = 1;
