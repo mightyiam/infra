@@ -19,7 +19,7 @@ mkTarget {
           mkSame = c: (mkBoth c c);
         in
         {
-          mgr = rec {
+          mgr = {
             # Reusing bat themes, since it's suggested in the styling guide
             # https://yazi-rs.github.io/docs/configuration/theme#mgr
             syntect_theme = colors {
@@ -28,10 +28,6 @@ mkTarget {
             };
 
             cwd = mkFg cyan;
-            hovered = (mkBg base02) // {
-              bold = true;
-            };
-            preview_hovered = hovered;
             find_keyword = (mkFg green) // {
               bold = true;
             };
@@ -44,6 +40,13 @@ mkTarget {
             count_copied = mkBoth base00 green;
             count_cut = mkBoth base00 red;
             count_selected = mkBoth base00 yellow;
+          };
+
+          indicator = rec {
+            current = (mkBg base02) // {
+              bold = true;
+            };
+            preview = current;
           };
 
           tabs = {
@@ -144,7 +147,12 @@ mkTarget {
               (mkRule "application/rtf" green)
               (mkRule "application/vnd.*" green)
 
-              ((mkRule "inode/directory" blue) // { bold = cfg.boldDirectory; })
+              # Use url rule for folders as folder mime types do not get checked until they are hovered
+              {
+                url = "*/";
+                fg = blue;
+                bold = cfg.boldDirectory;
+              }
               (mkRule "*" base05)
             ];
         };
