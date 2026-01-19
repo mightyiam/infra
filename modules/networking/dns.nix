@@ -1,9 +1,10 @@
-{ lib, ... }:
 {
-  flake.modules.nixos.base =
-    let
-      nameservers =
-        [
+  flake.modules.nixos.base = {
+    services.resolved = {
+      enable = true;
+      settings.Resolve = {
+        DNSOverTls = "opportunistic";
+        DNS = [
           # https://developers.cloudflare.com/1.1.1.1
           "1.1.1.1"
           "1.0.0.1"
@@ -15,17 +16,8 @@
           "8.8.4.4"
           "2001:4860:4860::8888"
           "2001:4860:4860::8844"
-        ]
-        |> lib.concatStringsSep " ";
-    in
-    {
-      services.resolved = {
-        enable = true;
-        dnsovertls = "opportunistic";
-        extraConfig = ''
-          [Resolve]
-          DNS=${nameservers}
-        '';
+        ];
       };
     };
+  };
 }
