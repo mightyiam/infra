@@ -10,7 +10,6 @@
       "files"
       "named-modules-as-needed"
       "patching-of-inputs"
-      "unfree-packages"
       "all-check-store-paths"
       "github-actions"
       "flake-inputs-dedupe-prefix"

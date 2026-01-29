@@ -71,19 +71,6 @@ This repository is the origin of the
 project
 which is used here.
 
-## Unfree packages
-
-What Nixpkgs unfree packages are allowed is configured at the flake level via an option.
-That is then used in the configuration of Nixpkgs used in NixOS, Home Manager or elsewhere.
-See definition at [`nixpkgs/unfree.nix`](modules/nixpkgs/unfree.nix).
-See usage at [`steam.nix`](modules/steam.nix).
-Value of this option available as flake output:
-
-```console
-$ nix eval .#meta.nixpkgs.allowedUnfreePackages
-[ "steam" "steam-unwrapped" "nvidia-x11" "nvidia-settings" ]
-```
-
 ## Refactoring
 
 To help determine whether a Nix change results in changes to derivations,

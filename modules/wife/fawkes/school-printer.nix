@@ -1,5 +1,5 @@
 {
-  nixpkgs.allowedUnfreePackages = [
+  nixpkgs.config.allowUnfreePackages = [
     "epson-201401w"
     "epson_201207w"
   ];
