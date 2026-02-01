@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.workstation = {
+  flake.modules.nixos.pc = {
     hardware.flipperzero.enable = true;
   };
 }
