@@ -5,6 +5,7 @@
       efi
       nvidia-gpu
       swap
+      wife
       workstation
     ];
   };
