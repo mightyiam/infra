@@ -1,6 +1,6 @@
 { config, ... }:
 {
-  flake.modules.nixos.workstation = {
+  flake.modules.nixos.pc = {
     virtualisation.docker = {
       enable = true;
       enableOnBoot = false;
