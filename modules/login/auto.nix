@@ -1,6 +1,6 @@
 { config, lib, ... }:
 {
-  flake.modules.nixos.workstation = nixosArgs: {
+  flake.modules.nixos.pc = nixosArgs: {
     services.greetd.settings.initial_session = lib.mkDefault {
       user = config.flake.meta.owner.username;
       command =
