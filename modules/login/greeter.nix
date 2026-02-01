@@ -1,6 +1,6 @@
 { lib, config, ... }:
 {
-  flake.modules.nixos.workstation =
+  flake.modules.nixos.pc =
     nixosArgs@{ pkgs, ... }:
     {
       services.greetd = {

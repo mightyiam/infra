@@ -1,9 +1,11 @@
+{ lib, ... }:
 {
   flake.modules = {
     nixos.wife =
       { pkgs, ... }:
       {
         services = {
+          greetd.enable = lib.mkForce false;
           displayManager.gdm.enable = true;
           desktopManager.gnome.enable = true;
         };
