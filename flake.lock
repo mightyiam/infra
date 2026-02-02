@@ -615,6 +615,7 @@
         "stylix": "stylix",
         "tinted-schemes": "tinted-schemes",
         "treefmt-nix": "treefmt-nix",
+        "treesitter-modules-nvim": "treesitter-modules-nvim",
         "ucodenix": "ucodenix",
         "vim-autoread": "vim-autoread",
         "zsh-auto-notify": "zsh-auto-notify"
@@ -859,6 +860,22 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "treesitter-modules-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1767382667,
+        "narHash": "sha256-wDzHRwEnHks+9ssOtQFZDQ2DB/C27oEKP0TWB4GHv8M=",
+        "owner": "MeanderingProgrammer",
+        "repo": "treesitter-modules.nvim",
+        "rev": "7efc486c933a361568855b10e0829aa2cda4b6b0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "MeanderingProgrammer",
+        "repo": "treesitter-modules.nvim",
         "type": "github"
       }
     },

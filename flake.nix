@@ -121,6 +121,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    treesitter-modules-nvim = {
+      flake = false;
+      url = "github:MeanderingProgrammer/treesitter-modules.nvim";
+    };
+
     ucodenix = {
       url = "github:e-tho/ucodenix";
       inputs.cpu-microcodes.follows = "cpu-microcodes";

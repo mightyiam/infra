@@ -1,17 +1,5 @@
 {
   flake.modules.nixvim.base = {
-    plugins.treesitter = {
-      enable = true;
-      settings = {
-        incremental_selection = {
-          enable = true;
-          keymaps = {
-            init_selection = "<CR>";
-            node_incremental = "<CR>";
-            node_decremental = "<BS>";
-          };
-        };
-      };
-    };
+    plugins.treesitter.enable = true;
   };
 }
