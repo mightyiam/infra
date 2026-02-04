@@ -151,4 +151,9 @@ with colors;
       background-color: #${base02-hex} !important;
     }
   }
+
+  ::selection {
+    background-color: #${base02-hex} !important;
+    color: #${base05-hex} !important;
+  }
 ''
