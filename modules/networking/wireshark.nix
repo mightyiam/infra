@@ -11,7 +11,7 @@
     homeManager.gui =
       { pkgs, ... }:
       {
-        home.packages = [ pkgs.wireshark-qt ];
+        home.packages = [ pkgs.wireshark ];
       };
   };
 }
