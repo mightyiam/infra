@@ -122,6 +122,7 @@ with colors;
       --identity-tab-color: #${base0F-hex} !important;
       --identity-icon-color: #${base0F-hex} !important;
     }
+  }
 
   /* Variables and styles specific to about:addons */
   @-moz-document url-prefix("about:addons") {
