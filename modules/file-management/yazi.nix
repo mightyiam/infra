@@ -1,5 +1,8 @@
 {
   flake.modules.homeManager.base = {
-    programs.yazi.enable = true;
+    programs.yazi = {
+      enable = true;
+      shellWrapperName = "y";
+    };
   };
 }
