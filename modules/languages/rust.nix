@@ -11,10 +11,7 @@
             allTargets = true;
             command = "clippy";
           };
-          inlayHints = {
-            maxLength = 99;
-            lifetimeElisionHints.enable = "always";
-          };
+          inlayHints.lifetimeElisionHints.enable = "always";
         };
       };
       lsp.keymaps.extra = [
