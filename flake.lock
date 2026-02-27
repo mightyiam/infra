@@ -470,21 +470,6 @@
         "type": "github"
       }
     },
-    "nixos-facter-modules": {
-      "locked": {
-        "lastModified": 1766558141,
-        "narHash": "sha256-Ud9v49ZPsoDBFuyJSQ2Mpw1ZgAH/aMwUwwzrVoetNus=",
-        "owner": "numtide",
-        "repo": "nixos-facter-modules",
-        "rev": "e796d536e3d83de74267069e179dc620a608ed7d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "nixos-facter-modules",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "path": "./inputs/nixpkgs",
@@ -605,7 +590,6 @@
         "make-shell": "make-shell",
         "nix-index-database": "nix-index-database",
         "nix-on-droid": "nix-on-droid",
-        "nixos-facter-modules": "nixos-facter-modules",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
         "refjump-nvim": "refjump-nvim",

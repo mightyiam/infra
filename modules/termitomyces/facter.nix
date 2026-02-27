@@ -1,5 +1,5 @@
 {
   configurations.nixos.termitomyces.module = {
-    facter.reportPath = ./facter.json;
+    hardware.facter.reportPath = ./facter.json;
   };
 }

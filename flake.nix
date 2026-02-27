@@ -58,8 +58,6 @@
       };
     };
 
-    nixos-facter-modules.url = "github:numtide/nixos-facter-modules";
-
     nixpkgs.url = "./inputs/nixpkgs";
 
     nixvim = {

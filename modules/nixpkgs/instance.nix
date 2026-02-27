@@ -35,8 +35,8 @@
 
     flake.modules.nixos.base = nixosArgs: {
       nixpkgs = {
-        pkgs = withSystem nixosArgs.config.facter.report.system (psArgs: psArgs.pkgs);
-        hostPlatform = nixosArgs.config.facter.report.system;
+        pkgs = withSystem nixosArgs.config.hardware.facter.report.system (psArgs: psArgs.pkgs);
+        hostPlatform = nixosArgs.config.hardware.facter.report.system;
       };
     };
   };
