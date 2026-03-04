@@ -65,6 +65,7 @@
       inputs = {
         flake-parts.follows = "flake-parts";
         nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
       };
     };
 
@@ -78,7 +79,7 @@
       inputs = {
         flake-parts.follows = "flake-parts";
         nixpkgs.follows = "nixpkgs";
-        systems.follows = "dedupe_systems";
+        systems.follows = "systems";
         treefmt-nix.follows = "treefmt-nix";
       };
     };
@@ -93,7 +94,7 @@
       inputs = {
         flake-parts.follows = "flake-parts";
         nixpkgs.follows = "nixpkgs";
-        systems.follows = "dedupe_systems";
+        systems.follows = "systems";
       };
     };
 
@@ -104,10 +105,12 @@
         flake-parts.follows = "flake-parts";
         nixpkgs.follows = "nixpkgs";
         nur.follows = "dedupe_nur";
-        systems.follows = "dedupe_systems";
+        systems.follows = "systems";
         tinted-schemes.follows = "tinted-schemes";
       };
     };
+
+    systems.url = "github:nix-systems/default-linux";
 
     tinted-schemes = {
       flake = false;
@@ -151,8 +154,6 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
-
-    dedupe_systems.url = "github:nix-systems/default";
   };
 
   outputs =
