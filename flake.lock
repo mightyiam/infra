@@ -617,19 +617,16 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "systems": [
-          "systems"
-        ],
         "treefmt-nix": [
           "treefmt-nix"
         ]
       },
       "locked": {
-        "lastModified": 1772326036,
-        "narHash": "sha256-2sy+y5JLYMj74kTkgmMoB8JZIVrIWIR5hgq+x3lVWKI=",
+        "lastModified": 1772583763,
+        "narHash": "sha256-sfOhT9PWTvL/T7oRuyfHUYJwg82FGZnIWDvySgdVCAU=",
         "owner": "mightyiam",
         "repo": "sink-rotate",
-        "rev": "e998988826276282bab70a0b21c182d0aad2671e",
+        "rev": "3a745843715b67623e074b03c1b7de32571a7d94",
         "type": "github"
       },
       "original": {
@@ -661,17 +658,14 @@
         ],
         "nixpkgs": [
           "nixpkgs"
-        ],
-        "systems": [
-          "systems"
         ]
       },
       "locked": {
-        "lastModified": 1766125969,
-        "narHash": "sha256-qPWU0TpiEzF7Scl5S5tU754BzDyw52nNi04m+UTvW9Y=",
+        "lastModified": 1772583427,
+        "narHash": "sha256-bSflAYuoHUlcVDFFaxDrVQQNp9cd6ZFjngoHljQLVOA=",
         "owner": "molybdenumsoftware",
         "repo": "statix",
-        "rev": "83746932a76912ce7aca839f2a0358d46ed70fc9",
+        "rev": "690a2f7c7a135d5d0156096ffdc897a8aae74c4c",
         "type": "github"
       },
       "original": {
