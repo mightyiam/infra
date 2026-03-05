@@ -23,7 +23,7 @@
     git-hooks = {
       url = "github:cachix/git-hooks.nix";
       inputs = {
-        flake-compat.follows = "dedupe_flake-compat";
+        flake-compat.follows = "";
         nixpkgs.follows = "nixpkgs";
       };
     };
@@ -40,7 +40,7 @@
 
     make-shell = {
       url = "github:nicknovitski/make-shell";
-      inputs.flake-compat.follows = "dedupe_flake-compat";
+      inputs.flake-compat.follows = "";
     };
 
     nix-index-database = {
@@ -143,8 +143,6 @@
 
   # _additional_ `inputs` only for deduplication
   inputs = {
-    dedupe_flake-compat.url = "github:edolstra/flake-compat";
-
     dedupe_nur = {
       url = "github:nix-community/NUR";
       inputs = {

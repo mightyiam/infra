@@ -84,21 +84,6 @@
         "type": "github"
       }
     },
-    "dedupe_flake-compat": {
-      "locked": {
-        "lastModified": 1767039857,
-        "narHash": "sha256-vNpUSpF5Nuw8xvDLj2KCwwksIbjua2LZCqhV1LNRDns=",
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "rev": "5edf11c44bc78a0d334f6334cdaf7d60d732daab",
-        "type": "github"
-      },
-      "original": {
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "type": "github"
-      }
-    },
     "dedupe_nur": {
       "inputs": {
         "flake-parts": [
@@ -228,9 +213,7 @@
     },
     "git-hooks": {
       "inputs": {
-        "flake-compat": [
-          "dedupe_flake-compat"
-        ],
+        "flake-compat": [],
         "gitignore": "gitignore",
         "nixpkgs": [
           "nixpkgs"
@@ -342,9 +325,7 @@
     },
     "make-shell": {
       "inputs": {
-        "flake-compat": [
-          "dedupe_flake-compat"
-        ]
+        "flake-compat": []
       },
       "locked": {
         "lastModified": 1733933815,
@@ -565,7 +546,6 @@
     "root": {
       "inputs": {
         "cpu-microcodes": "cpu-microcodes",
-        "dedupe_flake-compat": "dedupe_flake-compat",
         "dedupe_nur": "dedupe_nur",
         "files": "files",
         "flake-parts": "flake-parts",
