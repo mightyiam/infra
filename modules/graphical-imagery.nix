@@ -5,8 +5,7 @@
     {
       home.packages = with pkgs; [
         exiftool
-        # https://github.com/NixOS/nixpkgs/issues/427155
-        # gimp
+        gimp
         imagemagick
         imv
         inkscape
