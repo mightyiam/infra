@@ -7,7 +7,11 @@
           rerere.enabled = true;
         };
       };
-      mergiraf.enable = true;
+      mergiraf = {
+        enable = true;
+        enableGitIntegration = true;
+        enableJujutsuIntegration = true;
+      };
     };
   };
 }
