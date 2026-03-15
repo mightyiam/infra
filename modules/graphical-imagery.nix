@@ -5,7 +5,7 @@
     {
       home.packages = with pkgs; [
         exiftool
-        gimp
+        gimp-with-plugins
         imagemagick
         imv
         inkscape
