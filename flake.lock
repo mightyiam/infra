@@ -94,11 +94,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1773487617,
-        "narHash": "sha256-x/hBiGrPOqTo0s4EEMEKlIgM62Bn4o53TPk7H0Oi0iA=",
+        "lastModified": 1774086764,
+        "narHash": "sha256-RC5/86A51KqVPMUTK9DtVy6DkCk538yyk+erJwIkoSs=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "f9d941fb820c46be3636c7d50878d5648a1c2198",
+        "rev": "4874dec9b7f1e7c17293593917d499a411706a12",
         "type": "github"
       },
       "original": {
@@ -291,11 +291,11 @@
     },
     "import-tree": {
       "locked": {
-        "lastModified": 1772999353,
-        "narHash": "sha256-dPb0WxUhFaz6wuR3B6ysqFJpsu8txKDPZvS47AT2XLI=",
+        "lastModified": 1773693634,
+        "narHash": "sha256-BtZ2dtkBdSUnFPPFc+n0kcMbgaTxzFNPv2iaO326Ffg=",
         "owner": "vic",
         "repo": "import-tree",
-        "rev": "545a4df146fce44d155573e47f5a777985acf912",
+        "rev": "c41e7d58045f9057880b0d85e1152d6a4430dbf1",
         "type": "github"
       },
       "original": {
@@ -392,11 +392,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1772945408,
-        "narHash": "sha256-PMt48sEQ8cgCeljQ9I/32uoBq/8t8y+7W/nAZhf72TQ=",
+        "lastModified": 1773552174,
+        "narHash": "sha256-mHSRNrT1rjeYBgkAlj07dW3+1nFEgAd8Gu6lgyfT9DU=",
         "owner": "nix-community",
         "repo": "nix-index-database",
-        "rev": "1c1d8ea87b047788fd7567adf531418c5da321ec",
+        "rev": "8faeb68130df077450451b6734a221ba0d6cde42",
         "type": "github"
       },
       "original": {
@@ -602,11 +602,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1772930566,
-        "narHash": "sha256-qVpcPk+XhThYKLWJoAWh9F32N4n601L4l0XFpf1yQXw=",
+        "lastModified": 1773535724,
+        "narHash": "sha256-C1M8FVhOJuBFrt5sJ3LELCyKXwLS96RC+QHsCrE/u70=",
         "owner": "mightyiam",
         "repo": "sink-rotate",
-        "rev": "47a192f45cc9cfc4e02f03cc7fdddbdff2b608d2",
+        "rev": "c6770ba61d6c627392c6ea27347f47833c768307",
         "type": "github"
       },
       "original": {
@@ -641,11 +641,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1772583427,
-        "narHash": "sha256-bSflAYuoHUlcVDFFaxDrVQQNp9cd6ZFjngoHljQLVOA=",
+        "lastModified": 1773891719,
+        "narHash": "sha256-GgihI3Zo7C2BTQp9CTT7cicHMXQMxu2Pp7EMIZRWDXg=",
         "owner": "molybdenumsoftware",
         "repo": "statix",
-        "rev": "690a2f7c7a135d5d0156096ffdc897a8aae74c4c",
+        "rev": "ad3c9f8c1f99dd9f690b671746713bb28ba230cb",
         "type": "github"
       },
       "original": {
