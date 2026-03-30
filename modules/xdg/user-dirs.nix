@@ -20,6 +20,7 @@
             publicShare = "${config.home.homeDirectory}/public";
             templates = "${config.home.homeDirectory}/templates";
             videos = tmp;
+            setSessionVariables = true;
           };
       };
     };
