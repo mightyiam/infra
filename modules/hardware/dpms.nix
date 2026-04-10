@@ -29,12 +29,19 @@
       };
     };
 
-  flake.modules.homeManager.gui =
-    { pkgs, ... }:
-    let
-      dpms-all = withSystem pkgs.stdenv.hostPlatform.system (psArgs: psArgs.config.packages.dpms-all);
-    in
-    {
-      home.packages = [ dpms-all ];
+  flake.modules = {
+    nixos.base = {
+      services.kmscon.extraConfig = ''
+        dpms-timeout=60
+      '';
     };
+    homeManager.gui =
+      { pkgs, ... }:
+      let
+        dpms-all = withSystem pkgs.stdenv.hostPlatform.system (psArgs: psArgs.config.packages.dpms-all);
+      in
+      {
+        home.packages = [ dpms-all ];
+      };
+  };
 }
