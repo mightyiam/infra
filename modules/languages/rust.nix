@@ -7,7 +7,6 @@
         enable = true;
         settings.server.default_settings.rust-analyzer = {
           check = {
-            features = "all";
             allTargets = true;
             command = "clippy";
           };
