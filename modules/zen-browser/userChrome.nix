@@ -27,6 +27,10 @@ with colors;
     --zen-themed-toolbar-bg-transparent: #${base01-hex} !important;
   }
 
+  zen-workspace {
+    --toolbox-textcolor: #${base05-hex} !important;
+  }
+
   #permissions-granted-icon {
     color: #${base05-hex} !important;
   }
