@@ -40,6 +40,10 @@ with colors;
     --swipe-nav-icon-accent-color: #${base00-hex} !important;
   }
 
+  #sidebar-box {
+    background-color: #${base00-hex} !important;
+  }
+
   .sidebar-placesTree {
     background-color: #${base00-hex} !important;
   }
