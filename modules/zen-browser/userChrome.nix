@@ -155,7 +155,7 @@ with colors;
     --zen-main-browser-background: #${base00-hex} !important;
   }
 
-  #contentAreaContextMenu menu,
+  menu,
   menuitem,
   menupopup {
     color: #${base05-hex} !important;
