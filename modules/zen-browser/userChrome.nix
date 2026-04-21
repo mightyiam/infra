@@ -52,10 +52,6 @@ with colors;
     background-color: #${base00-hex} !important;
   }
 
-  #TabsToolbar {
-    background-color: #${base00-hex} !important;
-  }
-
   .urlbar-background {
     background-color: #${base02-hex} !important;
   }
@@ -141,10 +137,6 @@ with colors;
 
   #zen-toolbar-background {
     --zen-main-browser-background-toolbar: #${base00-hex} !important;
-  }
-
-  #zen-appcontent-navbar-container {
-    background-color: #${base00-hex} !important;
   }
 
   #commonDialog {
