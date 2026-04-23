@@ -4,18 +4,13 @@
     programs.rofi = {
       enable = true;
       terminal = hmArgs.config.terminal.path;
+      modes = [
+        "run"
+        "drun"
+        "window"
+      ];
       extraConfig = {
         show-icons = true;
-        modes = [
-          "run"
-          "drun"
-          "window"
-        ];
-        drun-match-fields = [
-          "name"
-          "generic"
-          "exec"
-        ];
         drun-display-format = "{icon} {name}";
         display-drun = "   Apps ";
         display-run = "   Run ";
