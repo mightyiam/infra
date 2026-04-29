@@ -1,7 +1,8 @@
 {
-  flake.modules.homeManager.gui = {
+  flake.modules.homeManager.gui = hmArgs: {
     programs.firefox = {
       enable = true;
+      configPath = "${hmArgs.config.xdg.configHome}/mozilla/firefox";
       profiles = {
         primary = {
           id = 0;

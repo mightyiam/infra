@@ -5,7 +5,8 @@
     {
       extraPlugins = [
         (pkgs.vimUtils.buildVimPlugin {
-          name = "treesitter-modules.nvim";
+          pname = "treesitter-modules.nvim";
+          version = "unstable";
           src = inputs.treesitter-modules-nvim;
           dependencies = [ pkgs.vimPlugins.nvim-treesitter ];
         })
