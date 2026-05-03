@@ -94,11 +94,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777451691,
-        "narHash": "sha256-HEwzq77kyAiZ/mHHB4nluX3hZWw2raeVJjrcsFT3rOM=",
+        "lastModified": 1777763626,
+        "narHash": "sha256-UFwZDbdMezNnxZwikhDR4EWiCPUiEmPXHmqLOrcG34g=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "89c459a546f40451f0c0a97161d92691f125af65",
+        "rev": "3873764e5896bd6da6cf0df17172849ea51ac5eb",
         "type": "github"
       },
       "original": {
@@ -161,11 +161,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1775087534,
-        "narHash": "sha256-91qqW8lhL7TLwgQWijoGBbiD4t7/q75KTi8NxjVmSmA=",
+        "lastModified": 1777678872,
+        "narHash": "sha256-EPIFsulyon7Z1vLQq5Fk64GR8L7cQsT+IPhcsukVbgk=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "3107b77cd68437b9a76194f0f7f9c55f2329ca5b",
+        "rev": "5250617bffd85403b14dbf43c3870e7f255d2c16",
         "type": "github"
       },
       "original": {
@@ -639,11 +639,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777216398,
-        "narHash": "sha256-tgjsb2oHtNyTJ8OEMbKrJFHlju6IFg7DoXY/WH76l/k=",
+        "lastModified": 1777736711,
+        "narHash": "sha256-U2nK4utZUGsdlc6YfNbbY4Zv5OTHYqi+VuInIfgAMWs=",
         "owner": "molybdenumsoftware",
         "repo": "statix",
-        "rev": "a5070770b97467e4bd55541faab50cbd31f43f56",
+        "rev": "b9d9aec27176a923d98a2f63501365545e8c4569",
         "type": "github"
       },
       "original": {
