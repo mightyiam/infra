@@ -1,9 +1,24 @@
-{ lib, ... }:
+{ lib, withSystem, ... }:
 {
+  perSystem =
+    { pkgs, ... }:
+    {
+      packages.i3status-capslock-util = pkgs.writers.writeNuBin "i3status-capslock-util" ''
+        def main [] {
+          let brightness = (glob --follow-symlinks '/sys/class/leds/input*\:\:*capslock/brightness' | first | open | into int)
+          if $brightness == 1 {
+            print '{ "state": "Warning" }'
+          } else {
+            print '{ "state": "Idle" }'
+          }
+        }
+      '';
+    };
   flake.modules.homeManager.gui =
     hmArgs@{ pkgs, ... }:
     let
       id = "bottom";
+      capslockSignal = 11;
     in
     {
       programs.i3status-rust = {
@@ -39,19 +54,8 @@
                   format = " 󰪛 ";
                   json = true;
                   command =
-                    pkgs.writeShellApplication {
-                      name = "i3status-capslock-util";
-                      runtimeInputs = [ pkgs.gnugrep ];
-                      text = ''
-                        if grep -q 1 /sys/class/leds/input*::capslock/brightness; then
-                          echo '{ "state": "Warning" }'
-                        else
-                          echo '{}'
-                        fi
-                      '';
-                    }
-                    |> lib.getExe;
-                  watch_files = [ "/dev/input" ];
+                    withSystem pkgs.stdenv.system (psArgs: psArgs.config.packages.i3status-capslock-util) |> lib.getExe;
+                  signal = capslockSignal;
                   interval = "once";
                 }
               ]
@@ -66,9 +70,22 @@
         };
       };
 
-      wayland.windowManager.hyprland.settings.exec-once = [
-        (lib.getExe hmArgs.config.programs.i3bar-river.package)
-      ];
+      wayland = {
+        windowManager = {
+          hyprland = {
+            settings =
+              let
+                binding = ", Caps_Lock, exec, pkill -SIGRTMIN+${toString capslockSignal} i3status-rs";
+              in
+              {
+                bindr = [ binding ];
+                exec-once = [
+                  (lib.getExe hmArgs.config.programs.i3bar-river.package)
+                ];
+              };
+          };
+        };
+      };
 
       programs.i3bar-river = {
         enable = true;
