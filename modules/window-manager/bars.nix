@@ -1,7 +1,7 @@
 { lib, ... }:
 {
   flake.modules.homeManager.gui =
-    hmArgs@{ pkgs, ... }:
+    hmArgs:
     let
       id = "bottom";
     in
@@ -33,26 +33,6 @@
                 {
                   block = "time";
                   format = " $timestamp.datetime(f:'%F %a %R') ";
-                }
-                {
-                  block = "custom";
-                  format = " 󰪛 ";
-                  json = true;
-                  command =
-                    pkgs.writeShellApplication {
-                      name = "i3status-capslock-util";
-                      runtimeInputs = [ pkgs.gnugrep ];
-                      text = ''
-                        if grep -q 1 /sys/class/leds/input*::capslock/brightness; then
-                          echo '{ "state": "Warning" }'
-                        else
-                          echo '{}'
-                        fi
-                      '';
-                    }
-                    |> lib.getExe;
-                  watch_files = [ "/dev/input" ];
-                  interval = "once";
                 }
               ]
               (lib.mkOrder 1300 [
