@@ -1,5 +1,11 @@
+{ lib, ... }:
 {
   flake.modules.homeManager.gui = hmArgs: {
+    terminal = {
+      path = lib.getExe hmArgs.config.programs.alacritty.package;
+      desktopFileId = "Alacritty.desktop";
+    };
+
     programs.alacritty = {
       enable = true;
       settings = {
