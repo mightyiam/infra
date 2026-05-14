@@ -25,10 +25,7 @@
 
     git-hooks = {
       url = "github:cachix/git-hooks.nix";
-      inputs = {
-        flake-compat.follows = "";
-        nixpkgs.follows = "nixpkgs";
-      };
+      flake = false;
     };
 
     home-manager = {
