@@ -74,15 +74,6 @@
       url = "github:mawkler/refjump.nvim";
     };
 
-    sink-rotate = {
-      url = "github:mightyiam/sink-rotate";
-      inputs = {
-        flake-parts.follows = "flake-parts";
-        nixpkgs.follows = "nixpkgs";
-        treefmt-nix.follows = "treefmt-nix";
-      };
-    };
-
     smart-scrolloff-nvim = {
       flake = false;
       url = "github:tonymajestro/smart-scrolloff.nvim";
