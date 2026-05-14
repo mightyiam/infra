@@ -108,6 +108,7 @@
       }
     },
     "files": {
+      "flake": false,
       "locked": {
         "lastModified": 1776952985,
         "narHash": "sha256-P1PaPjWrHrg0o7qqp78EenQZoXWYw8D+94sllU8a+xQ=",

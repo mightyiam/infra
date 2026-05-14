@@ -13,7 +13,10 @@
       url = "github:platomav/CPUMicrocodes";
     };
 
-    files.url = "github:mightyiam/files";
+    files = {
+      url = "github:mightyiam/files";
+      flake = false;
+    };
 
     flake-parts = {
       url = "github:hercules-ci/flake-parts";

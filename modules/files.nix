@@ -6,7 +6,7 @@
   ...
 }:
 {
-  imports = [ inputs.files.flakeModules.default ];
+  imports = [ (inputs.files + "/module.nix") ];
 
   options.text = lib.mkOption {
     default = { };
