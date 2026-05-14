@@ -40,7 +40,7 @@
 
     make-shell = {
       url = "github:nicknovitski/make-shell";
-      inputs.flake-compat.follows = "";
+      flake = false;
     };
 
     nix-index-database = {

@@ -280,9 +280,7 @@
       }
     },
     "make-shell": {
-      "inputs": {
-        "flake-compat": []
-      },
+      "flake": false,
       "locked": {
         "lastModified": 1733933815,
         "narHash": "sha256-9JjM7eT66W4NJAXpGUsdyAFXhBxFWR2Z9LZwUa7Hli0=",
