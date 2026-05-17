@@ -1,3 +1,8 @@
 {
-  flake.modules.nixvim.base.plugins.lsp.servers.lua_ls.enable = true;
+  flake.modules.nixvim.base = {
+    plugins.lsp.servers.lua_ls = {
+      enable = true;
+      package = null;
+    };
+  };
 }

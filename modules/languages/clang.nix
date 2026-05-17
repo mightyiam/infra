@@ -1,3 +1,8 @@
 {
-  flake.modules.nixvim.base.plugins.lsp.servers.clangd.enable = true;
+  flake.modules.nixvim.base = {
+    plugins.lsp.servers.clangd = {
+      enable = true;
+      package = null;
+    };
+  };
 }
