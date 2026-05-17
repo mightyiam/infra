@@ -1,9 +1,11 @@
 {
-  flake.modules.nixvim.base.plugins = {
-    lsp.servers.eslint = {
-      enable = true;
-      package = null;
+  flake.modules.nixvim.base = {
+    plugins = {
+      lsp.servers.eslint = {
+        enable = true;
+        package = null;
+      };
+      typescript-tools.enable = true;
     };
-    typescript-tools.enable = true;
   };
 }

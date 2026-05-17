@@ -22,18 +22,26 @@
       extra-system-features = [ "recursive-nix" ];
     };
     flake.modules = {
-      nixos.base.nix = {
-        inherit (config.nix) settings;
+      nixos.base = {
+        nix = {
+          inherit (config.nix) settings;
+        };
       };
 
-      homeManager.base.nix = {
-        inherit (config.nix) settings;
+      homeManager.base = {
+        nix = {
+          inherit (config.nix) settings;
+        };
       };
 
-      nixOnDroid.base.nix.extraOptions =
-        config.nix.settings
-        |> lib.mapAttrsToList (name: value: "${name} = ${toString value}")
-        |> lib.concatLines;
+      nixOnDroid.base = {
+        nix.extraOptions = {
+          nix.extraOptions =
+            config.nix.settings
+            |> lib.mapAttrsToList (name: value: "${name} = ${toString value}")
+            |> lib.concatLines;
+        };
+      };
     };
   };
 }

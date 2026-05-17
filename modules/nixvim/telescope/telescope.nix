@@ -1,6 +1,8 @@
 {
-  flake.modules.nixvim.base.plugins = {
-    telescope.enable = true;
-    web-devicons.enable = true;
+  flake.modules.nixvim.base = {
+    plugins = {
+      telescope.enable = true;
+      web-devicons.enable = true;
+    };
   };
 }

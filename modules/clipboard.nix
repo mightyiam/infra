@@ -35,6 +35,8 @@
         ];
       };
 
-    nixvim.base.clipboard.register = "unnamedplus";
+    nixvim.base = {
+      clipboard.register = "unnamedplus";
+    };
   };
 }
