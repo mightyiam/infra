@@ -5,7 +5,7 @@
     {
       files.files = [
         {
-          path_ = "LICENSE";
+          path = "LICENSE";
           drv = pkgs.writeText "LICENSE" ''
             MIT License
 

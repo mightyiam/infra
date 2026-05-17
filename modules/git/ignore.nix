@@ -9,7 +9,7 @@
     {
       files.files = [
         {
-          path_ = ".gitignore";
+          path = ".gitignore";
           drv = config.gitignore |> lib.naturalSort |> lib.concatLines |> pkgs.writeText ".gitignore";
         }
       ];
