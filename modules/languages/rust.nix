@@ -1,6 +1,4 @@
 {
-  perSystem.treefmt.programs.rustfmt.enable = true;
-
   flake.modules = {
     nixvim.base.plugins = {
       rustaceanvim = {
