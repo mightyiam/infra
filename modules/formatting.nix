@@ -23,7 +23,6 @@
 
   flake.modules.nixvim.base = {
     plugins = {
-      lsp.keymaps.lspBuf."<space>f" = "format";
       lsp-format.enable = true;
 
       none-ls = {
@@ -33,6 +32,11 @@
     };
 
     keymaps = [
+      {
+        key = "<space>f";
+        mode = "n";
+        action = "<cmd>Format<CR>";
+      }
       {
         key = "<leader>a";
         options.desc = "Toggle autoformatting";
