@@ -39,7 +39,7 @@
       }
       {
         key = "<leader>a";
-        options.desc = "Toggle autoformatting";
+        options.desc = "Toggle lsp-format autoformatting";
         action = inputs.nixvim.lib.nixvim.mkRaw ''
           function()
             local lsp_format = require("lsp-format")
@@ -48,9 +48,9 @@
 
             local message
             if lsp_format.disabled then
-              message = "Autoformatting is off"
+              message = "lsp-format autoformatting OFF"
             else
-              message = "Autoformatting is on"
+              message = "lsp-format autoformatting ON"
             end
             vim.notify(message, vim.log.levels.INFO)
           end
