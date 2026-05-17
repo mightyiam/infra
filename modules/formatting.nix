@@ -24,11 +24,7 @@
   flake.modules.nixvim.base = {
     plugins = {
       lsp.keymaps.lspBuf."<space>f" = "format";
-
-      lsp-format = {
-        enable = true;
-        lspServersToEnable = "none";
-      };
+      lsp-format.enable = true;
 
       none-ls = {
         enable = true;
