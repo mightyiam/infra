@@ -6,9 +6,9 @@
     };
   };
 
-  perSystem =
+  homeManager.base =
     { pkgs, ... }:
     {
-      make-shells.default.packages = [ pkgs.nixd ];
+      home.packages = [ pkgs.nixd ];
     };
 }
