@@ -4,11 +4,8 @@
 }:
 {
   perSystem =
-    { inputs', pkgs, ... }:
+    { inputs', ... }:
     {
-      packages.nixvim = inputs'.nixvim.legacyPackages.makeNixvimWithModule {
-        inherit pkgs;
-        module = config.flake.modules.nixvim.base;
-      };
+      packages.nixvim = inputs'.nixvim.legacyPackages.makeNixvim config.flake.modules.nixvim.base;
     };
 }
