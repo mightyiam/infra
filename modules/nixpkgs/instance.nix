@@ -33,6 +33,12 @@
   };
 
   config = {
+    perSystem =
+      { system, ... }:
+      {
+        _module.args.pkgs = config.nixpkgs.factory system;
+      };
+
     flake.modules.nixos.base = nixosArgs: {
       nixpkgs = {
         pkgs = config.nixpkgs.factory nixosArgs.config.hardware.facter.report.system;
