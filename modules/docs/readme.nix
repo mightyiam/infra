@@ -8,7 +8,6 @@
       "dendritic"
       "automatic-import"
       "files"
-      "named-modules-as-needed"
       "patching-of-inputs"
       "all-check-store-paths"
       "github-actions"
