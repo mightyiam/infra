@@ -230,11 +230,7 @@
       }
     },
     "home-manager": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
+      "flake": false,
       "locked": {
         "path": "./inputs/home-manager",
         "type": "path"

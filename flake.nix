@@ -30,8 +30,7 @@
 
     home-manager = {
       url = "./inputs/home-manager";
-      flake = true;
-      inputs.nixpkgs.follows = "nixpkgs";
+      flake = false;
     };
 
     import-tree.url = "github:vic/import-tree";

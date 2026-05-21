@@ -1,7 +1,7 @@
 {
   config,
   lib,
-  inputs,
+  homeManager,
   ...
 }:
 {
@@ -24,7 +24,7 @@
                 inherit pkgs;
                 modules = modules ++ [ { home.stateVersion = "25.05"; } ];
               }
-              |> inputs.home-manager.lib.homeManagerConfiguration
+              |> homeManager.homeManagerConfiguration
               |> lib.getAttrFromPath [
                 "config"
                 "home-files"
