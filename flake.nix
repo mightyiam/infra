@@ -33,7 +33,10 @@
       flake = false;
     };
 
-    import-tree.url = "github:vic/import-tree";
+    import-tree = {
+      url = "github:vic/import-tree";
+      flake = false;
+    };
 
     input-branches.url = "github:mightyiam/input-branches";
 
@@ -183,7 +186,7 @@
           '';
       };
 
-      imports = [ (inputs.import-tree ./modules) ];
+      imports = [ (import inputs.import-tree ./modules) ];
 
       _module.args.rootPath = ./.;
     };

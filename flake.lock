@@ -242,6 +242,7 @@
       "parent": []
     },
     "import-tree": {
+      "flake": false,
       "locked": {
         "lastModified": 1773693634,
         "narHash": "sha256-BtZ2dtkBdSUnFPPFc+n0kcMbgaTxzFNPv2iaO326Ffg=",
