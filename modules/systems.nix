@@ -1,6 +1,6 @@
+{ config, lib, ... }:
 {
-  systems = [
-    "x86_64-linux"
-    "aarch64-linux"
-  ];
+  systems =
+    config.flake.nixosConfigurations
+    |> lib.mapAttrsToList (name: nixos: nixos.pkgs.stdenv.hostPlatform.system);
 }

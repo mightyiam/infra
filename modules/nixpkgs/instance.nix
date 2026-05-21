@@ -2,7 +2,6 @@
   lib,
   config,
   inputs,
-  withSystem,
   ...
 }:
 {
@@ -24,18 +23,12 @@
   };
 
   config = {
-    perSystem =
-      { system, ... }:
-      {
-        _module.args.pkgs = import inputs.nixpkgs {
-          inherit system;
-          inherit (config.nixpkgs) config overlays;
-        };
-      };
-
     flake.modules.nixos.base = nixosArgs: {
       nixpkgs = {
-        pkgs = withSystem nixosArgs.config.hardware.facter.report.system (psArgs: psArgs.pkgs);
+        pkgs = import inputs.nixpkgs {
+          inherit (nixosArgs.config.hardware.facter.report) system;
+          inherit (config.nixpkgs) config overlays;
+        };
         hostPlatform = nixosArgs.config.hardware.facter.report.system;
       };
     };
