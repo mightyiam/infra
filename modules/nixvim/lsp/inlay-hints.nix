@@ -5,7 +5,7 @@
       inlayHints = true;
       keymaps.extra = [
         {
-          key = "<leader>ht";
+          key = "<leader>th";
           mode = "n";
           action = inputs.nixvim.lib.nixvim.mkRaw ''
             function()

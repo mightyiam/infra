@@ -38,7 +38,7 @@
         action = "<cmd>Format<CR>";
       }
       {
-        key = "<leader>a";
+        key = "<leader>tf";
         options.desc = "Toggle lsp-format autoformatting";
         action = inputs.nixvim.lib.nixvim.mkRaw ''
           function()
