@@ -36,10 +36,6 @@
 
   flake.modules = {
     nixos.base.imports = [ inputs.input-branches.modules.nixos.default ];
-    homeManager.base = {
-      # they include declaration paths
-      manual.manpages.enable = false;
-    };
   };
 
   perSystem =
