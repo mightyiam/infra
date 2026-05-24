@@ -64,10 +64,7 @@
 
     nixvim = {
       url = "github:nix-community/nixvim";
-      inputs = {
-        flake-parts.follows = "flake-parts";
-        systems.follows = "systems";
-      };
+      flake = false;
     };
 
     refjump-nvim = {

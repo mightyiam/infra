@@ -1,6 +1,5 @@
-{ inputs, ... }:
 {
-  flake.modules.nixvim.base = {
+  flake.modules.nixvim.base = nixvimArgs: {
     plugins.flash.enable = true;
     keymaps = [
       {
@@ -10,7 +9,7 @@
           "x"
           "o"
         ];
-        action = inputs.nixvim.lib.nixvim.mkRaw ''function() require("flash").jump() end'';
+        action = nixvimArgs.lib.nixvim.mkRaw ''function() require("flash").jump() end'';
         options.desc = "Flash";
       }
       {
@@ -20,13 +19,13 @@
           "x"
           "o"
         ];
-        action = inputs.nixvim.lib.nixvim.mkRaw ''function() require("flash").treesitter() end'';
+        action = nixvimArgs.lib.nixvim.mkRaw ''function() require("flash").treesitter() end'';
         options.desc = "Flash Treesitter";
       }
       {
         key = "r";
         mode = "o";
-        action = inputs.nixvim.lib.nixvim.mkRaw ''function() require("flash").remote() end'';
+        action = nixvimArgs.lib.nixvim.mkRaw ''function() require("flash").remote() end'';
         options.desc = "Remote Flash";
       }
       {
@@ -35,13 +34,13 @@
           "o"
           "x"
         ];
-        action = inputs.nixvim.lib.nixvim.mkRaw ''function() require("flash").treesitter_search() end'';
+        action = nixvimArgs.lib.nixvim.mkRaw ''function() require("flash").treesitter_search() end'';
         options.desc = "Treesitter search";
       }
       {
         key = "<c-s>";
         mode = "c";
-        action = inputs.nixvim.lib.nixvim.mkRaw ''function() require("flash").toggle() end'';
+        action = nixvimArgs.lib.nixvim.mkRaw ''function() require("flash").toggle() end'';
         options.desc = "Toggle Flash search";
       }
     ];

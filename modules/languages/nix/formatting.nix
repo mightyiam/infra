@@ -1,9 +1,8 @@
-{ inputs, ... }:
 {
   perSystem.treefmt.programs.nixfmt.enable = true;
 
   flake.modules.nixvim.base =
-    { pkgs, ... }:
+    nixvimArgs@{ pkgs, ... }:
     {
       extraConfigLua = ''
         vim.g.nixfmt_enabled = false
@@ -13,7 +12,7 @@
         {
           key = "<leader>n";
           options.desc = "Toggle nixfmt";
-          action = inputs.nixvim.lib.nixvim.mkRaw ''
+          action = nixvimArgs.lib.nixvim.mkRaw ''
             function()
               vim.g.nixfmt_enabled = not vim.g.nixfmt_enabled
 
@@ -34,7 +33,7 @@
         sources.formatting.nixfmt = {
           enable = true;
           package = pkgs.nixfmt;
-          settings.runtime_condition = inputs.nixvim.lib.nixvim.mkRaw ''
+          settings.runtime_condition = nixvimArgs.lib.nixvim.mkRaw ''
             function() return vim.g.nixfmt_enabled end
           '';
         };

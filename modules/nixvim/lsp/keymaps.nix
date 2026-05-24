@@ -1,6 +1,5 @@
-{ inputs, ... }:
 {
-  flake.modules.nixvim.base = {
+  flake.modules.nixvim.base = nixvimArgs: {
     plugins.lsp.keymaps = {
       lspBuf = {
         K = "hover";
@@ -14,7 +13,7 @@
       extra = [
         {
           key = "<space>a";
-          action = inputs.nixvim.lib.nixvim.mkRaw "vim.lsp.buf.code_action";
+          action = nixvimArgs.lib.nixvim.mkRaw "vim.lsp.buf.code_action";
           mode = [
             "n"
             "v"

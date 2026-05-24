@@ -21,7 +21,7 @@
     pre-commit.settings.hooks.treefmt.enable = true;
   };
 
-  flake.modules.nixvim.base = {
+  flake.modules.nixvim.base = nixvimArgs: {
     plugins = {
       lsp-format.enable = true;
 
@@ -40,7 +40,7 @@
       {
         key = "<leader>tf";
         options.desc = "Toggle lsp-format autoformatting";
-        action = inputs.nixvim.lib.nixvim.mkRaw ''
+        action = nixvimArgs.lib.nixvim.mkRaw ''
           function()
             local lsp_format = require("lsp-format")
 

@@ -1,11 +1,17 @@
 {
   config,
+  nixvim,
   ...
 }:
 {
   perSystem =
-    { inputs', ... }:
+    { system, ... }:
     {
-      packages.nixvim = inputs'.nixvim.legacyPackages.makeNixvim config.flake.modules.nixvim.base;
+      packages.nixvim =
+        nixvim.evalNixvim {
+          inherit system;
+          modules = [ config.flake.modules.nixvim.base ];
+        }
+        |> (evaluation: evaluation.config.build.package);
     };
 }

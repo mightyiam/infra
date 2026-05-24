@@ -1,6 +1,5 @@
-{ inputs, ... }:
 {
-  flake.modules.nixvim.base = {
+  flake.modules.nixvim.base = nixvimArgs: {
     plugins.lualine = {
       enable = true;
       settings =
@@ -15,7 +14,7 @@
             ];
             lualine_c = [
               (
-                inputs.nixvim.lib.nixvim.listToUnkeyedAttrs [ "filename" ]
+                nixvimArgs.lib.nixvim.listToUnkeyedAttrs [ "filename" ]
                 // {
                   path = 1;
                   shorting_target = 0;
@@ -60,7 +59,7 @@
             ];
             lualine_b = [
               (
-                inputs.nixvim.lib.nixvim.listToUnkeyedAttrs [ "diagnostics" ]
+                nixvimArgs.lib.nixvim.listToUnkeyedAttrs [ "diagnostics" ]
                 // {
                   sources = [ "nvim_lsp" ];
                 }

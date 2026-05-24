@@ -1,7 +1,7 @@
 {
   lib,
   config,
-  inputs,
+  nixvim,
   ...
 }:
 {
@@ -11,15 +11,18 @@
       # Ideally:
       #nixvim = self.packages.${pkgs.stdenv.hostPlatform.system}.nixvim;
       # but https://github.com/danth/stylix/pull/415#issuecomment-2832398958
-      nixvim = inputs.nixvim.legacyPackages.${pkgs.stdenv.hostPlatform.system}.makeNixvimWithModule {
-        extraSpecialArgs.homeConfig = hmArgs.config;
-        module = config.flake.modules.nixvim.base;
-      };
+      package =
+        nixvim.evalNixvim {
+          system = pkgs.stdenv.hostPlatform.system;
+          extraSpecialArgs.homeConfig = hmArgs.config;
+          modules = [ config.flake.modules.nixvim.base ];
+        }
+        |> (evaluation: evaluation.config.build.package);
     in
     {
       home = {
-        packages = [ nixvim ];
-        sessionVariables.EDITOR = lib.getExe nixvim;
+        packages = [ package ];
+        sessionVariables.EDITOR = lib.getExe package;
       };
     };
 }
