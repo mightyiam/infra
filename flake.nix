@@ -83,7 +83,7 @@
       inputs = {
         flake-parts.follows = "flake-parts";
         nixpkgs.follows = "nixpkgs";
-        nur.follows = "dedupe_nur";
+        nur.follows = "";
         systems.follows = "systems";
         tinted-schemes.follows = "tinted-schemes";
       };
@@ -122,17 +122,6 @@
     };
   };
 
-  # _additional_ `inputs` only for deduplication
-  inputs = {
-    dedupe_nur = {
-      url = "github:nix-community/NUR";
-      inputs = {
-        flake-parts.follows = "flake-parts";
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
-  };
-
   outputs =
     inputs:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
@@ -150,21 +139,6 @@
 
             > [!NOTE]
             > It does not currently catch all warnings Nix can produce, but perhaps only evaluation warnings.
-          '';
-
-        flake-inputs-dedupe-prefix =
-          # markdown
-          ''
-            ## Flake inputs for deduplication are prefixed
-
-            Some explicit flake inputs exist solely for the purpose of deduplication.
-            They are the target of at least one `<input>.inputs.<input>.follows`.
-            But what if in the future all of those targeting `follows` are removed?
-            Ideally, Nix would detect that and warn.
-            Until that feature is available those inputs are prefixed with `dedupe_`
-            and placed in an additional separate `inputs` attribute literal
-            for easy identification.
-
           '';
 
         automatic-import =

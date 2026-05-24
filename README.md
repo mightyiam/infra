@@ -82,16 +82,6 @@ is used.
 
 See [`modules/meta/ci.nix`](modules/meta/ci.nix).
 
-## Flake inputs for deduplication are prefixed
-
-Some explicit flake inputs exist solely for the purpose of deduplication.
-They are the target of at least one `<input>.inputs.<input>.follows`.
-But what if in the future all of those targeting `follows` are removed?
-Ideally, Nix would detect that and warn.
-Until that feature is available those inputs are prefixed with `dedupe_`
-and placed in an additional separate `inputs` attribute literal
-for easy identification.
-
 ## Trying to disallow warnings
 
 This at the top level of the `flake.nix` file:

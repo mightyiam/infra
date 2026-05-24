@@ -84,29 +84,6 @@
         "type": "github"
       }
     },
-    "dedupe_nur": {
-      "inputs": {
-        "flake-parts": [
-          "flake-parts"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1778390761,
-        "narHash": "sha256-W5/Gi8S0umdoD/yaAANVUNiI5CjM+/x2kxytauPBhOg=",
-        "owner": "nix-community",
-        "repo": "NUR",
-        "rev": "25be58813a26177b532ede90a162671a46da11a8",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "NUR",
-        "type": "github"
-      }
-    },
     "files": {
       "flake": false,
       "locked": {
@@ -465,7 +442,6 @@
     "root": {
       "inputs": {
         "cpu-microcodes": "cpu-microcodes",
-        "dedupe_nur": "dedupe_nur",
         "files": "files",
         "flake-parts": "flake-parts",
         "git-hooks": "git-hooks",
@@ -535,9 +511,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "nur": [
-          "dedupe_nur"
-        ],
+        "nur": [],
         "systems": [
           "systems"
         ],

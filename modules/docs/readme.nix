@@ -11,7 +11,6 @@
       "patching-of-inputs"
       "all-check-store-paths"
       "github-actions"
-      "flake-inputs-dedupe-prefix"
       "disallow-warnings"
     ];
 
