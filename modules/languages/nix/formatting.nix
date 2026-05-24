@@ -10,7 +10,7 @@
 
       keymaps = [
         {
-          key = "<leader>n";
+          key = "<leader>tn";
           options.desc = "Toggle nixfmt";
           action = nixvimArgs.lib.nixvim.mkRaw ''
             function()
