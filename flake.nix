@@ -38,7 +38,13 @@
       flake = false;
     };
 
-    input-branches.url = "github:mightyiam/input-branches";
+    input-branches = {
+      url = "github:mightyiam/input-branches";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        nixpkgs-lib.follows = "nixpkgs";
+      };
+    };
 
     make-shell = {
       url = "github:nicknovitski/make-shell";
@@ -54,9 +60,11 @@
       url = "github:nix-community/nix-on-droid";
       inputs = {
         home-manager.follows = "home-manager";
+        nix-formatter-pack.follows = "";
         nixpkgs-docs.follows = "nixpkgs";
         nixpkgs-for-bootstrap.follows = "nixpkgs";
         nixpkgs.follows = "nixpkgs";
+        nmd.follows = "";
       };
     };
 
@@ -81,11 +89,17 @@
       url = "./inputs/stylix";
       flake = true;
       inputs = {
+        base16-fish.follows = "";
+        base16-helix.follows = "";
+        firefox-gnome-theme.follows = "";
         flake-parts.follows = "flake-parts";
         nixpkgs.follows = "nixpkgs";
         nur.follows = "";
         systems.follows = "systems";
+        tinted-kitty.follows = "";
         tinted-schemes.follows = "tinted-schemes";
+        tinted-tmux.follows = "";
+        tinted-zed.follows = "";
       };
     };
 
