@@ -34,10 +34,6 @@
     };
   };
 
-  flake.modules = {
-    nixos.base.imports = [ inputs.input-branches.modules.nixos.default ];
-  };
-
   perSystem =
     psArgs@{ pkgs, ... }:
     {
