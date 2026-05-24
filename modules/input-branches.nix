@@ -2,7 +2,6 @@
   config,
   inputs,
   lib,
-  rootPath,
   ...
 }:
 {
@@ -25,13 +24,6 @@
   imports = [ inputs.input-branches.flakeModules.default ];
 
   input-branches.inputs = {
-    nixpkgs = {
-      upstream = {
-        url = "https://github.com/NixOS/nixpkgs.git";
-        ref = "nixpkgs-unstable";
-      };
-      shallow = true;
-    };
     home-manager.upstream = {
       url = "https://github.com/nix-community/home-manager.git";
       ref = "master";
@@ -43,10 +35,7 @@
   };
 
   flake.modules = {
-    nixos.base = {
-      imports = [ inputs.input-branches.modules.nixos.default ];
-      nixpkgs.flake.source = lib.mkForce (rootPath + "/inputs/nixpkgs");
-    };
+    nixos.base.imports = [ inputs.input-branches.modules.nixos.default ];
     homeManager.base = {
       # they include declaration paths
       manual.manpages.enable = false;

@@ -4,6 +4,3 @@
 [submodule "inputs/stylix"]
 	path = inputs/stylix
 	url = ./.
-[submodule "inputs/nixpkgs"]
-	path = inputs/nixpkgs
-	url = ./.

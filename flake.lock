@@ -252,14 +252,15 @@
     },
     "nixpkgs": {
       "locked": {
-        "path": "./inputs/nixpkgs",
-        "type": "path"
+        "lastModified": 315532800,
+        "narHash": "sha256-lMg7Dj7kyGN5cj9RGag5Is100HnQPKM9zEsuAOL2TLA=",
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre994919.b3da656039dc/nixexprs.tar.xz"
       },
       "original": {
-        "path": "./inputs/nixpkgs",
-        "type": "path"
-      },
-      "parent": []
+        "type": "tarball",
+        "url": "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz"
+      }
     },
     "nixvim": {
       "flake": false,
