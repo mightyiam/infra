@@ -28,10 +28,6 @@
       url = "https://github.com/nix-community/home-manager.git";
       ref = "master";
     };
-    stylix.upstream = {
-      url = "https://github.com/nix-community/stylix.git";
-      ref = "master";
-    };
   };
 
   perSystem =

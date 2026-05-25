@@ -86,8 +86,7 @@
     };
 
     stylix = {
-      url = "./inputs/stylix";
-      flake = true;
+      url = "github:nix-community/stylix";
       inputs = {
         base16-fish.follows = "";
         base16-helix.follows = "";
