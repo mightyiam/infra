@@ -38,14 +38,6 @@
       flake = false;
     };
 
-    input-branches = {
-      url = "github:mightyiam/input-branches";
-      inputs = {
-        flake-parts.follows = "flake-parts";
-        nixpkgs-lib.follows = "nixpkgs";
-      };
-    };
-
     make-shell = {
       url = "github:nicknovitski/make-shell";
       flake = false;

@@ -40,17 +40,6 @@ using [the _files_ flake-parts module](https://github.com/mightyiam/files):
 - `LICENSE`
 - `README.md`
 
-## Patching of inputs
-
-I attempt to maintain an upstream-first approach.
-While collaborating with upstream on the refinement and merge of those changes
-I maintain a branch of that input with those changes cherry-picked.
-
-This repository is the origin of the
-[_input branches_](https://github.com/mightyiam/input-branches)
-project
-which is used here.
-
 ## Refactoring
 
 To help determine whether a Nix change results in changes to derivations,

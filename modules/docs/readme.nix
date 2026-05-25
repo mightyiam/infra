@@ -8,7 +8,6 @@
       "dendritic"
       "automatic-import"
       "files"
-      "patching-of-inputs"
       "all-check-store-paths"
       "github-actions"
       "disallow-warnings"

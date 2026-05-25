@@ -168,29 +168,6 @@
         "type": "github"
       }
     },
-    "input-branches": {
-      "inputs": {
-        "flake-parts": [
-          "flake-parts"
-        ],
-        "nixpkgs-lib": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1764254272,
-        "narHash": "sha256-Jsu6qO7b7dwSzUMQP+vIPl4WYdbHFNY/1fbPiyPqFq8=",
-        "owner": "mightyiam",
-        "repo": "input-branches",
-        "rev": "96343c6ca9e84d559c93484c45c3864fcf2e1026",
-        "type": "github"
-      },
-      "original": {
-        "owner": "mightyiam",
-        "repo": "input-branches",
-        "type": "github"
-      }
-    },
     "make-shell": {
       "flake": false,
       "locked": {
@@ -306,7 +283,6 @@
         "git-hooks": "git-hooks",
         "home-manager": "home-manager",
         "import-tree": "import-tree",
-        "input-branches": "input-branches",
         "make-shell": "make-shell",
         "nix-index-database": "nix-index-database",
         "nix-on-droid": "nix-on-droid",
