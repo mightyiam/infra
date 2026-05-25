@@ -5,7 +5,7 @@ let
   owner = github.username;
   name = "infra";
   defaultBranch = "main";
-  flakeUri = "git+https://${github.domain}/${owner}/${name}?shallow=1";
+  flakeUri = "${forge}:${owner}/${name}";
 in
 {
   flake.meta.repo = {
