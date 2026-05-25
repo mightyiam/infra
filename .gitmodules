@@ -1,3 +1,0 @@
-[submodule "inputs/home-manager"]
-	path = inputs/home-manager
-	url = ./.

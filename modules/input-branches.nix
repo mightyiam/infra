@@ -23,13 +23,6 @@
 
   imports = [ inputs.input-branches.flakeModules.default ];
 
-  input-branches.inputs = {
-    home-manager.upstream = {
-      url = "https://github.com/nix-community/home-manager.git";
-      ref = "master";
-    };
-  };
-
   perSystem =
     psArgs@{ pkgs, ... }:
     {

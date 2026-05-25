@@ -139,14 +139,18 @@
     "home-manager": {
       "flake": false,
       "locked": {
-        "path": "./inputs/home-manager",
-        "type": "path"
+        "lastModified": 1778365864,
+        "narHash": "sha256-ImoT/wqmgMImf2dAC+E0MverAdA4QXsedOeES9B7Ezw=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "2f419037039a152448c5f4ae9494154753d1b399",
+        "type": "github"
       },
       "original": {
-        "path": "./inputs/home-manager",
-        "type": "path"
-      },
-      "parent": []
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
     },
     "import-tree": {
       "flake": false,

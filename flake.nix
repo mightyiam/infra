@@ -29,7 +29,7 @@
     };
 
     home-manager = {
-      url = "./inputs/home-manager";
+      url = "github:nix-community/home-manager";
       flake = false;
     };
 
