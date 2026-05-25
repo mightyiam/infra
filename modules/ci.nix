@@ -34,10 +34,7 @@ let
         hatchet-protocol = "holster";
       };
     };
-    checkout = {
-      uses = "actions/checkout@v4";
-      "with".submodules = true;
-    };
+    checkout.uses = "actions/checkout@v4";
     detsysNixInstaller.uses = "DeterminateSystems/nix-installer-action@main";
     magicNixCache.uses = "DeterminateSystems/magic-nix-cache-action@main";
   };

@@ -5,8 +5,6 @@
     allow-import-from-derivation = false;
   };
 
-  inputs.self.submodules = true;
-
   inputs = {
     cpu-microcodes = {
       flake = false;

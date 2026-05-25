@@ -5,10 +5,7 @@
       "runs-on": "ubuntu-latest",
       "steps": [
         {
-          "uses": "actions/checkout@v4",
-          "with": {
-            "submodules": true
-          }
+          "uses": "actions/checkout@v4"
         },
         {
           "uses": "wimpysworld/nothing-but-nix@main",
@@ -40,10 +37,7 @@
       "runs-on": "ubuntu-latest",
       "steps": [
         {
-          "uses": "actions/checkout@v4",
-          "with": {
-            "submodules": true
-          }
+          "uses": "actions/checkout@v4"
         },
         {
           "uses": "DeterminateSystems/nix-installer-action@main"
