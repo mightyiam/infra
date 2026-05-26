@@ -38,10 +38,11 @@
   };
 
   config = {
+    perSystem.files.writer.app = true;
+
     text.readme.parts.files =
-      withSystem (builtins.head config.systems) (psArgs: psArgs.config.files.files)
-      |> map (file: "- `${file.path}`")
-      |> lib.naturalSort
+      withSystem (builtins.head config.systems) (psArgs: psArgs.config.files.file)
+      |> lib.mapAttrsToList (path: _: "- `${path}`")
       |> lib.concat [
         # markdown
         ''
@@ -53,9 +54,5 @@
       ]
       |> lib.concatLines
       |> (s: s + "\n");
-
-    perSystem = psArgs: {
-      make-shells.default.packages = [ psArgs.config.files.writer.drv ];
-    };
   };
 }
