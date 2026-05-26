@@ -64,6 +64,7 @@
                 |> map (ws: [
                   "SUPER, ${ws}, workspace, ${ws}"
                   "SUPER+SHIFT, ${ws}, hy3:movetoworkspace, ${ws}"
+                  "SUPER+SHIFT, ${ws}, hy3:changefocus, bottom"
                 ])
                 |> lib.concatLists
               )
