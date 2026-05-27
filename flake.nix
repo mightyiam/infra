@@ -6,11 +6,6 @@
   };
 
   inputs = {
-    cpu-microcodes = {
-      flake = false;
-      url = "github:platomav/CPUMicrocodes";
-    };
-
     files = {
       url = "github:mightyiam/files";
       flake = false;
@@ -99,7 +94,6 @@
 
     ucodenix = {
       url = "github:e-tho/ucodenix";
-      inputs.cpu-microcodes.follows = "cpu-microcodes";
     };
 
     autoreload-nvim = {

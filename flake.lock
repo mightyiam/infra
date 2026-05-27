@@ -29,6 +29,7 @@
       "original": {
         "owner": "platomav",
         "repo": "CPUMicrocodes",
+        "rev": "efd81b0446842e952aa848ca10a659f0a5ed3bad",
         "type": "github"
       }
     },
@@ -226,7 +227,6 @@
     "root": {
       "inputs": {
         "autoreload-nvim": "autoreload-nvim",
-        "cpu-microcodes": "cpu-microcodes",
         "files": "files",
         "flake-parts": "flake-parts",
         "git-hooks": "git-hooks",
@@ -345,9 +345,7 @@
     },
     "ucodenix": {
       "inputs": {
-        "cpu-microcodes": [
-          "cpu-microcodes"
-        ]
+        "cpu-microcodes": "cpu-microcodes"
       },
       "locked": {
         "lastModified": 1774278023,
