@@ -102,9 +102,9 @@
       inputs.cpu-microcodes.follows = "cpu-microcodes";
     };
 
-    vim-autoread = {
+    autoreload-nvim = {
       flake = false;
-      url = "github:djoshea/vim-autoread/24061f84652d768bfb85d222c88580b3af138dab";
+      url = "github:ccntrq/autoreload.nvim";
     };
 
     zsh-auto-notify = {

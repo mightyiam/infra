@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "autoreload-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1772708028,
+        "narHash": "sha256-IktxyHlBhbUYAcVtuoVsvLOgtDafC0eE1Y2OfU9aE3k=",
+        "owner": "ccntrq",
+        "repo": "autoreload.nvim",
+        "rev": "6b58960cf12d008e821388afb4b5c75a48e1eb9f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ccntrq",
+        "repo": "autoreload.nvim",
+        "type": "github"
+      }
+    },
     "cpu-microcodes": {
       "flake": false,
       "locked": {
@@ -209,6 +225,7 @@
     },
     "root": {
       "inputs": {
+        "autoreload-nvim": "autoreload-nvim",
         "cpu-microcodes": "cpu-microcodes",
         "files": "files",
         "flake-parts": "flake-parts",
@@ -228,7 +245,6 @@
         "treefmt-nix": "treefmt-nix",
         "treesitter-modules-nvim": "treesitter-modules-nvim",
         "ucodenix": "ucodenix",
-        "vim-autoread": "vim-autoread",
         "zsh-auto-notify": "zsh-auto-notify"
       }
     },
@@ -344,23 +360,6 @@
       "original": {
         "owner": "e-tho",
         "repo": "ucodenix",
-        "type": "github"
-      }
-    },
-    "vim-autoread": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1691511602,
-        "narHash": "sha256-fSADjNt1V9jgAPjxggbh7Nogcxyisi18KaVve8j+c3w=",
-        "owner": "djoshea",
-        "repo": "vim-autoread",
-        "rev": "24061f84652d768bfb85d222c88580b3af138dab",
-        "type": "github"
-      },
-      "original": {
-        "owner": "djoshea",
-        "repo": "vim-autoread",
-        "rev": "24061f84652d768bfb85d222c88580b3af138dab",
         "type": "github"
       }
     },
