@@ -12,6 +12,9 @@
     };
     homeManager.gui = {
       stylix.targets.gtksourceview.enable = false;
+      # 2026-05-27: found that cursor was not present in entire screen sharing.
+      # This seems to workaround that.
+      wayland.windowManager.hyprland.settings.cursor.no_hardware_cursors = 1;
     };
   };
 
