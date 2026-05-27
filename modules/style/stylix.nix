@@ -6,10 +6,7 @@
 }:
 let
   polyModule = {
-    stylix = {
-      enable = true;
-      enableReleaseChecks = false;
-    };
+    stylix.enable = true;
   };
 in
 {

@@ -3,10 +3,7 @@
   flake.modules = {
     homeManager.wife = {
       imports = [ stylix.homeModules.stylix ];
-      stylix = {
-        enable = true;
-        enableReleaseChecks = false;
-      };
+      stylix.enable = true;
     };
   };
 }
