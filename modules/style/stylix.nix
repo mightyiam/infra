@@ -21,11 +21,19 @@ in
       stylix.homeManagerIntegration.autoImport = false;
     };
 
-    homeManager.base = {
-      imports = [
-        stylix.homeModules.stylix
-        polyModule
-      ];
+    homeManager = {
+      base = {
+        imports = [
+          stylix.homeModules.stylix
+          polyModule
+        ];
+      };
+      wife = {
+        imports = [
+          stylix.homeModules.stylix
+          polyModule
+        ];
+      };
     };
 
     nixOnDroid.base = {
