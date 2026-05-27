@@ -1,6 +1,7 @@
 {
   inputs,
   lib,
+  stylix,
   ...
 }:
 let
@@ -12,10 +13,12 @@ let
   };
 in
 {
+  _module.args.stylix = import inputs.stylix;
+
   flake.modules = {
     nixos.base = {
       imports = [
-        inputs.stylix.nixosModules.stylix
+        stylix.nixosModules.stylix
         polyModule
       ];
       stylix.homeManagerIntegration.autoImport = false;
@@ -23,14 +26,14 @@ in
 
     homeManager.base = {
       imports = [
-        inputs.stylix.homeModules.stylix
+        stylix.homeModules.stylix
         polyModule
       ];
     };
 
     nixOnDroid.base = {
       imports = [
-        inputs.stylix.nixOnDroidModules.stylix
+        stylix.nixOnDroidModules.stylix
         polyModule
       ];
     };

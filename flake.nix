@@ -77,19 +77,7 @@
 
     stylix = {
       url = "github:nix-community/stylix";
-      inputs = {
-        base16-fish.follows = "";
-        base16-helix.follows = "";
-        firefox-gnome-theme.follows = "";
-        flake-parts.follows = "flake-parts";
-        nixpkgs.follows = "nixpkgs";
-        nur.follows = "";
-        systems.follows = "systems";
-        tinted-kitty.follows = "";
-        tinted-schemes.follows = "tinted-schemes";
-        tinted-tmux.follows = "";
-        tinted-zed.follows = "";
-      };
+      flake = false;
     };
 
     systems.url = "github:nix-systems/default-linux";

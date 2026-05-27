@@ -1,8 +1,8 @@
-{ inputs, ... }:
+{ stylix, ... }:
 {
   flake.modules = {
     homeManager.wife = {
-      imports = [ inputs.stylix.homeModules.stylix ];
+      imports = [ stylix.homeModules.stylix ];
       stylix = {
         enable = true;
         enableReleaseChecks = false;

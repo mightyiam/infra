@@ -1,40 +1,5 @@
 {
   "nodes": {
-    "base16": {
-      "inputs": {
-        "fromYaml": "fromYaml"
-      },
-      "locked": {
-        "lastModified": 1755819240,
-        "narHash": "sha256-qcMhnL7aGAuFuutH4rq9fvAhCpJWVHLcHVZLtPctPlo=",
-        "owner": "SenchoPens",
-        "repo": "base16.nix",
-        "rev": "75ed5e5e3fce37df22e49125181fa37899c3ccd6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "SenchoPens",
-        "repo": "base16.nix",
-        "type": "github"
-      }
-    },
-    "base16-vim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1732806396,
-        "narHash": "sha256-e0bpPySdJf0F68Ndanwm+KWHgQiZ0s7liLhvJSWDNsA=",
-        "owner": "tinted-theming",
-        "repo": "base16-vim",
-        "rev": "577fe8125d74ff456cf942c733a85d769afe58b7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "tinted-theming",
-        "repo": "base16-vim",
-        "rev": "577fe8125d74ff456cf942c733a85d769afe58b7",
-        "type": "github"
-      }
-    },
     "cpu-microcodes": {
       "flake": false,
       "locked": {
@@ -87,22 +52,6 @@
         "type": "github"
       }
     },
-    "fromYaml": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1731966426,
-        "narHash": "sha256-lq95WydhbUTWig/JpqiB7oViTcHFP8Lv41IGtayokA8=",
-        "owner": "SenchoPens",
-        "repo": "fromYaml",
-        "rev": "106af9e2f715e2d828df706c386a685698f3223b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "SenchoPens",
-        "repo": "fromYaml",
-        "type": "github"
-      }
-    },
     "git-hooks": {
       "flake": false,
       "locked": {
@@ -116,23 +65,6 @@
       "original": {
         "owner": "cachix",
         "repo": "git-hooks.nix",
-        "type": "github"
-      }
-    },
-    "gnome-shell": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1767737596,
-        "narHash": "sha256-eFujfIUQDgWnSJBablOuG+32hCai192yRdrNHTv0a+s=",
-        "owner": "GNOME",
-        "repo": "gnome-shell",
-        "rev": "ef02db02bf0ff342734d525b5767814770d85b49",
-        "type": "github"
-      },
-      "original": {
-        "owner": "GNOME",
-        "repo": "gnome-shell",
-        "rev": "ef02db02bf0ff342734d525b5767814770d85b49",
         "type": "github"
       }
     },
@@ -317,30 +249,7 @@
       }
     },
     "stylix": {
-      "inputs": {
-        "base16": "base16",
-        "base16-fish": [],
-        "base16-helix": [],
-        "base16-vim": "base16-vim",
-        "firefox-gnome-theme": [],
-        "flake-parts": [
-          "flake-parts"
-        ],
-        "gnome-shell": "gnome-shell",
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "nur": [],
-        "systems": [
-          "systems"
-        ],
-        "tinted-kitty": [],
-        "tinted-schemes": [
-          "tinted-schemes"
-        ],
-        "tinted-tmux": [],
-        "tinted-zed": []
-      },
+      "flake": false,
       "locked": {
         "lastModified": 1778104276,
         "narHash": "sha256-/DSSnU0LLmOTG/OCgGwYpxP6+5YvxRx2g/GhI4x6aCU=",
