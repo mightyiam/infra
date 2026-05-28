@@ -8,16 +8,9 @@
   };
 
   flake.modules = {
-    nixvim.base = {
-      lsp.servers.statix = {
-        enable = true;
-        package = null;
-      };
+    nixvim.base.lsp.servers.statix = {
+      enable = true;
+      packageFallback = true;
     };
-    homeManager.base =
-      { pkgs, ... }:
-      {
-        home.packages = [ pkgs.statix ];
-      };
   };
 }

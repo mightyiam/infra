@@ -2,7 +2,7 @@
   flake.modules.nixvim.base = {
     lsp.servers.eslint = {
       enable = true;
-      package = null;
+      packageFallback = true;
     };
     plugins.typescript-tools.enable = true;
   };

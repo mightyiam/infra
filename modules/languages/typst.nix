@@ -2,7 +2,7 @@
   flake.modules.nixvim.base = {
     lsp.servers.tinymist = {
       enable = true;
-      package = null;
+      packageFallback = true;
     };
     plugins.typst-preview.enable = true;
   };

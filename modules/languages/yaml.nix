@@ -1,19 +1,10 @@
 {
   perSystem.treefmt.programs.yamlfmt.enable = true;
 
-  flake.modules = {
-    nixvim.base = {
-      lsp.servers.yamlls = {
-        enable = true;
-        package = null;
-      };
+  flake.modules.nixvim.base = {
+    lsp.servers.yamlls = {
+      enable = true;
+      packageFallback = true;
     };
-
-    homeManager.base =
-      { pkgs, ... }:
-      {
-        home.packages = [ pkgs.yaml-language-server ];
-      };
   };
-
 }

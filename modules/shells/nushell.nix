@@ -6,7 +6,7 @@
     nixvim.base = {
       lsp.servers.nushell = {
         enable = true;
-        package = null;
+        packageFallback = true;
       };
     };
   };

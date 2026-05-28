@@ -2,13 +2,7 @@
   flake.modules.nixvim.base = {
     lsp.servers.nixd = {
       enable = true;
-      package = null;
+      packageFallback = true;
     };
   };
-
-  flake.modules.homeManager.base =
-    { pkgs, ... }:
-    {
-      home.packages = [ pkgs.nixd ];
-    };
 }
