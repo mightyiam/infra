@@ -1,7 +1,8 @@
 {
   flake.modules = {
-    nixos.base = {
+    nixos.base = nixosArgs: {
       hardware.facter.detected.dhcp.enable = false;
+      services.ucodenix.cpuModelId = nixosArgs.config.hardware.facter.reportPath;
     };
 
     homeManager.base =
