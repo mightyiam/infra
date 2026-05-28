@@ -9,7 +9,7 @@
 
   flake.modules = {
     nixvim.base = {
-      plugins.lsp.servers.statix = {
+      lsp.servers.statix = {
         enable = true;
         package = null;
       };

@@ -3,7 +3,7 @@
 
   flake.modules = {
     nixvim.base = {
-      plugins.lsp.servers.yamlls = {
+      lsp.servers.yamlls = {
         enable = true;
         package = null;
       };

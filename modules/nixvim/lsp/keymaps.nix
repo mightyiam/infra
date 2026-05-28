@@ -1,25 +1,42 @@
 {
   flake.modules.nixvim.base = nixvimArgs: {
-    plugins.lsp.keymaps = {
-      lspBuf = {
-        K = "hover";
-        "<C-k>" = "signature_help";
-        gd = "definition";
-        gD = "declaration";
-        gi = "implementation";
-        go = "type_definition";
-        "<space>r" = "rename";
-      };
-      extra = [
-        {
-          key = "<space>a";
-          action = nixvimArgs.lib.nixvim.mkRaw "vim.lsp.buf.code_action";
-          mode = [
-            "n"
-            "v"
-          ];
-        }
-      ];
-    };
+    lsp.keymaps = [
+      {
+        key = "K";
+        lspBufAction = "hover";
+      }
+      {
+        key = "<C-k>";
+        lspBufAction = "signature_help";
+      }
+      {
+        key = "gd";
+        lspBufAction = "definition";
+      }
+      {
+        key = "gD";
+        lspBufAction = "declaration";
+      }
+      {
+        key = "gi";
+        lspBufAction = "implementation";
+      }
+      {
+        key = "go";
+        lspBufAction = "type_definition";
+      }
+      {
+        key = "<space>r";
+        lspBufAction = "rename";
+      }
+      {
+        key = "<space>a";
+        lspBufAction = "code_action";
+        mode = [
+          "n"
+          "v"
+        ];
+      }
+    ];
   };
 }

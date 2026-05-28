@@ -1,8 +1,8 @@
 {
   flake.modules.nixvim.base = nixvimArgs: {
-    plugins.lsp = {
-      inlayHints = true;
-      keymaps.extra = [
+    lsp = {
+      inlayHints.enable = true;
+      keymaps = [
         {
           key = "<leader>th";
           mode = "n";

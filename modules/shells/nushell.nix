@@ -4,7 +4,7 @@
       programs.nushell.enable = true;
     };
     nixvim.base = {
-      plugins.lsp.servers.nushell = {
+      lsp.servers.nushell = {
         enable = true;
         package = null;
       };

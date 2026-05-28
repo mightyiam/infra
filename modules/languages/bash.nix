@@ -1,6 +1,6 @@
 {
   flake.modules.nixvim.base = {
-    plugins.lsp.servers.bashls = {
+    lsp.servers.bashls = {
       enable = true;
       package = null;
     };

@@ -1,24 +1,22 @@
 {
   flake.modules = {
     nixvim.base = {
-      plugins = {
-        rustaceanvim = {
-          enable = true;
-          settings.server.default_settings.rust-analyzer = {
-            check = {
-              allTargets = true;
-              command = "clippy";
-            };
-            inlayHints.lifetimeElisionHints.enable = "always";
+      plugins.rustaceanvim = {
+        enable = true;
+        settings.server.default_settings.rust-analyzer = {
+          check = {
+            allTargets = true;
+            command = "clippy";
           };
+          inlayHints.lifetimeElisionHints.enable = "always";
         };
-        lsp.keymaps.extra = [
-          {
-            key = "<space>p";
-            action = "<CMD>RustLsp parentModule<CR>";
-          }
-        ];
       };
+      lsp.keymaps = [
+        {
+          key = "<space>p";
+          action = "<CMD>RustLsp parentModule<CR>";
+        }
+      ];
     };
 
     homeManager.base =

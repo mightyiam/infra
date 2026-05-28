@@ -1,5 +1,5 @@
 {
   flake.modules.nixvim.base = {
-    plugins.lsp.enable = true;
+    plugins.lspconfig.enable = true;
   };
 }
