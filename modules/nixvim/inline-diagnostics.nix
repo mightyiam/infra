@@ -1,22 +1,10 @@
 {
   flake.modules.nixvim.base = nixvimArgs: {
-    diagnostic.settings = {
-      virtual_lines = false;
-      virtual_text = true;
+    plugins.tiny-inline-diagnostic = {
+      enable = true;
+      settings.options.show_diags_only_under_cursor = true;
     };
     lsp.keymaps = [
-      {
-        key = "<leader>l";
-        action = nixvimArgs.lib.nixvim.mkRaw ''
-          function()
-            local current = vim.diagnostic.config()
-            vim.diagnostic.config({
-              virtual_lines = not current.virtual_lines,
-              virtual_text = not current.virtual_text,
-            })
-          end
-        '';
-      }
       {
         key = "[d";
         action = nixvimArgs.lib.nixvim.mkRaw ''
@@ -32,6 +20,31 @@
             vim.diagnostic.goto_next({ float = false })
           end
         '';
+      }
+      {
+        key = "<leader>de";
+        action = "<cmd>TinyInlineDiag enable<cr>";
+        options.desc = "Enable diagnostics";
+      }
+      {
+        key = "<leader>dd";
+        action = "<cmd>TinyInlineDiag disable<cr>";
+        options.desc = "Disable diagnostics";
+      }
+      {
+        key = "<leader>td";
+        action = "<cmd>TinyInlineDiag toggle<cr>";
+        options.desc = "Toggle diagnostics";
+      }
+      {
+        key = "<leader>tcd";
+        action = "<cmd>TinyInlineDiag toggle_cursor_only<cr>";
+        options.desc = "Toggle cursor-only diagnostics";
+      }
+      {
+        key = "<leader>dr";
+        action = "<cmd>TinyInlineDiag reset<cr>";
+        options.desc = "Reset diagnostic options";
       }
     ];
   };
