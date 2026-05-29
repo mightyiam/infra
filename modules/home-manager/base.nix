@@ -1,6 +1,6 @@
 { config, ... }:
 {
-  flake.modules.homeManager.base = hmArgs: {
+  flake.modules.homeManager.base = {
     home = {
       username = config.flake.meta.owner.username;
       homeDirectory = "/home/${config.flake.meta.owner.username}";
