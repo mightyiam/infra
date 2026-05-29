@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, ... }:
 {
   flake.modules.nixos.pc =
     nixosArgs@{ pkgs, ... }:
@@ -9,10 +9,7 @@
           [
             (lib.getExe pkgs.tuigreet)
             "--cmd"
-            (lib.getExe'
-              nixosArgs.config.home-manager.users.${config.flake.meta.owner.username}.wayland.windowManager.hyprland.package
-              "start-hyprland"
-            )
+            (lib.getExe' nixosArgs.config.home-manager.users.mightyiam.wayland.windowManager.hyprland.package "start-hyprland")
             "--remember"
           ]
           |> lib.concatStringsSep " ";

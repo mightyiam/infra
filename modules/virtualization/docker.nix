@@ -1,4 +1,3 @@
-{ config, ... }:
 {
   flake.modules.nixos.pc = {
     virtualisation.docker = {
@@ -10,6 +9,5 @@
         setSocketVariable = true;
       };
     };
-    users.extraGroups.docker.members = [ config.flake.meta.owner.username ];
   };
 }

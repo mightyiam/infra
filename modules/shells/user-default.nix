@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ lib, ... }:
 {
   flake.modules = {
     nixos.base =
@@ -6,8 +6,8 @@
       {
         programs.zsh.enable = true;
         users.defaultUserShell = pkgs.zsh;
-        users.users.${config.flake.meta.owner.username}.shell =
-          nixosArgs.config.home-manager.users.${config.flake.meta.owner.username}.programs.nushell.package;
+        users.users.mightyiam.shell =
+          nixosArgs.config.home-manager.users.mightyiam.programs.nushell.package;
       };
 
     nixOnDroid.base =

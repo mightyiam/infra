@@ -8,7 +8,7 @@
     base = {
       imports = [ (inputs.home-manager + "/nixos") ];
 
-      home-manager.users.${config.flake.meta.owner.username} =
+      home-manager.users.mightyiam =
         { osConfig, ... }:
         {
           home.stateVersion = osConfig.system.stateVersion;
@@ -16,7 +16,7 @@
         };
     };
     pc = {
-      home-manager.users.${config.flake.meta.owner.username} = config.flake.modules.homeManager.gui;
+      home-manager.users.mightyiam = config.flake.modules.homeManager.gui;
     };
   };
 }
