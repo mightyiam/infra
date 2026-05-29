@@ -9,9 +9,6 @@
       imports = [ (inputs.home-manager + "/nixos") ];
 
       home-manager = {
-        # https://github.com/nix-community/home-manager/issues/6770
-        #useUserPackages = true;
-
         users.${config.flake.meta.owner.username}.imports = [
           (
             { osConfig, ... }:
