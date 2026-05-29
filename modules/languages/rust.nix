@@ -13,7 +13,7 @@
       };
       lsp.keymaps = [
         {
-          key = "<space>p";
+          key = "gmp";
           action = "<CMD>RustLsp parentModule<CR>";
         }
       ];
