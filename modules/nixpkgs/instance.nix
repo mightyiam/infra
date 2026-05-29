@@ -44,6 +44,8 @@
         pkgs = config.nixpkgs.factory nixosArgs.config.hardware.facter.report.system;
         hostPlatform = nixosArgs.config.hardware.facter.report.system;
       };
+
+      home-manager.useGlobalPkgs = true;
     };
   };
 }

@@ -9,7 +9,6 @@
       imports = [ (inputs.home-manager + "/nixos") ];
 
       home-manager = {
-        useGlobalPkgs = true;
         # https://github.com/nix-community/home-manager/issues/6770
         #useUserPackages = true;
 
