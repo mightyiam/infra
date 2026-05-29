@@ -8,22 +8,15 @@
     base = {
       imports = [ (inputs.home-manager + "/nixos") ];
 
-      home-manager = {
-        users.${config.flake.meta.owner.username}.imports = [
-          (
-            { osConfig, ... }:
-            {
-              home.stateVersion = osConfig.system.stateVersion;
-            }
-          )
-          config.flake.modules.homeManager.base
-        ];
-      };
+      home-manager.users.${config.flake.meta.owner.username} =
+        { osConfig, ... }:
+        {
+          home.stateVersion = osConfig.system.stateVersion;
+          imports = [ config.flake.modules.homeManager.base ];
+        };
     };
     pc = {
-      home-manager.users.${config.flake.meta.owner.username}.imports = [
-        config.flake.modules.homeManager.gui
-      ];
+      home-manager.users.${config.flake.meta.owner.username} = config.flake.modules.homeManager.gui;
     };
   };
 }
