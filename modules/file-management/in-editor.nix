@@ -1,7 +1,13 @@
 { nixvim, ... }:
 {
   flake.modules.nixvim.base = {
-    plugins.mini-files.enable = true;
+    plugins.mini-files = {
+      enable = true;
+      settings.mappings = {
+        go_in = "";
+        go_in_plus = "l";
+      };
+    };
     keymaps = [
       {
         key = "<leader>.";
