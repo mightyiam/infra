@@ -1,5 +1,0 @@
-{
-  configurations.nixos.ganoderma.module = {
-    hardware.nvidia.open = false;
-  };
-}
