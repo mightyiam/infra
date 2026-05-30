@@ -1,15 +1,12 @@
 {
   flake.modules.nixvim.base = {
-    plugins = {
-      web-devicons.enable = true;
-      trouble = {
-        enable = true;
-        settings = {
-          auto_close = true;
-          auto_jump = true;
-          auto_refresh = true;
-          follow = false;
-        };
+    plugins.trouble = {
+      enable = true;
+      settings = {
+        auto_close = true;
+        auto_jump = true;
+        auto_refresh = true;
+        follow = false;
       };
     };
     keymaps = [
