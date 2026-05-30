@@ -1,52 +1,52 @@
 {
   flake.modules.nixvim.base = {
     plugins.telescope.keymaps = {
-      "<leader>ff" = {
+      "<leader>sf" = {
         action = "find_files";
       };
-      "<leader>fg" = {
+      "<leader>sg" = {
         action = "live_grep";
       };
-      "<leader>fb" = {
+      "<leader>sb" = {
         action = "buffers";
       };
-      "<leader>fh" = {
+      "<leader>sh" = {
         action = "help_tags";
       };
-      "<leader>fc" = {
+      "<leader>sc" = {
         action = "commands";
       };
-      "<leader>fq" = {
+      "<leader>sq" = {
         action = "quickfix";
       };
-      "<leader>fk" = {
+      "<leader>sk" = {
         action = "keymaps";
       };
-      "<leader>fr" = {
+      "<leader>sr" = {
         action = "lsp_references";
       };
-      "<leader>fds" = {
+      "<leader>sds" = {
         action = "lsp_document_symbols";
       };
-      "<leader>fs" = {
+      "<leader>ss" = {
         action = "lsp_workspace_symbols";
       };
-      "<leader>fp" = {
+      "<leader>sp" = {
         action = "diagnostics";
       };
-      "<leader>fi" = {
+      "<leader>si" = {
         action = "lsp_implementations";
       };
-      "<leader>fd" = {
+      "<leader>sd" = {
         action = "lsp_definitions";
       };
-      "<leader>ft" = {
+      "<leader>st" = {
         action = "lsp_type_definitions";
       };
-      "<leader>fa" = {
+      "<leader>sa" = {
         action = "builtin";
       };
-      "<leader>f;" = {
+      "<leader>s;" = {
         action = "resume";
       };
     };

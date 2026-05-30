@@ -6,6 +6,11 @@
   };
 
   inputs = {
+    nvim-genghis = {
+      url = "github:chrisgrieser/nvim-genghis";
+      flake = false;
+    };
+
     files = {
       url = "github:mightyiam/files";
       flake = false;
