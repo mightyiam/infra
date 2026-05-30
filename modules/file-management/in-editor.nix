@@ -6,6 +6,7 @@
       settings.mappings = {
         go_in = "";
         go_in_plus = "l";
+        synchronize = "<CR>";
       };
     };
     keymaps = [
