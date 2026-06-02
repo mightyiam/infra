@@ -16,7 +16,7 @@
 
         settings = {
           editor.command = [
-            hmArgs.config.guiEditorCommand
+            hmArgs.config.gui.editor.command
             "{file}"
             "+{line}"
           ];

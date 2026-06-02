@@ -2,17 +2,11 @@
 {
   flake.modules.homeManager.gui =
     hmArgs@{ pkgs, ... }:
-    let
-      package = pkgs.neovide;
-    in
     {
-      options.guiEditorCommand = lib.mkOption {
-        type = with lib.types; nullOr pathInStore;
-        default = lib.getExe package;
-      };
-
       config = {
-        home.packages = [ package ];
+        home.packages = [ pkgs.neovide ];
+
+        gui.editor.command = lib.getExe pkgs.neovide;
 
         xdg.configFile."neovide/config.toml".source = pkgs.writers.writeTOML "neovide/config.toml" {
           box-drawing.mode = "native";
