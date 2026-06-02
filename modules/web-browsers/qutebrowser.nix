@@ -15,8 +15,12 @@
         '';
 
         settings = {
+          # because neovide seems slow to start
+          # https://github.com/neovide/neovide/discussions/3323
           editor.command = [
-            hmArgs.config.gui.editor.command
+            hmArgs.config.terminal.path
+            "--command"
+            "nvim"
             "{file}"
             "+{line}"
           ];
