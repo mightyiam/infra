@@ -7,6 +7,7 @@
         home.packages = [ pkgs.neovide ];
 
         gui.editor.command = lib.getExe pkgs.neovide;
+        home.sessionVariables.VISUAL = lib.getExe pkgs.neovide;
 
         xdg.configFile."neovide/config.toml".source = pkgs.writers.writeTOML "neovide/config.toml" {
           box-drawing.mode = "native";
