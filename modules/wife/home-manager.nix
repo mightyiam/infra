@@ -1,7 +1,7 @@
 { config, ... }:
 {
   flake.modules.nixos.bow = {
-    home-manager.users.${config.flake.meta.bow.username} =
+    home-manager.users."1bowapinya" =
       { osConfig, ... }:
       {
         home.stateVersion = osConfig.system.stateVersion;
