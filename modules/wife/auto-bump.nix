@@ -3,7 +3,7 @@ let
   inherit (config.flake.meta) repo;
 in
 {
-  flake.modules.nixos.wife = {
+  flake.modules.nixos.bow = {
     system.autoUpgrade = {
       enable = true;
 

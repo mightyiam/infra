@@ -18,7 +18,7 @@
       nvidia-gpu
       pc
       swap
-      wife
+      bow
     ];
   };
 }

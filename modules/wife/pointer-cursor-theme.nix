@@ -12,7 +12,7 @@ let
 in
 {
   flake.modules = {
-    nixos.wife = polyModule;
-    homeManager.wife = polyModule;
+    nixos.bow = polyModule;
+    homeManager.bow = polyModule;
   };
 }

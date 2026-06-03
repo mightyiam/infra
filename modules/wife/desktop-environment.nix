@@ -1,6 +1,6 @@
 { lib, ... }:
 {
-  flake.modules.nixos.wife =
+  flake.modules.nixos.bow =
     { pkgs, ... }:
     {
       services = {

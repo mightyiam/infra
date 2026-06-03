@@ -21,7 +21,7 @@
       imports = with config.flake.modules.nixos; [
         efi
         pc
-        wife
+        bow
       ];
 
       services.printing.drivers = with pkgs; [

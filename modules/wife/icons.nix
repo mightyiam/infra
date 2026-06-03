@@ -1,6 +1,6 @@
 {
   flake.modules = {
-    homeManager.wife =
+    homeManager.bow =
       { pkgs, ... }:
       let
         variant = "pink";

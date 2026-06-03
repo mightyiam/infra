@@ -28,7 +28,7 @@ in
           polyModule
         ];
       };
-      wife = {
+      bow = {
         imports = [
           stylix.homeModules.stylix
           polyModule

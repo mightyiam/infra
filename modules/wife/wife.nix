@@ -1,9 +1,9 @@
 { config, ... }:
 {
   flake = {
-    meta.wife.username = "1bowapinya";
-    modules.nixos.wife = {
-      users.users.${config.flake.meta.wife.username} = {
+    meta.bow.username = "1bowapinya";
+    modules.nixos.bow = {
+      users.users.${config.flake.meta.bow.username} = {
         isNormalUser = true;
         initialPassword = "";
         extraGroups = [ "lpadmin" ];

@@ -15,7 +15,7 @@
       efi
       pc
       nvidia-gpu
-      wife
+      bow
     ];
 
     hardware.nvidia.open = false;

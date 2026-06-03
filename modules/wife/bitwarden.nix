@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.wife =
+  flake.modules.homeManager.bow =
     { pkgs, ... }:
     {
       home.packages = [ pkgs.bitwarden-desktop ];

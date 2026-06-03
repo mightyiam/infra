@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.wife = hmArgs: {
+  flake.modules.homeManager.bow = hmArgs: {
     gtk = {
       enable = true;
 

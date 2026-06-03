@@ -25,7 +25,7 @@ let
 in
 {
   flake.modules = {
-    homeManager.wife =
+    homeManager.bow =
       { pkgs, ... }:
       {
         imports = [ polyModule ];
@@ -35,6 +35,6 @@ in
           tlwg
         ];
       };
-    nixos.wife = polyModule;
+    nixos.bow = polyModule;
   };
 }

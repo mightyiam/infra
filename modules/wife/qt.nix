@@ -1,3 +1,3 @@
 {
-  flake.modules.homeManager.wife.qt.enable = true;
+  flake.modules.homeManager.bow.qt.enable = true;
 }
