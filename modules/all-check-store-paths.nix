@@ -25,8 +25,8 @@
     {
       packages.${pkgName} =
         self'.checks
-        |> lib.filterAttrs (name: drv: name != "packages/${pkgName}")
         |> lib.mapAttrs (name: drv: builtins.unsafeDiscardStringContext drv)
-        |> pkgs.writers.writeTOML "${pkgName}.toml";
+        |> pkgs.writers.writeTOML "${pkgName}.toml"
+        |> (toml: toml // { flakeCheck = false; });
     };
 }
