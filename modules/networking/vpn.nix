@@ -1,7 +1,7 @@
 {
-  nixpkgs.config.allowUnfreePackages = [ "zerotierone" ];
+  nixpkgs.config.allowUnfreePackages = ["zerotierone"];
 
-  flake.modules.nixos.base = {
+  nixos.modules.base = {
     services.zerotierone.enable = true;
   };
 }

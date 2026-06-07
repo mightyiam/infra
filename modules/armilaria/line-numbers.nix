@@ -1,0 +1,5 @@
+{
+  armilaria = {
+    opts.number = true;
+  };
+}

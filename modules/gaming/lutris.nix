@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.gui = {
+  homeManager.modules.gui = {
     programs.lutris.enable = true;
   };
 }

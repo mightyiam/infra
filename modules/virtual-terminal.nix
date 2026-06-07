@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.base = {
+  nixos.modules.base = {
     services.kmscon = {
       enable = true;
       extraConfig = ''

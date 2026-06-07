@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.base = {
+  nixos.modules.base = {
     services.resolved = {
       enable = true;
       settings.Resolve = {

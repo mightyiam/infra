@@ -1,7 +1,5 @@
 {
-  flake.modules.homeManager.gui =
-    { pkgs, ... }:
-    {
-      home.packages = with pkgs; [ vlc ];
-    };
+  homeManager.modules.gui = {pkgs, ...}: {
+    home.packages = with pkgs; [vlc];
+  };
 }

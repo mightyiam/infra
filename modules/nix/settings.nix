@@ -1,14 +1,17 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options.nix.settings = {
-    keep-outputs = lib.mkOption { type = lib.types.bool; };
+    keep-outputs = lib.mkOption {type = lib.types.bool;};
     experimental-features = lib.mkOption {
       type = lib.types.listOf lib.types.singleLineStr;
-      default = [ ];
+      default = [];
     };
     extra-system-features = lib.mkOption {
       type = lib.types.listOf lib.types.singleLineStr;
-      default = [ ];
+      default = [];
     };
   };
   config = {
@@ -19,28 +22,12 @@
         "flakes"
         "recursive-nix"
       ];
-      extra-system-features = [ "recursive-nix" ];
+      extra-system-features = ["recursive-nix"];
     };
-    flake.modules = {
-      nixos.base = {
-        nix = {
-          inherit (config.nix) settings;
-        };
-      };
 
-      homeManager.base = {
-        nix = {
-          inherit (config.nix) settings;
-        };
-      };
-
-      nixOnDroid.base = {
-        nix.extraOptions = {
-          nix.extraOptions =
-            config.nix.settings
-            |> lib.mapAttrsToList (name: value: "${name} = ${toString value}")
-            |> lib.concatLines;
-        };
+    nixos.modules.base = {
+      nix = {
+        inherit (config.nix) settings;
       };
     };
   };

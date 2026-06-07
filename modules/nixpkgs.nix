@@ -3,8 +3,9 @@
   config,
   inputs,
   ...
-}:
-{
+}: let
+  cfg = config.nixpkgs;
+in {
   options.nixpkgs = {
     config = {
       allowUnfreePredicate = lib.mkOption {
@@ -13,39 +14,41 @@
       };
       allowUnfreePackages = lib.mkOption {
         type = lib.types.listOf lib.types.singleLineStr;
-        default = [ ];
+        default = [];
       };
     };
     overlays = lib.mkOption {
       type = lib.types.listOf lib.types.unspecified;
-      default = [ ];
+      default = [];
     };
-    factory = lib.mkOption {
-      type = lib.types.functionTo lib.types.pkgs;
+    args = lib.mkOption {
+      type = lib.types.unspecified;
+      default = {
+        inherit (cfg) overlays;
+        config = {inherit (cfg.config) allowUnfreePredicate allowUnfreePackages;};
+      };
+    };
+    polyModule = lib.mkOption {
       readOnly = true;
-      default =
-        system:
-        import inputs.nixpkgs {
-          inherit system;
-          inherit (config.nixpkgs) config overlays;
-        };
+      type = lib.types.deferredModule;
+      default = {
+        nixpkgs = cfg.args;
+      };
     };
   };
 
   config = {
-    perSystem =
-      { system, ... }:
-      {
-        _module.args.pkgs = config.nixpkgs.factory system;
-      };
-
-    flake.modules.nixos.base = nixosArgs: {
-      nixpkgs = {
-        pkgs = config.nixpkgs.factory nixosArgs.config.hardware.facter.report.system;
-        hostPlatform = nixosArgs.config.hardware.facter.report.system;
-      };
-
-      home-manager.useGlobalPkgs = true;
+    perSystem = {system, ...}: {
+      _module.args.pkgs = import inputs.nixpkgs (
+        {
+          inherit system;
+        }
+        // cfg.args
+      );
     };
+
+    nixos.modules.base = cfg.polyModule;
+    homeManager.modules.base = cfg.polyModule;
+    armilaria = cfg.polyModule;
   };
 }

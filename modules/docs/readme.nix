@@ -1,8 +1,7 @@
-{ config, ... }:
-{
+{config, ...}: {
   text.readme = {
     order = [
-      "logo"
+      "banner"
       "ci-badge"
       "intro"
       "dendritic"
@@ -16,9 +15,9 @@
     parts.intro =
       # markdown
       ''
-        # ${config.flake.meta.repo.owner}/${config.flake.meta.repo.name}
+        # ${config.repository.git.owner}/${config.repository.git.name}
 
-        ${config.flake.meta.owner.name}'s [Nix](https://nix.dev)-powered "IT infrastructure" repository
+        ${config.repository.git.owner}'s [Nix](https://nix.dev)-powered "IT infrastructure" repository
 
         > [!NOTE]
         > I hope you find this helpful.

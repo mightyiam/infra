@@ -1,47 +1,41 @@
-{ withSystem, ... }:
-{
-  perSystem =
-    { pkgs, ... }:
-    {
-      packages.dpms-all = pkgs.writeShellApplication {
-        name = "dpms-all";
-        runtimeInputs = with pkgs; [ hyprland ];
-        text = ''
-          if [ $# -ne 1 ]; then
-              echo "Usage: $0 [on|off]" >&2
-              exit 1
-          fi
-          if [ "$1" != "on" ] && [ "$1" != "off" ]; then
-              echo "Usage: $0 [on|off]" >&2
-              exit 1
-          fi
+{withSystem, ...}: {
+  perSystem = {pkgs, ...}: {
+    # TODO via overlay
+    packages.dpms-all = pkgs.writeShellApplication {
+      name = "dpms-all";
+      runtimeInputs = with pkgs; [hyprland];
+      text = ''
+        if [ $# -ne 1 ]; then
+            echo "Usage: $0 [on|off]" >&2
+            exit 1
+        fi
+        if [ "$1" != "on" ] && [ "$1" != "off" ]; then
+            echo "Usage: $0 [on|off]" >&2
+            exit 1
+        fi
 
-          case "$XDG_CURRENT_DESKTOP" in
-              "Hyprland")
-                  hyprctl dispatch dpms "$1"
-                  ;;
-              *)
-                  echo "Unsupported XDG_CURRENT_DESKTOP" >&2
-                  exit 1
-                  ;;
-          esac
-        '';
-      };
-    };
-
-  flake.modules = {
-    nixos.base = {
-      services.kmscon.extraConfig = ''
-        dpms-timeout=60
+        case "$XDG_CURRENT_DESKTOP" in
+            "Hyprland")
+                hyprctl dispatch dpms "$1"
+                ;;
+            *)
+                echo "Unsupported XDG_CURRENT_DESKTOP" >&2
+                exit 1
+                ;;
+        esac
       '';
     };
-    homeManager.gui =
-      { pkgs, ... }:
-      let
-        dpms-all = withSystem pkgs.stdenv.hostPlatform.system (psArgs: psArgs.config.packages.dpms-all);
-      in
-      {
-        home.packages = [ dpms-all ];
-      };
+  };
+
+  nixos.modules.base = {
+    services.kmscon.extraConfig = ''
+      dpms-timeout=60
+    '';
+  };
+
+  home.gui = {pkgs, ...}: {
+    home.packages = [
+      (withSystem pkgs.stdenv.hostPlatform.system (psArgs: psArgs.config.packages.dpms-all))
+    ];
   };
 }

@@ -1,15 +1,11 @@
 {
-  flake.modules.homeManager = {
-    base =
-      { pkgs, ... }:
-      {
-        home.packages = [ pkgs.bitwarden-cli ];
-      };
+  homeManager.modules = {
+    base = {pkgs, ...}: {
+      home.packages = [pkgs.bitwarden-cli];
+    };
 
-    gui =
-      { pkgs, ... }:
-      {
-        home.packages = [ pkgs.bitwarden-desktop ];
-      };
+    gui = {pkgs, ...}: {
+      home.packages = [pkgs.bitwarden-desktop];
+    };
   };
 }

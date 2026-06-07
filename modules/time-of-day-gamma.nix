@@ -1,12 +1,9 @@
-{ config, ... }:
 {
-  flake.modules.homeManager.gui = {
-    services.wlsunset = {
+  homeManager.modules.gui = {
+    services.gammastep = {
       enable = true;
-      latitude = toString config.location.latitude;
-      longitude = toString config.location.longitude;
-      temperature.day = 6500;
-      temperature.night = 3000;
+      provider = "geoclue2";
+      tray = true;
     };
   };
 }

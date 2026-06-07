@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.pc = {
+  nixos.modules.pc = {
     services.lact.enable = true;
   };
 }

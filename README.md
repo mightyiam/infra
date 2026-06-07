@@ -1,4 +1,4 @@
-![Sci-fi looking server room](./modules/logo/logo.jpg)
+![Sci-fi looking server room](modules/banner/image.jpg)
 
 <a href="https://github.com/mightyiam/infra/actions/workflows/check.yaml?query=branch%3Amain">
 <img
@@ -9,7 +9,7 @@
 
 # mightyiam/infra
 
-Shahar "Dawn" Or's [Nix](https://nix.dev)-powered "IT infrastructure" repository
+mightyiam's [Nix](https://nix.dev)-powered "IT infrastructure" repository
 
 > [!NOTE]
 > I hope you find this helpful.
@@ -52,7 +52,7 @@ default-shell = "/nix/store/9nx7s96vwz2h384zm8las332cbkqdszf-nix-shell"
 ```
 
 > [!NOTE]
-> Implemented in [`meta/all-check-store-paths`](modules/meta/all-check-store-paths.nix)
+> Implemented in `modules/repository/all-check-store-paths.nix`.
 
 ## Running checks on GitHub Actions
 
@@ -69,7 +69,7 @@ To prevent runners from running out of space,
 The action [Nothing but Nix](https://github.com/marketplace/actions/nothing-but-nix)
 is used.
 
-See [`modules/meta/ci.nix`](modules/meta/ci.nix).
+See `modules/repository/ci.nix`.
 
 ## Trying to disallow warnings
 

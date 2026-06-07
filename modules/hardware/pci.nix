@@ -1,7 +1,5 @@
 {
-  flake.modules.homeManager.base =
-    { pkgs, ... }:
-    {
-      home.packages = with pkgs; [ pciutils ];
-    };
+  nixos.modules.base = {pkgs, ...}: {
+    environment.systemPackages = [pkgs.pciutils];
+  };
 }

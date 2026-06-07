@@ -1,19 +1,11 @@
-{ lib, config, ... }:
-let
-  reachableNixoss =
-    config.flake.nixosConfigurations
-    |> lib.filterAttrs (
-      _name: nixos:
-      !(lib.any isNull [
-        nixos.config.networking.domain
-        nixos.config.networking.hostName
-        nixos.config.services.openssh.publicKey
-      ])
-    );
-in
+# TODO review this module
 {
-  flake.modules = {
-    nixos.base = {
+  lib,
+  config,
+  ...
+}: {
+  nixos.modules = {
+    base = {
       options.services.openssh.publicKey = lib.mkOption {
         type = lib.types.nullOr lib.types.str;
         default = null;
@@ -33,47 +25,22 @@ in
           '';
         };
 
-        users.users.mightyiam.openssh.authorizedKeys.keys = [
-          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGPoHVrToSwWfz+DaUX68A9v70V7k3/REqGxiDqjLOS+"
-        ];
-
         programs.ssh.knownHosts =
-          reachableNixoss
+          config.nixos.configurations
+          |> lib.filterAttrs (
+            _name: {evaluation, ...}:
+              !(lib.any isNull [
+                evaluation.config.networking.domain
+                evaluation.config.networking.hostName
+                evaluation.config.services.openssh.publicKey
+              ])
+          )
           |> lib.mapAttrs (
-            _name: nixos: {
-              hostNames = [ nixos.config.networking.fqdn ];
-              inherit (nixos.config.services.openssh) publicKey;
+            _name: {evaluation, ...}: {
+              hostNames = [evaluation.config.networking.fqdn];
+              inherit (evaluation.config.services.openssh) publicKey;
             }
           );
-      };
-    };
-
-    homeManager.base = args: {
-      programs.ssh = {
-        enable = true;
-        enableDefaultConfig = false;
-        includes = [ "${args.config.home.homeDirectory}/.ssh/hosts/*" ];
-        matchBlocks =
-          reachableNixoss
-          |> lib.mapAttrsToList (
-            _name: nixos: {
-              "${nixos.config.networking.fqdn}" = {
-                identityFile = "~/.ssh/keys/infra_ed25519";
-              };
-            }
-          )
-          |> lib.concat [
-            {
-              "*" = {
-                setEnv.TERM = "xterm-256color";
-                compression = true;
-                identitiesOnly = true;
-                hashKnownHosts = false;
-                identityFile = "${args.config.home.homeDirectory}/.ssh/id_ed25519";
-              };
-            }
-          ]
-          |> lib.mkMerge;
       };
     };
   };

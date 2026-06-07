@@ -1,10 +1,11 @@
 {
   nixConfig = {
     abort-on-warn = true;
-    extra-experimental-features = [ "pipe-operators" ];
+    extra-experimental-features = ["pipe-operators"];
     allow-import-from-derivation = false;
   };
 
+  # TODO flake-file
   inputs = {
     nvim-genghis = {
       url = "github:chrisgrieser/nvim-genghis";
@@ -44,18 +45,6 @@
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       flake = false;
-    };
-
-    nix-on-droid = {
-      url = "github:nix-community/nix-on-droid";
-      inputs = {
-        home-manager.follows = "home-manager";
-        nix-formatter-pack.follows = "";
-        nixpkgs-docs.follows = "nixpkgs";
-        nixpkgs-for-bootstrap.follows = "nixpkgs";
-        nixpkgs.follows = "nixpkgs";
-        nmd.follows = "";
-      };
     };
 
     nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";
@@ -105,16 +94,10 @@
       flake = false;
       url = "github:ccntrq/autoreload.nvim";
     };
-
-    zsh-auto-notify = {
-      flake = false;
-      url = "github:MichaelAquilina/zsh-auto-notify";
-    };
   };
 
-  outputs =
-    inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+  outputs = inputs: let
+    evaluation = inputs.flake-parts.lib.evalFlakeModule {inherit inputs;} {
       text.readme.parts = {
         disallow-warnings =
           # markdown
@@ -147,8 +130,10 @@
           '';
       };
 
-      imports = [ (import inputs.import-tree ./modules) ];
+      imports = [(import inputs.import-tree ./modules)];
 
       _module.args.rootPath = ./.;
     };
+  in
+    {inherit evaluation;} // evaluation.config.processedFlake;
 }

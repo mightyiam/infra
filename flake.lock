@@ -36,11 +36,11 @@
     "files": {
       "flake": false,
       "locked": {
-        "lastModified": 1779757996,
-        "narHash": "sha256-liOvTj9cegOqBLP7DGpa+grSUapUJtLX4xwhcoXiy/0=",
+        "lastModified": 1780525181,
+        "narHash": "sha256-a7a7123pVQpWOVfZnffX+KFGIx8rTHC6pbNwk0ZYe1k=",
         "owner": "mightyiam",
         "repo": "files",
-        "rev": "9e069ca826ee1a45e1a9f4f45035fbd23ebcec2f",
+        "rev": "72c3663bf84fcffbccc682949041189c1e5e5197",
         "type": "github"
       },
       "original": {
@@ -149,37 +149,6 @@
         "type": "github"
       }
     },
-    "nix-on-droid": {
-      "inputs": {
-        "home-manager": [
-          "home-manager"
-        ],
-        "nix-formatter-pack": [],
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "nixpkgs-docs": [
-          "nixpkgs"
-        ],
-        "nixpkgs-for-bootstrap": [
-          "nixpkgs"
-        ],
-        "nmd": []
-      },
-      "locked": {
-        "lastModified": 1765031149,
-        "narHash": "sha256-4ZtlnCp4blhsjGnQIxAXDAj7nCJKy7tozoBRtklmwcU=",
-        "owner": "nix-community",
-        "repo": "nix-on-droid",
-        "rev": "55b6449b4582a4ba3ce712543c973360a026db7d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "nix-on-droid",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 315532800,
@@ -250,7 +219,6 @@
         "import-tree": "import-tree",
         "make-shell": "make-shell",
         "nix-index-database": "nix-index-database",
-        "nix-on-droid": "nix-on-droid",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
         "nvim-genghis": "nvim-genghis",
@@ -261,8 +229,7 @@
         "tinted-schemes": "tinted-schemes",
         "treefmt-nix": "treefmt-nix",
         "treesitter-modules-nvim": "treesitter-modules-nvim",
-        "ucodenix": "ucodenix",
-        "zsh-auto-notify": "zsh-auto-notify"
+        "ucodenix": "ucodenix"
       }
     },
     "smart-scrolloff-nvim": {
@@ -375,22 +342,6 @@
       "original": {
         "owner": "e-tho",
         "repo": "ucodenix",
-        "type": "github"
-      }
-    },
-    "zsh-auto-notify": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1750669386,
-        "narHash": "sha256-s3TBAsXOpmiXMAQkbaS5de0t0hNC1EzUUb0ZG+p9keE=",
-        "owner": "MichaelAquilina",
-        "repo": "zsh-auto-notify",
-        "rev": "b51c934d88868e56c1d55d0a2a36d559f21cb2ee",
-        "type": "github"
-      },
-      "original": {
-        "owner": "MichaelAquilina",
-        "repo": "zsh-auto-notify",
         "type": "github"
       }
     }

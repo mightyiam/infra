@@ -1,24 +1,18 @@
 {
-  flake.modules = {
-    nixos.pc = {
-      services.pipewire = {
+  nixos.modules.pc = {pkgs, ...}: {
+    services.pipewire = {
+      enable = true;
+      alsa = {
         enable = true;
-        alsa = {
-          enable = true;
-          support32Bit = true;
-        };
-        pulse.enable = true;
+        support32Bit = true;
       };
-      security.rtkit.enable = true;
+      pulse.enable = true;
     };
+    security.rtkit.enable = true;
 
-    homeManager.gui =
-      { pkgs, ... }:
-      {
-        home.packages = with pkgs; [
-          pwvucontrol
-          qpwgraph
-        ];
-      };
+    environment.systemPackages = with pkgs; [
+      pwvucontrol
+      qpwgraph
+    ];
   };
 }

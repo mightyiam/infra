@@ -1,9 +1,8 @@
 {
-  flake.modules.nixos.base = {
+  nixos.modules.base = {
     programs = {
       neovim = {
         enable = true;
-        vimAlias = true;
         defaultEditor = true;
       };
       nano.enable = false;

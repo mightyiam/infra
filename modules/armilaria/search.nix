@@ -1,0 +1,5 @@
+{
+  armilaria = {
+    globalOpts.ignorecase = true;
+  };
+}
