@@ -51,7 +51,7 @@
     )
   ];
 
-  armilaria = {pkgs, ...}: {
+  armilaria = {
     lsp.servers = {
       nixd = {
         enable = true;
@@ -92,7 +92,7 @@
       enable = true;
       sources.formatting.nixfmt = {
         enable = true;
-        package = pkgs.nixfmt;
+        package = null;
         settings.runtime_condition = nixvim.mkRaw ''
           function() return vim.g.nixfmt_enabled end
         '';
