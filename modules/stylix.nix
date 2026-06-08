@@ -4,6 +4,17 @@
   stylix,
   ...
 }: {
+  flake-file.inputs = {
+    stylix = {
+      url = "github:nix-community/stylix";
+      flake = false;
+    };
+    tinted-schemes = {
+      flake = false;
+      url = "github:tinted-theming/schemes";
+    };
+  };
+
   _module.args.stylix = import inputs.stylix;
 
   nixos.modules.pc = nixosArgs: let

@@ -1,4 +1,9 @@
 {inputs, ...}: {
+  flake-file.inputs.autoreload-nvim = {
+    flake = false;
+    url = "github:ccntrq/autoreload.nvim";
+  };
+
   armilaria = {pkgs, ...}: {
     extraPlugins = [
       # TODO upstream

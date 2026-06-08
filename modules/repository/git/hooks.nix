@@ -1,4 +1,9 @@
 {inputs, ...}: {
+  flake-file.inputs.git-hooks = {
+    url = "github:cachix/git-hooks.nix";
+    flake = false;
+  };
+
   imports = [(inputs.git-hooks + "/flake-module.nix")];
 
   git.ignore = ["/.pre-commit-config.yaml"];

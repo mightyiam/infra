@@ -12,6 +12,11 @@
   };
 
   config = {
+    flake-file.inputs.nixvim = {
+      url = "github:nix-community/nixvim";
+      flake = false;
+    };
+
     _module.args.nixvim =
       import "${inputs.nixvim}/lib/overlay.nix" |> lib.extend |> lib.getAttr "nixvim";
 

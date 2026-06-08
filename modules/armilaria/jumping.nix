@@ -3,6 +3,11 @@
   nixvim,
   ...
 }: {
+  flake-file.inputs.refjump-nvim = {
+    flake = false;
+    url = "github:mawkler/refjump.nvim";
+  };
+
   armilaria = {pkgs, ...}: {
     plugins.flash.enable = true;
 

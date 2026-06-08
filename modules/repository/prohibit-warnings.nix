@@ -11,4 +11,6 @@
     > [!NOTE]
     > It does not currently catch all warnings Nix can produce, but perhaps only evaluation warnings.
   '';
+
+  flake-file.nixConfig.abort-on-warn = true;
 }

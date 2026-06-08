@@ -1,4 +1,9 @@
 {inputs, ...}: {
+  flake-file.inputs.treesitter-modules-nvim = {
+    flake = false;
+    url = "github:MeanderingProgrammer/treesitter-modules.nvim";
+  };
+
   armilaria = nixvimArgs @ {pkgs, ...}: {
     extraPlugins = [
       # TODO upstream OR treesitter-textobjects

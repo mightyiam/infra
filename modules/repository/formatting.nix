@@ -1,4 +1,16 @@
-{inputs, ...}: {
+{
+  inputs,
+  lib,
+  ...
+}: {
+  flake-file = {
+    inputs.treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      flake = false;
+    };
+    formatter = lib.getAttr "alejandra";
+  };
+
   imports = [(inputs.treefmt-nix + "/flake-module.nix")];
 
   perSystem = {

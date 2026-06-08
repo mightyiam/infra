@@ -1,4 +1,9 @@
 {inputs, ...}: {
+  flake-file.inputs.smart-scrolloff-nvim = {
+    flake = false;
+    url = "github:tonymajestro/smart-scrolloff.nvim";
+  };
+
   armilaria = {pkgs, ...}: {
     extraPlugins = [
       # TODO upstream

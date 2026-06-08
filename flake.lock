@@ -49,6 +49,21 @@
         "type": "github"
       }
     },
+    "flake-file": {
+      "locked": {
+        "lastModified": 1779051720,
+        "narHash": "sha256-+jbXnODsR19pFKB0x/6kHhFgW6yV6N+CGClFr45eDU8=",
+        "owner": "denful",
+        "repo": "flake-file",
+        "rev": "c58eb27d9434e5be0c8693f1eb18d47035bc21ba",
+        "type": "github"
+      },
+      "original": {
+        "owner": "denful",
+        "repo": "flake-file",
+        "type": "github"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
@@ -213,6 +228,7 @@
       "inputs": {
         "autoreload-nvim": "autoreload-nvim",
         "files": "files",
+        "flake-file": "flake-file",
         "flake-parts": "flake-parts",
         "git-hooks": "git-hooks",
         "home-manager": "home-manager",
@@ -225,7 +241,6 @@
         "refjump-nvim": "refjump-nvim",
         "smart-scrolloff-nvim": "smart-scrolloff-nvim",
         "stylix": "stylix",
-        "systems": "systems",
         "tinted-schemes": "tinted-schemes",
         "treefmt-nix": "treefmt-nix",
         "treesitter-modules-nvim": "treesitter-modules-nvim",
@@ -261,21 +276,6 @@
       "original": {
         "owner": "nix-community",
         "repo": "stylix",
-        "type": "github"
-      }
-    },
-    "systems": {
-      "locked": {
-        "lastModified": 1689347949,
-        "narHash": "sha256-12tWmuL2zgBgZkdoB6qXZsgJEH9LR3oUgpaQq2RbI80=",
-        "owner": "nix-systems",
-        "repo": "default-linux",
-        "rev": "31732fcf5e8fea42e59c2488ad31a0e651500f68",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-systems",
-        "repo": "default-linux",
         "type": "github"
       }
     },

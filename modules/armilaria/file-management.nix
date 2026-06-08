@@ -3,6 +3,11 @@
   inputs,
   ...
 }: {
+  flake-file.inputs.nvim-genghis = {
+    url = "github:chrisgrieser/nvim-genghis";
+    flake = false;
+  };
+
   armilaria = {pkgs, ...}: {
     extraPlugins = [
       # TODO upstream
