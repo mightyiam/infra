@@ -1,12 +1,5 @@
 ![Sci-fi looking server room](modules/banner/image.jpg)
 
-<a href="https://github.com/mightyiam/infra/actions/workflows/check.yaml?query=branch%3Amain">
-<img
-  alt="CI status"
-  src="https://img.shields.io/github/actions/workflow/status/mightyiam/infra/check.yaml?style=for-the-badge&branch=main&label=Check"
->
-</a>
-
 # mightyiam/infra
 
 mightyiam's [Nix](https://nix.dev)-powered "IT infrastructure" repository
@@ -35,7 +28,6 @@ This means files can be moved around and nested in directories freely.
 The following files in this repository are generated and checked
 using [the _files_ flake-parts module](https://github.com/mightyiam/files):
 
-- `.github/workflows/check.yaml`
 - `.gitignore`
 - `LICENSE`
 - `README.md`
@@ -53,23 +45,6 @@ default-shell = "/nix/store/9nx7s96vwz2h384zm8las332cbkqdszf-nix-shell"
 
 > [!NOTE]
 > Implemented in `modules/repository/all-check-store-paths.nix`.
-
-## Running checks on GitHub Actions
-
-Running this repository's flake checks on GitHub Actions is merely a bonus
-and possibly more of a liability.
-
-Workflow files are generated using
-[the _files_ flake-parts module](https://github.com/mightyiam/files).
-
-For better visibility, a job is spawned for each flake check.
-This is done dynamically.
-
-To prevent runners from running out of space,
-The action [Nothing but Nix](https://github.com/marketplace/actions/nothing-but-nix)
-is used.
-
-See `modules/repository/ci.nix`.
 
 ## Trying to disallow warnings
 

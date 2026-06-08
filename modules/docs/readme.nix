@@ -2,13 +2,11 @@
   text.readme = {
     order = [
       "banner"
-      "ci-badge"
       "intro"
       "dendritic"
       "auto-import"
       "files"
       "all-check-store-paths"
-      "github-actions"
       "prohibit-warnings"
     ];
 
