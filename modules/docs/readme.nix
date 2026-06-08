@@ -5,11 +5,11 @@
       "ci-badge"
       "intro"
       "dendritic"
-      "automatic-import"
+      "auto-import"
       "files"
       "all-check-store-paths"
       "github-actions"
-      "disallow-warnings"
+      "prohibit-warnings"
     ];
 
     parts.intro =
