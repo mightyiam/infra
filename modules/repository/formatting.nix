@@ -3,7 +3,6 @@
 
   perSystem = {
     treefmt = {
-      #projectRootFile = "flake.nix";
       programs = {
         prettier.enable = true;
         alejandra.enable = true;
