@@ -28,9 +28,7 @@
   };
 
   nixos.modules.base = {
-    services.kmscon.extraConfig = ''
-      dpms-timeout=60
-    '';
+    services.kmscon.config.dmps-timeout = 60;
   };
 
   home.gui = {pkgs, ...}: {

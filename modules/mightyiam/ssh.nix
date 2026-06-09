@@ -4,8 +4,8 @@
       enable = true;
       enableDefaultConfig = false;
       includes = ["${hmArgs.config.home.homeDirectory}/.ssh/hosts/*"];
-      matchBlocks."*" = {
-        setEnv.TERM = "xterm-256color";
+      settings."Host *" = {
+        "SetEnv TERM" = "xterm-256color";
         compression = true;
         identitiesOnly = true;
         hashKnownHosts = false;
