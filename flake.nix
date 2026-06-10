@@ -79,9 +79,5 @@
       url = "github:MeanderingProgrammer/treesitter-modules.nvim";
       flake = false;
     };
-    ucodenix = {
-      url = "github:e-tho/ucodenix";
-      flake = false;
-    };
   };
 }

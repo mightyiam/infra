@@ -16,12 +16,7 @@
     ];
     hardware.facter.reportPath = ./termitomyces.facter.json;
     system.stateVersion = "24.11";
-
-    services = {
-      openssh.publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB7usI+3jiHKYtWD7XAO8gWXKHJN4VZ67dh5x9oPvsQk";
-      ucodenix.enable = true;
-    };
-
+    services.openssh.publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB7usI+3jiHKYtWD7XAO8gWXKHJN4VZ67dh5x9oPvsQk";
     environment.variables.DXVK_FILTER_DEVICE_NAME = "RX 6600";
 
     # https://www.reddit.com/r/buildapc/comments/xypn1m/network_card_intel_ethernet_controller_i225v_igc/

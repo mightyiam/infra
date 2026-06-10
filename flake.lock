@@ -227,8 +227,7 @@
         "stylix": "stylix",
         "tinted-schemes": "tinted-schemes",
         "treefmt-nix": "treefmt-nix",
-        "treesitter-modules-nvim": "treesitter-modules-nvim",
-        "ucodenix": "ucodenix"
+        "treesitter-modules-nvim": "treesitter-modules-nvim"
       }
     },
     "smart-scrolloff-nvim": {
@@ -308,22 +307,6 @@
       "original": {
         "owner": "MeanderingProgrammer",
         "repo": "treesitter-modules.nvim",
-        "type": "github"
-      }
-    },
-    "ucodenix": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1780951954,
-        "narHash": "sha256-Yg/JMMMnHL7tMJmc3mrnHeoC/RmxHioa1jmZZF+aOGk=",
-        "owner": "e-tho",
-        "repo": "ucodenix",
-        "rev": "953f744811d7d97a17d41d2be618052f9984dfe5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "e-tho",
-        "repo": "ucodenix",
         "type": "github"
       }
     }
