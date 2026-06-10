@@ -20,6 +20,8 @@
           color = "#000000";
           duration = 200;
         };
+        # override stylix being unhelpful
+        font.normal.family = lib.mkForce "monospace";
       };
     };
   };

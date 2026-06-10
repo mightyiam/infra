@@ -1,6 +1,6 @@
 {lib, ...}: {
   home.gui = hmArgs @ {pkgs, ...}: {
-    home.packages = [pkgs.neovide];
+    home.packages = [pkgs.neovide hmArgs.config.fonts.bitmapEmojiFont.package];
 
     gui.editor.command = lib.getExe pkgs.neovide;
     home.sessionVariables.VISUAL = lib.getExe pkgs.neovide;
@@ -12,7 +12,7 @@
       cursor_vfx_particle_density = 20;
       fork = true;
       font = {
-        normal = [hmArgs.config.stylix.fonts.monospace.name];
+        normal = ["monospace" hmArgs.config.fonts.bitmapEmojiFont.name];
         size = hmArgs.config.stylix.fonts.sizes.applications;
       };
     };
