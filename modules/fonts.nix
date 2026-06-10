@@ -4,6 +4,7 @@
       pkgs.google-fonts
       pkgs.gucharmap
       pkgs.tlwg
+      pkgs.uni
     ];
   };
 
