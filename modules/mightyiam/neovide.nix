@@ -2,7 +2,6 @@
   home.gui = hmArgs: {
     home.packages = [hmArgs.config.fonts.bitmapEmojiFont.package];
     gui.editor.command = lib.getExe hmArgs.config.programs.neovide.package;
-    home.sessionVariables.VISUAL = lib.getExe hmArgs.config.programs.neovide.package;
 
     programs.neovide = {
       enable = true;
