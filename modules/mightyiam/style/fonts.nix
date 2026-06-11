@@ -1,15 +1,10 @@
 {
-  home.gui = {pkgs, ...}: {
+  home.gui = hmArgs @ {pkgs, ...}: let
+    cfg = hmArgs.config.stylix.fonts;
+  in {
     stylix.fonts = {
-      sansSerif = {
-        package = pkgs.open-dyslexic;
-        name = "OpenDyslexic";
-      };
-
-      serif = {
-        package = pkgs.open-dyslexic;
-        name = "OpenDyslexic";
-      };
+      sansSerif = cfg.monospace;
+      serif = cfg.monospace;
 
       monospace = {
         # TODO stop using nerd fonts because they were never a good idea?
