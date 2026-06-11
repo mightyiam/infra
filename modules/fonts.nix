@@ -30,6 +30,5 @@ in {
   homeManager.modules.gui = hmArgs: {
     imports = [polyModule];
     home.packages = [hmArgs.config.fonts.bitmapEmojiFont.package];
-    fonts.fontconfig.defaultFonts.monospace = [hmArgs.config.fonts.bitmapEmojiFont.name];
   };
 }
