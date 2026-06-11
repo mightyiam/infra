@@ -30,7 +30,7 @@
       forge = "github";
       owner = config.users.mightyiam.accounts.github.username;
       name = "infra";
-      defaultBranch = "main";
+      defaultBranch = "master";
     };
   };
 }
