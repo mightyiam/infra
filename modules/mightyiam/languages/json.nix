@@ -6,4 +6,11 @@
       jq
     ];
   };
+
+  armilaria = {
+    lsp.servers.jsonls = {
+      enable = true;
+      packageFallback = true;
+    };
+  };
 }
