@@ -1,6 +1,6 @@
 {lib, ...}: {
   home.gui = hmArgs: {
-    gui.editor.command = lib.getExe hmArgs.config.programs.neovide.package;
+    home.sessionVariables.VISUAL = lib.getExe hmArgs.config.programs.neovide.package;
 
     programs.neovide = {
       enable = true;
