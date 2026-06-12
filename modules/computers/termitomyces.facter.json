@@ -2,6 +2,10 @@
   "version": 1,
   "system": "x86_64-linux",
   "virtualisation": "none",
+  "uefi": {
+    "supported": true,
+    "platform_size": 64
+  },
   "hardware": {
     "bios": {
       "apm_info": {
@@ -23,8 +27,8 @@
     },
     "bluetooth": [
       {
-        "index": 97,
-        "attached_to": 125,
+        "index": 108,
+        "attached_to": 140,
         "class_list": ["usb", "bluetooth"],
         "bus_type": {
           "hex": "0086",
@@ -118,8 +122,8 @@
         "module_alias": "usb:v0489pE0E2d0100dcEFdsc02dp01icE0isc01ip01in00"
       },
       {
-        "index": 116,
-        "attached_to": 125,
+        "index": 129,
+        "attached_to": 140,
         "class_list": ["usb", "bluetooth"],
         "bus_type": {
           "hex": "0086",
@@ -213,8 +217,8 @@
         "module_alias": "usb:v0489pE0E2d0100dcEFdsc02dp01icE0isc01ip01in01"
       },
       {
-        "index": 136,
-        "attached_to": 125,
+        "index": 149,
+        "attached_to": 140,
         "class_list": ["usb", "bluetooth"],
         "bus_type": {
           "hex": "0086",
@@ -310,8 +314,8 @@
     ],
     "bridge": [
       {
-        "index": 37,
-        "attached_to": 58,
+        "index": 41,
+        "attached_to": 62,
         "class_list": ["pci", "bridge"],
         "bus_type": {
           "hex": "0004",
@@ -376,7 +380,7 @@
         "module_alias": "pci:v00001022d000043F5sv00001B21sd00003328bc06sc04i00"
       },
       {
-        "index": 39,
+        "index": 43,
         "attached_to": 0,
         "class_list": ["pci", "bridge"],
         "bus_type": {
@@ -421,7 +425,7 @@
         "module_alias": "pci:v00001022d000014DAsv00000000sd00000000bc06sc00i00"
       },
       {
-        "index": 40,
+        "index": 44,
         "attached_to": 0,
         "class_list": ["pci", "bridge"],
         "bus_type": {
@@ -470,8 +474,8 @@
         "module_alias": "pci:v00001022d000014E3sv00000000sd00000000bc06sc00i00"
       },
       {
-        "index": 42,
-        "attached_to": 58,
+        "index": 46,
+        "attached_to": 62,
         "class_list": ["pci", "bridge"],
         "bus_type": {
           "hex": "0004",
@@ -536,8 +540,8 @@
         "module_alias": "pci:v00001022d000043F5sv00001B21sd00003328bc06sc04i00"
       },
       {
-        "index": 43,
-        "attached_to": 58,
+        "index": 47,
+        "attached_to": 62,
         "class_list": ["pci", "bridge"],
         "bus_type": {
           "hex": "0004",
@@ -602,7 +606,7 @@
         "module_alias": "pci:v00001022d000043F5sv00001B21sd00003328bc06sc04i00"
       },
       {
-        "index": 45,
+        "index": 49,
         "attached_to": 0,
         "class_list": ["pci", "bridge"],
         "bus_type": {
@@ -647,8 +651,8 @@
         "module_alias": "pci:v00001022d000014E1sv00000000sd00000000bc06sc00i00"
       },
       {
-        "index": 46,
-        "attached_to": 55,
+        "index": 50,
+        "attached_to": 59,
         "class_list": ["pci", "bridge"],
         "bus_type": {
           "hex": "0004",
@@ -710,7 +714,7 @@
         "module_alias": "pci:v00001002d00001479sv00001002sd00001479bc06sc04i00"
       },
       {
-        "index": 47,
+        "index": 51,
         "attached_to": 0,
         "class_list": ["pci", "bridge"],
         "bus_type": {
@@ -755,8 +759,8 @@
         "module_alias": "pci:v00001022d000014DAsv00000000sd00000000bc06sc00i00"
       },
       {
-        "index": 49,
-        "attached_to": 58,
+        "index": 53,
+        "attached_to": 62,
         "class_list": ["pci", "bridge"],
         "bus_type": {
           "hex": "0004",
@@ -821,7 +825,7 @@
         "module_alias": "pci:v00001022d000043F5sv00001B21sd00003328bc06sc04i00"
       },
       {
-        "index": 50,
+        "index": 54,
         "attached_to": 0,
         "class_list": ["pci", "bridge"],
         "bus_type": {
@@ -866,8 +870,8 @@
         "module_alias": "pci:v00001022d000014DAsv00000000sd00000000bc06sc00i00"
       },
       {
-        "index": 51,
-        "attached_to": 83,
+        "index": 55,
+        "attached_to": 87,
         "class_list": ["pci", "bridge"],
         "bus_type": {
           "hex": "0004",
@@ -932,7 +936,7 @@
         "module_alias": "pci:v00001022d000043F5sv00001B21sd00003328bc06sc04i00"
       },
       {
-        "index": 52,
+        "index": 56,
         "attached_to": 0,
         "class_list": ["pci", "bridge"],
         "bus_type": {
@@ -989,8 +993,8 @@
         "module_alias": "pci:v00001022d0000790Esv00001043sd00008877bc06sc01i00"
       },
       {
-        "index": 54,
-        "attached_to": 83,
+        "index": 58,
+        "attached_to": 87,
         "class_list": ["pci", "bridge"],
         "bus_type": {
           "hex": "0004",
@@ -1055,8 +1059,8 @@
         "module_alias": "pci:v00001022d000043F5sv00001B21sd00003328bc06sc04i00"
       },
       {
-        "index": 55,
-        "attached_to": 75,
+        "index": 59,
+        "attached_to": 79,
         "class_list": ["pci", "bridge"],
         "bus_type": {
           "hex": "0004",
@@ -1113,7 +1117,7 @@
         "module_alias": "pci:v00001002d00001478sv00000000sd00000000bc06sc04i00"
       },
       {
-        "index": 56,
+        "index": 60,
         "attached_to": 0,
         "class_list": ["pci", "bridge"],
         "bus_type": {
@@ -1175,8 +1179,8 @@
         "module_alias": "pci:v00001022d000014DBsv00001043sd00008877bc06sc04i00"
       },
       {
-        "index": 58,
-        "attached_to": 51,
+        "index": 62,
+        "attached_to": 55,
         "class_list": ["pci", "bridge"],
         "bus_type": {
           "hex": "0004",
@@ -1241,8 +1245,8 @@
         "module_alias": "pci:v00001022d000043F4sv00001B21sd00003328bc06sc04i00"
       },
       {
-        "index": 60,
-        "attached_to": 58,
+        "index": 64,
+        "attached_to": 62,
         "class_list": ["pci", "bridge"],
         "bus_type": {
           "hex": "0004",
@@ -1307,7 +1311,7 @@
         "module_alias": "pci:v00001022d000043F5sv00001B21sd00003328bc06sc04i00"
       },
       {
-        "index": 61,
+        "index": 65,
         "attached_to": 0,
         "class_list": ["pci", "bridge"],
         "bus_type": {
@@ -1369,7 +1373,7 @@
         "module_alias": "pci:v00001022d000014DDsv00001043sd00008877bc06sc04i00"
       },
       {
-        "index": 62,
+        "index": 66,
         "attached_to": 0,
         "class_list": ["pci", "bridge"],
         "bus_type": {
@@ -1414,7 +1418,7 @@
         "module_alias": "pci:v00001022d000014E6sv00000000sd00000000bc06sc00i00"
       },
       {
-        "index": 65,
+        "index": 69,
         "attached_to": 0,
         "class_list": ["pci", "bridge"],
         "bus_type": {
@@ -1466,7 +1470,7 @@
         "module_alias": "pci:v00001022d000014D8sv00001043sd00008877bc06sc00i00"
       },
       {
-        "index": 67,
+        "index": 71,
         "attached_to": 0,
         "class_list": ["pci", "bridge"],
         "bus_type": {
@@ -1528,7 +1532,7 @@
         "module_alias": "pci:v00001022d000014DDsv00001043sd00008877bc06sc04i00"
       },
       {
-        "index": 68,
+        "index": 72,
         "attached_to": 0,
         "class_list": ["pci", "bridge"],
         "bus_type": {
@@ -1573,7 +1577,7 @@
         "module_alias": "pci:v00001022d000014E4sv00000000sd00000000bc06sc00i00"
       },
       {
-        "index": 70,
+        "index": 74,
         "attached_to": 0,
         "class_list": ["pci", "bridge"],
         "bus_type": {
@@ -1618,8 +1622,8 @@
         "module_alias": "pci:v00001022d000014DAsv00000000sd00000000bc06sc00i00"
       },
       {
-        "index": 72,
-        "attached_to": 83,
+        "index": 76,
+        "attached_to": 87,
         "class_list": ["pci", "bridge"],
         "bus_type": {
           "hex": "0004",
@@ -1684,7 +1688,7 @@
         "module_alias": "pci:v00001022d000043F5sv00001B21sd00003328bc06sc04i00"
       },
       {
-        "index": 74,
+        "index": 78,
         "attached_to": 0,
         "class_list": ["pci", "bridge"],
         "bus_type": {
@@ -1729,7 +1733,7 @@
         "module_alias": "pci:v00001022d000014E2sv00000000sd00000000bc06sc00i00"
       },
       {
-        "index": 75,
+        "index": 79,
         "attached_to": 0,
         "class_list": ["pci", "bridge"],
         "bus_type": {
@@ -1791,8 +1795,8 @@
         "module_alias": "pci:v00001022d000014DBsv00001043sd00008877bc06sc04i00"
       },
       {
-        "index": 76,
-        "attached_to": 83,
+        "index": 80,
+        "attached_to": 87,
         "class_list": ["pci", "bridge"],
         "bus_type": {
           "hex": "0004",
@@ -1857,8 +1861,8 @@
         "module_alias": "pci:v00001022d000043F5sv00001B21sd00003328bc06sc04i00"
       },
       {
-        "index": 77,
-        "attached_to": 58,
+        "index": 81,
+        "attached_to": 62,
         "class_list": ["pci", "bridge"],
         "bus_type": {
           "hex": "0004",
@@ -1923,7 +1927,7 @@
         "module_alias": "pci:v00001022d000043F5sv00001B21sd00003328bc06sc04i00"
       },
       {
-        "index": 78,
+        "index": 82,
         "attached_to": 0,
         "class_list": ["pci", "bridge"],
         "bus_type": {
@@ -1968,7 +1972,7 @@
         "module_alias": "pci:v00001022d000014E0sv00000000sd00000000bc06sc00i00"
       },
       {
-        "index": 80,
+        "index": 84,
         "attached_to": 0,
         "class_list": ["pci", "bridge"],
         "bus_type": {
@@ -2030,8 +2034,8 @@
         "module_alias": "pci:v00001022d000014DBsv00001043sd00008877bc06sc04i00"
       },
       {
-        "index": 81,
-        "attached_to": 58,
+        "index": 85,
+        "attached_to": 62,
         "class_list": ["pci", "bridge"],
         "bus_type": {
           "hex": "0004",
@@ -2096,8 +2100,8 @@
         "module_alias": "pci:v00001022d000043F5sv00001B21sd00003328bc06sc04i00"
       },
       {
-        "index": 82,
-        "attached_to": 58,
+        "index": 86,
+        "attached_to": 62,
         "class_list": ["pci", "bridge"],
         "bus_type": {
           "hex": "0004",
@@ -2162,8 +2166,8 @@
         "module_alias": "pci:v00001022d000043F5sv00001B21sd00003328bc06sc04i00"
       },
       {
-        "index": 83,
-        "attached_to": 56,
+        "index": 87,
+        "attached_to": 60,
         "class_list": ["pci", "bridge"],
         "bus_type": {
           "hex": "0004",
@@ -2228,7 +2232,7 @@
         "module_alias": "pci:v00001022d000043F4sv00001B21sd00003328bc06sc04i00"
       },
       {
-        "index": 84,
+        "index": 88,
         "attached_to": 0,
         "class_list": ["pci", "bridge"],
         "bus_type": {
@@ -2273,7 +2277,7 @@
         "module_alias": "pci:v00001022d000014DAsv00000000sd00000000bc06sc00i00"
       },
       {
-        "index": 85,
+        "index": 89,
         "attached_to": 0,
         "class_list": ["pci", "bridge"],
         "bus_type": {
@@ -2318,7 +2322,7 @@
         "module_alias": "pci:v00001022d000014E7sv00000000sd00000000bc06sc00i00"
       },
       {
-        "index": 88,
+        "index": 92,
         "attached_to": 0,
         "class_list": ["pci", "bridge"],
         "bus_type": {
@@ -2363,202 +2367,11 @@
         "module_alias": "pci:v00001022d000014E5sv00000000sd00000000bc06sc00i00"
       }
     ],
-    "camera": [
-      {
-        "index": 108,
-        "attached_to": 106,
-        "class_list": ["camera", "usb"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "010f",
-          "name": "Camera",
-          "value": 271
-        },
-        "vendor": {
-          "hex": "046d",
-          "name": "Logitech Inc.",
-          "value": 1133
-        },
-        "device": {
-          "hex": "082d",
-          "name": "HD Pro Webcam C920",
-          "value": 2093
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "0.11",
-          "value": 0
-        },
-        "serial": "9B749FDF",
-        "model": "Logitech HD Pro Webcam C920",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:0c.0/0000:11:00.0/usb3/3-4/3-4:1.0",
-        "sysfs_bus_id": "3-4:1.0",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 480000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "00ef",
-            "name": "miscellaneous",
-            "value": 239
-          },
-          "device_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "device_protocol": 1,
-          "interface_class": {
-            "hex": "000e",
-            "name": "video",
-            "value": 14
-          },
-          "interface_subclass": {
-            "hex": "0001",
-            "name": "audio",
-            "value": 1
-          },
-          "interface_protocol": 0,
-          "interface_number": 0,
-          "interface_alternate_setting": 0,
-          "interface_association": {
-            "function_class": {
-              "hex": "000e",
-              "name": "video",
-              "value": 14
-            },
-            "function_subclass": {
-              "hex": "0003",
-              "name": "hid",
-              "value": 3
-            },
-            "function_protocol": 0,
-            "interface_count": 2,
-            "first_interface": 0
-          }
-        },
-        "hotplug": "usb",
-        "driver": "uvcvideo",
-        "driver_module": "uvcvideo",
-        "drivers": ["uvcvideo"],
-        "driver_modules": ["uvcvideo"],
-        "module_alias": "usb:v046Dp082Dd0011dcEFdsc02dp01ic0Eisc01ip00in00"
-      },
-      {
-        "index": 128,
-        "attached_to": 106,
-        "class_list": ["camera", "usb"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "010f",
-          "name": "Camera",
-          "value": 271
-        },
-        "vendor": {
-          "hex": "046d",
-          "name": "Logitech Inc.",
-          "value": 1133
-        },
-        "device": {
-          "hex": "082d",
-          "name": "HD Pro Webcam C920",
-          "value": 2093
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "0.11",
-          "value": 0
-        },
-        "serial": "9B749FDF",
-        "model": "Logitech HD Pro Webcam C920",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:0c.0/0000:11:00.0/usb3/3-4/3-4:1.1",
-        "sysfs_bus_id": "3-4:1.1",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 480000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "00ef",
-            "name": "miscellaneous",
-            "value": 239
-          },
-          "device_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "device_protocol": 1,
-          "interface_class": {
-            "hex": "000e",
-            "name": "video",
-            "value": 14
-          },
-          "interface_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "interface_protocol": 0,
-          "interface_number": 1,
-          "interface_alternate_setting": 0,
-          "interface_association": {
-            "function_class": {
-              "hex": "000e",
-              "name": "video",
-              "value": 14
-            },
-            "function_subclass": {
-              "hex": "0003",
-              "name": "hid",
-              "value": 3
-            },
-            "function_protocol": 0,
-            "interface_count": 2,
-            "first_interface": 0
-          }
-        },
-        "hotplug": "usb",
-        "driver": "uvcvideo",
-        "driver_module": "uvcvideo",
-        "drivers": ["uvcvideo"],
-        "driver_modules": ["uvcvideo"],
-        "module_alias": "usb:v046Dp082Dd0011dcEFdsc02dp01ic0Eisc02ip00in01"
-      }
-    ],
     "cpu": [
       {
         "architecture": "x86_64",
         "vendor_name": "AuthenticAMD",
+        "model_name": "AMD Ryzen 9 7950X 16-Core Processor",
         "family": 25,
         "model": 97,
         "stepping": 2,
@@ -2638,6 +2451,7 @@
           "bpext",
           "perfctr_llc",
           "mwaitx",
+          "cpuid_fault",
           "cpb",
           "cat_l3",
           "cdp_l3",
@@ -2703,8 +2517,7 @@
           "x2avic",
           "v_spec_ctrl",
           "vnmi",
-          "avx512vbmi",
-          "umip"
+          "avx"
         ],
         "bugs": [
           "sysret_ss_attrs",
@@ -2712,7 +2525,9 @@
           "spectre_v2",
           "spec_store_bypass",
           "srso",
-          "tsa"
+          "spectre_v2_user",
+          "tsa",
+          "vmscape"
         ],
         "power_management": [
           "ts",
@@ -2727,11 +2542,12 @@
         "bogo": 8982,
         "cache": 1024,
         "units": 32,
+        "page_size": 4096,
         "physical_id": 0,
         "siblings": 32,
         "cores": 16,
-        "fpu": true,
-        "fpu_exception": true,
+        "fpu": false,
+        "fpu_exception": false,
         "cpuid_level": 16,
         "write_protect": false,
         "tlb_size": 3584,
@@ -2743,229 +2559,10 @@
         }
       }
     ],
-    "disk": [
-      {
-        "index": 93,
-        "attached_to": 41,
-        "class_list": ["disk", "block_device", "nvme"],
-        "bus_type": {
-          "hex": "0096",
-          "name": "NVME",
-          "value": 150
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0106",
-          "name": "Mass Storage Device",
-          "value": 262
-        },
-        "sub_class": {
-          "hex": "0000",
-          "name": "Disk",
-          "value": 0
-        },
-        "vendor": {
-          "hex": "144d",
-          "value": 5197
-        },
-        "sub_vendor": {
-          "hex": "144d",
-          "value": 5197
-        },
-        "device": {
-          "hex": "a809",
-          "name": "Samsung SSD 980 1TB",
-          "value": 43017
-        },
-        "sub_device": {
-          "hex": "a801",
-          "value": 43009
-        },
-        "serial": "S649NF0R636466Z",
-        "model": "Samsung SSD 980 1TB",
-        "sysfs_id": "/class/block/nvme0n1",
-        "sysfs_bus_id": "nvme0",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:08.0/0000:07:00.0/0000:08:00.0/0000:09:00.0/nvme/nvme0",
-        "unix_device_names": [
-          "/dev/disk/by-id/nvme-Samsung_SSD_980_1TB_S649NF0R636466Z",
-          "/dev/disk/by-id/nvme-Samsung_SSD_980_1TB_S649NF0R636466Z_1",
-          "/dev/disk/by-id/nvme-eui.002538d611b13723",
-          "/dev/disk/by-path/pci-0000:09:00.0-nvme-1",
-          "/dev/nvme0n1"
-        ],
-        "resources": [
-          {
-            "type": "disk_geo",
-            "cylinders": 953869,
-            "heads": 64,
-            "sectors": 32,
-            "size": "0x0",
-            "geo_type": "logical"
-          },
-          {
-            "type": "size",
-            "unit": "sectors",
-            "value_1": 1953525168,
-            "value_2": 512
-          }
-        ],
-        "driver": "nvme",
-        "driver_module": "nvme",
-        "drivers": ["nvme"],
-        "driver_modules": ["nvme"]
-      },
-      {
-        "index": 94,
-        "attached_to": 53,
-        "class_list": ["disk", "block_device", "nvme"],
-        "bus_type": {
-          "hex": "0096",
-          "name": "NVME",
-          "value": 150
-        },
-        "slot": {
-          "bus": 0,
-          "number": 1
-        },
-        "base_class": {
-          "hex": "0106",
-          "name": "Mass Storage Device",
-          "value": 262
-        },
-        "sub_class": {
-          "hex": "0000",
-          "name": "Disk",
-          "value": 0
-        },
-        "vendor": {
-          "hex": "144d",
-          "value": 5197
-        },
-        "sub_vendor": {
-          "hex": "144d",
-          "value": 5197
-        },
-        "device": {
-          "hex": "a809",
-          "name": "Samsung SSD 980 1TB",
-          "value": 43017
-        },
-        "sub_device": {
-          "hex": "a801",
-          "value": 43009
-        },
-        "serial": "S649NF0R636457L",
-        "model": "Samsung SSD 980 1TB",
-        "sysfs_id": "/class/block/nvme1n1",
-        "sysfs_bus_id": "nvme1",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:02.2/0000:13:00.0/nvme/nvme1",
-        "unix_device_names": [
-          "/dev/disk/by-id/nvme-Samsung_SSD_980_1TB_S649NF0R636457L",
-          "/dev/disk/by-id/nvme-Samsung_SSD_980_1TB_S649NF0R636457L_1",
-          "/dev/disk/by-id/nvme-eui.002538d611b1371a",
-          "/dev/disk/by-path/pci-0000:13:00.0-nvme-1",
-          "/dev/nvme1n1"
-        ],
-        "resources": [
-          {
-            "type": "disk_geo",
-            "cylinders": 953869,
-            "heads": 64,
-            "sectors": 32,
-            "size": "0x0",
-            "geo_type": "logical"
-          },
-          {
-            "type": "size",
-            "unit": "sectors",
-            "value_1": 1953525168,
-            "value_2": 512
-          }
-        ],
-        "driver": "nvme",
-        "driver_module": "nvme",
-        "drivers": ["nvme"],
-        "driver_modules": ["nvme"]
-      },
-      {
-        "index": 95,
-        "attached_to": 63,
-        "class_list": ["disk", "ide", "block_device"],
-        "bus_type": {
-          "hex": "0085",
-          "name": "IDE",
-          "value": 133
-        },
-        "slot": {
-          "bus": 7,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0106",
-          "name": "Mass Storage Device",
-          "value": 262
-        },
-        "sub_class": {
-          "hex": "0000",
-          "name": "Disk",
-          "value": 0
-        },
-        "vendor": {
-          "hex": "0000",
-          "name": "Samsung",
-          "value": 0
-        },
-        "device": {
-          "hex": "0000",
-          "name": "SSD 840",
-          "value": 0
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "CB6Q",
-          "value": 0
-        },
-        "serial": "S1DBNSBFA57747Y",
-        "model": "Samsung SSD 840",
-        "sysfs_id": "/class/block/sda",
-        "sysfs_bus_id": "7:0:0:0",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:0d.0/0000:12:00.0/ata8/host7/target7:0:0/7:0:0:0",
-        "unix_device_names": [
-          "/dev/disk/by-id/ata-Samsung_SSD_840_EVO_250GB_S1DBNSBFA57747Y",
-          "/dev/disk/by-id/wwn-0x50025388a0781207",
-          "/dev/disk/by-path/pci-0000:12:00.0-ata-2",
-          "/dev/disk/by-path/pci-0000:12:00.0-ata-2.0",
-          "/dev/sda"
-        ],
-        "resources": [
-          {
-            "type": "disk_geo",
-            "cylinders": 30401,
-            "heads": 255,
-            "sectors": 63,
-            "size": "0x0",
-            "geo_type": "logical"
-          },
-          {
-            "type": "size",
-            "unit": "sectors",
-            "value_1": 488397168,
-            "value_2": 512
-          }
-        ],
-        "driver": "ahci",
-        "driver_module": "ahci",
-        "drivers": ["ahci", "sd"],
-        "driver_modules": ["ahci", "sd_mod"]
-      }
-    ],
     "graphics_card": [
       {
-        "index": 36,
-        "attached_to": 46,
+        "index": 40,
+        "attached_to": 50,
         "class_list": ["graphics_card", "pci"],
         "bus_type": {
           "hex": "0004",
@@ -3020,7 +2617,7 @@
           {
             "type": "io",
             "base": 61440,
-            "range": 256,
+            "range": 4096,
             "enabled": true,
             "access": "read_write"
           }
@@ -3039,8 +2636,8 @@
         "module_alias": "pci:v00001002d000073FFsv00001043sd000005D3bc03sc00i00"
       },
       {
-        "index": 44,
-        "attached_to": 67,
+        "index": 48,
+        "attached_to": 71,
         "class_list": ["graphics_card", "pci"],
         "bus_type": {
           "hex": "0004",
@@ -3095,7 +2692,7 @@
           {
             "type": "io",
             "base": 57344,
-            "range": 256,
+            "range": 4096,
             "enabled": true,
             "access": "read_write"
           }
@@ -3116,8 +2713,8 @@
     ],
     "hub": [
       {
-        "index": 100,
-        "attached_to": 66,
+        "index": 111,
+        "attached_to": 70,
         "class_list": ["usb", "hub"],
         "bus_type": {
           "hex": "0086",
@@ -3135,7 +2732,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.39 xhci-hcd",
+          "name": "Linux 6.18.35 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -3145,11 +2742,11 @@
         },
         "revision": {
           "hex": "0000",
-          "name": "6.12",
+          "name": "6.18",
           "value": 0
         },
         "serial": "0000:14:00.3",
-        "model": "Linux 6.12.39 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.18.35 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:14:00.3/usb6/6-0:1.0",
         "sysfs_bus_id": "6-0:1.0",
         "detail": {
@@ -3183,11 +2780,90 @@
         "driver_module": "usbcore",
         "drivers": ["hub"],
         "driver_modules": ["usbcore"],
-        "module_alias": "usb:v1D6Bp0003d0612dc09dsc00dp03ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0003d0618dc09dsc00dp03ic09isc00ip00in00"
       },
       {
-        "index": 106,
-        "attached_to": 73,
+        "index": 118,
+        "attached_to": 140,
+        "class_list": ["usb", "hub"],
+        "bus_type": {
+          "hex": "0086",
+          "name": "USB",
+          "value": 134
+        },
+        "slot": {
+          "bus": 0,
+          "number": 0
+        },
+        "base_class": {
+          "hex": "010a",
+          "name": "Hub",
+          "value": 266
+        },
+        "vendor": {
+          "hex": "05e3",
+          "name": "GenesysLogic",
+          "value": 1507
+        },
+        "device": {
+          "hex": "0610",
+          "name": "USB2.1 Hub",
+          "value": 1552
+        },
+        "revision": {
+          "hex": "0000",
+          "name": "6.63",
+          "value": 0
+        },
+        "model": "GenesysLogic USB2.1 Hub",
+        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:08.0/0000:07:00.0/0000:08:0c.0/0000:0f:00.0/usb1/1-2/1-2:1.0",
+        "sysfs_bus_id": "1-2:1.0",
+        "resources": [
+          {
+            "type": "baud",
+            "speed": 480000000,
+            "bits": 0,
+            "stop_bits": 0,
+            "parity": 0,
+            "handshake": 0
+          }
+        ],
+        "detail": {
+          "device_class": {
+            "hex": "0009",
+            "name": "hub",
+            "value": 9
+          },
+          "device_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
+          "device_protocol": 1,
+          "interface_class": {
+            "hex": "0009",
+            "name": "hub",
+            "value": 9
+          },
+          "interface_subclass": {
+            "hex": "0000",
+            "name": "per_interface",
+            "value": 0
+          },
+          "interface_protocol": 0,
+          "interface_number": 0,
+          "interface_alternate_setting": 0
+        },
+        "hotplug": "usb",
+        "driver": "hub",
+        "driver_module": "usbcore",
+        "drivers": ["hub"],
+        "driver_modules": ["usbcore"],
+        "module_alias": "usb:v05E3p0610d0663dc09dsc00dp01ic09isc00ip00in00"
+      },
+      {
+        "index": 121,
+        "attached_to": 77,
         "class_list": ["usb", "hub"],
         "bus_type": {
           "hex": "0086",
@@ -3205,7 +2881,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.39 xhci-hcd",
+          "name": "Linux 6.18.35 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -3215,11 +2891,11 @@
         },
         "revision": {
           "hex": "0000",
-          "name": "6.12",
+          "name": "6.18",
           "value": 0
         },
         "serial": "0000:11:00.0",
-        "model": "Linux 6.12.39 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.18.35 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:0c.0/0000:11:00.0/usb3/3-0:1.0",
         "sysfs_bus_id": "3-0:1.0",
         "resources": [
@@ -3263,11 +2939,11 @@
         "driver_module": "usbcore",
         "drivers": ["hub"],
         "driver_modules": ["usbcore"],
-        "module_alias": "usb:v1D6Bp0002d0612dc09dsc00dp01ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0002d0618dc09dsc00dp01ic09isc00ip00in00"
       },
       {
-        "index": 110,
-        "attached_to": 87,
+        "index": 126,
+        "attached_to": 91,
         "class_list": ["usb", "hub"],
         "bus_type": {
           "hex": "0086",
@@ -3285,7 +2961,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.39 xhci-hcd",
+          "name": "Linux 6.18.35 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -3295,11 +2971,11 @@
         },
         "revision": {
           "hex": "0000",
-          "name": "6.12",
+          "name": "6.18",
           "value": 0
         },
         "serial": "0000:14:00.4",
-        "model": "Linux 6.12.39 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.18.35 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:14:00.4/usb7/7-0:1.0",
         "sysfs_bus_id": "7-0:1.0",
         "resources": [
@@ -3343,11 +3019,11 @@
         "driver_module": "usbcore",
         "drivers": ["hub"],
         "driver_modules": ["usbcore"],
-        "module_alias": "usb:v1D6Bp0002d0612dc09dsc00dp01ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0002d0618dc09dsc00dp01ic09isc00ip00in00"
       },
       {
-        "index": 113,
-        "attached_to": 89,
+        "index": 132,
+        "attached_to": 77,
         "class_list": ["usb", "hub"],
         "bus_type": {
           "hex": "0086",
@@ -3365,7 +3041,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.39 xhci-hcd",
+          "name": "Linux 6.18.35 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -3375,77 +3051,11 @@
         },
         "revision": {
           "hex": "0000",
-          "name": "6.12",
-          "value": 0
-        },
-        "serial": "0000:15:00.0",
-        "model": "Linux 6.12.39 xhci-hcd xHCI Host Controller",
-        "sysfs_id": "/devices/pci0000:00/0000:00:08.3/0000:15:00.0/usb10/10-0:1.0",
-        "sysfs_bus_id": "10-0:1.0",
-        "detail": {
-          "device_class": {
-            "hex": "0009",
-            "name": "hub",
-            "value": 9
-          },
-          "device_subclass": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "device_protocol": 3,
-          "interface_class": {
-            "hex": "0009",
-            "name": "hub",
-            "value": 9
-          },
-          "interface_subclass": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "interface_protocol": 0,
-          "interface_number": 0,
-          "interface_alternate_setting": 0
-        },
-        "hotplug": "usb",
-        "module_alias": "usb:v1D6Bp0003d0612dc09dsc00dp03ic09isc00ip00in00"
-      },
-      {
-        "index": 118,
-        "attached_to": 73,
-        "class_list": ["usb", "hub"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "010a",
-          "name": "Hub",
-          "value": 266
-        },
-        "vendor": {
-          "hex": "1d6b",
-          "name": "Linux 6.12.39 xhci-hcd",
-          "value": 7531
-        },
-        "device": {
-          "hex": "0003",
-          "name": "xHCI Host Controller",
-          "value": 3
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "6.12",
+          "name": "6.18",
           "value": 0
         },
         "serial": "0000:11:00.0",
-        "model": "Linux 6.12.39 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.18.35 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:0c.0/0000:11:00.0/usb4/4-0:1.0",
         "sysfs_bus_id": "4-0:1.0",
         "detail": {
@@ -3479,11 +3089,11 @@
         "driver_module": "usbcore",
         "drivers": ["hub"],
         "driver_modules": ["usbcore"],
-        "module_alias": "usb:v1D6Bp0003d0612dc09dsc00dp03ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0003d0618dc09dsc00dp03ic09isc00ip00in00"
       },
       {
-        "index": 122,
-        "attached_to": 87,
+        "index": 136,
+        "attached_to": 91,
         "class_list": ["usb", "hub"],
         "bus_type": {
           "hex": "0086",
@@ -3501,7 +3111,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.39 xhci-hcd",
+          "name": "Linux 6.18.35 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -3511,11 +3121,11 @@
         },
         "revision": {
           "hex": "0000",
-          "name": "6.12",
+          "name": "6.18",
           "value": 0
         },
         "serial": "0000:14:00.4",
-        "model": "Linux 6.12.39 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.18.35 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:14:00.4/usb8/8-0:1.0",
         "sysfs_bus_id": "8-0:1.0",
         "detail": {
@@ -3549,11 +3159,11 @@
         "driver_module": "usbcore",
         "drivers": ["hub"],
         "driver_modules": ["usbcore"],
-        "module_alias": "usb:v1D6Bp0003d0612dc09dsc00dp03ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0003d0618dc09dsc00dp03ic09isc00ip00in00"
       },
       {
-        "index": 125,
-        "attached_to": 69,
+        "index": 140,
+        "attached_to": 73,
         "class_list": ["usb", "hub"],
         "bus_type": {
           "hex": "0086",
@@ -3571,7 +3181,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.39 xhci-hcd",
+          "name": "Linux 6.18.35 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -3581,11 +3191,11 @@
         },
         "revision": {
           "hex": "0000",
-          "name": "6.12",
+          "name": "6.18",
           "value": 0
         },
         "serial": "0000:0f:00.0",
-        "model": "Linux 6.12.39 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.18.35 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:08.0/0000:07:00.0/0000:08:0c.0/0000:0f:00.0/usb1/1-0:1.0",
         "sysfs_bus_id": "1-0:1.0",
         "resources": [
@@ -3629,11 +3239,11 @@
         "driver_module": "usbcore",
         "drivers": ["hub"],
         "driver_modules": ["usbcore"],
-        "module_alias": "usb:v1D6Bp0002d0612dc09dsc00dp01ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0002d0618dc09dsc00dp01ic09isc00ip00in00"
       },
       {
-        "index": 130,
-        "attached_to": 66,
+        "index": 146,
+        "attached_to": 70,
         "class_list": ["usb", "hub"],
         "bus_type": {
           "hex": "0086",
@@ -3651,7 +3261,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.39 xhci-hcd",
+          "name": "Linux 6.18.35 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -3661,11 +3271,11 @@
         },
         "revision": {
           "hex": "0000",
-          "name": "6.12",
+          "name": "6.18",
           "value": 0
         },
         "serial": "0000:14:00.3",
-        "model": "Linux 6.12.39 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.18.35 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:08.1/0000:14:00.3/usb5/5-0:1.0",
         "sysfs_bus_id": "5-0:1.0",
         "resources": [
@@ -3709,11 +3319,11 @@
         "driver_module": "usbcore",
         "drivers": ["hub"],
         "driver_modules": ["usbcore"],
-        "module_alias": "usb:v1D6Bp0002d0612dc09dsc00dp01ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0002d0618dc09dsc00dp01ic09isc00ip00in00"
       },
       {
-        "index": 134,
-        "attached_to": 89,
+        "index": 148,
+        "attached_to": 93,
         "class_list": ["usb", "hub"],
         "bus_type": {
           "hex": "0086",
@@ -3731,7 +3341,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.39 xhci-hcd",
+          "name": "Linux 6.18.35 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -3741,11 +3351,11 @@
         },
         "revision": {
           "hex": "0000",
-          "name": "6.12",
+          "name": "6.18",
           "value": 0
         },
         "serial": "0000:15:00.0",
-        "model": "Linux 6.12.39 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.18.35 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:08.3/0000:15:00.0/usb9/9-0:1.0",
         "sysfs_bus_id": "9-0:1.0",
         "resources": [
@@ -3789,11 +3399,11 @@
         "driver_module": "usbcore",
         "drivers": ["hub"],
         "driver_modules": ["usbcore"],
-        "module_alias": "usb:v1D6Bp0002d0612dc09dsc00dp01ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0002d0618dc09dsc00dp01ic09isc00ip00in00"
       },
       {
-        "index": 139,
-        "attached_to": 69,
+        "index": 153,
+        "attached_to": 73,
         "class_list": ["usb", "hub"],
         "bus_type": {
           "hex": "0086",
@@ -3811,7 +3421,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.12.39 xhci-hcd",
+          "name": "Linux 6.18.35 xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -3821,11 +3431,11 @@
         },
         "revision": {
           "hex": "0000",
-          "name": "6.12",
+          "name": "6.18",
           "value": 0
         },
         "serial": "0000:0f:00.0",
-        "model": "Linux 6.12.39 xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.18.35 xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:08.0/0000:07:00.0/0000:08:0c.0/0000:0f:00.0/usb2/2-0:1.0",
         "sysfs_bus_id": "2-0:1.0",
         "detail": {
@@ -3859,753 +3469,13 @@
         "driver_module": "usbcore",
         "drivers": ["hub"],
         "driver_modules": ["usbcore"],
-        "module_alias": "usb:v1D6Bp0003d0612dc09dsc00dp03ic09isc00ip00in00"
-      }
-    ],
-    "keyboard": [
-      {
-        "index": 119,
-        "attached_to": 106,
-        "class_list": ["keyboard", "usb"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0108",
-          "name": "Keyboard",
-          "value": 264
-        },
-        "sub_class": {
-          "hex": "0000",
-          "name": "Keyboard",
-          "value": 0
-        },
-        "vendor": {
-          "hex": "04d9",
-          "name": "Holtek Microelectronics Inc.",
-          "value": 1241
-        },
-        "device": {
-          "hex": "a131",
-          "name": "USB-HID Keyboard",
-          "value": 41265
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "1.06",
-          "value": 0
-        },
-        "model": "Holtek Microelectronics USB-HID Keyboard",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:0c.0/0000:11:00.0/usb3/3-5/3-5:1.0",
-        "sysfs_bus_id": "3-5:1.0",
-        "unix_device_names": [
-          "/dev/input/by-id/usb-HOLTEK_USB-HID_Keyboard-event-kbd",
-          "/dev/input/by-path/pci-0000:11:00.0-usb-0:5:1.0-event-kbd",
-          "/dev/input/by-path/pci-0000:11:00.0-usbv2-0:5:1.0-event-kbd",
-          "/dev/input/event5"
-        ],
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 12000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "device_subclass": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "device_protocol": 0,
-          "interface_class": {
-            "hex": "0003",
-            "name": "hid",
-            "value": 3
-          },
-          "interface_subclass": {
-            "hex": "0001",
-            "name": "audio",
-            "value": 1
-          },
-          "interface_protocol": 1,
-          "interface_number": 0,
-          "interface_alternate_setting": 0
-        },
-        "hotplug": "usb",
-        "driver": "usbhid",
-        "driver_module": "usbhid",
-        "drivers": ["usbhid"],
-        "driver_modules": ["usbhid"],
-        "driver_info": {
-          "type": "keyboard",
-          "xkb_rules": "xfree86",
-          "xkb_model": "pc104"
-        },
-        "module_alias": "usb:v04D9pA131d0106dc00dsc00dp00ic03isc01ip01in00"
-      }
-    ],
-    "memory": [
-      {
-        "index": 35,
-        "attached_to": 0,
-        "class_list": ["memory"],
-        "base_class": {
-          "hex": "0101",
-          "name": "Internally Used Class",
-          "value": 257
-        },
-        "sub_class": {
-          "hex": "0002",
-          "name": "Main Memory",
-          "value": 2
-        },
-        "model": "Main Memory",
-        "resources": [
-          {
-            "type": "phys_mem",
-            "range": 137438953472
-          }
-        ]
-      }
-    ],
-    "monitor": [
-      {
-        "index": 90,
-        "attached_to": 36,
-        "class_list": ["monitor"],
-        "base_class": {
-          "hex": "0100",
-          "name": "Monitor",
-          "value": 256
-        },
-        "sub_class": {
-          "hex": "0002",
-          "name": "LCD Monitor",
-          "value": 2
-        },
-        "vendor": {
-          "hex": "05e3",
-          "name": "AOC",
-          "value": 1507
-        },
-        "device": {
-          "hex": "2402",
-          "name": "24V2W1G5",
-          "value": 9218
-        },
-        "serial": "1730",
-        "model": "AOC 24V2W1G5",
-        "resources": [
-          {
-            "type": "monitor",
-            "width": 1024,
-            "height": 768,
-            "vertical_frequency": 60,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 1024,
-            "height": 768,
-            "vertical_frequency": 70,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 1024,
-            "height": 768,
-            "vertical_frequency": 75,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 1280,
-            "height": 1024,
-            "vertical_frequency": 60,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 1280,
-            "height": 1024,
-            "vertical_frequency": 75,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 1920,
-            "height": 1080,
-            "vertical_frequency": 60,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 640,
-            "height": 480,
-            "vertical_frequency": 60,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 640,
-            "height": 480,
-            "vertical_frequency": 67,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 640,
-            "height": 480,
-            "vertical_frequency": 72,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 640,
-            "height": 480,
-            "vertical_frequency": 75,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 720,
-            "height": 400,
-            "vertical_frequency": 70,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 800,
-            "height": 600,
-            "vertical_frequency": 56,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 800,
-            "height": 600,
-            "vertical_frequency": 60,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 800,
-            "height": 600,
-            "vertical_frequency": 72,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 800,
-            "height": 600,
-            "vertical_frequency": 75,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 832,
-            "height": 624,
-            "vertical_frequency": 75,
-            "interlaced": false
-          },
-          {
-            "type": "size",
-            "unit": "mm",
-            "value_1": 527,
-            "value_2": 296
-          }
-        ],
-        "detail": {
-          "manufacture_year": 2020,
-          "manufacture_week": 15,
-          "vertical_sync": {
-            "min": 48,
-            "max": 76
-          },
-          "horizontal_sync": {
-            "min": 30,
-            "max": 85
-          },
-          "horizontal_sync_timings": {
-            "disp": 1920,
-            "sync_start": 1968,
-            "sync_end": 2000,
-            "total": 2080
-          },
-          "vertical_sync_timings": {
-            "disp": 1080,
-            "sync_start": 1083,
-            "sync_end": 1088,
-            "total": 1119
-          },
-          "clock": 174500,
-          "width": 1920,
-          "height": 1080,
-          "width_millimetres": 527,
-          "height_millimetres": 296,
-          "horizontal_flag": 45,
-          "vertical_flag": 43,
-          "vendor": "",
-          "name": "24V2W1G5"
-        },
-        "driver_info": {
-          "type": "display",
-          "width": 1920,
-          "height": 1080,
-          "vertical_sync": {
-            "min": 48,
-            "max": 76
-          },
-          "horizontal_sync": {
-            "min": 30,
-            "max": 85
-          },
-          "bandwidth": 0,
-          "horizontal_sync_timings": {
-            "disp": 1920,
-            "sync_start": 1968,
-            "sync_end": 2000,
-            "total": 2080
-          },
-          "vertical_sync_timings": {
-            "disp": 1080,
-            "sync_start": 1083,
-            "sync_end": 1088,
-            "total": 1119
-          },
-          "horizontal_flag": 45,
-          "vertical_flag": 43
-        }
-      },
-      {
-        "index": 91,
-        "attached_to": 36,
-        "class_list": ["monitor"],
-        "base_class": {
-          "hex": "0100",
-          "name": "Monitor",
-          "value": 256
-        },
-        "sub_class": {
-          "hex": "0002",
-          "name": "LCD Monitor",
-          "value": 2
-        },
-        "vendor": {
-          "hex": "3669",
-          "value": 13929
-        },
-        "device": {
-          "hex": "1462",
-          "name": "Optix G24C",
-          "value": 5218
-        },
-        "serial": "0000000000001",
-        "model": "Optix G24C",
-        "resources": [
-          {
-            "type": "monitor",
-            "width": 1024,
-            "height": 768,
-            "vertical_frequency": 120,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 1024,
-            "height": 768,
-            "vertical_frequency": 60,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 1024,
-            "height": 768,
-            "vertical_frequency": 70,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 1024,
-            "height": 768,
-            "vertical_frequency": 75,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 1280,
-            "height": 1024,
-            "vertical_frequency": 120,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 1280,
-            "height": 1024,
-            "vertical_frequency": 60,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 1280,
-            "height": 1024,
-            "vertical_frequency": 75,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 1920,
-            "height": 1080,
-            "vertical_frequency": 60,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 640,
-            "height": 480,
-            "vertical_frequency": 60,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 640,
-            "height": 480,
-            "vertical_frequency": 72,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 640,
-            "height": 480,
-            "vertical_frequency": 75,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 720,
-            "height": 400,
-            "vertical_frequency": 70,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 800,
-            "height": 600,
-            "vertical_frequency": 56,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 800,
-            "height": 600,
-            "vertical_frequency": 60,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 800,
-            "height": 600,
-            "vertical_frequency": 72,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 800,
-            "height": 600,
-            "vertical_frequency": 75,
-            "interlaced": false
-          },
-          {
-            "type": "monitor",
-            "width": 832,
-            "height": 624,
-            "vertical_frequency": 75,
-            "interlaced": false
-          },
-          {
-            "type": "size",
-            "unit": "mm",
-            "value_1": 521,
-            "value_2": 293
-          }
-        ],
-        "detail": {
-          "manufacture_year": 2018,
-          "manufacture_week": 16,
-          "vertical_sync": {
-            "min": 48,
-            "max": 144
-          },
-          "horizontal_sync": {
-            "min": 162,
-            "max": 162
-          },
-          "horizontal_sync_timings": {
-            "disp": 1920,
-            "sync_start": 2008,
-            "sync_end": 2052,
-            "total": 2200
-          },
-          "vertical_sync_timings": {
-            "disp": 1080,
-            "sync_start": 1084,
-            "sync_end": 1089,
-            "total": 1125
-          },
-          "clock": 148500,
-          "width": 1920,
-          "height": 1080,
-          "width_millimetres": 521,
-          "height_millimetres": 293,
-          "horizontal_flag": 43,
-          "vertical_flag": 43,
-          "vendor": "",
-          "name": "Optix G24C"
-        },
-        "driver_info": {
-          "type": "display",
-          "width": 1920,
-          "height": 1080,
-          "vertical_sync": {
-            "min": 48,
-            "max": 144
-          },
-          "horizontal_sync": {
-            "min": 162,
-            "max": 162
-          },
-          "bandwidth": 0,
-          "horizontal_sync_timings": {
-            "disp": 1920,
-            "sync_start": 2008,
-            "sync_end": 2052,
-            "total": 2200
-          },
-          "vertical_sync_timings": {
-            "disp": 1080,
-            "sync_start": 1084,
-            "sync_end": 1089,
-            "total": 1125
-          },
-          "horizontal_flag": 43,
-          "vertical_flag": 43
-        }
-      }
-    ],
-    "mouse": [
-      {
-        "index": 105,
-        "attached_to": 125,
-        "class_list": ["mouse", "usb"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0105",
-          "name": "Mouse",
-          "value": 261
-        },
-        "sub_class": {
-          "hex": "0003",
-          "name": "USB Mouse",
-          "value": 3
-        },
-        "vendor": {
-          "hex": "046d",
-          "name": "Logitech Inc.",
-          "value": 1133
-        },
-        "device": {
-          "hex": "c099",
-          "name": "G502 X",
-          "value": 49305
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "60.00",
-          "value": 0
-        },
-        "serial": "206236903530",
-        "compat_vendor": "Unknown",
-        "compat_device": "Generic USB Mouse",
-        "model": "Logitech G502 X",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:08.0/0000:07:00.0/0000:08:0c.0/0000:0f:00.0/usb1/1-6/1-6:1.0",
-        "sysfs_bus_id": "1-6:1.0",
-        "unix_device_names": ["/dev/input/mice"],
-        "unix_device_name2": "/dev/input/mouse0",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 12000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "device_subclass": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "device_protocol": 0,
-          "interface_class": {
-            "hex": "0003",
-            "name": "hid",
-            "value": 3
-          },
-          "interface_subclass": {
-            "hex": "0001",
-            "name": "audio",
-            "value": 1
-          },
-          "interface_protocol": 2,
-          "interface_number": 0,
-          "interface_alternate_setting": 0
-        },
-        "hotplug": "usb",
-        "driver": "usbhid",
-        "driver_module": "usbhid",
-        "drivers": ["usbhid"],
-        "driver_modules": ["usbhid"],
-        "driver_info": {
-          "type": "mouse",
-          "db_entry_0": ["explorerps/2", "exps2"],
-          "xf86": "explorerps/2",
-          "gpm": "exps2",
-          "buttons": -1,
-          "wheels": -1
-        },
-        "module_alias": "usb:v046DpC099d6000dc00dsc00dp00ic03isc01ip02in00"
-      },
-      {
-        "index": 114,
-        "attached_to": 106,
-        "class_list": ["mouse", "usb"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0105",
-          "name": "Mouse",
-          "value": 261
-        },
-        "sub_class": {
-          "hex": "0003",
-          "name": "USB Mouse",
-          "value": 3
-        },
-        "vendor": {
-          "hex": "04d9",
-          "name": "Holtek Microelectronics Inc.",
-          "value": 1241
-        },
-        "device": {
-          "hex": "a131",
-          "name": "USB-HID Keyboard",
-          "value": 41265
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "1.06",
-          "value": 0
-        },
-        "compat_vendor": "Unknown",
-        "compat_device": "Generic USB Mouse",
-        "model": "Holtek Microelectronics USB-HID Keyboard",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:0c.0/0000:11:00.0/usb3/3-5/3-5:1.2",
-        "sysfs_bus_id": "3-5:1.2",
-        "unix_device_names": ["/dev/input/mice"],
-        "unix_device_name2": "/dev/input/mouse1",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 12000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "device_subclass": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "device_protocol": 0,
-          "interface_class": {
-            "hex": "0003",
-            "name": "hid",
-            "value": 3
-          },
-          "interface_subclass": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "interface_protocol": 0,
-          "interface_number": 2,
-          "interface_alternate_setting": 0
-        },
-        "hotplug": "usb",
-        "driver": "usbhid",
-        "driver_module": "usbhid",
-        "drivers": ["usbhid"],
-        "driver_modules": ["usbhid"],
-        "driver_info": {
-          "type": "mouse",
-          "db_entry_0": ["explorerps/2", "exps2"],
-          "xf86": "explorerps/2",
-          "gpm": "exps2",
-          "buttons": -1,
-          "wheels": -1
-        },
-        "module_alias": "usb:v04D9pA131d0106dc00dsc00dp00ic03isc00ip00in02"
+        "module_alias": "usb:v1D6Bp0003d0618dc09dsc00dp03ic09isc00ip00in00"
       }
     ],
     "network_controller": [
       {
-        "index": 48,
-        "attached_to": 77,
+        "index": 52,
+        "attached_to": 81,
         "class_list": ["network_controller", "pci"],
         "bus_type": {
           "hex": "0004",
@@ -4677,8 +3547,8 @@
         "label": "Intel 2.5G LAN"
       },
       {
-        "index": 57,
-        "attached_to": 37,
+        "index": 61,
+        "attached_to": 41,
         "class_list": ["network_controller", "pci", "wlan_card"],
         "bus_type": {
           "hex": "0004",
@@ -4817,126 +3687,10 @@
         "module_alias": "pci:v000014C3d00000616sv0000105Bsd0000E0CDbc02sc80i00"
       }
     ],
-    "network_interface": [
-      {
-        "index": 142,
-        "attached_to": 48,
-        "class_list": ["network_interface"],
-        "base_class": {
-          "hex": "0107",
-          "name": "Network Interface",
-          "value": 263
-        },
-        "sub_class": {
-          "hex": "0001",
-          "name": "Ethernet",
-          "value": 1
-        },
-        "model": "Ethernet network interface",
-        "sysfs_id": "/class/net/eno1",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:08.0/0000:07:00.0/0000:08:05.0/0000:0b:00.0",
-        "unix_device_names": ["eno1"],
-        "resources": [
-          {
-            "type": "hwaddr",
-            "address": 101
-          },
-          {
-            "type": "phwaddr",
-            "address": 101
-          }
-        ],
-        "driver": "igc",
-        "driver_module": "igc",
-        "drivers": ["igc"],
-        "driver_modules": ["igc"]
-      },
-      {
-        "index": 143,
-        "attached_to": 0,
-        "class_list": ["network_interface"],
-        "base_class": {
-          "hex": "0107",
-          "name": "Network Interface",
-          "value": 263
-        },
-        "sub_class": {
-          "hex": "0001",
-          "name": "Ethernet",
-          "value": 1
-        },
-        "model": "Ethernet network interface",
-        "sysfs_id": "/class/net/vboxnet0",
-        "unix_device_names": ["vboxnet0"],
-        "resources": [
-          {
-            "type": "hwaddr",
-            "address": 48
-          },
-          {
-            "type": "phwaddr",
-            "address": 48
-          }
-        ],
-        "driver": "vboxnet",
-        "drivers": ["vboxnet"]
-      },
-      {
-        "index": 144,
-        "attached_to": 57,
-        "class_list": ["network_interface"],
-        "base_class": {
-          "hex": "0107",
-          "name": "Network Interface",
-          "value": 263
-        },
-        "sub_class": {
-          "hex": "000a",
-          "name": "WLAN",
-          "value": 10
-        },
-        "model": "WLAN network interface",
-        "sysfs_id": "/class/net/wlan0",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:08.0/0000:07:00.0/0000:08:04.0/0000:0a:00.0",
-        "unix_device_names": ["wlan0"],
-        "resources": [
-          {
-            "type": "hwaddr",
-            "address": 99
-          },
-          {
-            "type": "phwaddr",
-            "address": 99
-          }
-        ],
-        "driver": "mt7921e",
-        "driver_module": "mt7921e",
-        "drivers": ["mt7921e"],
-        "driver_modules": ["mt7921e"]
-      },
-      {
-        "index": 145,
-        "attached_to": 0,
-        "class_list": ["network_interface"],
-        "base_class": {
-          "hex": "0107",
-          "name": "Network Interface",
-          "value": 263
-        },
-        "sub_class": {
-          "hex": "0000",
-          "name": "Loopback",
-          "value": 0
-        },
-        "model": "Loopback network interface",
-        "sysfs_id": "/class/net/lo",
-        "unix_device_names": ["lo"]
-      }
-    ],
     "pci": [
       {
-        "index": 38,
-        "attached_to": 67,
+        "index": 42,
+        "attached_to": 71,
         "class_list": ["pci", "unknown"],
         "bus_type": {
           "hex": "0004",
@@ -4992,7 +3746,7 @@
         "module_alias": "pci:v00001022d00001649sv00001043sd00008877bc10sc80i00"
       },
       {
-        "index": 59,
+        "index": 63,
         "attached_to": 0,
         "class_list": ["pci", "unknown"],
         "bus_type": {
@@ -5043,7 +3797,7 @@
         "module_alias": "pci:v00001022d000014D9sv00001043sd00008877bc08sc06i00"
       },
       {
-        "index": 86,
+        "index": 90,
         "attached_to": 0,
         "class_list": ["pci", "unknown"],
         "bus_type": {
@@ -5106,8 +3860,8 @@
     ],
     "sound": [
       {
-        "index": 64,
-        "attached_to": 46,
+        "index": 68,
+        "attached_to": 50,
         "class_list": ["sound", "pci"],
         "bus_type": {
           "hex": "0004",
@@ -5163,8 +3917,8 @@
         "module_alias": "pci:v00001002d0000AB28sv00001002sd0000AB28bc04sc03i00"
       },
       {
-        "index": 71,
-        "attached_to": 67,
+        "index": 75,
+        "attached_to": 71,
         "class_list": ["sound", "pci"],
         "bus_type": {
           "hex": "0004",
@@ -5217,1460 +3971,12 @@
         "drivers": ["snd_hda_intel"],
         "driver_modules": ["snd_hda_intel"],
         "module_alias": "pci:v00001002d00001640sv00001043sd00008877bc04sc03i00"
-      },
-      {
-        "index": 99,
-        "attached_to": 106,
-        "class_list": ["sound", "usb"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0004",
-          "name": "Multimedia controller",
-          "value": 4
-        },
-        "sub_class": {
-          "hex": "0001",
-          "name": "Multimedia audio controller",
-          "value": 1
-        },
-        "vendor": {
-          "hex": "0b05",
-          "name": "Generic",
-          "value": 2821
-        },
-        "device": {
-          "hex": "1a52",
-          "name": "USB Audio",
-          "value": 6738
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "0.02",
-          "value": 0
-        },
-        "model": "Generic USB Audio",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:0c.0/0000:11:00.0/usb3/3-6/3-6:1.5",
-        "sysfs_bus_id": "3-6:1.5",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 480000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "00ef",
-            "name": "miscellaneous",
-            "value": 239
-          },
-          "device_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "device_protocol": 1,
-          "interface_class": {
-            "hex": "0001",
-            "name": "audio",
-            "value": 1
-          },
-          "interface_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "interface_protocol": 32,
-          "interface_number": 5,
-          "interface_alternate_setting": 0,
-          "interface_association": {
-            "function_class": {
-              "hex": "0001",
-              "name": "audio",
-              "value": 1
-            },
-            "function_subclass": {
-              "hex": "0000",
-              "name": "per_interface",
-              "value": 0
-            },
-            "function_protocol": 32,
-            "interface_count": 7,
-            "first_interface": 0
-          }
-        },
-        "hotplug": "usb",
-        "driver": "snd-usb-audio",
-        "driver_module": "snd_usb_audio",
-        "drivers": ["snd-usb-audio"],
-        "driver_modules": ["snd_usb_audio"],
-        "module_alias": "usb:v0B05p1A52d0002dcEFdsc02dp01ic01isc02ip20in05"
-      },
-      {
-        "index": 101,
-        "attached_to": 125,
-        "class_list": ["sound", "usb"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0004",
-          "name": "Multimedia controller",
-          "value": 4
-        },
-        "sub_class": {
-          "hex": "0001",
-          "name": "Multimedia audio controller",
-          "value": 1
-        },
-        "vendor": {
-          "hex": "19f7",
-          "name": "RØDE Microphones",
-          "value": 6647
-        },
-        "device": {
-          "hex": "0015",
-          "name": "RØDE NT-USB Mini",
-          "value": 21
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "2.36",
-          "value": 0
-        },
-        "serial": "31FBD749",
-        "model": "RØDE Microphones RØDE NT-USB Mini",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:08.0/0000:07:00.0/0000:08:0c.0/0000:0f:00.0/usb1/1-2/1-2:1.2",
-        "sysfs_bus_id": "1-2:1.2",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 12000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "00ef",
-            "name": "miscellaneous",
-            "value": 239
-          },
-          "device_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "device_protocol": 1,
-          "interface_class": {
-            "hex": "0001",
-            "name": "audio",
-            "value": 1
-          },
-          "interface_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "interface_protocol": 0,
-          "interface_number": 2,
-          "interface_alternate_setting": 0,
-          "interface_association": {
-            "function_class": {
-              "hex": "0001",
-              "name": "audio",
-              "value": 1
-            },
-            "function_subclass": {
-              "hex": "0001",
-              "name": "audio",
-              "value": 1
-            },
-            "function_protocol": 0,
-            "interface_count": 3,
-            "first_interface": 0
-          }
-        },
-        "hotplug": "usb",
-        "driver": "snd-usb-audio",
-        "driver_module": "snd_usb_audio",
-        "drivers": ["snd-usb-audio"],
-        "driver_modules": ["snd_usb_audio"],
-        "module_alias": "usb:v19F7p0015d0236dcEFdsc02dp01ic01isc02ip00in02"
-      },
-      {
-        "index": 102,
-        "attached_to": 106,
-        "class_list": ["sound", "usb"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0004",
-          "name": "Multimedia controller",
-          "value": 4
-        },
-        "sub_class": {
-          "hex": "0001",
-          "name": "Multimedia audio controller",
-          "value": 1
-        },
-        "vendor": {
-          "hex": "0b05",
-          "name": "Generic",
-          "value": 2821
-        },
-        "device": {
-          "hex": "1a52",
-          "name": "USB Audio",
-          "value": 6738
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "0.02",
-          "value": 0
-        },
-        "model": "Generic USB Audio",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:0c.0/0000:11:00.0/usb3/3-6/3-6:1.3",
-        "sysfs_bus_id": "3-6:1.3",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 480000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "00ef",
-            "name": "miscellaneous",
-            "value": 239
-          },
-          "device_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "device_protocol": 1,
-          "interface_class": {
-            "hex": "0001",
-            "name": "audio",
-            "value": 1
-          },
-          "interface_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "interface_protocol": 32,
-          "interface_number": 3,
-          "interface_alternate_setting": 0,
-          "interface_association": {
-            "function_class": {
-              "hex": "0001",
-              "name": "audio",
-              "value": 1
-            },
-            "function_subclass": {
-              "hex": "0000",
-              "name": "per_interface",
-              "value": 0
-            },
-            "function_protocol": 32,
-            "interface_count": 7,
-            "first_interface": 0
-          }
-        },
-        "hotplug": "usb",
-        "driver": "snd-usb-audio",
-        "driver_module": "snd_usb_audio",
-        "drivers": ["snd-usb-audio"],
-        "driver_modules": ["snd_usb_audio"],
-        "module_alias": "usb:v0B05p1A52d0002dcEFdsc02dp01ic01isc02ip20in03"
-      },
-      {
-        "index": 103,
-        "attached_to": 106,
-        "class_list": ["sound", "usb"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0004",
-          "name": "Multimedia controller",
-          "value": 4
-        },
-        "sub_class": {
-          "hex": "0001",
-          "name": "Multimedia audio controller",
-          "value": 1
-        },
-        "vendor": {
-          "hex": "046d",
-          "name": "Logitech Inc.",
-          "value": 1133
-        },
-        "device": {
-          "hex": "082d",
-          "name": "HD Pro Webcam C920",
-          "value": 2093
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "0.11",
-          "value": 0
-        },
-        "serial": "9B749FDF",
-        "model": "Logitech HD Pro Webcam C920",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:0c.0/0000:11:00.0/usb3/3-4/3-4:1.2",
-        "sysfs_bus_id": "3-4:1.2",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 480000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "00ef",
-            "name": "miscellaneous",
-            "value": 239
-          },
-          "device_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "device_protocol": 1,
-          "interface_class": {
-            "hex": "0001",
-            "name": "audio",
-            "value": 1
-          },
-          "interface_subclass": {
-            "hex": "0001",
-            "name": "audio",
-            "value": 1
-          },
-          "interface_protocol": 0,
-          "interface_number": 2,
-          "interface_alternate_setting": 0,
-          "interface_association": {
-            "function_class": {
-              "hex": "0001",
-              "name": "audio",
-              "value": 1
-            },
-            "function_subclass": {
-              "hex": "0002",
-              "name": "comm",
-              "value": 2
-            },
-            "function_protocol": 0,
-            "interface_count": 2,
-            "first_interface": 2
-          }
-        },
-        "hotplug": "usb",
-        "driver": "snd-usb-audio",
-        "driver_module": "snd_usb_audio",
-        "drivers": ["snd-usb-audio"],
-        "driver_modules": ["snd_usb_audio"],
-        "module_alias": "usb:v046Dp082Dd0011dcEFdsc02dp01ic01isc01ip00in02"
-      },
-      {
-        "index": 104,
-        "attached_to": 125,
-        "class_list": ["sound", "usb"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0004",
-          "name": "Multimedia controller",
-          "value": 4
-        },
-        "sub_class": {
-          "hex": "0001",
-          "name": "Multimedia audio controller",
-          "value": 1
-        },
-        "vendor": {
-          "hex": "19f7",
-          "name": "RØDE Microphones",
-          "value": 6647
-        },
-        "device": {
-          "hex": "0015",
-          "name": "RØDE NT-USB Mini",
-          "value": 21
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "2.36",
-          "value": 0
-        },
-        "serial": "31FBD749",
-        "model": "RØDE Microphones RØDE NT-USB Mini",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:08.0/0000:07:00.0/0000:08:0c.0/0000:0f:00.0/usb1/1-2/1-2:1.0",
-        "sysfs_bus_id": "1-2:1.0",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 12000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "00ef",
-            "name": "miscellaneous",
-            "value": 239
-          },
-          "device_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "device_protocol": 1,
-          "interface_class": {
-            "hex": "0001",
-            "name": "audio",
-            "value": 1
-          },
-          "interface_subclass": {
-            "hex": "0001",
-            "name": "audio",
-            "value": 1
-          },
-          "interface_protocol": 0,
-          "interface_number": 0,
-          "interface_alternate_setting": 0,
-          "interface_association": {
-            "function_class": {
-              "hex": "0001",
-              "name": "audio",
-              "value": 1
-            },
-            "function_subclass": {
-              "hex": "0001",
-              "name": "audio",
-              "value": 1
-            },
-            "function_protocol": 0,
-            "interface_count": 3,
-            "first_interface": 0
-          }
-        },
-        "hotplug": "usb",
-        "driver": "snd-usb-audio",
-        "driver_module": "snd_usb_audio",
-        "drivers": ["snd-usb-audio"],
-        "driver_modules": ["snd_usb_audio"],
-        "module_alias": "usb:v19F7p0015d0236dcEFdsc02dp01ic01isc01ip00in00"
-      },
-      {
-        "index": 107,
-        "attached_to": 106,
-        "class_list": ["sound", "usb"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0004",
-          "name": "Multimedia controller",
-          "value": 4
-        },
-        "sub_class": {
-          "hex": "0001",
-          "name": "Multimedia audio controller",
-          "value": 1
-        },
-        "vendor": {
-          "hex": "0b05",
-          "name": "Generic",
-          "value": 2821
-        },
-        "device": {
-          "hex": "1a52",
-          "name": "USB Audio",
-          "value": 6738
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "0.02",
-          "value": 0
-        },
-        "model": "Generic USB Audio",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:0c.0/0000:11:00.0/usb3/3-6/3-6:1.1",
-        "sysfs_bus_id": "3-6:1.1",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 480000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "00ef",
-            "name": "miscellaneous",
-            "value": 239
-          },
-          "device_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "device_protocol": 1,
-          "interface_class": {
-            "hex": "0001",
-            "name": "audio",
-            "value": 1
-          },
-          "interface_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "interface_protocol": 32,
-          "interface_number": 1,
-          "interface_alternate_setting": 0,
-          "interface_association": {
-            "function_class": {
-              "hex": "0001",
-              "name": "audio",
-              "value": 1
-            },
-            "function_subclass": {
-              "hex": "0000",
-              "name": "per_interface",
-              "value": 0
-            },
-            "function_protocol": 32,
-            "interface_count": 7,
-            "first_interface": 0
-          }
-        },
-        "hotplug": "usb",
-        "driver": "snd-usb-audio",
-        "driver_module": "snd_usb_audio",
-        "drivers": ["snd-usb-audio"],
-        "driver_modules": ["snd_usb_audio"],
-        "module_alias": "usb:v0B05p1A52d0002dcEFdsc02dp01ic01isc02ip20in01"
-      },
-      {
-        "index": 111,
-        "attached_to": 125,
-        "class_list": ["sound", "usb"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0004",
-          "name": "Multimedia controller",
-          "value": 4
-        },
-        "sub_class": {
-          "hex": "0001",
-          "name": "Multimedia audio controller",
-          "value": 1
-        },
-        "vendor": {
-          "hex": "0951",
-          "name": "Kingston",
-          "value": 2385
-        },
-        "device": {
-          "hex": "16a4",
-          "name": "HyperX Virtual Surround Sound",
-          "value": 5796
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "0.10",
-          "value": 0
-        },
-        "serial": "00000000",
-        "model": "Kingston HyperX Virtual Surround Sound",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:08.0/0000:07:00.0/0000:08:0c.0/0000:0f:00.0/usb1/1-3/1-3:1.2",
-        "sysfs_bus_id": "1-3:1.2",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 12000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "device_subclass": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "device_protocol": 0,
-          "interface_class": {
-            "hex": "0001",
-            "name": "audio",
-            "value": 1
-          },
-          "interface_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "interface_protocol": 0,
-          "interface_number": 2,
-          "interface_alternate_setting": 0
-        },
-        "hotplug": "usb",
-        "driver": "snd-usb-audio",
-        "driver_module": "snd_usb_audio",
-        "drivers": ["snd-usb-audio"],
-        "driver_modules": ["snd_usb_audio"],
-        "module_alias": "usb:v0951p16A4d0010dc00dsc00dp00ic01isc02ip00in02"
-      },
-      {
-        "index": 115,
-        "attached_to": 125,
-        "class_list": ["sound", "usb"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0004",
-          "name": "Multimedia controller",
-          "value": 4
-        },
-        "sub_class": {
-          "hex": "0001",
-          "name": "Multimedia audio controller",
-          "value": 1
-        },
-        "vendor": {
-          "hex": "0951",
-          "name": "Kingston",
-          "value": 2385
-        },
-        "device": {
-          "hex": "16a4",
-          "name": "HyperX Virtual Surround Sound",
-          "value": 5796
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "0.10",
-          "value": 0
-        },
-        "serial": "00000000",
-        "model": "Kingston HyperX Virtual Surround Sound",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:08.0/0000:07:00.0/0000:08:0c.0/0000:0f:00.0/usb1/1-3/1-3:1.0",
-        "sysfs_bus_id": "1-3:1.0",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 12000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "device_subclass": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "device_protocol": 0,
-          "interface_class": {
-            "hex": "0001",
-            "name": "audio",
-            "value": 1
-          },
-          "interface_subclass": {
-            "hex": "0001",
-            "name": "audio",
-            "value": 1
-          },
-          "interface_protocol": 0,
-          "interface_number": 0,
-          "interface_alternate_setting": 0
-        },
-        "hotplug": "usb",
-        "driver": "snd-usb-audio",
-        "driver_module": "snd_usb_audio",
-        "drivers": ["snd-usb-audio"],
-        "driver_modules": ["snd_usb_audio"],
-        "module_alias": "usb:v0951p16A4d0010dc00dsc00dp00ic01isc01ip00in00"
-      },
-      {
-        "index": 117,
-        "attached_to": 106,
-        "class_list": ["sound", "usb"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0004",
-          "name": "Multimedia controller",
-          "value": 4
-        },
-        "sub_class": {
-          "hex": "0001",
-          "name": "Multimedia audio controller",
-          "value": 1
-        },
-        "vendor": {
-          "hex": "0b05",
-          "name": "Generic",
-          "value": 2821
-        },
-        "device": {
-          "hex": "1a52",
-          "name": "USB Audio",
-          "value": 6738
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "0.02",
-          "value": 0
-        },
-        "model": "Generic USB Audio",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:0c.0/0000:11:00.0/usb3/3-6/3-6:1.6",
-        "sysfs_bus_id": "3-6:1.6",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 480000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "00ef",
-            "name": "miscellaneous",
-            "value": 239
-          },
-          "device_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "device_protocol": 1,
-          "interface_class": {
-            "hex": "0001",
-            "name": "audio",
-            "value": 1
-          },
-          "interface_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "interface_protocol": 32,
-          "interface_number": 6,
-          "interface_alternate_setting": 0,
-          "interface_association": {
-            "function_class": {
-              "hex": "0001",
-              "name": "audio",
-              "value": 1
-            },
-            "function_subclass": {
-              "hex": "0000",
-              "name": "per_interface",
-              "value": 0
-            },
-            "function_protocol": 32,
-            "interface_count": 7,
-            "first_interface": 0
-          }
-        },
-        "hotplug": "usb",
-        "driver": "snd-usb-audio",
-        "driver_module": "snd_usb_audio",
-        "drivers": ["snd-usb-audio"],
-        "driver_modules": ["snd_usb_audio"],
-        "module_alias": "usb:v0B05p1A52d0002dcEFdsc02dp01ic01isc02ip20in06"
-      },
-      {
-        "index": 121,
-        "attached_to": 106,
-        "class_list": ["sound", "usb"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0004",
-          "name": "Multimedia controller",
-          "value": 4
-        },
-        "sub_class": {
-          "hex": "0001",
-          "name": "Multimedia audio controller",
-          "value": 1
-        },
-        "vendor": {
-          "hex": "0b05",
-          "name": "Generic",
-          "value": 2821
-        },
-        "device": {
-          "hex": "1a52",
-          "name": "USB Audio",
-          "value": 6738
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "0.02",
-          "value": 0
-        },
-        "model": "Generic USB Audio",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:0c.0/0000:11:00.0/usb3/3-6/3-6:1.4",
-        "sysfs_bus_id": "3-6:1.4",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 480000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "00ef",
-            "name": "miscellaneous",
-            "value": 239
-          },
-          "device_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "device_protocol": 1,
-          "interface_class": {
-            "hex": "0001",
-            "name": "audio",
-            "value": 1
-          },
-          "interface_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "interface_protocol": 32,
-          "interface_number": 4,
-          "interface_alternate_setting": 0,
-          "interface_association": {
-            "function_class": {
-              "hex": "0001",
-              "name": "audio",
-              "value": 1
-            },
-            "function_subclass": {
-              "hex": "0000",
-              "name": "per_interface",
-              "value": 0
-            },
-            "function_protocol": 32,
-            "interface_count": 7,
-            "first_interface": 0
-          }
-        },
-        "hotplug": "usb",
-        "driver": "snd-usb-audio",
-        "driver_module": "snd_usb_audio",
-        "drivers": ["snd-usb-audio"],
-        "driver_modules": ["snd_usb_audio"],
-        "module_alias": "usb:v0B05p1A52d0002dcEFdsc02dp01ic01isc02ip20in04"
-      },
-      {
-        "index": 123,
-        "attached_to": 106,
-        "class_list": ["sound", "usb"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0004",
-          "name": "Multimedia controller",
-          "value": 4
-        },
-        "sub_class": {
-          "hex": "0001",
-          "name": "Multimedia audio controller",
-          "value": 1
-        },
-        "vendor": {
-          "hex": "046d",
-          "name": "Logitech Inc.",
-          "value": 1133
-        },
-        "device": {
-          "hex": "082d",
-          "name": "HD Pro Webcam C920",
-          "value": 2093
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "0.11",
-          "value": 0
-        },
-        "serial": "9B749FDF",
-        "model": "Logitech HD Pro Webcam C920",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:0c.0/0000:11:00.0/usb3/3-4/3-4:1.3",
-        "sysfs_bus_id": "3-4:1.3",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 480000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "00ef",
-            "name": "miscellaneous",
-            "value": 239
-          },
-          "device_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "device_protocol": 1,
-          "interface_class": {
-            "hex": "0001",
-            "name": "audio",
-            "value": 1
-          },
-          "interface_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "interface_protocol": 0,
-          "interface_number": 3,
-          "interface_alternate_setting": 0,
-          "interface_association": {
-            "function_class": {
-              "hex": "0001",
-              "name": "audio",
-              "value": 1
-            },
-            "function_subclass": {
-              "hex": "0002",
-              "name": "comm",
-              "value": 2
-            },
-            "function_protocol": 0,
-            "interface_count": 2,
-            "first_interface": 2
-          }
-        },
-        "hotplug": "usb",
-        "driver": "snd-usb-audio",
-        "driver_module": "snd_usb_audio",
-        "drivers": ["snd-usb-audio"],
-        "driver_modules": ["snd_usb_audio"],
-        "module_alias": "usb:v046Dp082Dd0011dcEFdsc02dp01ic01isc02ip00in03"
-      },
-      {
-        "index": 124,
-        "attached_to": 125,
-        "class_list": ["sound", "usb"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0004",
-          "name": "Multimedia controller",
-          "value": 4
-        },
-        "sub_class": {
-          "hex": "0001",
-          "name": "Multimedia audio controller",
-          "value": 1
-        },
-        "vendor": {
-          "hex": "19f7",
-          "name": "RØDE Microphones",
-          "value": 6647
-        },
-        "device": {
-          "hex": "0015",
-          "name": "RØDE NT-USB Mini",
-          "value": 21
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "2.36",
-          "value": 0
-        },
-        "serial": "31FBD749",
-        "model": "RØDE Microphones RØDE NT-USB Mini",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:08.0/0000:07:00.0/0000:08:0c.0/0000:0f:00.0/usb1/1-2/1-2:1.1",
-        "sysfs_bus_id": "1-2:1.1",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 12000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "00ef",
-            "name": "miscellaneous",
-            "value": 239
-          },
-          "device_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "device_protocol": 1,
-          "interface_class": {
-            "hex": "0001",
-            "name": "audio",
-            "value": 1
-          },
-          "interface_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "interface_protocol": 0,
-          "interface_number": 1,
-          "interface_alternate_setting": 0,
-          "interface_association": {
-            "function_class": {
-              "hex": "0001",
-              "name": "audio",
-              "value": 1
-            },
-            "function_subclass": {
-              "hex": "0001",
-              "name": "audio",
-              "value": 1
-            },
-            "function_protocol": 0,
-            "interface_count": 3,
-            "first_interface": 0
-          }
-        },
-        "hotplug": "usb",
-        "driver": "snd-usb-audio",
-        "driver_module": "snd_usb_audio",
-        "drivers": ["snd-usb-audio"],
-        "driver_modules": ["snd_usb_audio"],
-        "module_alias": "usb:v19F7p0015d0236dcEFdsc02dp01ic01isc02ip00in01"
-      },
-      {
-        "index": 127,
-        "attached_to": 106,
-        "class_list": ["sound", "usb"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0004",
-          "name": "Multimedia controller",
-          "value": 4
-        },
-        "sub_class": {
-          "hex": "0001",
-          "name": "Multimedia audio controller",
-          "value": 1
-        },
-        "vendor": {
-          "hex": "0b05",
-          "name": "Generic",
-          "value": 2821
-        },
-        "device": {
-          "hex": "1a52",
-          "name": "USB Audio",
-          "value": 6738
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "0.02",
-          "value": 0
-        },
-        "model": "Generic USB Audio",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:0c.0/0000:11:00.0/usb3/3-6/3-6:1.2",
-        "sysfs_bus_id": "3-6:1.2",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 480000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "00ef",
-            "name": "miscellaneous",
-            "value": 239
-          },
-          "device_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "device_protocol": 1,
-          "interface_class": {
-            "hex": "0001",
-            "name": "audio",
-            "value": 1
-          },
-          "interface_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "interface_protocol": 32,
-          "interface_number": 2,
-          "interface_alternate_setting": 0,
-          "interface_association": {
-            "function_class": {
-              "hex": "0001",
-              "name": "audio",
-              "value": 1
-            },
-            "function_subclass": {
-              "hex": "0000",
-              "name": "per_interface",
-              "value": 0
-            },
-            "function_protocol": 32,
-            "interface_count": 7,
-            "first_interface": 0
-          }
-        },
-        "hotplug": "usb",
-        "driver": "snd-usb-audio",
-        "driver_module": "snd_usb_audio",
-        "drivers": ["snd-usb-audio"],
-        "driver_modules": ["snd_usb_audio"],
-        "module_alias": "usb:v0B05p1A52d0002dcEFdsc02dp01ic01isc02ip20in02"
-      },
-      {
-        "index": 129,
-        "attached_to": 106,
-        "class_list": ["sound", "usb"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0004",
-          "name": "Multimedia controller",
-          "value": 4
-        },
-        "sub_class": {
-          "hex": "0001",
-          "name": "Multimedia audio controller",
-          "value": 1
-        },
-        "vendor": {
-          "hex": "0b05",
-          "name": "Generic",
-          "value": 2821
-        },
-        "device": {
-          "hex": "1a52",
-          "name": "USB Audio",
-          "value": 6738
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "0.02",
-          "value": 0
-        },
-        "model": "Generic USB Audio",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:0c.0/0000:11:00.0/usb3/3-6/3-6:1.0",
-        "sysfs_bus_id": "3-6:1.0",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 480000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "00ef",
-            "name": "miscellaneous",
-            "value": 239
-          },
-          "device_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "device_protocol": 1,
-          "interface_class": {
-            "hex": "0001",
-            "name": "audio",
-            "value": 1
-          },
-          "interface_subclass": {
-            "hex": "0001",
-            "name": "audio",
-            "value": 1
-          },
-          "interface_protocol": 32,
-          "interface_number": 0,
-          "interface_alternate_setting": 0,
-          "interface_association": {
-            "function_class": {
-              "hex": "0001",
-              "name": "audio",
-              "value": 1
-            },
-            "function_subclass": {
-              "hex": "0000",
-              "name": "per_interface",
-              "value": 0
-            },
-            "function_protocol": 32,
-            "interface_count": 7,
-            "first_interface": 0
-          }
-        },
-        "hotplug": "usb",
-        "driver": "snd-usb-audio",
-        "driver_module": "snd_usb_audio",
-        "drivers": ["snd-usb-audio"],
-        "driver_modules": ["snd_usb_audio"],
-        "module_alias": "usb:v0B05p1A52d0002dcEFdsc02dp01ic01isc01ip20in00"
-      },
-      {
-        "index": 135,
-        "attached_to": 125,
-        "class_list": ["sound", "usb"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0004",
-          "name": "Multimedia controller",
-          "value": 4
-        },
-        "sub_class": {
-          "hex": "0001",
-          "name": "Multimedia audio controller",
-          "value": 1
-        },
-        "vendor": {
-          "hex": "0951",
-          "name": "Kingston",
-          "value": 2385
-        },
-        "device": {
-          "hex": "16a4",
-          "name": "HyperX Virtual Surround Sound",
-          "value": 5796
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "0.10",
-          "value": 0
-        },
-        "serial": "00000000",
-        "model": "Kingston HyperX Virtual Surround Sound",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:08.0/0000:07:00.0/0000:08:0c.0/0000:0f:00.0/usb1/1-3/1-3:1.1",
-        "sysfs_bus_id": "1-3:1.1",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 12000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "device_subclass": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "device_protocol": 0,
-          "interface_class": {
-            "hex": "0001",
-            "name": "audio",
-            "value": 1
-          },
-          "interface_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "interface_protocol": 0,
-          "interface_number": 1,
-          "interface_alternate_setting": 0
-        },
-        "hotplug": "usb",
-        "driver": "snd-usb-audio",
-        "driver_module": "snd_usb_audio",
-        "drivers": ["snd-usb-audio"],
-        "driver_modules": ["snd_usb_audio"],
-        "module_alias": "usb:v0951p16A4d0010dc00dsc00dp00ic01isc02ip00in01"
       }
     ],
     "storage_controller": [
       {
-        "index": 41,
-        "attached_to": 49,
+        "index": 45,
+        "attached_to": 53,
         "class_list": ["storage_controller", "pci"],
         "bus_type": {
           "hex": "0004",
@@ -6728,8 +4034,8 @@
         "module_alias": "pci:v0000144Dd0000A809sv0000144Dsd0000A801bc01sc08i02"
       },
       {
-        "index": 53,
-        "attached_to": 80,
+        "index": 57,
+        "attached_to": 84,
         "class_list": ["storage_controller", "pci"],
         "bus_type": {
           "hex": "0004",
@@ -6787,8 +4093,8 @@
         "module_alias": "pci:v0000144Dd0000A809sv0000144Dsd0000A801bc01sc08i02"
       },
       {
-        "index": 63,
-        "attached_to": 54,
+        "index": 67,
+        "attached_to": 58,
         "class_list": ["storage_controller", "pci"],
         "bus_type": {
           "hex": "0004",
@@ -6852,8 +4158,8 @@
         "label": "PROM21 SATA AHCI Controller"
       },
       {
-        "index": 79,
-        "attached_to": 82,
+        "index": 83,
+        "attached_to": 86,
         "class_list": ["storage_controller", "pci"],
         "bus_type": {
           "hex": "0004",
@@ -6919,456 +4225,145 @@
     "system": {
       "form_factor": "laptop"
     },
-    "tv_card": [
-      {
-        "index": 109,
-        "attached_to": 125,
-        "class_list": ["tv_card", "usb"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0112",
-          "name": "TV Card",
-          "value": 274
-        },
-        "vendor": {
-          "hex": "046d",
-          "name": "Logitech Inc.",
-          "value": 1133
-        },
-        "device": {
-          "hex": "0892",
-          "name": "HD Pro Webcam C920",
-          "value": 2194
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "0.19",
-          "value": 0
-        },
-        "serial": "F05822FF",
-        "model": "Logitech HD Pro Webcam C920",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:08.0/0000:07:00.0/0000:08:0c.0/0000:0f:00.0/usb1/1-5/1-5:1.3",
-        "sysfs_bus_id": "1-5:1.3",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 480000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "00ef",
-            "name": "miscellaneous",
-            "value": 239
-          },
-          "device_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "device_protocol": 1,
-          "interface_class": {
-            "hex": "0001",
-            "name": "audio",
-            "value": 1
-          },
-          "interface_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "interface_protocol": 0,
-          "interface_number": 3,
-          "interface_alternate_setting": 0,
-          "interface_association": {
-            "function_class": {
-              "hex": "0001",
-              "name": "audio",
-              "value": 1
-            },
-            "function_subclass": {
-              "hex": "0002",
-              "name": "comm",
-              "value": 2
-            },
-            "function_protocol": 0,
-            "interface_count": 2,
-            "first_interface": 2
-          }
-        },
-        "hotplug": "usb",
-        "driver": "snd-usb-audio",
-        "driver_module": "snd_usb_audio",
-        "drivers": ["snd-usb-audio"],
-        "driver_modules": ["snd_usb_audio"],
-        "driver_info": {
-          "type": "module",
-          "db_entry_0": ["gspca_vc032x"],
-          "active": true,
-          "modprobe": true,
-          "names": ["gspca_vc032x"],
-          "module_args": [""],
-          "conf": ""
-        },
-        "module_alias": "usb:v046Dp0892d0019dcEFdsc02dp01ic01isc02ip00in03"
-      },
-      {
-        "index": 112,
-        "attached_to": 125,
-        "class_list": ["tv_card", "usb"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0112",
-          "name": "TV Card",
-          "value": 274
-        },
-        "vendor": {
-          "hex": "046d",
-          "name": "Logitech Inc.",
-          "value": 1133
-        },
-        "device": {
-          "hex": "0892",
-          "name": "HD Pro Webcam C920",
-          "value": 2194
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "0.19",
-          "value": 0
-        },
-        "serial": "F05822FF",
-        "model": "Logitech HD Pro Webcam C920",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:08.0/0000:07:00.0/0000:08:0c.0/0000:0f:00.0/usb1/1-5/1-5:1.1",
-        "sysfs_bus_id": "1-5:1.1",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 480000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "00ef",
-            "name": "miscellaneous",
-            "value": 239
-          },
-          "device_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "device_protocol": 1,
-          "interface_class": {
-            "hex": "000e",
-            "name": "video",
-            "value": 14
-          },
-          "interface_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "interface_protocol": 0,
-          "interface_number": 1,
-          "interface_alternate_setting": 0,
-          "interface_association": {
-            "function_class": {
-              "hex": "000e",
-              "name": "video",
-              "value": 14
-            },
-            "function_subclass": {
-              "hex": "0003",
-              "name": "hid",
-              "value": 3
-            },
-            "function_protocol": 0,
-            "interface_count": 2,
-            "first_interface": 0
-          }
-        },
-        "hotplug": "usb",
-        "driver": "uvcvideo",
-        "driver_module": "uvcvideo",
-        "drivers": ["uvcvideo"],
-        "driver_modules": ["uvcvideo"],
-        "driver_info": {
-          "type": "module",
-          "db_entry_0": ["gspca_vc032x"],
-          "active": true,
-          "modprobe": true,
-          "names": ["gspca_vc032x"],
-          "module_args": [""],
-          "conf": ""
-        },
-        "module_alias": "usb:v046Dp0892d0019dcEFdsc02dp01ic0Eisc02ip00in01"
-      },
-      {
-        "index": 132,
-        "attached_to": 125,
-        "class_list": ["tv_card", "usb"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0112",
-          "name": "TV Card",
-          "value": 274
-        },
-        "vendor": {
-          "hex": "046d",
-          "name": "Logitech Inc.",
-          "value": 1133
-        },
-        "device": {
-          "hex": "0892",
-          "name": "HD Pro Webcam C920",
-          "value": 2194
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "0.19",
-          "value": 0
-        },
-        "serial": "F05822FF",
-        "model": "Logitech HD Pro Webcam C920",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:08.0/0000:07:00.0/0000:08:0c.0/0000:0f:00.0/usb1/1-5/1-5:1.2",
-        "sysfs_bus_id": "1-5:1.2",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 480000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "00ef",
-            "name": "miscellaneous",
-            "value": 239
-          },
-          "device_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "device_protocol": 1,
-          "interface_class": {
-            "hex": "0001",
-            "name": "audio",
-            "value": 1
-          },
-          "interface_subclass": {
-            "hex": "0001",
-            "name": "audio",
-            "value": 1
-          },
-          "interface_protocol": 0,
-          "interface_number": 2,
-          "interface_alternate_setting": 0,
-          "interface_association": {
-            "function_class": {
-              "hex": "0001",
-              "name": "audio",
-              "value": 1
-            },
-            "function_subclass": {
-              "hex": "0002",
-              "name": "comm",
-              "value": 2
-            },
-            "function_protocol": 0,
-            "interface_count": 2,
-            "first_interface": 2
-          }
-        },
-        "hotplug": "usb",
-        "driver": "snd-usb-audio",
-        "driver_module": "snd_usb_audio",
-        "drivers": ["snd-usb-audio"],
-        "driver_modules": ["snd_usb_audio"],
-        "driver_info": {
-          "type": "module",
-          "db_entry_0": ["gspca_vc032x"],
-          "active": true,
-          "modprobe": true,
-          "names": ["gspca_vc032x"],
-          "module_args": [""],
-          "conf": ""
-        },
-        "module_alias": "usb:v046Dp0892d0019dcEFdsc02dp01ic01isc01ip00in02"
-      },
-      {
-        "index": 140,
-        "attached_to": 125,
-        "class_list": ["tv_card", "usb"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0112",
-          "name": "TV Card",
-          "value": 274
-        },
-        "vendor": {
-          "hex": "046d",
-          "name": "Logitech Inc.",
-          "value": 1133
-        },
-        "device": {
-          "hex": "0892",
-          "name": "HD Pro Webcam C920",
-          "value": 2194
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "0.19",
-          "value": 0
-        },
-        "serial": "F05822FF",
-        "model": "Logitech HD Pro Webcam C920",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:08.0/0000:07:00.0/0000:08:0c.0/0000:0f:00.0/usb1/1-5/1-5:1.0",
-        "sysfs_bus_id": "1-5:1.0",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 480000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "00ef",
-            "name": "miscellaneous",
-            "value": 239
-          },
-          "device_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "device_protocol": 1,
-          "interface_class": {
-            "hex": "000e",
-            "name": "video",
-            "value": 14
-          },
-          "interface_subclass": {
-            "hex": "0001",
-            "name": "audio",
-            "value": 1
-          },
-          "interface_protocol": 0,
-          "interface_number": 0,
-          "interface_alternate_setting": 0,
-          "interface_association": {
-            "function_class": {
-              "hex": "000e",
-              "name": "video",
-              "value": 14
-            },
-            "function_subclass": {
-              "hex": "0003",
-              "name": "hid",
-              "value": 3
-            },
-            "function_protocol": 0,
-            "interface_count": 2,
-            "first_interface": 0
-          }
-        },
-        "hotplug": "usb",
-        "driver": "uvcvideo",
-        "driver_module": "uvcvideo",
-        "drivers": ["uvcvideo"],
-        "driver_modules": ["uvcvideo"],
-        "driver_info": {
-          "type": "module",
-          "db_entry_0": ["gspca_vc032x"],
-          "active": true,
-          "modprobe": true,
-          "names": ["gspca_vc032x"],
-          "module_args": [""],
-          "conf": ""
-        },
-        "module_alias": "usb:v046Dp0892d0019dcEFdsc02dp01ic0Eisc01ip00in00"
-      }
-    ],
     "unknown": [
       {
-        "index": 92,
+        "index": 3,
         "attached_to": 0,
         "class_list": ["unknown"],
         "base_class": {
-          "hex": "0007",
-          "name": "Communication controller",
-          "value": 7
+          "hex": "0101",
+          "name": "Internally Used Class",
+          "value": 257
         },
         "sub_class": {
-          "hex": "0000",
-          "name": "Serial controller",
-          "value": 0
+          "hex": "0004",
+          "name": "FPU",
+          "value": 4
         },
-        "pci_interface": {
-          "hex": "0002",
-          "name": "16550",
-          "value": 2
-        },
-        "device": {
-          "hex": "0000",
-          "name": "16550A",
-          "value": 0
-        },
-        "model": "16550A",
-        "unix_device_names": ["/dev/ttyS0"],
+        "model": "FPU",
         "resources": [
           {
             "type": "io",
-            "base": 1016,
-            "range": 0,
+            "base": 240,
+            "range": 16,
+            "enabled": true,
+            "access": "read_write"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "attached_to": 0,
+        "class_list": ["unknown"],
+        "base_class": {
+          "hex": "0008",
+          "name": "Generic system peripheral",
+          "value": 8
+        },
+        "sub_class": {
+          "hex": "0001",
+          "name": "DMA controller",
+          "value": 1
+        },
+        "pci_interface": {
+          "hex": "0000",
+          "name": "8237",
+          "value": 0
+        },
+        "model": "DMA controller",
+        "resources": [
+          {
+            "type": "dma",
+            "base": "0x4",
+            "enabled": true
+          },
+          {
+            "type": "io",
+            "base": 0,
+            "range": 944,
+            "enabled": true,
+            "access": "read_write"
+          },
+          {
+            "type": "io",
+            "base": 128,
+            "range": 16,
+            "enabled": true,
+            "access": "read_write"
+          },
+          {
+            "type": "io",
+            "base": 192,
+            "range": 32,
+            "enabled": true,
+            "access": "read_write"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "attached_to": 0,
+        "class_list": ["unknown"],
+        "base_class": {
+          "hex": "0008",
+          "name": "Generic system peripheral",
+          "value": 8
+        },
+        "sub_class": {
+          "hex": "0000",
+          "name": "PIC",
+          "value": 0
+        },
+        "pci_interface": {
+          "hex": "0000",
+          "name": "8259",
+          "value": 0
+        },
+        "model": "PIC",
+        "resources": [
+          {
+            "type": "io",
+            "base": 160,
+            "range": 2,
+            "enabled": true,
+            "access": "read_write"
+          },
+          {
+            "type": "io",
+            "base": 32,
+            "range": 2,
+            "enabled": true,
+            "access": "read_write"
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "attached_to": 0,
+        "class_list": ["unknown"],
+        "base_class": {
+          "hex": "0009",
+          "name": "Input device controller",
+          "value": 9
+        },
+        "sub_class": {
+          "hex": "0000",
+          "name": "Keyboard controller",
+          "value": 0
+        },
+        "model": "Keyboard controller",
+        "resources": [
+          {
+            "type": "io",
+            "base": 100,
+            "range": 1,
+            "enabled": true,
+            "access": "read_write"
+          },
+          {
+            "type": "io",
+            "base": 96,
+            "range": 1,
             "enabled": true,
             "access": "read_write"
           }
@@ -7377,89 +4372,8 @@
     ],
     "usb": [
       {
-        "index": 96,
-        "attached_to": 125,
-        "class_list": ["usb", "unknown"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0000",
-          "name": "Unclassified device",
-          "value": 0
-        },
-        "sub_class": {
-          "hex": "0000",
-          "name": "Unclassified device",
-          "value": 0
-        },
-        "vendor": {
-          "hex": "19f7",
-          "name": "RØDE Microphones",
-          "value": 6647
-        },
-        "device": {
-          "hex": "0015",
-          "name": "RØDE NT-USB Mini",
-          "value": 21
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "2.36",
-          "value": 0
-        },
-        "serial": "31FBD749",
-        "model": "RØDE Microphones RØDE NT-USB Mini",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:08.0/0000:07:00.0/0000:08:0c.0/0000:0f:00.0/usb1/1-2/1-2:1.4",
-        "sysfs_bus_id": "1-2:1.4",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 12000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "00ef",
-            "name": "miscellaneous",
-            "value": 239
-          },
-          "device_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "device_protocol": 1,
-          "interface_class": {
-            "hex": "00ff",
-            "name": "vendor_spec",
-            "value": 255
-          },
-          "interface_subclass": {
-            "hex": "0001",
-            "name": "audio",
-            "value": 1
-          },
-          "interface_protocol": 0,
-          "interface_number": 4,
-          "interface_alternate_setting": 0
-        },
-        "hotplug": "usb",
-        "module_alias": "usb:v19F7p0015d0236dcEFdsc02dp01icFFisc01ip00in04"
-      },
-      {
-        "index": 98,
-        "attached_to": 106,
+        "index": 109,
+        "attached_to": 121,
         "class_list": ["usb", "unknown"],
         "bus_type": {
           "hex": "0086",
@@ -7539,354 +4453,8 @@
         "module_alias": "usb:v0B05p19AFd0100dc00dsc00dp00icFFiscFFipFFin00"
       },
       {
-        "index": 120,
-        "attached_to": 125,
-        "class_list": ["usb", "unknown"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0000",
-          "name": "Unclassified device",
-          "value": 0
-        },
-        "sub_class": {
-          "hex": "0000",
-          "name": "Unclassified device",
-          "value": 0
-        },
-        "vendor": {
-          "hex": "19f7",
-          "name": "RØDE Microphones",
-          "value": 6647
-        },
-        "device": {
-          "hex": "0015",
-          "name": "RØDE NT-USB Mini",
-          "value": 21
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "2.36",
-          "value": 0
-        },
-        "serial": "31FBD749",
-        "model": "RØDE Microphones RØDE NT-USB Mini",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:08.0/0000:07:00.0/0000:08:0c.0/0000:0f:00.0/usb1/1-2/1-2:1.3",
-        "sysfs_bus_id": "1-2:1.3",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 12000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "00ef",
-            "name": "miscellaneous",
-            "value": 239
-          },
-          "device_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "device_protocol": 1,
-          "interface_class": {
-            "hex": "0003",
-            "name": "hid",
-            "value": 3
-          },
-          "interface_subclass": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "interface_protocol": 0,
-          "interface_number": 3,
-          "interface_alternate_setting": 0
-        },
-        "hotplug": "usb",
-        "driver": "usbhid",
-        "driver_module": "usbhid",
-        "drivers": ["usbhid"],
-        "driver_modules": ["usbhid"],
-        "module_alias": "usb:v19F7p0015d0236dcEFdsc02dp01ic03isc00ip00in03"
-      },
-      {
-        "index": 126,
-        "attached_to": 125,
-        "class_list": ["usb", "unknown"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0000",
-          "name": "Unclassified device",
-          "value": 0
-        },
-        "sub_class": {
-          "hex": "0000",
-          "name": "Unclassified device",
-          "value": 0
-        },
-        "vendor": {
-          "hex": "046d",
-          "name": "Logitech Inc.",
-          "value": 1133
-        },
-        "device": {
-          "hex": "c099",
-          "name": "G502 X",
-          "value": 49305
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "60.00",
-          "value": 0
-        },
-        "serial": "206236903530",
-        "model": "Logitech G502 X",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:08.0/0000:07:00.0/0000:08:0c.0/0000:0f:00.0/usb1/1-6/1-6:1.1",
-        "sysfs_bus_id": "1-6:1.1",
-        "unix_device_names": [
-          "/dev/input/by-id/usb-Logitech_G502_X_206236903530-if01-event-kbd",
-          "/dev/input/by-path/pci-0000:0f:00.0-usb-0:6:1.1-event-kbd",
-          "/dev/input/by-path/pci-0000:0f:00.0-usbv2-0:6:1.1-event-kbd",
-          "/dev/input/event4"
-        ],
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 12000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "device_subclass": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "device_protocol": 0,
-          "interface_class": {
-            "hex": "0003",
-            "name": "hid",
-            "value": 3
-          },
-          "interface_subclass": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "interface_protocol": 0,
-          "interface_number": 1,
-          "interface_alternate_setting": 0
-        },
-        "hotplug": "usb",
-        "driver": "usbhid",
-        "driver_module": "usbhid",
-        "drivers": ["usbhid"],
-        "driver_modules": ["usbhid"],
-        "module_alias": "usb:v046DpC099d6000dc00dsc00dp00ic03isc00ip00in01"
-      },
-      {
-        "index": 131,
-        "attached_to": 125,
-        "class_list": ["usb", "unknown"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0000",
-          "name": "Unclassified device",
-          "value": 0
-        },
-        "sub_class": {
-          "hex": "0000",
-          "name": "Unclassified device",
-          "value": 0
-        },
-        "vendor": {
-          "hex": "0951",
-          "name": "Kingston",
-          "value": 2385
-        },
-        "device": {
-          "hex": "16a4",
-          "name": "HyperX Virtual Surround Sound",
-          "value": 5796
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "0.10",
-          "value": 0
-        },
-        "serial": "00000000",
-        "model": "Kingston HyperX Virtual Surround Sound",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:08.0/0000:07:00.0/0000:08:0c.0/0000:0f:00.0/usb1/1-3/1-3:1.3",
-        "sysfs_bus_id": "1-3:1.3",
-        "unix_device_names": ["/dev/input/event1"],
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 12000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "device_subclass": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "device_protocol": 0,
-          "interface_class": {
-            "hex": "0003",
-            "name": "hid",
-            "value": 3
-          },
-          "interface_subclass": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "interface_protocol": 0,
-          "interface_number": 3,
-          "interface_alternate_setting": 0
-        },
-        "hotplug": "usb",
-        "driver": "usbhid",
-        "driver_module": "usbhid",
-        "drivers": ["usbhid"],
-        "driver_modules": ["usbhid"],
-        "module_alias": "usb:v0951p16A4d0010dc00dsc00dp00ic03isc00ip00in03"
-      },
-      {
-        "index": 133,
-        "attached_to": 106,
-        "class_list": ["usb", "unknown"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0000",
-          "name": "Unclassified device",
-          "value": 0
-        },
-        "sub_class": {
-          "hex": "0000",
-          "name": "Unclassified device",
-          "value": 0
-        },
-        "vendor": {
-          "hex": "04d9",
-          "name": "Holtek Microelectronics Inc.",
-          "value": 1241
-        },
-        "device": {
-          "hex": "a131",
-          "name": "USB-HID Keyboard",
-          "value": 41265
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "1.06",
-          "value": 0
-        },
-        "model": "Holtek Microelectronics USB-HID Keyboard",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:0c.0/0000:11:00.0/usb3/3-5/3-5:1.3",
-        "sysfs_bus_id": "3-5:1.3",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 12000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "device_subclass": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "device_protocol": 0,
-          "interface_class": {
-            "hex": "0003",
-            "name": "hid",
-            "value": 3
-          },
-          "interface_subclass": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "interface_protocol": 0,
-          "interface_number": 3,
-          "interface_alternate_setting": 0
-        },
-        "hotplug": "usb",
-        "driver": "usbhid",
-        "driver_module": "usbhid",
-        "drivers": ["usbhid"],
-        "driver_modules": ["usbhid"],
-        "module_alias": "usb:v04D9pA131d0106dc00dsc00dp00ic03isc00ip00in03"
-      },
-      {
-        "index": 137,
-        "attached_to": 106,
+        "index": 151,
+        "attached_to": 121,
         "class_list": ["usb", "unknown"],
         "bus_type": {
           "hex": "0086",
@@ -7968,180 +4536,12 @@
         "drivers": ["usbhid"],
         "driver_modules": ["usbhid"],
         "module_alias": "usb:v0B05p19AFd0100dc00dsc00dp00ic03isc00ip00in02"
-      },
-      {
-        "index": 138,
-        "attached_to": 106,
-        "class_list": ["usb", "unknown"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0000",
-          "name": "Unclassified device",
-          "value": 0
-        },
-        "sub_class": {
-          "hex": "0000",
-          "name": "Unclassified device",
-          "value": 0
-        },
-        "vendor": {
-          "hex": "0b05",
-          "name": "Generic",
-          "value": 2821
-        },
-        "device": {
-          "hex": "1a52",
-          "name": "USB Audio",
-          "value": 6738
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "0.02",
-          "value": 0
-        },
-        "model": "Generic USB Audio",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:0c.0/0000:11:00.0/usb3/3-6/3-6:1.7",
-        "sysfs_bus_id": "3-6:1.7",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 480000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "00ef",
-            "name": "miscellaneous",
-            "value": 239
-          },
-          "device_subclass": {
-            "hex": "0002",
-            "name": "comm",
-            "value": 2
-          },
-          "device_protocol": 1,
-          "interface_class": {
-            "hex": "0003",
-            "name": "hid",
-            "value": 3
-          },
-          "interface_subclass": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "interface_protocol": 0,
-          "interface_number": 7,
-          "interface_alternate_setting": 0
-        },
-        "hotplug": "usb",
-        "driver": "usbhid",
-        "driver_module": "usbhid",
-        "drivers": ["usbhid"],
-        "driver_modules": ["usbhid"],
-        "module_alias": "usb:v0B05p1A52d0002dcEFdsc02dp01ic03isc00ip00in07"
-      },
-      {
-        "index": 141,
-        "attached_to": 106,
-        "class_list": ["usb", "unknown"],
-        "bus_type": {
-          "hex": "0086",
-          "name": "USB",
-          "value": 134
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0000",
-          "name": "Unclassified device",
-          "value": 0
-        },
-        "sub_class": {
-          "hex": "0000",
-          "name": "Unclassified device",
-          "value": 0
-        },
-        "vendor": {
-          "hex": "04d9",
-          "name": "Holtek Microelectronics Inc.",
-          "value": 1241
-        },
-        "device": {
-          "hex": "a131",
-          "name": "USB-HID Keyboard",
-          "value": 41265
-        },
-        "revision": {
-          "hex": "0000",
-          "name": "1.06",
-          "value": 0
-        },
-        "model": "Holtek Microelectronics USB-HID Keyboard",
-        "sysfs_id": "/devices/pci0000:00/0000:00:02.1/0000:04:00.0/0000:05:0c.0/0000:11:00.0/usb3/3-5/3-5:1.1",
-        "sysfs_bus_id": "3-5:1.1",
-        "resources": [
-          {
-            "type": "baud",
-            "speed": 12000000,
-            "bits": 0,
-            "stop_bits": 0,
-            "parity": 0,
-            "handshake": 0
-          }
-        ],
-        "detail": {
-          "device_class": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "device_subclass": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "device_protocol": 0,
-          "interface_class": {
-            "hex": "0003",
-            "name": "hid",
-            "value": 3
-          },
-          "interface_subclass": {
-            "hex": "0000",
-            "name": "per_interface",
-            "value": 0
-          },
-          "interface_protocol": 0,
-          "interface_number": 1,
-          "interface_alternate_setting": 0
-        },
-        "hotplug": "usb",
-        "driver": "usbhid",
-        "driver_module": "usbhid",
-        "drivers": ["usbhid"],
-        "driver_modules": ["usbhid"],
-        "module_alias": "usb:v04D9pA131d0106dc00dsc00dp00ic03isc00ip00in01"
       }
     ],
     "usb_controller": [
       {
-        "index": 66,
-        "attached_to": 67,
+        "index": 70,
+        "attached_to": 71,
         "class_list": ["usb_controller", "pci"],
         "bus_type": {
           "hex": "0004",
@@ -8189,7 +4589,7 @@
         "sysfs_iommu_group_id": 25,
         "detail": {
           "function": 3,
-          "command": 1027,
+          "command": 1031,
           "header_type": 0,
           "secondary_bus": 0,
           "prog_if": 48
@@ -8201,8 +4601,8 @@
         "module_alias": "pci:v00001022d000015B6sv00001043sd00008877bc0Csc03i30"
       },
       {
-        "index": 69,
-        "attached_to": 43,
+        "index": 73,
+        "attached_to": 47,
         "class_list": ["usb_controller", "pci"],
         "bus_type": {
           "hex": "0004",
@@ -8266,8 +4666,8 @@
         "module_alias": "pci:v00001022d000043F7sv00001B21sd00001142bc0Csc03i30"
       },
       {
-        "index": 73,
-        "attached_to": 72,
+        "index": 77,
+        "attached_to": 76,
         "class_list": ["usb_controller", "pci"],
         "bus_type": {
           "hex": "0004",
@@ -8331,8 +4731,8 @@
         "module_alias": "pci:v00001022d000043F7sv00001B21sd00001142bc0Csc03i30"
       },
       {
-        "index": 87,
-        "attached_to": 67,
+        "index": 91,
+        "attached_to": 71,
         "class_list": ["usb_controller", "pci"],
         "bus_type": {
           "hex": "0004",
@@ -8392,8 +4792,8 @@
         "module_alias": "pci:v00001022d000015B7sv00001043sd00008877bc0Csc03i30"
       },
       {
-        "index": 89,
-        "attached_to": 61,
+        "index": 93,
+        "attached_to": 65,
         "class_list": ["usb_controller", "pci"],
         "bus_type": {
           "hex": "0004",
@@ -8458,8 +4858,8 @@
     "bios": {
       "handle": 0,
       "vendor": "American Megatrends Inc.",
-      "version": "2806",
-      "date": "02/13/2025",
+      "version": "3702",
+      "date": "04/09/2026",
       "features": [
         "PCI supported",
         "BIOS flashable",
@@ -8612,40 +5012,6 @@
         "sram_type_supported": ["Pipeline Burst"]
       }
     ],
-    "chassis": [
-      {
-        "handle": 3,
-        "manufacturer": "Default string",
-        "version": "Default string",
-        "chassis_type": {
-          "hex": "0003",
-          "name": "Desktop",
-          "value": 3
-        },
-        "lock_present": false,
-        "bootup_state": {
-          "hex": "0003",
-          "name": "Safe",
-          "value": 3
-        },
-        "power_state": {
-          "hex": "0003",
-          "name": "Safe",
-          "value": 3
-        },
-        "thermal_state": {
-          "hex": "0003",
-          "name": "Safe",
-          "value": 3
-        },
-        "security_state": {
-          "hex": "0003",
-          "name": "None",
-          "value": 3
-        },
-        "oem": "0x0"
-      }
-    ],
     "config": {
       "handle": 6,
       "options": ["Default string"]
@@ -8680,11 +5046,11 @@
           "value": 3
         },
         "ecc": {
-          "hex": "0003",
-          "name": "None",
-          "value": 3
+          "hex": "0006",
+          "name": "Multi-bit",
+          "value": 6
         },
-        "max_size": "0x8000000",
+        "max_size": "0x10000000",
         "error_handle": 18,
         "slots": 4
       }
