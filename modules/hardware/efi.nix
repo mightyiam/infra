@@ -1,7 +1,10 @@
-{
-  nixos.modules.efi = {pkgs, ...}: {
+{lib, ...}: {
+  nixos.modules.efi = nixosArgs @ {pkgs, ...}: {
     boot.loader = {
-      efi.canTouchEfiVariables = true;
+      efi = {
+        efiSysMountPoint = nixosArgs.config.boot.partlabels |> lib.head |> lib.getAttr "path";
+        canTouchEfiVariables = true;
+      };
       grub.efiSupport = true;
     };
 
