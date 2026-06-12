@@ -1,6 +1,6 @@
 {lib, ...}: {
   home.gui = hmArgs: {
-    home.sessionVariables.VISUAL = lib.getExe hmArgs.config.programs.neovide.package;
+    home.sessionVariables.VISUAL = "${lib.getExe hmArgs.config.programs.neovide.package} --no-fork";
 
     programs.neovide = {
       enable = true;
