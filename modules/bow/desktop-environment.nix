@@ -8,7 +8,6 @@
   users.bow.home.gui = {pkgs, ...}: {
     xdg.mimeApps.defaultApplicationPackages = [
       pkgs.cosmic-edit
-      pkgs.cosmic-reader
       pkgs.loupe
     ];
   };

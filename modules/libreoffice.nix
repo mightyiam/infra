@@ -1,6 +1,6 @@
-{
+{lib, ...}: {
   homeManager.modules.gui = {pkgs, ...}: {
-    home.packages = [pkgs.libreoffice-fresh];
+    home.packages = lib.mkOrder 30 [pkgs.libreoffice-fresh];
     xdg.mimeApps.defaultApplicationPackages = [pkgs.libreoffice-fresh];
   };
 }

@@ -1,6 +1,6 @@
-{
+{lib, ...}: {
   homeManager.modules.gui = {pkgs, ...}: {
-    home.packages = [pkgs.vlc];
+    home.packages = lib.mkOrder 20 [pkgs.vlc];
     xdg.mimeApps.defaultApplicationPackages = [pkgs.vlc];
   };
 }
