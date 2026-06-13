@@ -1,8 +1,6 @@
 {
-  home.gui = {
+  home.gui = hmArgs: {
     programs.zathura.enable = true;
-    xdg.mimeApps.defaultApplications = {
-      "application/pdf" = ["org.pwmt.zathura.desktop"];
-    };
+    xdg.mimeApps.defaultApplicationPackages = [hmArgs.config.programs.zathura.package];
   };
 }

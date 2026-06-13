@@ -1,5 +1,6 @@
 {
   homeManager.modules.gui = {pkgs, ...}: {
-    home.packages = with pkgs; [vlc];
+    home.packages = [pkgs.vlc];
+    xdg.mimeApps.defaultApplicationPackages = [pkgs.vlc];
   };
 }
