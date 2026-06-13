@@ -14,7 +14,7 @@
 
     boot.partlabels = [
       "boot0"
-      "boo1"
+      "boot1"
     ];
 
     nixpkgs.config.allowUnfreePackages = [
