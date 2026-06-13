@@ -20,5 +20,9 @@
     homeManager.modules.base = {
       programs.home-manager.enable = true;
     };
+
+    nixos.modules.base = {pkgs, ...}: {
+      home-manager.backupCommand = lib.getExe' pkgs.trash-cli "trash-put";
+    };
   };
 }
