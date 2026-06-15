@@ -47,7 +47,6 @@ in {
   };
   config = {
     nixos.modules = {
-      # TODO non-mightyiam users cannot authenticate by default
       base = {pkgs, ...}: {
         imports = [(inputs.home-manager + "/nixos")];
         users = {
