@@ -4,7 +4,6 @@
       enigma
       pingus
       sgt-puzzles
-      # TODO possibly https://github.com/NixOS/nixpkgs/issues/399790
       stellarium
     ];
   };
