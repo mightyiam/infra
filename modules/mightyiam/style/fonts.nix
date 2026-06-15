@@ -7,7 +7,6 @@
       serif = cfg.monospace;
 
       monospace = {
-        # TODO stop using nerd fonts because they were never a good idea?
         package = pkgs.nerd-fonts.open-dyslexic;
         name = "OpenDyslexicM Nerd Font Mono";
       };
