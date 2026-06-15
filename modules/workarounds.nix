@@ -4,10 +4,6 @@
     environment.defaultPackages = [];
 
     stylix.targets = {
-      # TODO look at this again
-      # https://github.com/danth/stylix/discussions/1206
-      grub.enable = false;
-
       # https://github.com/nix-community/stylix/discussions/2232
       gtksourceview.enable = false;
     };
