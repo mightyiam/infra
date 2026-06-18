@@ -1,20 +1,21 @@
-{
-  lib,
-  withSystem,
-  ...
-}: {
+{lib, ...}: {
+  nixpkgs.overlays = [
+    (final: prev: {
+      get-hyprland-main-keyboard-layout = prev.writeShellApplication {
+        name = "get-hyprland-main-keyboard-layout";
+        runtimeInputs = with prev; [
+          hyprland
+          jq
+        ];
+        text = ''
+          hyprctl devices -j | jq -r '.keyboards[] | select(.main == true) | .active_keymap | select(. == "English (US)" or . == "Hebrew") | if . == "English (US)" then "us" else "il" end'
+        '';
+      };
+    })
+  ];
+
   perSystem = {pkgs, ...}: {
-    # TODO overlay
-    packages.get-hyprland-main-keyboard-layout = pkgs.writeShellApplication {
-      name = "get-hyprland-main-keyboard-layout";
-      runtimeInputs = with pkgs; [
-        hyprland
-        jq
-      ];
-      text = ''
-        hyprctl devices -j | jq -r '.keyboards[] | select(.main == true) | .active_keymap | select(. == "English (US)" or . == "Hebrew") | if . == "English (US)" then "us" else "il" end'
-      '';
-    };
+    packages = {inherit (pkgs) get-hyprland-main-keyboard-layout;};
   };
 
   home.gui = hmArgs @ {pkgs, ...}: let
@@ -41,11 +42,7 @@
         block = "custom";
         watch_files = [hyprlandStateFile];
         interval = "once";
-        command =
-          withSystem pkgs.stdenv.hostPlatform.system (
-            psArgs: psArgs.config.packages.get-hyprland-main-keyboard-layout
-          )
-          |> lib.getExe;
+        command = lib.getExe pkgs.get-hyprland-main-keyboard-layout;
       }
     ];
   };
