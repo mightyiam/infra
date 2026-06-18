@@ -1,12 +1,5 @@
-{
-  lib,
-  withSystem,
-  ...
-}: {
-  home.gui = hmArgs @ {pkgs, ...}: let
-    # TODO via overlay
-    hyprcwd = withSystem pkgs.stdenv.hostPlatform.system (psArgs: psArgs.config.packages.hyprcwd);
-  in {
+{lib, ...}: {
+  home.gui = hmArgs @ {pkgs, ...}: {
     options.terminal = {
       path = lib.mkOption {
         type = lib.types.path;
@@ -24,7 +17,7 @@
       wayland.windowManager = {
         hyprland.settings.bind = [
           "SUPER, Return, exec, ${hmArgs.config.terminal.path}"
-          "SUPER+SHIFT, Return, exec, ${hmArgs.config.terminal.path} --working-directory `${lib.getExe hyprcwd}`"
+          "SUPER+SHIFT, Return, exec, ${hmArgs.config.terminal.path} --working-directory `${lib.getExe pkgs.hyprcwd}`"
         ];
       };
     };
