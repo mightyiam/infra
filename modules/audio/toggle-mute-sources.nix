@@ -1,33 +1,31 @@
-{
-  lib,
-  withSystem,
-  ...
-}: {
+{lib, ...}: {
+  nixpkgs.overlays = [
+    (final: prev: {
+      # TODO rewrite in Nushell
+      toggle-mute-sources = prev.writeShellApplication {
+        name = "toggle-mute-sources";
+        runtimeInputs = [
+          prev.pulseaudio
+          final.gawk
+        ];
+        text = ''
+          for source in $(pactl list short sources | awk "{print \$2}");
+          do pactl set-source-mute "$source" toggle;
+          done
+        '';
+      };
+    })
+  ];
+
   perSystem = {pkgs, ...}: {
-    # TODO rewrite in Nushell
-    packages.toggle-mute-sources = pkgs.writeShellApplication {
-      name = "toggle-mute-sources";
-      runtimeInputs = with pkgs; [
-        pulseaudio
-        gawk
-      ];
-      text = ''
-        for source in $(pactl list short sources | awk "{print \$2}");
-        do pactl set-source-mute "$source" toggle;
-        done
-      '';
-    };
+    packages = {inherit (pkgs) toggle-mute-sources;};
   };
 
-  homeManager.modules.gui = {pkgs, ...}: let
-    toggle-mute-sources = withSystem pkgs.stdenv.hostPlatform.system (
-      psArgs: psArgs.config.packages.toggle-mute-sources
-    );
-  in {
+  homeManager.modules.gui = {pkgs, ...}: {
     wayland.windowManager.hyprland.settings.bind = [
-      "SUPER, z, exec, ${lib.getExe toggle-mute-sources}"
+      "SUPER, z, exec, ${lib.getExe pkgs.toggle-mute-sources}"
     ];
 
-    home.packages = [toggle-mute-sources];
+    home.packages = [pkgs.toggle-mute-sources];
   };
 }
