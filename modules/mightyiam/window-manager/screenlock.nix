@@ -1,14 +1,8 @@
-{
-  lib,
-  withSystem,
-  ...
-}: {
+{lib, ...}: {
   nixos.modules.pc.security.pam.services.swaylock = {};
 
   home.gui = {pkgs, ...}: let
     lockCommand = lib.getExe pkgs.swaylock;
-    # TODO via overlay
-    dpms-all = withSystem pkgs.stdenv.hostPlatform.system (psArgs: psArgs.config.packages.dpms-all);
   in {
     wayland.windowManager.hyprland.settings.bind = [
       "SUPER+Alt, l, exec, ${lockCommand}"
@@ -32,8 +26,8 @@
         }
         {
           timeout = 60 * 11;
-          command = "${lib.getExe dpms-all} off";
-          resumeCommand = "${lib.getExe dpms-all} on";
+          command = "${lib.getExe pkgs.dpms-all} off";
+          resumeCommand = "${lib.getExe pkgs.dpms-all} on";
         }
       ];
     };
