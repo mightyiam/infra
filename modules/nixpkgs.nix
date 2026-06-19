@@ -51,6 +51,9 @@ in {
 
     nixos.modules.base = cfg.polyModule;
     homeManager.modules.base = cfg.polyModule;
-    armilaria = cfg.polyModule;
+    armilaria = {
+      imports = [cfg.polyModule];
+      nixpkgs.source = inputs.nixpkgs;
+    };
   };
 }
