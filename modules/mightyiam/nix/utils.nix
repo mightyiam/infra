@@ -1,9 +1,7 @@
-{lib, ...}: let
-  system-command = {writeShellScriptBin}: writeShellScriptBin "system" "nix-instantiate --eval --expr builtins.currentSystem --raw";
-in {
+{lib, ...}: {
   nixpkgs.overlays = [
     (final: prev: {
-      system-command = prev.callPackage system-command {};
+      system-command = prev.callPackage ./system-command.pkg.nix {};
     })
   ];
 

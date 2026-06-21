@@ -1,23 +1,7 @@
-{lib, ...}: let
-  get-hyprland-main-keyboard-layout = {
-    writeShellApplication,
-    hyprland,
-    jq,
-  }:
-    writeShellApplication {
-      name = "get-hyprland-main-keyboard-layout";
-      runtimeInputs = [
-        hyprland
-        jq
-      ];
-      text = ''
-        hyprctl devices -j | jq -r '.keyboards[] | select(.main == true) | .active_keymap | select(. == "English (US)" or . == "Hebrew") | if . == "English (US)" then "us" else "il" end'
-      '';
-    };
-in {
+{lib, ...}: {
   nixpkgs.overlays = [
     (final: prev: {
-      get-hyprland-main-keyboard-layout = prev.callPackage get-hyprland-main-keyboard-layout {};
+      get-hyprland-main-keyboard-layout = prev.callPackage ./get-hyprland-main-keyboard-layout.pkg.nix {};
     })
   ];
 

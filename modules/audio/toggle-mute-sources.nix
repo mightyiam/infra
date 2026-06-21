@@ -1,26 +1,7 @@
-{lib, ...}: let
-  toggle-mute-sources = {
-    writeShellApplication,
-    pulseaudio,
-    gawk,
-  }:
-    writeShellApplication {
-      name = "toggle-mute-sources";
-      runtimeInputs = [
-        pulseaudio
-        gawk
-      ];
-      text = ''
-        for source in $(pactl list short sources | awk "{print \$2}");
-        do pactl set-source-mute "$source" toggle;
-        done
-      '';
-    };
-in {
+{lib, ...}: {
   nixpkgs.overlays = [
     (final: prev: {
-      # TODO rewrite in Nushell
-      toggle-mute-sources = prev.callPackage toggle-mute-sources {};
+      toggle-mute-sources = prev.callPackage ./toggle-mute-sources.pkg.nix {};
     })
   ];
 
