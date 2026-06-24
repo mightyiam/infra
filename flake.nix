@@ -14,7 +14,7 @@
 
   inputs = {
     autoreload-nvim = {
-      url = "github:ccntrq/autoreload.nvim";
+      url = "github:ccntrq/autoreload.nvim/1-blocking-ux-for-conflicts";
       flake = false;
     };
     files = {

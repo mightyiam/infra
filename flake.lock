@@ -3,15 +3,16 @@
     "autoreload-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1772708028,
-        "narHash": "sha256-IktxyHlBhbUYAcVtuoVsvLOgtDafC0eE1Y2OfU9aE3k=",
+        "lastModified": 1782287892,
+        "narHash": "sha256-iWH9VwEaZMUfo9cA0lbenrdRX0Mxodm0c0mbqg6faII=",
         "owner": "ccntrq",
         "repo": "autoreload.nvim",
-        "rev": "6b58960cf12d008e821388afb4b5c75a48e1eb9f",
+        "rev": "685c11036ac82168d68eecb9b2e77a02ac855892",
         "type": "github"
       },
       "original": {
         "owner": "ccntrq",
+        "ref": "1-blocking-ux-for-conflicts",
         "repo": "autoreload.nvim",
         "type": "github"
       }

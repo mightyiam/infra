@@ -5,7 +5,7 @@
 }: {
   flake-file.inputs.autoreload-nvim = {
     flake = false;
-    url = "github:ccntrq/autoreload.nvim";
+    url = "github:ccntrq/autoreload.nvim/1-blocking-ux-for-conflicts";
   };
 
   armilaria = {pkgs, ...}: {
@@ -22,6 +22,7 @@
       ''
         require('autoreload').setup(${nixvim.lua.toLuaObject {
           timer.enabled = false;
+          conflict.strategy = "prompt";
         }})
       '';
   };
