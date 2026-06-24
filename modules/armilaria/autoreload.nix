@@ -5,7 +5,7 @@
 }: {
   flake-file.inputs.autoreload-nvim = {
     flake = false;
-    url = "github:ccntrq/autoreload.nvim/1-blocking-ux-for-conflicts";
+    url = "github:ccntrq/autoreload.nvim";
   };
 
   armilaria = {pkgs, ...}: {
