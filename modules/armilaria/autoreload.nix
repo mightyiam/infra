@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  inputs,
+  nixvim,
+  ...
+}: {
   flake-file.inputs.autoreload-nvim = {
     flake = false;
     url = "github:ccntrq/autoreload.nvim";
@@ -16,11 +20,9 @@
     extraConfigLua =
       # lua
       ''
-        require('autoreload').setup({
-          timer = {
-            enabled = false
-          }
-        })
+        require('autoreload').setup(${nixvim.lua.toLuaObject {
+          timer.enabled = false;
+        }})
       '';
   };
 }
