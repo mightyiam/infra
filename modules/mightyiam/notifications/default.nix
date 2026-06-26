@@ -35,5 +35,7 @@ in {
     wayland.windowManager.hyprland.settings.exec-once = [
       (lib.getExe pkgs.handle-hyprland-screencast)
     ];
+
+    home.packages = [pkgs.notify-desktop];
   };
 }
