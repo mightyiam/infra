@@ -1,22 +1,6 @@
-{
-  nixvim,
-  inputs,
-  ...
-}: {
-  flake-file.inputs.nvim-genghis = {
-    url = "github:chrisgrieser/nvim-genghis";
-    flake = false;
-  };
-
+{nixvim, ...}: {
   armilaria = {pkgs, ...}: {
-    extraPlugins = [
-      # TODO upstream
-      (pkgs.vimUtils.buildVimPlugin {
-        pname = "nvim-genghis";
-        version = "0-unstable";
-        src = inputs.nvim-genghis;
-      })
-    ];
+    extraPlugins = [pkgs.vimPlugins.nvim-genghis];
 
     extraConfigLua = ''
       require('genghis').setup(${

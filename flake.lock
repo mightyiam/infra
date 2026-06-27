@@ -176,22 +176,6 @@
         "type": "github"
       }
     },
-    "nvim-genghis": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1782115416,
-        "narHash": "sha256-z4VSvOWY85W6A9jiZkAgY/ezvxSXKBJdgjGXC0Thud0=",
-        "owner": "chrisgrieser",
-        "repo": "nvim-genghis",
-        "rev": "12100e3fe7fa863f60b5b81a3587c8c9d5a5b2ff",
-        "type": "github"
-      },
-      "original": {
-        "owner": "chrisgrieser",
-        "repo": "nvim-genghis",
-        "type": "github"
-      }
-    },
     "refjump-nvim": {
       "flake": false,
       "locked": {
@@ -221,7 +205,6 @@
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
-        "nvim-genghis": "nvim-genghis",
         "refjump-nvim": "refjump-nvim",
         "smart-scrolloff-nvim": "smart-scrolloff-nvim",
         "stylix": "stylix",

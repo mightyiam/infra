@@ -51,10 +51,6 @@
       url = "github:nix-community/nixvim";
       flake = false;
     };
-    nvim-genghis = {
-      url = "github:chrisgrieser/nvim-genghis";
-      flake = false;
-    };
     refjump-nvim = {
       url = "github:mawkler/refjump.nvim";
       flake = false;
