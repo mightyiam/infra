@@ -20,9 +20,7 @@
     _module.args.nixvim =
       import "${inputs.nixvim}/lib/overlay.nix" |> lib.extend |> lib.getAttr "nixvim";
 
-    users.mightyiam.home.base = hmArgs @ {pkgs, ...}: let
-      cfg = hmArgs.config.armilaria;
-    in {
+    users.mightyiam.home.base = hmArgs @ {pkgs, ...}: {
       options.armilaria = lib.mkOption {
         type = lib.types.attrs;
         default = withSystem pkgs.stdenv.hostPlatform.system (
@@ -34,8 +32,8 @@
         );
       };
       config.home = {
-        packages = [cfg.config.build.package];
-        sessionVariables.EDITOR = lib.getExe cfg.config.build.package;
+        packages = [pkgs.armilaria];
+        sessionVariables.EDITOR = lib.getExe pkgs.armilaria;
       };
     };
 
@@ -55,5 +53,11 @@
 
       config.packages.armilaria = psArgs.config.armilaria.evaluation.config.build.package;
     };
+
+    nixpkgs.overlays = [
+      (final: prev: {
+        armilaria = withSystem prev.stdenv.hostPlatform.system (psArgs: break psArgs.config.armilaria.evaluation.config.build.package);
+      })
+    ];
   };
 }
