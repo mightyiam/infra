@@ -37,7 +37,7 @@
       };
     };
 
-    perSystem = psArgs @ {system, ...}: {
+    perSystem = {system, ...}: {
       options.armilaria = lib.mkOption {
         type = lib.types.submodule {
           imports = [
@@ -50,8 +50,6 @@
           ];
         };
       };
-
-      config.packages.armilaria = psArgs.config.armilaria.evaluation.config.build.package;
     };
 
     nixpkgs.overlays = [

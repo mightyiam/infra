@@ -5,10 +5,6 @@
     })
   ];
 
-  perSystem = {pkgs, ...}: {
-    packages = {inherit (pkgs) toggle-mute-sources;};
-  };
-
   homeManager.modules.gui = {pkgs, ...}: {
     wayland.windowManager.hyprland.settings.bind = [
       "SUPER, z, exec, ${lib.getExe pkgs.toggle-mute-sources}"

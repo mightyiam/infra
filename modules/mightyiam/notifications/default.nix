@@ -9,12 +9,6 @@ in {
     })
   ];
 
-  perSystem = {pkgs, ...}: {
-    packages = {
-      inherit (pkgs) notification-privacy-off notification-privacy-on handle-hyprland-screencast;
-    };
-  };
-
   home.gui = {pkgs, ...}: {
     services.mako = {
       enable = true;

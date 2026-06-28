@@ -5,10 +5,6 @@
     })
   ];
 
-  perSystem = {pkgs, ...}: {
-    packages = {inherit (pkgs) ftn-advertise;};
-  };
-
   home.gui = {pkgs, ...}: {
     home.packages = [pkgs.ftn-advertise];
   };

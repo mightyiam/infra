@@ -5,10 +5,6 @@
     })
   ];
 
-  perSystem = {pkgs, ...}: {
-    packages = {inherit (pkgs) get-hyprland-main-keyboard-layout;};
-  };
-
   home.gui = hmArgs @ {pkgs, ...}: let
     hyprlandStateFile = "${hmArgs.config.xdg.stateHome}/hyprland-rotate-kb-layout";
 

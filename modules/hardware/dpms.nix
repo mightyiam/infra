@@ -5,10 +5,6 @@
     })
   ];
 
-  perSystem = {pkgs, ...}: {
-    packages = {inherit (pkgs) dpms-all;};
-  };
-
   nixos.modules.base = {
     services.kmscon.config.dmps-timeout = 60;
   };

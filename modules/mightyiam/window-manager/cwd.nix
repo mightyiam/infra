@@ -20,10 +20,6 @@
     })
   ];
 
-  perSystem = {pkgs, ...}: {
-    packages = {inherit (pkgs) hyprcwd;};
-  };
-
   home.gui = {pkgs, ...}: {
     home.packages = [pkgs.hyprcwd];
   };

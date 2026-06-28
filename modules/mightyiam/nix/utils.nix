@@ -5,8 +5,6 @@
     })
   ];
 
-  perSystem = {pkgs, ...}: {packages = {inherit (pkgs) system-command;};};
-
   home.base = {pkgs, ...}: {
     home.packages = [
       pkgs.nix-diff

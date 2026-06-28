@@ -40,13 +40,19 @@ in {
   config = {
     flake-file.inputs.nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";
 
-    perSystem = {system, ...}: {
+    perSystem = {
+      system,
+      pkgs,
+      ...
+    }: {
       _module.args.pkgs = import inputs.nixpkgs (
         {
           inherit system;
         }
         // cfg.args
       );
+
+      legacyPackages = pkgs;
     };
 
     nixos.modules.base = cfg.polyModule;
