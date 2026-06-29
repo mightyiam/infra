@@ -61,22 +61,25 @@ in {
               }
             );
         };
-        home-manager.users =
-          cfg
-          |> lib.mapAttrs (
-            _: {home, ...}: {
-              imports = [
-                (
-                  {osConfig, ...}: {
-                    home = {
-                      stateVersion = osConfig.system.stateVersion;
-                    };
-                  }
-                )
-                home.base
-              ];
-            }
-          );
+        home-manager = {
+          useGlobalPkgs = true;
+          users =
+            cfg
+            |> lib.mapAttrs (
+              _: {home, ...}: {
+                imports = [
+                  (
+                    {osConfig, ...}: {
+                      home = {
+                        stateVersion = osConfig.system.stateVersion;
+                      };
+                    }
+                  )
+                  home.base
+                ];
+              }
+            );
+        };
       };
 
       pc = {
