@@ -5,5 +5,5 @@
 }: {
   systems =
     config.nixos.configurations
-    |> lib.mapAttrsToList (name: {evaluation, ...}: evaluation.pkgs.stdenv.hostPlatform.system);
+    |> lib.mapAttrsToList (name: {evaluation, ...}: evaluation.config.hardware.facter.report.system);
 }
