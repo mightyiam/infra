@@ -54,7 +54,7 @@
 
     nixpkgs.overlays = [
       (final: prev: {
-        armilaria = withSystem prev.stdenv.hostPlatform.system (psArgs: break psArgs.config.armilaria.evaluation.config.build.package);
+        armilaria = withSystem prev.stdenv.hostPlatform.system (psArgs: psArgs.config.armilaria.evaluation.config.build.package);
       })
     ];
   };
