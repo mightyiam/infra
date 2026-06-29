@@ -11,7 +11,7 @@
     formatter = lib.getAttr "alejandra";
   };
 
-  imports = [(inputs.treefmt-nix + "/flake-module.nix")];
+  imports = ["${inputs.treefmt-nix}/flake-module.nix"];
 
   perSystem = {
     treefmt = {

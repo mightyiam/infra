@@ -4,7 +4,7 @@
     flake = false;
   };
 
-  imports = [(inputs.git-hooks + "/flake-module.nix")];
+  imports = ["${inputs.git-hooks}/flake-module.nix"];
 
   git.ignore = ["/.pre-commit-config.yaml"];
 

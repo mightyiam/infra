@@ -4,5 +4,5 @@
     flake = false;
   };
 
-  imports = [(inputs.make-shell + "/flake-module.nix")];
+  imports = ["${inputs.make-shell}/flake-module.nix"];
 }

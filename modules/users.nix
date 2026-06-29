@@ -48,7 +48,7 @@ in {
   config = {
     nixos.modules = {
       base = {pkgs, ...}: {
-        imports = [(inputs.home-manager + "/nixos")];
+        imports = ["${inputs.home-manager}/nixos"];
         users = {
           defaultUserShell = pkgs.nushell;
           users =

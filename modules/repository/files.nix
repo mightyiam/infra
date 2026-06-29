@@ -5,7 +5,7 @@
   lib,
   ...
 }: {
-  imports = [(inputs.files + "/flake-module.nix")];
+  imports = ["${inputs.files}/flake-module.nix"];
 
   # TODO this should be perSystem, apparently
   options.text = lib.mkOption {
