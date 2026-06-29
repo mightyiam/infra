@@ -37,7 +37,7 @@ in {
       cfg.configurations
       |> lib.mapAttrsToList (
         name: {evaluation, ...}: {
-          ${evaluation.config.nixpkgs.hostPlatform.system} = {
+          ${evaluation.config.hardware.facter.report.system} = {
             "configurations:nixos:${name}" = evaluation.config.system.build.toplevel;
           };
         }
