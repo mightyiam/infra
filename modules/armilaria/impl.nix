@@ -23,13 +23,10 @@
     users.mightyiam.home.base = hmArgs @ {pkgs, ...}: {
       options.armilaria = lib.mkOption {
         type = lib.types.attrs;
-        default = withSystem pkgs.stdenv.hostPlatform.system (
-          psArgs:
-            psArgs.config.armilaria.evaluation.extendModules {
-              # https://github.com/danth/stylix/pull/415#issuecomment-2832398958
-              modules = [hmArgs.config.stylix.targets.nixvim.exportedModule];
-            }
-        );
+        default = pkgs.armilaria.evaluation.extendModules {
+          # https://github.com/danth/stylix/pull/415#issuecomment-2832398958
+          modules = [hmArgs.config.stylix.targets.nixvim.exportedModule];
+        };
       };
       config.home = {
         packages = [hmArgs.config.armilaria.config.build.package];
@@ -54,7 +51,11 @@
 
     nixpkgs.overlays = [
       (final: prev: {
-        armilaria = withSystem prev.stdenv.hostPlatform.system (psArgs: psArgs.config.armilaria.evaluation.config.build.package);
+        armilaria = withSystem prev.stdenv.hostPlatform.system (psArgs:
+          psArgs.config.armilaria.evaluation.config.build.package
+          // {
+            inherit (psArgs.config.armilaria) evaluation;
+          });
       })
     ];
   };
