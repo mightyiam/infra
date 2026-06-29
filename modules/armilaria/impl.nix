@@ -32,8 +32,8 @@
         );
       };
       config.home = {
-        packages = [pkgs.armilaria];
-        sessionVariables.EDITOR = lib.getExe pkgs.armilaria;
+        packages = [hmArgs.config.armilaria.config.build.package];
+        sessionVariables.EDITOR = lib.getExe hmArgs.config.armilaria.config.build.package;
       };
     };
 
