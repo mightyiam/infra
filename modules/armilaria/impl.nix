@@ -34,7 +34,11 @@
       };
     };
 
-    perSystem = {system, ...}: {
+    perSystem = {
+      system,
+      pkgs,
+      ...
+    }: {
       options.armilaria = lib.mkOption {
         type = lib.types.submodule {
           imports = [
@@ -42,7 +46,10 @@
             {
               fn = nixvim.evalNixvim;
               args = {inherit system;};
-              module = config.armilaria;
+              module = {
+                imports = [config.armilaria];
+                nixpkgs = {inherit pkgs;};
+              };
             }
           ];
         };
