@@ -1,30 +1,30 @@
 {config, ...}: {
-  text.readme = {
-    order = [
-      "banner"
-      "intro"
-      "dendritic"
-      "auto-import"
-      "files"
-      "all-check-store-paths"
-      "prohibit-warnings"
-    ];
+  perSystem = psArgs: {
+    text.readme = {
+      order = [
+        "banner"
+        "intro"
+        "dendritic"
+        "auto-import"
+        "files"
+        "all-check-store-paths"
+        "prohibit-warnings"
+      ];
 
-    parts.intro =
-      # markdown
-      ''
-        # ${config.repository.git.owner}/${config.repository.git.name}
+      parts.intro =
+        # markdown
+        ''
+          # ${config.repository.git.owner}/${config.repository.git.name}
 
-        ${config.repository.git.owner}'s [Nix](https://nix.dev)-powered "IT infrastructure" repository
+          ${config.repository.git.owner}'s [Nix](https://nix.dev)-powered "IT infrastructure" repository
 
-        > [!NOTE]
-        > I hope you find this helpful.
-        > If you have any questions or suggestions for me, feel free to use the discussions feature or contact me.
+          > [!NOTE]
+          > I hope you find this helpful.
+          > If you have any questions or suggestions for me, feel free to use the discussions feature or contact me.
 
-      '';
-  };
+        '';
+    };
 
-  perSystem = {
-    files.file."README.md".text = config.text.readme;
+    files.file."README.md".text = psArgs.config.text.readme;
   };
 }

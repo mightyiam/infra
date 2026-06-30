@@ -4,7 +4,7 @@
     flake = false;
   };
 
-  text.readme.parts.auto-import = ''
+  perSystem.text.readme.parts.auto-import = ''
     ## Automatic import
 
     Nix files (they're all flake-parts modules) are automatically imported.

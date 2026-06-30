@@ -1,5 +1,5 @@
 {
-  text.readme.parts.prohibit-warnings = ''
+  perSystem.text.readme.parts.prohibit-warnings = ''
     ## Trying to disallow warnings
 
     This at the top level of the `flake.nix` file:

@@ -11,12 +11,13 @@
     |> lib.flip lib.concat ["image.jpg"]
     |> lib.concatStringsSep "/";
 in {
-  text.readme.parts.banner =
-    # markdown
-    ''
-      ![Sci-fi looking server room](${banner})
+  perSystem = {
+    text.readme.parts.banner =
+      # markdown
+      ''
+        ![Sci-fi looking server room](${banner})
 
-    '';
-
-  perSystem.treefmt.settings.global.excludes = [banner];
+      '';
+    treefmt.settings.global.excludes = [banner];
+  };
 }
