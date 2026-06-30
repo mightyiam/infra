@@ -17,11 +17,6 @@
       "boot1"
     ];
 
-    nixpkgs.config.allowUnfreePackages = [
-      "epson-201401w"
-      "epson_201207w"
-    ];
-
     services.printing.drivers = with pkgs; [
       epson-201401w
       epson-escpr
@@ -29,4 +24,9 @@
       epson_201207w
     ];
   };
+
+  nixpkgs.config.allowUnfreePackages = [
+    "epson-201401w"
+    "epson_201207w"
+  ];
 }
