@@ -15,15 +15,11 @@ in {
       type = lib.types.lazyAttrsOf (
         lib.types.submodule (
           {name, ...}: {
-            imports = [
-              evalModulesModule
-              {
-                fn = lib.nixosSystem;
-                module = {
-                  networking.hostName = lib.mkDefault name;
-                };
-              }
-            ];
+            imports = [evalModulesModule];
+            fn = lib.nixosSystem;
+            module = {
+              networking.hostName = lib.mkDefault name;
+            };
           }
         )
       );
