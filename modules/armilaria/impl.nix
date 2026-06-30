@@ -2,9 +2,7 @@
   inputs,
   config,
   lib,
-  evalModulesModule,
   nixvim,
-  withSystem,
   ...
 }: {
   options.armilaria = lib.mkOption {
@@ -34,35 +32,21 @@
       };
     };
 
-    perSystem = {
-      system,
-      pkgs,
-      ...
-    }: {
-      options.armilaria = lib.mkOption {
-        type = lib.types.submodule {
-          imports = [
-            evalModulesModule
-            {
-              fn = nixvim.evalNixvim;
-              args = {inherit system;};
-              module = {
-                imports = [config.armilaria];
-                nixpkgs = {inherit pkgs;};
-              };
-            }
-          ];
-        };
-      };
-    };
-
     nixpkgs.overlays = [
       (final: prev: {
-        armilaria = withSystem prev.stdenv.hostPlatform.system (psArgs:
-          psArgs.config.armilaria.evaluation.config.build.package
-          // {
-            inherit (psArgs.config.armilaria) evaluation;
-          });
+        armilaria =
+          nixvim.evalNixvim {
+            inherit (prev.stdenv.hostPlatform) system;
+            modules = [
+              {nixpkgs.pkgs = prev;}
+              config.armilaria
+            ];
+          }
+          |> (evaluation:
+            evaluation.config.build.package
+            // {
+              inherit evaluation;
+            });
       })
     ];
   };
