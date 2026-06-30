@@ -2,7 +2,8 @@
   home.base = {
     programs.yazi = {
       enable = true;
-      shellWrapperName = "y";
+      shellWrapperName = "_no-no-no";
     };
+    home.shellAliases.y = "yazi";
   };
 }
