@@ -5,5 +5,5 @@
 }: {
   systems =
     config.nixos.configurations
-    |> lib.mapAttrsToList (name: {evaluation, ...}: evaluation.config.hardware.facter.report.system);
+    |> lib.mapAttrsToList (name: {facter, ...}: facter.reportPath |> lib.readFile |> lib.fromJSON |> lib.getAttr "system");
 }
