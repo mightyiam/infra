@@ -3,9 +3,7 @@
   config,
   inputs,
   ...
-}: let
-  cfg = config.nixpkgs;
-in {
+}: {
   options.nixpkgs = {
     config = {
       allowUnfreePredicate = lib.mkOption {
@@ -21,13 +19,6 @@ in {
       type = lib.types.listOf lib.types.unspecified;
       default = [];
     };
-    args = lib.mkOption {
-      type = lib.types.unspecified;
-      default = {
-        inherit (cfg) overlays;
-        config = {inherit (cfg.config) allowUnfreePredicate allowUnfreePackages;};
-      };
-    };
   };
 
   config = {
@@ -38,12 +29,10 @@ in {
       pkgs,
       ...
     }: {
-      _module.args.pkgs = import inputs.nixpkgs (
-        {
-          inherit system;
-        }
-        // cfg.args
-      );
+      _module.args.pkgs = import inputs.nixpkgs {
+        inherit system;
+        inherit (config.nixpkgs) overlays config;
+      };
 
       legacyPackages = pkgs;
     };
