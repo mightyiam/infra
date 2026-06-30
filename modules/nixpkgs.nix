@@ -28,13 +28,6 @@ in {
         config = {inherit (cfg.config) allowUnfreePredicate allowUnfreePackages;};
       };
     };
-    polyModule = lib.mkOption {
-      readOnly = true;
-      type = lib.types.deferredModule;
-      default = {
-        nixpkgs = cfg.args;
-      };
-    };
   };
 
   config = {
@@ -54,7 +47,5 @@ in {
 
       legacyPackages = pkgs;
     };
-
-    nixos.modules.base = cfg.polyModule;
   };
 }

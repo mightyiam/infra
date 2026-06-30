@@ -2,6 +2,7 @@
   config,
   lib,
   evalModulesModule,
+  withSystem,
   ...
 }: let
   cfg = config.nixos;
@@ -17,8 +18,9 @@ in {
           {name, ...}: {
             imports = [evalModulesModule];
             fn = lib.nixosSystem;
-            module = {
+            module = nixosArgs: {
               networking.hostName = lib.mkDefault name;
+              nixpkgs.pkgs = withSystem nixosArgs.config.hardware.facter.report.system (lib.getAttr "pkgs");
             };
           }
         )
