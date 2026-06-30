@@ -8,9 +8,7 @@
           type = lib.types.path;
         };
         config.module = {
-          hardware.facter = {
-            inherit (submoduleArgs.config.facter) reportPath;
-          };
+          hardware.facter.report = submoduleArgs.config.facter.reportPath |> lib.readFile |> lib.fromJSON;
         };
       })
     );
