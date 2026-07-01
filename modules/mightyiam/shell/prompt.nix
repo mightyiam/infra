@@ -137,9 +137,6 @@
           show_always = true;
           format = "[  $user]($style) ";
         };
-        nix_shell = {
-          format = "via [$symbol$state]($style) ";
-        };
       };
     };
   };
