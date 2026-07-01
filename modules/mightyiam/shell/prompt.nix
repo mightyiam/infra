@@ -133,10 +133,7 @@
           disabled = false;
           symbol = " ";
         };
-        username = {
-          show_always = true;
-          format = "[  $user]($style) ";
-        };
+        username.show_always = true;
       };
     };
   };
