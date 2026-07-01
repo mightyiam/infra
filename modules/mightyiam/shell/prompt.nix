@@ -112,10 +112,6 @@
           "$shlvl"
           "$character"
         ];
-        fill = {
-          symbol = "─";
-          style = "bold";
-        };
         directory = {
           truncation_length = 0;
           truncate_to_repo = false;
