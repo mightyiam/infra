@@ -18,7 +18,7 @@ in {
     };
     git.ignore = [
       "/result"
-      "/result.*"
+      "/result-*"
     ];
   };
 }
