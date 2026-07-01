@@ -209,8 +209,7 @@
         "smart-scrolloff-nvim": "smart-scrolloff-nvim",
         "stylix": "stylix",
         "tinted-schemes": "tinted-schemes",
-        "treefmt-nix": "treefmt-nix",
-        "treesitter-modules-nvim": "treesitter-modules-nvim"
+        "treefmt-nix": "treefmt-nix"
       }
     },
     "smart-scrolloff-nvim": {
@@ -274,22 +273,6 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "type": "github"
-      }
-    },
-    "treesitter-modules-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1778562929,
-        "narHash": "sha256-3pSVcSJDNIEt6JwCBmgzGDFk1DdPuhN5XQNi59L+YmQ=",
-        "owner": "MeanderingProgrammer",
-        "repo": "treesitter-modules.nvim",
-        "rev": "290eec96bfc43ed28264661dd30e894a60c4b99c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "MeanderingProgrammer",
-        "repo": "treesitter-modules.nvim",
         "type": "github"
       }
     }

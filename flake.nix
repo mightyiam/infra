@@ -71,9 +71,5 @@
       url = "github:numtide/treefmt-nix";
       flake = false;
     };
-    treesitter-modules-nvim = {
-      url = "github:MeanderingProgrammer/treesitter-modules.nvim";
-      flake = false;
-    };
   };
 }
