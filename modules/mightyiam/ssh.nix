@@ -5,10 +5,10 @@
       enableDefaultConfig = false;
       includes = ["${hmArgs.config.home.homeDirectory}/.ssh/hosts/*"];
       settings."Host *" = {
-        compression = true;
-        identitiesOnly = true;
-        hashKnownHosts = false;
-        identityFile = "${hmArgs.config.home.homeDirectory}/.ssh/id_ed25519";
+        Compression = true;
+        IdentitiesOnly = true;
+        HashKnownHosts = false;
+        IdentityFile = "${hmArgs.config.home.homeDirectory}/.ssh/id_ed25519";
       };
     };
   };
