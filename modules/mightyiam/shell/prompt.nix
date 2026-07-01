@@ -123,12 +123,7 @@
         };
         direnv.disabled = false;
         shell.disabled = false;
-        shlvl = {
-          disabled = false;
-          threshold = 2;
-          style = "bold red";
-          symbol = "";
-        };
+        shlvl.disabled = false;
         status.disabled = false;
         username.show_always = true;
       };
