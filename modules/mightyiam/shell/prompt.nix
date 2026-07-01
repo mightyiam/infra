@@ -137,9 +137,6 @@
           show_always = true;
           format = "[  $user]($style) ";
         };
-        git_branch = {
-          format = "[$symbol$branch]($style) ";
-        };
         nix_shell = {
           format = "via [$symbol$state]($style) ";
         };
