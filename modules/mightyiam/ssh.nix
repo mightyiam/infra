@@ -5,7 +5,6 @@
       enableDefaultConfig = false;
       includes = ["${hmArgs.config.home.homeDirectory}/.ssh/hosts/*"];
       settings."Host *" = {
-        "SetEnv TERM" = "xterm-256color";
         compression = true;
         identitiesOnly = true;
         hashKnownHosts = false;
