@@ -129,10 +129,7 @@
           style = "bold red";
           symbol = "";
         };
-        status = {
-          disabled = false;
-          symbol = " ";
-        };
+        status.disabled = false;
         username.show_always = true;
       };
     };
