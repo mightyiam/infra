@@ -118,7 +118,6 @@
         };
         directory = {
           truncation_length = 0;
-          format = "[ : $path]($style)[$read_only]($read_only_style) ";
           truncate_to_repo = false;
         };
         direnv.disabled = false;
