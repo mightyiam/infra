@@ -176,22 +176,6 @@
         "type": "github"
       }
     },
-    "refjump-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1766522707,
-        "narHash": "sha256-dK3yUdR7HjAr6LxaNpcNPnEHz/18nmf91X85dcjOOE0=",
-        "owner": "mawkler",
-        "repo": "refjump.nvim",
-        "rev": "a7d342f6dc942e3423967b58f1d92d426cac1182",
-        "type": "github"
-      },
-      "original": {
-        "owner": "mawkler",
-        "repo": "refjump.nvim",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "autoreload-nvim": "autoreload-nvim",
@@ -205,7 +189,6 @@
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
-        "refjump-nvim": "refjump-nvim",
         "smart-scrolloff-nvim": "smart-scrolloff-nvim",
         "stylix": "stylix",
         "tinted-schemes": "tinted-schemes",

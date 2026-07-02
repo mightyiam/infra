@@ -1,24 +1,8 @@
-{
-  inputs,
-  nixvim,
-  ...
-}: {
-  flake-file.inputs.refjump-nvim = {
-    flake = false;
-    url = "github:mawkler/refjump.nvim";
-  };
-
+{nixvim, ...}: {
   armilaria = {pkgs, ...}: {
     plugins.flash.enable = true;
 
-    extraPlugins = [
-      # TODO upstream
-      (pkgs.vimUtils.buildVimPlugin {
-        pname = "refjump-nvim";
-        version = "unstable";
-        src = inputs.refjump-nvim;
-      })
-    ];
+    extraPlugins = [pkgs.vimPlugins.refjump-nvim];
 
     extraConfigLua = ''
       require('refjump').setup()

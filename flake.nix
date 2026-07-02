@@ -51,10 +51,6 @@
       url = "github:nix-community/nixvim";
       flake = false;
     };
-    refjump-nvim = {
-      url = "github:mawkler/refjump.nvim";
-      flake = false;
-    };
     smart-scrolloff-nvim = {
       url = "github:tonymajestro/smart-scrolloff.nvim";
       flake = false;
