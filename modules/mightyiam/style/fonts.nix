@@ -23,5 +23,6 @@
         terminal = 12;
       };
     };
+    programs.starship.presets = ["nerd-font-symbols"];
   };
 }
