@@ -1,6 +1,9 @@
 {
   home.base = {
-    programs.nushell.enable = true;
+    programs = {
+      nushell.enable = true;
+      starship.settings.character.disabled = true;
+    };
   };
   nixos.modules.base = {pkgs, ...}: {
     users.users.mightyiam = {
