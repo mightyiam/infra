@@ -1,5 +1,5 @@
 {
-  # TODO https://github.com/YaroSpace/lua-console.nvim
+  # altenative: http://github.com/YaroSpace/lua-console.nvim
   armilaria = {pkgs, ...}: {
     extraPlugins = [
       pkgs.vimPlugins.neorepl-nvim
