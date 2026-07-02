@@ -1,4 +1,3 @@
-# TODO review this module
 {
   lib,
   config,
