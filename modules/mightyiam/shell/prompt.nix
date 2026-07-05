@@ -25,7 +25,10 @@
         shell.disabled = false;
         shlvl.disabled = false;
         status.disabled = false;
-        username.show_always = true;
+        username = {
+          show_always = true;
+          format = "[$user]($style) ";
+        };
       };
     };
   };
