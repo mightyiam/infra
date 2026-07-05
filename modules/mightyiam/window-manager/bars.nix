@@ -17,7 +17,7 @@
               {
                 block = "sound";
                 format = " $output_name $icon {$volume.eng(w:2)|} ";
-                mappings = hmArgs.config.audio.deviceNameMaps;
+                mappings = hmArgs.config.audio.sinkNameMap;
                 mappings_use_regex = false;
               }
               {block = "cpu";}

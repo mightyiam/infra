@@ -9,7 +9,7 @@
         "set-sink-volume @DEFAULT_SINK@ ${d}${toString step}%"
       ];
   in {
-    options.audio.deviceNameMaps = lib.mkOption {
+    options.audio.sinkNameMap = lib.mkOption {
       type = lib.types.lazyAttrsOf lib.types.str;
       default = {};
     };
