@@ -22,6 +22,7 @@
           truncate_to_repo = false;
         };
         direnv.disabled = false;
+        git_branch.format = "[$symbol$branch(:$remote_branch)]($style) ";
         shell.disabled = false;
         shlvl.disabled = false;
         status.disabled = false;
