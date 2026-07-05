@@ -16,7 +16,9 @@
               }
               {
                 block = "sound";
-                format = " $output_description $icon {$volume.eng(w:2)|} ";
+                format = " $output_name $icon {$volume.eng(w:2)|} ";
+                mappings = hmArgs.config.audio.deviceNameMaps;
+                mappings_use_regex = false;
               }
               {block = "cpu";}
               {block = "memory";}

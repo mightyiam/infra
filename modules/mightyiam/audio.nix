@@ -9,7 +9,12 @@
         "set-sink-volume @DEFAULT_SINK@ ${d}${toString step}%"
       ];
   in {
-    wayland.windowManager.hyprland.settings.bind = [
+    options.audio.deviceNameMaps = lib.mkOption {
+      type = lib.types.lazyAttrsOf lib.types.str;
+      default = {};
+    };
+
+    config.wayland.windowManager.hyprland.settings.bind = [
       "SUPER, x, exec, ${incVol "-"}"
       "SUPER+SHIFT, x, exec, ${incVol "+"}"
     ];
