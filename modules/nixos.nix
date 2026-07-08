@@ -4,9 +4,7 @@
   evalModulesModule,
   withSystem,
   ...
-}: let
-  cfg = config.nixos;
-in {
+}: {
   options.nixos = {
     modules = lib.mkOption {
       type = lib.types.lazyAttrsOf lib.types.deferredModule;
@@ -29,10 +27,10 @@ in {
   };
 
   config.flake = {
-    nixosConfigurations = cfg.configurations |> lib.mapAttrs (name: {evaluation, ...}: evaluation);
+    nixosConfigurations = config.nixos.configurations |> lib.mapAttrs (name: {evaluation, ...}: evaluation);
 
     checks =
-      cfg.configurations
+      config.nixos.configurations
       |> lib.mapAttrsToList (
         name: {evaluation, ...}: {
           ${evaluation.config.hardware.facter.report.system} = {
