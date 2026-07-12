@@ -1,6 +1,6 @@
 {config, ...}: {
   nixos.configurations.dobby = {
-    module = {
+    module = nixosArgs: {
       networking = {
         hostName = "dobby";
         hostId = "abf835ae";
@@ -22,7 +22,12 @@
         "boot1"
       ];
 
-      hardware.nvidia.open = false;
+      hardware = {
+        nvidia = {
+          open = false;
+          package = nixosArgs.config.boot.kernelPackages.nvidiaPackages.legacy_580;
+        };
+      };
     };
 
     facter.reportPath = ./dobby.facter.json;
