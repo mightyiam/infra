@@ -29,12 +29,14 @@
       pkgs,
       ...
     }: {
-      _module.args.pkgs = import inputs.nixpkgs {
-        inherit system;
-        inherit (config.nixpkgs) overlays config;
-      };
+      config = {
+        _module.args.pkgs = import inputs.nixpkgs {
+          inherit system;
+          inherit (config.nixpkgs) overlays config;
+        };
 
-      legacyPackages = pkgs;
+        legacyPackages = pkgs;
+      };
     };
   };
 }
