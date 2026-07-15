@@ -1,6 +1,6 @@
 {config, ...}: {
   nixos.configurations.fawkes = {
-    module = {pkgs, ...}: {
+    module = {
       networking.hostId = "a1f5f4ab";
 
       system.stateVersion = "25.11";
@@ -16,22 +16,8 @@
         "boot0"
         "boot1"
       ];
-
-      services.printing.drivers = with pkgs; [
-        epson-201401w
-        epson-escpr
-        epson-escpr2
-        epson_201207w
-      ];
     };
 
     facter.reportPath = ./fawkes.facter.json;
-  };
-
-  perSystem = {
-    nixpkgs.config.allowUnfreePackages = [
-      "epson-201401w"
-      "epson_201207w"
-    ];
   };
 }
