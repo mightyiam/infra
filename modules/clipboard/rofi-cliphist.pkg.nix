@@ -14,6 +14,6 @@ writeShellApplication {
     content=$(cliphist list | rofi -dmenu -p "$prompt")
     decoded=$(cliphist decode <<<"$content")
 
-    echo "$decoded" | wl-copy
+    echo -n "$decoded" | wl-copy
   '';
 }
