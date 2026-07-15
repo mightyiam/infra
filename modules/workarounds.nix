@@ -17,6 +17,8 @@
     wayland.windowManager.hyprland.settings.cursor.no_hardware_cursors = 1;
   };
 
-  nixpkgs.overlays = [
-  ];
+  perSystem = {
+    nixpkgs.overlays = [
+    ];
+  };
 }

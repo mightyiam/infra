@@ -1,13 +1,15 @@
 {lib, ...}: let
   mode = "privacy";
 in {
-  nixpkgs.overlays = [
-    (final: prev: {
-      notification-privacy-off = prev.callPackage ./notification-privacy-off.pkg.nix {inherit mode;};
-      notification-privacy-on = prev.callPackage ./notification-privacy-on.pkg.nix {inherit mode;};
-      handle-hyprland-screencast = prev.callPackage ./handle-hyprland-screencast.pkg.nix {};
-    })
-  ];
+  perSystem = {
+    nixpkgs.overlays = [
+      (final: prev: {
+        notification-privacy-off = prev.callPackage ./notification-privacy-off.pkg.nix {inherit mode;};
+        notification-privacy-on = prev.callPackage ./notification-privacy-on.pkg.nix {inherit mode;};
+        handle-hyprland-screencast = prev.callPackage ./handle-hyprland-screencast.pkg.nix {};
+      })
+    ];
+  };
 
   home.gui = {pkgs, ...}: {
     services.mako = {

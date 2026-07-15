@@ -1,9 +1,11 @@
 {lib, ...}: {
-  nixpkgs.overlays = [
-    (final: prev: {
-      toggle-mute-sources = prev.callPackage ./toggle-mute-sources.pkg.nix {};
-    })
-  ];
+  perSystem = {
+    nixpkgs.overlays = [
+      (final: prev: {
+        toggle-mute-sources = prev.callPackage ./toggle-mute-sources.pkg.nix {};
+      })
+    ];
+  };
 
   homeManager.modules.gui = {pkgs, ...}: {
     wayland.windowManager.hyprland.settings.bind = [

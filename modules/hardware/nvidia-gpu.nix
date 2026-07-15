@@ -5,9 +5,11 @@
     };
   };
 
-  nixpkgs.config.allowUnfreePackages = [
-    "nvidia-kernel-modules"
-    "nvidia-settings"
-    "nvidia-x11"
-  ];
+  perSystem = {
+    nixpkgs.config.allowUnfreePackages = [
+      "nvidia-kernel-modules"
+      "nvidia-settings"
+      "nvidia-x11"
+    ];
+  };
 }

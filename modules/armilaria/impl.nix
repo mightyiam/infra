@@ -32,22 +32,24 @@
       };
     };
 
-    nixpkgs.overlays = [
-      (final: prev: {
-        armilaria =
-          nixvim.evalNixvim {
-            inherit (prev.stdenv.hostPlatform) system;
-            modules = [
-              {nixpkgs.pkgs = prev;}
-              config.armilaria
-            ];
-          }
-          |> (evaluation:
-            evaluation.config.build.package
-            // {
-              inherit evaluation;
-            });
-      })
-    ];
+    perSystem = {
+      nixpkgs.overlays = [
+        (final: prev: {
+          armilaria =
+            nixvim.evalNixvim {
+              inherit (prev.stdenv.hostPlatform) system;
+              modules = [
+                {nixpkgs.pkgs = prev;}
+                config.armilaria
+              ];
+            }
+            |> (evaluation:
+              evaluation.config.build.package
+              // {
+                inherit evaluation;
+              });
+        })
+      ];
+    };
   };
 }

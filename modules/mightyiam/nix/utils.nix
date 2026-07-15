@@ -1,9 +1,11 @@
 {lib, ...}: {
-  nixpkgs.overlays = [
-    (final: prev: {
-      system-command = prev.callPackage ./system-command.pkg.nix {};
-    })
-  ];
+  perSystem = {
+    nixpkgs.overlays = [
+      (final: prev: {
+        system-command = prev.callPackage ./system-command.pkg.nix {};
+      })
+    ];
+  };
 
   home.base = {pkgs, ...}: {
     home.packages = [

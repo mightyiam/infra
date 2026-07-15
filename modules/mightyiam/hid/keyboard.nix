@@ -1,9 +1,11 @@
 {lib, ...}: {
-  nixpkgs.overlays = [
-    (final: prev: {
-      get-hyprland-main-keyboard-layout = prev.callPackage ./get-hyprland-main-keyboard-layout.pkg.nix {};
-    })
-  ];
+  perSystem = {
+    nixpkgs.overlays = [
+      (final: prev: {
+        get-hyprland-main-keyboard-layout = prev.callPackage ./get-hyprland-main-keyboard-layout.pkg.nix {};
+      })
+    ];
+  };
 
   home.gui = hmArgs @ {pkgs, ...}: let
     hyprlandStateFile = "${hmArgs.config.xdg.stateHome}/hyprland-rotate-kb-layout";

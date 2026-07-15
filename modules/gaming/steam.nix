@@ -1,8 +1,11 @@
 {
-  nixpkgs.config.allowUnfreePackages = [
-    "steam"
-    "steam-unwrapped"
-  ];
+  perSystem = {
+    nixpkgs.config.allowUnfreePackages = [
+      "steam"
+      "steam-unwrapped"
+    ];
+  };
+
   nixos.modules.pc = {
     programs.steam = {
       enable = true;

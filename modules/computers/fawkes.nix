@@ -28,8 +28,10 @@
     facter.reportPath = ./fawkes.facter.json;
   };
 
-  nixpkgs.config.allowUnfreePackages = [
-    "epson-201401w"
-    "epson_201207w"
-  ];
+  perSystem = {
+    nixpkgs.config.allowUnfreePackages = [
+      "epson-201401w"
+      "epson_201207w"
+    ];
+  };
 }

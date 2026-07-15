@@ -4,11 +4,13 @@
     hardware.enableAllFirmware = true;
   };
 
-  nixpkgs.config.allowUnfreePackages = [
-    "b43-firmware"
-    "broadcom-bt-firmware"
-    "facetimehd-calibration"
-    "xone-dongle-firmware"
-    "facetimehd-firmware"
-  ];
+  perSystem = {
+    nixpkgs.config.allowUnfreePackages = [
+      "b43-firmware"
+      "broadcom-bt-firmware"
+      "facetimehd-calibration"
+      "xone-dongle-firmware"
+      "facetimehd-firmware"
+    ];
+  };
 }
