@@ -1,28 +1,17 @@
 {lib, ...}: {
-  home.gui = {
-    config,
-    pkgs,
-    ...
-  }: let
-    rofi-cliphist = pkgs.writeShellApplication {
-      name = "rofi-cliphist";
-      runtimeInputs = [
-        config.services.cliphist.package
-        config.programs.rofi.package
-      ];
-      text = ''
-        prompt=' 󰆏 '
-        content=$(cliphist list | rofi -dmenu -p "$prompt")
-        decoded=$(cliphist decode <<<"$content")
+  perSystem = {
+    nixpkgs.overlays = [
+      (final: prev: {
+        rofi-cliphist = prev.callPackage ./rofi-cliphist.pkg.nix {};
+      })
+    ];
+  };
 
-        echo "$decoded" | wl-copy
-      '';
-    };
-  in {
+  home.gui = {pkgs, ...}: {
     services.cliphist.enable = true;
 
     wayland.windowManager.hyprland.settings.bind = [
-      "SUPER, p, exec, ${lib.getExe rofi-cliphist} copy"
+      "SUPER, p, exec, ${lib.getExe pkgs.rofi-cliphist} copy"
     ];
 
     home.packages = with pkgs; [
