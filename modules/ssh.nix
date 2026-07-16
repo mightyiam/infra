@@ -35,7 +35,7 @@
           )
           |> lib.mapAttrs (
             _name: {evaluation, ...}: {
-              hostNames = [evaluation.config.networking.fqdn];
+              hostNames = ["${evaluation.config.networking.hostName}.local"];
               inherit (evaluation.config.services.openssh) publicKey;
             }
           );
