@@ -15,7 +15,7 @@
 
   nixos.modules.base = {
     users.users.mightyiam.openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGPoHVrToSwWfz+DaUX68A9v70V7k3/REqGxiDqjLOS+"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICJVzohaJsHeG8sgtc1NiOIo3LVlEs4J1MMC0bV3CoyA"
     ];
   };
 }
