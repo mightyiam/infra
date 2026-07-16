@@ -5,10 +5,7 @@
 }: {
   nixos.configurations.termitomyces = {
     module = {
-      networking = {
-        hostId = "6b5dea2a";
-        domain = "local";
-      };
+      networking.hostId = "6b5dea2a";
 
       imports = with config.nixos.modules; [
         efi
