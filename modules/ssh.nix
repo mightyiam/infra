@@ -7,7 +7,6 @@
     base = {
       options.services.openssh.publicKey = lib.mkOption {
         type = lib.types.nullOr lib.types.str;
-        default = null;
       };
 
       config = {
