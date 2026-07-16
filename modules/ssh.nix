@@ -25,14 +25,7 @@
 
         programs.ssh.knownHosts =
           config.nixos.configurations
-          |> lib.filterAttrs (
-            _name: {evaluation, ...}:
-              !(lib.any isNull [
-                evaluation.config.networking.domain
-                evaluation.config.networking.hostName
-                evaluation.config.services.openssh.publicKey
-              ])
-          )
+          |> lib.filterAttrs (_name: {evaluation, ...}: lib.isString evaluation.config.services.openssh.publicKey)
           |> lib.mapAttrs (
             _name: {evaluation, ...}: {
               hostNames = ["${evaluation.config.networking.hostName}.local"];
