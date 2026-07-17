@@ -96,7 +96,6 @@
       enable = true;
       sources.formatting.nixfmt = {
         enable = true;
-        package = null;
         settings.runtime_condition = nixvim.mkRaw ''
           function() return vim.g.nixfmt_enabled end
         '';
