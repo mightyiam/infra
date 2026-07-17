@@ -97,7 +97,7 @@
       sources.formatting.nixfmt = {
         enable = true;
         settings.runtime_condition = nixvim.mkRaw ''
-          function() return vim.g.nixfmt_enabled end
+          function(params) return vim.g.nixfmt_enabled end
         '';
       };
     };
