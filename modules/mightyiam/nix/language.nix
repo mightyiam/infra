@@ -60,6 +60,7 @@
       nixd = {
         enable = true;
         packageFallback = true;
+        config.settings.nixd.formatting.command = nixvim.emptyTable;
       };
 
       statix = {
