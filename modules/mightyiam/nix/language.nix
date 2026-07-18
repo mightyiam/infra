@@ -1,4 +1,4 @@
-{nixvim, ...}: {
+{lib, ...}: {
   flake-file.nixConfig.extra-experimental-features = ["pipe-operators"];
 
   nix.settings.experimental-features = [
@@ -55,51 +55,17 @@
     ];
   };
 
-  armilaria = {
+  armilaria = {pkgs, ...}: {
     lsp.servers = {
       nixd = {
         enable = true;
         packageFallback = true;
-        config.settings.nixd.formatting.command = nixvim.emptyTable;
+        config.settings.nixd.formatting.command = [(lib.getExe pkgs.alejandra)];
       };
 
       statix = {
         enable = true;
         packageFallback = true;
-      };
-    };
-
-    extraConfigLua = ''
-      vim.g.nixfmt_enabled = false
-    '';
-
-    keymaps = [
-      {
-        key = "<leader>tn";
-        options.desc = "Toggle nixfmt";
-        action = nixvim.mkRaw ''
-          function()
-            vim.g.nixfmt_enabled = not vim.g.nixfmt_enabled
-
-            local message
-            if vim.g.nixfmt_enabled then
-              message = "Nixfmt is on"
-            else
-              message = "Nixfmt is off"
-            end
-            vim.notify(message, vim.log.levels.INFO)
-          end
-        '';
-      }
-    ];
-
-    plugins.none-ls = {
-      enable = true;
-      sources.formatting.nixfmt = {
-        enable = true;
-        settings.runtime_condition = nixvim.mkRaw ''
-          function(params) return vim.g.nixfmt_enabled end
-        '';
       };
     };
   };
