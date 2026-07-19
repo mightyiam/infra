@@ -34,7 +34,7 @@
           "alsa_output.usb-R__DE_Microphones_R__DE_NT-USB_Mini_31FBD749-00.analog-stereo" = "RODE NT-USB Mini";
         };
 
-      environment.systemPackages = [pkgs.scarlett2];
+      environment.systemPackages = [pkgs.scarlett2 pkgs.alsa-scarlett-gui];
 
       # https://www.reddit.com/r/buildapc/comments/xypn1m/network_card_intel_ethernet_controller_i225v_igc/
       boot.kernelParams = [
