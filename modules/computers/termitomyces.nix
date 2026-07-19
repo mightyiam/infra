@@ -4,7 +4,7 @@
   ...
 }: {
   nixos.configurations.termitomyces = {
-    module = {
+    module = {pkgs, ...}: {
       networking.hostId = "6b5dea2a";
 
       imports = with config.nixos.modules; [
@@ -30,8 +30,11 @@
           inherit value;
         })
         |> lib.mergeAttrs {
-          "alsa_output.usb-R__DE_Microphones_R__DE_NT-USB_Mini_31FBD749-00.analog-stereo" = "HEADPHONES";
+          "alsa_output.usb-Focusrite_Scarlett_Solo_4th_Gen_S1GPDR85841AB5-00.HiFi__Line1__sink" = "HEADPHONES";
+          "alsa_output.usb-R__DE_Microphones_R__DE_NT-USB_Mini_31FBD749-00.analog-stereo" = "RODE NT-USB Mini";
         };
+
+      environment.systemPackages = [pkgs.scarlett2];
 
       # https://www.reddit.com/r/buildapc/comments/xypn1m/network_card_intel_ethernet_controller_i225v_igc/
       boot.kernelParams = [
