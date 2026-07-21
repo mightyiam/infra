@@ -1,6 +1,6 @@
 {nixvim, ...}: {
   armilaria = {pkgs, ...}: {
-    extraPlugins = [pkgs.vimPlugins.nvim-genghis];
+    extraPlugins = [pkgs.vimPlugins.nvim-genghis pkgs.vimPlugins.mkdir-nvim];
 
     extraConfigLua = ''
       require('genghis').setup(${
