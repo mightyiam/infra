@@ -1,4 +1,8 @@
-{nixvim, ...}: {
+{
+  nixvim,
+  lib,
+  ...
+}: {
   armilaria = {pkgs, ...}: {
     extraPlugins = [pkgs.vimPlugins.nvim-genghis pkgs.vimPlugins.mkdir-nvim];
 
@@ -74,6 +78,13 @@
             key = "<leader>f${keymap.key}";
             action = "<CMD>Genghis ${keymap.action}<CR>";
           }
-      );
+      )
+      |> lib.concat [
+        {
+          key = "gf";
+          action = ":e <cfile><CR>";
+          options.desc = "file";
+        }
+      ];
   };
 }
