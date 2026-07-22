@@ -17,8 +17,7 @@ in {
       treefmt.settings.global.excludes = ["*/.gitignore"];
     };
     git.ignore = [
-      "/result"
-      "/result-*"
+      "/result*"
     ];
   };
 }
