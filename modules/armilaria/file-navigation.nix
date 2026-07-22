@@ -32,6 +32,13 @@
           '';
           options.desc = "file manager";
         }
-      );
+      )
+      |> lib.concat [
+        {
+          key = "gf";
+          action = ":e <cfile><CR>";
+          options.desc = "file";
+        }
+      ];
   };
 }
