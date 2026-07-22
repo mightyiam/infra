@@ -5,5 +5,6 @@
       name = "catppuccin-frappe-pink-cursors";
       size = 32;
     };
+    home.pointerCursor.enable = true;
   };
 }

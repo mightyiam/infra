@@ -5,5 +5,6 @@
       name = "Banana";
       size = 40;
     };
+    home.pointerCursor.enable = true;
   };
 }
