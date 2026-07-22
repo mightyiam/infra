@@ -4,14 +4,24 @@
     url = "github:tonymajestro/smart-scrolloff.nvim";
   };
 
+  perSystem = {
+    nixpkgs.overlays = [
+      (final: prev: {
+        vimPlugins = prev.vimPlugins.extend (final': prev': {
+          # TODO upstream
+          smart-scrolloff-nvim = prev.vimUtils.buildVimPlugin {
+            pname = "smart-scrolloff-nvim";
+            version = "unstable";
+            src = inputs.smart-scrolloff-nvim;
+          };
+        });
+      })
+    ];
+  };
+
   armilaria = {pkgs, ...}: {
     extraPlugins = [
-      # TODO upstream
-      (pkgs.vimUtils.buildVimPlugin {
-        pname = "smart-scrolloff-nvim";
-        version = "unstable";
-        src = inputs.smart-scrolloff-nvim;
-      })
+      pkgs.vimPlugins.smart-scrolloff-nvim
     ];
     extraConfigLua = ''
       require('smart-scrolloff').setup({})
