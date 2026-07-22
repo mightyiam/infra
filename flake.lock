@@ -16,6 +16,22 @@
         "type": "github"
       }
     },
+    "better-goto-file-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1757085380,
+        "narHash": "sha256-4n7zbB2N2COD6YjPjWdKsbNJjN9T/AS+XpuIDpbHxGs=",
+        "owner": "vE5li",
+        "repo": "better-goto-file.nvim",
+        "rev": "6aec97210e3e00ef7fe9193699a72e192615a142",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vE5li",
+        "repo": "better-goto-file.nvim",
+        "type": "github"
+      }
+    },
     "files": {
       "flake": false,
       "locked": {
@@ -179,6 +195,7 @@
     "root": {
       "inputs": {
         "autoreload-nvim": "autoreload-nvim",
+        "better-goto-file-nvim": "better-goto-file-nvim",
         "files": "files",
         "flake-file": "flake-file",
         "flake-parts": "flake-parts",

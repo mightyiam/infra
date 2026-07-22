@@ -17,6 +17,10 @@
       url = "github:ccntrq/autoreload.nvim";
       flake = false;
     };
+    better-goto-file-nvim = {
+      url = "github:vE5li/better-goto-file.nvim";
+      flake = false;
+    };
     files = {
       url = "github:mightyiam/files";
       flake = false;
