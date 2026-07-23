@@ -46,8 +46,6 @@
           })
 
           if #none_ls_clients > 0 then
-            local initial_tick = vim.api.nvim_buf_get_changedtick(bufnr)
-
             vim.lsp.buf.format({
               bufnr = bufnr,
               filter = is_none_ls,
@@ -56,9 +54,7 @@
               timeout_ms = 15000,
             })
 
-            if vim.api.nvim_buf_get_changedtick(bufnr) ~= initial_tick then
-              return
-            end
+            return
           end
         end
 
