@@ -3,25 +3,8 @@
     lsp.servers.tinymist = {
       enable = true;
       packageFallback = true;
-      config.settings = {
-        typstExtraArgs = nixvimArgs.lib.nixvim.mkRaw ''
-          (function()
-              local extra_args = os.getenv('TYPST_EXTRA_ARGS')
-              if not extra_args or extra_args == "" then
-                return ""
-              end
-
-              extra_args = vim.split(extra_args, '%s+', { trimempty = true })
-
-              return extra_args
-          end)()
-        '';
-      };
     };
-    plugins.typst-preview = {
-      enable = true;
-      settings.extra_args = nixvimArgs.config.lsp.servers.tinymist.config.settings.typstExtraArgs;
-    };
+    plugins.typst-preview.enable = true;
   };
 
   perSystem = {
