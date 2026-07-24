@@ -1,5 +1,5 @@
 {
-  armilaria = nixvimArgs: {
+  armilaria = {
     lsp.servers.tinymist = {
       enable = true;
       packageFallback = true;
