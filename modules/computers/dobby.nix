@@ -12,9 +12,10 @@
       imports = with config.nixos.modules; [
         efi
         pc
-        nvidia-gpu
         bow
       ];
+
+      specialisation.nvidia-gpu.configuration = config.nixos.modules.nvidia-video-driver;
 
       boot.partlabels = [
         "boot0"

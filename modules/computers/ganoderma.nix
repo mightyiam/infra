@@ -16,10 +16,11 @@
 
       imports = with config.nixos.modules; [
         efi
-        nvidia-gpu
         pc
         bow
       ];
+
+      specialisation.nvidia-gpu.configuration = config.nixos.modules.nvidia-video-driver;
     };
 
     facter.reportPath = ./ganoderma.facter.json;

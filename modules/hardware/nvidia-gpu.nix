@@ -1,7 +1,10 @@
-{
-  nixos.modules.nvidia-gpu = {
-    specialisation.nvidia-gpu.configuration = {
+{lib, ...}: {
+  nixos.modules = {
+    nvidia-video-driver = {
       services.xserver.videoDrivers = ["nvidia"];
+    };
+    force-default-video-drivers = nixosArgs: {
+      services.xserver.videoDrivers = lib.mkForce nixosArgs.options.services.xserver.videoDrivers.default;
     };
   };
 
