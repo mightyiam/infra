@@ -25,11 +25,11 @@
 
         programs.ssh.knownHosts =
           config.nixos.configurations
-          |> lib.filterAttrs (_name: {evaluation, ...}: lib.isString evaluation.config.services.openssh.publicKey)
+          |> lib.filterAttrs (_name: {configuration, ...}: lib.isString configuration.config.services.openssh.publicKey)
           |> lib.mapAttrs (
-            _name: {evaluation, ...}: {
-              hostNames = ["${evaluation.config.networking.hostName}.local"];
-              inherit (evaluation.config.services.openssh) publicKey;
+            _name: {configuration, ...}: {
+              hostNames = ["${configuration.config.networking.hostName}.local"];
+              inherit (configuration.config.services.openssh) publicKey;
             }
           );
       };

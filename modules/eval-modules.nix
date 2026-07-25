@@ -12,7 +12,7 @@
       args = lib.mkOption {
         type = lib.types.lazyAttrsOf lib.types.anything;
       };
-      evaluation = lib.mkOption {
+      configuration = lib.mkOption {
         readOnly = true;
         type = lib.types.attrs;
         default = cfg.fn (

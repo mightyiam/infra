@@ -21,7 +21,7 @@
     users.mightyiam.home.base = hmArgs @ {pkgs, ...}: {
       options.armilaria = lib.mkOption {
         type = lib.types.attrs;
-        default = pkgs.armilaria.evaluation.extendModules {
+        default = pkgs.armilaria.configuration.extendModules {
           # https://github.com/danth/stylix/pull/415#issuecomment-2832398958
           modules = [hmArgs.config.stylix.targets.nixvim.exportedModule];
         };
@@ -43,10 +43,10 @@
                 config.armilaria
               ];
             }
-            |> (evaluation:
-              evaluation.config.build.package
+            |> (configuration:
+              configuration.config.build.package
               // {
-                inherit evaluation;
+                inherit configuration;
               });
         })
       ];

@@ -27,14 +27,14 @@
   };
 
   config.flake = {
-    nixosConfigurations = config.nixos.configurations |> lib.mapAttrs (name: {evaluation, ...}: evaluation);
+    nixosConfigurations = config.nixos.configurations |> lib.mapAttrs (name: {configuration, ...}: configuration);
 
     checks =
       config.nixos.configurations
       |> lib.mapAttrsToList (
-        name: {evaluation, ...}: {
-          ${evaluation.config.hardware.facter.report.system} = {
-            "configurations:nixos:${name}" = evaluation.config.system.build.toplevel;
+        name: {configuration, ...}: {
+          ${configuration.config.hardware.facter.report.system} = {
+            "configurations:nixos:${name}" = configuration.config.system.build.toplevel;
           };
         }
       )
