@@ -13,9 +13,10 @@
         efi
         pc
         bow
+        nvidia-video-driver
       ];
 
-      specialisation.nvidia-video-driver.configuration = config.nixos.modules.nvidia-video-driver;
+      specialisation.nvidia-video-driver.configuration = config.nixos.modules.force-default-video-drivers;
 
       boot.partlabels = [
         "boot0"
