@@ -15,7 +15,7 @@
         bow
       ];
 
-      specialisation.nvidia-gpu.configuration = config.nixos.modules.nvidia-video-driver;
+      specialisation.nvidia-video-driver.configuration = config.nixos.modules.nvidia-video-driver;
 
       boot.partlabels = [
         "boot0"
