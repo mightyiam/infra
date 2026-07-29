@@ -66,13 +66,6 @@
             |> lib.mapAttrs (
               _: {home, ...}: {
                 imports = [
-                  (
-                    {osConfig, ...}: {
-                      home = {
-                        stateVersion = osConfig.system.stateVersion;
-                      };
-                    }
-                  )
                   home.base
                 ];
               }

@@ -22,7 +22,16 @@
     };
 
     nixos.modules.base = {pkgs, ...}: {
-      home-manager.backupCommand = lib.getExe' pkgs.trash-cli "trash-put";
+      home-manager = {
+        sharedModules = [
+          ({osConfig, ...}: {
+            home = {
+              stateVersion = osConfig.system.stateVersion;
+            };
+          })
+        ];
+        backupCommand = lib.getExe' pkgs.trash-cli "trash-put";
+      };
     };
   };
 }
