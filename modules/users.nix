@@ -15,8 +15,7 @@
                 default = name;
               };
               name = lib.mkOption {
-                type = lib.types.singleLineStr;
-                default = name;
+                type = lib.types.nullOr lib.types.singleLineStr;
               };
               email = lib.mkOption {
                 type = lib.types.nullOr lib.types.singleLineStr;
