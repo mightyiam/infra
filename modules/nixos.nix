@@ -27,6 +27,12 @@
   };
 
   config = {
+    nixos.modules.pc = {
+      imports = [
+        config.nixos.modules.base
+      ];
+    };
+
     flake = {
       nixosConfigurations = config.nixos.configurations |> lib.mapAttrs (name: {configuration, ...}: configuration);
 
