@@ -21,6 +21,33 @@
                 type = lib.types.nullOr lib.types.singleLineStr;
                 default = null;
               };
+              nixos = {
+                base = lib.mkOption {
+                  type = lib.types.deferredModuleWith {
+                    staticModules = [
+                      {
+                        users.users.${name} = {
+                          name = userArgs.config.username;
+                          isNormalUser = true;
+                          useDefaultShell = lib.mkDefault true;
+                        };
+                        home-manager.users.${name} = userArgs.config.home.base;
+                      }
+                    ];
+                  };
+                  default = {};
+                };
+                pc = lib.mkOption {
+                  type = lib.types.deferredModuleWith {
+                    staticModules = [
+                      {
+                        home-manager.users.${name} = userArgs.config.home.gui;
+                      }
+                    ];
+                  };
+                  default = {};
+                };
+              };
               home = {
                 base = lib.mkOption {
                   type = lib.types.deferredModuleWith {
@@ -42,42 +69,16 @@
       type = lib.types.lazyAttrsOf lib.types.deferredModule;
     };
   };
-  config = {
-    nixos.modules = {
+  config.nixos.modules = lib.mkMerge [
+    {
       base = {pkgs, ...}: {
         imports = ["${inputs.home-manager}/nixos"];
-        users = {
-          defaultUserShell = pkgs.nushell;
-          users =
-            config.users
-            |> lib.mapAttrs (
-              _: {username, ...}: {
-                name = username;
-                isNormalUser = true;
-                useDefaultShell = lib.mkDefault true;
-              }
-            );
-        };
-        home-manager = {
-          users =
-            config.users
-            |> lib.mapAttrs (
-              _: {home, ...}: {
-                imports = [
-                  home.base
-                ];
-              }
-            );
-        };
+        users.defaultUserShell = pkgs.nushell;
       };
-
-      pc = {
-        home-manager.users =
-          config.users
-          |> lib.mapAttrs (_: {home, ...}: home.gui);
-      };
-    };
-
-    users.mightyiam.home = config.home;
-  };
+    }
+    {
+      inherit (config.users.bow.nixos) base pc;
+    }
+  ];
+  config.users.mightyiam.home = config.home;
 }
