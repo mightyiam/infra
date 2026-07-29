@@ -29,6 +29,7 @@
             home = {
               stateVersion = osConfig.system.stateVersion;
             };
+            stylix.overlays.enable = false;
           })
         ];
         backupCommand = lib.getExe' pkgs.trash-cli "trash-put";

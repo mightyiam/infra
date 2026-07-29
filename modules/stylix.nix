@@ -43,12 +43,6 @@
         };
       })
     ];
-
-    home-manager.sharedModules = [
-      {
-        stylix.overlays.enable = false;
-      }
-    ];
   };
 
   homeManager.modules.base = {
