@@ -1,25 +1,14 @@
 {lib, ...}: {
   home.gui = hmArgs: let
     wpaperctl = lib.getExe' hmArgs.config.services.wpaperd.package "wpaperctl";
-    submap = "background";
   in {
     wayland.windowManager.hyprland = {
       settings.misc.disable_hyprland_logo = true;
 
       settings.bind = [
-        "SUPER, b, submap, ${submap}"
+        "SUPER, i, exec, ${wpaperctl} next-wallpaper"
+        "SUPER+SHIFT, i, exec, ${wpaperctl} previous-wallpaper"
       ];
-
-      submaps.${submap}.settings = {
-        binde = [
-          ", n, exec, ${wpaperctl} next-wallpaper"
-          ", p, exec, ${wpaperctl} previous-wallpaper"
-        ];
-        bind = [
-          ", escape, submap, reset"
-          ", catchall, exec, true"
-        ];
-      };
     };
 
     services.wpaperd = {
