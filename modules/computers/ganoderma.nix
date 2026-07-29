@@ -17,7 +17,6 @@
       imports = with config.nixos.modules; [
         efi
         pc
-        bow
       ];
 
       specialisation.nvidia-video-driver.configuration = config.nixos.modules.nvidia-video-driver;
