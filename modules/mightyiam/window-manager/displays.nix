@@ -1,5 +1,5 @@
-{
-  home.gui = hmArgs: let
+{lib, ...}: {
+  home.gui = hmArgs @ {pkgs, ...}: let
     # https://wiki.hypr.land/Configuring/Monitors, example:
     #
     # ``` hyprlang
@@ -18,9 +18,15 @@
     # ```
     hyprlandConfPath = "${hmArgs.config.xdg.configHome}/hypr/monitors.conf";
   in {
-    wayland.windowManager.hyprland.extraConfig = ''
-      source = ${hyprlandConfPath}
-    '';
+    wayland.windowManager.hyprland = {
+      extraConfig = ''
+        source = ${hyprlandConfPath}
+      '';
+      settings.bind = [
+        "SUPER, b, exec, ${lib.getExe pkgs.brightnessctl} set 10%-"
+        "SUPER+SHIFT, b, exec, ${lib.getExe pkgs.brightnessctl} set 10%+"
+      ];
+    };
     home.activation.hyprlandStatefulMonitorsFile = hmArgs.lib.hm.dag.entryAfter ["writeBoundary"] ''
       run touch ${hyprlandConfPath}
     '';
