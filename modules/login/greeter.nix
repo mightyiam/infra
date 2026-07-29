@@ -10,6 +10,8 @@
           "--remember"
         ]
         |> lib.concatStringsSep " ";
+
+      useTextGreeter = true;
     };
   };
 }
