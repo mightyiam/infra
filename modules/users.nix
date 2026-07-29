@@ -60,7 +60,6 @@
             );
         };
         home-manager = {
-          useGlobalPkgs = true;
           users =
             config.users
             |> lib.mapAttrs (
