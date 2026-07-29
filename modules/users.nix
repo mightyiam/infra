@@ -3,9 +3,7 @@
   lib,
   config,
   ...
-}: let
-  cfg = config.users;
-in {
+}: {
   options = {
     users = lib.mkOption {
       type = lib.types.lazyAttrsOf (
@@ -52,7 +50,7 @@ in {
         users = {
           defaultUserShell = pkgs.nushell;
           users =
-            cfg
+            config.users
             |> lib.mapAttrs (
               _: {username, ...}: {
                 name = username;
@@ -64,7 +62,7 @@ in {
         home-manager = {
           useGlobalPkgs = true;
           users =
-            cfg
+            config.users
             |> lib.mapAttrs (
               _: {home, ...}: {
                 imports = [
@@ -83,7 +81,9 @@ in {
       };
 
       pc = {
-        home-manager.users = cfg |> lib.mapAttrs (_: {home, ...}: home.gui);
+        home-manager.users =
+          config.users
+          |> lib.mapAttrs (_: {home, ...}: home.gui);
       };
     };
 
