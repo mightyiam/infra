@@ -51,15 +51,21 @@
               home = {
                 base = lib.mkOption {
                   type = lib.types.deferredModuleWith {
-                    staticModules = [{home.username = lib.mkDefault userArgs.config.username;}];
+                    staticModules = [
+                      config.homeManager.modules.base
+                      {home.username = lib.mkDefault userArgs.config.username;}
+                    ];
                   };
                 };
                 gui = lib.mkOption {
-                  type = lib.types.deferredModule;
+                  type = lib.types.deferredModuleWith {
+                    staticModules = [
+                      config.homeManager.modules.gui
+                    ];
+                  };
                 };
               };
             };
-            config.home = {inherit (config.homeManager.modules) base gui;};
           }
         )
       );
