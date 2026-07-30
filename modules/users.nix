@@ -76,9 +76,6 @@
         users.defaultUserShell = pkgs.nushell;
       };
     }
-    {
-      inherit (config.users.bow.nixos) base pc;
-    }
   ];
   config.users.mightyiam.home = config.home;
 }
