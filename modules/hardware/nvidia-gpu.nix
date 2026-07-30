@@ -1,14 +1,26 @@
 {lib, ...}: {
-  nixos.modules = {
-    nvidia-video-driver = {
-      services.xserver.videoDrivers = ["nvidia"];
+  options.nixos.modules = {
+    nvidia-video-driver = lib.mkOption {
+      type = lib.types.deferredModuleWith {
+        staticModules = [
+          {services.xserver.videoDrivers = ["nvidia"];}
+        ];
+      };
+      default = {};
     };
-    force-default-video-drivers = nixosArgs: {
-      services.xserver.videoDrivers = lib.mkForce nixosArgs.options.services.xserver.videoDrivers.default;
+    force-default-video-drivers = lib.mkOption {
+      type = lib.types.deferredModuleWith {
+        staticModules = [
+          (nixosArgs: {
+            services.xserver.videoDrivers = lib.mkForce nixosArgs.options.services.xserver.videoDrivers.default;
+          })
+        ];
+      };
+      default = {};
     };
   };
 
-  perSystem = {
+  config.perSystem = {
     nixpkgs.config.allowUnfreePackages = [
       "nvidia-kernel-modules"
       "nvidia-settings"

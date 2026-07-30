@@ -6,10 +6,6 @@
   ...
 }: {
   options.nixos = {
-    modules = lib.mkOption {
-      type = lib.types.lazyAttrsOf lib.types.deferredModule;
-    };
-
     configurations = lib.mkOption {
       type = lib.types.lazyAttrsOf (
         lib.types.submodule (
@@ -26,26 +22,18 @@
     };
   };
 
-  config = {
-    nixos.modules.pc = {
-      imports = [
-        config.nixos.modules.base
-      ];
-    };
+  config.flake = {
+    nixosConfigurations = config.nixos.configurations |> lib.mapAttrs (name: {configuration, ...}: configuration);
 
-    flake = {
-      nixosConfigurations = config.nixos.configurations |> lib.mapAttrs (name: {configuration, ...}: configuration);
-
-      checks =
-        config.nixos.configurations
-        |> lib.mapAttrsToList (
-          name: {configuration, ...}: {
-            ${configuration.config.hardware.facter.report.system} = {
-              "configurations:nixos:${name}" = configuration.config.system.build.toplevel;
-            };
-          }
-        )
-        |> lib.mkMerge;
-    };
+    checks =
+      config.nixos.configurations
+      |> lib.mapAttrsToList (
+        name: {configuration, ...}: {
+          ${configuration.config.hardware.facter.report.system} = {
+            "configurations:nixos:${name}" = configuration.config.system.build.toplevel;
+          };
+        }
+      )
+      |> lib.mkMerge;
   };
 }
