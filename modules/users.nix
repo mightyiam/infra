@@ -70,16 +70,11 @@
         )
       );
     };
-
-    home = lib.mkOption {
-      type = lib.types.lazyAttrsOf lib.types.deferredModule;
-    };
   };
   config = {
     nixos.modules.base = {pkgs, ...}: {
       imports = ["${inputs.home-manager}/nixos"];
       users.defaultUserShell = pkgs.nushell;
     };
-    users.mightyiam.home = config.home;
   };
 }
