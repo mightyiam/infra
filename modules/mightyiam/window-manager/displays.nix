@@ -27,8 +27,11 @@
         "SUPER+SHIFT, b, exec, ${lib.getExe pkgs.brightnessctl} set 10%+"
       ];
     };
-    home.activation.hyprlandStatefulMonitorsFile = hmArgs.lib.hm.dag.entryAfter ["writeBoundary"] ''
-      run touch ${hyprlandConfPath}
-    '';
+    home = {
+      packages = [pkgs.brightnessctl];
+      activation.hyprlandStatefulMonitorsFile = hmArgs.lib.hm.dag.entryAfter ["writeBoundary"] ''
+        run touch ${hyprlandConfPath}
+      '';
+    };
   };
 }
