@@ -3,10 +3,11 @@
   config,
   lib,
   nixvim,
+  mkModuleOption,
   ...
 }: {
-  options.armilaria = lib.mkOption {
-    type = lib.types.deferredModule;
+  options.armilaria = mkModuleOption {
+    key = "armilaria";
   };
 
   config = {

@@ -1,11 +1,10 @@
 {
-  lib,
+  mkModuleOption,
   config,
   ...
 }: {
-  options.nixos.modules.pc = lib.mkOption {
-    type = lib.types.deferredModuleWith {
-      staticModules = [config.nixos.modules.base];
-    };
+  options.nixos.modules.pc = mkModuleOption {
+    key = "pc";
+    static = config.nixos.modules.base;
   };
 }

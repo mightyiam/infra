@@ -1,14 +1,14 @@
 {
-  lib,
+  mkModuleOption,
   config,
   ...
 }: {
   options.home = {
-    base = lib.mkOption {
-      type = lib.types.deferredModule;
+    base = mkModuleOption {
+      key = "base-alias";
     };
-    gui = lib.mkOption {
-      type = lib.types.deferredModule;
+    gui = mkModuleOption {
+      key = "gui-alias";
     };
   };
   config.users.mightyiam = {
