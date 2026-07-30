@@ -38,6 +38,7 @@
                 pc = mkModuleOption {
                   key = "${name}-pc";
                   static = {
+                    imports = [userArgs.config.nixos.base];
                     home-manager.users.${name} = userArgs.config.home.gui;
                   };
                   default = {};
