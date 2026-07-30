@@ -71,10 +71,8 @@
       );
     };
   };
-  config = {
-    nixos.modules.base = {pkgs, ...}: {
-      imports = ["${inputs.home-manager}/nixos"];
-      users.defaultUserShell = pkgs.nushell;
-    };
+  config.nixos.modules.base = {pkgs, ...}: {
+    imports = ["${inputs.home-manager}/nixos"];
+    users.defaultUserShell = pkgs.nushell;
   };
 }
