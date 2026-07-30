@@ -54,7 +54,12 @@
                 };
                 gui = mkModuleOption {
                   key = "${name}-gui";
-                  static = config.homeManager.modules.gui;
+                  static = {
+                    imports = [
+                      userArgs.config.home.base
+                      config.homeManager.modules.gui
+                    ];
+                  };
                 };
               };
             };
