@@ -4,8 +4,13 @@
   ...
 }: {
   options.homeManager = {
-    modules = lib.mkOption {
-      type = lib.types.lazyAttrsOf lib.types.deferredModule;
+    modules = {
+      base = lib.mkOption {
+        type = lib.types.deferredModule;
+      };
+      gui = lib.mkOption {
+        type = lib.types.deferredModule;
+      };
     };
   };
 
