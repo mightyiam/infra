@@ -75,13 +75,11 @@
       type = lib.types.lazyAttrsOf lib.types.deferredModule;
     };
   };
-  config.nixos.modules = lib.mkMerge [
-    {
-      base = {pkgs, ...}: {
-        imports = ["${inputs.home-manager}/nixos"];
-        users.defaultUserShell = pkgs.nushell;
-      };
-    }
-  ];
+  config.nixos.modules = {
+    base = {pkgs, ...}: {
+      imports = ["${inputs.home-manager}/nixos"];
+      users.defaultUserShell = pkgs.nushell;
+    };
+  };
   config.users.mightyiam.home = config.home;
 }
