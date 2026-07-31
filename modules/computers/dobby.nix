@@ -23,7 +23,7 @@
           config.users.bow.nixos.pc
         ];
 
-      specialisation.nvidia-video-driver.configuration = config.nixos.modules.force-default-video-drivers;
+      specialisation.default-video-driver.configuration = config.nixos.modules.force-default-video-drivers;
 
       boot.partlabels = [
         "boot0"
