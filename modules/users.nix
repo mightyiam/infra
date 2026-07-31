@@ -31,6 +31,7 @@
                       isNormalUser = true;
                       useDefaultShell = lib.mkDefault true;
                     };
+                    virtualisation.vmVariant.users.users.${name}.initialPassword = "";
                     home-manager.users.${name} = userArgs.config.home.base;
                   };
                   default = {};
