@@ -1,5 +1,6 @@
 {
   users.bow = {
+    wayland.sessions = pkgs: [pkgs.cosmic-session];
     nixos.pc = {
       services = {
         system76-scheduler.enable = true;
