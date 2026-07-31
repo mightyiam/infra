@@ -1,3 +1,17 @@
+/*
+storage:
+  mounpoint: legacy
+  compression: zstd-3 (or a lower integer for slower CPUs)
+  atime: off
+  xattr: off
+  acltype: off
+  encryption: on
+  keyformat: passphrase
+  keylocation: prompt
+
+storage/root:
+  quota: depends on volume
+*/
 {lib, ...}: {
   nixos.modules.base = nixosArgs @ {pkgs, ...}: {
     options = {
