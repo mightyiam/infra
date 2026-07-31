@@ -38,6 +38,17 @@
         |> lib.mkMerge;
     };
 
+    nixos.modules.pc = {
+      virtualisation.vmVariant = {
+        virtualisation = {
+          memorySize = 8192;
+          qemu.options = [
+            "-device virtio-balloon"
+          ];
+        };
+      };
+    };
+
     git.ignore = ["*.qcow2"];
   };
 }
