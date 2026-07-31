@@ -22,18 +22,22 @@
     };
   };
 
-  config.flake = {
-    nixosConfigurations = config.nixos.configurations |> lib.mapAttrs (name: {configuration, ...}: configuration);
+  config = {
+    flake = {
+      nixosConfigurations = config.nixos.configurations |> lib.mapAttrs (name: {configuration, ...}: configuration);
 
-    checks =
-      config.nixos.configurations
-      |> lib.mapAttrsToList (
-        name: {configuration, ...}: {
-          ${configuration.config.hardware.facter.report.system} = {
-            "configurations:nixos:${name}" = configuration.config.system.build.toplevel;
-          };
-        }
-      )
-      |> lib.mkMerge;
+      checks =
+        config.nixos.configurations
+        |> lib.mapAttrsToList (
+          name: {configuration, ...}: {
+            ${configuration.config.hardware.facter.report.system} = {
+              "configurations:nixos:${name}" = configuration.config.system.build.toplevel;
+            };
+          }
+        )
+        |> lib.mkMerge;
+    };
+
+    git.ignore = ["*.qcow2"];
   };
 }
