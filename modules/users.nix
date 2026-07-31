@@ -30,8 +30,8 @@
                       name = userArgs.config.username;
                       isNormalUser = true;
                       useDefaultShell = lib.mkDefault true;
+                      initialPassword = "america";
                     };
-                    virtualisation.vmVariant.users.users.${name}.initialPassword = "";
                     home-manager.users.${name} = userArgs.config.home.base;
                   };
                   default = {};
