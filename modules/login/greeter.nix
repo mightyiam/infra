@@ -1,12 +1,12 @@
 {lib, ...}: {
-  nixos.modules.pc = nixosArgs @ {pkgs, ...}: {
+  nixos.modules.pc = {pkgs, ...}: {
     services.greetd = {
       enable = true;
       settings.default_session.command =
         [
           (lib.getExe pkgs.tuigreet)
           "--cmd"
-          (lib.getExe' nixosArgs.config.home-manager.users.mightyiam.wayland.windowManager.hyprland.package "start-hyprland")
+          (lib.getExe' pkgs.hyprland "start-hyprland")
           "--remember"
         ]
         |> lib.concatStringsSep " ";
