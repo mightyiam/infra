@@ -7,10 +7,14 @@
     module = {pkgs, ...}: {
       networking.hostId = "6b5dea2a";
 
-      imports = with config.nixos.modules; [
-        efi
-        pc
-      ];
+      imports = with config.nixos.modules;
+        [
+          efi
+          pc
+        ]
+        |> lib.concat [
+          config.users.mightyiam.nixos.pc
+        ];
 
       boot.partlabels = [
         "boot0"

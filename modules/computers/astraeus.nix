@@ -21,10 +21,14 @@
           inherit value;
         });
 
-      imports = with config.nixos.modules; [
-        efi
-        pc
-      ];
+      imports = with config.nixos.modules;
+        [
+          efi
+          pc
+        ]
+        |> lib.concat [
+          config.users.mightyiam.nixos.pc
+        ];
     };
 
     facter.reportPath = ./astraeus.facter.json;

@@ -1,4 +1,8 @@
-{config, ...}: {
+{
+  config,
+  lib,
+  ...
+}: {
   nixos.configurations.ganoderma = {
     module = {
       networking.hostId = "0e8e163d";
@@ -14,10 +18,14 @@
       ];
       hardware.nvidia.open = false;
 
-      imports = with config.nixos.modules; [
-        efi
-        pc
-      ];
+      imports = with config.nixos.modules;
+        [
+          efi
+          pc
+        ]
+        |> lib.concat [
+          config.users.mightyiam.nixos.pc
+        ];
 
       specialisation.nvidia-video-driver.configuration = config.nixos.modules.nvidia-video-driver;
     };
