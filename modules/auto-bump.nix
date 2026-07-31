@@ -1,5 +1,5 @@
 {config, ...}: {
-  nixos.modules.bow = {
+  users.bow.nixos.pc = {
     system.autoUpgrade = {
       enable = true;
 
