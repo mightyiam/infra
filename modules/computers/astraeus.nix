@@ -12,9 +12,9 @@
 
       home-manager.users.mightyiam.audio.sinkNameMap =
         {
-          "Speaker" = "SPEAKER";
-          "Headphones" = "JACK";
-          "HDMI1" = "HDMI";
+          "Speaker" = "🔉";
+          "Headphones" = "🎧";
+          "HDMI1" = "🖵";
         }
         |> lib.mapAttrs' (substr: value: {
           name = "alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__${substr}__sink";
