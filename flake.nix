@@ -34,6 +34,10 @@
       url = "github:nix-community/home-manager";
       flake = false;
     };
+    htnl = {
+      url = "github:molybdenumsoftware/htnl";
+      flake = false;
+    };
     import-tree = {
       url = "github:vic/import-tree";
       flake = false;

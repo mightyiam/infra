@@ -99,6 +99,22 @@
         "type": "github"
       }
     },
+    "htnl": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1784798953,
+        "narHash": "sha256-agIt27EXavv0ok1LDAPzuyOXwX3WgEw17F+8QHKl4DA=",
+        "owner": "molybdenumsoftware",
+        "repo": "htnl",
+        "rev": "62ee4b91232c6102f9ee60f42c2af6455a190a64",
+        "type": "github"
+      },
+      "original": {
+        "owner": "molybdenumsoftware",
+        "repo": "htnl",
+        "type": "github"
+      }
+    },
     "import-tree": {
       "flake": false,
       "locked": {
@@ -184,6 +200,7 @@
         "flake-parts": "flake-parts",
         "git-hooks": "git-hooks",
         "home-manager": "home-manager",
+        "htnl": "htnl",
         "import-tree": "import-tree",
         "make-shell": "make-shell",
         "nix-index-database": "nix-index-database",

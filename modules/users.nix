@@ -45,6 +45,9 @@
                   default = {};
                 };
               };
+              description.text = lib.mkOption {
+                type = lib.types.nullOr lib.types.singleLineStr;
+              };
               home = {
                 base = mkModuleOption {
                   key = "${name}-base";
