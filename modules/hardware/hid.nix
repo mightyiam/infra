@@ -5,5 +5,6 @@
       pkgs.piper
       pkgs.wev
     ];
+    users.users.mightyiam.extraGroups = ["input"];
   };
 }

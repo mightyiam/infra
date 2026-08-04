@@ -4,7 +4,6 @@
     users.users.mightyiam.extraGroups = [
       "wheel"
       "systemd-journal"
-      "input"
     ];
   };
 }
