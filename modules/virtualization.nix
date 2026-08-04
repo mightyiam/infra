@@ -13,5 +13,10 @@
 
       virtualbox.host.enable = true;
     };
+
+    users.users.mightyiam.extraGroups = [
+      "docker"
+      "vboxusers"
+    ];
   };
 }

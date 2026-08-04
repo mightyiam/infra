@@ -5,8 +5,6 @@
       "wheel"
       "systemd-journal"
       "input"
-      "docker"
-      "vboxusers"
     ];
     nix.settings.trusted-users = ["mightyiam"];
   };
