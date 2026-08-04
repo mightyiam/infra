@@ -13,6 +13,9 @@
       type = lib.types.listOf lib.types.singleLineStr;
       default = [];
     };
+    trusted-users = lib.mkOption {
+      type = lib.types.listOf lib.types.str;
+    };
   };
   config = {
     nix.settings = {
@@ -23,6 +26,7 @@
         "recursive-nix"
       ];
       extra-system-features = ["recursive-nix"];
+      trusted-users = ["mightyiam"];
     };
 
     nixos.modules.base = {

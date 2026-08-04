@@ -6,6 +6,5 @@
       "systemd-journal"
       "input"
     ];
-    nix.settings.trusted-users = ["mightyiam"];
   };
 }
