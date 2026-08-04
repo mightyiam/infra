@@ -1,9 +1,6 @@
 {
   nixos.modules.base = {
     security.sudo-rs.enable = true;
-    users.users.mightyiam.extraGroups = [
-      "wheel"
-      "systemd-journal"
-    ];
+    users.users.mightyiam.extraGroups = ["wheel"];
   };
 }
