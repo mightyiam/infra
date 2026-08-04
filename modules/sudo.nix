@@ -5,7 +5,6 @@
       "wheel"
       "systemd-journal"
       "input"
-      "wireshark"
       "docker"
       "vboxusers"
     ];

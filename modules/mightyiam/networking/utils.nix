@@ -14,5 +14,6 @@
 
   nixos.modules.pc = {
     programs.wireshark.enable = true;
+    users.users.mightyiam.extraGroups = ["wireshark"];
   };
 }
