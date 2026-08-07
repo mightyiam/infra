@@ -11,6 +11,7 @@
         [
           efi
           pc
+          qmk
         ]
         |> lib.concat [
           config.users.mightyiam.nixos.pc
