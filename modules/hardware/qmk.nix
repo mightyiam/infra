@@ -6,6 +6,5 @@
       users.users.mightyiam.extraGroups = ["plugdev"];
       environment.systemPackages = [pkgs.qmk pkgs.vial];
     };
-    default = {};
   };
 }

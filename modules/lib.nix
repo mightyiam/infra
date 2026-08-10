@@ -23,6 +23,8 @@
           inherit key;
           imports = [module];
         };
+
+        default = {};
       };
   };
 }

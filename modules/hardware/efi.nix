@@ -19,7 +19,5 @@
         pkgs.efibootmgr
       ];
     };
-
-    default = {};
   };
 }

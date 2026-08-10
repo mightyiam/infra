@@ -9,14 +9,12 @@
       static = {
         services.xserver.videoDrivers = ["nvidia"];
       };
-      default = {};
     };
     force-default-video-drivers = mkModuleOption {
       key = "force-default-video-drivers";
       static = nixosArgs: {
         services.xserver.videoDrivers = lib.mkForce nixosArgs.options.services.xserver.videoDrivers.default;
       };
-      default = {};
     };
   };
 

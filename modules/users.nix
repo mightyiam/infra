@@ -34,7 +34,6 @@
                     };
                     home-manager.users.${name} = userArgs.config.home.base;
                   };
-                  default = {};
                 };
                 pc = mkModuleOption {
                   key = "${name}-pc";
@@ -42,7 +41,6 @@
                     imports = [userArgs.config.nixos.base];
                     home-manager.users.${name} = userArgs.config.home.gui;
                   };
-                  default = {};
                 };
               };
               home = {
