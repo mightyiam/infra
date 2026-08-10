@@ -29,7 +29,6 @@
 
     nixos.modules.base = {pkgs, ...}: {
       home-manager = {
-        useGlobalPkgs = true;
         sharedModules = [
           ({osConfig, ...}: {
             home = {

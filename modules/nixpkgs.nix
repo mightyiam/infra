@@ -18,5 +18,6 @@
 
   nixos.modules.base = nixosArgs: {
     nixpkgs.pkgs = withSystem nixosArgs.config.hardware.facter.report.system (lib.getAttr "pkgs");
+    home-manager.useGlobalPkgs = true;
   };
 }
