@@ -18,13 +18,6 @@ storage/root:
       swap.partlabels = lib.mkOption {
         type = lib.types.listOf lib.types.singleLineStr;
       };
-      boot.partlabels = lib.mkOption {
-        type = lib.types.listOf lib.types.singleLineStr;
-        apply = map (partlabel: {
-          inherit partlabel;
-          path = "/${partlabel}";
-        });
-      };
     };
 
     config = {
@@ -32,34 +25,10 @@ storage/root:
         # TODO has swap devices
       ];
 
-      fileSystems = lib.mkMerge [
-        {
-          "/" = {
-            device = "storage/root";
-            fsType = "zfs";
-          };
-        }
-        (
-          nixosArgs.config.boot.partlabels
-          |> map (
-            {
-              path,
-              partlabel,
-            }: {
-              name = path;
-              value = {
-                device = "/dev/disk/by-partlabel/${partlabel}";
-                fsType = "vfat";
-                options = [
-                  "fmask=0022"
-                  "dmask=0022"
-                ];
-              };
-            }
-          )
-          |> lib.listToAttrs
-        )
-      ];
+      fileSystems."/" = {
+        device = "storage/root";
+        fsType = "zfs";
+      };
 
       swapDevices =
         nixosArgs.config.swap.partlabels
@@ -71,15 +40,6 @@ storage/root:
       boot = {
         zfs.forceImportRoot = false;
         tmp.cleanOnBoot = true;
-
-        loader.grub.mirroredBoots =
-          nixosArgs.config.boot.partlabels
-          |> map (
-            {path, ...}: {
-              inherit path;
-              devices = ["nodev"];
-            }
-          );
       };
 
       services.zfs.autoScrub = {
