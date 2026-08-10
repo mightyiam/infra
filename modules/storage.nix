@@ -12,30 +12,13 @@ storage:
 storage/root:
   quota: depends on volume
 */
-{lib, ...}: {
-  nixos.modules.base = nixosArgs @ {pkgs, ...}: {
-    options = {
-      swap.partlabels = lib.mkOption {
-        type = lib.types.listOf lib.types.singleLineStr;
-      };
-    };
-
+{
+  nixos.modules.base = {pkgs, ...}: {
     config = {
-      assertions = [
-        # TODO has swap devices
-      ];
-
       fileSystems."/" = {
         device = "storage/root";
         fsType = "zfs";
       };
-
-      swapDevices =
-        nixosArgs.config.swap.partlabels
-        |> map (partlabel: {
-          device = "/dev/disk/by-partlabel/${partlabel}";
-          randomEncryption.enable = true;
-        });
 
       boot = {
         zfs.forceImportRoot = false;
