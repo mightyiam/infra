@@ -7,15 +7,15 @@
   options.nixos = {
     configurations = lib.mkOption {
       type = lib.types.lazyAttrsOf (
-        lib.types.submodule (
-          {name, ...}: {
-            imports = [evalModulesModule];
-            fn = lib.nixosSystem;
-            module = {
-              networking.hostName = lib.mkDefault name;
-            };
-          }
-        )
+        lib.types.submodule ({name, ...}: {
+          imports = [evalModulesModule];
+          options.name = lib.mkOption {
+            readOnly = true;
+            type = lib.types.str;
+            default = name;
+          };
+          config.fn = lib.nixosSystem;
+        })
       );
     };
   };
