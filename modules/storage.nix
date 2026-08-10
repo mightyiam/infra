@@ -13,7 +13,7 @@ storage/root:
   quota: depends on volume
 */
 {
-  nixos.modules.base = {pkgs, ...}: {
+  nixos.modules.base = {
     config = {
       fileSystems."/" = {
         device = "storage/root";
@@ -26,8 +26,6 @@ storage/root:
         enable = true;
         interval = "monthly";
       };
-
-      environment.systemPackages = [pkgs.gptfdisk];
     };
   };
 }
