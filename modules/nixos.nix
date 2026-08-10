@@ -2,7 +2,6 @@
   config,
   lib,
   evalModulesModule,
-  withSystem,
   ...
 }: {
   options.nixos = {
@@ -12,9 +11,8 @@
           {name, ...}: {
             imports = [evalModulesModule];
             fn = lib.nixosSystem;
-            module = nixosArgs: {
+            module = {
               networking.hostName = lib.mkDefault name;
-              nixpkgs.pkgs = withSystem nixosArgs.config.hardware.facter.report.system (lib.getAttr "pkgs");
             };
           }
         )
