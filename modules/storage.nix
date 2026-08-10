@@ -20,10 +20,7 @@ storage/root:
         fsType = "zfs";
       };
 
-      boot = {
-        zfs.forceImportRoot = false;
-        tmp.cleanOnBoot = true;
-      };
+      boot.zfs.forceImportRoot = false;
 
       services.zfs.autoScrub = {
         enable = true;
