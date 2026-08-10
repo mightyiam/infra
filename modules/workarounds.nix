@@ -1,11 +1,14 @@
 {
-  nixos.modules.base = {
-    # https://github.com/NixOS/nixpkgs/issues/263289
-    environment.defaultPackages = [];
-
-    stylix.targets = {
-      # https://github.com/nix-community/stylix/discussions/2232
-      gtksourceview.enable = false;
+  nixos.modules = {
+    base = {
+      # https://github.com/NixOS/nixpkgs/issues/263289
+      environment.defaultPackages = [];
+    };
+    pc = {
+      stylix.targets = {
+        # https://github.com/nix-community/stylix/discussions/2232
+        gtksourceview.enable = false;
+      };
     };
   };
   homeManager.modules.base = {
