@@ -51,6 +51,13 @@
       url = "github:nix-community/nixvim";
       flake = false;
     };
+    pr-tracker = {
+      url = "github:molybdenumsoftware/pr-tracker/v7.4.0";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
     smart-scrolloff-nvim = {
       url = "github:tonymajestro/smart-scrolloff.nvim";
       flake = false;
