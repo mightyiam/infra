@@ -2,6 +2,7 @@
   config,
   lib,
   evalModulesModule,
+  inputs,
   ...
 }: {
   options.nixos = {
@@ -14,7 +15,10 @@
             type = lib.types.str;
             default = name;
           };
-          config.fn = lib.nixosSystem;
+          config = {
+            fn = import "${inputs.nixpkgs}/nixos/lib/eval-config.nix";
+            args = {system = null;};
+          };
         })
       );
     };
