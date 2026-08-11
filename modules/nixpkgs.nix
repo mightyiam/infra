@@ -16,8 +16,9 @@
     legacyPackages = pkgs;
   };
 
-  nixos.modules.base = nixosArgs: {
+  nixos.modules.base = nixosArgs @ {pkgs, ...}: {
     nixpkgs.pkgs = withSystem nixosArgs.config.hardware.facter.report.system (lib.getAttr "pkgs");
     home-manager.useGlobalPkgs = true;
+    nix.nixPath = ["nixpkgs=${pkgs.path}"];
   };
 }
