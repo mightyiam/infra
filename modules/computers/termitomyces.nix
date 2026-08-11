@@ -10,6 +10,7 @@
       imports = with config.nixos.modules;
         [
           efi
+          zfs
           pc
           qmk
         ]

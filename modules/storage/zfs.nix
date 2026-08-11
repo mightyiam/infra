@@ -12,19 +12,22 @@ storage:
 storage/root:
   quota: depends on volume
 */
-{
-  nixos.modules.base = {
-    config = {
-      fileSystems."/" = {
-        device = "storage/root";
-        fsType = "zfs";
-      };
+{mkModuleOption, ...}: {
+  options.nixos.modules.zfs = mkModuleOption {
+    key = "zfs";
+    static = {
+      config = {
+        fileSystems."/" = {
+          device = "storage/root";
+          fsType = "zfs";
+        };
 
-      boot.zfs.forceImportRoot = false;
+        boot.zfs.forceImportRoot = false;
 
-      services.zfs.autoScrub = {
-        enable = true;
-        interval = "monthly";
+        services.zfs.autoScrub = {
+          enable = true;
+          interval = "monthly";
+        };
       };
     };
   };

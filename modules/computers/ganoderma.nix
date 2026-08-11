@@ -21,6 +21,7 @@
       imports = with config.nixos.modules;
         [
           efi
+          zfs
           pc
         ]
         |> lib.concat [
