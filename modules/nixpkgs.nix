@@ -4,7 +4,10 @@
   withSystem,
   ...
 }: {
-  flake-file.inputs.nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";
+  flake-file.inputs.nixpkgs = {
+    url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";
+    flake = false;
+  };
 
   perSystem = {
     system,

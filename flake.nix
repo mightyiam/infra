@@ -43,7 +43,10 @@
       url = "github:nix-community/nix-index-database";
       flake = false;
     };
-    nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";
+    nixpkgs = {
+      url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";
+      flake = false;
+    };
     nixvim = {
       url = "github:nix-community/nixvim";
       flake = false;

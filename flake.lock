@@ -146,6 +146,7 @@
       }
     },
     "nixpkgs": {
+      "flake": false,
       "locked": {
         "lastModified": 1785975029,
         "narHash": "sha256-7UJK0pRtDvDUfAMLP1bQDxXg6iDI30dGQQQCPtQVzgM=",
