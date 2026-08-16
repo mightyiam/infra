@@ -20,7 +20,6 @@
 
     fonts = pkgs.runCommand "fonts" {nativeBuildInputs = [(pkgs.python3.withPackages (ps: [ps.fonttools ps.brotli]))];} ''
       mkdir $out
-      fonttools ttLib.woff2 compress ${pkgs.hermit}/share/fonts/opentype/Hermit-Bold.otf -o $out/Hermit-Bold.woff2
       fonttools ttLib.woff2 compress ${pkgs.open-dyslexic}/share/fonts/opentype/OpenDyslexic-Bold.otf -o $out/OpenDyslexic-Bold.woff2
     '';
   in {
@@ -54,7 +53,7 @@
               }
             '')))
         ])
-        (body {class = ["bg-black" "text-white" "grid" "grid-flow-rows"];} [
+        (body {class = ["bg-black" "mx-auto" "max-w-xl" "text-white" "grid" "grid-flow-rows"];} [
           (config.users.mightyiam.username
             |> lib.stringToCharacters
             |> map span
@@ -64,8 +63,8 @@
                 "grid-flow-col"
                 "auto-cols-fr"
                 "justify-items-center"
-                "font-[Hermit_Bold]"
-                "text-[10vw]"
+                "font-[OpenDyslexic_Bold]"
+                "text-[4cqw]"
               ];
             })
           (config.users.mightyiam.name
@@ -82,7 +81,7 @@
                 "auto-cols-min-content"
                 "justify-evenly"
                 "font-[OpenDyslexic_Bold]"
-                "text-[6vw]"
+                "text-[3.1cqw]"
               ];
             })
         ])
