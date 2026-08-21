@@ -13,21 +13,29 @@
     options.users.wayland.sessions = lib.mkOption {
       type = lib.types.listOf lib.types.package;
     };
-    config.services.greetd = {
-      enable = true;
-      useTextGreeter = true;
-      settings.default_session.command =
-        [
-          (lib.getExe pkgs.tuigreet)
-          "--user-menu"
-          "--asterisks"
-          "--asterisks-char=♥"
-          "--remember"
-          "--remember-user-session"
-          "--sessions"
-          (lib.makeSearchPath "share/wayland-sessions" nixosArgs.config.users.wayland.sessions)
-        ]
-        |> lib.concatStringsSep " ";
+    config = {
+      services.greetd = {
+        enable = true;
+        useTextGreeter = true;
+        settings.default_session.command = lib.getExe pkgs.tuigreet;
+      };
+
+      environment = {
+        systemPackages = [pkgs.tuigreet];
+
+        etc."tuigreet/config.toml".source = pkgs.writers.writeTOML "config.toml" {
+          user_menu.enabled = true;
+          secret = {
+            mode = "characters";
+            characters = "♥";
+          };
+          remember = {
+            username = true;
+            user_session = true;
+          };
+          sessions.sessions_dirs = nixosArgs.config.users.wayland.sessions |> map (pkg: "${pkg}/share/wayland-sessions");
+        };
+      };
     };
   };
 }
