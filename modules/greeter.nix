@@ -24,7 +24,10 @@
         systemPackages = [pkgs.tuigreet];
 
         etc."tuigreet/config.toml".source = pkgs.writers.writeTOML "config.toml" {
-          user_menu.enabled = true;
+          user_menu = {
+            enabled = true;
+            max_uid = 30000;
+          };
           secret = {
             mode = "characters";
             characters = "♥";
