@@ -1,8 +1,5 @@
 {lib, ...}: {
   home.gui = hmArgs: {
-    # https://github.com/qutebrowser/qutebrowser/issues/8908
-    home.sessionVariables.QTWEBENGINE_FORCE_USE_GBM = "0";
-
     programs.qutebrowser = {
       enable = true;
 
