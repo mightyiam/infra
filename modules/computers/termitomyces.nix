@@ -26,19 +26,24 @@
       services.openssh.publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB7usI+3jiHKYtWD7XAO8gWXKHJN4VZ67dh5x9oPvsQk";
       environment.variables.DXVK_FILTER_DEVICE_NAME = "RX 6600";
 
-      home-manager.users.mightyiam.audio.sinkNameMap =
-        {
-          "SPDIF" = "SPDIF";
-          "Speaker" = "🔉";
-        }
-        |> lib.mapAttrs' (substr: value: {
-          name = "alsa_output.usb-Generic_USB_Audio-00.HiFi__${substr}__sink";
-          inherit value;
-        })
-        |> lib.mergeAttrs {
-          "alsa_output.usb-Focusrite_Scarlett_Solo_4th_Gen_S1GPDR85841AB5-00.HiFi__Line1__sink" = "🎧";
-          "alsa_output.usb-R__DE_Microphones_R__DE_NT-USB_Mini_31FBD749-00.analog-stereo" = "🎙️";
-        };
+      home-manager.users.mightyiam = {
+        # https://github.com/qutebrowser/qutebrowser/issues/8908
+        home.sessionVariables.QTWEBENGINE_FORCE_USE_GBM = "0";
+
+        audio.sinkNameMap =
+          {
+            "SPDIF" = "SPDIF";
+            "Speaker" = "🔉";
+          }
+          |> lib.mapAttrs' (substr: value: {
+            name = "alsa_output.usb-Generic_USB_Audio-00.HiFi__${substr}__sink";
+            inherit value;
+          })
+          |> lib.mergeAttrs {
+            "alsa_output.usb-Focusrite_Scarlett_Solo_4th_Gen_S1GPDR85841AB5-00.HiFi__Line1__sink" = "🎧";
+            "alsa_output.usb-R__DE_Microphones_R__DE_NT-USB_Mini_31FBD749-00.analog-stereo" = "🎙️";
+          };
+      };
 
       environment.systemPackages = [pkgs.scarlett2 pkgs.alsa-scarlett-gui];
 
