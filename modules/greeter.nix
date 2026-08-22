@@ -36,7 +36,7 @@
             username = true;
             user_session = true;
           };
-          sessions.sessions_dirs = nixosArgs.config.users.wayland.sessions |> map (pkg: "${pkg}/share/wayland-sessions");
+          session.sessions_dirs = nixosArgs.config.users.wayland.sessions |> map (pkg: "${pkg}/share/wayland-sessions");
           background = {
             kind = "matrix";
             matrix = {
