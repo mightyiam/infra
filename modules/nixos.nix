@@ -43,9 +43,15 @@
     nixos.modules.pc = {
       virtualisation.vmVariant = {
         virtualisation = {
+          cores = 8;
           memorySize = 8192;
           qemu.options = [
             "-device virtio-balloon"
+
+            "-device virtio-gpu-gl-pci,hostmem=2G,blob=true"
+            "-vga none"
+
+            "-display gtk,gl=on"
           ];
         };
       };
