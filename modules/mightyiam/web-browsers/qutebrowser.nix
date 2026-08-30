@@ -25,6 +25,11 @@
         tabs.tabs_are_windows = true;
 
         auto_save.session = true;
+        input.insert_mode.auto_leave = false;
+        content.blocking.enabled = false;
+        downloads.position = "bottom";
+        scrolling.smooth = true;
+        url.default_page = "https://grok.com/";
       };
     };
 
