@@ -190,6 +190,22 @@
         "type": "github"
       }
     },
+    "qmk-firmware": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1788391347,
+        "narHash": "sha256-k7NS/WKR/xc2QbbWrtb8Q4MzEIc+59a/WusFPo+f17g=",
+        "owner": "qmk",
+        "repo": "qmk_firmware",
+        "rev": "3c73e928ab40b026adcff7112c8fc36a8d96152a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "qmk",
+        "repo": "qmk_firmware",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "autoreload-nvim": "autoreload-nvim",
@@ -203,6 +219,7 @@
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
+        "qmk-firmware": "qmk-firmware",
         "smart-scrolloff-nvim": "smart-scrolloff-nvim",
         "stylix": "stylix",
         "tinted-schemes": "tinted-schemes",

@@ -7,4 +7,10 @@
       environment.systemPackages = [pkgs.qmk pkgs.vial];
     };
   };
+  config = {
+    flake-file.inputs.qmk-firmware = {
+      url = "github:qmk/qmk_firmware";
+      flake = false;
+    };
+  };
 }
