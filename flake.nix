@@ -51,6 +51,10 @@
       url = "github:nix-community/nixvim";
       flake = false;
     };
+    qmix = {
+      url = "github:Tygo-van-den-Hurk/QMix";
+      flake = false;
+    };
     smart-scrolloff-nvim = {
       url = "github:tonymajestro/smart-scrolloff.nvim";
       flake = false;

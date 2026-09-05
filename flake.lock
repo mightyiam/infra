@@ -190,6 +190,22 @@
         "type": "github"
       }
     },
+    "qmix": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1788437997,
+        "narHash": "sha256-qrPYVM8X62J2qF7JL8xjviT7bBUDujojrYW/rXSL1pw=",
+        "owner": "Tygo-van-den-Hurk",
+        "repo": "QMix",
+        "rev": "eaa642fc2ea30505d990f9e1332568e8da91360f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Tygo-van-den-Hurk",
+        "repo": "QMix",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "autoreload-nvim": "autoreload-nvim",
@@ -203,6 +219,7 @@
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
+        "qmix": "qmix",
         "smart-scrolloff-nvim": "smart-scrolloff-nvim",
         "stylix": "stylix",
         "tinted-schemes": "tinted-schemes",
