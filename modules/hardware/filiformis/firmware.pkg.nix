@@ -1,16 +1,43 @@
 {
   qmk,
   dos2unix,
-  runCommand,
   git,
+  python3,
+  gcc-arm-embedded,
   qmk-firmware,
+  stdenv,
 }:
-runCommand "filiformis-firmware" {
+stdenv.mkDerivation (finalAttrs: {
+  name = "filiformis-firmware";
+  __structuredAttrs = true;
   env.SKIP_GIT = "1";
-  nativeBuildInputs = [git qmk dos2unix];
-} ''
-  cp -r ${qmk-firmware}/* .
-  qmk setup
-  qmk config general.interactive
-  qmk compile --keyboard lily58/rev1 -km default -e CONVERT_TO=helios -e VIA_ENABLE=yes
-''
+  nativeBuildInputs = [qmk dos2unix python3];
+  src = qmk-firmware;
+  buildPhase = ''
+    runHook preBuild
+
+    export HOME=.
+    export QMK_HOME=.
+    chmod -R 777 .
+
+    qmk compile \
+      --clean \
+      --parallel $(nproc) \
+      --keyboard lily58/rev1 \
+      -km default \
+      -e VERBOSE=true \
+      -e CONVERT_TO=helios
+      #-e VIA_ENABLE=yes
+
+    runHook postBuild
+  '';
+  # makeFlags = [
+  #   "--keyboard lily58/rev1"
+  #   "-km default"
+  #   "-e VERBOSE=true"
+  #   "-e CONVERT_TO=helios"
+  #   "-e VIA_ENABLE=yes"
+  # ];
+})
+# qmk config general.interactive False
+# qmk config general.verbose True

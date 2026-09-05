@@ -1,0 +1,13 @@
+diff --git a/builddefs/common_rules.mk b/builddefs/common_rules.mk
+index 282cc6c656..a9ebb465ac 100644
+--- a/builddefs/common_rules.mk
++++ b/builddefs/common_rules.mk
+@@ -228,7 +228,7 @@ gccversion :
+ 	@$(BUILD_CMD)
+ 
+ %.uf2: %.elf
+-	$(eval CMD=$(HEX) $< $(BUILD_DIR)/$(TARGET).tmp && $(UF2CONV) $(UF2CONV_ARGS) $(BUILD_DIR)/$(TARGET).tmp --output $@ --convert --family $(UF2_FAMILY) >/dev/null 2>&1)
++	$(eval CMD=$(HEX) $< $(BUILD_DIR)/$(TARGET).tmp && $(UF2CONV) $(UF2CONV_ARGS) $(BUILD_DIR)/$(TARGET).tmp --output $@ --convert --family $(UF2_FAMILY))
+ 	#@$(SILENT) || printf "$(MSG_EXECUTING) '$(CMD)':\n"
+ 	@$(SILENT) || printf "$(MSG_UF2) $@" | $(AWK_CMD)
+ 	@$(BUILD_CMD)
