@@ -14,7 +14,7 @@
     };
     nixpkgs.overlays = [
       (final: prev: {
-        flash-lily58 = prev.callPackage ./flash-lily58.pkg..nix {};
+        flash-lily58 = prev.callPackage ./flash-lily58.nix {};
       })
     ];
   };
