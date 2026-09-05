@@ -52,7 +52,7 @@
       flake = false;
     };
     qmk-firmware = {
-      url = "github:qmk/qmk_firmware";
+      url = "git+https://github.com/qmk/qmk_firmware.git?shallow=1&submodules=1";
       flake = false;
     };
     smart-scrolloff-nvim = {
