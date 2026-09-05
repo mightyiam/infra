@@ -12,7 +12,7 @@
           efi
           zfs
           pc
-          lily58
+          qmk
         ]
         |> lib.concat [
           config.users.mightyiam.nixos.pc

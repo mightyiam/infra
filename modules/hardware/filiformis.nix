@@ -1,10 +1,14 @@
-{mkModuleOption, ...}: {
-  options.nixos.modules.lily58 = mkModuleOption {
-    key = "lily58";
+{
+  mkModuleOption,
+  lib,
+  ...
+}: {
+  options.nixos.modules.qmk = mkModuleOption {
+    key = "qmk";
     static = {pkgs, ...}: {
       hardware.keyboard.qmk.enable = true;
       users.users.mightyiam.extraGroups = ["plugdev"];
-      environment.systemPackages = [pkgs.flash-lily58 pkgs.vial];
+      environment.systemPackages = [pkgs.vial];
     };
   };
   config = {
@@ -12,12 +16,14 @@
       url = "github:qmk/qmk_firmware";
       flake = false;
     };
-    perSystem = {
+    perSystem = {pkgs, ...}: {
       nixpkgs.overlays = [
         (final: prev: {
-          flash-lentinus = final.callPackage ./flash-lentinus.pkg.nix {};
+          filiformis-flash = final.callPackage ./flash.pkg.nix {};
+          filiformis-firmware = final.callPackage ./firmware.pkg.nix {};
         })
       ];
+      checks = ["filiformis-flash" "filiformis-firmware"] |> lib.flip lib.genAttrs (name: pkgs.${name});
     };
   };
 }
