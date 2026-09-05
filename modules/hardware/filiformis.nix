@@ -12,10 +12,12 @@
       url = "github:qmk/qmk_firmware";
       flake = false;
     };
-    nixpkgs.overlays = [
-      (final: prev: {
-        flash-lily58 = prev.callPackage ./flash-lily58.pkg..nix {};
-      })
-    ];
+    perSystem = {
+      nixpkgs.overlays = [
+        (final: prev: {
+          flash-lentinus = final.callPackage ./flash-lentinus.pkg.nix {};
+        })
+      ];
+    };
   };
 }
