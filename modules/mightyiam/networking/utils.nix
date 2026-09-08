@@ -9,6 +9,7 @@
       inetutils
       socat
       wifite2
+      cloudflare-speed-cli
     ];
   };
 
