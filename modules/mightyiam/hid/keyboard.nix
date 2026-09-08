@@ -20,7 +20,7 @@
     };
   in {
     wayland.windowManager.hyprland.settings = {
-      bind = [
+      bindl = [
         "ALT+SHIFT, SHIFT_L, exec, ${hyprland-rotate-keyboard-layout |> lib.getExe}"
       ];
       input.kb_layout = "us,il";
