@@ -2,7 +2,10 @@
   armilaria = nixvimArgs: {
     plugins.tiny-inline-diagnostic = {
       enable = true;
-      settings.options.show_diags_only_under_cursor = true;
+      settings.options = {
+        add_messages.display_count = true;
+        multilines.enabled = true;
+      };
     };
 
     lsp.keymaps = [
