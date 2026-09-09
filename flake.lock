@@ -190,6 +190,25 @@
         "type": "github"
       }
     },
+    "qmk-firmware": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1788591813,
+        "narHash": "sha256-Q9sEFSXB9oOHchqPyMdYkx7EKqa6jPG6Plj6F4xDiZY=",
+        "ref": "refs/heads/master",
+        "rev": "2a5dd4317a3d845ca2a00d189c2be795a2fdf5b7",
+        "shallow": true,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/qmk/qmk_firmware.git"
+      },
+      "original": {
+        "shallow": true,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/qmk/qmk_firmware.git"
+      }
+    },
     "root": {
       "inputs": {
         "autoreload-nvim": "autoreload-nvim",
@@ -203,6 +222,7 @@
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
+        "qmk-firmware": "qmk-firmware",
         "smart-scrolloff-nvim": "smart-scrolloff-nvim",
         "stylix": "stylix",
         "tinted-schemes": "tinted-schemes",

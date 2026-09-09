@@ -51,6 +51,10 @@
       url = "github:nix-community/nixvim";
       flake = false;
     };
+    qmk-firmware = {
+      url = "git+https://github.com/qmk/qmk_firmware.git?shallow=1&submodules=1";
+      flake = false;
+    };
     smart-scrolloff-nvim = {
       url = "github:tonymajestro/smart-scrolloff.nvim";
       flake = false;
