@@ -3,13 +3,13 @@
     programs.yazi.settings = {
       open.append_rules = [
         {
-          mime = "*";
+          url = "*";
           use = "open";
         }
       ];
       opener.open = [
         {
-          run = ''${lib.getExe' pkgs.xdg-utils "xdg-open"} "$@"'';
+          run = ''${lib.getExe' pkgs.xdg-utils "xdg-open"} %s1'';
           desc = "Open";
         }
       ];
