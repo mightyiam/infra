@@ -16,6 +16,7 @@
       pkgs.nix-output-monitor
       pkgs.nix-prefetch-scripts
       pkgs.nix-tree
+      pkgs.nixpkgs-reviewFull
       pkgs.nurl
       pkgs.nvd
       pkgs.system-command
