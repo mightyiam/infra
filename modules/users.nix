@@ -1,5 +1,4 @@
 {
-  mkModuleOption,
   inputs,
   lib,
   config,
@@ -23,41 +22,66 @@
                 default = null;
               };
               nixos = {
-                base = mkModuleOption {
-                  key = "${name}-base";
-                  static = {
-                    users.users.${name} = {
-                      name = userArgs.config.username;
-                      isNormalUser = true;
-                      useDefaultShell = lib.mkDefault true;
-                      initialPassword = "america";
-                    };
-                    home-manager.users.${name} = userArgs.config.home.base;
+                base = lib.mkOption {
+                  type = lib.types.deferredModuleWith {
+                    staticModules = [
+                      {
+                        users.users.${name} = {
+                          name = userArgs.config.username;
+                          isNormalUser = true;
+                          useDefaultShell = lib.mkDefault true;
+                          initialPassword = "america";
+                        };
+                        home-manager.users.${name} = userArgs.config.home.base;
+                      }
+                    ];
                   };
+                  apply = module: {
+                    key = "${name}-base";
+                    imports = [module];
+                  };
+                  default = {};
                 };
-                pc = mkModuleOption {
-                  key = "${name}-pc";
-                  static = {
-                    imports = [userArgs.config.nixos.base];
-                    home-manager.users.${name} = userArgs.config.home.gui;
+                pc = lib.mkOption {
+                  type = lib.types.deferredModuleWith {
+                    staticModules = [
+                      {
+                        imports = [userArgs.config.nixos.base];
+                        home-manager.users.${name} = userArgs.config.home.gui;
+                      }
+                    ];
+                  };
+                  apply = module: {
+                    key = "${name}-pc";
+                    imports = [module];
                   };
                 };
               };
               home = {
-                base = mkModuleOption {
-                  key = "${name}-base";
-                  static = {
-                    imports = [config.homeManager.modules.base];
-                    home.username = lib.mkDefault userArgs.config.username;
+                base = lib.mkOption {
+                  type = lib.types.deferredModuleWith {
+                    staticModules = [
+                      {
+                        imports = [config.homeManager.modules.base];
+                        home.username = lib.mkDefault userArgs.config.username;
+                      }
+                    ];
+                  };
+                  apply = module: {
+                    key = "${name}-base";
+                    imports = [module];
                   };
                 };
-                gui = mkModuleOption {
-                  key = "${name}-gui";
-                  static = {
-                    imports = [
+                gui = lib.mkOption {
+                  type = lib.types.deferredModuleWith {
+                    staticModules = [
                       userArgs.config.home.base
                       config.homeManager.modules.gui
                     ];
+                  };
+                  apply = module: {
+                    key = "${name}-gui";
+                    imports = [module];
                   };
                 };
               };

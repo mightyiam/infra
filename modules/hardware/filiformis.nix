@@ -1,13 +1,14 @@
 {
-  mkModuleOption,
   inputs,
   removeStorePathPrefix,
   lib,
   ...
 }: {
-  options.nixos.modules.qmk = mkModuleOption {
-    key = "qmk";
-    static = {pkgs, ...}: {
+  options.nixos.modules.qmk = lib.mkOption {
+    type = lib.types.deferredModule;
+    readOnly = true;
+    default = {pkgs, ...}: {
+      key = "qmk";
       hardware.keyboard.qmk.enable = true;
       users.users.mightyiam.extraGroups = ["plugdev"];
       environment.systemPackages = [pkgs.vial];

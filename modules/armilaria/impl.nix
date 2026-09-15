@@ -3,11 +3,14 @@
   config,
   lib,
   nixvim,
-  mkModuleOption,
   ...
 }: {
-  options.armilaria = mkModuleOption {
-    key = "armilaria";
+  options.armilaria = lib.mkOption {
+    type = lib.types.deferredModule;
+    apply = module: {
+      key = "armilaria";
+      imports = [module];
+    };
   };
 
   config = {

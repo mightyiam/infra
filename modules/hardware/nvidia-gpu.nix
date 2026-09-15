@@ -1,18 +1,18 @@
-{
-  lib,
-  mkModuleOption,
-  ...
-}: {
+{lib, ...}: {
   options.nixos.modules = {
-    nvidia-video-driver = mkModuleOption {
-      key = "nvidia-video-driver";
-      static = {
+    nvidia-video-driver = lib.mkOption {
+      type = lib.types.deferredModule;
+      readOnly = true;
+      default = {
+        key = "nvidia-video-driver";
         services.xserver.videoDrivers = ["nvidia"];
       };
     };
-    force-default-video-drivers = mkModuleOption {
-      key = "force-default-video-drivers";
-      static = nixosArgs: {
+    force-default-video-drivers = lib.mkOption {
+      type = lib.types.deferredModule;
+      readOnly = true;
+      default = nixosArgs: {
+        key = "force-default-video-drivers";
         services.xserver.videoDrivers = lib.mkForce nixosArgs.options.services.xserver.videoDrivers.default;
       };
     };

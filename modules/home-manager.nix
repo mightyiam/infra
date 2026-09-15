@@ -1,16 +1,23 @@
 {
   inputs,
   lib,
-  mkModuleOption,
   ...
 }: {
   options.homeManager = {
     modules = {
-      base = mkModuleOption {
-        key = "base";
+      base = lib.mkOption {
+        type = lib.types.deferredModule;
+        apply = module: {
+          key = "base";
+          imports = [module];
+        };
       };
-      gui = mkModuleOption {
-        key = "gui";
+      gui = lib.mkOption {
+        type = lib.types.deferredModule;
+        apply = module: {
+          key = "gui";
+          imports = [module];
+        };
       };
     };
   };
