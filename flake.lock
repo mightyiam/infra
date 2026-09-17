@@ -190,6 +190,22 @@
         "type": "github"
       }
     },
+    "pr-tracker": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1789648829,
+        "narHash": "sha256-8TjXLOV+OAVeoXVohLVsfFHK2T/em2DLTuq+xtxJXaM=",
+        "owner": "molybdenumsoftware",
+        "repo": "pr-tracker",
+        "rev": "fcafa181ca40357b51b77a5759fb7758b7fe9648",
+        "type": "github"
+      },
+      "original": {
+        "owner": "molybdenumsoftware",
+        "repo": "pr-tracker",
+        "type": "github"
+      }
+    },
     "qmk-firmware": {
       "flake": false,
       "locked": {
@@ -222,6 +238,7 @@
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
+        "pr-tracker": "pr-tracker",
         "qmk-firmware": "qmk-firmware",
         "smart-scrolloff-nvim": "smart-scrolloff-nvim",
         "stylix": "stylix",

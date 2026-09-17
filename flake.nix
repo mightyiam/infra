@@ -51,6 +51,10 @@
       url = "github:nix-community/nixvim";
       flake = false;
     };
+    pr-tracker = {
+      url = "github:molybdenumsoftware/pr-tracker";
+      flake = false;
+    };
     qmk-firmware = {
       url = "git+https://github.com/qmk/qmk_firmware.git?shallow=1&submodules=1";
       flake = false;
