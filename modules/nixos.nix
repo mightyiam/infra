@@ -40,7 +40,7 @@
         |> lib.mkMerge;
     };
 
-    nixos.modules.pc = {
+    nixos.modules.base = {
       virtualisation.vmVariant = {
         virtualisation = {
           cores = 8;
