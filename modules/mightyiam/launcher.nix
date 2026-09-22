@@ -2,13 +2,9 @@
   home.gui = hmArgs: {
     programs.rofi = {
       enable = true;
-      terminal = hmArgs.config.terminal.path;
-      modes = [
-        "run"
-        "drun"
-        "window"
-      ];
-      extraConfig = {
+      settings = {
+        terminal = hmArgs.config.terminal.path;
+        modes = ["run" "drun" "window"];
         show-icons = true;
         drun-display-format = "{icon} {name}";
         display-drun = "   Apps ";
