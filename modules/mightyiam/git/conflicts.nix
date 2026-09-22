@@ -1,9 +1,9 @@
-{
+{lib, ...}: {
   home.base = {
     programs = {
       git = {
         settings = {
-          merge.conflictstyle = "zdiff3";
+          merge.conflictStyle = lib.mkDefault "zdiff3";
           rerere.enabled = true;
         };
       };
