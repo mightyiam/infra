@@ -12,6 +12,7 @@
       pkgs.nix-diff
       pkgs.nix-du
       pkgs.nix-fast-build
+      pkgs.nix-graph
       pkgs.nix-melt
       pkgs.nix-output-monitor
       pkgs.nix-prefetch-scripts
