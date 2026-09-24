@@ -23,8 +23,8 @@
         source = ${hyprlandConfPath}
       '';
       settings.bind = [
-        "SUPER, b, exec, ${lib.getExe pkgs.brightnessctl} set 10%-"
-        "SUPER+SHIFT, b, exec, ${lib.getExe pkgs.brightnessctl} set 10%+"
+        "SUPER, b, exec, ${lib.getExe pkgs.brightnessctl} set 2%-"
+        "SUPER+SHIFT, b, exec, ${lib.getExe pkgs.brightnessctl} set 2%+"
       ];
     };
     home = {
