@@ -22,7 +22,9 @@
         </busconfig>
       '')
     ];
+  };
 
-    environment.systemPackages = [pkgs.impala];
+  home.base = {
+    programs.impala.enable = true;
   };
 }
