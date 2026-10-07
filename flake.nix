@@ -64,7 +64,7 @@
       flake = false;
     };
     stylix = {
-      url = "github:nix-community/stylix";
+      url = "github:mightyiam/stylix/for/infra";
       flake = false;
     };
     tinted-schemes = {

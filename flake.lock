@@ -267,13 +267,14 @@
       "locked": {
         "lastModified": 1789937675,
         "narHash": "sha256-/F9gQpAlPCxheQ9ht/5Fka2JEr/FfuOh9R7ySa9SAGc=",
-        "owner": "nix-community",
+        "owner": "mightyiam",
         "repo": "stylix",
         "rev": "abff36bfab11cbdcd0723f41c1b0921e211be6ac",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
+        "owner": "mightyiam",
+        "ref": "for/infra",
         "repo": "stylix",
         "type": "github"
       }
