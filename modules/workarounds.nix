@@ -16,7 +16,6 @@
       # https://github.com/nix-community/stylix/discussions/2232
       stylix.targets = {
         gtksourceview.enable = false;
-        rofi.enable = false;
       };
 
       # 2026-05-27: found that cursor was not present in entire screen sharing.
