@@ -19,11 +19,11 @@
     "files": {
       "flake": false,
       "locked": {
-        "lastModified": 1791938349,
-        "narHash": "sha256-P4LSmOLRK+2iEhv5H9gZ6vrEmtoT+EoH3MoEIroLxLY=",
+        "lastModified": 1792176909,
+        "narHash": "sha256-PjiXDkVOwKSbXgWVBhNhOF0prZz38QJ/zWV2o23kQmg=",
         "owner": "mightyiam",
         "repo": "files",
-        "rev": "2e8260269c089b68058b32cae5cd16eca16a2b4f",
+        "rev": "531e595007959ebac1311a01e0199fe89741e1e8",
         "type": "github"
       },
       "original": {
@@ -148,11 +148,11 @@
     "nixpkgs": {
       "flake": false,
       "locked": {
-        "lastModified": 1791966044,
-        "narHash": "sha256-UwKRZKua8BOagYl0cou05BHtu7F6XV62FD2Hb+f0QYs=",
-        "rev": "319e4cebef10cbb636c6ea392137b52ad105336a",
+        "lastModified": 1792116957,
+        "narHash": "sha256-MTJCMrhDFb+GRbLxBPTp8kB4dDlO+egmQ5qsJgYuaWw=",
+        "rev": "f20cd90e28fe0403873f473b29e42662cd86e8c4",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1092129.319e4cebef10/nixexprs.tar.xz"
+        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1093421.f20cd90e28fe/nixexprs.tar.xz"
       },
       "original": {
         "type": "tarball",
@@ -177,11 +177,11 @@
     "nixvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1792012326,
-        "narHash": "sha256-DApZIjaKdU4XzglZ56yrPYLhG/ajoyuQ4g4s8tkHqxU=",
+        "lastModified": 1792203519,
+        "narHash": "sha256-yJ072hxngo/srNdLTp4BlFeo0hedwnKicI3TGlSXLFE=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "8485794923eb406ce3728af320392226608f724b",
+        "rev": "453dc9c5037e6d1bec81d2a51ddacd58a2f44e9c",
         "type": "github"
       },
       "original": {
@@ -193,11 +193,11 @@
     "pr-tracker": {
       "flake": false,
       "locked": {
-        "lastModified": 1791989154,
-        "narHash": "sha256-dSpgLNzBQunolw1osncYSCfi3eBMPX3jivhyr9S6mTw=",
+        "lastModified": 1792239209,
+        "narHash": "sha256-RegOTQDXxWLB1PyOzrM/QXTmxQTyK7NXn6qNS0nUKQM=",
         "owner": "molybdenumsoftware",
         "repo": "pr-tracker",
-        "rev": "c7e6d722fc53c6040a585c94bf131ed8e0d40c51",
+        "rev": "75d69095f12794ad918c6b1d7b0851fe2d07102f",
         "type": "github"
       },
       "original": {
@@ -209,10 +209,10 @@
     "qmk-firmware": {
       "flake": false,
       "locked": {
-        "lastModified": 1790961495,
-        "narHash": "sha256-jKohhOzGWWkKFg0F1C7bFMR2/aodNKZWicb2ioGWJRA=",
+        "lastModified": 1792150538,
+        "narHash": "sha256-YKoFg2BDdALHhIktPPLLY7pUPzD2ydRmQ1nmwzhbiH8=",
         "ref": "refs/heads/master",
-        "rev": "7a1bbf37c5c07da4ea0a162bb139083a46ef40a1",
+        "rev": "180f394b489c238cb231c2bf8b080262155e03c0",
         "shallow": true,
         "submodules": true,
         "type": "git",
