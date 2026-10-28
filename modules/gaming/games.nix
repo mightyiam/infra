@@ -3,6 +3,7 @@
     home.packages = with pkgs; [
       enigma
       pingus
+      pysolfc
       stellarium
     ];
   };
