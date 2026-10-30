@@ -7,7 +7,6 @@
         "dendritic"
         "auto-import"
         "files"
-        "all-check-store-paths"
         "prohibit-warnings"
       ];
 
