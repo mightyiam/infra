@@ -4,14 +4,14 @@
       services.avahi = {
         enable = true;
         nssmdns4 = true;
-        publish = {
+        settings.publish = {
           enable = true;
-          addresses = true;
+          publish-addresses = true;
         };
       };
     };
     pc = {
-      services.avahi.publish.workstation = true;
+      services.avahi.settings.publish.publish-workstation = true;
     };
   };
 }
