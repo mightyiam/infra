@@ -41,7 +41,7 @@
         options.desc = "Toggle diagnostics";
       }
       {
-        key = "<leader>tcd";
+        key = "<leader>tD";
         action = "<cmd>TinyInlineDiag toggle_cursor_only<cr>";
         options.desc = "Toggle cursor-only diagnostics";
       }
