@@ -2,6 +2,7 @@
   home.gui = {pkgs, ...}: {
     wayland.windowManager.hyprland = {
       enable = true;
+      configType = "hyprlang";
       plugins = [pkgs.hyprlandPlugins.hy3];
 
       settings = {
