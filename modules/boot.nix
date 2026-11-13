@@ -49,7 +49,7 @@
     };
 
     pc = {
-      boot.plymouth.enable = true;
+      services.bootvine.enable = true;
     };
   };
 }
