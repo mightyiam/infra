@@ -1,4 +1,7 @@
 {lib, ...}: {
+  # https://github.com/NixOS/nixpkgs/pull/584791
+  perSystem.nixpkgs.config.permittedInsecurePackages = ["qutebrowser-3.7.0"];
+
   home.gui = hmArgs: {
     programs.qutebrowser = {
       enable = true;
