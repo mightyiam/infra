@@ -16,15 +16,26 @@
     #   scale = 1
     # }
     # ```
-    hyprlandConfPath = "${hmArgs.config.xdg.configHome}/hypr/monitors.conf";
+    baseName = "monitors";
+    hyprlandConfPath = "${hmArgs.config.xdg.configHome}/hypr/${baseName}.lua";
   in {
     wayland.windowManager.hyprland = {
       extraConfig = ''
-        source = ${hyprlandConfPath}
+        require("${baseName}")
       '';
       settings.bind = [
-        "SUPER, b, exec, ${lib.getExe pkgs.brightnessctl} set 2%-"
-        "SUPER+SHIFT, b, exec, ${lib.getExe pkgs.brightnessctl} set 2%+"
+        {
+          _args = [
+            "SUPER + b"
+            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe pkgs.brightnessctl} set 2%-")'')
+          ];
+        }
+        {
+          _args = [
+            "SUPER + SHIFT + b"
+            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe pkgs.brightnessctl} set 2%+")'')
+          ];
+        }
       ];
     };
     home = {

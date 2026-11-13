@@ -43,9 +43,17 @@
         };
       };
     };
-
-    wayland.windowManager.hyprland.settings.exec-once = [
-      (lib.getExe hmArgs.config.programs.i3bar-river.package)
+    wayland.windowManager.hyprland.settings.on = [
+      {
+        _args = [
+          "hyprland.start"
+          (lib.generators.mkLuaInline ''
+            function()
+              hl.exec_cmd("${lib.getExe hmArgs.config.programs.i3bar-river.package}")
+            end
+          '')
+        ];
+      }
     ];
 
     programs.i3bar-river = {

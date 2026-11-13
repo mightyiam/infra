@@ -3,11 +3,21 @@
     wpaperctl = lib.getExe' hmArgs.config.services.wpaperd.package "wpaperctl";
   in {
     wayland.windowManager.hyprland = {
-      settings.misc.disable_hyprland_logo = true;
+      settings.config.misc.disable_hyprland_logo = true;
 
       settings.bind = [
-        "SUPER, i, exec, ${wpaperctl} next-wallpaper"
-        "SUPER+SHIFT, i, exec, ${wpaperctl} previous-wallpaper"
+        {
+          _args = [
+            "SUPER + i"
+            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${wpaperctl} next-wallpaper")'')
+          ];
+        }
+        {
+          _args = [
+            "SUPER + SHIFT + i"
+            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${wpaperctl} previous-wallpaper")'')
+          ];
+        }
       ];
     };
 

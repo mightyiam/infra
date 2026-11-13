@@ -22,8 +22,18 @@
       rofi = lib.getExe hmArgs.config.programs.rofi.package;
     in {
       hyprland.settings.bind = [
-        "SUPER, d, exec, ${rofi} -show drun"
-        "SUPER+SHIFT, d, exec, ${rofi} -show run"
+        {
+          _args = [
+            "SUPER + d"
+            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${rofi} -show drun")'')
+          ];
+        }
+        {
+          _args = [
+            "SUPER + SHIFT + d"
+            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${rofi} -show run")'')
+          ];
+        }
       ];
     };
   };

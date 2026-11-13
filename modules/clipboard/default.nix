@@ -11,7 +11,12 @@
     services.cliphist.enable = true;
 
     wayland.windowManager.hyprland.settings.bind = [
-      "SUPER, p, exec, ${lib.getExe pkgs.rofi-cliphist} copy"
+      {
+        _args = [
+          "SUPER + p"
+          (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe pkgs.rofi-cliphist} copy")'')
+        ];
+      }
     ];
 
     home.packages = with pkgs; [

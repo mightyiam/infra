@@ -16,8 +16,18 @@
       };
       wayland.windowManager = {
         hyprland.settings.bind = [
-          "SUPER, Return, exec, ${hmArgs.config.terminal.path}"
-          "SUPER+SHIFT, Return, exec, ${hmArgs.config.terminal.path} --working-directory `${lib.getExe pkgs.hyprcwd}`"
+          {
+            _args = [
+              "SUPER + RETURN"
+              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${hmArgs.config.terminal.path}")'')
+            ];
+          }
+          {
+            _args = [
+              "SUPER + SHIFT + RETURN"
+              (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${hmArgs.config.terminal.path} --working-directory `${lib.getExe pkgs.hyprcwd}`")'')
+            ];
+          }
         ];
       };
     };

@@ -10,7 +10,12 @@
     };
 
     wayland.windowManager.hyprland.settings.bind = [
-      "SUPER, m, exec, ${lib.getExe package}"
+      {
+        _args = [
+          "SUPER + m"
+          (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe package}")'')
+        ];
+      }
     ];
   };
 }

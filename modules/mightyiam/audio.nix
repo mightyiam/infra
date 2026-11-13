@@ -15,8 +15,18 @@
     };
 
     config.wayland.windowManager.hyprland.settings.bind = [
-      "SUPER, x, exec, ${incVol "-"}"
-      "SUPER+SHIFT, x, exec, ${incVol "+"}"
+      {
+        _args = [
+          "SUPER + x"
+          (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${incVol "-"}")'')
+        ];
+      }
+      {
+        _args = [
+          "SUPER + SHIFT + x"
+          (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${incVol "+"}")'')
+        ];
+      }
     ];
   };
 }

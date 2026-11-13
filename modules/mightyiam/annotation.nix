@@ -15,10 +15,31 @@
 
   home.gui = {pkgs, ...}: {
     wayland.windowManager.hyprland.settings = {
-      exec-once = [(lib.getExe pkgs.vellum)];
+      on = [
+        {
+          _args = [
+            "hyprland.start"
+            (lib.generators.mkLuaInline ''
+              function()
+                hl.exec_cmd("${lib.getExe pkgs.vellum}")
+              end
+            '')
+          ];
+        }
+      ];
       bind = [
-        "SUPER, g, exec, ${lib.getExe pkgs.vellum} toggle"
-        "SUPER+SHIFT, g, exec, ${lib.getExe pkgs.vellum} clear"
+        {
+          _args = [
+            "SUPER + g"
+            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe pkgs.vellum} toggle")'')
+          ];
+        }
+        {
+          _args = [
+            "SUPER + SHIFT + g"
+            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe pkgs.vellum} clear")'')
+          ];
+        }
       ];
     };
   };

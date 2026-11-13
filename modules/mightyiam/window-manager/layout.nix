@@ -1,6 +1,6 @@
 {
   home.gui = {
-    wayland.windowManager.hyprland.settings.general = {
+    wayland.windowManager.hyprland.settings.config.general = {
       gaps_in = 3;
       gaps_out = 6;
     };

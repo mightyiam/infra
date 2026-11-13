@@ -28,8 +28,17 @@ in {
     '';
     services.systembus-notify.enable = true;
 
-    wayland.windowManager.hyprland.settings.exec-once = [
-      (lib.getExe pkgs.handle-hyprland-screencast)
+    wayland.windowManager.hyprland.settings.on = [
+      {
+        _args = [
+          "hyprland.start"
+          (lib.generators.mkLuaInline ''
+            function()
+              hl.exec_cmd("${lib.getExe pkgs.handle-hyprland-screencast}")
+            end
+          '')
+        ];
+      }
     ];
 
     home.packages = [pkgs.notify-desktop];

@@ -48,14 +48,12 @@
         {
           key,
           target,
-        }:
-          [
-            "SUPER+SHIFT"
-            key
-            "exec"
-            (mkScript target |> lib.getExe)
-          ]
-          |> lib.concatStringsSep ", "
+        }: {
+          _args = [
+            "SUPER + SHIFT + ${key}"
+            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${mkScript target |> lib.getExe}")'')
+          ];
+        }
       );
   };
 }

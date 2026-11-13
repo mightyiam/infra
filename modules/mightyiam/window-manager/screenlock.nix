@@ -5,7 +5,12 @@
     lockCommand = lib.getExe pkgs.swaylock;
   in {
     wayland.windowManager.hyprland.settings.bind = [
-      "SUPER+Alt, l, exec, ${lockCommand}"
+      {
+        _args = [
+          "SUPER + ALT + l"
+          (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lockCommand}")'')
+        ];
+      }
     ];
 
     programs.swaylock = {

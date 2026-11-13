@@ -1,5 +1,5 @@
 {
   home.gui = {
-    wayland.windowManager.hyprland.settings.decoration.rounding = 5;
+    wayland.windowManager.hyprland.settings.config.decoration.rounding = 5;
   };
 }

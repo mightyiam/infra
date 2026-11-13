@@ -7,8 +7,18 @@
     };
 
     wayland.windowManager.hyprland.settings.bind = [
-      "SUPER, u, exec, ${lib.getExe pkgs.rofimoji}"
-      "SUPER+Shift, u, exec, ${lib.getExe pkgs.rofimoji} --files all"
+      {
+        _args = [
+          "SUPER + u"
+          (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe pkgs.rofimoji}")'')
+        ];
+      }
+      {
+        _args = [
+          "SUPER + SHIFT + u"
+          (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe pkgs.rofimoji} --files all")'')
+        ];
+      }
     ];
   };
 }

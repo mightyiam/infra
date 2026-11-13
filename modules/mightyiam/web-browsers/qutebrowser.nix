@@ -34,7 +34,12 @@
     };
 
     wayland.windowManager.hyprland.settings.bind = [
-      "SUPER, q, exec, ${lib.getExe hmArgs.config.programs.qutebrowser.package}"
+      {
+        _args = [
+          "SUPER + q"
+          (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe hmArgs.config.programs.qutebrowser.package}")'')
+        ];
+      }
     ];
 
     xdg.mimeApps.defaultApplicationPackages = [hmArgs.config.programs.qutebrowser.package];

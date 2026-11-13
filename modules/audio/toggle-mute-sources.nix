@@ -9,7 +9,12 @@
 
   homeManager.modules.gui = {pkgs, ...}: {
     wayland.windowManager.hyprland.settings.bind = [
-      "SUPER, z, exec, ${lib.getExe pkgs.toggle-mute-sources}"
+      {
+        _args = [
+          "SUPER + z"
+          (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lib.getExe pkgs.toggle-mute-sources}")'')
+        ];
+      }
     ];
 
     home.packages = [pkgs.toggle-mute-sources];

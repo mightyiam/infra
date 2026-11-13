@@ -20,10 +20,16 @@
     };
   in {
     wayland.windowManager.hyprland.settings = {
-      bindl = [
-        "ALT+SHIFT, SHIFT_L, exec, ${hyprland-rotate-keyboard-layout |> lib.getExe}"
+      bind = [
+        {
+          _args = [
+            "ALT + SHIFT + SHIFT_L"
+            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${hyprland-rotate-keyboard-layout |> lib.getExe}")'')
+            {locked = true;}
+          ];
+        }
       ];
-      input.kb_layout = "us,il";
+      config.input.kb_layout = "us,il";
     };
 
     programs.i3status-rust.bars.bottom.blocks = lib.mkOrder 1200 [

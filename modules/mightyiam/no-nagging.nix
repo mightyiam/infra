@@ -1,5 +1,5 @@
 {
   home.gui = {
-    wayland.windowManager.hyprland.settings.ecosystem.no_donation_nag = true;
+    wayland.windowManager.hyprland.settings.config.ecosystem.no_donation_nag = true;
   };
 }
