@@ -5,7 +5,7 @@
         enable = true;
         nssmdns4 = true;
         settings.publish = {
-          enable = true;
+          disable-publishing = false;
           publish-addresses = true;
         };
       };
