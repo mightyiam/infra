@@ -3,7 +3,7 @@
     services.resolved = {
       enable = true;
       settings.Resolve = {
-        DNSOverTls = "opportunistic";
+        DNSOverTLS = "opportunistic";
         DNS = [
           # https://developers.cloudflare.com/1.1.1.1
           "1.1.1.1"
