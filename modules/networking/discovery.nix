@@ -2,6 +2,7 @@
   nixos.modules = {
     base = {
       services = {
+        resolved.settings.Resolve.MulticastDNS = false;
         avahi = {
           enable = true;
           nssmdns4 = true;
