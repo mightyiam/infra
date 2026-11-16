@@ -84,11 +84,11 @@
     "home-manager": {
       "flake": false,
       "locked": {
-        "lastModified": 1794278858,
-        "narHash": "sha256-rkrJwLgLSHBnXfgoSKIDa+2LLGdTqynsV3GAxOTGhUU=",
+        "lastModified": 1794715309,
+        "narHash": "sha256-awkBBs5ctFKgEYjpNGpi3t/VqF589n5EWfdinRb2gNI=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "82ce401aa350502897c3f2e85f384d61cd3b0b6d",
+        "rev": "a1293da7dd8e497e08d26173f97e2976b36a31ea",
         "type": "github"
       },
       "original": {
@@ -132,11 +132,11 @@
     "nix-index-database": {
       "flake": false,
       "locked": {
-        "lastModified": 1794132860,
-        "narHash": "sha256-iGNtQnUZsi+v6/4NbtYr+dsmASa6GkzXtUcTpE8F3mE=",
+        "lastModified": 1794739050,
+        "narHash": "sha256-PCGNIyAydZcdUXCxEXTjrS1+wWS+k9E+ENqBkUK2Mpg=",
         "owner": "nix-community",
         "repo": "nix-index-database",
-        "rev": "af9249ca33bc2efaae5d071e4c67ddef19dcb681",
+        "rev": "9bd074026d6db75b59aae8cd6071b5f2fe27a36c",
         "type": "github"
       },
       "original": {
@@ -148,11 +148,11 @@
     "nixpkgs": {
       "flake": false,
       "locked": {
-        "lastModified": 1794495034,
-        "narHash": "sha256-QG/HY0t5t3sfT2ozW/Ikis5Klqf0X4nfTuLvFaBpNno=",
-        "rev": "2074cc672349f14240fb7ea90d509e0b643e9dd4",
+        "lastModified": 1794644783,
+        "narHash": "sha256-Qiji3lsueSxl/ngykvc6AEQJnqXRhOMDtUp66DPCxfw=",
+        "rev": "5d2b81a7a3be3e2f832879028e4d60abbf58e9a0",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1118975.2074cc672349/nixexprs.tar.xz"
+        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1120695.5d2b81a7a3be/nixexprs.tar.xz"
       },
       "original": {
         "type": "tarball",
@@ -209,10 +209,10 @@
     "qmk-firmware": {
       "flake": false,
       "locked": {
-        "lastModified": 1794457929,
-        "narHash": "sha256-Snmwzm85MS/Ry0I1mHn+sGE0Q7k2oX2WnZxIlrJE4A4=",
+        "lastModified": 1794783694,
+        "narHash": "sha256-D3vE5IMhxUA8cw4JhzK1UmhWlSAur3cNKfpo8eCNAm8=",
         "ref": "refs/heads/master",
-        "rev": "33292390974c75362ca30873c482d052e0bd7a63",
+        "rev": "8252b6309752f0be6882c387e15989ba51323d8f",
         "shallow": true,
         "submodules": true,
         "type": "git",
