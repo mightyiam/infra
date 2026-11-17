@@ -7,8 +7,19 @@
     wayland.windowManager.hyprland.settings.bind = [
       {
         _args = [
-          "SUPER + ALT + l"
+          "SUPER + SHIFT + ALT + l"
           (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("${lockCommand}")'')
+        ];
+      }
+      {
+        _args = [
+          "SUPER + ALT + l"
+          (lib.generators.mkLuaInline ''
+            function()
+              hl.dispatch(hl.dsp.exec_cmd("${lockCommand}"))
+              hl.dispatch(hl.dsp.exec_cmd("systemctl suspend"))
+            end
+          '')
         ];
       }
     ];
