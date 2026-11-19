@@ -265,16 +265,15 @@
     "stylix": {
       "flake": false,
       "locked": {
-        "lastModified": 1793116891,
-        "narHash": "sha256-NHqRyJJZ54DVSdFzsT4f4Y43nEIhxSJjQl1fXfbgFSI=",
-        "owner": "mightyiam",
+        "lastModified": 1795038909,
+        "narHash": "sha256-u9VYWK6f9T8ZuMliRvX4LUuvJ/k5+6M5y35cZgsyJ8A=",
+        "owner": "nix-community",
         "repo": "stylix",
-        "rev": "0d95c6defdc4e8bb2d61e6aad98942619b75679c",
+        "rev": "44aafe27b8b3427201dd53c6a464c196b6a956dd",
         "type": "github"
       },
       "original": {
-        "owner": "mightyiam",
-        "ref": "for/infra",
+        "owner": "nix-community",
         "repo": "stylix",
         "type": "github"
       }
